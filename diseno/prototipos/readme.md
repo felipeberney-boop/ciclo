@@ -26,3 +26,9 @@ conexiones). Cada una arranca en su portada al apretar Present.
 ## prototipo_felipe_1/
 
 Carpeta de trabajo de Felipe. Arranca con una captura de la portada actual de la web como base para iterar.
+
+## prototipo_abril_1/
+
+Carpeta de trabajo de Abril. Tres propuestas conceptuales de alta fidelidad (radar, detalle de atributo y
+consulta por imagen), generadas con IA de imágenes. Los prompts están en `prompts.md`. Datos y gráficos
+ilustrativos.

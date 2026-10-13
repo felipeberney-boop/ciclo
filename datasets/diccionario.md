@@ -103,6 +103,21 @@ contra 2021–22.
 Coordenadas ya calculadas de cada gráfico del prototipo, en píxeles. Lo genera
 `codigo/calcular_geometria_de_graficos.js`. Es un intermedio: no es dato de investigación.
 
+## `datasets_procesados/series_google_trends/`
+
+Las mismas series que usa la app, en CSV plano, para poder compartirlas sin que el otro lado tenga
+que parsear el JSON. Siete archivos: búsqueda mundial y Argentina por atributo, los 12 términos de
+jean sin agrupar, participación por corte en web y en Shopping, el Lyst Index completo y el único
+agregado de H&M que quedó en CSV.
+
+El `readme.md` de esa carpeta trae la tabla término por término —texto exacto buscado, región,
+idioma, rango, fecha de descarga y si es web o Shopping— más las dos transformaciones aplicadas
+(detrend y normalización) y las advertencias de 2025 y del corte de Lyst en Q1-26.
+
+**Dos columnas quedan sin completar a propósito:** la categoría de Trends usada y si cada término se
+exportó solo o comparado con uno de referencia. Esa información sólo está en el export original, que
+vive en la carpeta de Drive del grupo. Figuran como «no consta» en vez de suponerlas.
+
 ## `datasets/completado_2026/reddit_2026.csv` · medido
 
 | Columna | Contenido |

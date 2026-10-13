@@ -1,0 +1,641 @@
+trimestre,marca,puesto
+Q1-18,Balenciaga,1
+Q1-18,Gucci,2
+Q1-18,Vetements,3
+Q1-18,Off-White,4
+Q1-18,Stone Island,5
+Q1-18,Givenchy,6
+Q1-18,Moncler,7
+Q1-18,Dolce & Gabbana,8
+Q1-18,Yeezy,9
+Q1-18,Valentino,10
+Q2-18,Gucci,1
+Q2-18,Off-White,2
+Q2-18,Balenciaga,3
+Q2-18,Givenchy,4
+Q2-18,Dolce & Gabbana,5
+Q2-18,Vetements,6
+Q2-18,Versace,7
+Q2-18,Fendi,8
+Q2-18,Nike,9
+Q2-18,Prada,10
+Q3-18,Off-White,1
+Q3-18,Gucci,2
+Q3-18,Balenciaga,3
+Q3-18,Nike,4
+Q3-18,Prada,5
+Q3-18,Versace,6
+Q3-18,Yeezy,7
+Q3-18,Vetements,8
+Q3-18,Fendi,9
+Q3-18,Valentino,10
+Q4-18,Gucci,1
+Q4-18,Off-White,2
+Q4-18,Balenciaga,3
+Q4-18,Moncler,4
+Q4-18,Fendi,5
+Q4-18,Versace,6
+Q4-18,Stone Island,7
+Q4-18,Vetements,8
+Q4-18,Valentino,9
+Q4-18,Burberry,10
+Q1-19,Off-White,1
+Q1-19,Gucci,2
+Q1-19,Balenciaga,3
+Q1-19,Valentino,4
+Q1-19,Fendi,5
+Q1-19,Prada,6
+Q1-19,Stone Island,7
+Q1-19,Versace,8
+Q1-19,Vetements,9
+Q1-19,Saint Laurent,10
+Q1-19,Nike,11
+Q1-19,Burberry,12
+Q1-19,Moncler,13
+Q1-19,Givenchy,14
+Q1-19,Dolce & Gabbana,15
+Q1-19,Yeezy,16
+Q1-19,Balmain,17
+Q1-19,Palm Angels,18
+Q1-19,Adidas,19
+Q1-19,Alexander McQueen,20
+Q2-19,Gucci,1
+Q2-19,Off-White,2
+Q2-19,Balenciaga,3
+Q2-19,Valentino,4
+Q2-19,Prada,5
+Q2-19,Versace,6
+Q2-19,Fendi,7
+Q2-19,Stone Island,8
+Q2-19,Nike,9
+Q2-19,Saint Laurent,10
+Q2-19,Vetements,11
+Q2-19,Burberry,12
+Q2-19,Dolce & Gabbana,13
+Q2-19,Givenchy,14
+Q2-19,Palm Angels,15
+Q2-19,Adidas,16
+Q2-19,Moncler,17
+Q2-19,Moschino,18
+Q2-19,Yeezy,19
+Q2-19,Balmain,20
+Q3-19,Off-White,1
+Q3-19,Balenciaga,2
+Q3-19,Gucci,3
+Q3-19,Versace,4
+Q3-19,Prada,5
+Q3-19,Valentino,6
+Q3-19,Fendi,7
+Q3-19,Burberry,8
+Q3-19,Saint Laurent,9
+Q3-19,Vetements,10
+Q3-19,Stone Island,11
+Q3-19,Nike,12
+Q3-19,Givenchy,13
+Q3-19,Moncler,14
+Q3-19,Dolce & Gabbana,15
+Q3-19,Bottega Veneta,16
+Q3-19,Alexander McQueen,17
+Q3-19,Moschino,18
+Q3-19,Balmain,19
+Q3-19,Loewe,20
+Q4-19,Off-White,1
+Q4-19,Gucci,2
+Q4-19,Balenciaga,3
+Q4-19,Moncler,4
+Q4-19,Versace,5
+Q4-19,Fendi,6
+Q4-19,Prada,7
+Q4-19,Valentino,8
+Q4-19,Saint Laurent,9
+Q4-19,Burberry,10
+Q4-19,Stone Island,11
+Q4-19,Nike,12
+Q4-19,Givenchy,13
+Q4-19,Bottega Veneta,14
+Q4-19,Vetements,15
+Q4-19,Yeezy,16
+Q4-19,Acne Studios,17
+Q4-19,Canada Goose,18
+Q4-19,Dr. Martens,19
+Q4-19,Loewe,20
+Q1-20,Off-White,1
+Q1-20,Balenciaga,2
+Q1-20,Nike,3
+Q1-20,Gucci,4
+Q1-20,Prada,5
+Q1-20,Moncler,6
+Q1-20,Fendi,7
+Q1-20,Valentino,8
+Q1-20,Saint Laurent,9
+Q1-20,Versace,10
+Q1-20,Burberry,11
+Q1-20,Stone Island,12
+Q1-20,Bottega Veneta,13
+Q1-20,Givenchy,14
+Q1-20,Jacquemus,15
+Q1-20,Vetements,16
+Q1-20,Raf Simons,17
+Q1-20,Loewe,18
+Q1-20,Thom Browne,19
+Q1-20,Rick Owens,20
+Q2-20,Nike,1
+Q2-20,Off-White,2
+Q2-20,Gucci,3
+Q2-20,Balenciaga,4
+Q2-20,Prada,5
+Q2-20,Saint Laurent,6
+Q2-20,Versace,7
+Q2-20,Burberry,8
+Q2-20,Fendi,9
+Q2-20,Bottega Veneta,10
+Q2-20,Jacquemus,11
+Q2-20,Valentino,12
+Q2-20,Adidas,13
+Q2-20,Moncler,14
+Q2-20,Alexander McQueen,15
+Q2-20,Loewe,16
+Q2-20,Balmain,17
+Q2-20,Vetements,18
+Q2-20,Stone Island,19
+Q2-20,Fear of God,20
+Q3-20,Gucci,1
+Q3-20,Off-White,2
+Q3-20,Nike,3
+Q3-20,Prada,4
+Q3-20,Balenciaga,5
+Q3-20,Fendi,6
+Q3-20,Versace,7
+Q3-20,Saint Laurent,8
+Q3-20,Bottega Veneta,9
+Q3-20,Valentino,10
+Q3-20,Jacquemus,11
+Q3-20,Burberry,12
+Q3-20,Moncler,13
+Q3-20,Alexander McQueen,14
+Q3-20,Loewe,15
+Q3-20,Balmain,16
+Q3-20,Adidas,17
+Q3-20,Givenchy,18
+Q3-20,Fear of God,19
+Q3-20,Marine Serre,20
+Q4-20,Gucci,1
+Q4-20,Balenciaga,2
+Q4-20,Moncler,3
+Q4-20,Off-White,4
+Q4-20,Prada,5
+Q4-20,Saint Laurent,6
+Q4-20,Bottega Veneta,7
+Q4-20,Versace,8
+Q4-20,Valentino,9
+Q4-20,Fendi,10
+Q4-20,Nike,11
+Q4-20,Burberry,12
+Q4-20,Jacquemus,13
+Q4-20,Alexander McQueen,14
+Q4-20,Loewe,15
+Q4-20,Balmain,16
+Q4-20,Givenchy,17
+Q4-20,Adidas,18
+Q4-20,Stone Island,19
+Q4-20,Fear of God,20
+Q1-21,Gucci,1
+Q1-21,Nike,2
+Q1-21,Dior,3
+Q1-21,Balenciaga,4
+Q1-21,Moncler,5
+Q1-21,Prada,6
+Q1-21,Louis Vuitton,7
+Q1-21,Bottega Veneta,8
+Q1-21,Saint Laurent,9
+Q1-21,Off-White,10
+Q1-21,Versace,11
+Q1-21,Burberry,12
+Q1-21,Fendi,13
+Q1-21,Valentino,14
+Q1-21,Alexander McQueen,15
+Q1-21,Loewe,16
+Q1-21,Givenchy,17
+Q1-21,Jacquemus,18
+Q1-21,Balmain,19
+Q1-21,Stone Island,20
+Q2-21,Gucci,1
+Q2-21,Dior,2
+Q2-21,Nike,3
+Q2-21,Louis Vuitton,4
+Q2-21,Prada,5
+Q2-21,Balenciaga,6
+Q2-21,Moncler,7
+Q2-21,Bottega Veneta,8
+Q2-21,Saint Laurent,9
+Q2-21,Versace,10
+Q2-21,Fendi,11
+Q2-21,Burberry,12
+Q2-21,Off-White,13
+Q2-21,Alexander McQueen,14
+Q2-21,Valentino,15
+Q2-21,Loewe,16
+Q2-21,Givenchy,17
+Q2-21,Balmain,18
+Q2-21,Jacquemus,19
+Q2-21,Rick Owens,20
+Q3-21,Balenciaga,1
+Q3-21,Gucci,2
+Q3-21,Dior,3
+Q3-21,Prada,4
+Q3-21,Louis Vuitton,5
+Q3-21,Nike,6
+Q3-21,Bottega Veneta,7
+Q3-21,Versace,8
+Q3-21,Fendi,9
+Q3-21,Saint Laurent,10
+Q3-21,Moncler,11
+Q3-21,Burberry,12
+Q3-21,Valentino,13
+Q3-21,Off-White,14
+Q3-21,Loewe,15
+Q3-21,Alexander McQueen,16
+Q3-21,Givenchy,17
+Q3-21,Balmain,18
+Q3-21,Jacquemus,19
+Q3-21,Dolce & Gabbana,20
+Q4-21,Balenciaga,1
+Q4-21,Gucci,2
+Q4-21,Prada,3
+Q4-21,Louis Vuitton,4
+Q4-21,Moncler,5
+Q4-21,Dior,6
+Q4-21,Fendi,7
+Q4-21,Saint Laurent,8
+Q4-21,Versace,9
+Q4-21,Bottega Veneta,10
+Q4-21,Valentino,11
+Q4-21,Burberry,12
+Q4-21,Nike,13
+Q4-21,Loewe,14
+Q4-21,Alexander McQueen,15
+Q4-21,Jacquemus,16
+Q4-21,Balmain,17
+Q4-21,Dolce & Gabbana,18
+Q4-21,Givenchy,19
+Q4-21,Miu Miu,20
+Q1-22,Balenciaga,1
+Q1-22,Gucci,2
+Q1-22,Louis Vuitton,3
+Q1-22,Prada,4
+Q1-22,Valentino,5
+Q1-22,Dior,6
+Q1-22,Moncler,7
+Q1-22,Bottega Veneta,8
+Q1-22,Fendi,9
+Q1-22,Miu Miu,10
+Q1-22,Off-White,11
+Q1-22,Burberry,12
+Q1-22,Loewe,13
+Q1-22,Versace,14
+Q1-22,Diesel,15
+Q1-22,Rick Owens,16
+Q1-22,Adidas,17
+Q1-22,Saint Laurent,18
+Q1-22,Nike,19
+Q1-22,Alexander McQueen,20
+Q2-22,Gucci,1
+Q2-22,Balenciaga,2
+Q2-22,Prada,3
+Q2-22,Valentino,4
+Q2-22,Louis Vuitton,5
+Q2-22,Dior,6
+Q2-22,Miu Miu,7
+Q2-22,Fendi,8
+Q2-22,Diesel,9
+Q2-22,Burberry,10
+Q2-22,Versace,11
+Q2-22,Nike,12
+Q2-22,Adidas,13
+Q2-22,Loewe,14
+Q2-22,Dolce & Gabbana,15
+Q2-22,Saint Laurent,16
+Q2-22,Bottega Veneta,17
+Q2-22,Moncler,18
+Q2-22,Off-White,19
+Q2-22,Jacquemus,20
+Q3-22,Gucci,1
+Q3-22,Prada,2
+Q3-22,Valentino,3
+Q3-22,Balenciaga,4
+Q3-22,Miu Miu,5
+Q3-22,Dior,6
+Q3-22,Fendi,7
+Q3-22,Diesel,8
+Q3-22,Louis Vuitton,9
+Q3-22,Versace,10
+Q3-22,Bottega Veneta,11
+Q3-22,Dolce & Gabbana,12
+Q3-22,Saint Laurent,13
+Q3-22,Loewe,14
+Q3-22,Nike,15
+Q3-22,Jacquemus,16
+Q3-22,Moncler,17
+Q3-22,Adidas,18
+Q3-22,Burberry,19
+Q3-22,Off-White,20
+Q4-22,Prada,1
+Q4-22,Gucci,2
+Q4-22,Moncler,3
+Q4-22,Miu Miu,4
+Q4-22,Valentino,5
+Q4-22,Bottega Veneta,6
+Q4-22,Loewe,7
+Q4-22,Dior,8
+Q4-22,Dolce & Gabbana,9
+Q4-22,Saint Laurent,10
+Q4-22,Balenciaga,11
+Q4-22,Nike,12
+Q4-22,Versace,13
+Q4-22,Fendi,14
+Q4-22,Louis Vuitton,15
+Q4-22,Diesel,16
+Q4-22,UGG,17
+Q4-22,Burberry,18
+Q4-22,Coach,19
+Q4-22,Jacquemus,20
+Q1-23,Prada,1
+Q1-23,Miu Miu,2
+Q1-23,Moncler,3
+Q1-23,Valentino,4
+Q1-23,Loewe,5
+Q1-23,Bottega Veneta,6
+Q1-23,Dolce & Gabbana,7
+Q1-23,Versace,8
+Q1-23,Gucci,9
+Q1-23,Saint Laurent,10
+Q1-23,Dior,11
+Q1-23,Nike,12
+Q1-23,Louis Vuitton,13
+Q1-23,Diesel,14
+Q1-23,Burberry,15
+Q1-23,Fendi,16
+Q1-23,Skims,17
+Q1-23,Balenciaga,18
+Q1-23,Jacquemus,19
+Q1-23,JW Anderson,20
+Q2-23,Loewe,1
+Q2-23,Prada,2
+Q2-23,Versace,3
+Q2-23,Miu Miu,4
+Q2-23,Bottega Veneta,5
+Q2-23,Valentino,6
+Q2-23,Saint Laurent,7
+Q2-23,Moncler,8
+Q2-23,Gucci,9
+Q2-23,Dior,10
+Q2-23,Louis Vuitton,11
+Q2-23,Dolce & Gabbana,12
+Q2-23,Diesel,13
+Q2-23,Burberry,14
+Q2-23,Jacquemus,15
+Q2-23,Balenciaga,16
+Q2-23,Skims,17
+Q2-23,Nike,18
+Q2-23,Fendi,19
+Q2-23,JW Anderson,20
+Q3-23,Miu Miu,1
+Q3-23,Loewe,2
+Q3-23,Prada,3
+Q3-23,Bottega Veneta,4
+Q3-23,Versace,5
+Q3-23,Saint Laurent,6
+Q3-23,Moncler,7
+Q3-23,Valentino,8
+Q3-23,Jacquemus,9
+Q3-23,Burberry,10
+Q3-23,Diesel,11
+Q3-23,Gucci,12
+Q3-23,Dior,13
+Q3-23,Balenciaga,14
+Q3-23,Dolce & Gabbana,15
+Q3-23,Louis Vuitton,16
+Q3-23,Skims,17
+Q3-23,Fendi,18
+Q3-23,JW Anderson,19
+Q3-23,Ferragamo,20
+Q4-23,Prada,1
+Q4-23,Miu Miu,2
+Q4-23,Loewe,3
+Q4-23,Bottega Veneta,4
+Q4-23,Moncler,5
+Q4-23,Saint Laurent,6
+Q4-23,Versace,7
+Q4-23,Jacquemus,8
+Q4-23,Burberry,9
+Q4-23,Valentino,10
+Q4-23,Gucci,11
+Q4-23,Balenciaga,12
+Q4-23,Diesel,13
+Q4-23,Skims,14
+Q4-23,Dior,15
+Q4-23,Louis Vuitton,16
+Q4-23,UGG,17
+Q4-23,The Row,18
+Q4-23,JW Anderson,19
+Q4-23,Fendi,20
+Q1-24,Miu Miu,1
+Q1-24,Prada,2
+Q1-24,Loewe,3
+Q1-24,Bottega Veneta,4
+Q1-24,Saint Laurent,5
+Q1-24,Moncler,6
+Q1-24,Versace,7
+Q1-24,Balenciaga,8
+Q1-24,Valentino,9
+Q1-24,Jacquemus,10
+Q1-24,Gucci,11
+Q1-24,Burberry,12
+Q1-24,Skims,13
+Q1-24,Louis Vuitton,14
+Q1-24,New Balance,15
+Q1-24,The Row,16
+Q1-24,Diesel,17
+Q1-24,Dolce & Gabbana,18
+Q1-24,Alaïa,19
+Q1-24,JW Anderson,20
+Q2-24,Loewe,1
+Q2-24,Miu Miu,2
+Q2-24,Prada,3
+Q2-24,Saint Laurent,4
+Q2-24,Bottega Veneta,5
+Q2-24,Versace,6
+Q2-24,Balenciaga,7
+Q2-24,Jacquemus,8
+Q2-24,Moncler,9
+Q2-24,Gucci,10
+Q2-24,Valentino,11
+Q2-24,Skims,12
+Q2-24,Burberry,13
+Q2-24,New Balance,14
+Q2-24,Louis Vuitton,15
+Q2-24,The Row,16
+Q2-24,Alaïa,17
+Q2-24,JW Anderson,18
+Q2-24,Dolce & Gabbana,19
+Q2-24,Coach,20
+Q3-24,Miu Miu,1
+Q3-24,Loewe,2
+Q3-24,Prada,3
+Q3-24,Saint Laurent,4
+Q3-24,Alaïa,5
+Q3-24,Bottega Veneta,6
+Q3-24,Jacquemus,7
+Q3-24,Gucci,8
+Q3-24,The Row,9
+Q3-24,Valentino,10
+Q3-24,Versace,11
+Q3-24,Skims,12
+Q3-24,Moncler,13
+Q3-24,Ralph Lauren,14
+Q3-24,Coach,15
+Q3-24,Totême,16
+Q3-24,Balenciaga,17
+Q3-24,Louis Vuitton,18
+Q3-24,Victoria Beckham,19
+Q3-24,Chloé,20
+Q4-24,Miu Miu,1
+Q4-24,Saint Laurent,2
+Q4-24,Prada,3
+Q4-24,Loewe,4
+Q4-24,Coach,5
+Q4-24,Bottega Veneta,6
+Q4-24,Alaïa,7
+Q4-24,Moncler,8
+Q4-24,The Row,9
+Q4-24,UGG,10
+Q4-24,Skims,11
+Q4-24,Gucci,12
+Q4-24,Jacquemus,13
+Q4-24,Versace,14
+Q4-24,Balenciaga,15
+Q4-24,Valentino,16
+Q4-24,COS,17
+Q4-24,Ralph Lauren,18
+Q4-24,Chloé,19
+Q4-24,Totême,20
+Q1-25,Loewe,1
+Q1-25,Miu Miu,2
+Q1-25,Saint Laurent,3
+Q1-25,Coach,4
+Q1-25,Prada,5
+Q1-25,COS,6
+Q1-25,Bottega Veneta,7
+Q1-25,The Row,8
+Q1-25,Chloé,9
+Q1-25,Alaïa,10
+Q1-25,Moncler,11
+Q1-25,Ralph Lauren,12
+Q1-25,Versace,13
+Q1-25,Balenciaga,14
+Q1-25,Skims,15
+Q1-25,Jacquemus,16
+Q1-25,Gucci,17
+Q1-25,On,18
+Q1-25,Totême,19
+Q1-25,Valentino,20
+Q2-25,Miu Miu,1
+Q2-25,Loewe,2
+Q2-25,Saint Laurent,3
+Q2-25,Prada,4
+Q2-25,Coach,5
+Q2-25,The Row,6
+Q2-25,COS,7
+Q2-25,Chloé,8
+Q2-25,Bottega Veneta,9
+Q2-25,Moncler,10
+Q2-25,Ralph Lauren,11
+Q2-25,Alaïa,12
+Q2-25,Balenciaga,13
+Q2-25,Jacquemus,14
+Q2-25,Skims,15
+Q2-25,Versace,16
+Q2-25,Burberry,17
+Q2-25,Gucci,18
+Q2-25,Birkenstock,19
+Q2-25,Valentino,20
+Q3-25,Saint Laurent,1
+Q3-25,Miu Miu,2
+Q3-25,COS,3
+Q3-25,The Row,4
+Q3-25,Coach,5
+Q3-25,Prada,6
+Q3-25,Bottega Veneta,7
+Q3-25,Loewe,8
+Q3-25,Ralph Lauren,9
+Q3-25,Chloé,10
+Q3-25,Moncler,11
+Q3-25,Versace,12
+Q3-25,Burberry,13
+Q3-25,Gucci,14
+Q3-25,Skims,15
+Q3-25,Balenciaga,16
+Q3-25,Jacquemus,17
+Q3-25,Alaïa,18
+Q3-25,Stone Island,19
+Q3-25,Valentino,20
+Q4-25,Saint Laurent,1
+Q4-25,Miu Miu,2
+Q4-25,COS,3
+Q4-25,Ralph Lauren,4
+Q4-25,Prada,5
+Q4-25,Coach,6
+Q4-25,The Row,7
+Q4-25,Burberry,8
+Q4-25,Gucci,9
+Q4-25,Moncler,10
+Q4-25,Chloé,11
+Q4-25,Bottega Veneta,12
+Q4-25,Loewe,13
+Q4-25,Versace,14
+Q4-25,Stone Island,15
+Q4-25,Massimo Dutti,16
+Q4-25,Balenciaga,17
+Q4-25,Skims,18
+Q4-25,Nike,19
+Q4-25,Jacquemus,20
+Q1-26,Chanel,1
+Q1-26,Saint Laurent,2
+Q1-26,Dior,3
+Q1-26,Miu Miu,4
+Q1-26,Gucci,5
+Q1-26,Ralph Lauren,6
+Q1-26,Prada,7
+Q1-26,Coach,8
+Q1-26,Burberry,9
+Q1-26,COS,10
+Q1-26,The Row,11
+Q1-26,Versace,12
+Q1-26,Moncler,13
+Q1-26,Chloé,14
+Q1-26,Bottega Veneta,15
+Q1-26,Loewe,16
+Q1-26,Stone Island,17
+Q1-26,Massimo Dutti,18
+Q1-26,Fendi,19
+Q1-26,Celine,20
+Q2-26,Chanel,1
+Q2-26,Miu Miu,2
+Q2-26,Dior,3
+Q2-26,Saint Laurent,4
+Q2-26,Gucci,5
+Q2-26,Prada,6
+Q2-26,Ralph Lauren,7
+Q2-26,Burberry,8
+Q2-26,Coach,9
+Q2-26,Massimo Dutti,10
+Q2-26,Chloé,11
+Q2-26,The Row,12
+Q2-26,Versace,13
+Q2-26,Bottega Veneta,14
+Q2-26,Celine,15
+Q2-26,Moncler,16
+Q2-26,Loewe,17
+Q2-26,Phoebe Philo,18
+Q2-26,Jacquemus,19
+Q2-26,Stone Island,20

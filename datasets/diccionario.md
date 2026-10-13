@@ -102,3 +102,27 @@ contra 2021–22.
 
 Coordenadas ya calculadas de cada gráfico del prototipo, en píxeles. Lo genera
 `codigo/calcular_geometria_de_graficos.js`. Es un intermedio: no es dato de investigación.
+
+## `datasets/completado_2026/reddit_2026.csv` · medido
+
+| Columna | Contenido |
+|---|---|
+| `termino` | Término buscado en el título (los combinados, como `baggy jeans + mom jeans`, se suman) |
+| `posts` · `posts_totales_anio` | Conteos crudos, 01/01–12/10/2026 |
+| `posts_por_mil` | Proporción sin suavizar |
+| `indice` | Comparable con `RDS` y `REC[].r`: media móvil centrada, empalmada en el 2025 del repo. Puede pasar de 100 |
+| `indice_2025_en_repo` | El 2025 que ya estaba, para comparar |
+| `control_2024_error_pct` | Diferencia entre 2024 recalculado y el 2024 del repo |
+| `tipo` | Siempre `medido` |
+
+## `datasets/completado_2026/pasarela_proyeccion_2024_2026.csv` · proyectado
+
+| Columna | Contenido |
+|---|---|
+| `id` · `atributo` · `tag_vogue` | Igual que en `REC` |
+| `valor` | Proyección de la curva de pasarela (0–100, misma escala que `REC[].v`) |
+| `min_80` · `max_80` | Rango donde cayó el 80 % de los valores reales en el backtest |
+| `tipo` | Siempre `proyectado` |
+| `fuente_o_metodo` | Método y parámetros |
+
+**No entra al K-means.** El error medio del backtest es 20,1 puntos sobre 100. Ver el readme de la carpeta.

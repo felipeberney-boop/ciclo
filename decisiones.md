@@ -134,3 +134,26 @@ marcas a cuatro, porque a 306 píxeles de ancho seis líneas dejan de leerse.
 Se arma el repositorio con la estructura de la cátedra. Los datasets originales no se suben: superan el
 límite de GitHub o requieren cuenta. Van los links de descarga y la fecha en
 `datasets/fuentes_y_descargas.md`.
+
+## 2026-10-13 · Completar las fuentes hasta hoy
+
+**Problema.** La pasarela termina en 2023 y Reddit en 2025. Varias capas no llegan a la fecha.
+
+**Reddit: completado con dato real.** Bajamos los títulos de enero a octubre de 2026 de Arctic Shift. Para
+empalmar con la serie probamos tres reglas de suavizado contra los valores del repo 2022–2025: la media
+móvil centrada de 3 años los reproduce con 2,4 % de error mediano (hacia atrás: 17,5 %; sin suavizar:
+37,2 %). Con esa regla, 2024 recalculado difiere 1,6 %. Corset, hoodie e Y2K marcan récord en 2026, con más
+de 20 posts cada uno. Las caídas más grandes (cargo, crop top, chunky sneakers) son de términos con menos de
+10 posts en el año: no alcanzan para leerse como tendencia, y lo dejamos dicho.
+
+**Pasarela: proyectada, y lo decimos.** No existe dato público de looks etiquetados 2024–2026. Elegimos
+el método por backtest entre 21 candidatos: ganó Holt amortiguado con 20,1 puntos de error sobre 100,
+contra 20,9 de repetir el último año. Casi no mejora a no hacer nada. Queda como curva punteada con su
+banda y **no entra al K-means**: clasificar con un número que el propio backtest no sostiene sería
+contestar la pregunta con lo que no sabemos.
+
+**Lo que no se completó.** H&M y Amazon no tienen ediciones más nuevas, y en el repo sólo hay sus métricas
+resumidas: proyectarlos sería inventar. Google Trends 2026 sigue excluido por la deriva de abril. Lyst ya
+llega a Q2-26.
+
+Detalle y archivos: `datasets/completado_2026/`.

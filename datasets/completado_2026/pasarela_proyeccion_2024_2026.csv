@@ -1,0 +1,40 @@
+id,atributo,tag_vogue,anio,valor,min_80,max_80,tipo,fuente_o_metodo
+jamplio,Jeans amplios,denim,2024,65.7,51.6,95.0,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+jamplio,Jeans amplios,denim,2025,64.1,38.0,96.4,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+jamplio,Jeans amplios,denim,2026,63.1,22.6,95.2,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+jmedio,Jeans medios,denim,2024,65.7,51.6,95.0,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+jmedio,Jeans medios,denim,2025,64.1,38.0,96.4,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+jmedio,Jeans medios,denim,2026,63.1,22.6,95.2,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+jajust,Jeans ajustados,denim,2024,65.7,51.6,95.0,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+jajust,Jeans ajustados,denim,2025,64.1,38.0,96.4,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+jajust,Jeans ajustados,denim,2026,63.1,22.6,95.2,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+buzo,Buzo / athleisure,buzo,2024,40.2,26.1,69.5,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+buzo,Buzo / athleisure,buzo,2025,37.8,11.7,70.1,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+buzo,Buzo / athleisure,buzo,2026,36.3,0.0,68.4,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+cuero,Cuero,cuero,2024,29.1,14.9,58.3,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+cuero,Cuero,cuero,2025,26.6,0.5,58.9,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+cuero,Cuero,cuero,2026,25.1,0.0,57.2,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+lunares,Lunares,lunares,2024,35.8,21.7,65.1,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+lunares,Lunares,lunares,2025,33.5,7.4,65.8,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+lunares,Lunares,lunares,2026,32.1,0.0,64.2,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+floral,Floral,floral,2024,47.6,33.4,76.8,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+floral,Floral,floral,2025,46.0,19.9,78.3,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+floral,Floral,floral,2026,45.0,4.4,77.1,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+animal,Animal print,animal print,2024,7.5,0.0,36.8,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+animal,Animal print,animal print,2025,6.1,0.0,38.4,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+animal,Animal print,animal print,2026,5.2,0.0,37.4,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+cargo,Cargo,militar,2024,49.2,35.1,78.5,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+cargo,Cargo,militar,2025,46.5,20.4,78.8,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+cargo,Cargo,militar,2026,45.0,4.4,77.1,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+encaje,Encaje,encaje,2024,33.8,19.6,63.0,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+encaje,Encaje,encaje,2025,31.4,5.3,63.7,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+encaje,Encaje,encaje,2026,30.0,0.0,62.1,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+kimono,Kimono,kimono,2024,45.7,31.6,75.0,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+kimono,Kimono,kimono,2025,43.2,17.0,75.4,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+kimono,Kimono,kimono,2026,41.6,1.0,73.7,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+capa,Capa,capa,2024,43.4,29.3,72.7,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+capa,Capa,capa,2025,40.7,14.6,73.0,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+capa,Capa,capa,2026,39.0,0.0,71.2,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+trench,Trench,trench,2024,41.7,27.6,71.0,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+trench,Trench,trench,2025,38.5,12.4,70.8,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6
+trench,Trench,trench,2026,36.5,0.0,68.6,proyectado,Holt amortiguado a=0.5 b=0.3 phi=0.6

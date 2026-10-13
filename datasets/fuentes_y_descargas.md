@@ -19,6 +19,9 @@ fecha en que lo bajamos y su licencia.
 - Usado: 902.566 looks (filtro `section=Collection`, sin Bridal, 2000–2023)
 - Licencia: *a verificar en la ficha del dataset.* Los tags no los puso un editor: los generó un modelo
   de visión genérico.
+- **Después de 2023 no hay dato.** Revisado el 13/10/2026: el archivo se scrapeó de Vogue el 31/03/2023 y
+  no se actualizó. No encontramos reemplazo público con looks etiquetados de 2024–2026; el informe anual de
+  Tagwalk es pago. 2024–2026 está **proyectado**, no medido: `datasets/completado_2026/`.
 
 ## Búsqueda y compra
 
@@ -41,6 +44,9 @@ fecha en que lo bajamos y su licencia.
 - Licencia: datos públicos de Reddit vía API de archivo. Atribuir a Arctic Shift y a Reddit.
 - Nota: Pushshift está discontinuado. Intentamos sumar r/malefashionadvice y r/streetwear pero el
   servidor corta las consultas grandes.
+- **Completado a 2026:** consultado el 13/10/2026, del 01/01/2026 al 12/10/2026, 14.495 posts. Para
+  empalmarlo se bajaron también 2022–2025. Sólo se suben los conteos por término y año, no los títulos.
+  Está en `datasets/completado_2026/reddit_2026.csv`.
 
 ## Marcas y cultura
 

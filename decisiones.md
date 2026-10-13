@@ -157,3 +157,24 @@ resumidas: proyectarlos sería inventar. Google Trends 2026 sigue excluido por l
 llega a Q2-26.
 
 Detalle y archivos: `datasets/completado_2026/`.
+
+## 2026-10-13 · La consulta por imagen pasa a ser real
+
+**Antes.** La pantalla de Consulta mostraba un resultado fijo (una campera de cuero dibujada).
+
+**Ahora.** CLIP ViT-B/32 corre en el navegador: la foto no sale de la computadora. Hace dos cosas.
+Clasifica la imagen contra los 18 atributos del K-means (zero-shot) y busca los looks más parecidos entre
+14.000 looks reales de Vogue, usando los embeddings que ya trae el dataset.
+
+**Por qué CLIP y no entrenar un clasificador.** No tenemos fotos etiquetadas por atributo propias, y las
+etiquetas de Vogue sólo cubren 10 de los 18. CLIP no necesita entrenamiento y comparte espacio con los
+embeddings del dataset: 25 de 25 fotos se encontraron a sí mismas en el primer puesto.
+
+**Cuánto acierta.** Validado contra las etiquetas de Vogue en 150.000 looks: AUC mediano 0,90; el atributo
+correcto queda entre los tres primeros entre el 67 % y el 92 % de las veces. Animal print es el punto débil
+(20 %). Los seis atributos que Vogue no etiqueta quedan marcados «sin validar» en la interfaz.
+
+**Ejemplos sin elegir a mano.** Los botones de ejemplo usan el primer look del índice con cada etiqueta, aunque
+el resultado no sea el esperado (el de cuero da encaje primero).
+
+Detalle: `prompts/prompt_consulta_por_imagen_v2.md`.

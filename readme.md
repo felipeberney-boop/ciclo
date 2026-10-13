@@ -94,7 +94,7 @@ Seis puntos. Tres corren una sola vez, en batch; tres se disparan con el usuario
 | IA-3 | Agrupar atributos | K-means no supervisado, k=4 | al cargar |
 | IA-4 | Ubicar una tendencia nueva | Asignación al centroide más cercano | en vivo |
 | IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE | en vivo |
-| IA-6 | Consulta por imagen | Clasificador de imagen | en vivo |
+| IA-6 | Consulta por imagen | CLIP en el navegador: zero-shot + looks parecidos | en vivo |
 
 **La regla que atraviesa todo:** el modelo de lenguaje nunca ve una fila de la base. Recibe métricas ya
 calculadas —nivel, momento, crecimiento, distancia al pico— y el tipo de cliente. Todo lo que devuelve

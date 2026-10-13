@@ -13,6 +13,7 @@ Scripts de extracción, cálculo y render. Ninguno es parte del sitio: el sitio 
 | `contar_terminos_reddit.py` | Cuenta, por año, los posts cuyo título nombra cada término |
 | `proyectar_pasarela.py` | Elige un método por backtest y proyecta la pasarela a 2024–2026 |
 | `empalmar_reddit_2026.py` | Lleva Reddit 2026 a la escala de la serie y escribe `datasets/completado_2026/` |
+| `verificar_pasarela.py` | Recalcula la pasarela desde el parquet original de Vogue y la compara con el repo |
 
 ## Cómo correrlos
 

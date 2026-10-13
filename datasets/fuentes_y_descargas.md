@@ -133,6 +133,21 @@ fecha en que lo bajamos y su licencia.
   `retail_price`— y citamos la ficha de Kaggle.
 - Nota: `retail_price` es inusable — 47 % sin descuento y 25 % con más de 72 %. Es solo de verano.
 
+## Ventas reales
+
+**VISUELLE** — Nunalie, vía HumaticsLAB
+- Link: https://github.com/HumaticsLAB/GTM-Transformer · paper arXiv:2109.09824
+- Descargado: 13/10/2026, llenando el formulario que pide el repositorio
+- Contenido: 5.577 productos con 12 semanas de ventas reales cada uno (SS17 a AW19) y 219 semanas de
+  Google Trends para 96 términos, ya alineadas. El paquete completo pesa 2,3 GB porque incluye las
+  fotos de cada producto; nosotros usamos sólo tres CSV que suman 2 MB.
+- Licencia: **sin licencia declarada.** El repositorio es MIT, pero eso cubre el código. Uso
+  académico, sin redistribuir, citando el paper.
+- Para qué lo usamos: es la única fuente del proyecto con **ventas reales**. Con ella probamos si la
+  búsqueda predice la venta. El resultado está en `decisiones.md`: a nivel producto no predice nada
+  (r=+0,036, y fuera de muestra 6,5 % peor que el promedio de la categoría); a nivel categoría ×
+  temporada el nivel de búsqueda da r=+0,19, apenas por encima del umbral.
+
 ## Datasets revisados y descartados
 
 | Dataset | Por qué se descartó |

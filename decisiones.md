@@ -348,3 +348,70 @@ ya lo teníamos identificado desde septiembre sin usarlo. Se baja llenando un fo
 https://forms.gle/cVGQAmxhHf7eRJ937 — lo tiene que completar alguien del grupo. El repositorio es
 MIT, pero la licencia del dataset no figura: hay que leerla en el formulario o en el paper
 (arXiv:2109.09824).
+
+## 2026-10-13 · La prueba contra ventas reales: VISUELLE
+
+Conseguimos el dataset que nos faltaba y pudimos correr, por primera vez, la pregunta que el
+proyecto siempre quiso contestar: **¿la búsqueda predice la venta?** Hasta ahora predecíamos
+búsqueda con búsqueda, que es un proxy.
+
+**Los datos.** VISUELLE: 5.577 productos de Nunalie con sus **ventas semanales reales** (12 semanas
+desde la salida de cada uno) y 219 semanas de Google Trends para 96 términos —categorías, colores y
+tejidos—, ya alineadas. Temporadas SS17 a AW19.
+
+**El diseño.** Los predictores salen de la búsqueda del atributo **en las 12 semanas anteriores** a
+la salida del producto, nunca de las posteriores. Se entrena con SS17–AW18 y se prueba con SS19 y
+AW19. La base a vencer es «predecí el promedio de la categoría», que es lo que haría cualquiera sin
+modelo.
+
+### A nivel producto: no predice nada
+
+| Predictor | r | n |
+|---|---|---|
+| Nivel de búsqueda de la categoría | **+0,036** | 5.577 |
+| Pendiente de búsqueda de la categoría | +0,009 | 5.577 |
+| Nivel de búsqueda del color | −0,121 | 5.577 |
+
+Con 5.577 productos el umbral de significancia es 0,026, así que +0,036 «da significativo». Y no
+sirve para nada: explica el **0,1 % de la variación** de las ventas. Es el ejemplo de manual de la
+diferencia entre significativo y útil.
+
+Fuera de muestra el modelo con búsqueda es **6,5 % peor** que predecir el promedio de la categoría
+(EAM 0,3034 contra 0,2848).
+
+### A nivel categoría × temporada: algo, pero poco
+
+Agregando los 5.577 productos en 134 grupos de categoría × temporada —que es el test justo, porque
+la venta de **un** producto depende del diseño, el precio y la góndola, no del atributo:
+
+| Objetivo | Nivel de búsqueda | Pendiente |
+|---|---|---|
+| Venta total del grupo | **+0,184** | −0,076 |
+| Venta media por producto | **+0,196** | −0,031 |
+
+Con n=134 el umbral es 0,170, así que el nivel pasa raspando: explica cerca del **4 %**. Positivo y
+en la dirección esperada, pero chico.
+
+### Lo que esto significa para CICLO
+
+**El momento no sirve.** El modelo del proyecto usa nivel y momento. El nivel tiene una señal débil;
+el **momento no tiene ninguna** —a nivel producto +0,009, a nivel categoría −0,076, las dos veces
+indistinguible de cero. Y el momento es justamente lo que sostiene la lectura de «en qué etapa está».
+
+**Qué es CICLO entonces.** Un instrumento **descriptivo**: dice dónde está un atributo en su ciclo
+cruzando capas, y eso está contrastado contra Lyst, que es un jurado externo que el modelo no vio.
+No es un predictor de ventas, y ahora lo sabemos medido en vez de suponerlo. Es el mismo tipo de
+corrección que hicimos en septiembre con los datasets sintéticos.
+
+**Una lectura más incómoda.** La búsqueda tampoco predice bien cuántos productos lanza Nunalie de
+cada categoría (r=+0,146, por debajo del umbral). Si la marca mirara las mismas señales que nosotros
+y le funcionaran, esa correlación sería alta.
+
+### Sobre el dataset
+
+- Fuente: https://github.com/HumaticsLAB/GTM-Transformer · paper arXiv:2109.09824
+- Descargado: 13/10/2026, por formulario
+- **No se sube al repositorio**: son 2,3 GB, casi todo imágenes, y no es nuestro para redistribuir.
+  El repositorio del código es MIT, pero eso cubre el código, no los datos: la licencia del dataset
+  no figura. Queda como las otras tres: sin licencia declarada, uso académico, citando la fuente.
+- Lo que usamos son tres CSV que suman 2 MB: `gtrends.csv`, `train.csv` y `test.csv`.

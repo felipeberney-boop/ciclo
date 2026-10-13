@@ -188,3 +188,27 @@ un atributo puntual, y el botón «Atrás» del navegador salía de la app.
 cliente va como `?c=fast` o `?c=nicho` (premium es el valor por defecto y no se escribe). Cambiar de pantalla
 crea una entrada en el historial; cambiar de atributo o de cliente actualiza la dirección sin crearla, para que
 «Atrás» vuelva a la pantalla anterior y no recorra cada clic. Botón «Copiar link» en la barra del cliente.
+
+## 2026-10-13 · Entrada en dos pasos: vínculo y categoría
+
+**Devolución del profesor.** Antes de elegir el tipo de cliente hay que separar si quien diseña trabaja en
+relación de dependencia o por su cuenta, porque cambia cómo lee la misma tendencia.
+
+**Decisión.** Paso 1: «Trabajo para una marca» / «Trabajo por mi cuenta». Paso 2: tres categorías (high
+fashion, fast fashion, nicho), con la pregunta y el texto según la rama. Se reusan las claves del modelo
+(`premium`, `fast`, `nicho`), así que `CONSEJO` y los gráficos no cambian.
+
+**Por qué el vínculo no mueve la lectura de la etapa.** El lead time y en qué etapa conviene entrar los fija
+la categoría: dependen de cuánto tarda en llegar la prenda a la tienda, no de quién firma el contrato. Lo que
+cambia el vínculo es el riesgo: quien trabaja por su cuenta no compromete producción ni stock, así que donde
+a una marca le conviene «Esperar», a esa persona le conviene «Explorar» —empezar a diseñar sin comprometer
+la serie—. Las demás acciones no cambian. Está implementado como una capa sobre `CONSEJO`, sin duplicar la
+tabla. También cambia el tratamiento: «tu marca» o «tu cliente».
+
+**Lo que no se mostró.** El pedido original incluía, en cada tarjeta, ventana, fecha límite de decisión y
+error medido por categoría. Esta versión de la app no tiene esa validación, así que las tarjetas muestran
+sólo lo que sí está: el lead time y las acciones de `CONSEJO` por etapa.
+
+**De paso.** «Premium» pasa a llamarse «High fashion» en la barra, para usar el término de industria. Se
+corrigió un error previo: el detalle de cuero no abría porque buscaba «Campera de cuero» en el modelo, donde
+se llama «Cuero».

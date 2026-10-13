@@ -82,7 +82,7 @@ main{min-width:0}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .stamp{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
-.copiar{font:inherit;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-2);background:transparent;border:1px solid var(--rule);border-radius:3px;padding:4px 9px;cursor:pointer}
+.copiar{white-space:nowrap;font:inherit;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-2);background:transparent;border:1px solid var(--rule);border-radius:3px;padding:4px 9px;cursor:pointer}
 .copiar:hover{border-color:var(--ink-2);color:var(--ink)}
 
 /* ---------- portada ---------- */
@@ -123,6 +123,25 @@ body.on-cover .app{border:0;max-width:none}
 
 /* ---------- view ---------- */
 .view{padding:26px 28px 60px}
+.gate{max-width:980px;margin:0 auto;padding:34px 0 10px}
+.gprog{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);letter-spacing:.08em}
+.gprog b{color:var(--ink);font-weight:500}
+.gate h1{margin:10px 0 8px}
+.gate .sub{max-width:620px}
+.ggrid{display:grid;grid-template-columns:repeat(var(--gcols,3),1fr);gap:14px;margin-top:26px;align-items:stretch}
+.gcard{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:18px 18px 16px;cursor:pointer;transition:border-color .15s,transform .15s}
+.gcard:hover{border-color:var(--ink-2)}
+.gcard:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.gcard .gt{font-family:"Bodoni Moda",serif;font-size:24px;line-height:1.1}
+.gcard .gd{font-size:13.5px;line-height:1.5;color:var(--ink-2);margin:8px 0 14px;min-height:3em}
+.gcard dl{display:grid;width:100%;align-self:stretch;grid-template-columns:auto 1fr;gap:5px 12px;margin:0;padding-top:12px;border-top:1px solid var(--rule-2);font-size:12px}
+.gcard dt{font-variation-settings:"wdth" 62.5;font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);align-self:baseline}
+.gcard dd{margin:0;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink)}
+.gnav{display:flex;align-items:center;gap:16px;margin-top:22px}
+.gvolver{white-space:nowrap;flex:none;font:inherit;font-family:"IBM Plex Mono",monospace;font-size:12px;background:transparent;border:1px solid var(--rule);border-radius:3px;padding:6px 12px;color:var(--ink-2);cursor:pointer}
+.gvolver:hover{color:var(--ink);border-color:var(--ink-2)}
+.gnota{font-size:12px;color:var(--ink-3)}
+@media (max-width:760px){.ggrid{grid-template-columns:1fr}.gate{padding-top:14px}}
 .vhead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:6px}
 h1{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.05;margin:0;letter-spacing:-.01em}
 .sub{font-size:14px;color:var(--ink-2);max-width:62ch;margin:8px 0 0}
@@ -383,20 +402,31 @@ td.k{font-weight:600;white-space:nowrap}
   <main>
     <div class="top">
       <div class="who">
-        <span class="lbl">Asesorando a</span>
+        <span class="lbl" id="clilbl">Asesorando a</span>
         <div class="seg" id="cli" role="group" aria-label="Tipo de cliente">
           <button data-c="fast" aria-pressed="false">Fast fashion</button>
-          <button data-c="premium" aria-pressed="true">Premium</button>
+          <button data-c="premium" aria-pressed="true">High fashion</button>
           <button data-c="nicho" aria-pressed="false">Nicho</button>
         </div>
       </div>
-      <div style="display:flex;align-items:center;gap:14px">
+      <div style="display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap">
         <span class="stamp" id="plazo">plazo de producción 6 meses</span>
+        <button class="copiar" id="cambiarperfil" type="button">Cambiar perfil</button>
         <button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link</button>
       </div>
     </div>
 
     <!-- ================= PORTADA ================= -->
+    <section class="view" id="v-perfil" hidden>
+      <div class="gate">
+        <div class="gprog" id="gprog"><b>01</b> / 02</div>
+        <h1 id="gpreg">¿Para quién trabajás?</h1>
+        <p class="sub" id="gsub">La misma tendencia se lee distinto si el riesgo de producción es de una marca o es tuyo.</p>
+        <div class="ggrid" id="ggrid"></div>
+        <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button><span class="gnota" id="gnota">Lo podés cambiar después desde la barra de arriba.</span></div>
+      </div>
+    </section>
+
     <section class="view cover" id="v-portada">
       <div class="cv">
         <div class="meta"><span>IA Aplicada a Diseño · UdeSA</span><span>Berney · Dobler · Dottori Greco</span></div>
@@ -1065,8 +1095,8 @@ function cascada(curva){
   l2.textContent='forma esperada · demostración';s.appendChild(l2);
   return s;
 }
-const KMAP={amplio:'Jeans amplios',recto:'Jeans medios',ajustado:'Jeans ajustados',cuero:'Campera de cuero',lunares:'Lunares',floral:'Floral'};
-function kEtapa(id){const nm=KMAP[id];if(!nm)return '';const P=KM.rows.map(kZ),F=kFit(P,4),N=kName(F.C,4),i=KM.rows.findIndex(r=>r.n===nm);
+const KMAP={amplio:'Jeans amplios',recto:'Jeans medios',ajustado:'Jeans ajustados',cuero:'Cuero',lunares:'Lunares',floral:'Floral'};
+function kEtapa(id){const nm=KMAP[id];if(!nm)return '';const P=KM.rows.map(kZ),F=kFit(P,4),N=kName(F.C,4),i=KM.rows.findIndex(r=>r.n===nm);if(i<0)return '';
   return `<dt>K-means</dt><dd>${N[F.L[i]].n} <span class="tag real">pasarela × búsqueda</span></dd>`}
 const DMAP={amplio:'jamplio',recto:'jmedio',ajustado:'jajust',cuero:'cuero',lunares:'lunares',floral:'floral',rayas:'rayas',gamuza:'gamuza'};
 const CONSEJO={
@@ -1078,7 +1108,7 @@ const CONSEJO={
   premium:{0:['Entrar','Con seis meses de producción, esta es tu ventana. Cuando llegue al mainstream vos ya estás vendiendo.'],
         1:['Entrar','Justo a tiempo. Un ciclo más y llegás cuando la calle ya lo tiene.'],
         2:['Esperar','Con seis meses llegarías al pico ya pasado. Conviene esperar el retorno.'],
-        3:['Salir','Saturado. Para una marca premium, entrar acá diluye la percepción de valor.'],
+        3:['Salir','Saturado. Para una marca high fashion, entrar acá diluye la percepción de valor.'],
         4:['Esperar','El retorno es tu oportunidad natural, pero todavía es temprano para comprometer producción.']},
   nicho:{0:['Entrar','Es exactamente tu terreno: paleta angosta, poca competencia, alto diferencial.'],
         1:['Entrar','Todavía es tuyo. Cuando se ensanche la paleta va a dejar de serlo.'],
@@ -1086,11 +1116,16 @@ const CONSEJO={
         3:['Salir','Saturado. Para una marca de nicho esto ya es ruido.'],
         4:['Entrar','Un retorno bien leído es la mejor jugada de una marca chica: nostalgia con autoría.']}
 };
+/* vínculo laboral: no cambia la lectura de la etapa (eso lo fija la categoría), cambia el riesgo y el tratamiento */
+let vinculo='marca';
+const EXPLORAR='Como trabajás por tu cuenta, no comprometés producción ni stock: podés empezar a diseñarlo ahora y decidir la serie cuando la señal se confirme.';
+function consejo(cli,et){const c=CONSEJO[cli][et];return vinculo==='propia'&&c[0]==='Esperar'?['Explorar',EXPLORAR]:c;}
+const tuQuien=()=>vinculo==='propia'?'tu cliente':'tu marca';
 let detSel=null;
 function abrirDetalle(id){
   const t=T.find(x=>x.id===id);detSel=id;const v=$('#v-detalle');
-  const [acc,arg]=CONSEJO[cliente][t.et];
-  const CLI={fast:'fast fashion',premium:'premium',nicho:'de nicho'}[cliente];
+  const [acc,arg]=consejo(cliente,t.et);
+  const CLI={fast:'fast fashion',premium:'high fashion',nicho:'de nicho'}[cliente];
   v.innerHTML=`
     <button class="back" id="volver">← Volver al radar</button>
     <div class="vhead">
@@ -1110,14 +1145,14 @@ function abrirDetalle(id){
           <dt>Prendas</dt><dd class="mono">${t.prod}</dd>
           ${t.cols?`<dt>Colores</dt><dd class="mono">${t.cols} de 12</dd>`:''}
           <dt>Fuente</dt><dd>${t.fuente} <span class="tag real">medido</span></dd>
-          <dt>Cliente</dt><dd>Marca ${CLI}</dd>
+          <dt>${vinculo==='propia'?'Para':'Cliente'}</dt><dd>${vinculo==='propia'?'Tu cliente · '+CLI:'Tu marca · '+CLI}</dd>
         </dl>
         <div class="ai">
           <div class="h"><span class="lbl" style="color:var(--accent)">Lectura de la IA</span><span class="tag alert">interpretación</span></div>
           <p>${t.lect}</p>
           <div class="rec">
             <div class="a serif">${acc}</div>
-            <div class="t">Recomendación · marca ${CLI}</div>
+            <div class="t">Recomendación · ${tuQuien()} · ${CLI}</div>
             <div class="d">${arg}</div>
           </div>
         </div>
@@ -1662,7 +1697,7 @@ function kSmall(id,vals,lab,hi){const W=300,H=150,ml=34,mr=10,mt=10,mb=26,ks=Obj
 function kGroups(F,N){const g=$('#kgroups');g.innerHTML='';const raw=F.C.map(c=>c.map((v,i)=>v*KM.sc.s[i]+KM.sc.m[i]));
   const med=a=>{const b=a.filter(x=>x!=null).sort((x,y)=>x-y);return b.length?b[Math.floor((b.length-1)/2)]:null};
   N.forEach((n,i)=>{const m=KM.rows.filter((r,j)=>F.L[j]===i),c=raw[i];const sh=med(m.map(r=>r.shop_22_25));
-    const cons=n.et!=null?CONSEJO[cliente][n.et]:null;const d=document.createElement('div');
+    const cons=n.et!=null?consejo(cliente,n.et):null;const d=document.createElement('div');
     d.innerHTML=`<div class="gt"><i class="kdot" style="background:var(${n.c});width:12px;height:12px"></i><span class="gn">${n.n}</span></div>
       <div class="gm">${m.map(r=>r.n).join(', ')}</div>
       <div class="gv">pasarela ${Math.round(c[0]*100)} % del pico · ${kPct(c[1])}<br>búsqueda ${Math.round(c[2]*100)} % del pico · ${kPct(c[3])}${sh!=null?`<br>compra después: ${kPct(sh)} (mediana)`:''}</div>
@@ -1776,7 +1811,7 @@ function pintarLystX(){
 /* ---------- navegación ---------- */
 function mostrar(v,keepNav){
   document.body.classList.toggle('on-cover',v==='portada');
-  ['portada','radar','detalle','etapas','recorridos','marcas','retornos','consulta','racional'].forEach(x=>{
+  ['portada','perfil','radar','detalle','etapas','recorridos','marcas','retornos','consulta','racional'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
@@ -1784,23 +1819,77 @@ function mostrar(v,keepNav){
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }
+/* ---------- entrada en dos pasos: vínculo → categoría ---------- */
+const GATE={
+  marca:{preg:'¿Qué tipo de marca?',sub:'La categoría fija el lead time y en qué etapa conviene entrar. Las recomendaciones van a hablar de tu marca.',
+    c:{premium:['High fashion / couture','Prêt-à-porter de lujo · Loewe, Miu Miu, Bottega Veneta.'],
+       fast:['Fast fashion','High street · Zara, H&M, Gap.'],
+       nicho:['Marca local / de nicho','Marca chica, colección propia.']}},
+  propia:{preg:'¿Qué tipo de prendas querés diseñar?',sub:'La categoría fija el lead time y en qué etapa conviene entrar. Como el riesgo de producción no es tuyo, donde a una marca le conviene esperar a vos te conviene explorar.',
+    c:{premium:['High fashion','Piezas de autor, pasarela.'],
+       fast:['Streetwear / fast fashion','Volumen, rotación rápida.'],
+       nicho:['Nicho','Series cortas, identidad propia.']}}};
+let gateDestino='radar',gatePaso=1;
+const ETAPAS_C=['emergente','en ascenso','en pico','saturada','en retorno'];
+function gateResumen(cli,acc){const e=[0,1,2,3,4].filter(i=>consejo(cli,i)[0]===acc).map(i=>ETAPAS_C[i]);return e.length?e.join(', '):'—';}
+function gateTarjeta(datos,attrs){return `<button class="gcard" type="button" ${attrs}>${datos}</button>`;}
+function pintarGate(){
+  const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;
+  $('#gprog').innerHTML=`<b>0${gatePaso}</b> / 02`;
+  if(gatePaso===1){
+    g.style.setProperty('--gcols',2);
+    $('#gpreg').textContent='¿Para quién trabajás?';
+    $('#gsub').textContent='La misma tendencia se lee distinto si el riesgo de producción es de una marca o es tuyo.';
+    g.innerHTML=gateTarjeta(`<span class="gt">Trabajo para una marca</span><span class="gd">En relación de dependencia. La producción y el stock son de la marca: la lectura tiene que cuidar ese riesgo.</span>`,'data-vinc="marca"')+
+                gateTarjeta(`<span class="gt">Trabajo por mi cuenta</span><span class="gd">Freelance, por encargo o con marca propia en desarrollo. Podés diseñar antes de comprometer producción.</span>`,'data-vinc="propia"');
+    $$('#ggrid [data-vinc]').forEach(b=>b.addEventListener('click',()=>{vinculo=b.dataset.vinc;gatePaso=2;pintarGate();$('#ggrid .gcard')?.focus();}));
+  }else{
+    const G=GATE[vinculo];g.style.setProperty('--gcols',3);
+    $('#gpreg').textContent=G.preg;$('#gsub').textContent=G.sub;
+    g.innerHTML=['premium','fast','nicho'].map(k=>gateTarjeta(`<span class="gt">${G.c[k][0]}</span><span class="gd">${G.c[k][1]}</span>
+      <dl><dt>Lead time</dt><dd>${PLAZO[k].replace('plazo de producción ','')}</dd>
+      <dt>Entrar</dt><dd>${gateResumen(k,'Entrar')}</dd>
+      ${vinculo==='propia'&&gateResumen(k,'Explorar')!=='—'?`<dt>Explorar</dt><dd>${gateResumen(k,'Explorar')}</dd>`:''}
+      ${gateResumen(k,'Esperar')!=='—'?`<dt>Esperar</dt><dd>${gateResumen(k,'Esperar')}</dd>`:''}
+      <dt>Salir</dt><dd>${gateResumen(k,'Salir')}</dd></dl>`,`data-cli="${k}"`)).join('');
+    $$('#ggrid [data-cli]').forEach(b=>b.addEventListener('click',()=>gateElegir(b.dataset.cli)));
+  }
+}
+function aplicarVinculo(){
+  $('#clilbl').textContent=vinculo==='propia'?'Diseñás para':'Tu marca es';
+  try{localStorage.setItem('ciclo.perfil',JSON.stringify({vinculo,cliente}));}catch(e){}
+}
+function gateElegir(cli){
+  const b=$(`#cli button[data-c="${cli}"]`);if(cli!==cliente)b.click();else{pintarEtapas();}
+  aplicarVinculo();perfilListo=true;mostrar(gateDestino);
+}
+function abrirGate(destino){gateDestino=destino||'radar';gatePaso=1;pintarGate();mostrar('perfil');}
+$('#gvolver').addEventListener('click',()=>{gatePaso=1;pintarGate();$('#ggrid .gcard')?.focus();});
+$('#cambiarperfil').addEventListener('click',()=>abrirGate(vista==='perfil'||vista==='portada'?'radar':vista));
+let perfilListo=false;
+try{const g=JSON.parse(localStorage.getItem('ciclo.perfil')||'null');if(g&&GATE[g.vinculo]&&PLAZO[g.cliente]){vinculo=g.vinculo;perfilListo=true;}}catch(e){}
+
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
-const VISTAS=['portada','radar','detalle','etapas','recorridos','marcas','retornos','consulta','racional'];
+const VISTAS=['portada','perfil','radar','detalle','etapas','recorridos','marcas','retornos','consulta','racional'];
 let vista='portada',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
-  return '#'+vista+(el?'/'+el:'')+(cliente!=='premium'?'?c='+cliente:'');
+  const q=[cliente!=='premium'?'c='+cliente:'',vinculo==='propia'?'v=propia':''].filter(Boolean).join('&');
+  return '#'+vista+(el?'/'+el:'')+(q?'?'+q:'');
 }
 function escribirLink(nueva){
   if(leyendoLink)return;const h=linkActual();if(location.hash===h)return;
   try{history[nueva&&location.hash?'pushState':'replaceState'](null,'',h);}catch(e){}
 }
 function leerLink(){
-  const m=location.hash.match(/^#([a-z]+)(?:\/([a-z0-9_-]+))?(?:\?c=([a-z]+))?$/);
+  const m=location.hash.match(/^#([a-z]+)(?:\/([a-z0-9_-]+))?(?:\?(.*))?$/);
   if(!m||!VISTAS.includes(m[1]))return false;
   leyendoLink=true;
   try{
-    const c=m[3]||'premium',bc=$(`#cli button[data-c="${c}"]`);if(bc&&c!==cliente)bc.click();
+    const qs=new URLSearchParams(m[3]||''),c=qs.get('c')||'premium',bc=$(`#cli button[data-c="${c}"]`);
+    if(qs.has('c')||qs.has('v')){vinculo=qs.get('v')==='propia'?'propia':'marca';perfilListo=true;aplicarVinculo();}
+    if(bc&&c!==cliente)bc.click();
+    if(m[1]==='perfil'){abrirGate('radar');return true;}
     if(m[1]==='detalle'&&m[2]&&T.some(t=>t.id===m[2]))abrirDetalle(m[2]);
     else if(m[1]==='detalle')mostrar('radar');
     else{if(m[1]==='recorridos'&&m[2]&&REC.some(o=>o.id===m[2])){recSel=m[2];pintarRecorridos();}mostrar(m[1]);}
@@ -1822,6 +1911,7 @@ $$('#cli button').forEach(b=>b.addEventListener('click',()=>{
   cliente=b.dataset.c;$$('#cli button').forEach(x=>x.setAttribute('aria-pressed',x===b));
   $('#plazo').textContent=PLAZO[cliente];pintarEtapas();
   if(!$('#v-detalle').hidden){const id=T.find(t=>$('#v-detalle').querySelector('h1').textContent===t.n);if(id)abrirDetalle(id.id);}
+  if(perfilListo)aplicarVinculo();
   escribirLink(false);
 }));
 function pintarPipe(){
@@ -1841,10 +1931,13 @@ $('#home').addEventListener('click',()=>mostrar('portada'));
 const DEP1={'Jeans':'jamplio','Pantalones':'cargo','Abrigos':'trench','Tejidos y buzos':'buzo',
   'Remeras y tops':'corset','Estampa':'floral','Material':'cuero'};
 $$('#v-portada .cvit').forEach(b=>b.addEventListener('click',()=>{
-  if(b.dataset.v){mostrar(b.dataset.v);return;}
-  recSel=DEP1[b.dataset.dep]||'jamplio';pintarRecorridos();mostrar('recorridos');
+  let destino=b.dataset.v;
+  if(!destino){recSel=DEP1[b.dataset.dep]||'jamplio';pintarRecorridos();destino='recorridos';}
+  if(!perfilListo){abrirGate(destino);return;}
+  mostrar(destino);
 }));
 pintarPipe();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
+if(perfilListo){try{const g=JSON.parse(localStorage.getItem('ciclo.perfil'));if(g.cliente!==cliente)$(`#cli button[data-c="${g.cliente}"]`).click();}catch(e){}aplicarVinculo();}
 if(!leerLink())mostrar('portada');
 </script>
 

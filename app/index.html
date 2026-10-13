@@ -124,6 +124,7 @@ body.on-cover .app{border:0;max-width:none}
 /* ---------- view ---------- */
 .view{padding:26px 28px 60px}
 .gate{max-width:980px;margin:0 auto;padding:34px 0 10px}
+body.on-gate .top,body.on-gate .colofon{display:none}
 .gprog{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);letter-spacing:.08em}
 .gprog b{color:var(--ink);font-weight:500}
 .gate h1{margin:10px 0 8px}
@@ -1863,6 +1864,7 @@ function pintarLystX(){
 /* ---------- navegación ---------- */
 function mostrar(v,keepNav){
   document.body.classList.toggle('on-cover',v==='portada');
+  document.body.classList.toggle('on-gate',v==='perfil');
   ['portada','perfil','radar','detalle','etapas','recorridos','marcas','retornos','consulta','racional'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
@@ -1992,7 +1994,7 @@ $$('#v-portada .cvit').forEach(b=>b.addEventListener('click',()=>{
 }));
 pintarPipe();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
 if(perfilListo){try{const g=JSON.parse(localStorage.getItem('ciclo.perfil'));if(g.cliente!==cliente)$(`#cli button[data-c="${g.cliente}"]`).click();}catch(e){}aplicarVinculo();}
-if(!leerLink())mostrar('portada');
+if(!leerLink()){if(perfilListo)mostrar('portada');else abrirGate('portada');} // la primera vez, la app arranca con las dos opciones
 </script>
 
 </body></html>

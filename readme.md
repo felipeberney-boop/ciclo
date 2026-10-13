@@ -21,9 +21,20 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 
 ## Captura
 
-![Portada de CICLO](entregas/entrega_2/capturas/captura_01_portada.png)
+La app arranca con dos preguntas —para quién trabajás y qué categoría— y con eso ajusta qué te muestra:
 
-Más capturas en `entregas/entrega_2/capturas/`.
+![La entrada: ¿para quién trabajás?](entregas/entrega_3/capturas/captura_01_entrada_dos_opciones.png)
+
+Cada tendencia, de la pasarela a la búsqueda, hasta 2030. La línea llena es medida; la punteada es dónde
+quedaría si se moviera como la mediana de la historia, con el error medido. No es un pronóstico:
+
+![Recorridos hasta 2030](entregas/entrega_3/capturas/captura_05_grafico_2030.png)
+
+Subí una foto y CLIP, en tu navegador, te dice qué atributos ve y qué looks de pasarela se le parecen:
+
+![Consulta por imagen](entregas/entrega_3/capturas/captura_06_consulta_por_imagen.png)
+
+Todas las capturas actuales en `entregas/entrega_3/capturas/`; las de la Entrega 2, en `entregas/entrega_2/capturas/`.
 
 ## Hipótesis
 

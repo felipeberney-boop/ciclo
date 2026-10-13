@@ -1,0 +1,235 @@
+{
+ "global": {
+  "1": {
+   "eam": 7.81,
+   "base": 7.66,
+   "mejora": -2.0,
+   "dir": 51.5,
+   "base_dir": 59.8,
+   "n": 132
+  },
+  "2": {
+   "eam": 12.27,
+   "base": 12.32,
+   "mejora": 0.4,
+   "dir": 54.3,
+   "base_dir": 60.9,
+   "n": 151
+  },
+  "3": {
+   "eam": 16.09,
+   "base": 15.68,
+   "mejora": -2.6,
+   "dir": 52.9,
+   "base_dir": 63.1,
+   "n": 157
+  },
+  "5": {
+   "eam": 23.34,
+   "base": 22.05,
+   "mejora": -5.8,
+   "dir": 38.3,
+   "base_dir": 61.1,
+   "n": 149
+  }
+ },
+ "comercial": [
+  {
+   "id": "jamplio",
+   "n": "Jeans amplios",
+   "nivel": 99.1356904393807,
+   "momento": 7.262989428204719,
+   "pn": 0.609,
+   "pm": -0.07,
+   "amz": 0.79,
+   "shop": 0.95
+  },
+  {
+   "id": "jmedio",
+   "n": "Jeans medios",
+   "nivel": 89.91672746002477,
+   "momento": 10.569860091660061,
+   "pn": 0.609,
+   "pm": -0.07,
+   "amz": null,
+   "shop": 0.99
+  },
+  {
+   "id": "jajust",
+   "n": "Jeans ajustados",
+   "nivel": 18.014910157363524,
+   "momento": -12.778618777779819,
+   "pn": 0.609,
+   "pm": -0.07,
+   "amz": -0.39,
+   "shop": 0.53
+  },
+  {
+   "id": "buzo",
+   "n": "Buzo / athleisure",
+   "nivel": 72.53940092398831,
+   "momento": -8.938187278314729,
+   "pn": 0.375,
+   "pm": 0.039,
+   "amz": 0.64,
+   "shop": -0.16
+  },
+  {
+   "id": "cuero",
+   "n": "Cuero",
+   "nivel": 19.031354262575856,
+   "momento": -3.9101211305815546,
+   "pn": 0.298,
+   "pm": -0.45,
+   "amz": 0.48,
+   "shop": 0.29
+  },
+  {
+   "id": "lunares",
+   "n": "Lunares",
+   "nivel": 32.44052392408447,
+   "momento": -18.63419518627788,
+   "pn": 0.315,
+   "pm": -0.297,
+   "amz": 0.1,
+   "shop": 0.24
+  },
+  {
+   "id": "floral",
+   "n": "Floral",
+   "nivel": 96.02374738556647,
+   "momento": 8.328566603917494,
+   "pn": 0.454,
+   "pm": -0.101,
+   "amz": 0.07,
+   "shop": 0.95
+  },
+  {
+   "id": "animal",
+   "n": "Animal print",
+   "nivel": 28.43968596637947,
+   "momento": -15.144547673040563,
+   "pn": 0.074,
+   "pm": -0.844,
+   "amz": 1.49,
+   "shop": 0.05
+  },
+  {
+   "id": "cargo",
+   "n": "Cargo",
+   "nivel": 67.32222573728424,
+   "momento": 34.49244955748936,
+   "pn": 0.457,
+   "pm": -0.077,
+   "amz": 0.23,
+   "shop": 0.27
+  },
+  {
+   "id": "encaje",
+   "n": "Encaje",
+   "nivel": 22.072826310466525,
+   "momento": -10.190566521852443,
+   "pn": 0.302,
+   "pm": -0.32,
+   "amz": 0.01,
+   "shop": 0.33
+  },
+  {
+   "id": "kimono",
+   "n": "Kimono",
+   "nivel": 33.4607586351206,
+   "momento": -14.016136953292474,
+   "pn": 0.421,
+   "pm": -0.083,
+   "amz": 0.53,
+   "shop": 0.11
+  },
+  {
+   "id": "capa",
+   "n": "Capa",
+   "nivel": 38.07011277788601,
+   "momento": -4.795419871764231,
+   "pn": 0.425,
+   "pm": -0.027,
+   "amz": null,
+   "shop": null
+  },
+  {
+   "id": "trench",
+   "n": "Trench",
+   "nivel": 39.568188878533704,
+   "momento": 2.672720691877146,
+   "pn": 0.398,
+   "pm": -0.168,
+   "amz": 0.43,
+   "shop": 0.16
+  }
+ ],
+ "pasarela_por_atributo": [
+  {
+   "id": "jamplio",
+   "mejor_rezago": 4,
+   "r": 0.967
+  },
+  {
+   "id": "jmedio",
+   "mejor_rezago": 4,
+   "r": 0.954
+  },
+  {
+   "id": "jajust",
+   "mejor_rezago": 0,
+   "r": 0.627
+  },
+  {
+   "id": "buzo",
+   "mejor_rezago": 4,
+   "r": 0.885
+  },
+  {
+   "id": "cuero",
+   "mejor_rezago": 0,
+   "r": -0.228
+  },
+  {
+   "id": "lunares",
+   "mejor_rezago": 4,
+   "r": 0.538
+  },
+  {
+   "id": "floral",
+   "mejor_rezago": 4,
+   "r": 0.706
+  },
+  {
+   "id": "animal",
+   "mejor_rezago": 0,
+   "r": 0.383
+  },
+  {
+   "id": "cargo",
+   "mejor_rezago": 3,
+   "r": 0.821
+  },
+  {
+   "id": "encaje",
+   "mejor_rezago": 0,
+   "r": 0.63
+  },
+  {
+   "id": "kimono",
+   "mejor_rezago": 0,
+   "r": 0.691
+  },
+  {
+   "id": "capa",
+   "mejor_rezago": 4,
+   "r": 0.385
+  },
+  {
+   "id": "trench",
+   "mejor_rezago": 4,
+   "r": 0.932
+  }
+ ]
+}

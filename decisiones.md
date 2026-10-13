@@ -287,3 +287,64 @@ no hacer es tocar las columnas de venta.
 **Dos cosas que no sabíamos del archivo.** Es **86 % menswear** (218 contra 34), el desbalance
 opuesto al que suponíamos para el resto del corpus. Y trae **31 productos de calzado**, todos de
 hombre: es lo único de calzado que tenemos, y el calzado era el agujero declarado frente a Lyst.
+
+## 2026-10-13 · Tres intentos de salvar la predicción, y un casi-hallazgo que no era
+
+Después de que los cuatro métodos fallaran, probamos tres caminos distintos.
+
+### 1 · Un modelo global en vez de uno por serie
+
+**Qué es.** En vez de ajustar una curva por atributo, se entrena **una sola regla** sobre las 16
+series juntas: dado el recorrido de los últimos 5 años, cuánto se mueve en los próximos h. Validado
+dejando afuera la serie que se evalúa. Es la técnica por la que un panel más grande serviría.
+
+**Resultado.** Tampoco le gana a repetir el último valor: −2,0 % a un año, +0,4 % a dos, −2,6 % a
+tres, −5,8 % a cinco.
+
+**Qué significa.** El problema no es que tengamos pocas series. Sumar los 19 términos que faltan no
+iba a salvarlo, así que no vale la pena ir a buscarlos para esto.
+
+### 2 · Predecir algo que no sea búsqueda
+
+**Qué probamos.** Contra las dos únicas señales comerciales que tenemos por atributo: el cambio en
+reseñas de Amazon 2019-2022 y el de Google Shopping 2022-2025.
+
+| Predictor | Amazon (n=11) | Shopping (n=12) |
+|---|---|---|
+| Nivel de búsqueda | +0,13 | **+0,61** |
+| Momento de búsqueda | −0,09 | +0,41 |
+| Nivel de pasarela | −0,56 | **+0,67** |
+| Momento de pasarela | −0,55 | +0,30 |
+
+Con esos tamaños de muestra hace falta |r| > 0,6 para decir algo. Contra Amazon **no hay nada**.
+Contra Shopping el nivel de búsqueda y el de pasarela pasan raspando.
+
+**El límite honesto:** Google Shopping sigue siendo búsqueda, no venta. Que la búsqueda prediga la
+búsqueda comercial no sorprende a nadie. Nos falta una serie de ventas de verdad.
+
+### 3 · ¿La pasarela adelanta? El casi-hallazgo
+
+**Qué hicimos.** Rehacer el test de la H5 **atributo por atributo** en vez de promediado, porque el
+promedio puede tapar que adelante en unos y no en otros.
+
+**Lo que apareció.** En niveles, espectacular: **7 de 13 atributos** con su correlación máxima en
+rezago 3 o 4 años — jeans amplios +0,97, jeans medios +0,95, trench +0,93, buzo +0,89, cargo +0,82.
+Parecía que la H5 se salvaba con un adelanto de cuatro años.
+
+**Por qué no lo es.** Dos series que suben correlacionan alto aunque no tengan nada que ver. Al
+repetir el test sobre los **cambios año a año** en vez de los niveles, se desarma: de 13 atributos
+sólo **cargo** (k=2, r=+0,75) y **capa** (k=4, r=+0,74) superan el umbral. Y con 13 atributos por 5
+rezagos son **65 pruebas**: por puro azar se esperan unas 3 que pasen. Dos no es más de lo que da
+tirar una moneda.
+
+**Decisión.** La H5 sigue rechazada a escala anual. Dejamos documentado el casi-hallazgo porque es
+exactamente la clase de resultado que uno quiere creer, y el detrend es lo que lo descarta.
+
+### Lo que sí falta, y es concreto
+
+**VISUELLE** (github.com/HumaticsLAB/GTM-Transformer) tiene 5.577 productos de Nunalie 2016-2019 con
+**ventas semanales y Google Trends ya alineados**. Es exactamente la serie de ventas que nos falta, y
+ya lo teníamos identificado desde septiembre sin usarlo. Se baja llenando un formulario:
+https://forms.gle/cVGQAmxhHf7eRJ937 — lo tiene que completar alguien del grupo. El repositorio es
+MIT, pero la licencia del dataset no figura: hay que leerla en el formulario o en el paper
+(arXiv:2109.09824).

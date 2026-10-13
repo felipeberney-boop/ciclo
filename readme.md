@@ -134,6 +134,25 @@ El registro completo de lo que se probó y se descartó está en `decisiones.md`
 La evolución del proyecto, versión por versión, está en `historial.md` — y cada versión tiene su commit
 fechado en el historial de este repositorio.
 
+## Licencias y atribución
+
+Verificado el 13/10/2026 fuente por fuente. **Tres de las fuentes no declaran ninguna licencia** —
+Vogue Runway, Amazon Reviews y Wish—, lo que no significa que sean libres sino que nadie otorgó
+permiso explícito. Las usamos sólo para análisis académico, no redistribuimos ningún dataset y
+citamos cada origen. El detalle está en `datasets/fuentes_y_descargas.md`.
+
+La única cita formalmente exigida es la de Amazon Reviews:
+
+> Hou, Y., Li, J., He, Z., Yan, A., Chen, X., & McAuley, J. (2024). *Bridging Language and Items for
+> Retrieval and Recommendation.* arXiv:2403.03952.
+
+Google Trends se usa bajo los términos de servicio de Google, con atribución y sin redistribuir.
+H&M es de una competencia de Kaggle: uso académico y no comercial. El Lyst Index es contenido
+editorial de Lyst, citado por trimestre y sin redistribuir el informe.
+
+**Queda una pendiente:** el dataset de Zara de febrero 2024 no se pudo verificar porque no tenemos
+la URL exacta de Kaggle.
+
 ## Límites declarados
 
 - **No detectamos lo emergente.** La pasarela pública llega hasta 2023.

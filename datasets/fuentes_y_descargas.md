@@ -4,8 +4,13 @@ Los datasets originales **no están en el repositorio**: superan el límite de G
 para descargarlos, o se transcribieron a mano desde una publicación. Acá va de dónde sale cada uno, la
 fecha en que lo bajamos y su licencia.
 
-> **Pendiente antes de la entrega final:** verificar en la ficha de cada dataset la licencia exacta y la
-> forma de atribución que pide. Las marcadas *a verificar* todavía no las confirmamos.
+> **Verificación de licencias, 13/10/2026.** Fuimos a la ficha de cada fuente a buscar la licencia.
+> El resultado es incómodo y conviene decirlo de entrada: **tres de las cuatro que teníamos pendientes
+> no declaran ninguna licencia.** No significa que sean libres — significa lo contrario: nadie otorgó
+> permiso explícito. Lo anotamos como «sin licencia declarada» en vez de inventar una o dejar
+> «a verificar» para siempre.
+>
+> No somos abogados. Lo que sigue es lo que dice cada ficha, no una opinión legal.
 
 ---
 
@@ -17,8 +22,14 @@ fecha en que lo bajamos y su licencia.
 - Archivo: `VogueRunway.parquet` · 99 MB de metadata, sin imágenes
 - Contenido: 1.281.633 imágenes con diseñador, temporada, año, ciudad y tags
 - Usado: 902.566 looks (filtro `section=Collection`, sin Bridal, 2000–2023)
-- Licencia: *a verificar en la ficha del dataset.* Los tags no los puso un editor: los generó un modelo
-  de visión genérico.
+- Licencia: **sin licencia declarada.** La ficha del dataset no tiene campo de licencia ni condiciones
+  de uso. Dice que fue «scraped from Vogue on 2023-03-31» e importado del Internet Archive, y las URL
+  de imagen apuntan a los servidores de Condé Nast. Los embeddings se hicieron con clip-retrieval
+  (ViT-B/32).
+- **Qué implica.** El contenido de origen es editorial de Vogue, no abierto. Lo usamos sólo para
+  análisis académico, no redistribuimos el dataset ni las imágenes, y citamos la fuente. Si la cátedra
+  necesita una licencia formal, esta fuente no la tiene.
+- Los tags no los puso un editor: los generó un modelo de visión genérico.
 - **Después de 2023 no hay dato.** Revisado el 13/10/2026: el archivo se scrapeó de Vogue el 31/03/2023 y
   no se actualizó. No encontramos reemplazo público con looks etiquetados de 2024–2026; el informe anual de
   Tagwalk es pago. 2024–2026 está **proyectado**, no medido: `datasets/completado_2026/`.
@@ -76,22 +87,37 @@ fecha en que lo bajamos y su licencia.
 - Licencia: reglas de la competencia de Kaggle — uso académico y no comercial. Requiere cuenta.
 
 **Amazon Reviews**
+- Link: https://amazon-reviews-2023.github.io
 - Contenido: muestra de 1,1 M de reseñas de indumentaria, 2012 a abril 2023
 - Descargado: 22/09/2026
-- Licencia: uso académico, citando el trabajo original de los autores del dataset. *A verificar la cita
-  exacta antes de la entrega final.*
+- Licencia: **sin licencia declarada.** La página no fija términos de uso; su única condición es citar
+  el trabajo original.
+- **Cita exigida** (verificada el 13/10/2026):
+  > Hou, Y., Li, J., He, Z., Yan, A., Chen, X., & McAuley, J. (2024). *Bridging Language and Items for
+  > Retrieval and Recommendation.* arXiv:2403.03952.
+- Nota: la versión 2023 cubre mayo 1996 a septiembre 2023. La categoría Clothing, Shoes and Jewelry
+  tiene 66 M de reseñas sobre 7,2 M de artículos; nosotros usamos una muestra. La versión vieja (2018)
+  pide otra cita —Ni, Li & McAuley, EMNLP 2019— y los propios autores recomiendan no usarla salvo para
+  reproducir resultados anteriores.
 
 ## Catálogo
 
 **Zara febrero 2024** (Kaggle)
 - Contenido: 252 filas, 228 SKU únicos, con descripciones reales scrapeadas
 - Descargado: 08/09/2026
-- Licencia: *a verificar en la ficha del dataset.*
+- Licencia: **sin confirmar — falta la URL exacta del dataset.** Es la única de las cuatro que quedó
+  sin verificar: no pudimos identificar cuál de los varios datasets de Zara en Kaggle es el que
+  bajamos. Quien lo haya descargado tiene que pegar acá el link y repetir la verificación.
 
 **Wish 2020** (Kaggle) — `computed_insight_success_of_active_sellers`
+- Link: https://www.kaggle.com/datasets/jmmvutu/summer-products-and-sales-in-ecommerce-wish
 - Contenido: 1.573 productos, 1.341 únicos
 - Descargado: 22/09/2026
-- Licencia: *a verificar en la ficha del dataset.*
+- Licencia: **sin licencia declarada.** La ficha no tiene campo de licencia, no nombra autor más allá
+  del usuario de Kaggle (jmmvutu) y no dice de dónde salieron los datos ni cómo pueden usarse.
+- **Qué implica.** Sin procedencia declarada no podemos afirmar que sea redistribuible. Lo usamos
+  sólo como demostración de método —ya estaba descartado para conclusiones por el problema de
+  `retail_price`— y citamos la ficha de Kaggle.
 - Nota: `retail_price` es inusable — 47 % sin descuento y 25 % con más de 72 %. Es solo de verano.
 
 ## Datasets revisados y descartados

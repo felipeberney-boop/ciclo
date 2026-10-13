@@ -238,3 +238,28 @@ dato o estimado. La curva de cascada del detalle, que es estimada, dejó de ser 
 **Tu prenda en tienda.** Una línea vertical en hoy + el lead time de la categoría. Se mueve poco (de noviembre
 de 2026 a abril de 2027) porque los lead times son de semanas o meses; el pedido original hablaba de ventanas
 de 2026, 2028 y 2030 por categoría, pero esa validación no existe en esta versión y no se inventó.
+
+## 2026-10-13 · Verificación de licencias
+
+**Qué hicimos.** Fuimos a la ficha de cada una de las cuatro fuentes que teníamos marcadas
+«a verificar» desde septiembre.
+
+**Qué encontramos.** Tres de las cuatro **no declaran licencia alguna**:
+
+| Fuente | Resultado |
+|---|---|
+| Vogue Runway (`traopia/vogue-runway`) | Sin licencia. La ficha dice «scraped from Vogue on 2023-03-31», importado del Internet Archive, con las imágenes apuntando a servidores de Condé Nast |
+| Amazon Reviews | Sin licencia; única condición, citar a Hou et al. (2024), arXiv:2403.03952 |
+| Wish 2020 (Kaggle, jmmvutu) | Sin licencia, sin autor nombrado y sin procedencia declarada |
+| Zara febrero 2024 (Kaggle) | No verificable: falta la URL exacta del dataset |
+
+**La lectura.** «Sin licencia declarada» no es lo mismo que libre: es lo contrario. Nadie otorgó
+permiso explícito, y en el caso de Vogue el contenido de origen es editorial de Condé Nast.
+
+**Decisión.** Se declara tal cual en el readme y en `fuentes_y_descargas.md`, en vez de inventar una
+licencia o dejar «a verificar» indefinidamente. En la práctica: uso académico, sin redistribuir
+ningún dataset, citando cada fuente. Es la misma política que ya veníamos aplicando —los pesados no
+se suben al repositorio— pero ahora está fundamentada.
+
+**Pendiente concreto.** Quien bajó el dataset de Zara de febrero 2024 tiene que pegar la URL de
+Kaggle en `fuentes_y_descargas.md` y repetir la verificación. Es la última que falta.

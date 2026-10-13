@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>CICLO · Prototipo Felipe 1</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5,500;62.5,600;62.5,700;100,400;100,500;100,600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#FAF9F7;--paper-2:#F1EFE9;--card:#FFFFFF;--ink:#14130F;--ink-2:#55534B;--ink-3:#8B897F;
+  --rule:#DEDAD1;--rule-2:#EBE8E1;--ia:#FFAFA3;--ia-t:#B8503D;--ia-soft:#FFF1EE;
+  --serif:'Bodoni Moda',Didot,Georgia,serif;--sans:'Archivo','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',Menlo,monospace}
+@media (max-width:1100px){html{zoom:.69445}}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:1440px;background:var(--paper);color:var(--ink);font-family:var(--sans);overflow:hidden}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+
+/* barra superior */
+.top{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;border-bottom:1px solid var(--ink)}
+.logo{font-family:var(--serif);font-size:30px;letter-spacing:.18em;font-weight:500}
+.nav{display:flex;gap:30px;font-stretch:62.5%;font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.nav a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--ink);padding-bottom:6px}
+.cli{display:flex;align-items:center;gap:12px}
+.seg{display:flex;border:1px solid var(--ink);border-radius:999px;overflow:hidden;font-stretch:62.5%;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.seg span{padding:6px 14px}.seg .on{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:470px 1fr;gap:56px;padding:44px 56px 30px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:62px;line-height:1.02;letter-spacing:-.01em;margin:18px 0 20px}
+.hero h1 em{font-style:italic}
+.lead{font-size:17px;line-height:1.55;color:var(--ink-2);max-width:440px}
+.search{margin-top:28px;display:flex;align-items:center;border:1px solid var(--ink);background:var(--card);height:56px}
+.search .q{flex:1;padding:0 18px;font-size:16px;color:var(--ink-3)}
+.search .q b{color:var(--ink);font-weight:500}
+.search .img{height:100%;display:flex;align-items:center;gap:8px;padding:0 18px;background:var(--ia);font-stretch:62.5%;font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+.chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:13px;padding:5px 11px;border:1px solid var(--rule);border-radius:999px;color:var(--ink-2);background:var(--card)}
+.hint{margin-top:12px;font-size:12px;color:var(--ink-3)}
+.hint i{display:inline-block;width:8px;height:8px;background:var(--ia);border-radius:50%;margin-right:6px}
+
+/* panel del ciclo */
+.panel{display:flex;flex-direction:column;justify-content:space-between;background:var(--card);border:1px solid var(--rule);padding:22px 26px 10px}
+.panel-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.panel-h h2{font-family:var(--serif);font-weight:400;font-size:26px}
+.panel-h .meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:right;line-height:1.5}
+.ciclo{width:100%;display:block}
+.zl{stroke:var(--rule);stroke-dasharray:2 4}
+.zt{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;fill:var(--ink-3)}
+.zn{font-family:var(--mono);font-size:11px;fill:var(--ink-3)}
+.ht{stroke:var(--rule);stroke-width:1.2}
+.ar{fill:var(--paper-2)}
+.cv{fill:none;stroke:var(--ink);stroke-width:2}
+.dt{stroke:var(--ink);stroke-width:1}
+.base{stroke:var(--ink)}
+.nm{font-family:var(--sans);font-size:14.5px;fill:var(--ink)}
+.nm.mute{fill:var(--ink-3)}
+
+/* números con fuente */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin:0 56px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.stat{padding:16px 0 16px 0;border-right:1px solid var(--rule);padding-left:20px}
+.stat:first-child{padding-left:0}.stat:last-child{border-right:0}
+.stat .n{font-family:var(--serif);font-size:34px;line-height:1}
+.stat .l{font-size:14px;color:var(--ink-2);margin-top:6px}
+.stat .s{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:6px;letter-spacing:.04em}
+
+/* lo que se mueve */
+.sec{padding:26px 56px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.sec-h h2{font-family:var(--serif);font-weight:400;font-size:30px}
+.sec-h a{font-stretch:62.5%;font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr) 1.05fr;gap:20px}
+.card{background:var(--card);border:1px solid var(--rule);padding:18px 20px}
+.card header{display:flex;justify-content:space-between;align-items:center}
+.sw{display:flex}.sw i{width:22px;height:22px;border:1px solid rgba(20,19,15,.25);margin-right:-4px;border-radius:50%}
+.tipo{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:12px 0 12px}
+.track{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+.track span{height:6px;background:var(--rule-2)}.track .on{background:var(--ink)}
+.stage{font-stretch:62.5%;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-top:8px}
+.spark{width:100%;height:70px;margin-top:12px;display:block;overflow:visible}
+.sp{fill:none;stroke:var(--ink);stroke-width:1.8}.sp-end{fill:var(--ink)}
+.spv{fill:none;stroke:var(--ink-3);stroke-width:1.2;stroke-dasharray:3 3}.spv-end{fill:var(--ink-3)}
+.leg{display:flex;gap:14px;font-size:11px;color:var(--ink-3);margin-top:6px}
+.leg b{display:inline-block;width:14px;height:0;border-top:2px solid var(--ink);vertical-align:middle;margin-right:5px}
+.leg b.lv{border-top:1.5px dashed var(--ink-3)}.leg .yr{margin-left:auto;font-family:var(--mono)}
+.dato{font-size:14px;margin-top:14px;padding-top:12px;border-top:1px solid var(--rule-2)}
+.src{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-top:6px}
+
+/* lectura de la IA */
+.ia{background:var(--ia-soft);border:1px solid var(--ia);padding:18px 20px;display:flex;flex-direction:column}
+.ia .tag{align-self:flex-start;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--ia);padding:4px 8px}
+.ia h3{font-family:var(--serif);font-weight:400;font-size:24px;margin:14px 0 10px;line-height:1.15}
+.ia p{font-size:14.5px;line-height:1.55;color:var(--ink)}
+.ia ul{list-style:none;margin-top:12px;font-size:13.5px;line-height:1.5}
+.ia li{padding:7px 0;border-top:1px solid rgba(184,80,61,.25)}
+.ia li b{font-weight:600}
+.ia .foot{margin-top:auto;padding-top:12px;font-family:var(--mono);font-size:10px;color:var(--ia-t);line-height:1.5}
+
+/* límites */
+.lim{margin:22px 56px 0;padding:14px 0;border-top:1px solid var(--ink);display:flex;gap:28px;font-size:12.5px;color:var(--ink-2)}
+.lim .eyebrow{color:var(--ink);white-space:nowrap}
+.lim span:not(.eyebrow)::before{content:'—';margin-right:6px;color:var(--ink-3)}
+</style></head>
+<body>
+
+<div class="top">
+  <div class="logo">CICLO</div>
+  <nav class="nav"><a class="on">Inicio</a><a>Radar</a><a>El ciclo</a><a>Recorridos</a><a>Marcas</a><a>Retornos</a><a>Método</a></nav>
+  <div class="cli"><span class="eyebrow">Cliente</span><div class="seg"><span>Fast</span><span class="on">Premium</span><span>Nicho</span></div></div>
+</div>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">N.º 01 · Primavera 2026 · lectura del 23.09</div>
+    <h1>Dónde está cada atributo en su <em>ciclo de vida.</em></h1>
+    <p class="lead">Un color, una estampa, un corte, un material. Cruzamos pasarela, búsqueda, venta masiva y
+      marcas para ubicar cada uno en una de cinco etapas — sin que nadie las etiquete a mano.</p>
+    <div class="search">
+      <div class="q">Buscá: <b>trench</b>, lunares, cuero…</div>
+      <div class="img">◐ Subir una prenda</div>
+    </div>
+    <div class="chips"><span>Jeans</span><span>Pantalones</span><span>Abrigos</span><span>Tejidos</span><span>Remeras y tops</span><span>Estampas</span><span>Materiales</span></div>
+    <p class="hint"><i></i>Lo salmón lo calcula o lo interpreta un modelo. Lo negro está medido.</p>
+  </div>
+
+  <div class="panel">
+    <div class="panel-h">
+      <div><div class="eyebrow">El ciclo hoy</div><h2>18 atributos, cuatro grupos</h2></div>
+      <div class="meta">K-means · k = 4 · silhouette 0,326<br>pasarela + búsqueda, 2004–2025</div>
+    </div>
+    <svg viewBox="0 0 860 450" class="ciclo"><defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="ht"/></pattern></defs><text x="28" y="18" class="zt">EMERGENTE</text><line x1="184" y1="22" x2="184" y2="250" class="zl"/><text x="192" y="18" class="zt">EN ASCENSO</text><line x1="348" y1="22" x2="348" y2="250" class="zl"/><text x="356" y="18" class="zt">EN PICO</text><line x1="512" y1="22" x2="512" y2="250" class="zl"/><text x="520" y="18" class="zt">SATURADA</text><line x1="676" y1="22" x2="676" y2="250" class="zl"/><text x="684" y="18" class="zt">EN RETORNO</text><path d="M20.0,250.0 L24.1,250.0 L28.2,249.9 L32.3,249.9 L36.4,249.9 L40.5,249.9 L44.6,249.9 L48.7,249.9 L52.8,249.8 L56.9,249.8 L61.0,249.8 L65.1,249.7 L69.2,249.7 L73.3,249.7 L77.4,249.6 L81.5,249.5 L85.6,249.4 L89.7,249.4 L93.8,249.3 L97.9,249.1 L102.0,249.0 L106.1,248.8 L110.2,248.7 L114.3,248.5 L118.4,248.2 L122.5,248.0 L126.6,247.7 L130.7,247.4 L134.8,247.0 L138.9,246.6 L143.0,246.2 L147.1,245.6 L151.2,245.1 L155.3,244.5 L159.4,243.8 L163.5,243.0 L167.6,242.1 L171.7,241.2 L175.8,240.2 L179.9,239.1 L184.0,237.8 L188.1,236.5 L192.2,235.0 L196.3,233.4 L200.4,231.7 L204.5,229.9 L208.6,227.9 L212.7,225.7 L216.8,223.4 L220.9,220.9 L225.0,218.3 L229.1,215.5 L233.2,212.5 L237.3,209.3 L241.4,206.0 L245.5,202.5 L249.6,198.7 L253.7,194.8 L257.8,190.8 L261.9,186.5 L266.0,182.1 L270.1,177.5 L274.2,172.7 L278.3,167.8 L282.4,162.8 L286.5,157.6 L290.6,152.3 L294.7,147.0 L298.8,141.5 L302.9,135.9 L307.0,130.3 L311.1,124.7 L315.2,119.1 L319.3,113.5 L323.4,107.9 L327.5,102.4 L331.6,97.0 L335.7,91.6 L339.8,86.5 L343.9,81.4 L348.0,76.6 L352.1,71.9 L356.2,67.5 L360.3,63.4 L364.4,59.5 L368.5,56.0 L372.6,52.7 L376.7,49.8 L380.8,47.3 L384.9,45.1 L389.0,43.3 L393.1,41.8 L397.2,40.8 L401.3,40.2 L405.4,40.0 L409.5,40.2 L413.6,40.8 L417.7,41.8 L421.8,43.3 L425.9,45.1 L430.0,47.3 L434.1,49.8 L438.2,52.7 L442.3,56.0 L446.4,59.5 L450.5,63.4 L454.6,67.5 L458.7,71.9 L462.8,76.6 L466.9,81.4 L471.0,86.5 L475.1,91.6 L479.2,97.0 L483.3,102.4 L487.4,107.9 L491.5,113.5 L495.6,119.1 L499.7,124.7 L503.8,130.3 L507.9,135.9 L512.0,141.5 L516.1,147.0 L520.2,152.3 L524.3,157.6 L528.4,162.8 L532.5,167.8 L536.6,172.7 L540.7,177.5 L544.8,182.1 L548.9,186.5 L553.0,190.8 L557.1,194.8 L561.2,198.7 L565.3,202.5 L569.4,206.0 L573.5,209.3 L577.6,212.5 L581.7,215.5 L585.8,218.3 L589.9,220.9 L594.0,223.4 L598.1,225.7 L602.2,227.9 L606.3,229.9 L610.4,231.7 L614.5,233.4 L618.6,235.0 L622.7,236.5 L626.8,237.8 L630.9,239.0 L635.0,240.2 L639.1,241.2 L643.2,242.1 L647.3,243.0 L651.4,243.7 L655.5,244.4 L659.6,245.0 L663.7,245.5 L667.8,245.9 L671.9,246.2 L676.0,246.4 L680.1,246.5 L684.2,246.5 L688.3,246.3 L692.4,245.9 L696.5,245.3 L700.6,244.5 L704.7,243.4 L708.8,241.9 L712.9,240.1 L717.0,237.9 L721.1,235.3 L725.2,232.2 L729.3,228.7 L733.4,224.9 L737.5,220.7 L741.6,216.1 L745.7,211.5 L749.8,206.7 L753.9,202.0 L758.0,197.5 L762.1,193.4 L766.2,189.8 L770.3,186.8 L774.4,184.6 L778.5,183.2 L782.6,182.7 L786.7,183.2 L790.8,184.6 L794.9,186.8 L799.0,189.8 L803.1,193.5 L807.2,197.6 L811.3,202.2 L815.4,206.9 L819.5,211.7 L823.6,216.4 L827.7,221.0 L831.8,225.3 L835.9,229.2 L840.0,232.8 L840,250 L20,250 Z" class="ar"/><path d="M20.0,250.0 L24.1,250.0 L28.2,249.9 L32.3,249.9 L36.4,249.9 L40.5,249.9 L44.6,249.9 L48.7,249.9 L52.8,249.8 L56.9,249.8 L61.0,249.8 L65.1,249.7 L69.2,249.7 L73.3,249.7 L77.4,249.6 L81.5,249.5 L85.6,249.4 L89.7,249.4 L93.8,249.3 L97.9,249.1 L102.0,249.0 L106.1,248.8 L110.2,248.7 L114.3,248.5 L118.4,248.2 L122.5,248.0 L126.6,247.7 L130.7,247.4 L134.8,247.0 L138.9,246.6 L143.0,246.2 L147.1,245.6 L151.2,245.1 L155.3,244.5 L159.4,243.8 L163.5,243.0 L167.6,242.1 L171.7,241.2 L175.8,240.2 L179.9,239.1 L184.0,237.8 L188.1,236.5 L192.2,235.0 L196.3,233.4 L200.4,231.7 L204.5,229.9 L208.6,227.9 L212.7,225.7 L216.8,223.4 L220.9,220.9 L225.0,218.3 L229.1,215.5 L233.2,212.5 L237.3,209.3 L241.4,206.0 L245.5,202.5 L249.6,198.7 L253.7,194.8 L257.8,190.8 L261.9,186.5 L266.0,182.1 L270.1,177.5 L274.2,172.7 L278.3,167.8 L282.4,162.8 L286.5,157.6 L290.6,152.3 L294.7,147.0 L298.8,141.5 L302.9,135.9 L307.0,130.3 L311.1,124.7 L315.2,119.1 L319.3,113.5 L323.4,107.9 L327.5,102.4 L331.6,97.0 L335.7,91.6 L339.8,86.5 L343.9,81.4 L348.0,76.6 L352.1,71.9 L356.2,67.5 L360.3,63.4 L364.4,59.5 L368.5,56.0 L372.6,52.7 L376.7,49.8 L380.8,47.3 L384.9,45.1 L389.0,43.3 L393.1,41.8 L397.2,40.8 L401.3,40.2 L405.4,40.0 L409.5,40.2 L413.6,40.8 L417.7,41.8 L421.8,43.3 L425.9,45.1 L430.0,47.3 L434.1,49.8 L438.2,52.7 L442.3,56.0 L446.4,59.5 L450.5,63.4 L454.6,67.5 L458.7,71.9 L462.8,76.6 L466.9,81.4 L471.0,86.5 L475.1,91.6 L479.2,97.0 L483.3,102.4 L487.4,107.9 L491.5,113.5 L495.6,119.1 L499.7,124.7 L503.8,130.3 L507.9,135.9 L512.0,141.5 L516.1,147.0 L520.2,152.3 L524.3,157.6 L528.4,162.8 L532.5,167.8 L536.6,172.7 L540.7,177.5 L544.8,182.1 L548.9,186.5 L553.0,190.8 L557.1,194.8 L561.2,198.7 L565.3,202.5 L569.4,206.0 L573.5,209.3 L577.6,212.5 L581.7,215.5 L585.8,218.3 L589.9,220.9 L594.0,223.4 L598.1,225.7 L602.2,227.9 L606.3,229.9 L610.4,231.7 L614.5,233.4 L618.6,235.0 L622.7,236.5 L626.8,237.8 L630.9,239.0 L635.0,240.2 L639.1,241.2 L643.2,242.1 L647.3,243.0 L651.4,243.7 L655.5,244.4 L659.6,245.0 L663.7,245.5 L667.8,245.9 L671.9,246.2 L676.0,246.4 L680.1,246.5 L684.2,246.5 L688.3,246.3 L692.4,245.9 L696.5,245.3 L700.6,244.5 L704.7,243.4 L708.8,241.9 L712.9,240.1 L717.0,237.9 L721.1,235.3 L725.2,232.2 L729.3,228.7 L733.4,224.9 L737.5,220.7 L741.6,216.1 L745.7,211.5 L749.8,206.7 L753.9,202.0 L758.0,197.5 L762.1,193.4 L766.2,189.8 L770.3,186.8 L774.4,184.6 L778.5,183.2 L782.6,182.7 L786.7,183.2 L790.8,184.6 L794.9,186.8 L799.0,189.8 L803.1,193.5 L807.2,197.6 L811.3,202.2 L815.4,206.9 L819.5,211.7 L823.6,216.4 L827.7,221.0 L831.8,225.3 L835.9,229.2 L840.0,232.8" class="cv"/><rect x="20" y="22" width="164" height="228" fill="url(#hatch)"/><text x="28" y="238" class="zn">sin datos después de 2023</text><circle cx="266.0" cy="182.1" r="7" fill="#E3A0B0" class="dt"/><circle cx="196" cy="274" r="4" fill="#E3A0B0" class="dt"/><text x="205" y="279" class="nm">Y2K</text><circle cx="366.2" cy="57.9" r="7" fill="#415A78" class="dt"/><circle cx="384.4" cy="45.3" r="7" fill="#415A78" class="dt"/><circle cx="402.7" cy="40.1" r="7" fill="#8C8C88" class="dt"/><circle cx="420.9" cy="42.9" r="7" fill="#E3A0B0" class="dt"/><circle cx="439.1" cy="53.4" r="7" fill="#9A8F7E" class="dt"/><circle cx="457.3" cy="70.5" r="7" fill="#D9C8AE" class="dt"/><circle cx="475.6" cy="92.2" r="7" fill="#3F6B4A" class="dt"/><circle cx="493.8" cy="116.6" r="7" fill="#1D1C1A" class="dt"/><circle cx="360" cy="274" r="4" fill="#415A78" class="dt"/><text x="369" y="279" class="nm">Jeans amplios</text><circle cx="360" cy="296" r="4" fill="#415A78" class="dt"/><text x="369" y="301" class="nm">Jeans medios</text><circle cx="360" cy="318" r="4" fill="#8C8C88" class="dt"/><text x="369" y="323" class="nm">Buzo</text><circle cx="360" cy="340" r="4" fill="#E3A0B0" class="dt"/><text x="369" y="345" class="nm">Floral</text><circle cx="360" cy="362" r="4" fill="#9A8F7E" class="dt"/><text x="369" y="367" class="nm">Capa</text><text x="369" y="389" class="nm mute">+3 más</text><circle cx="566.7" cy="203.6" r="7" fill="#415A78" class="dt"/><circle cx="621.3" cy="236.0" r="7" fill="#B02B31" class="dt"/><circle cx="524" cy="274" r="4" fill="#415A78" class="dt"/><text x="533" y="279" class="nm">Jeans ajustados</text><circle cx="524" cy="296" r="4" fill="#B02B31" class="dt"/><text x="533" y="301" class="nm">Kimono</text><circle cx="696.5" cy="245.3" r="7" fill="#F2F0EA" class="dt"/><circle cx="717.0" cy="237.9" r="7" fill="#7A4B2A" class="dt"/><circle cx="737.5" cy="220.7" r="7" fill="#A8764A" class="dt"/><circle cx="758.0" cy="197.5" r="7" fill="#F2F0EA" class="dt"/><circle cx="778.5" cy="183.2" r="7" fill="#B02B31" class="dt"/><circle cx="799.0" cy="189.8" r="7" fill="#6B4A2F" class="dt"/><circle cx="819.5" cy="211.7" r="7" fill="#F2F0EA" class="dt"/><circle cx="688" cy="274" r="4" fill="#F2F0EA" class="dt"/><text x="697" y="279" class="nm">Lunares</text><circle cx="688" cy="296" r="4" fill="#7A4B2A" class="dt"/><text x="697" y="301" class="nm">Cuero</text><circle cx="688" cy="318" r="4" fill="#A8764A" class="dt"/><text x="697" y="323" class="nm">Animal print</text><circle cx="688" cy="340" r="4" fill="#F2F0EA" class="dt"/><text x="697" y="345" class="nm">Encaje</text><circle cx="688" cy="362" r="4" fill="#B02B31" class="dt"/><text x="697" y="367" class="nm">Cuadros</text><text x="697" y="389" class="nm mute">+2 más</text><line x1="20" y1="250" x2="840" y2="250" class="base"/></svg>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="n">902.566</div><div class="l">looks de pasarela</div><div class="s">VOGUE RUNWAY · 2000–2023</div></div>
+  <div class="stat"><div class="n">49</div><div class="l">términos de búsqueda</div><div class="s">GOOGLE TRENDS · 2004–2025</div></div>
+  <div class="stat"><div class="n">30,6 M</div><div class="l">compras de adulto</div><div class="s">H&amp;M · 2018–2020</div></div>
+  <div class="stat"><div class="n">34</div><div class="l">trimestres, 55 marcas</div><div class="s">LYST INDEX · Q1-18 A Q2-26</div></div>
+</div>
+
+<section class="sec">
+  <div class="sec-h"><h2>Lo que se está moviendo</h2><a>Ver el radar completo →</a></div>
+  <div class="grid">
+    <article class="card">
+  <header><div class="sw"><i style="background:#415A78"></i><i style="background:#93BAD8"></i><i style="background:#D9C8AE"></i></div><span class="tipo">Jeans</span></header>
+  <h3>Jeans amplios</h3>
+  <div class="track"><span class=""></span><span class=""></span><span class="on"></span><span class=""></span><span class=""></span></div>
+  <div class="stage">En pico</div>
+  <svg viewBox="0 0 300 70" class="spark"><path d="M85.7,42.3 L100.0,45.6 L114.3,42.8 L128.6,48.6 L142.9,40.9 L157.1,37.5 L171.4,25.6 L185.7,21.9 L200.0,26.8 L214.3,17.0 L228.6,6.5 L242.9,4.0 L257.1,26.1 L271.4,30.4" class="spv"/><circle cx="271.4" cy="30.4" r="3" class="spv-end"/><path d="M0.0,64.3 L14.3,64.0 L28.6,63.6 L42.9,63.0 L57.1,62.0 L71.4,60.2 L85.7,60.5 L100.0,61.6 L114.3,60.7 L128.6,59.5 L142.9,56.1 L157.1,54.5 L171.4,53.2 L185.7,50.6 L200.0,49.5 L214.3,46.8 L228.6,37.7 L242.9,30.1 L257.1,32.2 L271.4,28.9 L285.7,18.1 L300.0,4.0" class="sp"/><circle cx="300.0" cy="4.0" r="3" class="sp-end"/></svg>
+  <div class="leg"><span><b class="lg"></b>búsqueda</span><span><b class="lv"></b>pasarela</span><span class="yr">2004 — 2025</span></div>
+  <p class="dato"><b>+79 %</b> en reseñas de Amazon, 2019 → 2022</p>
+  <p class="src">Google Trends · Vogue Runway · Amazon Reviews</p>
+</article><article class="card">
+  <header><div class="sw"><i style="background:#415A78"></i><i style="background:#1D1C1A"></i><i style="background:#8C8C88"></i></div><span class="tipo">Jeans</span></header>
+  <h3>Jeans ajustados</h3>
+  <div class="track"><span class=""></span><span class=""></span><span class=""></span><span class="on"></span><span class=""></span></div>
+  <div class="stage">Saturada</div>
+  <svg viewBox="0 0 300 70" class="spark"><path d="M85.7,42.3 L100.0,45.6 L114.3,42.8 L128.6,48.6 L142.9,40.9 L157.1,37.5 L171.4,25.6 L185.7,21.9 L200.0,26.8 L214.3,17.0 L228.6,6.5 L242.9,4.0 L257.1,26.1 L271.4,30.4" class="spv"/><circle cx="271.4" cy="30.4" r="3" class="spv-end"/><path d="M0.0,64.3 L14.3,61.3 L28.6,51.5 L42.9,45.8 L57.1,37.3 L71.4,23.7 L85.7,16.8 L100.0,18.9 L114.3,10.8 L128.6,13.4 L142.9,13.4 L157.1,8.7 L171.4,6.9 L185.7,5.6 L200.0,7.5 L214.3,6.4 L228.6,9.8 L242.9,4.0 L257.1,15.6 L271.4,18.8 L285.7,21.1 L300.0,17.6" class="sp"/><circle cx="300.0" cy="17.6" r="3" class="sp-end"/></svg>
+  <div class="leg"><span><b class="lg"></b>búsqueda</span><span><b class="lv"></b>pasarela</span><span class="yr">2004 — 2025</span></div>
+  <p class="dato"><b>−39 %</b> en reseñas de Amazon, 2019 → 2022</p>
+  <p class="src">Google Trends · Vogue Runway · Amazon Reviews</p>
+</article><article class="card">
+  <header><div class="sw"><i style="background:#F2F0EA"></i><i style="background:#1D1C1A"></i><i style="background:#B02B31"></i><i style="background:#23324F"></i></div><span class="tipo">Estampa</span></header>
+  <h3>Lunares</h3>
+  <div class="track"><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class="on"></span></div>
+  <div class="stage">En retorno</div>
+  <svg viewBox="0 0 300 70" class="spark"><path d="M85.7,56.3 L100.0,43.2 L114.3,50.6 L128.6,58.8 L142.9,32.9 L157.1,4.0 L171.4,35.5 L185.7,13.6 L200.0,24.2 L214.3,18.5 L228.6,30.0 L242.9,17.1 L257.1,44.9 L271.4,48.0" class="spv"/><circle cx="271.4" cy="48.0" r="3" class="spv-end"/><path d="M0.0,60.9 L14.3,59.4 L28.6,52.7 L42.9,53.8 L57.1,54.5 L71.4,54.5 L85.7,52.9 L100.0,48.7 L114.3,41.6 L128.6,39.4 L142.9,42.7 L157.1,45.4 L171.4,46.5 L185.7,45.4 L200.0,31.9 L214.3,27.2 L228.6,39.4 L242.9,39.4 L257.1,40.1 L271.4,44.5 L285.7,38.5 L300.0,4.0" class="sp"/><circle cx="300.0" cy="4.0" r="3" class="sp-end"/></svg>
+  <div class="leg"><span><b class="lg"></b>búsqueda</span><span><b class="lv"></b>pasarela</span><span class="yr">2004 — 2025</span></div>
+  <p class="dato">Vuelve cada <b>seis años</b>: 2013, 2019, 2025</p>
+  <p class="src">Google Trends · Vogue Runway</p>
+</article>
+    <aside class="ia">
+      <span class="tag">Interpretación · IA-5</span>
+      <h3>Para un cliente premium, con seis meses de plazo</h3>
+      <p>El jean amplio ya está en pico: entrar ahora es llegar tarde a la subida. El recto y el bootcut crecen callados y son la apuesta de la próxima temporada.</p>
+      <ul>
+        <li><b>Sumar</b> · jeans medios, trench, capa</li>
+        <li><b>Sostener</b> · amplios, sin ampliar la paleta</li>
+        <li><b>Salir</b> · ajustados, kimono</li>
+      </ul>
+      <div class="foot">Leído a partir de métricas calculadas, nunca de filas de la base. Es una lectura, no un dato.</div>
+    </aside>
+  </div>
+</section>
+
+<div class="lim">
+  <span class="eyebrow">Límites</span>
+  <span>No detectamos lo emergente: la pasarela pública llega a 2023</span>
+  <span>Menswear y womenswear mezclados</span>
+  <span>Sin calzado</span>
+  <span>Trends detrendado, 2026 excluido</span>
+</div>
+
+</body></html>

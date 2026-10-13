@@ -22,3 +22,7 @@ Generadas por `codigo/generar_laminas_entrega_2.py`.
 El prototipo navegable tiene dos páginas: *Prototipo navegable* (10 pantallas de 1440×900, 82
 conexiones) y *Prototipo mobile · iPhone* (las mismas 10 a 393×852 con barra de pestañas, 63
 conexiones). Cada una arranca en su portada al apretar Present.
+
+## prototipo_felipe_1/
+
+Carpeta de trabajo de Felipe. Arranca con una captura de la portada actual de la web como base para iterar.

@@ -13,6 +13,7 @@ Scripts de extracción, cálculo y render. Ninguno es parte del sitio: el sitio 
 | `contar_terminos_reddit.py` | Cuenta, por año, los posts cuyo título nombra cada término |
 | `proyectar_pasarela.py` | Elige un método por backtest y proyecta la pasarela a 2024–2026 |
 | `empalmar_reddit_2026.py` | Lleva Reddit 2026 a la escala de la serie y escribe `datasets/completado_2026/` |
+| `calcular_cono.py` | Reproduce el cono de 2030 (búsqueda detrendeada, sin 2025) y lo compara con el JSON guardado |
 | `verificar_pasarela.py` | Recalcula la pasarela desde el parquet original de Vogue y la compara con el repo |
 | `prueba_busqueda_contra_ventas_visuelle.py` | ¿La búsqueda predice la venta? Contra las ventas reales de VISUELLE |
 | `tres_pruebas_panel_objetivo_y_adelanto.py` | Modelo global, objetivo comercial y el test de adelanto de la pasarela atributo por atributo |

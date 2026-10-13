@@ -100,14 +100,13 @@ python3 codigo/empalmar_reddit_2026.py conteos.csv datasets/completado_2026/redd
         pasarela.csv datasets/completado_2026/pasarela_proyeccion_2024_2026.csv
 ```
 
-## Hasta 2030 · lo habitual (13/10/2026)
+## Hasta 2030 (13/10/2026)
 
-En la app, las curvas de Recorridos siguen hasta 2030 con «lo habitual»: el último valor medido más el cambio
-mediano que tuvieron las curvas de esa capa a esa distancia, con el rango real (percentiles 10–90 y 25–75).
-Reemplaza en la app a la proyección de Holt de pasarela, que sigue acá como dataset documentado.
-Tabla: `lo_habitual_hasta_2030.csv`. Script: `codigo/calcular_lo_habitual.py`.
+En la app, las curvas de Recorridos siguen hasta 2030 con el **cono medido**: el último dato bueno de cada
+capa más el cambio mediano de la búsqueda detrendeada a esa distancia, y la banda de cuánto se movió de
+verdad (224 tramos). Viene de la otra copia del repositorio y se verificó: `codigo/calcular_cono.py` lo
+reproduce cifra por cifra. Reemplaza a la proyección de Holt de pasarela (que sigue acá como dataset
+documentado) y a una primera versión, «lo habitual», que se descartó porque incluía el salto de Google de
+2025. Resultado: `datasets_procesados/ciclo_cono__incertidumbre_medida.json`.
 
-**No es un pronóstico.** Con orígenes 2012–2022 y distancias de 1 a 3 años, contra repetir el último valor:
-pasarela 20,9 contra 20,9; búsqueda mundo 11,4 contra 12,6; Argentina 15,7 contra 15,7; Reddit 18,6 contra 17,1
-(sólo 30 casos). Las medianas son positivas porque los atributos del proyecto se eligieron por estar vigentes:
-es un sesgo de selección, y por eso la línea muestra hacia dónde *suele* ir una curva, no hacia dónde va esta.
+**No es un pronóstico.** Ninguno de los cuatro métodos probados le gana a repetir el último valor.

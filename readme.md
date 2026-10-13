@@ -158,8 +158,9 @@ la URL exacta de Kaggle.
 - **No detectamos lo emergente.** La pasarela pública llega hasta 2023.
 - **El corpus mezcla menswear y womenswear.** Separarlo exige volver a agregar desde el archivo original.
 - **No medimos calzado**, que es donde Lyst ve las señales más fuertes de 2023 y 2024.
-- **Google Trends tiene deriva:** 33 de 35 términos tocan su máximo en el mismo mes (abril 2026). Se
-  detrenda por la media de los 35 términos y se excluye 2026 entero.
+- **Google Trends tiene deriva:** el salto de medición empieza en 2025 (cambio medio +18,9 contra +3,2
+  histórico; 12 de 16 series tocan su máximo ese año) y sigue en 2026. La búsqueda se mide hasta 2024; 2025
+  se dibuja tenue y 2026 se excluye. El K-means todavía usa el momento 2024–25: está pendiente recalcularlo.
 - **Lyst recalibró su fórmula en Q1-26.** Es un corte en la serie, no un crecimiento real: las métricas
   se calculan dentro de cada tramo, nunca a través.
 - **Zara 2018–22 y Mix de marcas son sintéticos.** Correlación casi nula entre variables. Sirven para

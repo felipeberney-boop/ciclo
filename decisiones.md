@@ -415,3 +415,35 @@ y le funcionaran, esa correlación sería alta.
   El repositorio del código es MIT, pero eso cubre el código, no los datos: la licencia del dataset
   no figura. Queda como las otras tres: sin licencia declarada, uso académico, citando la fuente.
 - Lo que usamos son tres CSV que suman 2 MB: `gtrends.csv`, `train.csv` y `test.csv`.
+
+## 2026-10-13 · Unificar con la otra copia: 2025 fuera, el cono y la ventana
+
+**Qué pasó.** Había dos copias del repositorio trabajando en paralelo desde el 6/10. Se compararon y se trajo de
+la otra lo que estaba mejor resuelto, sobre la base de esta (que tiene CLIP, links, Reddit 2026 y la entrada
+en dos pasos).
+
+**2025 queda fuera de la búsqueda.** Lo encontró la otra copia y lo verificamos con nuestros datos: el cambio
+medio anual de las 16 series es +3,2; en 2025 es +18,9, suben 15 de 16 y 12 tocan su máximo ese año. Es el salto
+de medición de Google, empezado antes de 2026. La búsqueda se mide hasta 2024 y 2025 se dibuja tenue. Cambia
+el panel «Cuándo tocó techo» y el gráfico de retrasos: lunares (pico 2019), animal print (2012), capa (2015) y
+corset (2022) dejan de figurar como «sigue subiendo». Corrige también un error de esta copia: «lo habitual»
+arrancaba de 2025, y por eso jeans amplios terminaba en 113; ahora termina en 70.
+
+**El cono reemplaza a «lo habitual».** Mismo criterio —no es un pronóstico—, pero medido bien: búsqueda
+detrendeada (cada año dividido por la mediana de los 16 atributos), sin 2025, 224 tramos. Lo calculó la otra
+copia con un módulo que no se subió; `codigo/calcular_cono.py` lo reproduce cifra por cifra. Cada capa sigue
+desde su último dato bueno con la mediana; la banda (percentiles 20–80 y 5–95) va sólo alrededor de la
+búsqueda mundial, que es donde se midió el error.
+
+**La ventana por categoría.** Cuánto tiempo la prenda tiene que seguir leyéndose actual: fast fashion 1 año,
+contemporary 2, high fashion 3, diseño emergente 5. No es el lead time: una marca de nicho produce en tres meses
+pero su apuesta tiene que aguantar cinco años. La ventana es un supuesto de diseño; el error a esa distancia
+(±12, ±16, ±19, ±25) sí está medido. En el gráfico, «tu ventana» se mueve a 2026, 2027, 2028 o 2030 y la línea
+sigue apagada más allá. Las tarjetas de la entrada muestran lead time, ventana, decide hasta y error.
+
+**Contemporary vuelve al selector**, con su fila de `CONSEJO`, pero no a la entrada en dos pasos, que sigue con
+tres categorías. Se adoptan los textos de la otra copia: lead time, high street, revival.
+
+**Pendiente.** El K-means usa el momento de búsqueda 2024–25, contaminado por el salto. Recalcularlo con
+2023–24 puede mover atributos de etapa; se hace aparte. También quedan textos de lectura escritos a mano que
+citan 2025 como año de retorno (lunares, animal print).

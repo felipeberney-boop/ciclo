@@ -82,6 +82,8 @@ main{min-width:0}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .stamp{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
+.copiar{font:inherit;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-2);background:transparent;border:1px solid var(--rule);border-radius:3px;padding:4px 9px;cursor:pointer}
+.copiar:hover{border-color:var(--ink-2);color:var(--ink)}
 
 /* ---------- portada ---------- */
 .cover{--cov-bg:#100F0D;--cov-ink:#F6F3EC;--cov-dim:#938F84;--cov-rule:#35322C;
@@ -388,7 +390,10 @@ td.k{font-weight:600;white-space:nowrap}
           <button data-c="nicho" aria-pressed="false">Nicho</button>
         </div>
       </div>
-      <span class="stamp" id="plazo">plazo de producción 6 meses</span>
+      <div style="display:flex;align-items:center;gap:14px">
+        <span class="stamp" id="plazo">plazo de producción 6 meses</span>
+        <button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link</button>
+      </div>
     </div>
 
     <!-- ================= PORTADA ================= -->
@@ -1081,8 +1086,9 @@ const CONSEJO={
         3:['Salir','Saturado. Para una marca de nicho esto ya es ruido.'],
         4:['Entrar','Un retorno bien leído es la mejor jugada de una marca chica: nostalgia con autoría.']}
 };
+let detSel=null;
 function abrirDetalle(id){
-  const t=T.find(x=>x.id===id);const v=$('#v-detalle');
+  const t=T.find(x=>x.id===id);detSel=id;const v=$('#v-detalle');
   const [acc,arg]=CONSEJO[cliente][t.et];
   const CLI={fast:'fast fashion',premium:'premium',nicho:'de nicho'}[cliente];
   v.innerHTML=`
@@ -1569,6 +1575,7 @@ function pintarRecorridos(){
   } else p.innerHTML='';
   $('#rlect').textContent=o.lect;
   $('#lag').innerHTML='';$('#lag').appendChild(lagChart());
+  if(vista==='recorridos')escribirLink(false);
 }
 function lagChart(){
   const L=REC.filter(o=>o.pv&&o.tipo!=='Jeans').sort((a,b)=>(a.abierto-b.abierto)||((a.pg-a.pv)-(b.pg-b.pv)));
@@ -1775,7 +1782,37 @@ function mostrar(v,keepNav){
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   window.scrollTo({top:0,behavior:'instant'});
+  vista=v;escribirLink(true);
 }
+/* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
+const VISTAS=['portada','radar','detalle','etapas','recorridos','marcas','retornos','consulta','racional'];
+let vista='portada',leyendoLink=false;
+function linkActual(){
+  const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
+  return '#'+vista+(el?'/'+el:'')+(cliente!=='premium'?'?c='+cliente:'');
+}
+function escribirLink(nueva){
+  if(leyendoLink)return;const h=linkActual();if(location.hash===h)return;
+  try{history[nueva&&location.hash?'pushState':'replaceState'](null,'',h);}catch(e){}
+}
+function leerLink(){
+  const m=location.hash.match(/^#([a-z]+)(?:\/([a-z0-9_-]+))?(?:\?c=([a-z]+))?$/);
+  if(!m||!VISTAS.includes(m[1]))return false;
+  leyendoLink=true;
+  try{
+    const c=m[3]||'premium',bc=$(`#cli button[data-c="${c}"]`);if(bc&&c!==cliente)bc.click();
+    if(m[1]==='detalle'&&m[2]&&T.some(t=>t.id===m[2]))abrirDetalle(m[2]);
+    else if(m[1]==='detalle')mostrar('radar');
+    else{if(m[1]==='recorridos'&&m[2]&&REC.some(o=>o.id===m[2])){recSel=m[2];pintarRecorridos();}mostrar(m[1]);}
+  }finally{leyendoLink=false;}
+  return true;
+}
+window.addEventListener('popstate',leerLink);
+$('#copiar').addEventListener('click',async()=>{
+  const b=$('#copiar'),u=location.href.split('#')[0]+linkActual();
+  try{await navigator.clipboard.writeText(u);b.textContent='Copiado';}catch(e){window.prompt('Copiá este link:',u);}
+  setTimeout(()=>{b.textContent='Copiar link';},1800);
+});
 $$('#nav a').forEach(a=>{a.setAttribute('tabindex','0');a.setAttribute('role','link');
   a.addEventListener('click',()=>mostrar(a.dataset.v));
   a.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();mostrar(a.dataset.v);}});});
@@ -1785,6 +1822,7 @@ $$('#cli button').forEach(b=>b.addEventListener('click',()=>{
   cliente=b.dataset.c;$$('#cli button').forEach(x=>x.setAttribute('aria-pressed',x===b));
   $('#plazo').textContent=PLAZO[cliente];pintarEtapas();
   if(!$('#v-detalle').hidden){const id=T.find(t=>$('#v-detalle').querySelector('h1').textContent===t.n);if(id)abrirDetalle(id.id);}
+  escribirLink(false);
 }));
 function pintarPipe(){
   const c=$('#pipe');c.innerHTML='';
@@ -1807,7 +1845,7 @@ $$('#v-portada .cvit').forEach(b=>b.addEventListener('click',()=>{
   recSel=DEP1[b.dataset.dep]||'jamplio';pintarRecorridos();mostrar('recorridos');
 }));
 pintarPipe();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
-mostrar('portada');
+if(!leerLink())mostrar('portada');
 </script>
 
 </body></html>

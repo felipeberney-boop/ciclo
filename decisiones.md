@@ -178,3 +178,13 @@ correcto queda entre los tres primeros entre el 67 % y el 92 % de las veces. Ani
 el resultado no sea el esperado (el de cuero da encaje primero).
 
 Detalle: `prompts/prompt_consulta_por_imagen_v2.md`.
+
+## 2026-10-13 · Links compartibles
+
+**Problema.** La app no cambiaba la dirección al navegar: no había forma de mandarle a un cliente el link a
+un atributo puntual, y el botón «Atrás» del navegador salía de la app.
+
+**Decisión.** Cada pantalla tiene su dirección: `#recorridos/cargo`, `#detalle/floral`, `#consulta`. El
+cliente va como `?c=fast` o `?c=nicho` (premium es el valor por defecto y no se escribe). Cambiar de pantalla
+crea una entrada en el historial; cambiar de atributo o de cliente actualiza la dirección sin crearla, para que
+«Atrás» vuelva a la pantalla anterior y no recorra cada clic. Botón «Copiar link» en la barra del cliente.

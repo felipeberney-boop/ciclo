@@ -263,3 +263,27 @@ se suben al repositorio— pero ahora está fundamentada.
 
 **Pendiente concreto.** Quien bajó el dataset de Zara de febrero 2024 tiene que pegar la URL de
 Kaggle en `fuentes_y_descargas.md` y repetir la verificación. Es la última que falta.
+
+## 2026-10-13 · El Zara de febrero 2024 es el cuarto dataset sintético
+
+**Qué probamos.** Al llegar el archivo lo testeamos como a los tres anteriores.
+
+**Qué encontramos.** La columna `Sales Volume` no son ventas:
+
+- correlación con el precio: **−0,07**
+- media con promoción 1.827, sin promoción **1.821** — seis unidades de diferencia sobre 1.824
+- desvío observado 696 contra 710, que es el de una uniforme sobre el mismo rango
+- los diez deciles con la misma cantidad de productos
+
+Las ventas reales de retail son muy asimétricas: unos pocos productos se llevan casi todo. Esto es
+plano. `Promotion`, `Seasonal` y `Product Position` se reparten casi 50/50 o en tercios, como se
+esperaría de columnas generadas al azar.
+
+**Lo que sí es real** es lo scrapeado: `name`, `description`, `price`, `url`, `sku`, `terms`,
+`section` y la fecha. Las descripciones son copy auténtico de Zara, y es exactamente la parte que
+usamos para contar proporciones. O sea que el uso que le veníamos dando está bien; lo que hay que
+no hacer es tocar las columnas de venta.
+
+**Dos cosas que no sabíamos del archivo.** Es **86 % menswear** (218 contra 34), el desbalance
+opuesto al que suponíamos para el resto del corpus. Y trae **31 productos de calzado**, todos de
+hombre: es lo único de calzado que tenemos, y el calzado era el agujero declarado frente a Lyst.

@@ -103,11 +103,24 @@ fecha en que lo bajamos y su licencia.
 ## Catálogo
 
 **Zara febrero 2024** (Kaggle)
-- Contenido: 252 filas, 228 SKU únicos, con descripciones reales scrapeadas
+- Contenido: 252 filas, 228 SKU únicos. Un solo scrape, el **2024-02-19**. Precios en USD.
 - Descargado: 08/09/2026
-- Licencia: **sin confirmar — falta la URL exacta del dataset.** Es la única de las cuatro que quedó
-  sin verificar: no pudimos identificar cuál de los varios datasets de Zara en Kaggle es el que
-  bajamos. Quien lo haya descargado tiene que pegar acá el link y repetir la verificación.
+- Licencia: **sin confirmar — falta la URL exacta del dataset.** Quien lo bajó tiene que pegar acá el
+  link de Kaggle y repetir la verificación.
+- **Mitad real, mitad sintético** (verificado el 13/10/2026). Hay que separar las columnas:
+  - **Reales y usables:** `url`, `sku`, `name`, `description`, `price`, `scraped_at`, `terms`,
+    `section`. Las descripciones son copy auténtico de Zara. Es la parte que usamos para la minería
+    de texto de proporciones.
+  - **Sintéticas, no usar:** `Sales Volume`, `Promotion`, `Seasonal`, `Product Position`.
+    `Sales Volume` tiene correlación −0,07 con el precio; la media con promoción es 1.827 y sin
+    promoción 1.821, una diferencia de **6 unidades** sobre 1.824; y su desvío observado (696) es
+    casi idéntico al de una uniforme sobre su rango (710), con los diez deciles igual de poblados.
+    Son columnas generadas al azar, no ventas.
+- **Es 86 % menswear:** 218 filas MAN contra 34 WOMAN. El resto del corpus del proyecto
+  —Vogue, r/femalefashionadvice, los atributos tipo corset o encaje— se inclina a womenswear. Es el
+  desbalance opuesto al que suponíamos.
+- **Trae calzado:** 31 productos con `terms = shoes`, todos de hombre. Es lo único de calzado que
+  tenemos medido, y el calzado era el agujero declarado contra Lyst.
 
 **Wish 2020** (Kaggle) — `computed_insight_success_of_active_sellers`
 - Link: https://www.kaggle.com/datasets/jmmvutu/summer-products-and-sales-in-ecommerce-wish

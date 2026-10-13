@@ -212,3 +212,29 @@ sólo lo que sí está: el lead time y las acciones de `CONSEJO` por etapa.
 **De paso.** «Premium» pasa a llamarse «High fashion» en la barra, para usar el término de industria. Se
 corrigió un error previo: el detalle de cuero no abría porque buscaba «Campera de cuero» en el modelo, donde
 se llama «Cuero».
+
+## 2026-10-13 · Gráficos legibles y hasta 2030
+
+**Devolución del profesor.** La interfaz y los gráficos se ven caóticos: no se puede seguir una línea, hay
+demasiados puntos, y el gráfico termina en 2026 cuando lo que quiere ver quien diseña es hacia dónde va.
+
+**Hasta 2030, sin prometer el futuro.** Cada curva sigue con «lo habitual»: el último valor medido más el
+cambio mediano histórico de su capa a esa distancia, con el rango real. Probado: no le gana a repetir el último
+valor (pasarela 20,9 contra 20,9; búsqueda 11,4 contra 12,6). Por eso la leyenda dice «no es un pronóstico» y
+las líneas quedan casi paralelas: a todas se les aplica el mismo movimiento mediano, y abrirlas sería dibujar
+una divergencia que los datos no muestran. Reemplaza en la app a la proyección de Holt de pasarela, para que
+las cuatro capas usen el mismo criterio.
+
+**Cómo se separan las líneas sin inventar.** Etiqueta directa al final de cada línea (nombre y valor en 2030,
+separadas al menos 14 px); un guión por capa, el mismo en el tramo medido y en el habitual; halo del color del
+fondo en los cruces; clic o teclado en la leyenda para aislar una capa (las demás quedan al 15 %) y ver su
+rango; medido 2,4 px, habitual 2 px, bandas al 5 % y 9 % sólo en la capa aislada. Se sacaron los puntos de pico
+(están en el panel de al lado) y el tramo punteado de pasarela anterior a 2010. En teléfono, un gráfico chico
+por capa.
+
+**Código visual común.** Llena = medido · punteada = lo habitual · punto hueco = año incompleto · tenue = poco
+dato o estimado. La curva de cascada del detalle, que es estimada, dejó de ser punteada y pasó a tenue.
+
+**Tu prenda en tienda.** Una línea vertical en hoy + el lead time de la categoría. Se mueve poco (de noviembre
+de 2026 a abril de 2027) porque los lead times son de semanas o meses; el pedido original hablaba de ventanas
+de 2026, 2028 y 2030 por categoría, pero esa validación no existe en esta versión y no se inventó.

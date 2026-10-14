@@ -40,3 +40,28 @@ for h in range(1, 7):
     ok &= igual
     print(f'h={h} ({2024 + h})  n={len(dl)}  mediana {q[50]:+.1f}  20–80: {q[20]:+.1f} a {q[80]:+.1f}  error ±{eam}  {"= guardado" if igual else "DIFIERE"}')
 print('el cono guardado se reproduce' if ok else 'ATENCIÓN: el cono guardado no se reproduce')
+
+# ---------- el cono con 2025 corregido (13/10/2026) ----------
+# Con el detrend, 2025 deja de ser un salto: cambio medio −1,2 y suben 6 de 16, como un año normal.
+# Así que la búsqueda se usa hasta 2025, corregida, y el cono se vuelve a medir con 2025 adentro.
+Y2 = list(range(2004, 2026))
+raw2 = {i: [R[i]['g'][y - 2004] for y in Y2] for i in ids}
+med2 = [st.median(raw2[i][k] for i in ids) for k in range(len(Y2))]
+X2 = {}
+for i in ids:
+    x = [raw2[i][k] / med2[k] for k in range(len(Y2))]
+    # desde 2010: antes había tan pocas búsquedas de moda que cualquier término pesaba de más
+    m = max(x[6:]); X2[i] = [None if Y2[k] < 2010 else round(100 * v / m, 1) for k, v in enumerate(x)]
+cono2 = {}
+for h in range(1, 8):  # hasta 7: la pasarela termina en 2023 y tiene que llegar a 2030
+    dl = [X2[i][k + h] - X2[i][k] for i in ids for k in range(len(Y2)) if Y2[k] >= 2010 and k + h < len(Y2)]
+    cono2[h] = {'anio': 2025 + h, 'q': {str(p): round(pct(dl, p), 1) for p in (5, 20, 50, 80, 95)},
+                'eam': round(st.mean(abs(v) for v in dl), 2), 'n': len(dl)}
+    print(f'con 2025 · h={h} ({2025 + h})  n={len(dl)}  mediana {cono2[h]["q"]["50"]:+.1f}  error ±{cono2[h]["eam"]}')
+json.dump({'meta': {'que_es': 'distribución real de los movimientos históricos de la búsqueda, no un pronóstico',
+                    'serie': 'Google Trends mundo, 16 atributos, 2010–2025; cada año dividido por la mediana de los 16 y cada serie llevada a su máximo de 2010–2025 (antes de 2010 hay tan pocas búsquedas de moda que cualquier término pesa de más)',
+                    'por_que_2025_entra': 'corregida, 2025 tiene cambio medio −1,2 y suben 6 de 16: el salto de Google era común a todos',
+                    'origenes': 'desde 2010', 'proyecta': '2026–2030 desde el último dato, 2025'},
+           'cono': cono2, 'serie_corregida': {i: X2[i] for i in ids}},
+          open('datasets_procesados/ciclo_cono__con_2025_corregido.json', 'w'), ensure_ascii=False, indent=1)
+print('escrito datasets_procesados/ciclo_cono__con_2025_corregido.json')

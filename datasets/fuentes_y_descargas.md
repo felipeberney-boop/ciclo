@@ -20,6 +20,11 @@ fecha en que lo bajamos y su licencia.
 - Link: https://huggingface.co/datasets/traopia/vogue-runway
 - Descargado: 15/09/2026
 - Archivo: `VogueRunway.parquet` · 99 MB de metadata, sin imágenes
+- Archivo: `VogueRunway_image.npy` · 1,3 GB, embeddings CLIP de cada imagen (float16, 1.281.633 × 512, mismo
+  orden que las filas del parquet). Lo usan `codigo/armar_diseno.py` y `codigo/armar_indice_clip.py`.
+- **Los dos archivos crudos no están en este repo:** pesan más que el límite de GitHub (100 MB por archivo) y
+  la fuente no tiene licencia para redistribuirlos. Se bajan del link de arriba. Lo que sí está en el repo es
+  todo lo calculado a partir de ellos: `datasets_procesados/`, `app/clip/` y `app/diseno/diseno.json`.
 - Contenido: 1.281.633 imágenes con diseñador, temporada, año, ciudad y tags
 - Usado: 902.566 looks (filtro `section=Collection`, sin Bridal, 2000–2023)
 - Licencia: **sin licencia declarada.** La ficha del dataset no tiene campo de licencia ni condiciones

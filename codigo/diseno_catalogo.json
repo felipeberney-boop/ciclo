@@ -252,9 +252,81 @@
      "n": "Polera",
      "en": "a turtleneck t-shirt",
      "sil": "cuellos/cuello_turtleneck"
+    },
+    {
+     "id": "halter",
+     "n": "Halter",
+     "en": "a halter neck t-shirt",
+     "sil": "cuellos/cuello_halter",
+     "solo": "mujer"
+    },
+    {
+     "id": "cowl",
+     "n": "Cuello drapeado",
+     "en": "a cowl neck t-shirt",
+     "sil": "cuellos/cuello_cowl",
+     "solo": "mujer"
+    },
+    {
+     "id": "mock",
+     "n": "Mock neck",
+     "en": "a mock neck t-shirt",
+     "sil": "cuellos/cuello_mock"
     }
    ],
-   "nota_cortes": "fit"
+   "nota_cortes": "fit",
+   "mangas": [
+    {
+     "id": "corta",
+     "n": "Manga corta",
+     "en": "a short-sleeve t-shirt",
+     "sil": "mangas/manga_short"
+    },
+    {
+     "id": "larga",
+     "n": "Manga larga",
+     "en": "a long-sleeve t-shirt",
+     "sil": "mangas/manga_long"
+    },
+    {
+     "id": "sinmanga",
+     "n": "Sin manga",
+     "en": "a sleeveless t-shirt",
+     "sil": "mangas/manga_sleeveless"
+    },
+    {
+     "id": "tresq",
+     "n": "Manga tres cuartos",
+     "en": "a three-quarter sleeve t-shirt",
+     "sil": "mangas/manga_three-q"
+    },
+    {
+     "id": "drop",
+     "n": "Hombro caído",
+     "en": "a drop-shoulder t-shirt",
+     "sil": "mangas/manga_drop"
+    },
+    {
+     "id": "raglan",
+     "n": "Raglan",
+     "en": "a raglan sleeve t-shirt",
+     "sil": "mangas/manga_raglan"
+    },
+    {
+     "id": "puff",
+     "n": "Manga abullonada",
+     "en": "a puff sleeve t-shirt",
+     "sil": "mangas/manga_puff",
+     "solo": "mujer"
+    },
+    {
+     "id": "balloon",
+     "n": "Manga globo",
+     "en": "a balloon sleeve t-shirt",
+     "sil": "mangas/manga_balloon",
+     "solo": "mujer"
+    }
+   ]
   },
   {
    "id": "buzos",
@@ -338,7 +410,40 @@
      "sil": "cuellos/cuello_turtleneck"
     }
    ],
-   "nota_cortes": "fit"
+   "nota_cortes": "fit",
+   "mangas": [
+    {
+     "id": "larga",
+     "n": "Manga larga",
+     "en": "a long-sleeve sweatshirt",
+     "sil": "mangas/manga_long"
+    },
+    {
+     "id": "corta",
+     "n": "Manga corta",
+     "en": "a short-sleeve sweatshirt",
+     "sil": "mangas/manga_short"
+    },
+    {
+     "id": "drop",
+     "n": "Hombro caído",
+     "en": "a drop-shoulder sweatshirt",
+     "sil": "mangas/manga_drop"
+    },
+    {
+     "id": "raglan",
+     "n": "Raglan",
+     "en": "a raglan sleeve sweatshirt",
+     "sil": "mangas/manga_raglan"
+    },
+    {
+     "id": "balloon",
+     "n": "Manga globo",
+     "en": "a balloon sleeve sweatshirt",
+     "sil": "mangas/manga_balloon",
+     "solo": "mujer"
+    }
+   ]
   },
   {
    "id": "abrigos",

@@ -1,4 +1,4 @@
-// Embeddings de texto CLIP (ViT-B/32) para el recorrido «Diseñar»: cortes, cuellos, colores por prenda, estampas y público.
+// Embeddings de texto CLIP (ViT-B/32) para el recorrido «Diseñar»: cortes, cuellos, mangas, colores por prenda, estampas y público.
 // Lee codigo/diseno_catalogo.json y escribe textos_diseno.json (intermedio, no se sube).
 // Uso (desde la raíz del repo): node codigo/calcular_textos_diseno.mjs salida.json
 import { AutoTokenizer, CLIPTextModelWithProjection } from '@huggingface/transformers';
@@ -14,6 +14,7 @@ for (const pr of C.prendas) for (const c of pr.cortes) {
 }
 for (const pr of C.prendas) {
   P['prenda:' + pr.id] = [`a runway photo of ${sin(pr.en)}`, `a fashion photo of a model wearing ${sin(pr.en)}`];
+  for (const k of pr.mangas || []) P['manga:' + pr.id + ':' + k.id] = [`a runway photo of ${sin(k.en)}`, `a fashion photo of a model wearing ${sin(k.en)}`];
   for (const k of pr.cuellos || []) P['cuello:' + pr.id + ':' + k.id] = [`a runway photo of ${sin(k.en)}`, `a close-up fashion photo of ${sin(k.en)}`];
 }
 for (const e of C.estampas) P['estampa:' + e.id] = [`a runway photo of clothing with ${sin(e.en)}`, `a fashion photo of ${sin(e.en)}`];

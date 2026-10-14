@@ -504,3 +504,13 @@ marcado como interpretación. El cuello es la lectura más débil: en una foto d
 **La pregunta del país, afuera.** Con dos opciones (Argentina / otro país) quedaba raro, y una lista de países
 prometería datos locales que no tenemos. La entrada es de tres preguntas. El dato argentino queda en
 Recorridos, como «búsqueda local (AR)», para cualquiera.
+
+**Mangas, más cuellos y los dibujos adentro de la página (14/10/2026).** Remeras y buzos suman el paso «Manga»
+(corta y larga primero; después sin manga, tres cuartos, hombro caído, raglan, abullonada y globo), leído por CLIP
+igual que fit y cuello. Remeras suma halter, cuello drapeado y mock neck. Halter, drapeado, abullonada y globo no
+se muestran si diseñás para hombre. Los dibujos ahora viajan dentro de los datos (`DIS.svg`, lo arma
+`codigo/armar_diseno.py`) y no como archivos aparte: así no hay tarjetas vacías mientras cargan ni diferencias
+entre navegadores.
+
+**Menú más corto.** Cuatro secciones a la vista —Diseñar, Tendencias (el radar), Recorridos y Buscar por imagen—
+y el resto (El ciclo, Marcas, Retornos, Método) detrás de «Más».

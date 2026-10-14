@@ -115,8 +115,12 @@ for pr in C['prendas']:
         for item, (a, d) in zip(P['cortes'], r): item['ahora'], item['cambio'] = a, d
         P['n_fit'] = n
         n, r = reparto([f'cuello:{pr["id"]}:{x["id"]}' for x in pr['cuellos']], pool, score, top)
-        P['cuellos'] = [dict({k: x[k] for k in ('id', 'n', 'sil')}, ahora=a, cambio=d) for x, (a, d) in zip(pr['cuellos'], r)]
+        P['cuellos'] = [dict({k: x[k] for k in ('id', 'n', 'sil', 'solo') if k in x}, ahora=a, cambio=d) for x, (a, d) in zip(pr['cuellos'], r)]
         P['n_cuello'] = n
+        n, r = reparto([f'manga:{pr["id"]}:{x["id"]}' for x in pr['mangas']], pool, score, top)
+        P['mangas'] = [dict({k: x[k] for k in ('id', 'n', 'sil', 'solo') if k in x}, ahora=a, cambio=d) for x, (a, d) in zip(pr['mangas'], r)]
+        P['n_manga'] = n
+        print('   manga', [(x['n'], x['ahora'], x['cambio']) for x in P['mangas']])
         P['color'] = colores(f'color:{pr["id"]}:{pr["cortes"][1]["id"]}', pr.get('colores') or C['colores_generales'], pool, score, top=top)
         print(pr['n'], 'fit', [(x['n'], x['ahora'], x['cambio']) for x in P['cortes']], '\n   cuello', [(x['n'], x['ahora'], x['cambio']) for x in P['cuellos']], n)
     salida['prendas'].append(P)
@@ -126,6 +130,11 @@ for e in C['estampas']:
     item['refs'] = referencias(sim(f'estampa:{e["id"]}'), pool)
     item['fuente_refs'] = 'etiqueta de Vogue + CLIP' if e.get('vogue') else 'CLIP'
     salida['estampas'].append(item)
+# las ilustraciones van adentro de los datos: la app las dibuja sin bajar archivos aparte
+import re
+usadas = {pr['sil'] for pr in salida['prendas'] if pr.get('sil')} | {x['sil'] for pr in salida['prendas'] for k in ('cortes', 'cuellos', 'mangas') for x in pr.get(k, []) if x.get('sil')} \
+         | {e['sil'] for e in salida['estampas'] if e.get('sil')}
+salida['svg'] = {u: re.sub(r'\s+', ' ', re.sub(r'<svg([^>]*?) width="\d+" height="\d+"', r'<svg\1', open(f'app/siluetas/{u}.svg').read())).strip() for u in sorted(usadas)}
 os.makedirs('app/diseno', exist_ok=True)
 json.dump(salida, open('app/diseno/diseno.json', 'w'), ensure_ascii=False, separators=(',', ':'))
 print('escrito app/diseno/diseno.json ·', round(os.path.getsize('app/diseno/diseno.json') / 1e3), 'KB')

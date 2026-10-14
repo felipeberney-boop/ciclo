@@ -13,6 +13,9 @@ Scripts de extracción, cálculo y render. Ninguno es parte del sitio: el sitio 
 | `contar_terminos_reddit.py` | Cuenta, por año, los posts cuyo título nombra cada término |
 | `proyectar_pasarela.py` | Elige un método por backtest y proyecta la pasarela a 2024–2026 |
 | `empalmar_reddit_2026.py` | Lleva Reddit 2026 a la escala de la serie y escribe `datasets/completado_2026/` |
+| `diseno_catalogo.json` | Catálogo del recorrido Diseñar: prendas, cortes, colores y estampas, con los textos para CLIP |
+| `calcular_textos_diseno.mjs` | Embeddings de texto CLIP del catálogo |
+| `armar_diseno.py` | Fotos de referencia y colores que ganan presencia en la pasarela → `app/diseno/diseno.json` |
 | `calcular_cono.py` | Reproduce el cono de 2030 (búsqueda detrendeada, sin 2025) y lo compara con el JSON guardado |
 | `verificar_pasarela.py` | Recalcula la pasarela desde el parquet original de Vogue y la compara con el repo |
 | `prueba_busqueda_contra_ventas_visuelle.py` | ¿La búsqueda predice la venta? Contra las ventas reales de VISUELLE |

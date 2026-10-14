@@ -447,3 +447,36 @@ tres categorías. Se adoptan los textos de la otra copia: lead time, high street
 **Pendiente.** El K-means usa el momento de búsqueda 2024–25, contaminado por el salto. Recalcularlo con
 2023–24 puede mover atributos de etapa; se hace aparte. También quedan textos de lectura escritos a mano que
 citan 2025 como año de retorno (lunares, animal print).
+
+## 2026-10-13 · La app como asistente de diseño: preguntas, Diseñar y la búsqueda corregida
+
+**Devolución del profesor.** La interfaz es confusa: un mar de datos y gráficos. Pidió referencias visuales de
+cada tendencia.
+
+**La idea del grupo.** Que la app acompañe a quien diseña en vez de mostrarle todo: primero sabe quién es,
+después lo lleva paso a paso —prenda, corte, color, estampa— y en cada paso le recomienda según lo que se
+mueve afuera, pero la que decide es la persona.
+
+**Las preguntas del principio.** País, público (mujer, hombre, sin género), si trabaja para una marca o por su
+cuenta, y categoría. Con eso se filtra qué mostrar. El país importa por cómo funciona la moda: se crea afuera y
+llega después. Para Argentina la app agrega «¿ya llegó acá?», comparando la búsqueda argentina con la mundial:
+el jean skinny tocó techo afuera en 2012 y acá en 2016, el corset un año después, el cargo el mismo año. El
+desfase va de 0 a 4 años, no es una regla. De otros países no hay datos locales y la app lo dice.
+
+**Diseñar.** Es la pantalla principal después de las preguntas. Cada paso tiene tarjetas con una foto real de
+pasarela (filtrada por público), la acción para el perfil y si gana o pierde terreno afuera; lo recomendado
+queda marcado. Los cortes de jean se llaman como se llaman —baggy, wide leg, mom, barrel, recto, bootcut, flare,
+tapered, skinny, slim— y para cada uno se usa su parte de todas las búsquedas de jeans. El color sale de leer con
+CLIP la pasarela 2018–2023 (`prompts/prompt_disenar_referencias_y_colores_v1.md`): es interpretación de un
+modelo, no venta, y así está marcado. Los gráficos siguen en «Recorridos» para quien quiera ver el detalle.
+
+**La búsqueda, corregida en vez de recortada.** 2025 había quedado fuera por el salto de medición de Google. En
+vez de perder el año, cada búsqueda se lee como peso frente a las otras búsquedas de moda (cada año dividido por
+la mediana de los 16): 2025 vuelve a ser un año normal y queda lo que le importa a quien diseña, qué gana terreno
+y qué lo pierde. Se usa desde 2010, porque antes había tan pocas búsquedas de moda que cualquier término pesaba
+de más. El K-means ya usaba esta corrección (media de 35 términos): se verificó y no hizo falta recalcularlo.
+Argentina no tuvo el salto y se usa tal cual. El cono se volvió a medir con 2025 adentro.
+
+**Lo que se sacó de la vista.** La fila de cifras de Recorridos («1,28 M looks», «retraso 0 a +2», que además
+contradecía que la pasarela no adelanta a la búsqueda) y la tira de estado de las fuentes del Radar. En su lugar:
+la decisión para el perfil y qué gana y qué pierde terreno afuera.

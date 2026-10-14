@@ -21,18 +21,21 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 
 ## Captura
 
-La app arranca con dos preguntas —para quién trabajás y qué categoría— y con eso ajusta qué te muestra:
+La app arranca con cuatro preguntas —desde dónde diseñás, para quién, si trabajás para una marca o por tu
+cuenta, y la categoría— y con eso decide qué mostrarte:
 
-![La entrada: ¿para quién trabajás?](entregas/entrega_3/capturas/captura_01_entrada_dos_opciones.png)
+![La entrada: ¿desde dónde diseñás?](entregas/entrega_3/capturas/captura_01_entrada_pais.png)
 
-Cada tendencia, de la pasarela a la búsqueda, hasta 2030. La línea llena es medida; la punteada es dónde
-quedaría si se moviera como la mediana de la historia, con el error medido. No es un pronóstico:
+Después, **Diseñar**: elegís prenda, corte, color y estampa, y en cada paso la app te marca lo que conviene
+según tu perfil y lo que gana terreno afuera, con fotos reales de pasarela. Vos decidís:
 
-![Recorridos hasta 2030](entregas/entrega_3/capturas/captura_05_grafico_2030.png)
+![Diseñar: elegí la prenda](entregas/entrega_3/capturas/captura_03_disenar_prenda.png)
 
-Subí una foto y CLIP, en tu navegador, te dice qué atributos ve y qué looks de pasarela se le parecen:
+![Tu diseño, con referencias](entregas/entrega_3/capturas/captura_06_tu_diseno.png)
 
-![Consulta por imagen](entregas/entrega_3/capturas/captura_06_consulta_por_imagen.png)
+Para ver el detalle, cada tendencia de la pasarela a la búsqueda hasta 2030 (la punteada no es un pronóstico):
+
+![Recorridos hasta 2030](entregas/entrega_3/capturas/captura_07_recorridos_hasta_2030.png)
 
 Todas las capturas actuales en `entregas/entrega_3/capturas/`; las de la Entrega 2, en `entregas/entrega_2/capturas/`.
 
@@ -65,6 +68,8 @@ Sin conexión funciona igual, con las tipografías del sistema.
 
 | | |
 |---|---|
+| Entrada | Cuatro preguntas: país, público, marca o por tu cuenta, categoría |
+| Diseñar | Paso a paso: prenda → corte → color → estampa → tu diseño, con referencias y recomendación |
 | Portada | Dos entradas: por prenda o por el índice |
 | Radar | Los atributos con su paleta medida y su posición en el ciclo |
 | Detalle | El recorrido de un atributo por las cuatro capas |
@@ -107,6 +112,7 @@ Seis puntos. Tres corren una sola vez, en batch; tres se disparan con el usuario
 | IA-4 | Ubicar una tendencia nueva | Asignación al centroide más cercano | en vivo |
 | IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE | en vivo |
 | IA-6 | Consulta por imagen | CLIP en el navegador: zero-shot + looks parecidos | en vivo |
+| IA-7 | Diseñar: referencias y colores | CLIP sobre la pasarela de Vogue | batch |
 
 **La regla que atraviesa todo:** el modelo de lenguaje nunca ve una fila de la base. Recibe métricas ya
 calculadas —nivel, momento, crecimiento, distancia al pico— y el tipo de cliente. Todo lo que devuelve

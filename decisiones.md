@@ -480,3 +480,11 @@ Argentina no tuvo el salto y se usa tal cual. El cono se volvió a medir con 202
 **Lo que se sacó de la vista.** La fila de cifras de Recorridos («1,28 M looks», «retraso 0 a +2», que además
 contradecía que la pasarela no adelanta a la búsqueda) y la tira de estado de las fuentes del Radar. En su lugar:
 la decisión para el perfil y qué gana y qué pierde terreno afuera.
+
+**Siluetas en vez de sólo fotos (13/10/2026).** Una foto de pasarela trae lavado, modelo y fondo, y el corte se
+pierde. En «Diseñar» los cortes de jean se muestran con un dibujo plano propio (`app/siluetas/`, todos con la
+misma cintura: sólo cambia la pierna) y las estampas con una muestra de tela en el color que elegiste; la foto de
+pasarela queda chica en una esquina, como referencia. En «Tu diseño» el jean se dibuja relleno con tu color y tu
+estampa. Mom no es un corte (es tiro alto + pierna tapered) y se muestra así; el pied-de-poule quedó mal dibujado y
+no se usa. Abrigos, buzo, cargo, corset y las estampas sin muestra (floral, encaje, gamuza) siguen con foto.
+Fits, cuellos y mangas quedan guardados para cuando la app los pregunte como ejes aparte.

@@ -143,6 +143,15 @@ body.on-cover .app{border:0;max-width:none}
 .dzc.es-rec{border-color:var(--ia-t)}
 .dzimg{position:relative;display:block;width:100%;aspect-ratio:3/4;background:var(--paper-2);flex:none}
 .dzimg img{width:100%;height:100%;object-fit:cover;display:block}
+.dzsil{position:absolute;inset:7% 14% 7% 14%;background:var(--ink);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.dztela{position:absolute;inset:0;background-color:var(--paper-2)}
+.dztela i{position:absolute;inset:0;background:var(--tc,var(--ink));-webkit-mask:var(--m) 0 0/60px 60px repeat;mask:var(--m) 0 0/60px 60px repeat}
+.dzpas{position:absolute;right:8px;bottom:8px;width:32%;aspect-ratio:3/4;border:2px solid var(--card);border-radius:3px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.dzpas img{width:100%;height:100%;object-fit:cover}
+.dzpas span{position:absolute;left:0;right:0;bottom:0;background:rgba(20,19,15,.62);color:#F2F0EA;font-family:"IBM Plex Mono",monospace;font-size:8.5px;text-align:center;padding:1px 0}
+.dzsilnota{position:absolute;left:8px;bottom:8px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;color:var(--ink-3);max-width:55%;line-height:1.3}
+.dzdib{flex:none;width:150px;height:200px;border-radius:4px;background:var(--paper-2);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;color:var(--ink)}
+.dzdib svg{height:92%;width:auto}
 .dztop{background:var(--card)!important;color:var(--ok)!important;border:1px solid var(--ok)}
 .dzrec{position:absolute;left:8px;top:8px;background:var(--ia);color:#14130F;font-family:"IBM Plex Mono",monospace;font-size:10px;padding:3px 7px;border-radius:2px}
 .dzrec2{white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-size:10px;background:var(--ia);color:#14130F;padding:1px 6px;border-radius:2px;margin-left:6px}
@@ -1497,14 +1506,38 @@ function dzLectura(it,prendaId){
   return {et,acc,d,cuota,aca,rec,score:(acc?ACC_ORDEN[acc[0]]:1.5)*10+(d||0)/(prendaId==='jeans'?1:5)};
 }
 const dzFlecha=(d,jeans)=>d==null?'':`<span class="dzt ${d>0.5?'sube':d<-0.5?'baja':''}">${d>0.5?'▲':d<-0.5?'▼':'='} ${d>0?'+':''}${jeans?d.toFixed(1)+' pts de las búsquedas de jeans':Math.round(d)+' afuera'}</span>`;
+/* siluetas propias (app/siluetas, ver su LEEME): dibujo plano del corte y muestra de la estampa.
+   Mom no es un corte sino tiro alto + pierna tapered; houndstooth quedó mal y no se usa. */
+const SILJ={baggy:'baggy',wideleg:'wide-leg',mom:'tapered',barrel:'barrel',recto:'straight',bootcut:'bootcut',flare:'flare',tapered:'tapered',skinny:'skinny',slim:'slim'};
+const SILE={lunares:'polka-dot',rayas:'breton',animal:'leopard',cuadros:'tartan'};
+const silJean=id=>SILJ[id]&&`siluetas/jeans/corte_${SILJ[id]}.svg`,silEst=id=>SILE[id]&&`siluetas/estampas/estampa_${SILE[id]}.svg`;
+const claro=h=>{const n=parseInt(h.slice(1),16);return (.299*(n>>16)+.587*(n>>8&255)+.114*(n&255))/255>.62;};
+function dzTela(est,hex){ // la tela: color elegido de fondo y la estampa en contraste
+  const u=est&&silEst(est),tc=hex?(claro(hex)?'rgba(20,19,15,.78)':'rgba(242,240,234,.88)'):'';
+  return `<span class="dztela" style="${hex?`background-color:${hex};`:''}">${u?`<i style="--m:url(${u});${tc?`--tc:${tc}`:''}"></i>`:''}</span>`;
+}
 function dzTarjeta(it,L,attrs,jeans,extra,i){
-  const f=dzFotos(it,1)[0];
+  const f=dzFotos(it,1)[0],esEst=attrs.startsWith('data-es'),sj=jeans&&silJean(it.id),se=esEst&&(silEst(it.id)||it.id==='liso');
+  const img=f?`<img loading="${i<8?'eager':'lazy'}" alt="${it.n}: ${f.d}, ${TEMP[f.s]||''} ${f.y}" src="${vogueFoto(f.f,sj||se?240:480)}">`:'';
+  const vis=sj?`<span class="dzsil" style="--m:url(${sj})" role="img" aria-label="Dibujo del corte ${it.n}"></span>${it.id==='mom'?'<span class="dzsilnota">tiro alto + pierna tapered</span>':''}${f?`<span class="dzpas">${img}<span>pasarela</span></span>`:''}`
+    :se?`${dzTela(it.id,dz.color&&dzColHex())}${f&&it.id!=='liso'?`<span class="dzpas">${img}<span>pasarela</span></span>`:''}`:img;
   return `<button class="dzc${L.rec?' es-rec':''}" type="button" ${attrs}>
-    <span class="dzimg">${f?`<img loading="${i<8?'eager':'lazy'}" alt="${it.n}: ${f.d}, ${TEMP[f.s]||''} ${f.y}" src="${vogueFoto(f.f,480)}">`:''}${L.rec?'<span class="dzrec">Te lo recomendamos</span>':L.top?'<span class="dzrec dztop">Gana más terreno</span>':''}</span>
+    <span class="dzimg">${vis}${L.rec?'<span class="dzrec">Te lo recomendamos</span>':L.top?'<span class="dzrec dztop">Gana más terreno</span>':''}</span>
     <span class="dzb"><span class="dzn">${it.n}</span>
       <span class="dzm">${L.acc?`<span class="tag ${L.acc[0]==='Salir'?'alert':L.acc[0]==='Esperar'?'demo':'ia'}">${L.acc[0]}</span>`:''}${L.et?`<span class="dze">${L.et.n.toLowerCase()}</span>`:''}</span>
       ${dzFlecha(L.d,jeans)}${L.cuota!=null?`<span class="dzq">${L.cuota.toFixed(0)} % de las búsquedas de jeans</span>`:''}
       ${L.aca?`<span class="dza">${L.aca}</span>`:''}${extra||''}</span></button>`;
+}
+function dzColHex(){const pr=DIS.prendas.find(p=>p.id===dz.prenda),co=pr&&pr.cortes.find(c=>c.id===dz.corte),c=co&&co.color.colores.find(x=>x.id===dz.color);return c&&c.hex;}
+async function dzDibujo(el,corte,est,hex){ // tu jean dibujado: el contorno relleno con tu color y tu estampa
+  try{
+    const t=await (await fetch(silJean(corte))).text(),d=new DOMParser().parseFromString(t,'image/svg+xml').documentElement;
+    const forma=d.querySelector('path').getAttribute('d');let pat='';
+    if(est&&silEst(est)){const e=new DOMParser().parseFromString(await (await fetch(silEst(est))).text(),'image/svg+xml').documentElement,g=e.querySelector('g');
+      g.removeAttribute('clip-path');pat=`<defs><pattern id="dzpat" width="42" height="42" patternUnits="userSpaceOnUse"><g transform="scale(.35)" color="${claro(hex)?'rgba(20,19,15,.78)':'rgba(242,240,234,.88)'}">${g.outerHTML}</g></pattern></defs>`;}
+    d.insertAdjacentHTML('afterbegin',`${pat}<path d="${forma}" fill="${hex}"/>${pat?`<path d="${forma}" fill="url(#dzpat)"/>`:''}`);
+    d.removeAttribute('width');d.removeAttribute('height');el.innerHTML=d.outerHTML;
+  }catch(e){}
 }
 function dzMarcarTop(L){const m=L.filter(x=>x.L.d!=null&&!x.L.rec&&x.L.d>0).sort((a,b)=>b.L.d-a.L.d)[0];if(m)m.L.top=true;}
 function dzPrendas(){return DIS.prendas.filter(p=>!(publico==='hombre'&&p.id==='tops'));}
@@ -1537,14 +1570,14 @@ function pintarDisenar(){
   }else if(dz.paso===4){
     const L=DIS.estampas.map(e=>({e,L:e.id==='liso'?{rec:false,acc:null,et:null,d:null,score:12}:dzLectura(e,null)})).sort((a,b)=>b.L.score-a.L.score);dzMarcarTop(L);
     C.innerHTML=`<h2 class="dzh">¿Con qué estampa o material?</h2><div class="dzgrid">${L.map(({e,L},i)=>dzTarjeta(e,L,`data-es="${e.id}"`,false,e.id==='liso'?'<span class="dzq">sin estampa: la base</span>':'',i)).join('')}</div>`+
-      nota('Acción según la etapa del K-means y tu perfil; «afuera», cambio en la búsqueda mundial de 2023 a 2025 frente a las otras búsquedas de moda. Rayas y gamuza no entran al K-means: sólo tienen el dato de búsqueda.');
+      nota('Acción según la etapa del K-means y tu perfil; «afuera», cambio en la búsqueda mundial de 2023 a 2025 frente a las otras búsquedas de moda. Rayas y gamuza no entran al K-means: sólo tienen el dato de búsqueda. Las muestras van en el color que elegiste.');
     $$('#dzcuerpo [data-es]').forEach(b=>b.onclick=()=>{dz.estampa=b.dataset.es;dz.paso=5;pintarDisenar();window.scrollTo({top:0,behavior:'instant'});});
   }else{
     const Lc=dzLectura(co,pr.id),Le=es.id==='liso'?null:dzLectura(es,null),fotos=dzFotos(co,6).concat(es.id==='liso'?[]:dzFotos(es,3));
     const linea=(t,L,jeans)=>`<div class="dzrl"><span class="dzrk">${t}</span><span>${L&&L.acc?`<span class="tag ${L.acc[0]==='Salir'?'alert':L.acc[0]==='Esperar'?'demo':'ia'}">${L.acc[0]}</span> `:''}${L&&L.et?L.et.n.toLowerCase()+' · ':''}${L?dzFlecha(L.d,jeans):''}${L&&L.aca?` · ${L.aca}`:''}</span></div>`;
     const alerta=[Lc,Le].some(L=>L&&L.acc&&L.acc[0]==='Salir')?'<p class="note a" style="margin-top:14px"><b>Ojo:</b> elegiste algo que la app marca «Salir» para tu perfil. Si lo hacés, que sea a propósito.</p>':'';
     C.innerHTML=`<h2 class="dzh">Tu diseño</h2>
-      <div class="dzres"><div class="dzresh"><span class="sw grande" style="background:${col.hex}"></span><div><div class="dzresn serif">${pr.id==='jeans'?'Jean '+co.n.toLowerCase():co.n}, ${col.n.toLowerCase()}${es.id==='liso'?'':', '+es.n.toLowerCase()}</div>
+      <div class="dzres"><div class="dzresh"><span class="dzdib" id="dzdib">${pr.id==='jeans'&&silJean(co.id)?'':dzTela(es.id,col.hex)}</span><div><div class="dzresn serif">${pr.id==='jeans'?'Jean '+co.n.toLowerCase():co.n}, ${col.n.toLowerCase()}${es.id==='liso'?'':', '+es.n.toLowerCase()}</div>
         <div class="dzresp">Para ${PERFIL[cliente].n.toLowerCase()}${vinculo==='propia'?', por tu cuenta':', tu marca'} · tu ventana llega a ${PERFIL[cliente].hasta} (±${Math.round(PERFIL[cliente].banda)})</div></div></div>
         ${linea(pr.id==='jeans'?'Corte':'Prenda',Lc,pr.id==='jeans')}
         <div class="dzrl"><span class="dzrk">Color</span><span>${col.ahora.toFixed(0)} % de la pasarela 2022–23 · <span class="dzt ${col.cambio>0.5?'sube':col.cambio<-0.5?'baja':''}">${col.cambio>0?'+':''}${col.cambio.toFixed(1)} desde 2018–19</span> <span class="tag ia2">CLIP</span></span></div>
@@ -1553,6 +1586,7 @@ function pintarDisenar(){
       <h3 class="dzh3">Referencias de pasarela</h3><div class="dzrefs">${fotos.map(f=>`<a href="${vogueFoto(f.f,1280)}" target="_blank" rel="noopener"><img loading="lazy" alt="${f.d}, ${TEMP[f.s]||''} ${f.y}" src="${vogueFoto(f.f,320)}"><span>${f.d} · ${TEMP[f.s]||''} ${f.y}</span></a>`).join('')}</div>
       <div class="dzacc">${co.rec?`<button class="gvolver" type="button" id="dzver">Ver el recorrido completo de ${co.n.toLowerCase()} →</button>`:''}<button class="gvolver" type="button" id="dzotro">Diseñar otra prenda</button></div>`+
       nota('Fotos elegidas por CLIP en la pasarela de Vogue: pueden fallar. Acción y etapa según el K-means y tu perfil; «afuera», búsqueda mundial 2023→2025 frente a las otras búsquedas de moda. Nada de esto es un pronóstico.');
+    if(pr.id==='jeans'&&silJean(co.id))dzDibujo($('#dzdib'),co.id,es.id,col.hex);
     if($('#dzver'))$('#dzver').onclick=()=>{recSel=co.rec;pintarRecorridos();mostrar('recorridos');};
     $('#dzotro').onclick=()=>{Object.assign(dz,{paso:1,prenda:null,corte:null,color:null,estampa:null});pintarDisenar();window.scrollTo({top:0,behavior:'instant'});};
   }

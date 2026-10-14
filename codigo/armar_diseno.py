@@ -75,6 +75,19 @@ def colores(prefijo, lista, pool, score, top=None):
               'cambio': round(100 * (res['ahora'][x['id']] - res['antes'][x['id']]), 1)} for x in lista]
     return {'n': n, 'colores': sorted(filas, key=lambda r: -r['ahora'])}
 
+def reparto(claves, pool, score, top):
+    """Qué parte de los looks de una prenda eligió CLIP para cada opción (fit o cuello), 2018–19 contra 2022–23."""
+    Z = np.stack([sim(k) for k in claves], 1); elegido = Z.argmax(1); res, n = {}, {}
+    for per, (a0, a1) in (('antes', (2018, 2019)), ('ahora', (2022, 2023))):
+        m = pool & (anio >= a0) & (anio <= a1)
+        if top:
+            m2 = np.zeros(len(idx), bool)
+            for y in range(a0, a1 + 1):
+                cand = np.where(m & (anio == y))[0]; m2[cand[np.argsort(-score[cand])[:top]]] = True
+            m = m2
+        cnt = collections.Counter(elegido[m]); n[per] = int(m.sum()); res[per] = [cnt.get(j, 0) / n[per] for j in range(len(claves))]
+    return n, [(round(100 * a, 1), round(100 * (a - b), 1)) for a, b in zip(res['ahora'], res['antes'])]
+
 salida = {'nota': 'Referencias y colores leídos por CLIP en la pasarela de Vogue, 2018–2023. Es interpretación de un modelo, no venta.',
           'prendas': [], 'estampas': []}
 for pr in C['prendas']:
@@ -94,6 +107,18 @@ for pr in C['prendas']:
         P['cortes'].append(item)
         print(f'{pr["n"]:10s} {co["n"]:16s} refs {len(item["refs"]["mujer"])}/{len(item["refs"]["hombre"])} · colores ahora:',
               ', '.join(f'{x["n"]} {x["ahora"]}% ({x["cambio"]:+.1f})' for x in item['color']['colores'][:3]), '· n', item['color']['n'])
+        if pr.get('cuellos'): item['color'] = None  # el color de remeras y buzos se calcula una vez para la prenda, abajo
+    P.update({k: pr[k] for k in ('sil', 'rec', 'grupo', 'nota_cortes') if k in pr})
+    if pr.get('cuellos'):  # remeras y buzos: fit y cuello leídos por CLIP en la pasarela de la prenda
+        pool = con_etiqueta(pr.get('vogue')); score = sim(f'prenda:{pr["id"]}'); top = None if pr.get('vogue') else 300
+        n, r = reparto([f'corte:{pr["id"]}:{x["id"]}' for x in pr['cortes']], pool, score, top)
+        for item, (a, d) in zip(P['cortes'], r): item['ahora'], item['cambio'] = a, d
+        P['n_fit'] = n
+        n, r = reparto([f'cuello:{pr["id"]}:{x["id"]}' for x in pr['cuellos']], pool, score, top)
+        P['cuellos'] = [dict({k: x[k] for k in ('id', 'n', 'sil')}, ahora=a, cambio=d) for x, (a, d) in zip(pr['cuellos'], r)]
+        P['n_cuello'] = n
+        P['color'] = colores(f'color:{pr["id"]}:{pr["cortes"][1]["id"]}', pr.get('colores') or C['colores_generales'], pool, score, top=top)
+        print(pr['n'], 'fit', [(x['n'], x['ahora'], x['cambio']) for x in P['cortes']], '\n   cuello', [(x['n'], x['ahora'], x['cambio']) for x in P['cuellos']], n)
     salida['prendas'].append(P)
 for e in C['estampas']:
     pool = con_etiqueta(e.get('vogue'))

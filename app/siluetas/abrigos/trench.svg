@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Trench">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 83 40 C 77 48 62 44 52 50 L 30 196 L 50 200 L 60 110 L 54 286 L 146 286 L 140 110 L 150 200 L 170 196 L 148 50 C 138 44 123 48 117 40 C 107 50 93 50 83 40 Z"/>
+<path d="M 83 40 L 70 62 L 84 70 L 100 112" stroke-width="1.02"/>
+<path d="M 117 40 L 130 62 L 116 70 L 100 112" stroke-width="1.02"/>
+<path d="M 106 112 L 106 286" stroke-width="1.02"/>
+<path d="M 58 148 L 142 148" stroke-width="1.02"/>
+<path d="M 58 158 L 142 158" stroke-width="1.02"/>
+<path d="M 94 146 L 106 146 L 106 160 L 94 160 Z" stroke-width="1.02"/>
+<path d="M 64 58 L 80 92" stroke-width="1.02"/>
+<path d="M 136 58 L 120 92" stroke-width="1.02"/>
+<path d="M 37 176 L 55 180" stroke-width="1.02"/>
+<path d="M 163 176 L 145 180" stroke-width="1.02"/>
+<circle cx="90" cy="124" r="2.3" stroke-width="1.02"/>
+<circle cx="114" cy="124" r="2.3" stroke-width="1.02"/>
+<circle cx="90" cy="138" r="2.3" stroke-width="1.02"/>
+<circle cx="114" cy="138" r="2.3" stroke-width="1.02"/>
+<circle cx="90" cy="180" r="2.3" stroke-width="1.02"/>
+<circle cx="114" cy="180" r="2.3" stroke-width="1.02"/>
+</g></svg>

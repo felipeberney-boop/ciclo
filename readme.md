@@ -21,13 +21,14 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 
 ## Captura
 
-La app arranca con cuatro preguntas —desde dónde diseñás, para quién, si trabajás para una marca o por tu
-cuenta, y la categoría— y con eso decide qué mostrarte:
+La app arranca con tres preguntas —para quién diseñás, si trabajás para una marca o por tu cuenta, y la
+categoría— y con eso decide qué mostrarte:
 
-![La entrada: ¿desde dónde diseñás?](entregas/entrega_3/capturas/captura_01_entrada_pais.png)
+![La entrada: ¿para quién diseñás?](entregas/entrega_3/capturas/captura_01_entrada_publico.png)
 
 Después, **Diseñar**: elegís prenda, corte, color y estampa, y en cada paso la app te marca lo que conviene
-según tu perfil y lo que gana terreno afuera, con fotos reales de pasarela. Vos decidís:
+según tu perfil y lo que gana terreno afuera. Todo es dibujo plano —cortes, fits, cuellos y estampas en tu
+color— para ver la forma sin el ruido de una foto; las fotos de pasarela quedan como referencia al final. Vos decidís:
 
 ![Diseñar: elegí la prenda](entregas/entrega_3/capturas/captura_03_disenar_prenda.png)
 

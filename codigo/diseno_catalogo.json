@@ -1,75 +1,561 @@
 {
-  "nota": "Catálogo del recorrido «Diseñar»: prenda → corte → color → estampa o material. Cada ítem dice qué dato lo respalda. Los textos en inglés son los que lee CLIP; las etiquetas de Vogue, si existen, acotan dónde buscar.",
-  "publico": {
-    "mujer": "a photo of a woman wearing clothes",
-    "hombre": "a photo of a man wearing clothes"
+ "nota": "Catálogo del recorrido «Diseñar»: prenda → corte → color → estampa o material. Cada ítem dice qué dato lo respalda. Los textos en inglés son los que lee CLIP; las etiquetas de Vogue, si existen, acotan dónde buscar.",
+ "publico": {
+  "mujer": "a photo of a woman wearing clothes",
+  "hombre": "a photo of a man wearing clothes"
+ },
+ "prendas": [
+  {
+   "id": "jeans",
+   "n": "Jeans",
+   "en": "jeans",
+   "vogue": [
+    "Denim",
+    "Jeans"
+   ],
+   "cortes": [
+    {
+     "id": "baggy",
+     "n": "Baggy",
+     "en": "baggy loose jeans",
+     "busq": "baggy",
+     "grupo": "Jeans baggy",
+     "rec": "jamplio",
+     "sil": "jeans/corte_baggy"
+    },
+    {
+     "id": "wideleg",
+     "n": "Wide leg",
+     "en": "wide-leg jeans",
+     "busq": "wide leg",
+     "grupo": "Jeans baggy",
+     "rec": "jamplio",
+     "sil": "jeans/corte_wide-leg"
+    },
+    {
+     "id": "mom",
+     "n": "Mom",
+     "en": "high-waisted mom jeans",
+     "busq": "mom",
+     "grupo": "Jeans baggy",
+     "rec": "jamplio",
+     "sil": "jeans/corte_tapered"
+    },
+    {
+     "id": "barrel",
+     "n": "Barrel",
+     "en": "curved barrel-leg jeans",
+     "busq": "barrel",
+     "grupo": "Jeans baggy",
+     "rec": "jamplio",
+     "sil": "jeans/corte_barrel"
+    },
+    {
+     "id": "recto",
+     "n": "Recto",
+     "en": "straight-leg jeans",
+     "busq": "straight leg",
+     "grupo": "Jeans rectos",
+     "rec": "jmedio",
+     "sil": "jeans/corte_straight"
+    },
+    {
+     "id": "bootcut",
+     "n": "Bootcut",
+     "en": "bootcut jeans",
+     "busq": "bootcut",
+     "grupo": "Jeans rectos",
+     "rec": "jmedio",
+     "sil": "jeans/corte_bootcut"
+    },
+    {
+     "id": "flare",
+     "n": "Flare",
+     "en": "flared jeans",
+     "busq": "flare",
+     "grupo": "Jeans rectos",
+     "rec": "jmedio",
+     "sil": "jeans/corte_flare"
+    },
+    {
+     "id": "tapered",
+     "n": "Tapered",
+     "en": "tapered jeans",
+     "busq": "tapered",
+     "grupo": "Jeans rectos",
+     "rec": "jmedio",
+     "sil": "jeans/corte_tapered"
+    },
+    {
+     "id": "skinny",
+     "n": "Skinny",
+     "en": "skinny jeans",
+     "busq": "skinny",
+     "grupo": "Jeans skinny",
+     "rec": "jajust",
+     "sil": "jeans/corte_skinny"
+    },
+    {
+     "id": "slim",
+     "n": "Slim",
+     "en": "slim-fit jeans",
+     "busq": "slim",
+     "grupo": "Jeans skinny",
+     "rec": "jajust",
+     "sil": "jeans/corte_slim"
+    }
+   ],
+   "colores": [
+    {
+     "id": "claro",
+     "n": "Azul claro / lavado",
+     "hex": "#9DB8D2",
+     "en": "light wash blue jeans"
+    },
+    {
+     "id": "medio",
+     "n": "Azul medio",
+     "hex": "#5B7FA8",
+     "en": "medium blue denim jeans"
+    },
+    {
+     "id": "indigo",
+     "n": "Índigo oscuro",
+     "hex": "#26385A",
+     "en": "dark indigo raw denim jeans"
+    },
+    {
+     "id": "negro",
+     "n": "Negro",
+     "hex": "#1D1C1A",
+     "en": "black jeans"
+    },
+    {
+     "id": "gris",
+     "n": "Gris",
+     "hex": "#8C8C88",
+     "en": "grey washed jeans"
+    },
+    {
+     "id": "blanco",
+     "n": "Blanco / crudo",
+     "hex": "#F2F0EA",
+     "en": "white jeans"
+    },
+    {
+     "id": "beige",
+     "n": "Beige / arena",
+     "hex": "#D9C8AE",
+     "en": "beige jeans"
+    },
+    {
+     "id": "marron",
+     "n": "Marrón",
+     "hex": "#6B4A2F",
+     "en": "brown jeans"
+    }
+   ],
+   "sil": "jeans/corte_straight"
   },
-  "prendas": [
-    {"id": "jeans", "n": "Jeans", "en": "jeans", "vogue": ["Denim", "Jeans"],
-     "cortes": [
-       {"id": "baggy", "n": "Baggy", "en": "baggy loose jeans", "busq": "baggy", "grupo": "Jeans baggy", "rec": "jamplio"},
-       {"id": "wideleg", "n": "Wide leg", "en": "wide-leg jeans", "busq": "wide leg", "grupo": "Jeans baggy", "rec": "jamplio"},
-       {"id": "mom", "n": "Mom", "en": "high-waisted mom jeans", "busq": "mom", "grupo": "Jeans baggy", "rec": "jamplio"},
-       {"id": "barrel", "n": "Barrel", "en": "curved barrel-leg jeans", "busq": "barrel", "grupo": "Jeans baggy", "rec": "jamplio"},
-       {"id": "recto", "n": "Recto", "en": "straight-leg jeans", "busq": "straight leg", "grupo": "Jeans rectos", "rec": "jmedio"},
-       {"id": "bootcut", "n": "Bootcut", "en": "bootcut jeans", "busq": "bootcut", "grupo": "Jeans rectos", "rec": "jmedio"},
-       {"id": "flare", "n": "Flare", "en": "flared jeans", "busq": "flare", "grupo": "Jeans rectos", "rec": "jmedio"},
-       {"id": "tapered", "n": "Tapered", "en": "tapered jeans", "busq": "tapered", "grupo": "Jeans rectos", "rec": "jmedio"},
-       {"id": "skinny", "n": "Skinny", "en": "skinny jeans", "busq": "skinny", "grupo": "Jeans skinny", "rec": "jajust"},
-       {"id": "slim", "n": "Slim", "en": "slim-fit jeans", "busq": "slim", "grupo": "Jeans skinny", "rec": "jajust"}
+  {
+   "id": "pantalones",
+   "n": "Pantalones",
+   "en": "pants",
+   "cortes": [
+    {
+     "id": "cargo",
+     "n": "Cargo",
+     "en": "cargo pants with utility pockets",
+     "rec": "cargo",
+     "grupo": "Cargo",
+     "sil": "pantalones/cargo"
+    }
+   ],
+   "sil": "pantalones/cargo"
+  },
+  {
+   "id": "remeras",
+   "n": "Remeras",
+   "en": "a t-shirt",
+   "sil": "fits/fit_regular",
+   "cortes": [
+    {
+     "id": "fitted",
+     "n": "Al cuerpo",
+     "en": "a fitted t-shirt",
+     "sil": "fits/fit_fitted"
+    },
+    {
+     "id": "regular",
+     "n": "Regular",
+     "en": "a regular-fit t-shirt",
+     "sil": "fits/fit_regular"
+    },
+    {
+     "id": "relaxed",
+     "n": "Relaxed",
+     "en": "a relaxed loose t-shirt",
+     "sil": "fits/fit_relaxed"
+    },
+    {
+     "id": "oversized",
+     "n": "Oversized",
+     "en": "a oversized t-shirt",
+     "sil": "fits/fit_oversized"
+    },
+    {
+     "id": "boxy",
+     "n": "Boxy",
+     "en": "a boxy wide cropped-length t-shirt",
+     "sil": "fits/fit_boxy"
+    },
+    {
+     "id": "cropped",
+     "n": "Cropped",
+     "en": "a cropped t-shirt",
+     "sil": "fits/fit_cropped"
+    }
+   ],
+   "cuellos": [
+    {
+     "id": "redondo",
+     "n": "Cuello redondo",
+     "en": "a crew neck t-shirt",
+     "sil": "cuellos/cuello_crew"
+    },
+    {
+     "id": "v",
+     "n": "Escote en V",
+     "en": "a v-neck t-shirt",
+     "sil": "cuellos/cuello_v"
+    },
+    {
+     "id": "scoop",
+     "n": "Escote scoop",
+     "en": "a scoop neck t-shirt",
+     "sil": "cuellos/cuello_scoop"
+    },
+    {
+     "id": "bote",
+     "n": "Escote bote",
+     "en": "a boat neck t-shirt",
+     "sil": "cuellos/cuello_bateau"
+    },
+    {
+     "id": "cuadrado",
+     "n": "Escote cuadrado",
+     "en": "a square neck t-shirt",
+     "sil": "cuellos/cuello_square"
+    },
+    {
+     "id": "polera",
+     "n": "Polera",
+     "en": "a turtleneck t-shirt",
+     "sil": "cuellos/cuello_turtleneck"
+    }
+   ],
+   "nota_cortes": "fit"
+  },
+  {
+   "id": "buzos",
+   "n": "Buzos",
+   "en": "hoodie",
+   "cortes": [
+    {
+     "id": "fitted",
+     "n": "Al cuerpo",
+     "en": "a fitted sweatshirt",
+     "sil": "fits/fit_fitted"
+    },
+    {
+     "id": "regular",
+     "n": "Regular",
+     "en": "a regular-fit sweatshirt",
+     "sil": "fits/fit_regular"
+    },
+    {
+     "id": "relaxed",
+     "n": "Relaxed",
+     "en": "a relaxed loose sweatshirt",
+     "sil": "fits/fit_relaxed"
+    },
+    {
+     "id": "oversized",
+     "n": "Oversized",
+     "en": "a oversized sweatshirt",
+     "sil": "fits/fit_oversized"
+    },
+    {
+     "id": "boxy",
+     "n": "Boxy",
+     "en": "a boxy wide cropped-length sweatshirt",
+     "sil": "fits/fit_boxy"
+    },
+    {
+     "id": "cropped",
+     "n": "Cropped",
+     "en": "a cropped sweatshirt",
+     "sil": "fits/fit_cropped"
+    }
+   ],
+   "vogue": [
+    "Sweatshirt",
+    "Hood",
+    "Hoodie"
+   ],
+   "rec": "buzo",
+   "grupo": "Buzo",
+   "sil": "fits/fit_oversized",
+   "cuellos": [
+    {
+     "id": "redondo",
+     "n": "Cuello redondo",
+     "en": "a crew neck sweatshirt",
+     "sil": "cuellos/cuello_crew"
+    },
+    {
+     "id": "capucha",
+     "n": "Capucha",
+     "en": "a hooded sweatshirt",
+     "sil": "cuellos/cuello_capucha"
+    },
+    {
+     "id": "v",
+     "n": "Escote en V",
+     "en": "a v-neck sweatshirt",
+     "sil": "cuellos/cuello_v"
+    },
+    {
+     "id": "mock",
+     "n": "Mock neck",
+     "en": "a mock neck sweatshirt",
+     "sil": "cuellos/cuello_mock"
+    },
+    {
+     "id": "polera",
+     "n": "Polera",
+     "en": "a turtleneck sweatshirt",
+     "sil": "cuellos/cuello_turtleneck"
+    }
+   ],
+   "nota_cortes": "fit"
+  },
+  {
+   "id": "abrigos",
+   "n": "Abrigos",
+   "en": "coat",
+   "cortes": [
+    {
+     "id": "trench",
+     "n": "Trench",
+     "en": "a trench coat",
+     "vogue": [
+      "Trench Coat"
      ],
-     "colores": [
-       {"id": "claro", "n": "Azul claro / lavado", "hex": "#9DB8D2", "en": "light wash blue jeans"},
-       {"id": "medio", "n": "Azul medio", "hex": "#5B7FA8", "en": "medium blue denim jeans"},
-       {"id": "indigo", "n": "Índigo oscuro", "hex": "#26385A", "en": "dark indigo raw denim jeans"},
-       {"id": "negro", "n": "Negro", "hex": "#1D1C1A", "en": "black jeans"},
-       {"id": "gris", "n": "Gris", "hex": "#8C8C88", "en": "grey washed jeans"},
-       {"id": "blanco", "n": "Blanco / crudo", "hex": "#F2F0EA", "en": "white jeans"},
-       {"id": "beige", "n": "Beige / arena", "hex": "#D9C8AE", "en": "beige jeans"},
-       {"id": "marron", "n": "Marrón", "hex": "#6B4A2F", "en": "brown jeans"}
-     ]},
-    {"id": "abrigos", "n": "Abrigos", "en": "coat",
-     "cortes": [
-       {"id": "trench", "n": "Trench", "en": "a trench coat", "vogue": ["Trench Coat"], "rec": "trench", "grupo": "Trench"},
-       {"id": "cuero", "n": "Campera de cuero", "en": "a leather jacket", "vogue": ["Leather Jacket"], "rec": "cuero", "grupo": "Cuero"},
-       {"id": "capa", "n": "Capa", "en": "a cape coat", "vogue": ["Cape", "Cloak"], "rec": "capa", "grupo": "Capa"},
-       {"id": "kimono", "n": "Kimono", "en": "a kimono jacket", "vogue": ["Kimono"], "rec": "kimono", "grupo": "Kimono"},
-       {"id": "blazer", "n": "Blazer oversize", "en": "an oversized blazer", "grupo": "Blazer oversize"},
-       {"id": "piel", "n": "Tapado de piel", "en": "a fur coat", "grupo": "Piel"}
-     ]},
-    {"id": "buzos", "n": "Buzos", "en": "hoodie",
-     "cortes": [
-       {"id": "hoodie", "n": "Hoodie / buzo", "en": "a hoodie sweatshirt", "vogue": ["Sweatshirt"], "rec": "buzo", "grupo": "Buzo"}
-     ]},
-    {"id": "pantalones", "n": "Pantalones", "en": "pants",
-     "cortes": [
-       {"id": "cargo", "n": "Cargo", "en": "cargo pants with utility pockets", "rec": "cargo", "grupo": "Cargo"}
-     ]},
-    {"id": "tops", "n": "Tops", "en": "top",
-     "cortes": [
-       {"id": "corset", "n": "Corset", "en": "a corset top", "rec": "corset"}
-     ]}
-  ],
-  "colores_generales": [
-    {"id": "negro", "n": "Negro", "hex": "#1D1C1A", "en": "black"},
-    {"id": "blanco", "n": "Blanco / crudo", "hex": "#F2F0EA", "en": "white"},
-    {"id": "gris", "n": "Gris", "hex": "#8C8C88", "en": "grey"},
-    {"id": "beige", "n": "Beige / camel", "hex": "#C8A97E", "en": "beige camel"},
-    {"id": "marron", "n": "Marrón", "hex": "#6B4A2F", "en": "brown"},
-    {"id": "marino", "n": "Azul marino", "hex": "#23324F", "en": "navy blue"},
-    {"id": "celeste", "n": "Celeste", "hex": "#93BAD8", "en": "light blue"},
-    {"id": "rojo", "n": "Rojo / bordó", "hex": "#8E2A2E", "en": "burgundy red"},
-    {"id": "verde", "n": "Verde / oliva", "hex": "#5E6B3F", "en": "olive green"},
-    {"id": "rosa", "n": "Rosa", "hex": "#E3A0B0", "en": "pink"}
-  ],
-  "estampas": [
-    {"id": "liso", "n": "Liso", "en": "plain solid-color clothing without print"},
-    {"id": "lunares", "n": "Lunares", "en": "a polka dot print", "vogue": ["Polka Dot"], "rec": "lunares", "grupo": "Lunares"},
-    {"id": "rayas", "n": "Rayas", "en": "a striped print", "rec": "rayas"},
-    {"id": "floral", "n": "Floral", "en": "a floral print", "vogue": ["Flower", "Floral Design"], "rec": "floral", "grupo": "Floral"},
-    {"id": "animal", "n": "Animal print", "en": "a leopard or zebra animal print", "vogue": ["Zebra"], "rec": "animal", "grupo": "Animal print"},
-    {"id": "cuadros", "n": "Cuadros", "en": "a plaid check pattern", "grupo": "Cuadros"},
-    {"id": "encaje", "n": "Encaje", "en": "lace fabric", "vogue": ["Lace"], "rec": "encaje", "grupo": "Encaje"},
-    {"id": "gamuza", "n": "Gamuza", "en": "suede fabric", "rec": "gamuza"}
-  ]
+     "rec": "trench",
+     "grupo": "Trench",
+     "sil": "abrigos/trench"
+    },
+    {
+     "id": "cuero",
+     "n": "Campera de cuero",
+     "en": "a leather jacket",
+     "vogue": [
+      "Leather Jacket"
+     ],
+     "rec": "cuero",
+     "grupo": "Cuero",
+     "sil": "abrigos/cuero"
+    },
+    {
+     "id": "capa",
+     "n": "Capa",
+     "en": "a cape coat",
+     "vogue": [
+      "Cape",
+      "Cloak"
+     ],
+     "rec": "capa",
+     "grupo": "Capa",
+     "sil": "abrigos/capa"
+    },
+    {
+     "id": "kimono",
+     "n": "Kimono",
+     "en": "a kimono jacket",
+     "vogue": [
+      "Kimono"
+     ],
+     "rec": "kimono",
+     "grupo": "Kimono",
+     "sil": "abrigos/kimono"
+    },
+    {
+     "id": "blazer",
+     "n": "Blazer oversize",
+     "en": "an oversized blazer",
+     "grupo": "Blazer oversize",
+     "sil": "abrigos/blazer"
+    },
+    {
+     "id": "piel",
+     "n": "Tapado de piel",
+     "en": "a fur coat",
+     "grupo": "Piel",
+     "sil": "abrigos/piel"
+    }
+   ],
+   "sil": "abrigos/trench"
+  },
+  {
+   "id": "tops",
+   "n": "Tops",
+   "en": "top",
+   "cortes": [
+    {
+     "id": "corset",
+     "n": "Corset",
+     "en": "a corset top",
+     "rec": "corset",
+     "sil": "tops/corset"
+    }
+   ],
+   "sil": "tops/corset"
+  }
+ ],
+ "colores_generales": [
+  {
+   "id": "negro",
+   "n": "Negro",
+   "hex": "#1D1C1A",
+   "en": "black"
+  },
+  {
+   "id": "blanco",
+   "n": "Blanco / crudo",
+   "hex": "#F2F0EA",
+   "en": "white"
+  },
+  {
+   "id": "gris",
+   "n": "Gris",
+   "hex": "#8C8C88",
+   "en": "grey"
+  },
+  {
+   "id": "beige",
+   "n": "Beige / camel",
+   "hex": "#C8A97E",
+   "en": "beige camel"
+  },
+  {
+   "id": "marron",
+   "n": "Marrón",
+   "hex": "#6B4A2F",
+   "en": "brown"
+  },
+  {
+   "id": "marino",
+   "n": "Azul marino",
+   "hex": "#23324F",
+   "en": "navy blue"
+  },
+  {
+   "id": "celeste",
+   "n": "Celeste",
+   "hex": "#93BAD8",
+   "en": "light blue"
+  },
+  {
+   "id": "rojo",
+   "n": "Rojo / bordó",
+   "hex": "#8E2A2E",
+   "en": "burgundy red"
+  },
+  {
+   "id": "verde",
+   "n": "Verde / oliva",
+   "hex": "#5E6B3F",
+   "en": "olive green"
+  },
+  {
+   "id": "rosa",
+   "n": "Rosa",
+   "hex": "#E3A0B0",
+   "en": "pink"
+  }
+ ],
+ "estampas": [
+  {
+   "id": "liso",
+   "n": "Liso",
+   "en": "plain solid-color clothing without print"
+  },
+  {
+   "id": "lunares",
+   "n": "Lunares",
+   "en": "a polka dot print",
+   "vogue": [
+    "Polka Dot"
+   ],
+   "rec": "lunares",
+   "grupo": "Lunares",
+   "sil": "estampas/estampa_lunares"
+  },
+  {
+   "id": "rayas",
+   "n": "Rayas",
+   "en": "a striped print",
+   "rec": "rayas",
+   "sil": "estampas/estampa_rayas"
+  },
+  {
+   "id": "floral",
+   "n": "Floral",
+   "en": "a floral print",
+   "vogue": [
+    "Flower",
+    "Floral Design"
+   ],
+   "rec": "floral",
+   "grupo": "Floral",
+   "sil": "estampas/estampa_floral"
+  },
+  {
+   "id": "animal",
+   "n": "Animal print",
+   "en": "a leopard or zebra animal print",
+   "vogue": [
+    "Zebra"
+   ],
+   "rec": "animal",
+   "grupo": "Animal print",
+   "sil": "estampas/estampa_leopard"
+  },
+  {
+   "id": "cuadros",
+   "n": "Cuadros",
+   "en": "a plaid check pattern",
+   "grupo": "Cuadros",
+   "sil": "estampas/estampa_tartan"
+  },
+  {
+   "id": "encaje",
+   "n": "Encaje",
+   "en": "lace fabric",
+   "vogue": [
+    "Lace"
+   ],
+   "rec": "encaje",
+   "grupo": "Encaje",
+   "sil": "estampas/estampa_encaje"
+  },
+  {
+   "id": "gamuza",
+   "n": "Gamuza",
+   "en": "suede fabric",
+   "rec": "gamuza",
+   "sil": "estampas/estampa_gamuza"
+  }
+ ]
 }

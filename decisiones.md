@@ -488,3 +488,19 @@ pasarela queda chica en una esquina, como referencia. En «Tu diseño» el jean 
 estampa. Mom no es un corte (es tiro alto + pierna tapered) y se muestra así; el pied-de-poule quedó mal dibujado y
 no se usa. Abrigos, buzo, cargo, corset y las estampas sin muestra (floral, encaje, gamuza) siguen con foto.
 Fits, cuellos y mangas quedan guardados para cuando la app los pregunte como ejes aparte.
+
+**Todo dibujo, sin mezcla con fotos (14/10/2026).** Tarjetas con foto y tarjetas con dibujo juntas eran «una
+ensalada de frutas». Ahora cada opción de «Diseñar» es un dibujo plano: las siluetas de la carpeta del grupo más
+las que faltaban (abrigos, cargo, corset, capucha, floral, encaje, gamuza, y lunares y rayas rehechas porque las
+originales no repetían sin costura), dibujadas en el mismo estilo con `codigo/dibujar_siluetas.py`. Las fotos de
+pasarela quedan plegadas al final de «Tu diseño», como referencia. Cada tarjeta dice una sola cosa: la acción y
+un dato.
+
+**Remeras y buzos: fit y cuello.** Remeras es prenda nueva; buzos pasó de «hoodie» a seis fits (al cuerpo,
+regular, relaxed, oversized, boxy, cropped) y cinco cuellos con capucha. No hay búsqueda por fit ni por cuello:
+qué gana presencia lo lee CLIP sobre la pasarela de la prenda (2018–19 contra 2022–23), como el color, y está
+marcado como interpretación. El cuello es la lectura más débil: en una foto de pasarela entera se ve chico.
+
+**La pregunta del país, afuera.** Con dos opciones (Argentina / otro país) quedaba raro, y una lista de países
+prometería datos locales que no tenemos. La entrada es de tres preguntas. El dato argentino queda en
+Recorridos, como «búsqueda local (AR)», para cualquiera.

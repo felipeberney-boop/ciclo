@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Corset">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 50 72 C 66 62 86 66 100 82 C 114 66 134 62 150 72 C 146 110 136 140 138 170 C 140 200 148 222 150 244 L 50 244 C 52 222 60 200 62 170 C 64 140 54 110 50 72 Z"/>
+<path d="M 62 66 L 72 22" stroke-width="1.02"/>
+<path d="M 138 66 L 128 22" stroke-width="1.02"/>
+<path d="M 78 68 C 82 120 74 180 80 244" stroke-width="1.02"/>
+<path d="M 122 68 C 118 120 126 180 120 244" stroke-width="1.02"/>
+<path d="M 96 96 L 104 104 M 104 96 L 96 104 M 96 112 L 104 120 M 104 112 L 96 120 M 96 128 L 104 136 M 104 128 L 96 136 M 96 144 L 104 152 M 104 144 L 96 152 M 96 160 L 104 168 M 104 160 L 96 168 M 96 176 L 104 184 M 104 176 L 96 184 M 96 192 L 104 200 M 104 192 L 96 200 M 96 208 L 104 216 M 104 208 L 96 216 M 96 224 L 104 232 M 104 224 L 96 232" stroke-width="1.02"/>
+</g></svg>

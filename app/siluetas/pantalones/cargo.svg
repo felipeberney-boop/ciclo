@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Pantalón cargo">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 44 36 C 43 80 46 110 44 132 L 48 326 L 96 326 L 100 148 L 104 326 L 152 326 L 156 132 C 154 110 157 80 156 36 Z"/>
+<path d="M 42 24 L 158 24 L 158 36 L 42 36 Z" stroke-width="1.02"/>
+<path d="M 100 80 L 100 148" stroke-width="1.02"/>
+<path d="M 103.5 36 C 105 56 104 70 101 80" stroke-width="1.02"/>
+<path d="M 44 39 C 48 50 55 56 62 58" stroke-width="1.02"/>
+<path d="M 156 39 C 152 50 145 56 138 58" stroke-width="1.02"/>
+<path d="M 45 168 L 72 168 L 72 222 L 46 222" stroke-width="1.02"/>
+<path d="M 45 176 L 72 176" stroke-width="1.02"/>
+<path d="M 155 168 L 128 168 L 128 222 L 154 222" stroke-width="1.02"/>
+<path d="M 155 176 L 128 176" stroke-width="1.02"/>
+<path d="M 48 312 L 96 312" stroke-width="1.02"/>
+<path d="M 104 312 L 152 312" stroke-width="1.02"/>
+<circle cx="58.5" cy="172" r="1.6" stroke-width="1.02"/>
+<circle cx="141.5" cy="172" r="1.6" stroke-width="1.02"/>
+</g></svg>

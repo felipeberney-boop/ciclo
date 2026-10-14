@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Kimono">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 80 40 L 20 54 L 20 132 L 58 132 L 60 270 L 140 270 L 142 132 L 180 132 L 180 54 L 120 40 C 110 48 90 48 80 40 Z"/>
+<path d="M 80 40 L 94 270" stroke-width="1.02"/>
+<path d="M 88 43 L 100 270" stroke-width="1.02"/>
+<path d="M 120 40 L 106 270" stroke-width="1.02"/>
+<path d="M 58 60 L 58 132" stroke-width="1.02"/>
+<path d="M 142 60 L 142 132" stroke-width="1.02"/>
+<path d="M 20 120 L 58 120" stroke-width="1.02"/>
+<path d="M 180 120 L 142 120" stroke-width="1.02"/>
+</g></svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Blazer oversize">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 83 40 L 44 50 L 30 206 L 50 208 L 58 108 L 56 226 L 144 226 L 142 108 L 150 208 L 170 206 L 156 50 L 117 40 C 107 48 93 48 83 40 Z"/>
+<path d="M 83 40 L 70 62 L 80 70 L 73 76 L 98 150" stroke-width="1.02"/>
+<path d="M 117 40 L 130 62 L 120 70 L 127 76 L 102 150" stroke-width="1.02"/>
+<path d="M 100 150 L 100 226" stroke-width="1.02"/>
+<path d="M 64 182 L 86 182" stroke-width="1.02"/>
+<path d="M 114 182 L 136 182" stroke-width="1.02"/>
+<path d="M 118 110 L 134 108" stroke-width="1.02"/>
+<circle cx="100" cy="168" r="2.3" stroke-width="1.02"/>
+<circle cx="100" cy="190" r="2.3" stroke-width="1.02"/>
+</g></svg>

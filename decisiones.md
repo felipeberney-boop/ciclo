@@ -756,3 +756,27 @@ otra cosa, no por poco volumen: mejor poco dato correcto que mucho dato de otra 
 tiro medio, ocho materiales (jersey, rib, french terry, piqué, lona, nylon, acrílico, crepe), toile de jouy, chevron
 y los colores naranja y amarillo.
 
+## 2026-10-20 · Nombres de taller, buzos partidos y el chat como herramienta
+
+**La regla de nombres.** Si un diseñador no puede decir el nombre en voz alta en un taller y que le entiendan, no va
+en la interfaz. Cada material lleva tres cosas: el nombre rioplatense (el título), el término de industria en
+inglés (chico abajo) y una línea de qué es: «Frisa · french terry · Punto afelpado por dentro, la tela del buzo».
+Corderoy, Polar, Crepé, Satén, Morley, Punto trenzado, Lycra. El jersey va sólo en remeras y vestidos y el crepé
+sólo en vestidos y blusas: la tabla los dejaba pasar a pantalones (estaba mal cargada, no mal aplicada). Blazer,
+capa y kimono tienen su propia lista.
+
+**Fuera los contadores.** «4 cortes con dato» era contabilidad interna. Se quedan las etiquetas de procedencia de
+cada tarjeta («mostrando: …»), que son la honestidad del dato.
+
+**Buzos y Sweaters, por separado.** Buzos: hoodie, canguro con cierre, cuello redondo; los tres toman prestada la
+serie «hoodie», que mide los buzos en general. Sweaters: cuello redondo, en V, polera y cardigan. Capa y kimono
+quedan como secundarias de Abrigos, con su definición.
+
+**El chat, herramienta de diseño.** Recibe el diseño armado, lee una imagen con CLIP y muestra lo que leyó para que
+se corrija, trae el dato y la serie en cada respuesta y termina en cambios que se aplican con un botón
+(`prompts/prompt_asistente_v2.md`).
+
+**Accesorios y calzado.** No entran sin dato. El calzado sigue afuera por la decisión del 20/10 («no va a haber
+calzado»). Para accesorios está el plan en `datasets/plan_exportacion_trends_3.csv` (gorra, piluso, tote,
+cinturón de cuero, anteojos de sol), junto con «toile de jouy» para reemplazar a «toile».
+

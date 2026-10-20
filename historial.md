@@ -103,6 +103,13 @@ versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-2
 Dos planes de Google Trends (70 términos, trench coat de ancla): entran 49 series nuevas a las 16 que había.
 Todo el análisis corta en 2024 porque 2026 viene contaminado. Hojas con dato propio: 26 → 75.
 
+## v1.4 · 20/10/2026 · Nombres de taller y el chat como herramienta de diseño
+
+Materiales con nombre rioplatense, término de industria y qué es; la tabla de materiales corregida; Buzos y
+Sweaters por separado; fuera los contadores; siluetas enteras; cuero y gamuza como color; los colores de
+Tendencias explicados. Preguntar pasa a ser una herramienta: sabe qué estás diseñando, lee una imagen con CLIP,
+trae el dato con su serie y termina en un cambio que se aplica con un botón.
+
 ## Lo que falta para la Entrega 3
 
 - Conectar la Groq API en vivo. Hoy IA-5 corre con prompt fijo.

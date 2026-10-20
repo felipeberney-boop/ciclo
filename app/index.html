@@ -532,7 +532,7 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 /* subtítulos de sección: también display, más grandes y con regla arriba, para que abran sección como en una revista */
 .kbig,.h3{font-size:clamp(36px,4.2vw,60px);line-height:.98;letter-spacing:-.02em;margin-top:96px;padding-top:22px;border-top:1px solid var(--ink)}
 .kh{font-size:30px;line-height:1.05}
-.lbl,.tag,.stamp,th,.mast nav a,.navmas,.chip,.seg button,.kbtn,.copiar,.gvolver,.gprog,.dzpt,.colofon b,.dfacts dt,.gcard dt,.rec .t,.dzrk,.dzpn,.perfilinea,.aviso{
+.lbl,.tag,.stamp,th,.mast nav a,.navmas,.chip,.seg button,.kbtn,.copiar,.gvolver,.gprog,.dzpt,.colofon b,.dfacts dt,.gcard dt,.rec .t,.dzrk,.dzpn,.aviso{
   font-family:var(--mono)!important;font-variation-settings:normal!important;font-weight:500!important;
   font-size:10.5px!important;letter-spacing:.17em!important;text-transform:uppercase}
 .tag{font-size:9.5px!important;padding:3px 7px 2px;display:inline-block;line-height:1.45}
@@ -583,7 +583,7 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 .seg button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)!important}
 .chip{background:transparent!important;border:0!important;border-bottom:1px solid transparent!important;padding:4px 0 3px!important;margin-right:14px;color:var(--ink-3)}
 .chip[aria-pressed="true"]{color:var(--ink)!important;border-bottom-color:var(--ink)!important}
-.copiar,.gvolver,.perfilinea button{border:0;background:none;padding:2px 0;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;cursor:pointer;font:inherit}
+.copiar,.gvolver{border:0;background:none;padding:2px 0;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;cursor:pointer;font:inherit}
 .dzp{border:0!important;border-bottom:1px solid transparent!important}.dzp.on{border-bottom-color:var(--ink)!important}
 .asq{align-self:flex-end;background:transparent;color:var(--ink);border:0;border-right:1px solid var(--ink);padding:2px 16px 2px 0;
   font-family:"Bodoni Moda",serif;font-style:italic;font-size:22px;line-height:1.3;text-align:right;max-width:70%}
@@ -604,14 +604,19 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 .acc-salir{color:var(--act-salir)!important}
 .tag.acc{background:transparent!important;border:1px solid currentColor!important}
 
-/* el perfil guardado, a la vista: no se saltea en silencio */
-.perfilinea{margin:0;padding:12px var(--gut);border-bottom:1px solid var(--rule);color:var(--ink-2)}
-.perfilinea button{font-size:inherit!important;letter-spacing:inherit;text-transform:inherit;margin-left:2px}
 .aviso{margin:0;padding:12px var(--gut);border-bottom:1px solid var(--ink);color:var(--ink)}
-@media (max-width:760px){.perfilinea,.aviso{padding:10px 16px}}
+@media (max-width:760px){.aviso{padding:10px 16px}}
 /* la grilla del gate, alineada a la izquierda como el resto; el perfil ya está en la línea de arriba, no se repite */
 .gate{margin:0;max-width:1180px}
-#dzperfil,#cambiarperfil{display:none!important}
+#dzperfil{display:none!important}
+.navperfil{font:inherit;font-family:var(--mono);font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);background:none;border:0;
+  padding:9px 14px 8px;margin-left:10px;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;white-space:nowrap}
+.navperfil:hover{color:var(--ink)}
+.gcard.on{border-top:3px solid var(--ink)}
+.gprev{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.gnav{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:36px}
+@media (max-width:1000px){.ggrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:560px){.ggrid{grid-template-columns:minmax(0,1fr)!important;gap:28px}}
 .kmL,.kmR,.kcard{min-width:0}
 @media (max-width:1000px){.km,.k2{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:760px){.who{flex-wrap:wrap;gap:8px 12px}.seg{flex-wrap:wrap;gap:6px 16px}}
@@ -638,28 +643,11 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
         <a data-v="retornos">Retornos</a>
         <a data-v="racional">Método</a>
       </span>
+      <button type="button" class="navperfil" id="navperfil">Cambiar perfil</button>
     </nav>
   </header>
 
   <main>
-    <div class="top">
-      <div class="who">
-        <span class="lbl" id="clilbl">Asesorando a</span>
-        <div class="seg" id="cli" role="group" aria-label="Tipo de cliente">
-          <button data-c="fast" aria-pressed="false">Fast fashion</button>
-          <button data-c="medio" aria-pressed="false">Contemporary</button>
-          <button data-c="premium" aria-pressed="true">High fashion</button>
-          <button data-c="nicho" aria-pressed="false">Emergente</button>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap">
-        <span class="stamp" id="plazo">lead time 6 meses · decide a 3 años</span>
-        <button class="copiar" id="cambiarperfil" type="button">Cambiar perfil</button>
-        <button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link</button>
-      </div>
-    </div>
-
-    <p class="perfilinea" id="perfilinea" hidden></p>
     <p class="aviso" id="aviso" role="alert" hidden></p>
 
     <!-- ================= PORTADA ================= -->
@@ -669,7 +657,7 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
         <h1 id="gpreg">¿Para quién trabajás?</h1>
         <p class="sub" id="gsub"></p>
         <div class="ggrid" id="ggrid"></div>
-        <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button><span class="gnota" id="gnota">Lo podés cambiar después desde la barra de arriba.</span></div>
+        <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button><button class="kbtn" id="gcont" type="button" hidden>Continuar →</button><span class="gnota" id="gnota">Lo podés cambiar después con «Cambiar perfil», al final del menú.</span></div>
       </div>
     </section>
 
@@ -1140,6 +1128,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     </section>
 
     <footer class="colofon">
+      <div><b>Este diseño</b><button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link</button></div>
       <div><b>Pasarela</b>Vogue Runway · 1,28 M looks<br>Runways since 2011 · 6.655 desfiles</div>
       <div><b>Búsqueda y redes</b>Google Trends · 49 términos<br>Google Shopping · 25 términos<br>Reddit · 4.857 menciones</div>
       <div><b>Mercado masivo</b>H&amp;M · 30,6 M compras<br>Amazon · 1,1 M reseñas<br>Wish · 1.341 productos<br>Zara feb-2024 · 252 prendas</div>
@@ -2489,105 +2478,104 @@ function mostrar(v,keepNav){
   if(v==='disenar')pintarDisenar();
   if(v==='asistente')asAbrir();
   window.scrollTo({top:0,behavior:'instant'});
-  vista=v;escribirLink(true);pintarPerfilLinea();
+  vista=v;escribirLink(true);
 }
 /* ---------- entrada en tres pasos: público → vínculo → categoría ---------- */
 const GATE={
   marca:{preg:'¿Qué tipo de marca?',sub:'La categoría fija tu lead time y tu ventana: hasta qué año el gráfico todavía sirve para decidir, con el error que medimos a esa distancia.',
     c:{premium:['High fashion / couture','Prêt-à-porter de lujo · Loewe, Miu Miu, Bottega Veneta.'],
+       medio:['Contemporary','Bridge · COS, Massimo Dutti, Arket.'],
        fast:['Fast fashion','High street · Zara, H&M, Gap.'],
-       nicho:['Marca de nicho / de autor','Marca chica, colección propia.']}},
+       nicho:['Emergente / de autor','Marca chica, colección propia.']}},
   propia:{preg:'¿Qué tipo de prendas querés diseñar?',sub:'La categoría fija tu lead time y tu ventana. Como el riesgo de producción no es tuyo, donde a una marca le conviene esperar a vos te conviene explorar.',
     c:{premium:['High fashion','Piezas de autor, pasarela.'],
+       medio:['Contemporary','Básicos con diseño, calidad media.'],
        fast:['Streetwear / fast fashion','Volumen, rotación rápida.'],
-       nicho:['Nicho','Series cortas, identidad propia.']}}};
-let gateDestino='radar',gatePaso=1;
+       nicho:['Emergente / de autor','Series cortas, identidad propia.']}}};
+let gateDestino='disenar',gatePaso=1;
 const ETAPAS_C=['emergente','en ascenso','en pico','saturada','en retorno'];
 function gateResumen(cli,acc){const e=[0,1,2,3,4].filter(i=>consejo(cli,i)[0]===acc).map(i=>ETAPAS_C[i]);return e.length?e.join(', '):'—';}
-function gateTarjeta(datos,attrs){return `<button class="gcard" type="button" ${attrs}>${datos}</button>`;}
+/* la entrada es la portada de la app: se ve siempre. Lo que quedó de una visita anterior viene marcado y alcanza con «Continuar» */
+const gateSel={publico:null,vinculo:null,cliente:null};
+try{const g=JSON.parse(localStorage.getItem('ciclo.perfil')||'null');
+  if(g&&GATE[g.vinculo]&&PLAZO[g.cliente]){gateSel.publico=['mujer','hombre','todos'].includes(g.publico)?g.publico:null;gateSel.vinculo=g.vinculo;gateSel.cliente=g.cliente;}}catch(e){}
+function gateTarjeta(datos,attrs,on){return `<button class="gcard${on?' on':''}" type="button" aria-pressed="${!!on}" ${attrs}>${on?'<span class="gprev">tu elección anterior</span>':''}${datos}</button>`;}
 function pintarGate(){
   const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;
   $('#gprog').innerHTML=`<b>0${gatePaso}</b> / 03`;
   const tit=(t,sub)=>{$('#gpreg').textContent=t;$('#gsub').textContent=sub;};
   const sig=()=>{gatePaso++;pintarGate();$('#ggrid .gcard')?.focus();};
+  const cont=(listo,fn)=>{const c=$('#gcont');c.hidden=!listo;c.onclick=fn;};
   if(gatePaso===1){
     g.style.setProperty('--gcols',3);
-    tit('¿Para quién diseñás?','Con esto elegimos qué prendas y qué fotos de referencia mostrarte.');
-    g.innerHTML=gateTarjeta(`<span class="gt">Mujer</span><span class="gd">Womenswear.</span>`,'data-pub="mujer"')+
-                gateTarjeta(`<span class="gt">Hombre</span><span class="gd">Menswear.</span>`,'data-pub="hombre"')+
-                gateTarjeta(`<span class="gt">Sin género</span><span class="gd">Prendas para cualquiera. Te mostramos referencias de las dos pasarelas.</span>`,'data-pub="todos"');
-    $$('#ggrid [data-pub]').forEach(b=>b.addEventListener('click',()=>{publico=b.dataset.pub;sig();}));
+    tit('¿Para quién diseñás?','Con esto elegimos qué prendas y qué referencias mostrarte.');
+    g.innerHTML=[['mujer','Mujer','Womenswear.'],['hombre','Hombre','Menswear.'],['todos','Sin género','Prendas para cualquiera. Te mostramos referencias de las dos pasarelas.']]
+      .map(([k,t,d])=>gateTarjeta(`<span class="gt">${t}</span><span class="gd">${d}</span>`,`data-pub="${k}"`,gateSel.publico===k)).join('');
+    $$('#ggrid [data-pub]').forEach(b=>b.addEventListener('click',()=>{gateSel.publico=b.dataset.pub;sig();}));
+    cont(!!gateSel.publico,sig);
   }else if(gatePaso===2){
     g.style.setProperty('--gcols',2);
-    tit('¿Para quién trabajás?','La misma tendencia se lee distinto si el riesgo de producción es de una marca o es tuyo.');
-    g.innerHTML=gateTarjeta(`<span class="gt">Trabajo para una marca</span><span class="gd">En relación de dependencia. La producción y el stock son de la marca: la lectura tiene que cuidar ese riesgo.</span>`,'data-vinc="marca"')+
-                gateTarjeta(`<span class="gt">Trabajo por mi cuenta</span><span class="gd">Freelance, por encargo o con marca propia en desarrollo. Podés diseñar antes de comprometer producción.</span>`,'data-vinc="propia"');
-    $$('#ggrid [data-vinc]').forEach(b=>b.addEventListener('click',()=>{vinculo=b.dataset.vinc;sig();}));
+    tit('¿Trabajás para una marca o por tu cuenta?','La misma tendencia se lee distinto si el riesgo de producción es de una marca o es tuyo.');
+    g.innerHTML=gateTarjeta(`<span class="gt">Para una marca</span><span class="gd">En relación de dependencia. La producción y el stock son de la marca: la lectura tiene que cuidar ese riesgo.</span>`,'data-vinc="marca"',gateSel.vinculo==='marca')+
+                gateTarjeta(`<span class="gt">Por mi cuenta</span><span class="gd">Freelance, por encargo o con marca propia en desarrollo. Podés diseñar antes de comprometer producción.</span>`,'data-vinc="propia"',gateSel.vinculo==='propia');
+    $$('#ggrid [data-vinc]').forEach(b=>b.addEventListener('click',()=>{gateSel.vinculo=b.dataset.vinc;sig();}));
+    cont(!!gateSel.vinculo,sig);
   }else{
-    const G=GATE[vinculo];g.style.setProperty('--gcols',3);
+    const G=GATE[gateSel.vinculo]||GATE.marca;g.style.setProperty('--gcols',4);
     tit(G.preg,G.sub);
-    g.innerHTML=['premium','fast','nicho'].map(k=>gateTarjeta(`<span class="gt">${G.c[k][0]}</span><span class="gd">${G.c[k][1]}</span>
+    g.innerHTML=['premium','medio','fast','nicho'].map(k=>gateTarjeta(`<span class="gt">${G.c[k][0]}</span><span class="gd">${G.c[k][1]}</span>
       <dl><dt>Lead time</dt><dd>${PERFIL[k].prod}</dd>
       <dt>Ventana</dt><dd>${PERFIL[k].vent} año${PERFIL[k].vent>1?'s':''}</dd>
       <dt>Decide hasta</dt><dd>${PERFIL[k].hasta}</dd>
       <dt>Error ahí</dt><dd>±${Math.round(PERFIL[k].banda)} puntos</dd>
       <dt class="acc-entrar">Entrar</dt><dd>${gateResumen(k,'Entrar')}</dd>
-      ${vinculo==='propia'&&gateResumen(k,'Explorar')!=='—'?`<dt class="acc-esperar">Explorar</dt><dd>${gateResumen(k,'Explorar')}</dd>`:''}
-      <dt class="acc-salir">Salir</dt><dd>${gateResumen(k,'Salir')}</dd></dl>`,`data-cli="${k}"`)).join('');
-    $$('#ggrid [data-cli]').forEach(b=>b.addEventListener('click',()=>gateElegir(b.dataset.cli)));
+      ${gateSel.vinculo==='propia'&&gateResumen(k,'Explorar')!=='—'?`<dt class="acc-esperar">Explorar</dt><dd>${gateResumen(k,'Explorar')}</dd>`:''}
+      <dt class="acc-salir">Salir</dt><dd>${gateResumen(k,'Salir')}</dd></dl>`,`data-cli="${k}"`,gateSel.cliente===k)).join('');
+    $$('#ggrid [data-cli]').forEach(b=>b.addEventListener('click',()=>{gateSel.cliente=b.dataset.cli;gateElegir();}));
+    cont(!!gateSel.cliente,gateElegir);
   }
 }
-function aplicarVinculo(){
-  $('#clilbl').textContent=vinculo==='propia'?'Diseñás para':'Tu marca es';
-  try{localStorage.setItem('ciclo.perfil',JSON.stringify({vinculo,cliente,pais,publico}));}catch(e){}
-  pintarPerfilLinea();
+function guardarPerfil(){try{localStorage.setItem('ciclo.perfil',JSON.stringify({vinculo,cliente,pais,publico}));}catch(e){}}
+/* cambiar de cliente recalcula todo: sólo pasa al salir del gate o con un link que trae el perfil */
+function ponerCliente(c){
+  cliente=PLAZO[c]?c:'premium';pintarEtapas();pintarRecorridos();
+  if(vista==='disenar')pintarDisenar();
+  if(vista==='detalle'&&detSel)abrirDetalle(detSel);
 }
-function gateElegir(cli){
-  const b=$(`#cli button[data-c="${cli}"]`);if(cli!==cliente)b.click();else{pintarEtapas();}
-  aplicarVinculo();perfilListo=true;mostrar(gateDestino);
+function gateElegir(){
+  publico=gateSel.publico||'todos';vinculo=gateSel.vinculo||'marca';ponerCliente(gateSel.cliente);guardarPerfil();
+  if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);
 }
-function abrirGate(destino){gateDestino=destino||'disenar';gatePaso=1;pintarGate();mostrar('perfil');}
-/* el perfil guardado no se saltea en silencio: una línea arriba dice para quién estás diseñando y deja cambiarlo */
-const PERFIL_TXT={marca:{fast:'marca de fast fashion',medio:'marca contemporary',premium:'marca de high fashion',nicho:'marca de nicho'},
-  propia:{fast:'por tu cuenta · streetwear',medio:'por tu cuenta · contemporary',premium:'por tu cuenta · high fashion',nicho:'por tu cuenta · nicho'}};
-function pintarPerfilLinea(){
-  const el=$('#perfilinea');if(!el)return;el.hidden=!perfilListo||vista==='perfil'||vista==='portada';if(el.hidden)return;
-  const quien=publico==='mujer'?'para mujer':publico==='hombre'?'para hombre':'sin género';
-  el.innerHTML=`<span>Diseñando ${quien} · ${(PERFIL_TXT[vinculo]||PERFIL_TXT.marca)[cliente]||''}</span> · <button type="button" id="perfilcambiar">cambiar</button>`;
-  $('#perfilcambiar').addEventListener('click',()=>abrirGate(vista==='perfil'||vista==='portada'?'disenar':vista));
-}
-$$('#cli button').forEach(b=>b.addEventListener('click',()=>setTimeout(pintarPerfilLinea)));
+function abrirGate(destino){gateDestino=destino&&!['perfil','portada'].includes(destino)?destino:'disenar';gatePaso=1;pintarGate();mostrar('perfil');}
 $('#gvolver').addEventListener('click',()=>{gatePaso=Math.max(1,gatePaso-1);pintarGate();$('#ggrid .gcard')?.focus();});
-$('#cambiarperfil').addEventListener('click',()=>abrirGate(vista==='perfil'||vista==='portada'?'disenar':vista));
-let perfilListo=false;
+$('#navperfil').addEventListener('click',()=>abrirGate(vista));
 let publico='todos';
-try{const g=JSON.parse(localStorage.getItem('ciclo.perfil')||'null');if(g&&GATE[g.vinculo]&&PLAZO[g.cliente]){vinculo=g.vinculo;pais=g.pais||'otro';publico=g.publico||'todos';perfilListo=true;}}catch(e){}
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
 const VISTAS=['portada','perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional'];
 let vista='portada',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
-  const q=[cliente!=='premium'?'c='+cliente:'',vinculo==='propia'?'v=propia':'',publico!=='todos'?'pu='+publico:''].filter(Boolean).join('&');
-  return '#'+vista+(el?'/'+el:'')+(q?'?'+q:'');
+  return '#'+vista+(el?'/'+el:'')+`?c=${cliente}&v=${vinculo}&pu=${publico}`;
 }
 function escribirLink(nueva){
   if(leyendoLink)return;const h=linkActual();if(location.hash===h)return;
   try{history[nueva&&location.hash?'pushState':'replaceState'](null,'',h);}catch(e){}
 }
+/* un link abre directo su vista sólo si trae el perfil completo; si no, primero las tres preguntas y después esa vista */
 function leerLink(){
   const m=location.hash.match(/^#([a-z]+)(?:\/([a-z0-9_-]+))?(?:\?(.*))?$/);
   if(!m||!VISTAS.includes(m[1]))return false;
+  const qs=new URLSearchParams(m[3]||''),destino=m[1],el=m[2];
+  if(destino==='recorridos'&&el&&REC.some(o=>o.id===el)){recSel=el;pintarRecorridos();}
+  if(destino==='detalle'&&el&&T.some(t=>t.id===el))detSel=el;
+  if(!(qs.has('c')&&qs.has('v')&&qs.has('pu'))||destino==='perfil'||destino==='portada'){abrirGate(destino);return true;}
   leyendoLink=true;
   try{
-    const qs=new URLSearchParams(m[3]||''),c=qs.get('c')||'premium',bc=$(`#cli button[data-c="${c}"]`);
-    if(qs.has('c')||qs.has('v')||qs.has('pa')||qs.has('pu')){vinculo=qs.get('v')==='propia'?'propia':'marca';pais=qs.get('pa')==='ar'?'AR':'otro';publico=['mujer','hombre'].includes(qs.get('pu'))?qs.get('pu'):'todos';perfilListo=true;aplicarVinculo();}
-    if(bc&&c!==cliente)bc.click();
-    if(m[1]==='perfil'){abrirGate('disenar');return true;}
-    if(m[1]==='disenar'){mostrar('disenar');return true;}
-    if(m[1]==='detalle'&&m[2]&&T.some(t=>t.id===m[2]))abrirDetalle(m[2]);
-    else if(m[1]==='detalle')mostrar('radar');
-    else{if(m[1]==='recorridos'&&m[2]&&REC.some(o=>o.id===m[2])){recSel=m[2];pintarRecorridos();}mostrar(m[1]);}
+    vinculo=qs.get('v')==='propia'?'propia':'marca';publico=['mujer','hombre'].includes(qs.get('pu'))?qs.get('pu'):'todos';
+    Object.assign(gateSel,{publico,vinculo,cliente:PLAZO[qs.get('c')]?qs.get('c'):'premium'});
+    ponerCliente(gateSel.cliente);guardarPerfil();
+    if(destino==='detalle'){if(detSel)abrirDetalle(detSel);else mostrar('radar');}else mostrar(destino);
   }finally{leyendoLink=false;}
   return true;
 }
@@ -2603,13 +2591,6 @@ $$('#nav a').forEach(a=>{a.setAttribute('tabindex','0');a.setAttribute('role','l
   a.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();mostrar(a.dataset.v);}});});
 $$('#filt .chip').forEach(b=>b.addEventListener('click',()=>{
   filtro=b.dataset.f;$$('#filt .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));pintarRadar();}));
-$$('#cli button').forEach(b=>b.addEventListener('click',()=>{
-  cliente=b.dataset.c;$$('#cli button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  $('#plazo').textContent=PLAZO[cliente];pintarEtapas();pintarRecorridos();if(vista==='disenar')pintarDisenar();
-  if(!$('#v-detalle').hidden){const id=T.find(t=>$('#v-detalle').querySelector('h1').textContent===t.n);if(id)abrirDetalle(id.id);}
-  if(perfilListo)aplicarVinculo();
-  escribirLink(false);
-}));
 function pintarPipe(){
   const c=$('#pipe');c.innerHTML='';
   CAPAS.forEach((capa,i)=>{
@@ -2629,7 +2610,6 @@ const DEP1={'Jeans':'jamplio','Pantalones':'cargo','Abrigos':'trench','Tejidos y
 $$('#v-portada .cvit').forEach(b=>b.addEventListener('click',()=>{
   let destino=b.dataset.v;
   if(!destino){recSel=DEP1[b.dataset.dep]||'jamplio';pintarRecorridos();destino='recorridos';}
-  if(!perfilListo){abrirGate(destino);return;}
   mostrar(destino);
 }));
 /* el arranque: todas las vistas empiezan ocultas y sólo esto decide cuál se ve. Si algo falla, el gate y un aviso,
@@ -2642,9 +2622,7 @@ function arranqueFallido(e){
 }
 try{
   pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
-  // restaurar el perfil no tiene que escribir la URL: antes dejaba «#portada?…» y leerLink() volvía a la portada vieja
-  if(perfilListo){leyendoLink=true;try{const g=JSON.parse(localStorage.getItem('ciclo.perfil'));if(g.cliente!==cliente)$(`#cli button[data-c="${g.cliente}"]`).click();}catch(e){}finally{leyendoLink=false;}aplicarVinculo();}
-  if(!leerLink()){if(perfilListo)mostrar('disenar');else abrirGate('disenar');} // sin perfil guardado, la app arranca con las tres preguntas
+  if(!leerLink())abrirGate('disenar'); // la entrada son las tres preguntas, siempre; sólo un link con el perfil la saltea
 }catch(e){arranqueFallido(e);}
 window.CICLO_LISTO=true;
 </script>

@@ -112,7 +112,7 @@ Seis puntos. Tres corren una sola vez, en batch; tres se disparan con el usuario
 | IA-2 | Enlace de registros entre las 8 fuentes | Comparación de pares + clasificación | batch |
 | IA-3 | Agrupar atributos | K-means no supervisado, k=4 | al cargar |
 | IA-4 | Ubicar una tendencia nueva | Asignación al centroide más cercano | en vivo |
-| IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE | en vivo |
+| IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE, desde una función de Netlify | en vivo, en la app oficial |
 | IA-6 | Consulta por imagen | CLIP en el navegador: zero-shot + looks parecidos | en vivo |
 | IA-7 | Diseñar: referencias y colores | CLIP sobre la pasarela de Vogue | batch |
 
@@ -190,8 +190,9 @@ la URL exacta de Kaggle.
 
 ## Qué falta
 
-Conectar la Groq API en vivo (hoy IA-5 corre con un prompt fijo), separar pasarela y venta por género,
-y sumar calzado.
+Separar pasarela y venta por género, sumar calzado y recalcular el K-means sin el momento de búsqueda
+2024–25. IA-5 ya corre en vivo (Recorridos → «Pedir lectura en vivo»), sólo en la app oficial: GitHub
+Pages no tiene funciones.
 
 ## Estructura del repositorio
 
@@ -202,6 +203,7 @@ ciclo/
 ├── historial.md               las versiones del proyecto, de la hipótesis al prototipo
 ├── .gitignore
 ├── netlify.toml               configuración de Netlify: publica app/ sin build
+├── netlify/functions/         lectura.mjs: IA-5 en vivo (Groq), la única parte con servidor
 ├── datasets/                  diccionario y links de descarga (los CSV no se suben)
 ├── datasets_procesados/       las series que consume la app
 ├── diseno/                    referencias y prototipos por versión

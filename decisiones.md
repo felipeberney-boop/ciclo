@@ -514,3 +514,25 @@ entre navegadores.
 
 **Menú más corto.** Cuatro secciones a la vista —Diseñar, Tendencias (el radar), Recorridos y Buscar por imagen—
 y el resto (El ciclo, Marcas, Retornos, Método) detrás de «Más».
+
+## 2026-10-20 · Netlify como app oficial y Groq en vivo
+
+**Problema.** IA-5 corría con un prompt fijo desde la Entrega 2. Llamar a Groq desde el navegador
+expone la clave, y GitHub Pages sólo sirve archivos: no puede guardar un secreto.
+
+**Decisión.** La app oficial pasa a Netlify (`ciclo-udesa.netlify.app`), con una función
+(`netlify/functions/lectura.mjs`) que guarda la clave como `GROQ_API_KEY` y arma el prompt del lado del
+servidor. GitHub Pages queda como espejo: ahí el botón avisa que la lectura en vivo sólo corre en la app
+oficial.
+
+**Cómo se usa.** En Recorridos, debajo de la recomendación fija, «Pedir lectura en vivo». El navegador
+manda sólo métricas del atributo (nivel y momento en pasarela y búsqueda, picos, validación) y el tipo de
+cliente; la función valida cada campo contra una lista cerrada, así que no entra texto libre al modelo.
+La respuesta sale en salmón, marcada como interpretación, con el modelo y la versión del prompt.
+
+**Lo que corregimos al armarlo.** La tabla del K-means guarda el pico de búsqueda de Jeans baggy en 2025,
+el año del salto de medición. Mandarlo así contradecía un límite declarado; ahora la función recibe el
+pico hasta 2024, el mismo que dibuja la app. El momento de búsqueda todavía usa 2024–25: sigue pendiente.
+
+**Por qué un botón y no automático.** Cada lectura es una llamada que cuesta y tarda. La recomendación
+fija sigue a la vista: las dos se pueden comparar.

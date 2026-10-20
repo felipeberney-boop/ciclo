@@ -301,6 +301,10 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--in
 .dline{display:flex;align-items:baseline;gap:16px;margin-top:8px}
 .dline .a{font-size:34px;line-height:1;flex:none}
 .dline p{margin:0;font-size:14px;line-height:1.5;color:var(--ink)}
+.vivo{margin-top:14px;padding-top:12px;border-top:1px dashed var(--ia);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.vivo .h{width:100%;display:flex;align-items:center;gap:8px}
+.vivo .dline{margin-top:0}.vivo .dline .a{color:var(--ia-t)}
+.vivo .vm{font-size:11.5px;color:var(--ink-3)}
 .dfacts{display:grid;grid-template-columns:auto 1fr;gap:7px 14px;align-content:center;font-size:13px}
 .dfacts dt{font-variation-settings:"wdth" 62.5;font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);align-self:baseline}
 .dfacts dd{margin:0}
@@ -1776,11 +1780,37 @@ function pintarDecision(o){
   const [acc,arg]=et&&et.et!=null?consejo(cliente,et.et):['—','Este atributo no entra al K-means, así que no tiene etapa ni recomendación. Mirá cómo se mueve afuera en el gráfico.'];
   const ter=d==null?'sin dato':d>5?`gana terreno (+${Math.round(d)})`:d<-5?`pierde terreno (${Math.round(d)})`:`estable (${d>0?'+':''}${Math.round(d)})`;
   $('#rdecide').innerHTML=`<div class="dacc"><div class="h"><span class="lbl">Para vos · ${P.n}${vinculo==='propia'?' · por tu cuenta':' · tu marca'}</span><span class="tag ia2">recomendación · interpretación</span></div>
-      <div class="dline"><span class="a serif">${acc}</span><p>${arg}</p></div></div>
+      <div class="dline"><span class="a serif">${acc}</span><p>${arg}</p></div>
+      ${vivoDatos(o)?`<div class="vivo" id="rvivo"></div>`:''}</div>
     <dl class="dfacts"><dt>Etapa</dt><dd>${et?et.n:'sin etapa'}${et?' <span class="mono" style="color:var(--ink-3);font-size:10.5px">K-means</span>':''}</dd>
       <dt>Afuera, 2023→2025</dt><dd>${ter}</dd>
       ${aca?`<dt>Búsqueda local (AR)</dt><dd>${aca}</dd>`:''}
       <dt>Tu ventana</dt><dd>hasta ${P.hasta} · ±${Math.round(P.banda)}</dd></dl>`;
+  pintarVivo(o);
+}
+/* IA-5 en vivo: la función de Netlify recibe sólo estas métricas, nunca una fila, y arma el prompt v2 */
+const VIVO={};
+const escH=t=>String(t).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
+function vivoDatos(o){
+  const km=KM.rows.find(r=>r.n.split(' /')[0]===o.n.split(' /')[0]);if(!km)return null;const et=etapaDe(o.n),pg=picoBusq(o,'g');
+  return {atributo:km.n,cliente,vinculo,etapa:et?et.n:null,pn:km.pn,pm:km.pm,bn:km.bn,bm:km.bm,
+    pico_pas:km.pico_pas,pico_bus:pg&&pg.y,bus_abierto:!!(pg&&pg.abierto),shop:km.shop_22_25,amz:km.amz_19_22,terreno:terreno(o.id)};
+}
+function pintarVivo(o){
+  const box=$('#rvivo');if(!box)return;const d=vivoDatos(o),key=[d.atributo,cliente,vinculo].join('|'),r=VIVO[key];
+  const tag=`<span class="tag ia2">interpretación · Groq en vivo</span>`;
+  if(r&&r.accion) box.innerHTML=`<div class="h">${tag}<span class="mono vm">${escH(r.modelo)} · prompt ${escH(r.prompt)}</span></div>
+      <div class="dline"><span class="a serif">${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
+  else box.innerHTML=`<button type="button" class="kbtn ghost" id="rvivob"${r==='…'?' disabled':''}>${r==='…'?'Pensando…':'Pedir lectura en vivo'}</button>
+      <span class="vm">${r&&r.error?escH(r.error):'Un modelo de lenguaje lee las métricas de este atributo para '+tuQuien()+'. No ve ningún dato crudo.'}</span>`;
+  const b=$('#rvivob');if(b)b.addEventListener('click',async()=>{
+    VIVO[key]='…';pintarVivo(o);
+    try{const res=await fetch('/api/lectura',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)});
+      VIVO[key]=res.status===404?{error:'La lectura en vivo corre sólo en la app oficial: ciclo-udesa.netlify.app.'}
+        :await res.json().then(j=>res.ok?j:{error:j.error||'No se pudo leer.'}).catch(()=>({error:'No se pudo leer.'}));}
+    catch{VIVO[key]={error:'Sin conexión.'};}
+    if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);
+  });
 }
 /* pico de una capa de búsqueda sin 2025 (salto de medición de Google): «abierto» si el máximo es el último año bueno */
 function picoBusq(o,k){const v=o[k];if(!v)return null;let mi=-1,my=null;RX.forEach((y,i)=>{if(y<=ANIO_BASE&&v[i]!=null&&v[i]>mi){mi=v[i];my=y;}});return {y:my,abierto:my===ANIO_BASE};}

@@ -2,3 +2,7 @@
 [build]
   publish = "app"
   command = ""
+
+# IA-5 en vivo: la función arma el prompt y llama a Groq con GROQ_API_KEY (variable de entorno, nunca en el repo).
+[functions]
+  directory = "netlify/functions"

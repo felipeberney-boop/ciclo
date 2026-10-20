@@ -5,7 +5,8 @@ número siguiente, no se pisa el anterior.
 
 | Archivo | Para qué | Estado |
 |---|---|---|
-| `prompt_lectura_recomendacion_v1.md` | IA-5 · leer el grupo y recomendar | en uso, con prompt fijo |
+| `prompt_lectura_recomendacion_v1.md` | IA-5 · leer el grupo y recomendar | reemplazado por v2 |
+| `prompt_lectura_recomendacion_v2.md` | IA-5 · leer un atributo y recomendar, en vivo (función de Netlify) | en uso |
 | `prompt_consulta_por_imagen_v1.md` | IA-6 · atributos a partir de una foto | reemplazado por v2 |
 | `prompt_consulta_por_imagen_v2.md` | IA-6 · CLIP en el navegador: atributos, looks parecidos y años | en uso |
 | `prompt_disenar_referencias_y_colores_v1.md` | IA-7 · Diseñar: fotos de referencia y colores de la pasarela | en uso |

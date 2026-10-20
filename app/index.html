@@ -498,14 +498,13 @@ td.k{font-weight:600;white-space:nowrap}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 /* ---------- editorial: que se sienta revista (20/10/2026) ----------
    Negro es medido, salmón es calculado o interpretado por un modelo, y tres colores quedan reservados para la
-   recomendación (Entrar, Esperar/Explorar, Salir). Nada más lleva color: negro, crema y blanco, para que el
-   color de la pantalla sea el de las prendas. Este bloque pisa lo de arriba; ver decisiones.md, 20/10/2026. */
+   recomendación (Entrar, Esperar/Explorar, Salir). Los gráficos conservan sus colores de serie (--s1…--s6): en gris
+   se leían peor. El resto es negro, crema y blanco, para que el color de la pantalla sea el de las prendas. Este bloque pisa lo de arriba; ver decisiones.md, 20/10/2026. */
 :root{
   --paper:#F6F0EB; --paper-2:#FFFFFF; --card:#FFFFFF;
   --ink:#0E0D0B; --ink-2:#4A4741; --ink-3:#8A857C;
   --rule:#D6CCC2; --rule-2:#E6DED5;
   --accent:var(--ink); --accent-soft:transparent; --alert:var(--ink); --alert-soft:transparent; --ok:var(--ink);
-  --s1:#0E0D0B; --s2:#77726A; --s3:#ABA59B; --s4:#45413B; --s5:#CBC4B9; --s6:#5E5A53;
   --act-entrar:#2C6A3D; --act-esperar:#9A6200; --act-salir:#A5372A;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace; --gut:clamp(16px,5.5vw,80px);
 }
@@ -514,7 +513,6 @@ td.k{font-weight:600;white-space:nowrap}
     --paper:#0E0D0B; --paper-2:#171614; --card:#171614;
     --ink:#F6F0EB; --ink-2:#BDB6AC; --ink-3:#878178;
     --rule:#36332E; --rule-2:#25231F;
-    --s1:#F6F0EB; --s2:#A9A398; --s3:#6F6A62; --s4:#D9D2C8; --s5:#54504A; --s6:#8E887E;
     --act-entrar:#72C38A; --act-esperar:#E3A83F; --act-salir:#EE7D6B;
   }
 }
@@ -522,7 +520,6 @@ td.k{font-weight:600;white-space:nowrap}
   --paper:#0E0D0B; --paper-2:#171614; --card:#171614;
   --ink:#F6F0EB; --ink-2:#BDB6AC; --ink-3:#878178;
   --rule:#36332E; --rule-2:#25231F;
-  --s1:#F6F0EB; --s2:#A9A398; --s3:#6F6A62; --s4:#D9D2C8; --s5:#54504A; --s6:#8E887E;
   --act-entrar:#72C38A; --act-esperar:#E3A83F; --act-salir:#EE7D6B;
 }
 /* fuera lo que parece software: esquinas, rellenos de botón (los círculos de color y los puntos de dato quedan) */
@@ -532,7 +529,8 @@ td.k{font-weight:600;white-space:nowrap}
 /* tipografía: Bodoni enorme contra mono chiquita; nada intermedio */
 h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font-weight:400}
 .gate h1{font-size:clamp(46px,7.6vw,104px)}
-.kbig,.h3{font-size:clamp(32px,3.6vw,48px);line-height:1;letter-spacing:-.015em;margin-top:88px}
+/* subtítulos de sección: también display, más grandes y con regla arriba, para que abran sección como en una revista */
+.kbig,.h3{font-size:clamp(36px,4.2vw,60px);line-height:.98;letter-spacing:-.02em;margin-top:96px;padding-top:22px;border-top:1px solid var(--ink)}
 .kh{font-size:30px;line-height:1.05}
 .lbl,.tag,.stamp,th,.mast nav a,.navmas,.chip,.seg button,.kbtn,.copiar,.gvolver,.gprog,.dzpt,.colofon b,.dfacts dt,.gcard dt,.rec .t,.dzrk,.dzpn,.perfilinea,.aviso{
   font-family:var(--mono)!important;font-variation-settings:normal!important;font-weight:500!important;
@@ -1107,7 +1105,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         </div>
       </div>
       <hr class="rule">
-      <p class="note colores"><b>Cómo leer los colores.</b> Negro es medido. <span class="ia-t">Salmón</span> es calculado o interpretado por un modelo. Tres colores quedan reservados para la recomendación, que es una decisión y no un dato: <b class="acc-entrar">Entrar</b>, <b class="acc-esperar">Esperar / Explorar</b> y <b class="acc-salir">Salir</b>, siempre con la palabra al lado. Nada más lleva color: el resto de la pantalla es negro, crema y blanco, para que el color que se vea sea el de las prendas.</p>
+      <p class="note colores"><b>Cómo leer los colores.</b> Negro es medido. <span class="ia-t">Salmón</span> es calculado o interpretado por un modelo. Tres colores quedan reservados para la recomendación, que es una decisión y no un dato: <b class="acc-entrar">Entrar</b>, <b class="acc-esperar">Esperar / Explorar</b> y <b class="acc-salir">Salir</b>, siempre con la palabra al lado. Los gráficos usan color sólo para separar sus series. El resto de la pantalla es negro, crema y blanco, para que el color que se vea sea el de las prendas.</p>
       <div class="tw"><table>
         <thead><tr><th>Lo que ves</th><th>Origen</th><th>Cómo se obtiene</th></tr></thead>
         <tbody>

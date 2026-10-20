@@ -634,3 +634,9 @@ la columna ancha); texto en columnas de 60–70 caracteres; reglas de 1 px; sin 
 ni botones con relleno (de línea fina o texto subrayado); numeración de sección como sumario, en el orden del
 menú (01 · Diseñar … 09 · Método, igual en el índice de la portada); paleta negro, crema #F6F0EB y blanco. Se
 hizo como un bloque al final del CSS que pisa lo anterior, para no reescribir 480 líneas.
+
+**Los gráficos vuelven a tener color (20/10/2026).** Pasar las series a grises hacía que el K-means y
+Recorridos se leyeran peor: cuatro grupos en cuatro grises no se distinguen. Vuelven sus colores de serie, que
+sirven sólo para separar líneas y grupos. Gana/pierde terreno sigue en negro: está en dos columnas con su
+signo, y en verde y rojo se confundía con Entrar y Salir. Los subtítulos de sección (Bodoni) suben a 36–60 px
+y llevan una regla de 1 px arriba: abren sección en vez de ser un tamaño intermedio.

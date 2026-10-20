@@ -1,0 +1,35 @@
+lote,ancla,termino,hoja_taxonomia,link,nota
+10,trench coat,t shirt,tipo:remeras/remera,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,t%20shirt,button%20down%20shirt,oversized%20shirt,cropped%20shirt",
+10,trench coat,button down shirt,tipo:camisas/clasica,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,t%20shirt,button%20down%20shirt,oversized%20shirt,cropped%20shirt",
+10,trench coat,oversized shirt,tipo:camisas/oversize,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,t%20shirt,button%20down%20shirt,oversized%20shirt,cropped%20shirt",
+10,trench coat,cropped shirt,tipo:camisas/cropped,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,t%20shirt,button%20down%20shirt,oversized%20shirt,cropped%20shirt",
+11,trench coat,bomber jacket,tipo:abrigos/campera,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,bomber%20jacket,a%20line%20dress,mid%20rise%20jeans,capris",la campera más buscada; «jacket» solo es demasiado general
+11,trench coat,a line dress,tipo:vestidos/evase,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,bomber%20jacket,a%20line%20dress,mid%20rise%20jeans,capris",
+11,trench coat,mid rise jeans,tiro:medio,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,bomber%20jacket,a%20line%20dress,mid%20rise%20jeans,capris",
+11,trench coat,capris,tipo:pantalones/capri,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,bomber%20jacket,a%20line%20dress,mid%20rise%20jeans,capris",reintento: «capri pants» volvió vacío
+12,trench coat,bermudas,tipo:pantalones/bermuda,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,bermudas,cable%20knit%20sweater,tweed%20jacket,jersey%20knit",reintento: «bermuda shorts» tuvo 7 años útiles
+12,trench coat,cable knit sweater,mat:cable,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,bermudas,cable%20knit%20sweater,tweed%20jacket,jersey%20knit",reintento: «cable knit» tuvo 8 años útiles
+12,trench coat,tweed jacket,mat:tweed,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,bermudas,cable%20knit%20sweater,tweed%20jacket,jersey%20knit",reintento: «tweed» volvió plano
+12,trench coat,jersey knit,mat:jersey,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,bermudas,cable%20knit%20sweater,tweed%20jacket,jersey%20knit",«jersey» solo es la camiseta de fútbol
+13,trench coat,ribbed top,mat:rib,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,ribbed%20top,french%20terry,cotton%20dress,poplin",
+13,trench coat,french terry,mat:frenchterry,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,ribbed%20top,french%20terry,cotton%20dress,poplin",
+13,trench coat,cotton dress,mat:algodon,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,ribbed%20top,french%20terry,cotton%20dress,poplin",«cotton» solo es demasiado general
+13,trench coat,poplin,mat:popelina,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,ribbed%20top,french%20terry,cotton%20dress,poplin",
+14,trench coat,pique polo,mat:pique,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,pique%20polo,canvas%20jacket,wool%20sweater,merino%20wool",
+14,trench coat,canvas jacket,mat:lona,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,pique%20polo,canvas%20jacket,wool%20sweater,merino%20wool",
+14,trench coat,wool sweater,mat:lana,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,pique%20polo,canvas%20jacket,wool%20sweater,merino%20wool",
+14,trench coat,merino wool,mat:merino,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,pique%20polo,canvas%20jacket,wool%20sweater,merino%20wool",
+15,trench coat,wool coat,mat:pano,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,wool%20coat,silk%20dress,polyester,nylon%20jacket",
+15,trench coat,silk dress,mat:seda,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,wool%20coat,silk%20dress,polyester,nylon%20jacket",«silk» solo mezcla sábanas y cosmética
+15,trench coat,polyester,mat:poliester,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,wool%20coat,silk%20dress,polyester,nylon%20jacket",
+15,trench coat,nylon jacket,mat:nylon,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,wool%20coat,silk%20dress,polyester,nylon%20jacket",
+16,trench coat,acrylic sweater,mat:acrilico,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,acrylic%20sweater,spandex,neoprene,organza",
+16,trench coat,spandex,mat:elastano,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,acrylic%20sweater,spandex,neoprene,organza",
+16,trench coat,neoprene,mat:neoprene,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,acrylic%20sweater,spandex,neoprene,organza",
+16,trench coat,organza,mat:organza,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,acrylic%20sweater,spandex,neoprene,organza",
+17,trench coat,crepe fabric,mat:crepe,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,crepe%20fabric,studded,cut%20out%20dress,toile",«crepe» solo son los panqueques
+17,trench coat,studded,det:tachas,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,crepe%20fabric,studded,cut%20out%20dress,toile",
+17,trench coat,cut out dress,det:cutouts,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,crepe%20fabric,studded,cut%20out%20dress,toile",
+17,trench coat,toile,estampa:toile,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,crepe%20fabric,studded,cut%20out%20dress,toile",
+18,trench coat,chevron print,estampa:chevron,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,chevron%20print,herringbone",
+18,trench coat,herringbone,estampa:espiga,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,chevron%20print,herringbone",

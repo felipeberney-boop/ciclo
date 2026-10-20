@@ -221,16 +221,21 @@ def hoja(ref):
 # ---------- series propias nuevas (codigo/pegar_lotes_trends.py): la hoja pasa a dato directo y deja de pedir prestado ----------
 import csv as _csv
 SERIES = {}
-for r in _csv.DictReader(open('datasets/plan_exportacion_trends.csv')): SERIES[r['hoja_taxonomia']] = r['termino']
+import glob as _glob
+for _f in sorted(_glob.glob('datasets/plan_exportacion_trends*.csv')):
+    for r in _csv.DictReader(open(_f)): SERIES.setdefault(r['hoja_taxonomia'], [])
+    for r in _csv.DictReader(open(_f)): SERIES[r['hoja_taxonomia']].append(r['termino'])
 _hay = {r['atributo_id'] for r in _csv.DictReader(open('datasets_procesados/series_google_trends/trends_mundo__web_anual.csv'))}
 def hoja_ref(ref):
     k, v = ref.split(':', 1)
     if k == 'det': return next(d for d in DETALLES if d['id'] == v)
+    if k == 'tiro': return next(t for t in TIROS if t['id'] == v)
     return hoja(ref)
-for ref, termino in SERIES.items():
+for ref, terminos in SERIES.items():  # si hubo reintento, vale el último término que entró
     aid = ref.split(':')[1].replace('/', '_')
     if aid in _hay:
-        h = hoja_ref(ref); h['serie'], h['termino'] = aid, termino
+        _t = {r['termino_buscado'] for r in _csv.DictReader(open('datasets_procesados/series_google_trends/trends_mundo__web_anual.csv')) if r['atributo_id'] == aid}
+        h = hoja_ref(ref); h['serie'], h['termino'] = aid, next((t for t in reversed(terminos) if t in _t), terminos[-1])
         PRESTA.pop(ref, None)
 for ref, (de, porque) in PRESTA.items():
     h = hoja(ref); assert not any(h.get(x) for x in ('km', 'rec', 'je', 'jeans', 'serie')), ('ya tiene serie propia', ref)

@@ -14,7 +14,7 @@ La mediana de GREL sigue siendo la de las 16 series originales, para que sumar s
 import csv, glob, os, re, statistics as st
 
 BASE = 'datasets_procesados/series_google_trends/trends_mundo__web_anual.csv'
-PLAN = {r['termino']: r for r in csv.DictReader(open('datasets/plan_exportacion_trends.csv'))}
+PLAN = {r['termino']: r for f in sorted(glob.glob('datasets/plan_exportacion_trends*.csv')) for r in csv.DictReader(open(f))}  # los dos planes
 Y = list(range(2004, 2026))
 filas = list(csv.DictReader(open(BASE)))
 trench = {int(r['anio']): float(r['indice_0_100']) for r in filas if r['atributo_id'] == 'trench'}

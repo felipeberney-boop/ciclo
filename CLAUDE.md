@@ -38,6 +38,8 @@ Netlify publishes `app/` with no build command. The only external dependency is 
 - **«Preguntar» (`#v-asistente`)** is the class V2 pattern: the user pastes a Groq key (localStorage `groq_key`)
   and the browser calls Groq directly with `app/llm/ciclo_datos.md` as DATOS (only the parts the question names).
   That file is generated: run `node codigo/armar_datos_llm.js` after changing any data constant.
+- **Borrowed data:** taxonomy leaves without their own series carry `presta_de`/`presta_porque` (sibling → parent → loose
+  attribute, never another family); the UI always says where a borrowed number comes from.
 - **Diseñar** runs on `TAX` (from `codigo/taxonomia.py`; rerun it after touching drawings or tables). Every state color
   comes from `señal()` / `señalPalabra()` and the `s-<estado>` CSS classes; never assign a state color by hand.
   The app always opens on the 3-question gate; only a link with `c`, `v` and `pu` skips it.
@@ -45,8 +47,9 @@ Netlify publishes `app/` with no build command. The only external dependency is 
 
 ## Design rules that apply in code
 
-- **Salmon (`#FFAFA3`) = AI.** Black is measured; salmon is calculated or interpreted by a model. Holds in
-  the app and in the presentation slides.
+- **Color means one thing: the signal** (`señal()`: entrar green, esperar amber, salir red, sin-dato neutral), always with
+  its word and icon. Provenance is never a color: `● medido`, `◇ interpretado` (dashed), `↪ prestado` as text/icon/dashed
+  line. The old salmon-for-AI rule is retired (tokens `--ia`/`--ia-t` are neutral now).
 - **Stage is encoded as position on a track, not color.** The UI is monochrome (black, cream #F6F0EB, white)
   so the only color is the garments' own palette. The one exception: the recommendation word (Entrar green,
   Esperar/Explorar amber, Salir red, via `accCls()` and the `--act-*` tokens), always with the word itself.

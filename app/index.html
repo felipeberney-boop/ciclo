@@ -714,9 +714,9 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
       <span class="side r">Última lectura 23.09.2026</span>
     </div>
     <nav id="nav" aria-label="Secciones">
-      <a data-v="disenar" class="nav-dz">Diseñar</a>
-      <a data-v="radar" aria-current="page">Tendencias</a>
       <a data-v="recorridos">El ciclo</a>
+      <a data-v="disenar" class="nav-dz">Diseñar</a>
+      <a data-v="radar">Tendencias</a>
       <a data-v="consulta">Buscar por imagen</a>
       <a data-v="asistente">Preguntar</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
@@ -764,9 +764,9 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
           </div>
           <div>
             <div class="cvh">El índice</div>
-        <button class="cvit" data-v="disenar"><span class="n">01</span><span class="t">Diseñar</span><span class="d">paso a paso, con tu perfil</span></button>
-        <button class="cvit" data-v="radar"><span class="n">02</span><span class="t">Tendencias</span><span class="d">qué se está moviendo</span></button>
-        <button class="cvit" data-v="recorridos"><span class="n">03</span><span class="t">El ciclo</span><span class="d">cuándo picó y cuánto tardó en volver</span></button>
+        <button class="cvit" data-v="recorridos"><span class="n">01</span><span class="t">El ciclo</span><span class="d">cuándo picó y cuánto tardó en volver</span></button>
+        <button class="cvit" data-v="disenar"><span class="n">02</span><span class="t">Diseñar</span><span class="d">paso a paso, con tu perfil</span></button>
+        <button class="cvit" data-v="radar"><span class="n">03</span><span class="t">Tendencias</span><span class="d">qué se está moviendo</span></button>
         <button class="cvit" data-v="consulta"><span class="n">04</span><span class="t">Buscar por imagen</span><span class="d">mandá una prenda</span></button>
         <button class="cvit" data-v="asistente"><span class="n">05</span><span class="t">Preguntar</span><span class="d">un modelo lee los datos</span></button>
         <button class="cvit" data-v="etapas"><span class="n">06</span><span class="t">El modelo</span><span class="d">el K-means que pone las etapas</span></button>
@@ -786,7 +786,7 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
     <section class="view" id="v-disenar" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">01 · Diseñar</span>
+          <span class="lbl">02 · Diseñar</span>
           <h1>Diseñá con lo que se mueve afuera</h1>
           <p class="sub">Elegí vos, paso a paso. En cada paso la app te marca lo que conviene según tu perfil y lo que está ganando terreno afuera.</p>
           <p class="dzperfil" id="dzperfil"></p>
@@ -800,7 +800,7 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
     <section class="view" id="v-radar" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">02 · Tendencias</span>
+          <span class="lbl">03 · Tendencias</span>
           <h1>Qué se está moviendo</h1>
           <p class="sub">Doce atributos leídos en los catálogos de nueve marcas. Las cinco capas ya tienen fuente, y siete atributos tienen además su recorrido en pasarela y búsqueda: abrí la ficha para verlo.</p>
         </div>
@@ -926,7 +926,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-recorridos" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">03 · El ciclo</span>
+          <span class="lbl">01 · El ciclo</span>
           <h1>¿Cuándo estuvo de moda, y cuánto tardó en volver?</h1>
           <p class="sub">Para cada atributo: su último pico en la búsqueda mundial, si hoy sube o baja, cuántos años pasaron, y —cuando la serie tiene dos picos— cada cuánto vuelve. Tocá uno para ver su recorrido completo.</p>
         </div>
@@ -1548,7 +1548,7 @@ function abrirDetalle(id){
     <button class="back" id="volver">← Volver al radar</button>
     <div class="vhead">
       <div>
-        <span class="lbl">02 · Tendencias · ${t.k} · ${t.fuente}</span>
+        <span class="lbl">03 · Tendencias · ${t.k} · ${t.fuente}</span>
         <h1>${t.n}</h1>
         <p class="sub">${t.med}.</p>
       </div>
@@ -1956,7 +1956,9 @@ function dzEjes(){ // cada elección con su señal y si puede sostener o tumbar 
   return E;
 }
 function dzVeredicto(E){
-  const falta=E.filter(e=>e.bloquea&&e.s.estado==='sin-dato'),con=E.filter(e=>e.s.estado!=='sin-dato');
+  const falta=E.filter(e=>e.bloquea&&e.s.estado==='sin-dato');
+  // un mismo dato no se cuenta dos veces (el denim prestado del pantalón largo repite el número del jean)
+  const con=E.filter(e=>e.s.estado!=='sin-dato').filter((e,i,a)=>!(e.s.proc==='prestado'&&a.some((x,j)=>j!==i&&x.s.proc!=='prestado'&&x.s.num===e.s.num&&x.s.fuente===e.s.fuente)));
   if(falta.length||!con.length)return {s:señalDe('sin-dato','Sin recomendación',`${falta.length?falta.map(e=>e.n.toLowerCase()).join(' y '):'Nada de lo que elegiste'} no ${falta.length>1?'tienen':'tiene'} serie medida. Se puede explorar, pero CICLO no lo recomienda.`),por:''};
   if(!con.some(e=>!e.s.interpretado))return {s:señalDe('sin-dato','Sin recomendación','Lo único que respalda esta combinación es la lectura de CLIP sobre la pasarela, que es interpretación de un modelo. Hace falta al menos una serie medida.'),por:''};
   const peor=['salir','esperar','entrar'].find(k=>con.some(e=>e.s.estado===k));
@@ -2007,7 +2009,8 @@ function pintarDisenar(){
     enlazar('data-pr','prenda');
   }else if(dz.paso==='tipo'){
     const L=pr.tipos.filter(dzVisible).map(x=>{const s=dzSeñal(x);return {id:x.id,n:x.n,d:x.d,vis:dzSil(x.sil,x.n),s,dato:s.num?`${s.num} afuera`:'',attr:'data-ti',on:dz.tipo===x.id};}).sort(dzOrden);
-    C.innerHTML=dzPanel(`¿Qué tipo de ${pr.n.toLowerCase().split(' y ')[0].replace(/s$/,'')}?`,'',L,'La señal sale de la etapa del K-means y tu perfil, o de la búsqueda mundial 2023→2025 frente a las otras búsquedas de moda.');
+    const SING={pantalones:'pantalón',faldas:'falda',vestidos:'vestido',remeras:'remera o top',camisas:'camisa',buzos:'buzo o sweater',abrigos:'campera o abrigo',enteritos:'enterito'};
+    C.innerHTML=dzPanel(`¿Qué tipo de ${SING[pr.id]||pr.n.toLowerCase()}?`,'',L,'La señal sale de la etapa del K-means y tu perfil, o de la búsqueda mundial 2023→2025 frente a las otras búsquedas de moda.');
     enlazar('data-ti','tipo');
   }else if(dz.paso==='corte'){
     const L=TAX.cortes.map(x=>{const s=dzSeñal(x);return {id:x.id,n:x.n,d:x.d,vis:dzSil(x.sil,x.n),s,dato:dzDatoTxt(s),attr:'data-co',on:dz.corte===x.id};}).sort(dzOrden);

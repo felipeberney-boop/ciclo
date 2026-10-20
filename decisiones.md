@@ -695,3 +695,29 @@ de búsqueda y los medios bajan −34 %. Jeans amplios y cargo quedan juntos en 
 Al último grupo le quedaba la etapa sobrante, y Y2K —subiendo +81 %— salía «saturada». Ahora los cuatro
 centros toman juntos la combinación de etapas con menor distancia total. Y2K vuelve a «en ascenso».
 
+## 2026-10-20 · Cajas, procedencia sin color, dato prestado, «El ciclo»
+
+**El rojo, por última vez.** Había dos reglas peleando por el canal color: el salmón y su terracota (`--ia`,
+`--ia-t`) marcaban «interpretado por un modelo», y las recomendaciones son interpretadas, así que salían
+rojizas. La procedencia sale del canal color: se marca con texto, ícono y línea punteada (● medido,
+◇ interpretado, ↪ prestado). El color queda sólo para la señal, con cuatro estados. **Se retira la regla del
+salmón** que venía de la Entrega 2.
+
+**Cajas cerradas.** Toda opción elegible es una caja de cuatro lados, de al menos 44 px, con hover, foco
+visible y un estado elegido que se distingue sin color (borde doble).
+
+**Dato por cercanía.** Las hojas sin serie propia toman la de un pariente y lo dicen en la tarjeta: hermano de
+la misma familia, después el padre, después el atributo suelto (el color en toda la pasarela). Nunca se salta
+a otra familia sin parentesco. El pantalón largo pasa a tener dato propio: las tres series de jean. Las 34
+búsquedas nuevas que llevarían a ~50 hojas con dato propio no se exportaron: el plan
+(`plan_exportacion_trends.csv`) no está en el repositorio y Google Trends se baja a mano.
+
+**«El ciclo».** Recorridos no se entendía. Ahora contesta una pregunta: cuándo picó y cuánto tardó en volver.
+Cada atributo dice su último pico, si sube o baja, los años desde el pico y, si hay dos picos, la distancia
+entre ellos, en una frase. El K-means pasa a llamarse «El modelo». El gráfico arranca en el primer año con dos
+capas y marca dónde entra cada fuente.
+
+**Dos bugs viejos que salieron al dibujar.** Las barras de color de Tendencias nunca se habían visto (dentro
+de un `<button>` flex un bloque vacío queda de ancho cero), y las muestras de estampa tampoco (un `url("…")`
+dentro de un `style` con comillas dobles).
+

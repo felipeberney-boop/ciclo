@@ -16,6 +16,12 @@ import csv, glob, os, re, statistics as st
 BASE = 'datasets_procesados/series_google_trends/trends_mundo__web_anual.csv'
 PLAN = {r['termino']: r for f in sorted(glob.glob('datasets/plan_exportacion_trends*.csv')) for r in csv.DictReader(open(f))}  # los dos planes
 Y = list(range(2004, 2026))
+UTIL = [y for y in Y if y <= 2024]  # el análisis corta en 2024: 2025 y 2026 traen el salto de medición de Google (69 de 70 series suben en 2026, mediana +99 %)
+# decisiones del 20/10/2026 sobre el segundo plan (ver datasets/fuentes_y_descargas.md)
+DESCARTE = {t: 'máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil' for t in ['button down shirt', 'oversized shirt', 'cropped shirt', 'jersey knit',
+    'ribbed top', 'french terry', 'pique polo', 'canvas jacket', 'nylon jacket', 'acrylic sweater', 'crepe fabric', 'chevron print']}
+DESCARTE['bermudas'] = 'mide otra cosa: estacionalidad 0,26 y picos sueltos (2009-06, 2014-03, 2019-11) que no son verano: la isla, no el pantalón'
+DESCARTE['toile'] = 'mide otra cosa: en francés es «tela» y en costura la prueba de un molde; cae de 70 a 33 sin ciclo. Falta bajar «toile de jouy»'
 filas = list(csv.DictReader(open(BASE)))
 trench = {int(r['anio']): float(r['indice_0_100']) for r in filas if r['atributo_id'] == 'trench'}
 
@@ -37,19 +43,20 @@ def correlacion(x, y):  # statistics.correlation recién existe en Python 3.10
     return sum((a - mx) * (b - my) for a, b in zip(x, y)) / (sum((a - mx) ** 2 for a in x) * sum((b - my) ** 2 for b in y)) ** .5
 
 informe, nuevas = [], []
-for ruta in sorted(glob.glob('datasets/trends_lotes/*.csv')):
+for ruta in sorted(glob.glob('datasets/trends_lotes/*.csv') + glob.glob('datasets/trends_lotes/plan2/*.csv')):
     L = leer_lote(ruta); a = L.get('trench coat')
     if not a: informe.append(f'- {ruta}: sin columna «trench coat», no entra.'); continue
-    ys = [y for y in Y if y in a and a[y] > 0]
+    ys = [y for y in UTIL if y in a and a[y] > 0]
     r = correlacion([a[y] for y in ys], [trench[y] for y in ys])
     if r < 0.95: informe.append(f'- {ruta}: el ancla no pega (r = {r:.2f}), no entra.'); continue
     k = st.median(trench[y] / a[y] for y in ys)
     for termino, serie in L.items():
         if termino == 'trench coat': continue
         if termino not in PLAN: informe.append(f'- {termino} ({ruta}): no está en el plan, se ignora.'); continue
-        v = {y: serie.get(y, 0) * k for y in Y}; mx = max(v.values()) or 1
-        utiles = sum(1 for y in Y if serie.get(y, 0) >= 1)
-        plana = st.pstdev(v.values()) / mx < 0.05
+        if termino in DESCARTE: informe.append(f'- {termino}: descartado, {DESCARTE[termino]}. Sigue prestado.'); continue
+        v = {y: serie.get(y, 0) * k for y in Y}; mx = max(v[y] for y in UTIL) or 1  # a su máximo hasta 2024
+        utiles = sum(1 for y in UTIL if serie.get(y, 0) >= 1)
+        plana = st.pstdev([v[y] for y in UTIL]) / mx < 0.05
         if utiles < 12 or plana:
             informe.append(f'- {termino}: {"plana" if plana else f"{utiles} años útiles"}, no entra; sigue prestado.'); continue
         hoja = PLAN[termino]['hoja_taxonomia']; aid = hoja.split(':')[1].replace('/', '_')
@@ -57,7 +64,9 @@ for ruta in sorted(glob.glob('datasets/trends_lotes/*.csv')):
         informe.append(f'- {termino} → {hoja}: entra ({utiles} años útiles, ancla r = {r:.2f}).')
 
 ids = {f['atributo_id'] for f in nuevas}
-filas = [f for f in filas if f['atributo_id'] not in ids] + nuevas
+ORIG = ['jamplio', 'jmedio', 'jajust', 'cargo', 'buzo', 'trench', 'capa', 'kimono', 'cuero', 'gamuza', 'encaje', 'rayas', 'lunares', 'floral', 'animal', 'corset']
+# el CSV queda con las 16 originales y las que pasan hoy: una serie que dejó de pasar el filtro no queda colgada
+filas = [f for f in filas if f['atributo_id'] in ORIG] + nuevas
 with open(BASE, 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=['atributo_id', 'atributo', 'termino_buscado', 'anio', 'indice_0_100']); w.writeheader(); w.writerows(filas)
 os.makedirs('datasets/trends_lotes', exist_ok=True)
@@ -66,14 +75,15 @@ print('\n'.join(informe)); print(f'{len(ids)} series nuevas en {BASE}')
 
 # 5. a la app: GREL de cada serie nueva, dividida por la mediana de las 16 originales de cada año y sobre su máximo desde 2010
 import json
-ORIG = ['jamplio', 'jmedio', 'jajust', 'cargo', 'buzo', 'trench', 'capa', 'kimono', 'cuero', 'gamuza', 'encaje', 'rayas', 'lunares', 'floral', 'animal', 'corset']
 W = {}
 for f in filas: W.setdefault(f['atributo_id'], {})[int(f['anio'])] = float(f['indice_0_100'])
 med = {y: st.median(W[k][y] for k in ORIG) for y in Y}
 h = open('app/index.html').read(); i = h.index('\nconst GREL=') + len('\nconst GREL=')
 G, j = json.JSONDecoder().raw_decode(h, i)
-for aid in ids:
-    rel = {y: W[aid][y] / med[y] for y in Y}; mx = max(rel[y] for y in Y if y >= 2010) or 1
+G = {k: v for k, v in G.items() if k in ORIG or k in ids}
+for aid in sorted(set(G) | ids):  # todas, las 16 originales también: sobre su máximo de 2010 a 2024
+    if aid not in W: continue
+    rel = {y: W[aid][y] / med[y] for y in Y}; mx = max(rel[y] for y in Y if 2010 <= y <= 2024) or 1
     G[aid] = [round(rel[y] / mx * 100, 1) if y >= 2010 else None for y in Y]
 open('app/index.html', 'w').write(h[:i] + json.dumps(G, ensure_ascii=False, separators=(',', ':')) + h[j:])
 print(f'GREL: {len(G)} series en la app')

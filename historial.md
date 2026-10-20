@@ -98,6 +98,11 @@ prestado); se retira la regla del salmón. Las hojas sin serie toman la de un pa
 tardó en volver) y el gráfico arranca donde arranca el dato. Commits `9f842b8` a `aa99cf9` y siguientes; la
 versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-20_cc69c93.html`.
 
+## v1.3 · 20/10/2026 · 65 series de búsqueda y el corte en 2024
+
+Dos planes de Google Trends (70 términos, trench coat de ancla): entran 49 series nuevas a las 16 que había.
+Todo el análisis corta en 2024 porque 2026 viene contaminado. Hojas con dato propio: 26 → 75.
+
 ## Lo que falta para la Entrega 3
 
 - Conectar la Groq API en vivo. Hoy IA-5 corre con prompt fijo.

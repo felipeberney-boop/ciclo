@@ -739,3 +739,20 @@ con dato directo pasan de 26 a 58; quedan 36 prestadas y 34 sin dato. Las nuevas
 que ya estaban), pero no entran al K-means: no tienen pasarela medida. Cable knit, tweed, capri y bermuda no
 alcanzaron (pocos años útiles o serie plana) y siguen prestadas.
 
+## 2026-10-20 · 2026 contaminado: todo corta en 2024, y el segundo plan de Trends
+
+**El corte.** 69 de 70 series de Google Trends saltan en 2026 (mediana +99 %), y el ancla, trench coat, pica en
+abril cuando siempre picó entre septiembre y febrero. Es la medición, no la moda. Ya se sacaba 2025 del pico y del
+K-means; ahora todo el análisis termina en 2024: la señal (2022→2024), la cuota de cada corte de jean, El ciclo,
+el pegado de series nuevas (cada una a su máximo hasta 2024) y lo que lee el asistente. 2025 y 2026 se dibujan
+apagados, con punto hueco. `ANIO_F` no existe en el repositorio; la constante vigente es `ANIO_BASE = 2024`, y
+`ANIO_G` (último año de la búsqueda) pasa de 2025 a 2024.
+
+**Qué entró y qué no.** 19 de 34 términos del segundo plan; los descartes y por qué están en
+`datasets/fuentes_y_descargas.md` para que se vea que se probaron. «bermudas» y «toile» quedan afuera porque miden
+otra cosa, no por poco volumen: mejor poco dato correcto que mucho dato de otra cosa.
+
+**Conteo.** Sobre 128 hojas: **75 directo, 40 prestado, 13 sin dato** (antes 58 · 36 · 34). Sin dato quedan el
+tiro medio, ocho materiales (jersey, rib, french terry, piqué, lona, nylon, acrílico, crepe), toile de jouy, chevron
+y los colores naranja y amarillo.
+

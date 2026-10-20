@@ -1,38 +1,72 @@
 # Lotes de Google Trends: qué entró y qué no
 
-- ruffles → det:volados: entra (22 años útiles, ancla r = 1.00).
-- embroidery → det:bordado: entra (22 años útiles, ancla r = 1.00).
-- pleated skirt → det:plisado: entra (21 años útiles, ancla r = 1.00).
-- quilted jacket → det:acolchado: entra (17 años útiles, ancla r = 1.00).
-- fleece → mat:fleece: entra (22 años útiles, ancla r = 1.00).
-- cable knit: 8 años útiles, no entra; sigue prestado.
-- boucle → mat:boucle: entra (22 años útiles, ancla r = 1.00).
-- tulle → mat:tul: entra (22 años útiles, ancla r = 1.00).
-- satin → mat:satenseda: entra (22 años útiles, ancla r = 1.00).
+- ruffles → det:volados: entra (21 años útiles, ancla r = 1.00).
+- embroidery → det:bordado: entra (21 años útiles, ancla r = 1.00).
+- pleated skirt → det:plisado: entra (20 años útiles, ancla r = 1.00).
+- quilted jacket → det:acolchado: entra (16 años útiles, ancla r = 1.00).
+- fleece → mat:fleece: entra (21 años útiles, ancla r = 1.00).
+- cable knit: 7 años útiles, no entra; sigue prestado.
+- boucle → mat:boucle: entra (21 años útiles, ancla r = 1.00).
+- tulle → mat:tul: entra (21 años útiles, ancla r = 1.00).
+- satin → mat:satenseda: entra (21 años útiles, ancla r = 1.00).
 - tweed: plana, no entra; sigue prestado.
-- cashmere → mat:cashmere: entra (22 años útiles, ancla r = 1.00).
-- chiffon → mat:gasa: entra (22 años útiles, ancla r = 1.00).
-- denim shorts → tipo:pantalones/short: entra (13 años útiles, ancla r = 1.00).
+- cashmere → mat:cashmere: entra (21 años útiles, ancla r = 1.00).
+- chiffon → mat:gasa: entra (21 años útiles, ancla r = 1.00).
+- denim shorts → tipo:pantalones/short: entra (12 años útiles, ancla r = 1.00).
 - capri pants: 0 años útiles, no entra; sigue prestado.
-- corduroy → mat:corduroy: entra (22 años útiles, ancla r = 1.00).
-- linen → mat:lino: entra (22 años útiles, ancla r = 1.00).
-- shirt dress → tipo:vestidos/camisero: entra (22 años útiles, ancla r = 1.00).
-- wrap dress → tipo:vestidos/cruzado: entra (21 años útiles, ancla r = 1.00).
-- bodycon dress → tipo:vestidos/tubo: entra (15 años útiles, ancla r = 1.00).
-- jumpsuit → tipo:enteritos/largo: entra (22 años útiles, ancla r = 1.00).
-- romper → tipo:enteritos/corto: entra (22 años útiles, ancla r = 1.00).
-- overalls → tipo:enteritos/jardinero: entra (22 años útiles, ancla r = 1.00).
-- puffer jacket → tipo:abrigos/puffer: entra (12 años útiles, ancla r = 1.00).
-- cardigan → tipo:buzos/cardigan: entra (22 años útiles, ancla r = 1.00).
-- mini skirt → tipo:faldas/mini: entra (22 años útiles, ancla r = 1.00).
-- midi skirt → tipo:faldas/midi: entra (12 años útiles, ancla r = 1.00).
-- maxi skirt → tipo:faldas/maxi: entra (15 años útiles, ancla r = 1.00).
-- slip dress → tipo:vestidos/slip: entra (21 años útiles, ancla r = 1.00).
-- turtleneck → tipo:buzos/polera: entra (22 años útiles, ancla r = 1.00).
-- blouse → tipo:camisas/blusa: entra (22 años útiles, ancla r = 1.00).
-- tank top → tipo:remeras/musculosa: entra (22 años útiles, ancla r = 1.00).
-- bermuda shorts: 7 años útiles, no entra; sigue prestado.
-- fringe → det:flecos: entra (22 años útiles, ancla r = 1.00).
-- sequins → det:pedreria: entra (22 años útiles, ancla r = 1.00).
-- camo → estampa:camo: entra (22 años útiles, ancla r = 1.00).
-- tie dye → estampa:tiedye: entra (22 años útiles, ancla r = 1.00).
+- corduroy → mat:corduroy: entra (21 años útiles, ancla r = 1.00).
+- linen → mat:lino: entra (21 años útiles, ancla r = 1.00).
+- shirt dress → tipo:vestidos/camisero: entra (21 años útiles, ancla r = 1.00).
+- wrap dress → tipo:vestidos/cruzado: entra (20 años útiles, ancla r = 1.00).
+- bodycon dress → tipo:vestidos/tubo: entra (14 años útiles, ancla r = 1.00).
+- jumpsuit → tipo:enteritos/largo: entra (21 años útiles, ancla r = 1.00).
+- romper → tipo:enteritos/corto: entra (21 años útiles, ancla r = 1.00).
+- overalls → tipo:enteritos/jardinero: entra (21 años útiles, ancla r = 1.00).
+- puffer jacket: 11 años útiles, no entra; sigue prestado.
+- cardigan → tipo:buzos/cardigan: entra (21 años útiles, ancla r = 1.00).
+- mini skirt → tipo:faldas/mini: entra (21 años útiles, ancla r = 1.00).
+- midi skirt: 11 años útiles, no entra; sigue prestado.
+- maxi skirt → tipo:faldas/maxi: entra (14 años útiles, ancla r = 1.00).
+- slip dress → tipo:vestidos/slip: entra (20 años útiles, ancla r = 1.00).
+- turtleneck → tipo:buzos/polera: entra (21 años útiles, ancla r = 1.00).
+- blouse → tipo:camisas/blusa: entra (21 años útiles, ancla r = 1.00).
+- tank top → tipo:remeras/musculosa: entra (21 años útiles, ancla r = 1.00).
+- bermuda shorts: 6 años útiles, no entra; sigue prestado.
+- fringe → det:flecos: entra (21 años útiles, ancla r = 1.00).
+- sequins → det:pedreria: entra (21 años útiles, ancla r = 1.00).
+- camo → estampa:camo: entra (21 años útiles, ancla r = 1.00).
+- tie dye → estampa:tiedye: entra (21 años útiles, ancla r = 1.00).
+- t shirt → tipo:remeras/remera: entra (21 años útiles, ancla r = 1.00).
+- button down shirt: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- oversized shirt: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- cropped shirt: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- bomber jacket → tipo:abrigos/campera: entra (21 años útiles, ancla r = 1.00).
+- a line dress → tipo:vestidos/evase: entra (18 años útiles, ancla r = 1.00).
+- mid rise jeans: 9 años útiles, no entra; sigue prestado.
+- capris → tipo:pantalones/capri: entra (21 años útiles, ancla r = 1.00).
+- bermudas: descartado, mide otra cosa: estacionalidad 0,26 y picos sueltos (2009-06, 2014-03, 2019-11) que no son verano: la isla, no el pantalón. Sigue prestado.
+- cable knit sweater → mat:cable: entra (13 años útiles, ancla r = 1.00).
+- tweed jacket → mat:tweed: entra (21 años útiles, ancla r = 1.00).
+- jersey knit: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- ribbed top: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- french terry: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- cotton dress → mat:algodon: entra (20 años útiles, ancla r = 1.00).
+- poplin → mat:popelina: entra (21 años útiles, ancla r = 1.00).
+- pique polo: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- canvas jacket: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- wool sweater → mat:lana: entra (21 años útiles, ancla r = 1.00).
+- merino wool → mat:merino: entra (21 años útiles, ancla r = 1.00).
+- wool coat → mat:pano: entra (21 años útiles, ancla r = 1.00).
+- silk dress → mat:seda: entra (21 años útiles, ancla r = 1.00).
+- polyester → mat:poliester: entra (21 años útiles, ancla r = 1.00).
+- nylon jacket: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- acrylic sweater: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- spandex → mat:elastano: entra (21 años útiles, ancla r = 1.00).
+- neoprene → mat:neoprene: entra (21 años útiles, ancla r = 1.00).
+- organza → mat:organza: entra (21 años útiles, ancla r = 1.00).
+- crepe fabric: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- studded → det:tachas: entra (21 años útiles, ancla r = 1.00).
+- cut out dress → det:cutouts: entra (15 años útiles, ancla r = 1.00).
+- toile: descartado, mide otra cosa: en francés es «tela» y en costura la prueba de un molde; cae de 70 a 33 sin ciclo. Falta bajar «toile de jouy». Sigue prestado.
+- chevron print: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
+- herringbone → estampa:espiga: entra (21 años útiles, ancla r = 1.00).

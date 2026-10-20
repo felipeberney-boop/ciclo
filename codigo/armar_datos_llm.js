@@ -72,7 +72,7 @@ const pct = v => v == null ? 'sin dato' : Math.round(v * 100) + ' %';
 const sig = (v, u = '') => v == null ? 'sin dato' : (v > 0 ? '+' : '') + String(Math.round(v)) + u;
 const sigp = v => v == null ? 'sin dato' : (v > 0 ? '+' : '') + Math.round(v * 100) + ' %';
 const ANIO_BASE = 2024, Y0 = 2004;
-const terreno = id => { const v = GREL[id]; return v && v[2025 - Y0] != null && v[2023 - Y0] != null ? v[2025 - Y0] - v[2023 - Y0] : null; };
+const terreno = id => { const v = GREL[id]; return v && v[2024 - Y0] != null && v[2022 - Y0] != null ? v[2024 - Y0] - v[2022 - Y0] : null; };
 function picoBusq(o) { // pico de volumen sin 2025, como en la app
   if (!o || !o.g) return null; let mi = -1, my = null;
   o.g.forEach((v, i) => { const y = Y0 + i; if (y <= ANIO_BASE && v != null && v > mi) { mi = v; my = y; } });
@@ -96,7 +96,7 @@ Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Ú
 ## Cómo leer los números
 - Pasarela | fuente: Vogue Runway, 1,28 millones de looks, 2010–2023 | medido | nivel: dónde está 2022–23 contra su propio máximo (100 % = en su pico) | momento: 2021–23 contra 2018–20
 - Búsqueda | fuente: Google Trends mundo, dividido por el promedio de 35 términos de moda de cada año | medido | va hasta 2024: en 2025 Google cambió cómo mide y casi todo salta a la vez, 2026 se excluye | nivel: 2023–24 contra su máximo | momento: 2023–24 contra 2020–21
-- Peso afuera 2023→2025 | fuente: Google Trends mundo, cada año dividido por la mediana de 16 búsquedas de moda | medido | cuántos puntos gana o pierde frente a las otras búsquedas; corrige el salto de 2025
+- Peso afuera 2022→2024 | fuente: Google Trends mundo, cada año dividido por la mediana de 16 búsquedas de moda | medido | cuántos puntos gana o pierde frente a las otras búsquedas; corrige el salto de 2025
 - Argentina | fuente: Google Trends Argentina | medido | Argentina no tuvo el salto de 2025
 - Validación | fuente: Google Shopping 2021–22→2024–25 y reseñas de Amazon 2019→2022 | medido | el modelo no las usa; sirven para ver si acertó
 - Etapa | fuente: K-means (k=4) sobre los cuatro números de pasarela y búsqueda | calculado | los grupos los nombramos nosotros por el prototipo más cercano
@@ -125,10 +125,10 @@ for (const [k, fila] of Object.entries(CONSEJO))
 L.push('\n## Resumen: todos los atributos');
 for (const r of KM.rows) {
   const o = recDe(r.n), d = o ? terreno(o.id) : null;
-  linea(r.n, `id: ${KM_ID[r.n]}`, `etapa: ${ETAPA[r.n]}`, `búsqueda: ${pct(r.bn)} de su pico, momento ${sigp(r.bm)}`, d != null ? `afuera 2023→2025: ${sig(d)}` : null);
+  linea(r.n, `id: ${KM_ID[r.n]}`, `etapa: ${ETAPA[r.n]}`, `búsqueda: ${pct(r.bn)} de su pico, momento ${sigp(r.bm)}`, d != null ? `afuera 2022→2024: ${sig(d)}` : null);
 }
 for (const o of REC.filter(o => !KM.rows.some(r => recDe(r.n) === o)))
-  linea(o.n, `id: ${o.id}`, 'etapa: sin etapa (no entra al K-means: Vogue no lo etiqueta)', `afuera 2023→2025: ${sig(terreno(o.id))}`);
+  linea(o.n, `id: ${o.id}`, 'etapa: sin etapa (no entra al K-means: Vogue no lo etiqueta)', `afuera 2022→2024: ${sig(terreno(o.id))}`);
 
 // ---------- fichas detalladas (sólo las que nombra la pregunta) ----------
 L.push('\n## Fichas de atributos');
@@ -137,13 +137,13 @@ for (const r of KM.rows) {
   linea(r.n, `id: ${id}`, `busca: ${BUSCA[id]}`, `tipo: ${r.tipo}`, `etapa: ${ETAPA[r.n]}`,
     `pasarela: ${pct(r.pn)} de su pico, momento ${sigp(r.pm)}, pico en ${r.pico_pas}`,
     `búsqueda: ${pct(r.bn)} de su pico, momento ${sigp(r.bm)}, ${o ? picoBusq(o) : (r.pico_bus === 2024 ? 'sigue subiendo (máximo en 2024)' : 'pico en ' + r.pico_bus)}`,
-    o && terreno(o.id) != null ? `afuera 2023→2025: ${sig(terreno(o.id))} puntos` : null, argentina(o),
+    o && terreno(o.id) != null ? `afuera 2022→2024: ${sig(terreno(o.id))} puntos` : null, argentina(o),
     `Google Shopping: ${sigp(r.shop_22_25)}`, `reseñas de Amazon: ${sigp(r.amz_19_22)}`,
     o && o.lect ? `lectura: ${o.lect}` : null);
 }
 for (const o of REC.filter(o => !KM.rows.some(r => recDe(r.n) === o)))
   linea(o.n, `id: ${o.id}`, `busca: ${BUSCA[o.id]}`, `tipo: ${o.tipo}`, 'etapa: sin etapa', `búsqueda: ${picoBusq(o)}`,
-    `afuera 2023→2025: ${sig(terreno(o.id))} puntos`, argentina(o), o.lect ? `lectura: ${o.lect}` : null);
+    `afuera 2022→2024: ${sig(terreno(o.id))} puntos`, argentina(o), o.lect ? `lectura: ${o.lect}` : null);
 
 // ---------- Diseñar: cortes, fits, cuellos, mangas y colores ----------
 L.push('\n## Diseñar: qué conviene en cada prenda');
@@ -156,7 +156,7 @@ const opciones = (lista, que) => lista ? `${que} (CLIP, % de la pasarela 2022–
 // el jean es pantalón + denim; los cortes salen de la taxonomía, con sus alias de búsqueda sumados
 const cuotaT = (ts, y) => ts.reduce((a, t) => a + (JE.terms[t] ? cuota(t, y) : 0), 0);
 for (const c of TAX.cortes) {
-  const busq = c.je ? `búsqueda: ${Math.round(cuotaT(c.je, 2025))} % de las búsquedas de jeans en 2025 (${sig(cuotaT(c.je, 2025) - cuotaT(c.je, 2023))} puntos desde 2023)` : 'sin serie de búsqueda';
+  const busq = c.je ? `búsqueda: ${Math.round(cuotaT(c.je, 2024))} % de las búsquedas de jeans en 2024 (${sig(cuotaT(c.je, 2024) - cuotaT(c.je, 2022))} puntos desde 2022)` : 'sin serie de búsqueda';
   const dj = c.clip_jeans ? DIS.prendas.find(p => p.id === 'jeans').cortes.find(x => x.id === c.clip_jeans) : null;
   linea(`Pantalón largo · ${c.n}`, 'prenda: jeans', `corte: ${c.d}`, c.km ? `atributo: ${c.km} (etapa: ${ETAPA[c.km] || 'sin etapa'})` : null, busq, dj ? colores(dj.color) : null);
 }
@@ -168,7 +168,7 @@ linea('Estampas por material', 'prenda: estampas', Object.entries(TAX.estampa_po
 for (const p of DIS.prendas.filter(p => p.id !== 'jeans')) {
   for (const c of p.cortes) {
     const busq = p.id === 'jeans' && c.busq && JE.terms[c.busq]
-      ? `búsqueda: ${Math.round(cuota(c.busq, 2025))} % de las búsquedas de jeans en 2025 (${sig(cuota(c.busq, 2025) - cuota(c.busq, 2023))} puntos desde 2023)` : null;
+      ? `búsqueda: ${Math.round(cuota(c.busq, 2024))} % de las búsquedas de jeans en 2024 (${sig(cuota(c.busq, 2024) - cuota(c.busq, 2022))} puntos desde 2022)` : null;
     const fit = c.ahora != null ? `fit en la pasarela (CLIP): ${Math.round(c.ahora)} %, ${pts(c.cambio)} desde 2018–19` : null;
     linea(`${p.n} · ${c.n}`, `prenda: ${p.id}`, c.grupo ? `atributo: ${c.grupo} (etapa: ${ETAPA[c.grupo] || 'sin etapa'})` : null, busq, fit, colores(c.color));
   }

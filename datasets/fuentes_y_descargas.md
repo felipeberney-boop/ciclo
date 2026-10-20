@@ -174,3 +174,25 @@ con el ya medido) y cada serie a su propio máximo. Entraron 32; quedaron afuera
 (plana), capri pants (0) y bermuda shorts (7), que siguen con dato prestado. Uso bajo los términos de Google, con
 atribución y sin redistribuir el export.
 
+## Google Trends · segundo plan, 34 términos (20/10/2026)
+
+`datasets/plan_exportacion_trends_2.csv`, lotes 10 a 18, mismo método (trench coat de ancla, mundial, «2004 –
+presente», mensual), exportados el 20/10/2026; los CSV en `datasets/trends_lotes/plan2/`. **El análisis corta en
+2024** (69 de 70 series saltan en 2026, mediana +99 %; el ancla pica en abril). Con ese corte:
+
+- **Entraron 19.** t shirt, bomber jacket, capris, wool sweater, merino wool, wool coat, polyester, spandex,
+  neoprene, organza, studded, herringbone, y como marginales con 12 años o más de señal: a line dress, cable knit
+  sweater, tweed jacket, cotton dress, poplin, silk dress, cut out dress.
+- **Se intentaron y no entraron (12), por ruido** (máximo bajo 6 o menos de 24 meses con señal): button down shirt,
+  oversized shirt, cropped shirt, jersey knit, ribbed top, french terry, pique polo, canvas jacket, nylon jacket,
+  acrylic sweater, crepe fabric, chevron print.
+- **Se descartaron porque miden otra cosa (2).** «bermudas»: estacionalidad 0,26 y picos sueltos (2009-06, 2014-03,
+  2019-11) que no caen en verano; es la isla, no el pantalón. «toile»: en francés es «tela» y en costura la prueba
+  de un molde; cae de 70 a 33 sin ciclo. Para comparar falta bajar «toile de jouy».
+- **Marginal que no pasó:** mid rise jeans (9 años con señal).
+- **Reintentos.** capris le gana a capri pants (252 meses con señal contra 0); cable knit sweater a cable knit (32
+  contra 2); tweed jacket a tweed (forma estacional 0,84 contra una serie plana); bermudas pierde contra bermuda
+  shorts por forma, pero bermuda shorts tampoco pasa (6 años útiles): la bermuda sigue prestada.
+- **Por el corte en 2024 salieron dos del primer plan:** puffer jacket y midi skirt quedan en 11 años útiles; pasan
+  a prestado (de la campera y de la mini).
+

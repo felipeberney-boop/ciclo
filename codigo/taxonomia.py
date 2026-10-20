@@ -6,8 +6,8 @@ prenda: es pantalón + denim. «Short de jean» existe sin listarlo (short + den
 
 Cada atributo dice qué dato lo respalda, si hay alguno:
   km   nombre del atributo en el K-means (etapa → la regla de CICLO para tu perfil)
-  rec  id con serie de búsqueda en Recorridos (peso afuera 2023→2025)
-  je   términos de Google Trends dentro de las búsquedas de jeans (parte de las búsquedas, 2023→2025)
+  rec  id con serie de búsqueda en Recorridos (peso afuera 2022→2024)
+  je   términos de Google Trends dentro de las búsquedas de jeans (parte de las búsquedas, 2022→2024)
   clip qué lectura de CLIP sobre la pasarela usa (fit, cuello, manga, color)
 Lo que no tiene ninguno aparece igual —con su dibujo y su definición— pero como «sin dato medido».
 
@@ -196,6 +196,11 @@ PRESTA = {
   'tipo:buzos/cardigan': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),
   'tipo:buzos/polera': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),
   'tipo:abrigos/tapado': ('tipo:abrigos/trench', 'Hermano: el otro abrigo largo de la familia.'),
+  'tipo:abrigos/puffer': ('tipo:abrigos/campera', 'Hermano: la otra campera corta de la familia. «puffer jacket» no llegó a 12 años con señal hasta 2024.'),
+  'tipo:faldas/midi': ('tipo:faldas/mini', 'Hermano: la misma falda, más corta. «midi skirt» no llegó a 12 años con señal hasta 2024.'),
+  'tipo:camisas/clasica': ('tipo:camisas/blusa', 'Hermano: la única camisa con serie. «button down shirt» fue ruido (máximo 2).'),
+  'tipo:camisas/oversize': ('tipo:camisas/blusa', 'Hermano: la única camisa con serie. «oversized shirt» fue ruido.'),
+  'tipo:camisas/cropped': ('tipo:camisas/blusa', 'Hermano: la única camisa con serie. «cropped shirt» fue ruido.'),
   'corte:cigarette': ('corte:slim', 'Hermano: el corte más parecido, recto y angosto.'),
   'tiro:alto': ('je:mom', 'La única búsqueda de jean que nombra el tiro: «mom», un recto de tiro alto.'),
   'tiro:bajo': ('km:Y2K', 'Padre: el tiro bajo es la marca del Y2K, que sí tiene serie.'),

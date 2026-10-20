@@ -144,7 +144,6 @@ body.on-cover .app{border:0;max-width:none}
 .dzc{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:0;overflow:hidden;cursor:pointer;transition:border-color .15s}
 .dzc:hover{border-color:var(--ink-2)}
 .dzc:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.dzc.es-rec{border-color:var(--ia-t)}
 .dzimg{position:relative;display:block;width:100%;aspect-ratio:4/5;background:var(--paper-2);flex:none}
 .dzimg img{width:100%;height:100%;object-fit:cover;display:block}
 .dzsil{position:absolute;inset:12% 16% 9% 16%;color:var(--ink);display:flex;align-items:center;justify-content:center}.dzsil svg{width:100%;height:100%}
@@ -156,20 +155,16 @@ body.on-cover .app{border:0;max-width:none}
 .dzpie{display:flex;flex-direction:column;gap:8px;align-self:flex-start}
 .dzfotos{margin-top:22px;max-width:820px}.dzfotos summary{cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);padding:8px 0}
 .dzfotos .dzrefs{margin-top:8px}
-.dztop{background:var(--card)!important;color:var(--ok)!important;border:1px solid var(--ok)}
-.dzrec{position:absolute;left:8px;top:8px;background:var(--ia);color:#14130F;font-family:"IBM Plex Mono",monospace;font-size:10px;padding:3px 7px;border-radius:2px}
-.dzrec2{white-space:nowrap;font-family:"IBM Plex Mono",monospace;font-size:10px;background:var(--ia);color:#14130F;padding:1px 6px;border-radius:2px;margin-left:6px}
 .dzb{display:flex;flex-direction:column;gap:5px;padding:11px 12px 13px}
 .dzn{font-family:"Bodoni Moda",serif;font-size:20px;line-height:1.1}
 .dzm{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .dze{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3)}
 .dzt{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-2)}
-.dzt.sube{color:var(--ok)}.dzt.baja{color:var(--alert)}
 .dzq,.dza{font-size:12px;color:var(--ink-2);line-height:1.4}
 .dza{border-top:1px solid var(--rule-2);padding-top:6px}
 .dzcol{display:flex;flex-direction:column;gap:2px;max-width:760px}
 .dzcr{display:grid;grid-template-columns:26px 260px 1fr 46px 70px;gap:12px;align-items:center;font:inherit;color:inherit;background:var(--card);border:1px solid var(--rule-2);border-radius:3px;padding:8px 10px;cursor:pointer;text-align:left}
-.dzcr:hover{border-color:var(--ink-2)}.dzcr.es-rec{border-color:var(--ia-t)}
+.dzcr:hover{border-color:var(--ink-2)}
 .dzcr .sw{width:22px;height:22px;border-radius:50%;border:1px solid rgba(20,19,15,.25)}
 .dzcr .cb{height:6px;background:var(--rule-2);border-radius:3px;position:relative;overflow:hidden}.dzcr .cb i{position:absolute;left:0;top:0;bottom:0;background:var(--ink-2);border-radius:3px}
 .dzcr .cp{font-family:"IBM Plex Mono",monospace;font-size:12px;text-align:right}
@@ -598,11 +593,15 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 .tag.demo{color:var(--ink-3);border-color:var(--rule)}
 .ia-t{color:var(--ia-t)}
 
-/* la recomendación es lo único con color de semáforo, y siempre con la palabra */
-.acc-entrar{color:var(--act-entrar)!important}
-.acc-esperar{color:var(--act-esperar)!important}
-.acc-salir{color:var(--act-salir)!important}
-.tag.acc{background:transparent!important;border:1px solid currentColor!important}
+/* la señal: el único lugar donde se asigna un color de estado. Todo lo demás lee var(--sen) */
+:root{--sen-entrar:var(--act-entrar);--sen-esperar:var(--act-esperar);--sen-salir:var(--act-salir);--sen-sin-dato:var(--ink-3)}
+.s-entrar{--sen:var(--sen-entrar)}.s-esperar{--sen:var(--sen-esperar)}.s-salir{--sen:var(--sen-salir)}.s-sin{--sen:var(--sen-sin-dato)}
+.sen,.a.serif[class*="s-"],.acc.serif[class*="s-"],b[class*="s-"],dt[class*="s-"]{color:var(--sen)!important}
+.sen{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.dzc[class*="s-"]{border-color:var(--rule);border-top:3px solid var(--sen)}
+.dzc.s-sin{border-top-style:dashed}
+.dzcr[class*="s-"]{border-left:3px solid var(--sen)}
+.dzcr.s-sin{border-left-style:dashed}
 
 .aviso{margin:0;padding:12px var(--gut);border-bottom:1px solid var(--ink);color:var(--ink)}
 @media (max-width:760px){.aviso{padding:10px 16px}}
@@ -1093,7 +1092,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         </div>
       </div>
       <hr class="rule">
-      <p class="note colores"><b>Cómo leer los colores.</b> Negro es medido. <span class="ia-t">Salmón</span> es calculado o interpretado por un modelo. Tres colores quedan reservados para la recomendación, que es una decisión y no un dato: <b class="acc-entrar">Entrar</b>, <b class="acc-esperar">Esperar / Explorar</b> y <b class="acc-salir">Salir</b>, siempre con la palabra al lado. Los gráficos usan color sólo para separar sus series. El resto de la pantalla es negro, crema y blanco, para que el color que se vea sea el de las prendas.</p>
+      <p class="note colores"><b>Cómo leer los colores.</b> Negro es medido. <span class="ia-t">Salmón</span> es calculado o interpretado por un modelo. Tres colores quedan reservados para la recomendación, que es una decisión y no un dato: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato medido</b>, siempre con la palabra al lado. Los gráficos usan color sólo para separar sus series. El resto de la pantalla es negro, crema y blanco, para que el color que se vea sea el de las prendas.</p>
       <div class="tw"><table>
         <thead><tr><th>Lo que ves</th><th>Origen</th><th>Cómo se obtiene</th></tr></thead>
         <tbody>
@@ -1414,9 +1413,35 @@ const CONSEJO={
 /* vínculo laboral: no cambia la lectura de la etapa (eso lo fija la categoría), cambia el riesgo y el tratamiento */
 let vinculo='marca';
 const EXPLORAR='Como trabajás por tu cuenta, no comprometés producción ni stock: podés empezar a diseñarlo ahora y decidir la serie cuando la señal se confirme.';
-/* el color va sólo en la recomendación: Entrar verde, Esperar/Explorar ámbar, Salir rojo, siempre con la palabra */
-const accCls=a=>a==='Entrar'?'acc-entrar':a==='Salir'?'acc-salir':a==='Esperar'||a==='Explorar'?'acc-esperar':'';
-function consejo(cli,et){const c=CONSEJO[cli][et];return vinculo==='propia'&&c[0]==='Esperar'?['Explorar',EXPLORAR]:c;}
+/* ---------- la señal: un solo valor decide, y decide todo ----------
+   Cuatro estados y nada más. Borde, fondo, texto, ícono, porcentaje y badge de cada tarjeta leen de este objeto;
+   en el CSS el color sale sólo de la clase s-<estado> (variable --sen). Ningún otro lugar asigna un color de estado.
+   sin-dato es neutro: «de esto no tengo datos» no es lo mismo que «esto está cayendo». */
+const SEN={entrar:{cls:'s-entrar',icono:'▲'},esperar:{cls:'s-esperar',icono:'■'},salir:{cls:'s-salir',icono:'▼'},'sin-dato':{cls:'s-sin',icono:'○'}};
+const SEN_ACC={Entrar:'entrar',Esperar:'esperar',Explorar:'esperar',Salir:'salir'};
+const SEN_TEND={entrar:'Gana presencia',esperar:'Estable',salir:'Pierde presencia'};
+function señalDe(estado,palabra,porque,extra){return Object.assign({estado,palabra,porque,cls:SEN[estado].cls,icono:SEN[estado].icono,color:`var(--sen-${estado})`},extra||{});}
+/* una palabra de recomendación que ya viene decidida (la regla fija, el LLM): mismo objeto, misma clase */
+function señalPalabra(p,porque){const e=SEN_ACC[p];return e?señalDe(e,p,porque||''):señalDe('sin-dato','Sin dato medido',porque||'');}
+/* at: {grupo: atributo del K-means, rec: id con búsqueda (Recorridos), d: cambio ya calculado, cuota, unidad, fuente, interpretado}
+   perfil: {cliente, vinculo}. Con etapa del K-means decide la regla de CICLO para tu perfil; si sólo hay serie, decide
+   la tendencia; si no hay serie, sin-dato. */
+function señal(at,perfil){
+  at=at||{};perfil=perfil||{cliente,vinculo};
+  const et=at.grupo?etapaDe(at.grupo):null,d=at.d!=null?at.d:at.rec?terreno(at.rec):null;
+  const unidad=at.unidad||'puntos',fuente=at.fuente||(at.rec?'búsqueda mundial 2023→2025, frente a las otras búsquedas de moda':''),umbral=at.umbral!=null?at.umbral:3;
+  const num=d!=null?`${d>0?'+':''}${Math.abs(d)<10?d.toFixed(1).replace('.',','):Math.round(d)} ${unidad}`:'';
+  const extra={d,cuota:at.cuota!=null?at.cuota:null,num,fuente,interpretado:!!at.interpretado,etapa:et&&et.n};
+  if(et&&et.et!=null){
+    let [a,por]=CONSEJO[perfil.cliente][et.et];if(perfil.vinculo==='propia'&&a==='Esperar'){a='Explorar';por=EXPLORAR;}
+    return señalDe(SEN_ACC[a],a,`Etapa ${et.n.toLowerCase()} (K-means)${num?` · ${num}, ${fuente}`:''}. ${por}`,extra);
+  }
+  if(d!=null){const e=d>umbral?'entrar':d<-umbral?'salir':'esperar';return señalDe(e,SEN_TEND[e],`${num}, ${fuente}.`,extra);}
+  return señalDe('sin-dato','Sin dato medido','No tenemos serie medida para esto: se puede explorar, pero CICLO no lo recomienda.',extra);
+}
+const senBadge=s=>`<span class="sen ${s.cls}"><span aria-hidden="true">${s.icono}</span> ${s.palabra}</span>`;
+function consejo(cli,et){const c=CONSEJO[cli][et]; // la regla fija; el color lo pone señal()
+  return vinculo==='propia'&&c[0]==='Esperar'?['Explorar',EXPLORAR]:c;}
 const tuQuien=()=>vinculo==='propia'?'tu cliente':'tu marca';
 let detSel=null;
 function abrirDetalle(id){
@@ -1448,7 +1473,7 @@ function abrirDetalle(id){
           <div class="h"><span class="lbl" style="color:var(--accent)">Lectura de la IA</span><span class="tag ia2">interpretación</span></div>
           <p>${t.lect}</p>
           <div class="rec">
-            <div class="a serif ${accCls(acc)}">${acc}</div>
+            <div class="a serif ${señalPalabra(acc).cls}">${acc}</div>
             <div class="t">Recomendación · ${tuQuien()} · ${CLI}</div>
             <div class="d">${arg}</div>
           </div>
@@ -1690,14 +1715,16 @@ function dzLectura(it,prendaId){
   let d=null,cuota=null;
   if(prendaId==='jeans'&&it.busq){const Yi=y=>JE.Y.indexOf(y),tot=y=>Object.values(JE.terms).reduce((s,v)=>s+(v[Yi(y)]||0),0),sh=y=>(JE.terms[it.busq][Yi(y)]||0)/tot(y)*100;cuota=sh(2025);d=sh(2025)-sh(2023);}
   else if(it.rec)d=terreno(it.rec);
-  const rec=(acc?ACC_ORDEN[acc[0]]>=3:true)&&(d==null?!!acc:d>(acc?-3:3));
-  return {et,acc,d,cuota,rec,score:(acc?ACC_ORDEN[acc[0]]:1.5)*10+(d||0)/(prendaId==='jeans'?1:5)};
+  const s=señal({grupo:it.grupo,d,cuota,unidad:prendaId==='jeans'&&it.busq?'puntos de las búsquedas de jeans':'puntos',umbral:prendaId==='jeans'&&it.busq?1:3,
+    fuente:prendaId==='jeans'&&it.busq?'parte de las búsquedas de jeans 2023→2025':undefined});
+  return {et,acc,d,cuota,s,rec:s.estado==='entrar',score:({entrar:3,esperar:1.5,salir:0,'sin-dato':1})[s.estado]*10+(d||0)/(prendaId==='jeans'?1:5)};
 }
 /* fit y cuello de remeras y buzos: qué parte de la pasarela de la prenda eligió CLIP para cada opción */
 function dzLecturaPasarela(lista){const top=lista.filter(x=>x.ahora>=5).sort((a,b)=>b.cambio-a.cambio).slice(0,2).map(x=>x.id);
-  return lista.map(x=>({c:x,L:{pas:true,d:x.cambio,cuota:x.ahora,rec:top.includes(x.id)&&x.cambio>0.5,score:x.ahora+3*x.cambio}}));}
-const dzTag=acc=>acc?`<span class="tag acc ${accCls(acc[0])}">${acc[0]}</span>`:'';
-const dzSigno=d=>`<span class="dzt ${d>0.5?'sube':d<-0.5?'baja':''}">${d>0.5?'▲':d<-0.5?'▼':'='} ${d>0?'+':''}${Math.abs(d)<10?d.toFixed(1).replace('.',','):Math.round(d)}</span>`;
+  return lista.map(x=>{const s=señal({d:x.cambio,cuota:x.ahora,umbral:1,interpretado:true,fuente:'parte de la pasarela 2018–19→2022–23, leída por CLIP'});
+    return {c:x,L:{pas:true,d:x.cambio,cuota:x.ahora,s,rec:s.estado==='entrar',score:x.ahora+3*x.cambio}};});}
+const dzTag=L=>L&&L.s?senBadge(L.s):'';
+const dzSigno=d=>`<span class="dzt">${d>0?'+':''}${Math.abs(d)<10?d.toFixed(1).replace('.',','):Math.round(d)}</span>`;
 /* una sola línea de dato por tarjeta */
 function dzDato(L,jeans){
   if(L.pas)return `${L.cuota.toFixed(0)} % de la pasarela ${dzSigno(L.d)}`;
@@ -1716,12 +1743,11 @@ function dzTela(es,hex){ // la tela: tu color de fondo y la estampa en contraste
 }
 const dzSil=(s,nm)=>`<span class="dzsil" role="img" aria-label="Dibujo: ${nm}">${silSvg(s)}</span>`;
 function dzTarjeta(it,L,attrs,vis,jeans,nota){
-  const marca=L.rec?'<span class="dzrec">Recomendado</span>':L.top?'<span class="dzrec dztop">Gana más terreno</span>':'';
-  const dato=dzDato(L,jeans);
-  return `<button class="dzc${L.rec?' es-rec':''}" type="button" ${attrs}><span class="dzimg">${vis}${marca}${nota?`<span class="dzsilnota">${nota}</span>`:''}</span>
-    <span class="dzb"><span class="dzn">${it.n}</span>${L.acc||dato?`<span class="dzm">${dzTag(L.acc)}${dato?`<span class="dzq">${dato}</span>`:''}</span>`:''}</span></button>`;
+  const s=L.s||señal({}),dato=dzDato(L,jeans);
+  return `<button class="dzc ${s.cls}" type="button" ${attrs}><span class="dzimg">${vis}${nota?`<span class="dzsilnota">${nota}</span>`:''}</span>
+    <span class="dzb"><span class="dzn">${it.n}</span><span class="dzm">${senBadge(s)}${s.interpretado?'<span class="tag ia2">CLIP</span>':''}</span>${dato?`<span class="dzq">${dato}</span>`:''}</span></button>`;
 }
-function dzMarcarTop(L){const m=L.filter(x=>x.L.d!=null&&!x.L.rec&&x.L.d>0).sort((a,b)=>b.L.d-a.L.d)[0];if(m)m.L.top=true;}
+function dzMarcarTop(L){}
 function dzPrendas(){return DIS.prendas.filter(p=>!(publico==='hombre'&&p.id==='tops'));}
 function dzDibujo(el,sil,es,hex){ // tu prenda dibujada: el contorno relleno con tu color y tu estampa
   try{
@@ -1773,9 +1799,9 @@ function pintarDisenar(){
       nota('<span class="tag ia2">interpretación · CLIP</span> Qué parte de los '+pr.n.toLowerCase()+' de la pasarela 2022–23 leyó CLIP con cada manga, y cuánto cambió desde 2018–19. Las de pasarela de otoño-invierno y primavera-verano van juntas.');
     $$('#dzcuerpo [data-ma]').forEach(b=>b.onclick=()=>{dz.manga=b.dataset.ma;dzIr('color');});
   }else if(dz.paso==='color'){
-    const cs=colL.colores,rec=cs.filter(c=>c.ahora>=5).sort((a,b)=>b.cambio-a.cambio).slice(0,2).map(c=>c.id),mx=Math.max(...cs.map(c=>c.ahora));
+    const cs=colL.colores,mx=Math.max(...cs.map(c=>c.ahora)),sc=c=>señal({d:c.cambio,cuota:c.ahora,umbral:1,interpretado:true,fuente:'parte de la pasarela, leída por CLIP'});
     C.innerHTML=`<h2 class="dzh">¿De qué color?</h2><p class="dzsub">Qué parte de ${pr.id==='jeans'?'los jeans':'los '+(fit?pr.n.toLowerCase():co.n.toLowerCase())} de la pasarela 2022–23 tuvo cada color, y cuánto cambió desde 2018–19.</p>
-      <div class="dzcol">${cs.map(c=>`<button type="button" class="dzcr${rec.includes(c.id)?' es-rec':''}" data-col="${c.id}"><span class="sw" style="background:${c.hex}"></span><span class="cn">${c.n}${rec.includes(c.id)?' <span class="dzrec2">gana presencia</span>':''}</span><span class="cb"><i style="width:${Math.round(c.ahora/mx*100)}%"></i></span><span class="cp">${c.ahora.toFixed(0)} %</span>${dzSigno(c.cambio)}</button>`).join('')}</div>`+
+      <div class="dzcol">${cs.map(c=>`<button type="button" class="dzcr ${sc(c).cls}" data-col="${c.id}"><span class="sw" style="background:${c.hex}"></span><span class="cn">${c.n} ${senBadge(sc(c))}</span><span class="cb"><i style="width:${Math.round(c.ahora/mx*100)}%"></i></span><span class="cp">${c.ahora.toFixed(0)} %</span>${dzSigno(c.cambio)}</button>`).join('')}</div>`+
       nota(`<span class="tag ia2">interpretación · CLIP</span> El color de cada look lo leyó CLIP sobre ${colL.n.ahora} looks de 2022–2023 y ${colL.n.antes} de 2018–2019${pr.id==='jeans'?' (todos los jeans juntos: Vogue no etiqueta el corte)':''}. Es pasarela, no venta, y termina en 2023.`);
     $$('#dzcuerpo [data-col]').forEach(b=>b.onclick=()=>{dz.color=b.dataset.col;dzIr('estampa');});
   }else if(dz.paso==='estampa'){
@@ -1786,7 +1812,7 @@ function pintarDisenar(){
   }else{
     const Lc=fit?(pr.rec?dzLectura({rec:pr.rec,grupo:pr.grupo},pr.id):null):dzLectura(co,pr.id),Le=es.id==='liso'?null:dzLectura(es,null);
     const fotos=dzFotos(co,6).concat(es.id==='liso'?[]:dzFotos(es,3));
-    const linea=(t,L,txt)=>`<div class="dzrl"><span class="dzrk">${t}</span><span>${L?dzTag(L.acc)+' ':''}${[L&&L.et?L.et.n.toLowerCase():'',txt].filter(Boolean).join(' · ')}</span></div>`;
+    const linea=(t,L,txt)=>`<div class="dzrl"><span class="dzrk">${t}</span><span>${L?dzTag(L)+' ':''}${[L&&L.et?L.et.n.toLowerCase():'',txt].filter(Boolean).join(' · ')}</span></div>`;
     const fitL=fit?dzLecturaPasarela(pr.cortes).find(x=>x.c.id===co.id).L:null,cuL=cu?dzLecturaPasarela(pr.cuellos).find(x=>x.c.id===cu.id).L:null,maL=ma?dzLecturaPasarela(pr.mangas).find(x=>x.c.id===ma.id).L:null;
     const alerta=[Lc,Le].some(L=>L&&L.acc&&L.acc[0]==='Salir')?'<p class="note a" style="margin-top:14px"><b>Ojo:</b> elegiste algo que la app marca «Salir» para tu perfil. Si lo hacés, que sea a propósito.</p>':'';
     const titulo=(pr.id==='jeans'?'Jean '+co.n.toLowerCase():fit?pr.n.replace(/s$/,'')+' '+co.n.toLowerCase():co.n)+(cu?', '+cu.n.toLowerCase():'')+(ma?', '+ma.n.toLowerCase():'')+', '+col.n.toLowerCase()+(es.id==='liso'?'':', '+es.n.toLowerCase());
@@ -1944,7 +1970,7 @@ function llegoAca(o){
 }
 function pintarTerreno(){
   const L=REC.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d),mx=Math.max(...L.map(x=>Math.abs(x.d)));
-  const fila=x=>`<button class="tfila" data-r="${x.o.id}" type="button"><span class="tn">${x.o.n}</span><span class="tb"><i style="width:${Math.round(Math.abs(x.d)/mx*100)}%;background:${x.d>0?'var(--ok)':'var(--alert)'}"></i></span><span class="tv">${x.d>0?'+':''}${Math.round(x.d)}</span></button>`;
+  const fila=x=>{const sg=señal({d:x.d,fuente:'búsqueda mundial 2023→2025'});return `<button class="tfila ${sg.cls}" data-r="${x.o.id}" type="button" title="${sg.palabra}: ${sg.porque}"><span class="tn">${x.o.n}</span><span class="tb"><i style="width:${Math.round(Math.abs(x.d)/mx*100)}%;background:var(--sen)"></i></span><span class="tv">${x.d>0?'+':''}${Math.round(x.d)}</span></button>`;};
   $('#terreno').innerHTML=`<div class="th"><span class="lbl">Qué gana y qué pierde terreno afuera</span><span class="tag real">medido</span></div>
     <p class="tsub">Búsqueda mundial de 2023 a 2025, comparada con las otras búsquedas de moda. Tocá uno para ver su recorrido.</p>
     <div class="tcols"><div><div class="tt">Gana terreno</div>${L.filter(x=>x.d>2).slice(0,5).map(fila).join('')}</div>
@@ -1956,9 +1982,10 @@ function etapaDe(n){const km=KM.rows.find(r=>r.n.split(' /')[0]===n.split(' /')[
 function pintarDecision(o){
   const et=etapaDe(o.n),P=PERFIL[cliente]||PERFIL.premium,d=terreno(o.id),aca=llegoAca(o);
   const [acc,arg]=et&&et.et!=null?consejo(cliente,et.et):['—','Este atributo no entra al K-means, así que no tiene etapa ni recomendación. Mirá cómo se mueve afuera en el gráfico.'];
+  const s0=et&&et.et!=null?señal({grupo:o.n,rec:o.id}):señalDe('sin-dato','Sin recomendación',arg);
   const ter=d==null?'sin dato':d>5?`gana terreno (+${Math.round(d)})`:d<-5?`pierde terreno (${Math.round(d)})`:`estable (${d>0?'+':''}${Math.round(d)})`;
   $('#rdecide').innerHTML=`<div class="dacc"><div class="h"><span class="lbl">Para vos · ${P.n}${vinculo==='propia'?' · por tu cuenta':' · tu marca'}</span><span class="tag ia2">recomendación · interpretación</span></div>
-      <div class="dline"><span class="a serif ${accCls(acc)}">${acc}</span><p>${arg}</p></div>
+      <div class="dline"><span class="a serif ${s0.cls}"><span class="ico" aria-hidden="true">${s0.icono}</span> ${s0.palabra}</span><p>${s0.estado==='sin-dato'?arg:s0.porque}</p></div>
       ${vivoDatos(o)?`<div class="vivo" id="rvivo"></div>`:''}</div>
     <dl class="dfacts"><dt>Etapa</dt><dd>${et?et.n:'sin etapa'}${et?' <span class="mono" style="color:var(--ink-3);font-size:10.5px">K-means</span>':''}</dd>
       <dt>Afuera, 2023→2025</dt><dd>${ter}</dd>
@@ -1978,7 +2005,7 @@ function pintarVivo(o){
   const box=$('#rvivo');if(!box)return;const d=vivoDatos(o),key=[d.atributo,cliente,vinculo].join('|'),r=VIVO[key];
   const tag=`<span class="tag ia2">interpretación · Groq en vivo</span>`;
   if(r&&r.accion) box.innerHTML=`<div class="h">${tag}<span class="mono vm">${escH(r.modelo)} · prompt ${escH(r.prompt)}</span></div>
-      <div class="dline"><span class="a serif ${accCls(r.accion)}">${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
+      <div class="dline"><span class="a serif ${señalPalabra(r.accion).cls}">${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
   else box.innerHTML=`<button type="button" class="kbtn ghost" id="rvivob"${r==='…'?' disabled':''}>${r==='…'?'Pensando…':'Pedir lectura en vivo'}</button>
       <span class="vm">${r&&r.error?escH(r.error):'Un modelo de lenguaje lee las métricas de este atributo para '+tuQuien()+'. No ve ningún dato crudo.'}</span>`;
   const b=$('#rvivob');if(b)b.addEventListener('click',async()=>{
@@ -2077,7 +2104,7 @@ function asPintar(){
     if(m.error){d.className='asa err';d.innerHTML=`<p>${escH(m.error)}</p>`;ch.appendChild(d);return;}
     const r=m.r;d.className='asa';
     d.innerHTML=`<div class="h"><span class="tag ia2">interpretación · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">fuera de los datos</span>':''}</div>
-      ${r.accion?`<div class="acc serif ${accCls(r.accion)}">${escH(r.accion)}</div>`:''}<p>${escH(r.respuesta)}</p>
+      ${r.accion?`<div class="acc serif ${señalPalabra(r.accion).cls}">${escH(r.accion)}</div>`:''}<p>${escH(r.respuesta)}</p>
       ${r.regla?`<p class="ascap" style="margin:8px 0 0">La regla fija de CICLO para tu perfil dice <b>${escH(r.regla)}</b>: el modelo se apartó.</p>`:''}
       ${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}
       ${r.atributos.length?`<div class="chips">${r.atributos.map(id=>{const o=REC.find(x=>x.id===id);return o?`<button type="button" data-r="${id}">Ver ${escH(o.n)} en Recorridos</button>`:'';}).join('')}</div>`:''}`;
@@ -2358,7 +2385,7 @@ function kGroups(F,N){const g=$('#kgroups');g.innerHTML='';const raw=F.C.map(c=>
     d.innerHTML=`<div class="gt"><i class="kdot" style="background:var(${n.c});width:12px;height:12px"></i><span class="gn">${n.n}</span></div>
       <div class="gm">${m.map(r=>r.n).join(', ')}</div>
       <div class="gv">pasarela ${Math.round(c[0]*100)} % del pico · ${kPct(c[1])}<br>búsqueda ${Math.round(c[2]*100)} % del pico · ${kPct(c[3])}${sh!=null?`<br>compra después: ${kPct(sh)} (mediana)`:''}</div>
-      ${cons?`<div class="gr"><b class="${accCls(cons[0])}">${cons[0]}</b>${cons[1]}</div>`:''}`;g.appendChild(d)})}
+      ${cons?`<div class="gr"><b class="${señalPalabra(cons[0]).cls}">${cons[0]}</b>${cons[1]}</div>`:''}`;g.appendChild(d)})}
 function kVal(F,N){const t=$('#kval');let h='<thead><tr><th>Atributo</th><th>Grupo</th><th class="r">Google Shopping</th><th class="r">Amazon</th></tr></thead><tbody>';
   const order=N.map((_,i)=>i).sort((a,b)=>(N[a].et??9)-(N[b].et??9));
   order.forEach(i=>KM.rows.forEach((r,j)=>{if(F.L[j]!==i)return;h+=`<tr><td>${r.n}</td><td><i class="kdot" style="background:var(${N[i].c})"></i>${N[i].n}</td><td class="r">${r.shop_22_25!=null?kPct(r.shop_22_25):'—'}</td><td class="r">${r.amz_19_22!=null?kPct(r.amz_19_22):'—'}</td></tr>`}));
@@ -2528,9 +2555,9 @@ function pintarGate(){
       <dt>Ventana</dt><dd>${PERFIL[k].vent} año${PERFIL[k].vent>1?'s':''}</dd>
       <dt>Decide hasta</dt><dd>${PERFIL[k].hasta}</dd>
       <dt>Error ahí</dt><dd>±${Math.round(PERFIL[k].banda)} puntos</dd>
-      <dt class="acc-entrar">Entrar</dt><dd>${gateResumen(k,'Entrar')}</dd>
-      ${gateSel.vinculo==='propia'&&gateResumen(k,'Explorar')!=='—'?`<dt class="acc-esperar">Explorar</dt><dd>${gateResumen(k,'Explorar')}</dd>`:''}
-      <dt class="acc-salir">Salir</dt><dd>${gateResumen(k,'Salir')}</dd></dl>`,`data-cli="${k}"`,gateSel.cliente===k)).join('');
+      <dt class="s-entrar sen">Entrar</dt><dd>${gateResumen(k,'Entrar')}</dd>
+      ${gateSel.vinculo==='propia'&&gateResumen(k,'Explorar')!=='—'?`<dt class="s-esperar sen">Explorar</dt><dd>${gateResumen(k,'Explorar')}</dd>`:''}
+      <dt class="s-salir sen">Salir</dt><dd>${gateResumen(k,'Salir')}</dd></dl>`,`data-cli="${k}"`,gateSel.cliente===k)).join('');
     $$('#ggrid [data-cli]').forEach(b=>b.addEventListener('click',()=>{gateSel.cliente=b.dataset.cli;gateElegir();}));
     cont(!!gateSel.cliente,gateElegir);
   }

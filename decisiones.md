@@ -602,3 +602,35 @@ pruebas en `prompts/prompt_asistente_v1.md`.
 
 **IA-5 sigue igual.** La lectura de Recorridos usa la clave guardada en Netlify; «Preguntar» no depende de
 ella.
+
+## 2026-10-20 · El arranque, el color de la acción y la estética de revista
+
+**El arranque.** La app podía abrir en la portada vieja. Dos causas. La portada y el radar no tenían
+`hidden` en el HTML: si el script fallaba antes de arrancar, quedaban a la vista. Y con un perfil guardado, al
+restaurar el selector de cliente se escribía `#portada?…` en la dirección (la vista inicial todavía era la
+portada), y después el arranque leía esa misma dirección y volvía a la portada. Ahora todas las vistas
+empiezan ocultas y sólo el arranque decide cuál se ve; restaurar el perfil no toca la dirección; el arranque
+está protegido y, si falla —adentro o antes de llegar—, se muestra el gate con un aviso, nunca una pantalla
+equivocada sin explicación. Las tres preguntas siguen siendo la entrada; si el perfil ya estaba guardado no
+se saltea en silencio: arriba de cada vista dice «Diseñando para mujer · marca de fast fashion · cambiar».
+
+**El color de la acción.** «Entrar» salía en rojo (era el salmón de la IA), justo al revés de lo que dice.
+Pasa a semáforo: Entrar verde, Esperar y Explorar ámbar, Salir rojo, siempre con la palabra, para que se lea
+en blanco y negro y por quien no distingue rojo de verde.
+
+**La tesis de color, actualizada.** Decía «interfaz monocroma para que el único color de la pantalla sea el
+de las prendas», y el semáforo la contradice. Queda así: **negro es medido, salmón es calculado o
+interpretado por un modelo, y los tres colores de acción están reservados para la recomendación**, que es
+una decisión y no un dato. Nada más lleva color. Para cumplirlo se sacaron colores que se habían colado: el
+azul de las etiquetas «medido» y de los focos, el verde y rojo de «gana/pierde terreno» (ahora negro, el
+signo lo dice), y los colores de las series en los gráficos, que pasan a grises (cada capa ya tenía su tipo
+de línea). Cinco etiquetas «interpretación» que salían en rojo pasan a salmón. Está escrito igual en la
+pantalla de Método.
+
+**La estética.** La portada tenía la vibra de revista y el resto no. Ahora todas las vistas: Bodoni Moda de
+80 a 116 px en los títulos contra IBM Plex Mono de 10–11 px en mayúsculas para las etiquetas, sin tamaños
+intermedios; márgenes anchos; grilla asimétrica (la etiqueta de sección a la izquierda, título y bajada en
+la columna ancha); texto en columnas de 60–70 caracteres; reglas de 1 px; sin esquinas redondeadas, sombras
+ni botones con relleno (de línea fina o texto subrayado); numeración de sección como sumario, en el orden del
+menú (01 · Diseñar … 09 · Método, igual en el índice de la portada); paleta negro, crema #F6F0EB y blanco. Se
+hizo como un bloque al final del CSS que pisa lo anterior, para no reescribir 480 líneas.

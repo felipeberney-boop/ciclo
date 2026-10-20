@@ -303,7 +303,7 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--in
 .dline p{margin:0;font-size:14px;line-height:1.5;color:var(--ink)}
 .vivo{margin-top:14px;padding-top:12px;border-top:1px dashed var(--ia);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .vivo .h{width:100%;display:flex;align-items:center;gap:8px}
-.vivo .dline{margin-top:0}.vivo .dline .a{color:var(--ia-t)}
+.vivo .dline{margin-top:0}
 .vivo .vm{font-size:11.5px;color:var(--ink-3)}
 .as{display:grid;grid-template-columns:300px 1fr;gap:24px;margin-top:20px;align-items:start}
 .ascard{border:1px solid var(--rule);border-radius:4px;padding:14px 16px;background:var(--card);margin-bottom:12px}
@@ -314,7 +314,7 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--in
 .asq{align-self:flex-end;max-width:80%;background:var(--ink);color:var(--paper);padding:9px 13px;border-radius:12px 12px 2px 12px;font-size:14px;line-height:1.45}
 .asa{border:1px solid var(--rule);border-left:3px solid var(--ia);border-radius:4px;padding:13px 16px;background:var(--paper-2);max-width:92%}
 .asa .h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.asa .acc{font-size:26px;line-height:1;color:var(--ia-t);margin:2px 0 8px}
+.asa .acc{font-size:26px;line-height:1;margin:2px 0 8px}
 .asa p{margin:0;font-size:14px;line-height:1.55;color:var(--ink)}
 .asa ul{margin:10px 0 0;padding-left:18px;font-size:12.5px;color:var(--ink-2);line-height:1.5}
 .asa .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
@@ -496,6 +496,128 @@ td.k{font-weight:600;white-space:nowrap}
   .attrs{grid-template-columns:repeat(2,1fr)}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+/* ---------- editorial: que se sienta revista (20/10/2026) ----------
+   Negro es medido, salmón es calculado o interpretado por un modelo, y tres colores quedan reservados para la
+   recomendación (Entrar, Esperar/Explorar, Salir). Nada más lleva color: negro, crema y blanco, para que el
+   color de la pantalla sea el de las prendas. Este bloque pisa lo de arriba; ver decisiones.md, 20/10/2026. */
+:root{
+  --paper:#F6F0EB; --paper-2:#FFFFFF; --card:#FFFFFF;
+  --ink:#0E0D0B; --ink-2:#4A4741; --ink-3:#8A857C;
+  --rule:#D6CCC2; --rule-2:#E6DED5;
+  --accent:var(--ink); --accent-soft:transparent; --alert:var(--ink); --alert-soft:transparent; --ok:var(--ink);
+  --s1:#0E0D0B; --s2:#77726A; --s3:#ABA59B; --s4:#45413B; --s5:#CBC4B9; --s6:#5E5A53;
+  --act-entrar:#2C6A3D; --act-esperar:#9A6200; --act-salir:#A5372A;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace; --gut:clamp(16px,5.5vw,80px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E0D0B; --paper-2:#171614; --card:#171614;
+    --ink:#F6F0EB; --ink-2:#BDB6AC; --ink-3:#878178;
+    --rule:#36332E; --rule-2:#25231F;
+    --s1:#F6F0EB; --s2:#A9A398; --s3:#6F6A62; --s4:#D9D2C8; --s5:#54504A; --s6:#8E887E;
+    --act-entrar:#72C38A; --act-esperar:#E3A83F; --act-salir:#EE7D6B;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E0D0B; --paper-2:#171614; --card:#171614;
+  --ink:#F6F0EB; --ink-2:#BDB6AC; --ink-3:#878178;
+  --rule:#36332E; --rule-2:#25231F;
+  --s1:#F6F0EB; --s2:#A9A398; --s3:#6F6A62; --s4:#D9D2C8; --s5:#54504A; --s6:#8E887E;
+  --act-entrar:#72C38A; --act-esperar:#E3A83F; --act-salir:#EE7D6B;
+}
+/* fuera lo que parece software: esquinas, rellenos de botón (los círculos de color y los puntos de dato quedan) */
+*:not(.sw):not(.kdot):not(.dot){border-radius:0!important}
+.app{max-width:1360px;border-left:0;border-right:0}
+
+/* tipografía: Bodoni enorme contra mono chiquita; nada intermedio */
+h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font-weight:400}
+.gate h1{font-size:clamp(46px,7.6vw,104px)}
+.kbig,.h3{font-size:clamp(32px,3.6vw,48px);line-height:1;letter-spacing:-.015em;margin-top:88px}
+.kh{font-size:30px;line-height:1.05}
+.lbl,.tag,.stamp,th,.mast nav a,.navmas,.chip,.seg button,.kbtn,.copiar,.gvolver,.gprog,.dzpt,.colofon b,.dfacts dt,.gcard dt,.rec .t,.dzrk,.dzpn,.perfilinea,.aviso{
+  font-family:var(--mono)!important;font-variation-settings:normal!important;font-weight:500!important;
+  font-size:10.5px!important;letter-spacing:.17em!important;text-transform:uppercase}
+.tag{font-size:9.5px!important;padding:3px 7px 2px;display:inline-block;line-height:1.45}
+.mast nav a,.navmas{font-size:10.5px!important}
+.navgrupo a{font-size:10px!important}
+.mk{font-size:40px;letter-spacing:.3em}
+.mast .side{font-size:10px;letter-spacing:.17em}
+
+/* aire y grilla editorial asimétrica: etiqueta a la izquierda, título y bajada en la columna ancha */
+.mast{padding:24px var(--gut) 0}
+.top{padding:14px var(--gut);background:transparent;border-bottom:1px solid var(--rule)}
+.view{padding:76px var(--gut) 128px}
+.colofon{padding:28px var(--gut) 48px}
+.vhead{display:block;margin:0 0 10px}
+.vhead>div{display:grid;grid-template-columns:minmax(140px,1fr) minmax(0,4.2fr);column-gap:36px;align-items:start}
+.vhead>div>.lbl{grid-column:1;grid-row:1/span 4;padding-top:1.1em;color:var(--ink)}
+.vhead>div>:not(.lbl){grid-column:2}
+.sub{font-size:16.5px;line-height:1.62;max-width:60ch;margin:26px 0 0;color:var(--ink-2)}
+.view p,.note,.ai p,.asa p{max-width:66ch}
+.rule{margin:48px 0 0;border-top:1px solid var(--ink)}
+.note{border-left:1px solid var(--ink);padding:2px 0 2px 18px;margin-top:22px}
+.note.a{border-left-color:var(--ink-3);border-left-style:dashed}
+@media (max-width:760px){
+  .vhead>div{grid-template-columns:1fr}
+  .vhead>div>.lbl{grid-row:auto;padding:0 0 14px}
+  .vhead>div>:not(.lbl){grid-column:1}
+  .view{padding:44px 16px 88px}.mast{padding:18px 16px 0}.top{padding:12px 16px}
+  .sub{font-size:15.5px}
+}
+
+/* superficies: blanco sobre crema, separadas por reglas de 1 px; sin sombras, sin cajas de software */
+.kcard,.ascard,.dzres{background:transparent;border:0;border-top:1px solid var(--ink);padding:20px 0 6px}
+.ai,.asa{background:transparent;border:0;border-left:1px solid var(--ia);padding:4px 0 4px 20px}
+.asa.err{border-left-color:var(--ink)}
+.gcard{background:transparent;border:0;border-top:1px solid var(--ink);padding:22px 4px 18px 0}
+.gcard:hover .gt{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.gcard .gt{font-size:34px;line-height:1.02}
+.gcard dl{border-top:1px solid var(--rule)}
+.ggrid{gap:40px;margin-top:56px}
+
+/* botones: de línea fina o sólo texto subrayado; ningún relleno */
+.kbtn{background:transparent!important;color:var(--ink)!important;border:1px solid var(--ink)!important;padding:10px 16px 9px}
+.kbtn:hover{text-decoration:underline;text-underline-offset:4px}
+.kbtn.ghost{border-color:var(--rule)!important;color:var(--ink-2)!important}
+.kbtn:disabled{opacity:.45}
+.seg{border:0;background:transparent;gap:18px;overflow:visible}
+.seg button{border:0!important;padding:4px 0 3px;border-bottom:1px solid transparent!important;background:transparent!important;color:var(--ink-3)}
+.seg button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)!important}
+.chip{background:transparent!important;border:0!important;border-bottom:1px solid transparent!important;padding:4px 0 3px!important;margin-right:14px;color:var(--ink-3)}
+.chip[aria-pressed="true"]{color:var(--ink)!important;border-bottom-color:var(--ink)!important}
+.copiar,.gvolver,.perfilinea button{border:0;background:none;padding:2px 0;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;cursor:pointer;font:inherit}
+.dzp{border:0!important;border-bottom:1px solid transparent!important}.dzp.on{border-bottom-color:var(--ink)!important}
+.asq{align-self:flex-end;background:transparent;color:var(--ink);border:0;border-right:1px solid var(--ink);padding:2px 16px 2px 0;
+  font-family:"Bodoni Moda",serif;font-style:italic;font-size:22px;line-height:1.3;text-align:right;max-width:70%}
+.asa .chips button,.assug button{border:0;border-bottom:1px solid var(--ink);background:none;padding:2px 0;margin-right:14px;font-size:13px}
+.assug button{border-bottom-style:dashed;border-bottom-color:var(--ia)}
+.ascard input,.ascard select,.asform textarea,.kform input{background:transparent;border:0;border-bottom:1px solid var(--ink)}
+.drop{background:transparent;border:1px dashed var(--ink-3)}
+
+/* etiquetas: negro = medido; salmón = interpretado; el resto, sin color */
+.tag.real{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.tag.alert{background:transparent;color:var(--ink);border:1px dashed var(--ink-3)}
+.tag.demo{color:var(--ink-3);border-color:var(--rule)}
+.ia-t{color:var(--ia-t)}
+
+/* la recomendación es lo único con color de semáforo, y siempre con la palabra */
+.acc-entrar{color:var(--act-entrar)!important}
+.acc-esperar{color:var(--act-esperar)!important}
+.acc-salir{color:var(--act-salir)!important}
+.tag.acc{background:transparent!important;border:1px solid currentColor!important}
+
+/* el perfil guardado, a la vista: no se saltea en silencio */
+.perfilinea{margin:0;padding:12px var(--gut);border-bottom:1px solid var(--rule);color:var(--ink-2)}
+.perfilinea button{font-size:inherit!important;letter-spacing:inherit;text-transform:inherit;margin-left:2px}
+.aviso{margin:0;padding:12px var(--gut);border-bottom:1px solid var(--ink);color:var(--ink)}
+@media (max-width:760px){.perfilinea,.aviso{padding:10px 16px}}
+/* la grilla del gate, alineada a la izquierda como el resto; el perfil ya está en la línea de arriba, no se repite */
+.gate{margin:0;max-width:1180px}
+#dzperfil,#cambiarperfil{display:none!important}
+.kmL,.kmR,.kcard{min-width:0}
+@media (max-width:1000px){.km,.k2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.who{flex-wrap:wrap;gap:8px 12px}.seg{flex-wrap:wrap;gap:6px 16px}}
+
 </style>
 
 <div class="app">
@@ -539,10 +661,13 @@ td.k{font-weight:600;white-space:nowrap}
       </div>
     </div>
 
+    <p class="perfilinea" id="perfilinea" hidden></p>
+    <p class="aviso" id="aviso" role="alert" hidden></p>
+
     <!-- ================= PORTADA ================= -->
     <section class="view" id="v-perfil" hidden>
       <div class="gate">
-        <div class="gprog" id="gprog"><b>01</b> / 04</div>
+        <div class="gprog" id="gprog"><b>01</b> / 03</div>
         <h1 id="gpreg">¿Para quién trabajás?</h1>
         <p class="sub" id="gsub"></p>
         <div class="ggrid" id="ggrid"></div>
@@ -550,7 +675,7 @@ td.k{font-weight:600;white-space:nowrap}
       </div>
     </section>
 
-    <section class="view cover" id="v-portada">
+    <section class="view cover" id="v-portada" hidden>
       <div class="cv">
         <div class="meta"><span>IA Aplicada a Diseño · UdeSA</span><span>Berney · Dobler · Dottori Greco</span></div>
         <h1 class="mkbig">CICLO</h1>
@@ -570,13 +695,15 @@ td.k{font-weight:600;white-space:nowrap}
           </div>
           <div>
             <div class="cvh">El índice</div>
-        <button class="cvit" data-v="radar"><span class="n">01</span><span class="t">Radar</span><span class="d">qué se está moviendo</span></button>
-        <button class="cvit" data-v="etapas"><span class="n">02</span><span class="t">El ciclo</span><span class="d">en qué etapa está cada una</span></button>
+        <button class="cvit" data-v="disenar"><span class="n">01</span><span class="t">Diseñar</span><span class="d">paso a paso, con tu perfil</span></button>
+        <button class="cvit" data-v="radar"><span class="n">02</span><span class="t">Tendencias</span><span class="d">qué se está moviendo</span></button>
         <button class="cvit" data-v="recorridos"><span class="n">03</span><span class="t">Recorridos</span><span class="d">de la pasarela a la calle</span></button>
-        <button class="cvit" data-v="marcas"><span class="n">04</span><span class="t">Marcas</span><span class="d">Lyst · 34 trimestres</span></button>
-        <button class="cvit" data-v="retornos"><span class="n">05</span><span class="t">Retornos</span><span class="d">lo que vuelve y por qué</span></button>
-        <button class="cvit" data-v="consulta"><span class="n">06</span><span class="t">Consulta</span><span class="d">pegá una prenda o un dato</span></button>
-        <button class="cvit" data-v="racional"><span class="n">07</span><span class="t">Método</span><span class="d">datos, modelo y límites</span></button>
+        <button class="cvit" data-v="consulta"><span class="n">04</span><span class="t">Buscar por imagen</span><span class="d">mandá una prenda</span></button>
+        <button class="cvit" data-v="asistente"><span class="n">05</span><span class="t">Preguntar</span><span class="d">un modelo lee los datos</span></button>
+        <button class="cvit" data-v="etapas"><span class="n">06</span><span class="t">El ciclo</span><span class="d">en qué etapa está cada una</span></button>
+        <button class="cvit" data-v="marcas"><span class="n">07</span><span class="t">Marcas</span><span class="d">Lyst · 34 trimestres</span></button>
+        <button class="cvit" data-v="retornos"><span class="n">08</span><span class="t">Retornos</span><span class="d">lo que vuelve y por qué</span></button>
+        <button class="cvit" data-v="racional"><span class="n">09</span><span class="t">Método</span><span class="d">datos, modelo y límites</span></button>
           </div>
         </div>
         <div class="foot">
@@ -590,7 +717,7 @@ td.k{font-weight:600;white-space:nowrap}
     <section class="view" id="v-disenar" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">Diseñar</span>
+          <span class="lbl">01 · Diseñar</span>
           <h1>Diseñá con lo que se mueve afuera</h1>
           <p class="sub">Elegí vos, paso a paso. En cada paso la app te marca lo que conviene según tu perfil y lo que está ganando terreno afuera.</p>
           <p class="dzperfil" id="dzperfil"></p>
@@ -600,10 +727,10 @@ td.k{font-weight:600;white-space:nowrap}
       <div id="dzcuerpo" aria-live="polite"></div>
     </section>
 
-    <section class="view" id="v-radar">
+    <section class="view" id="v-radar" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">01 · Radar</span>
+          <span class="lbl">02 · Tendencias</span>
           <h1>Qué se está moviendo</h1>
           <p class="sub">Doce atributos leídos en los catálogos de nueve marcas. Las cinco capas ya tienen fuente, y siete atributos tienen además su recorrido en pasarela y búsqueda: abrí la ficha para verlo.</p>
         </div>
@@ -629,7 +756,7 @@ td.k{font-weight:600;white-space:nowrap}
     <section class="view" id="v-etapas" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">02 · El ciclo</span>
+          <span class="lbl">06 · El ciclo</span>
           <h1>En qué etapa está cada tendencia</h1>
           <p class="sub">K-means sobre 17 atributos que existen a la vez en la pasarela de Vogue y en Google Trends, como pide la consigna. Nadie le dice al modelo qué es un «pico»: agrupa los atributos que se mueven parecido, y después nosotros leemos qué etapa es cada grupo.</p>
         </div>
@@ -715,7 +842,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <p class="note a"><b>Por qué no lo usamos como dato de entrenamiento.</b> El propio README del archivo lo aclara: las columnas de atributo son anotaciones de período repetidas en las 20 filas de cada marca, no observaciones por producto, y los blancos significan «no relevado», no cero. Sirve para contrastar una lectura; no para entrenar un clasificador.</p>
 
       <div class="ai" style="margin-top:22px">
-        <div class="h"><span class="lbl" style="color:var(--accent)">Rol de la IA</span><span class="tag alert">interpretación</span></div>
+        <div class="h"><span class="lbl" style="color:var(--accent)">Rol de la IA</span><span class="tag ia2">interpretación</span></div>
         <p>El modelo de lenguaje nunca ve las filas: recibe sólo los centros de cada grupo y su validación, y los traduce a una recomendación para el tipo de cliente elegido arriba. El prompt que usamos:</p>
         <pre class="kcalc" style="margin:8px 0 0">Contexto: sos analista de tendencias de CICLO. El cliente es una marca {tipo}, con {plazo} de producción.
 Objetivo: decir si conviene entrar, esperar o salir de cada grupo.
@@ -748,7 +875,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
           <dl id="rdl" style="margin-top:12px"></dl>
           <div id="rpion"></div>
           <div class="ai">
-            <div class="h"><span class="lbl" style="color:var(--accent)">Lectura</span><span class="tag alert">interpretación</span></div>
+            <div class="h"><span class="lbl" style="color:var(--accent)">Lectura</span><span class="tag ia2">interpretación</span></div>
             <p id="rlect"></p>
           </div>
         </div>
@@ -791,7 +918,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-marcas" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">04 · Marcas</span>
+          <span class="lbl">07 · Marcas</span>
           <h1>Ocho años de quién está caliente</h1>
           <p class="sub">El Lyst Index rankea las marcas más deseadas cada trimestre desde 2018. Transcribimos los 34 trimestres: 55 marcas distintas pasaron por el top 20. Es la serie temporal más larga que tenemos y la única fuente que conecta el alto nivel con la demanda real.</p>
         </div>
@@ -868,7 +995,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-retornos" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">05 · Retornos</span>
+          <span class="lbl">08 · Retornos</span>
           <h1>Lo que vuelve</h1>
           <p class="sub">La moda es cíclica: un atributo que desapareció rara vez desaparece del todo. Con 22 años de búsqueda alcanza para ver algunos atributos aparecer, irse y volver dos o tres veces — y medir cada cuánto.</p>
         </div>
@@ -895,7 +1022,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-asistente" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">Preguntale a CICLO</span>
+          <span class="lbl">05 · Preguntar</span>
           <h1>Preguntá lo que quieras decidir</h1>
           <p class="sub">Un modelo de lenguaje contesta con los datos de CICLO y con tu perfil. No ve ninguna fila de la base: lee un documento con las métricas ya calculadas (<a href="llm/ciclo_datos.md" target="_blank" rel="noopener">ciclo_datos.md</a>) y, si algo no está ahí, te lo dice.</p>
         </div>
@@ -933,7 +1060,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-consulta" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">06 · Consulta</span>
+          <span class="lbl">04 · Buscar por imagen</span>
           <h1>Mandá una prenda</h1>
           <p class="sub">Subí una foto, un dibujo o una captura. CLIP, un modelo de visión que corre en tu navegador, la compara con 14.000 looks reales de pasarela y con los 17 atributos del modelo, y te dice en qué etapa del ciclo está cada uno. La foto no sale de tu computadora.</p>
         </div>
@@ -974,12 +1101,13 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-racional" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">07 · Método</span>
+          <span class="lbl">09 · Método</span>
           <h1>Qué está medido y qué está interpretado</h1>
           <p class="sub">La regla de la casa: el modelo de lenguaje nunca ve una fila de datos. Recibe métricas que ya calculamos y las traduce. Todo lo que ves en la app cae en una de estas dos columnas y está marcado.</p>
         </div>
       </div>
       <hr class="rule">
+      <p class="note colores"><b>Cómo leer los colores.</b> Negro es medido. <span class="ia-t">Salmón</span> es calculado o interpretado por un modelo. Tres colores quedan reservados para la recomendación, que es una decisión y no un dato: <b class="acc-entrar">Entrar</b>, <b class="acc-esperar">Esperar / Explorar</b> y <b class="acc-salir">Salir</b>, siempre con la palabra al lado. Nada más lleva color: el resto de la pantalla es negro, crema y blanco, para que el color que se vea sea el de las prendas.</p>
       <div class="tw"><table>
         <thead><tr><th>Lo que ves</th><th>Origen</th><th>Cómo se obtiene</th></tr></thead>
         <tbody>
@@ -1006,8 +1134,8 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
           <tr><td class="k">Pinterest y TikTok</td><td><span class="tag alert">pendiente</span></td><td>Pinterest Trends y TikTok Creative Center piden iniciar sesión para mostrar series. Con una cuenta del grupo abierta en el navegador se leen igual que Google Trends.</td></tr>
           <tr><td class="k">Los tres datasets de Kaggle</td><td><span class="tag real">revisado</span></td><td><b>Fashion Trend Dataset</b> es el mismo archivo que ya usábamos como «Zara 2018–22» (fashion_data_2018_2022.xls, 20 columnas): sintético. <b>Fashion Dataset</b>: 15.702 vestidos etiquetados por estampa — liso 53,4 %, floral 17,7 %, rayas 4,5 %, lunares 4,1 %; confirma al liso como fondo, pero no tiene fecha. <b>Runways since 2011</b>: 6.655 desfiles y 132.118 imágenes sin etiquetas; sirve para medir color por temporada y queda para la próxima etapa.</td></tr>
           <tr><td class="k">Instagram</td><td><span class="tag alert">descartado</span></td><td>No existe serie histórica de hashtags a ningún precio. Instagram sacó la pestaña cronológica en 2022 y limitó a 5 hashtags por post en diciembre de 2025: el volumen de hashtag es una señal que se degrada sola. Es un resultado negativo, no un olvido.</td></tr>
-          <tr><td class="k">Lectura y recomendación</td><td><span class="tag alert">interpretación</span></td><td>Salida del modelo de lenguaje a partir de las métricas de arriba. Es opinión, no dato, y en la interfaz siempre aparece con esta marca.</td></tr>
-          <tr><td class="k">Preguntale a CICLO</td><td><span class="tag alert">interpretación</span></td><td>Chat con un modelo de lenguaje (Groq, con la API key de cada uno, desde el navegador). Lee <code>llm/ciclo_datos.md</code>: métricas ya calculadas, tu perfil y la regla fija de CICLO, nunca una fila de la base. Si algo no está en ese documento, lo dice.</td></tr>
+          <tr><td class="k">Lectura y recomendación</td><td><span class="tag ia2">interpretación</span></td><td>Salida del modelo de lenguaje a partir de las métricas de arriba. Es opinión, no dato, y en la interfaz siempre aparece con esta marca.</td></tr>
+          <tr><td class="k">Preguntale a CICLO</td><td><span class="tag ia2">interpretación</span></td><td>Chat con un modelo de lenguaje (Groq, con la API key de cada uno, desde el navegador). Lee <code>llm/ciclo_datos.md</code>: métricas ya calculadas, tu perfil y la regla fija de CICLO, nunca una fila de la base. Si algo no está en ese documento, lo dice.</td></tr>
         </tbody>
       </table></div>
       <p class="note a"><b>Lo que esta versión todavía no puede hacer.</b> Las tres puntas ya están medidas en el tiempo: pasarela hasta 2023, búsqueda hasta 2024 (2025 excluido por el salto de Google), Reddit hasta octubre de 2026 (de ahí a 2030 se muestra la mediana de la historia, que no es un pronóstico), y el catálogo masivo con los 30,6 millones de compras de H&amp;M entre 2018 y 2020 más las reseñas de Amazon hasta 2023. Falta <b>separar pasarela y venta por menswear y womenswear</b>: el corpus las mezcla y hay que volver a agregarlo desde el archivo original. El calzado queda afuera por decisión: la app trabaja con ropa.</p>
@@ -1299,6 +1427,8 @@ const CONSEJO={
 /* vínculo laboral: no cambia la lectura de la etapa (eso lo fija la categoría), cambia el riesgo y el tratamiento */
 let vinculo='marca';
 const EXPLORAR='Como trabajás por tu cuenta, no comprometés producción ni stock: podés empezar a diseñarlo ahora y decidir la serie cuando la señal se confirme.';
+/* el color va sólo en la recomendación: Entrar verde, Esperar/Explorar ámbar, Salir rojo, siempre con la palabra */
+const accCls=a=>a==='Entrar'?'acc-entrar':a==='Salir'?'acc-salir':a==='Esperar'||a==='Explorar'?'acc-esperar':'';
 function consejo(cli,et){const c=CONSEJO[cli][et];return vinculo==='propia'&&c[0]==='Esperar'?['Explorar',EXPLORAR]:c;}
 const tuQuien=()=>vinculo==='propia'?'tu cliente':'tu marca';
 let detSel=null;
@@ -1310,7 +1440,7 @@ function abrirDetalle(id){
     <button class="back" id="volver">← Volver al radar</button>
     <div class="vhead">
       <div>
-        <span class="lbl">${t.k} · ${t.fuente}</span>
+        <span class="lbl">02 · Tendencias · ${t.k} · ${t.fuente}</span>
         <h1>${t.n}</h1>
         <p class="sub">${t.med}.</p>
       </div>
@@ -1328,10 +1458,10 @@ function abrirDetalle(id){
           <dt>${vinculo==='propia'?'Para':'Cliente'}</dt><dd>${vinculo==='propia'?'Tu cliente · '+CLI:'Tu marca · '+CLI}</dd>
         </dl>
         <div class="ai">
-          <div class="h"><span class="lbl" style="color:var(--accent)">Lectura de la IA</span><span class="tag alert">interpretación</span></div>
+          <div class="h"><span class="lbl" style="color:var(--accent)">Lectura de la IA</span><span class="tag ia2">interpretación</span></div>
           <p>${t.lect}</p>
           <div class="rec">
-            <div class="a serif">${acc}</div>
+            <div class="a serif ${accCls(acc)}">${acc}</div>
             <div class="t">Recomendación · ${tuQuien()} · ${CLI}</div>
             <div class="d">${arg}</div>
           </div>
@@ -1579,7 +1709,7 @@ function dzLectura(it,prendaId){
 /* fit y cuello de remeras y buzos: qué parte de la pasarela de la prenda eligió CLIP para cada opción */
 function dzLecturaPasarela(lista){const top=lista.filter(x=>x.ahora>=5).sort((a,b)=>b.cambio-a.cambio).slice(0,2).map(x=>x.id);
   return lista.map(x=>({c:x,L:{pas:true,d:x.cambio,cuota:x.ahora,rec:top.includes(x.id)&&x.cambio>0.5,score:x.ahora+3*x.cambio}}));}
-const dzTag=acc=>acc?`<span class="tag ${acc[0]==='Salir'?'alert':acc[0]==='Esperar'?'demo':'ia'}">${acc[0]}</span>`:'';
+const dzTag=acc=>acc?`<span class="tag acc ${accCls(acc[0])}">${acc[0]}</span>`:'';
 const dzSigno=d=>`<span class="dzt ${d>0.5?'sube':d<-0.5?'baja':''}">${d>0.5?'▲':d<-0.5?'▼':'='} ${d>0?'+':''}${Math.abs(d)<10?d.toFixed(1).replace('.',','):Math.round(d)}</span>`;
 /* una sola línea de dato por tarjeta */
 function dzDato(L,jeans){
@@ -1841,7 +1971,7 @@ function pintarDecision(o){
   const [acc,arg]=et&&et.et!=null?consejo(cliente,et.et):['—','Este atributo no entra al K-means, así que no tiene etapa ni recomendación. Mirá cómo se mueve afuera en el gráfico.'];
   const ter=d==null?'sin dato':d>5?`gana terreno (+${Math.round(d)})`:d<-5?`pierde terreno (${Math.round(d)})`:`estable (${d>0?'+':''}${Math.round(d)})`;
   $('#rdecide').innerHTML=`<div class="dacc"><div class="h"><span class="lbl">Para vos · ${P.n}${vinculo==='propia'?' · por tu cuenta':' · tu marca'}</span><span class="tag ia2">recomendación · interpretación</span></div>
-      <div class="dline"><span class="a serif">${acc}</span><p>${arg}</p></div>
+      <div class="dline"><span class="a serif ${accCls(acc)}">${acc}</span><p>${arg}</p></div>
       ${vivoDatos(o)?`<div class="vivo" id="rvivo"></div>`:''}</div>
     <dl class="dfacts"><dt>Etapa</dt><dd>${et?et.n:'sin etapa'}${et?' <span class="mono" style="color:var(--ink-3);font-size:10.5px">K-means</span>':''}</dd>
       <dt>Afuera, 2023→2025</dt><dd>${ter}</dd>
@@ -1861,7 +1991,7 @@ function pintarVivo(o){
   const box=$('#rvivo');if(!box)return;const d=vivoDatos(o),key=[d.atributo,cliente,vinculo].join('|'),r=VIVO[key];
   const tag=`<span class="tag ia2">interpretación · Groq en vivo</span>`;
   if(r&&r.accion) box.innerHTML=`<div class="h">${tag}<span class="mono vm">${escH(r.modelo)} · prompt ${escH(r.prompt)}</span></div>
-      <div class="dline"><span class="a serif">${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
+      <div class="dline"><span class="a serif ${accCls(r.accion)}">${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
   else box.innerHTML=`<button type="button" class="kbtn ghost" id="rvivob"${r==='…'?' disabled':''}>${r==='…'?'Pensando…':'Pedir lectura en vivo'}</button>
       <span class="vm">${r&&r.error?escH(r.error):'Un modelo de lenguaje lee las métricas de este atributo para '+tuQuien()+'. No ve ningún dato crudo.'}</span>`;
   const b=$('#rvivob');if(b)b.addEventListener('click',async()=>{
@@ -1960,7 +2090,7 @@ function asPintar(){
     if(m.error){d.className='asa err';d.innerHTML=`<p>${escH(m.error)}</p>`;ch.appendChild(d);return;}
     const r=m.r;d.className='asa';
     d.innerHTML=`<div class="h"><span class="tag ia2">interpretación · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">fuera de los datos</span>':''}</div>
-      ${r.accion?`<div class="acc serif">${escH(r.accion)}</div>`:''}<p>${escH(r.respuesta)}</p>
+      ${r.accion?`<div class="acc serif ${accCls(r.accion)}">${escH(r.accion)}</div>`:''}<p>${escH(r.respuesta)}</p>
       ${r.regla?`<p class="ascap" style="margin:8px 0 0">La regla fija de CICLO para tu perfil dice <b>${escH(r.regla)}</b>: el modelo se apartó.</p>`:''}
       ${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}
       ${r.atributos.length?`<div class="chips">${r.atributos.map(id=>{const o=REC.find(x=>x.id===id);return o?`<button type="button" data-r="${id}">Ver ${escH(o.n)} en Recorridos</button>`:'';}).join('')}</div>`:''}`;
@@ -2241,7 +2371,7 @@ function kGroups(F,N){const g=$('#kgroups');g.innerHTML='';const raw=F.C.map(c=>
     d.innerHTML=`<div class="gt"><i class="kdot" style="background:var(${n.c});width:12px;height:12px"></i><span class="gn">${n.n}</span></div>
       <div class="gm">${m.map(r=>r.n).join(', ')}</div>
       <div class="gv">pasarela ${Math.round(c[0]*100)} % del pico · ${kPct(c[1])}<br>búsqueda ${Math.round(c[2]*100)} % del pico · ${kPct(c[3])}${sh!=null?`<br>compra después: ${kPct(sh)} (mediana)`:''}</div>
-      ${cons?`<div class="gr"><b>${cons[0]}</b>${cons[1]}</div>`:''}`;g.appendChild(d)})}
+      ${cons?`<div class="gr"><b class="${accCls(cons[0])}">${cons[0]}</b>${cons[1]}</div>`:''}`;g.appendChild(d)})}
 function kVal(F,N){const t=$('#kval');let h='<thead><tr><th>Atributo</th><th>Grupo</th><th class="r">Google Shopping</th><th class="r">Amazon</th></tr></thead><tbody>';
   const order=N.map((_,i)=>i).sort((a,b)=>(N[a].et??9)-(N[b].et??9));
   order.forEach(i=>KM.rows.forEach((r,j)=>{if(F.L[j]!==i)return;h+=`<tr><td>${r.n}</td><td><i class="kdot" style="background:var(${N[i].c})"></i>${N[i].n}</td><td class="r">${r.shop_22_25!=null?kPct(r.shop_22_25):'—'}</td><td class="r">${r.amz_19_22!=null?kPct(r.amz_19_22):'—'}</td></tr>`}));
@@ -2361,7 +2491,7 @@ function mostrar(v,keepNav){
   if(v==='disenar')pintarDisenar();
   if(v==='asistente')asAbrir();
   window.scrollTo({top:0,behavior:'instant'});
-  vista=v;escribirLink(true);
+  vista=v;escribirLink(true);pintarPerfilLinea();
 }
 /* ---------- entrada en tres pasos: público → vínculo → categoría ---------- */
 const GATE={
@@ -2403,21 +2533,32 @@ function pintarGate(){
       <dt>Ventana</dt><dd>${PERFIL[k].vent} año${PERFIL[k].vent>1?'s':''}</dd>
       <dt>Decide hasta</dt><dd>${PERFIL[k].hasta}</dd>
       <dt>Error ahí</dt><dd>±${Math.round(PERFIL[k].banda)} puntos</dd>
-      <dt>Entrar</dt><dd>${gateResumen(k,'Entrar')}</dd>
-      ${vinculo==='propia'&&gateResumen(k,'Explorar')!=='—'?`<dt>Explorar</dt><dd>${gateResumen(k,'Explorar')}</dd>`:''}
-      <dt>Salir</dt><dd>${gateResumen(k,'Salir')}</dd></dl>`,`data-cli="${k}"`)).join('');
+      <dt class="acc-entrar">Entrar</dt><dd>${gateResumen(k,'Entrar')}</dd>
+      ${vinculo==='propia'&&gateResumen(k,'Explorar')!=='—'?`<dt class="acc-esperar">Explorar</dt><dd>${gateResumen(k,'Explorar')}</dd>`:''}
+      <dt class="acc-salir">Salir</dt><dd>${gateResumen(k,'Salir')}</dd></dl>`,`data-cli="${k}"`)).join('');
     $$('#ggrid [data-cli]').forEach(b=>b.addEventListener('click',()=>gateElegir(b.dataset.cli)));
   }
 }
 function aplicarVinculo(){
   $('#clilbl').textContent=vinculo==='propia'?'Diseñás para':'Tu marca es';
   try{localStorage.setItem('ciclo.perfil',JSON.stringify({vinculo,cliente,pais,publico}));}catch(e){}
+  pintarPerfilLinea();
 }
 function gateElegir(cli){
   const b=$(`#cli button[data-c="${cli}"]`);if(cli!==cliente)b.click();else{pintarEtapas();}
   aplicarVinculo();perfilListo=true;mostrar(gateDestino);
 }
 function abrirGate(destino){gateDestino=destino||'disenar';gatePaso=1;pintarGate();mostrar('perfil');}
+/* el perfil guardado no se saltea en silencio: una línea arriba dice para quién estás diseñando y deja cambiarlo */
+const PERFIL_TXT={marca:{fast:'marca de fast fashion',medio:'marca contemporary',premium:'marca de high fashion',nicho:'marca de nicho'},
+  propia:{fast:'por tu cuenta · streetwear',medio:'por tu cuenta · contemporary',premium:'por tu cuenta · high fashion',nicho:'por tu cuenta · nicho'}};
+function pintarPerfilLinea(){
+  const el=$('#perfilinea');if(!el)return;el.hidden=!perfilListo||vista==='perfil'||vista==='portada';if(el.hidden)return;
+  const quien=publico==='mujer'?'para mujer':publico==='hombre'?'para hombre':'sin género';
+  el.innerHTML=`<span>Diseñando ${quien} · ${(PERFIL_TXT[vinculo]||PERFIL_TXT.marca)[cliente]||''}</span> · <button type="button" id="perfilcambiar">cambiar</button>`;
+  $('#perfilcambiar').addEventListener('click',()=>abrirGate(vista==='perfil'||vista==='portada'?'disenar':vista));
+}
+$$('#cli button').forEach(b=>b.addEventListener('click',()=>setTimeout(pintarPerfilLinea)));
 $('#gvolver').addEventListener('click',()=>{gatePaso=Math.max(1,gatePaso-1);pintarGate();$('#ggrid .gcard')?.focus();});
 $('#cambiarperfil').addEventListener('click',()=>abrirGate(vista==='perfil'||vista==='portada'?'disenar':vista));
 let perfilListo=false;
@@ -2493,9 +2634,28 @@ $$('#v-portada .cvit').forEach(b=>b.addEventListener('click',()=>{
   if(!perfilListo){abrirGate(destino);return;}
   mostrar(destino);
 }));
-pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
-if(perfilListo){try{const g=JSON.parse(localStorage.getItem('ciclo.perfil'));if(g.cliente!==cliente)$(`#cli button[data-c="${g.cliente}"]`).click();}catch(e){}aplicarVinculo();}
-if(!leerLink()){if(perfilListo)mostrar('disenar');else abrirGate('disenar');} // la primera vez, la app arranca con las dos opciones
+/* el arranque: todas las vistas empiezan ocultas y sólo esto decide cuál se ve. Si algo falla, el gate y un aviso,
+   nunca una pantalla equivocada sin explicación (el <script> de abajo cubre un error antes de llegar acá) */
+function arranqueFallido(e){
+  console.error('CICLO no arrancó bien:',e);
+  try{abrirGate('disenar');}catch(e2){$$('main .view').forEach(x=>x.hidden=x.id!=='v-perfil');}
+  const a=document.getElementById('aviso');
+  if(a){a.hidden=false;a.textContent='Algo falló al cargar la app. Elegí tu perfil para seguir; si vuelve a pasar, recargá la página.';}
+}
+try{
+  pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
+  // restaurar el perfil no tiene que escribir la URL: antes dejaba «#portada?…» y leerLink() volvía a la portada vieja
+  if(perfilListo){leyendoLink=true;try{const g=JSON.parse(localStorage.getItem('ciclo.perfil'));if(g.cliente!==cliente)$(`#cli button[data-c="${g.cliente}"]`).click();}catch(e){}finally{leyendoLink=false;}aplicarVinculo();}
+  if(!leerLink()){if(perfilListo)mostrar('disenar');else abrirGate('disenar');} // sin perfil guardado, la app arranca con las tres preguntas
+}catch(e){arranqueFallido(e);}
+window.CICLO_LISTO=true;
+</script>
+<script>
+if(!window.CICLO_LISTO){
+  try{arranqueFallido(new Error('el script principal se cortó antes del arranque'));}
+  catch(e){var g=document.getElementById('v-perfil');if(g)g.hidden=false;var a=document.getElementById('aviso');
+    if(a){a.hidden=false;a.textContent='Algo falló al cargar la app. Recargá la página; si vuelve a pasar, avisanos.';}}
+}
 </script>
 
 </body></html>

@@ -44,8 +44,12 @@ Netlify publishes `app/` with no build command. The only external dependency is 
 
 - **Salmon (`#FFAFA3`) = AI.** Black is measured; salmon is calculated or interpreted by a model. Holds in
   the app and in the presentation slides.
-- **Stage is encoded as position on a track, not color.** The UI is monochrome so the only color is the
-  garments' own palette.
+- **Stage is encoded as position on a track, not color.** The UI is monochrome (black, cream #F6F0EB, white)
+  so the only color is the garments' own palette. The one exception: the recommendation word (Entrar green,
+  Esperar/Explorar amber, Salir red, via `accCls()` and the `--act-*` tokens), always with the word itself.
+  Nothing else gets those colors. The editorial style block at the end of the CSS overrides the older rules.
+- **Startup:** every `.view` starts `hidden`; only the boot code (wrapped in try/catch, plus a fallback
+  `<script>`) decides what shows. A saved profile goes to Diseñar with the `#perfilinea` line, never silently.
 - **No number without its source.** Each card states which data layer can and cannot answer.
 - **The LLM never sees a data row**, only precomputed metrics (level, momentum, growth, distance to peak)
   plus client type; its output is shown labelled as interpretation. Prompts live in `prompts/` and are

@@ -154,6 +154,12 @@ Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022
 - **La etapa se codifica como posición en una pista, no como color.** Hay cinco etapas y el color ya
   está ocupado por la ropa, que es el dato que la usuaria vino a ver. La posición es además el canal
   perceptual más preciso (Munzner).
+- **Tres reglas de color, y nada más.** Negro es medido. Salmón es calculado o interpretado por un modelo.
+  Verde, ámbar y rojo quedan reservados para la recomendación —Entrar, Esperar o Explorar, Salir—, que es
+  una decisión y no un dato, y siempre van con la palabra al lado. El resto es negro, crema y blanco.
+- **Se lee como una revista.** Bodoni Moda enorme para los títulos contra IBM Plex Mono chiquita y en
+  mayúsculas para las etiquetas; grilla asimétrica, texto en columnas de 60–70 caracteres, reglas de 1 px y
+  nada de esquinas redondeadas, sombras ni botones con relleno.
 - **La entrada es por prenda y por corte.** Dentro de un mismo atributo hay ciclos opuestos: si se mira
   «denim» agregado, los amplios y los ajustados se cancelan y no se ve nada.
 - **Ningún número aparece sin su fuente.** Cada ficha declara qué capa puede y qué capa no puede responder.

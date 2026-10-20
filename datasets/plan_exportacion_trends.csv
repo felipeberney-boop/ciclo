@@ -1,0 +1,37 @@
+lote,ancla,termino,hoja_taxonomia,link,archivo_esperado
+1,trench coat,mini skirt,tipo:faldas/mini,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,mini%20skirt,midi%20skirt,maxi%20skirt,slip%20dress",datasets/trends_lotes/lote_01.csv
+1,trench coat,midi skirt,tipo:faldas/midi,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,mini%20skirt,midi%20skirt,maxi%20skirt,slip%20dress",datasets/trends_lotes/lote_01.csv
+1,trench coat,maxi skirt,tipo:faldas/maxi,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,mini%20skirt,midi%20skirt,maxi%20skirt,slip%20dress",datasets/trends_lotes/lote_01.csv
+1,trench coat,slip dress,tipo:vestidos/slip,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,mini%20skirt,midi%20skirt,maxi%20skirt,slip%20dress",datasets/trends_lotes/lote_01.csv
+2,trench coat,shirt dress,tipo:vestidos/camisero,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,shirt%20dress,wrap%20dress,bodycon%20dress,jumpsuit",datasets/trends_lotes/lote_02.csv
+2,trench coat,wrap dress,tipo:vestidos/cruzado,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,shirt%20dress,wrap%20dress,bodycon%20dress,jumpsuit",datasets/trends_lotes/lote_02.csv
+2,trench coat,bodycon dress,tipo:vestidos/tubo,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,shirt%20dress,wrap%20dress,bodycon%20dress,jumpsuit",datasets/trends_lotes/lote_02.csv
+2,trench coat,jumpsuit,tipo:enteritos/largo,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,shirt%20dress,wrap%20dress,bodycon%20dress,jumpsuit",datasets/trends_lotes/lote_02.csv
+3,trench coat,romper,tipo:enteritos/corto,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,romper,overalls,puffer%20jacket,cardigan",datasets/trends_lotes/lote_03.csv
+3,trench coat,overalls,tipo:enteritos/jardinero,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,romper,overalls,puffer%20jacket,cardigan",datasets/trends_lotes/lote_03.csv
+3,trench coat,puffer jacket,tipo:abrigos/puffer,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,romper,overalls,puffer%20jacket,cardigan",datasets/trends_lotes/lote_03.csv
+3,trench coat,cardigan,tipo:buzos/cardigan,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,romper,overalls,puffer%20jacket,cardigan",datasets/trends_lotes/lote_03.csv
+4,trench coat,turtleneck,tipo:buzos/polera,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,turtleneck,blouse,tank%20top,bermuda%20shorts",datasets/trends_lotes/lote_04.csv
+4,trench coat,blouse,tipo:camisas/blusa,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,turtleneck,blouse,tank%20top,bermuda%20shorts",datasets/trends_lotes/lote_04.csv
+4,trench coat,tank top,tipo:remeras/musculosa,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,turtleneck,blouse,tank%20top,bermuda%20shorts",datasets/trends_lotes/lote_04.csv
+4,trench coat,bermuda shorts,tipo:pantalones/bermuda,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,turtleneck,blouse,tank%20top,bermuda%20shorts",datasets/trends_lotes/lote_04.csv
+5,trench coat,denim shorts,tipo:pantalones/short,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,denim%20shorts,capri%20pants,corduroy,linen",datasets/trends_lotes/lote_05.csv
+5,trench coat,capri pants,tipo:pantalones/capri,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,denim%20shorts,capri%20pants,corduroy,linen",datasets/trends_lotes/lote_05.csv
+5,trench coat,corduroy,mat:corduroy,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,denim%20shorts,capri%20pants,corduroy,linen",datasets/trends_lotes/lote_05.csv
+5,trench coat,linen,mat:lino,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,denim%20shorts,capri%20pants,corduroy,linen",datasets/trends_lotes/lote_05.csv
+6,trench coat,satin,mat:satenseda,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,satin,tweed,cashmere,chiffon",datasets/trends_lotes/lote_06.csv
+6,trench coat,tweed,mat:tweed,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,satin,tweed,cashmere,chiffon",datasets/trends_lotes/lote_06.csv
+6,trench coat,cashmere,mat:cashmere,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,satin,tweed,cashmere,chiffon",datasets/trends_lotes/lote_06.csv
+6,trench coat,chiffon,mat:gasa,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,satin,tweed,cashmere,chiffon",datasets/trends_lotes/lote_06.csv
+7,trench coat,fleece,mat:fleece,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,fleece,cable%20knit,boucle,tulle",datasets/trends_lotes/lote_07.csv
+7,trench coat,cable knit,mat:cable,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,fleece,cable%20knit,boucle,tulle",datasets/trends_lotes/lote_07.csv
+7,trench coat,boucle,mat:boucle,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,fleece,cable%20knit,boucle,tulle",datasets/trends_lotes/lote_07.csv
+7,trench coat,tulle,mat:tul,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,fleece,cable%20knit,boucle,tulle",datasets/trends_lotes/lote_07.csv
+8,trench coat,ruffles,det:volados,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,ruffles,embroidery,pleated%20skirt,quilted%20jacket",datasets/trends_lotes/lote_08.csv
+8,trench coat,embroidery,det:bordado,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,ruffles,embroidery,pleated%20skirt,quilted%20jacket",datasets/trends_lotes/lote_08.csv
+8,trench coat,pleated skirt,det:plisado,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,ruffles,embroidery,pleated%20skirt,quilted%20jacket",datasets/trends_lotes/lote_08.csv
+8,trench coat,quilted jacket,det:acolchado,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,ruffles,embroidery,pleated%20skirt,quilted%20jacket",datasets/trends_lotes/lote_08.csv
+9,trench coat,fringe,det:flecos,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,fringe,sequins,camo,tie%20dye",datasets/trends_lotes/lote_09.csv
+9,trench coat,sequins,det:pedreria,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,fringe,sequins,camo,tie%20dye",datasets/trends_lotes/lote_09.csv
+9,trench coat,camo,estampa:camo,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,fringe,sequins,camo,tie%20dye",datasets/trends_lotes/lote_09.csv
+9,trench coat,tie dye,estampa:tiedye,"https://trends.google.com/trends/explore?date=all&q=trench%20coat,fringe,sequins,camo,tie%20dye",datasets/trends_lotes/lote_09.csv

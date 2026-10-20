@@ -189,7 +189,7 @@ DETALLE_POR_PRENDA = {
 # toman el color suelto en toda la pasarela (se calcula en la app).
 PRESTA = {
   'tipo:pantalones/short': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, más corto. Short no tiene serie propia todavía.'),
-  'tipo:pantalones/bermuda': ('rec:cargo', 'Misma familia utilitaria de pantalón corto: la bermuda se busca junto al cargo.'),
+  'tipo:pantalones/bermuda': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, hasta la rodilla. (Antes tomaba el cargo, que no es su pariente en el árbol.)'),
   'tipo:pantalones/capri': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, cortado a media pierna.'),
   'tipo:remeras/top': ('rec:corset', 'Hermano: misma familia de tops al cuerpo.'),
   'tipo:buzos/sweater': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),

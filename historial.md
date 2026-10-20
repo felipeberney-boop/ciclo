@@ -89,6 +89,15 @@ denim), 35 materiales y detalles, combinaciones imposibles fuera, recomendación
 contador de dato medido y la barra que acumula. Commits `d9f6c4f` a `e6a401a`; la versión anterior quedó en
 `diseno/prototipos/versiones_de_la_app/app_2026-10-20_9035227.html`.
 
+## v1.2 · 20/10/2026 · Cajas, procedencia sin color, dato prestado y «El ciclo»
+
+Jeans reagrupados (mom y boyfriend a medios) y K-means recalculado, con nombres por asignación óptima. Toda
+opción es una caja cerrada; el color es sólo la señal y la procedencia va en texto (medido, interpretado,
+prestado); se retira la regla del salmón. Las hojas sin serie toman la de un pariente: 26 directo, 39 prestado,
+63 sin dato. Dibujos para detalles y estampas que faltaban. Recorridos pasa a «El ciclo» (cuándo picó y cuánto
+tardó en volver) y el gráfico arranca donde arranca el dato. Commits `9f842b8` a `aa99cf9` y siguientes; la
+versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-20_cc69c93.html`.
+
 ## Lo que falta para la Entrega 3
 
 - Conectar la Groq API en vivo. Hoy IA-5 corre con prompt fijo.

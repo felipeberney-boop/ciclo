@@ -721,3 +721,15 @@ capas y marca dónde entra cada fuente.
 de un `<button>` flex un bloque vacío queda de ancho cero), y las muestras de estampa tampoco (un `url("…")`
 dentro de un `style` con comillas dobles).
 
+**Dos decisiones (20/10/2026).**
+- **k = 4, y se queda.** La silhouette prefiere k=2 (0,361) y después k=6 y k=5, pero con dos grupos el modelo
+  sólo diría «sube o baja», que ya lo dice la señal; y con 5 o 6 aparecen grupos de un atributo. El K-means está
+  para nombrar etapas, y cuatro es lo mínimo que las separa. Queda declarado en la pantalla del modelo.
+- **La bermuda toma el dato del pantalón largo, no del cargo.** El cargo no es su pariente en el árbol (está en
+  detalles), y el préstamo salta de familia, que es justo lo que la regla prohíbe. Hermano primero, como short y capri.
+
+**Cuántas hojas tienen dato.** Sobre 128 hojas (tipos, cortes, tiros, materiales, detalles, estampas y los 12
+colores del vocabulario): **26 directo, 39 prestado, 63 sin dato**. El plan para salir a buscar lo que falta está
+en `datasets/plan_exportacion_trends.csv` (36 términos en 9 lotes con trench coat de ancla) y se pega con
+`codigo/pegar_lotes_trends.py`.
+

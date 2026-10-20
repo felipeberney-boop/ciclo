@@ -8,7 +8,8 @@ número siguiente, no se pisa el anterior.
 | `prompt_lectura_recomendacion_v1.md` | IA-5 · leer el grupo y recomendar | reemplazado por v2 |
 | `prompt_lectura_recomendacion_v2.md` | IA-5 · leer un atributo y recomendar, en vivo (función de Netlify) | reemplazado por v3 |
 | `prompt_lectura_recomendacion_v3.md` | IA-5 · lo mismo, con `gpt-oss-120b` (Groq ya no tiene Llama) | en uso |
-| `prompt_asistente_v1.md` | IA-8 · Preguntale a CICLO: chat con la API key de cada uno y `llm/ciclo_datos.md` | en uso |
+| `prompt_asistente_v1.md` | IA-8 · Preguntale a CICLO: chat con la API key de cada uno y `llm/ciclo_datos.md` | reemplazado por v2 |
+| `prompt_asistente_v2.md` | IA-8 · Preguntar como herramienta de diseño: tu diseño, imagen por CLIP, el dato en la burbuja y acciones | en uso |
 | `prompt_consulta_por_imagen_v1.md` | IA-6 · atributos a partir de una foto | reemplazado por v2 |
 | `prompt_consulta_por_imagen_v2.md` | IA-6 · CLIP en el navegador: atributos, looks parecidos y años | reemplazado por v3 |
 | `prompt_consulta_por_imagen_v3.md` | IA-6 · lo mismo, con 17 atributos (sin calzado) | en uso |

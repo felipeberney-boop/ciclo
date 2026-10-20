@@ -710,6 +710,26 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 .ppierna{inset:10px 0}
 .pswcap{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:6px 16px 0;align-self:stretch}
 
+/* ---------- Preguntar: herramienta de diseño, con estructura de nota ---------- */
+.aschips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.aschip{font:inherit;font-size:13px;background:var(--card);border:1px solid var(--rule)!important;padding:6px 10px;cursor:pointer;color:var(--ink);min-height:36px}
+.aschip:hover{border-color:var(--ink)!important}.aschip span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-right:6px}
+.aschip.leido{border-style:dashed!important}
+.asfoto{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--ink);cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;margin-top:4px}
+.asfoto input{position:absolute;width:1px;height:1px;opacity:0}.asfoto:focus-within{outline:2px solid var(--ink);outline-offset:3px}
+.asimg{display:block;max-width:100%;max-height:220px;margin-top:12px;border:1px solid var(--rule)}
+.asa .asleer{font-family:"Bodoni Moda",serif;font-size:21px;line-height:1.35;max-width:52ch}
+.asdatos{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule)}
+.asdato{display:grid;grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr);gap:12px;align-items:center;padding:6px 0;font-size:13px}
+.asdato .n{font-weight:500}.asdato .v{font-family:var(--mono);font-size:11px;color:var(--ink-2)}.asspark{color:var(--ink)}
+.asacciones{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.asacciones .lbl{width:100%}
+.asa.aviso{border-left-style:solid!important}
+.aslooks{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:10px}
+.aslooks button{border:1px solid var(--rule);background:var(--card);padding:0;cursor:pointer;text-align:left;font:inherit;font-size:10.5px;color:var(--ink-2)}
+.aslooks img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover}.aslooks span{display:block;padding:4px 6px}
+@media (max-width:760px){.asdato{grid-template-columns:1fr 110px}.asdato .v{grid-column:1/-1}.asspark{width:110px}}
+
 </style>
 
 <div class="app">
@@ -1102,23 +1122,26 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       <div class="vhead">
         <div>
           <span class="lbl">05 · Preguntar</span>
-          <h1>Preguntá lo que quieras decidir</h1>
-          <p class="sub">Un modelo de lenguaje contesta con los datos de CICLO y con tu perfil. No ve ninguna fila de la base: lee un documento con las métricas ya calculadas (<a href="llm/ciclo_datos.md" target="_blank" rel="noopener">ciclo_datos.md</a>) y, si algo no está ahí, te lo dice.</p>
+          <h1>Preguntale a CICLO por tu diseño</h1>
+          <p class="sub">Traé lo que estás armando —o una foto, o un boceto— y preguntá. Cada respuesta trae el dato que la sostiene y un cambio para probar. El modelo de lenguaje lee sólo métricas ya calculadas (<a href="llm/ciclo_datos.md" target="_blank" rel="noopener">ciclo_datos.md</a>), nunca una fila de la base.</p>
         </div>
       </div>
       <hr class="rule">
       <div class="as">
         <div class="asL">
+          <div class="ascard"><span class="lbl">Tu diseño</span><div id="asdis" class="aschips"></div></div>
           <div class="ascard">
-            <span class="lbl">1 · Tu API key de Groq</span>
+            <span class="lbl">Una foto o un boceto</span>
+            <p class="ascap">CLIP la lee en este navegador; la imagen no sale de tu computadora. Si leyó algo que no va, sacalo.</p>
+            <label class="asfoto"><input type="file" id="asfile" accept="image/*"><span>Elegir una imagen</span></label>
+            <div id="asprev"></div><div id="asclip" class="aschips"></div><p class="ascap" id="asclipest"></p>
+          </div>
+          <div class="ascard">
+            <span class="lbl">Tu API key de Groq</span>
             <p class="ascap">Se guarda sólo en este navegador y viaja sólo a api.groq.com. La sacás gratis en <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>.</p>
             <input id="askey" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="API key de Groq">
             <label class="ascap" for="asmodelo" style="display:block;margin-top:10px">Modelo</label>
             <select id="asmodelo"><option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option><option value="openai/gpt-oss-20b">openai/gpt-oss-20b (más rápido)</option></select>
-          </div>
-          <div class="ascard">
-            <span class="lbl">2 · Lo que sabe de vos</span>
-            <p class="ascap" id="asperfil"></p>
           </div>
           <details class="ascard asver"><summary class="lbl">Qué se le mandó al modelo</summary>
             <p class="ascap" id="astok">Todavía nada.</p>
@@ -1129,7 +1152,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
           <div id="aschat" class="aschat" aria-live="polite"></div>
           <div id="assug" class="assug"></div>
           <form id="asform" class="asform">
-            <textarea id="astexto" rows="2" maxlength="600" placeholder="Por ejemplo: ¿meto wide leg en la colección de invierno?" aria-label="Tu pregunta"></textarea>
+            <textarea id="astexto" rows="2" maxlength="600" placeholder="Preguntá sobre tu diseño" aria-label="Tu pregunta"></textarea>
             <button type="submit" class="kbtn" id="asenviar">Preguntar</button>
           </form>
         </div>
@@ -2301,75 +2324,95 @@ function pintarVivo(o){
     if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);
   });
 }
-/* ---------- Preguntale a CICLO: el chat de la V2 de la clase, hecho para CICLO (prompts/prompt_asistente_v1.md) ----------
-   Como en la V2: la API key la pega cada uno, queda en este navegador y la página le habla directo a Groq.
-   La fuente de datos es un .md (llm/ciclo_datos.md, lo arma codigo/armar_datos_llm.js con los datos de la app).
-   Lo propio de CICLO: el plan gratis de Groq da 8.000 tokens por minuto y el documento entero pesa ~7.000,
-   así que va siempre lo general y, de las fichas, sólo las que nombra la conversación. Y el modelo contesta
-   un JSON que se valida antes de mostrarlo. */
+/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v2.md) ----------
+   Como en la V2 de la clase: la API key la pega cada uno, queda en este navegador y la página le habla directo a Groq,
+   con llm/ciclo_datos.md como DATOS (sólo las partes que nombran la pregunta, el diseño y la imagen: el plan gratis da
+   8.000 tokens por minuto). Lo propio de CICLO: sabe qué estás diseñando (la barra de Diseñar), lee una foto con CLIP
+   y muestra lo que leyó para que lo corrijas, cada respuesta trae la serie que la sostiene y termina en cambios que se
+   aplican con un botón. La respuesta es un JSON que se valida antes de mostrarlo. */
 const AS_API='https://api.groq.com/openai/v1/chat/completions';
-const AS_INSTR=`Sos el asistente de CICLO: ayudás a diseñadores a decidir qué atributos de moda usar según en qué etapa de su ciclo están.
+const AS_INSTR=`Sos el asistente de CICLO dentro de una herramienta de diseño: quien pregunta está armando una prenda y tiene una duda concreta.
 Reglas:
 - Usá únicamente la información de DATOS. Cada número que digas tiene que estar en DATOS, tal cual. No inventes cifras, marcas, temporadas, fuentes ni años.
-- Si la respuesta no está en DATOS, poné "fuera_de_datos": true, decí qué no mide CICLO y, si sirve, qué sí mide que se acerque.
-- Decí de qué capa sale cada dato (pasarela, búsqueda, Argentina, validación, CLIP) y si es medido o interpretación.
-- Cuando hablás de un atributo con ficha, usá al menos dos números de capas distintas (por ejemplo búsqueda y pasarela, o búsqueda y Argentina).
-- Recomendá según el perfil de quien pregunta. Si la ficha trae «para vos (regla de CICLO)», esa es la acción: usala y explicá su porqué. Sólo te apartás si un dato de DATOS lo justifica, y entonces lo decís.
-- El perfil es el que eligió en la app. Si menciona otro, contestá con el suyo y decile que lo puede cambiar en «Cambiar perfil».
-- Si recomendás o desaconsejás algo, completá "accion". Si comparás varios, la acción es la del que recomendás.
-- CICLO no tiene calzado, no separa hombre y mujer en los datos, no detecta lo emergente y no pronostica: si te lo piden, decilo.
-- Castellano rioplatense, sin jerga, tono directo, para diseñadores. De 2 a 4 oraciones. Se dice «estampa», no «estampilla».
-- En "respuesta" va sólo el texto para leer: nada de nombres de campos ni JSON.
+- Si algo no está en DATOS, poné "fuera_de_datos": true y decí «esto no lo tengo medido»; si sirve, ofrecé lo que sí mide CICLO que se acerque.
+- Hablá del diseño que está armando (TU DISEÑO) y de lo que CLIP leyó en su imagen, si hay: no le hagas repetir nada.
+- Decí si cada dato es medido, interpretado (CLIP) o prestado de un pariente, como dice DATOS.
+- Recomendá según su perfil. Si una ficha trae «para vos (regla de CICLO)», esa es la acción: usala y explicá su porqué. Sólo te apartás si un dato lo justifica, y lo decís.
+- Estructura de nota: "respuesta" es la lectura, en 1 a 3 oraciones; el dato va en "atributos" y "datos"; el cambio va en "acciones".
+- "acciones": hasta 2 cambios concretos sobre su diseño, sólo con pasos y valores de OPCIONES, y sólo si DATOS los respalda; "texto" en castellano y corto («Probá tiro alto»). Sin diseño u OPCIONES, [].
+- CICLO no tiene calzado ni accesorios, no separa hombre y mujer en los datos, no detecta lo emergente y no pronostica: si te lo piden, decilo.
+- Castellano rioplatense, sin jerga, tono directo. En "respuesta" va sólo el texto para leer.
 Respondé SOLO con un objeto JSON, sin texto antes ni después:
 {
-  "respuesta": "2 a 4 oraciones",
+  "respuesta": "1 a 3 oraciones",
   "accion": "Entrar | Esperar | Explorar | Salir, o \\"\\" si la pregunta no pide decidir",
-  "atributos": ["id de cada atributo de DATOS del que hablaste"],
-  "datos": ["hasta 3: el número que usaste y de qué capa sale, en pocas palabras"],
+  "atributos": ["id de cada línea de DATOS que usaste"],
+  "datos": ["hasta 3: el número que usaste y de dónde sale, con nombres, nunca ids"],
   "fuera_de_datos": false,
-  "siguiente": ["hasta 2 preguntas cortas para seguir, que DATOS pueda contestar"]
+  "acciones": [{"paso": "tiro", "valor": "alto", "texto": "Probá tiro alto: sube en la búsqueda"}],
+  "siguiente": ["hasta 2 preguntas cortas para seguir"]
 }`;
-const AS_SUG=['¿Meto wide leg en la colección de invierno?','¿Qué estampa me conviene trabajar ahora?','¿Qué cuello gana terreno en remeras?','¿Por qué lunares sale saturada?'];
-const as={datos:null,hist:[],ocupado:false};
+const as={datos:null,hist:[],ocupado:false,clip:[],looks:null};
 const asNorm=t=>t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 const asCampo=(l,k)=>{const m=l.match(new RegExp(`\\| ${k}: ([^|]*)`));return m?m[1].trim():null;};
 function asLeer(k){try{return localStorage.getItem(k)||'';}catch(e){return '';}}
 function asGuardar(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function asSecciones(doc){const S={intro:[]};let a='intro';for(const l of doc.split('\n')){if(l.startsWith('## ')){a=l.slice(3).trim();S[a]=[l];}else(S[a]||(S[a]=[])).push(l);}return S;}
-/* DATOS para esta pregunta: lo general siempre; fichas y líneas de Diseñar, sólo las que nombra la conversación */
-function asElegir(doc,texto){
+/* lo que está armando en Diseñar, como chips y como ids de DATOS */
+function asDiseno(){
+  const pr=dzPrenda();if(!pr)return {chips:[],ids:[],txt:''};
+  const P=dzPasos().filter(p=>p!=='fin'&&dz[p]),chips=P.map(p=>({paso:p,n:DZ_NOMBRE[p],v:dzValor(p)}));
+  const ids=[];if(dz.tipo)ids.push(`tipo_${dz.prenda}_${dz.tipo}`);['corte','tiro','material','estampa','detalle'].forEach(k=>{if(dz[k])ids.push(`${k}_${dz[k]}`);});
+  return {chips,ids,txt:dzNombre?chips.map(c=>`${c.n.toLowerCase()}: ${c.v}`).join(' · '):''};
+}
+/* los pasos y valores que una acción puede tocar, para el diseño de ahora */
+function asOpciones(){
+  const t=dzTipo();if(!t)return {};const O={};
+  if((t.pasos||[]).includes('corte'))O.corte=TAX.cortes.map(c=>c.id);
+  if((t.pasos||[]).includes('tiro'))O.tiro=TAX.tiros.map(c=>c.id);
+  O.material=dzMateriales();O.estampa=dzEstampas();O.detalle=dzDetalles();return O;
+}
+/* DATOS para esta pregunta: lo general siempre; fichas y señales de Diseñar, las que nombran la pregunta, el diseño y la imagen */
+function asElegir(doc,texto,prefer){
   const S=asSecciones(doc),q=' '+asNorm(texto)+' ';
   const nombra=l=>{const nm=l.slice(2).split(' | ')[0];
     return [nm.split(' · ').pop(),asCampo(l,'id'),...(asCampo(l,'busca')||'').split(',')].filter(Boolean).map(x=>asNorm(x.trim()))
       .some(k=>k.length>2&&new RegExp('[^a-z0-9]'+k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).test(q));};
-  const AS_ET={'Emergente':0,'En ascenso':1,'Pico':2,'Saturada':3,'En retorno':4};
-  const reglas={};
-  const fichas=(S['Fichas de atributos']||[]).filter(l=>l.startsWith('- ')).filter(nombra).slice(0,3).map(l=>{ // la regla fija de CICLO para tu perfil, calculada acá
+  const AS_ET={'Emergente':0,'En ascenso':1,'Pico':2,'Saturada':3,'En retorno':4},reglas={};
+  const fichas=(S['Fichas de atributos']||[]).filter(l=>l.startsWith('- ')).filter(nombra).slice(0,3).map(l=>{
     const e=AS_ET[asCampo(l,'etapa')];if(e==null)return l;const [a,por]=consejo(cliente,e);reglas[asCampo(l,'id')]=a;
     return l+` | para vos (regla de CICLO): ${a}. ${por}`;});
-  const nombres=fichas.map(l=>asNorm(l.slice(2).split(' | ')[0]));
-  const dis=(S['Diseñar: qué conviene en cada prenda']||[]).filter(l=>l.startsWith('- '));
-  const prendas=[...new Set(dis.map(l=>asCampo(l,'prenda')).filter(Boolean))].filter(p=>q.includes(asNorm(p).replace(/s$/,'')));
-  const detalle=/cuello|escote|manga|color/.test(q);
-  const lineas=dis.map(l=>{const at=asCampo(l,'atributo'),p=asCampo(l,'prenda');
-    return {l,pt:(nombra(l)?3:0)+(detalle&&l.includes('cuellos, mangas')?3:0)+(prendas.includes(p)?1:0)+(at&&nombres.some(n=>asNorm(at).startsWith(n))?1:0)};})
-    .filter(x=>x.pt>0).sort((a,b)=>b.pt-a.pt).slice(0,6).map(x=>x.l);
+  // señales de Diseñar: las del diseño primero; si pregunta por material o estampa, las que se producen para su prenda
+  const sen=(S['Señales de Diseñar']||[]).filter(l=>l.startsWith('- '));const O=asOpciones(),pide=k=>new RegExp(k).test(q);
+  const elegidas=[];const sumar=l=>{if(l&&!elegidas.includes(l))elegidas.push(l);};
+  prefer.forEach(id=>sumar(sen.find(l=>asCampo(l,'id')===id)));
+  if(pide('material|tela')&&O.material)sen.filter(l=>asCampo(l,'paso')==='material'&&O.material.includes(asCampo(l,'valor'))&&!/sin dato/.test(l)).forEach(sumar);
+  if(pide('estampa|print')&&O.estampa)sen.filter(l=>asCampo(l,'paso')==='estampa'&&O.estampa.includes(asCampo(l,'valor'))&&!/sin dato/.test(l)).forEach(sumar);
+  if(pide('tiro')&&O.tiro)sen.filter(l=>asCampo(l,'paso')==='tiro').forEach(sumar);
+  if(pide('corte')&&O.corte)sen.filter(l=>asCampo(l,'paso')==='corte').forEach(sumar);
+  sen.filter(nombra).forEach(sumar);
+  const senales=elegidas.slice(0,16);
   const del=(sec,pred)=>(S[sec]||[]).filter(l=>!l.startsWith('- ')||pred(l));
   const partes=[S.intro,S['Cómo leer los números'],S['Etapas'],del('Perfiles',l=>asCampo(l,'perfil')===cliente),
     del('Qué conviene según etapa y perfil',l=>asCampo(l,'perfil')===cliente),S['Resumen: todos los atributos'],
-    fichas.length?['## Fichas de atributos',...fichas]:null,lineas.length?['## Diseñar: qué conviene en cada prenda',...lineas]:null,
+    fichas.length?['## Fichas de atributos',...fichas]:null,senales.length?['## Señales de Diseñar',...senales]:null,
     S['Lo que CICLO no puede responder']].filter(Boolean);
-  return {datos:partes.map(p=>p.join('\n').trim()).join('\n\n'),usadas:[...fichas,...lineas].map(l=>l.slice(2).split(' | ')[0]),
-    ids:(S['Resumen: todos los atributos']||[]).map(l=>asCampo(l,'id')).filter(Boolean),reglas};
+  const todas=[...(S['Resumen: todos los atributos']||[]),...fichas,...senales].filter(l=>l.startsWith('- '));
+  const serie={},nombre={};todas.forEach(l=>{const id=asCampo(l,'id');if(!id)return;nombre[id]=l.slice(2).split(' | ')[0];
+    const g=asCampo(l,'serie')||(GREL[id]?id:null);if(g&&GREL[g])serie[id]=g;});
+  return {datos:partes.map(p=>p.join('\n').trim()).join('\n\n'),usadas:[...fichas,...senales].map(l=>l.slice(2).split(' | ')[0]),
+    ids:todas.map(l=>asCampo(l,'id')).filter(Boolean),reglas,serie,nombre,senal:Object.fromEntries(todas.map(l=>[asCampo(l,'id'),asCampo(l,'señal')]))};
 }
 const asQuien=()=>`Quien pregunta ${vinculo==='propia'?'diseña por su cuenta (sin producción ni stock)':'trabaja para una marca'}, ${publico==='mujer'?'diseña para mujer':publico==='hombre'?'diseña para hombre':'diseña sin género'}, perfil: ${cliente}.`;
-/* no confiamos a ciegas en el modelo: recortamos, validamos la acción y los ids contra DATOS */
-function asNormalizar(r,ids){
-  const txt=(v,m)=>typeof v==='string'?v.replace(/[\u200b-\u200d\u2060\ufeff]/g,'').trim().slice(0,m):'',lista=(v,n,m)=>(Array.isArray(v)?v:[]).map(x=>txt(x,m)).filter(Boolean).slice(0,n);
+/* no confiamos a ciegas en el modelo: recortamos, validamos la acción, los ids y cada cambio contra OPCIONES */
+function asNormalizar(r,ids,O){
+  const txt=(v,m)=>typeof v==='string'?v.replace(/[​-‍⁠﻿]/g,'').trim().slice(0,m):'',lista=(v,n,m)=>(Array.isArray(v)?v:[]).map(x=>txt(x,m)).filter(Boolean).slice(0,n);
   const val=vinculo==='propia'?['Entrar','Explorar','Salir']:['Entrar','Esperar','Salir'];
   let acc=txt(r.accion,12).replace(/^\w/,c=>c.toUpperCase());if(acc==='Esperar'&&vinculo==='propia')acc='Explorar';
-  return {respuesta:txt(r.respuesta,900).replace(/^"?fuera_de_datos"?\s*:\s*(true|false)\s*[,.]?\s*/i,''),accion:val.includes(acc)?acc:'',
-    atributos:[...new Set(lista(r.atributos,6,12).filter(id=>ids.includes(id)))],datos:lista(r.datos,3,160),fuera:r.fuera_de_datos===true,siguiente:lista(r.siguiente,2,120)};
+  const acciones=(Array.isArray(r.acciones)?r.acciones:[]).filter(a=>a&&O[a.paso]&&O[a.paso].includes(a.valor)&&dz[a.paso]!==a.valor)
+    .map(a=>({paso:a.paso,valor:a.valor,texto:txt(a.texto,120)||`Probá ${a.valor}`})).slice(0,2);
+  return {respuesta:txt(r.respuesta,700).replace(/^"?fuera_de_datos"?\s*:\s*(true|false)\s*[,.]?\s*/i,''),accion:val.includes(acc)?acc:'',
+    atributos:[...new Set(lista(r.atributos,6,40).filter(id=>ids.includes(id)))],datos:lista(r.datos,3,160),fuera:r.fuera_de_datos===true,acciones,siguiente:lista(r.siguiente,2,120)};
 }
 function asError(st,msg){
   if(st===401)return 'Groq rechazó la API key. Revisá que esté completa y sin espacios.';
@@ -2378,59 +2421,116 @@ function asError(st,msg){
   if(st===0)return 'No hubo conexión con api.groq.com. Revisá internet o si un bloqueador impide ese dominio.';
   return msg||'Groq devolvió un error.';
 }
+/* la serie adentro de la burbuja: búsqueda mundial 2010–2024, con 2024 marcado */
+function asSpark(g){
+  const v=(GREL[g]||[]).map((x,i)=>({y:2004+i,x})).filter(p=>p.x!=null&&p.y<=ANIO_G);if(v.length<3)return '';
+  const W=150,H=34,mx=Math.max(...v.map(p=>p.x)),X=i=>2+i/(v.length-1)*(W-4),Y=x=>H-3-(x/mx)*(H-6);
+  return `<svg class="asspark" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="1.4" points="${v.map((p,i)=>X(i).toFixed(1)+','+Y(p.x).toFixed(1)).join(' ')}"/><circle cx="${X(v.length-1)}" cy="${Y(v[v.length-1].x)}" r="2.2" fill="currentColor"/></svg>`;
+}
+function asSugerencias(){
+  const c=TAX.cortes.find(x=>x.id===dz.corte),t=dzTipo(),nm=c?c.n.toLowerCase():t?dzNombreTipo().toLowerCase():null;
+  if(!nm)return ['¿Qué estampa me conviene trabajar ahora?','¿Qué material está subiendo?','¿Qué va a estar de moda en 2027?','Mostrame qué se le parece en pasarela'];
+  return [`¿${nm[0].toUpperCase()+nm.slice(1)} está subiendo o bajando?`,`¿Qué material le va a ${c?'un '+nm:'mi '+nm} este año?`,'Mostrame qué se le parece en pasarela','¿Qué cambiarías para que dure más de una temporada?'];
+}
 function asPintar(){
-  $('#asperfil').textContent=`${(PERFIL[cliente]||PERFIL.premium).n} · ${vinculo==='propia'?'por tu cuenta':'para una marca'} · ${publico==='mujer'?'mujer':publico==='hombre'?'hombre':'sin género'}. Lo cambiás arriba, en «Cambiar perfil».`;
+  const D=asDiseno();
+  $('#asdis').innerHTML=D.chips.length?D.chips.map(c=>`<button type="button" class="aschip" data-ir="${c.paso}"><span>${c.n}</span>${escH(c.v)}</button>`).join('')+`<p class="ascap">${(PERFIL[cliente]||PERFIL.premium).n} · ${vinculo==='propia'?'por tu cuenta':'para una marca'}</p>`
+    :`<p class="ascap">Todavía no armaste nada. <button type="button" class="gvolver" id="asirdis">Ir a Diseñar →</button></p>`;
+  $$('#asdis [data-ir]').forEach(b=>b.onclick=()=>{mostrar('disenar');dzIr(b.dataset.ir);});if($('#asirdis'))$('#asirdis').onclick=()=>mostrar('disenar');
+  $('#asclip').innerHTML=as.clip.map((c,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar"><span>leí</span>${escH(c.n)} ×</button>`).join('');
+  $$('#asclip [data-x]').forEach(b=>b.onclick=()=>{as.clip.splice(+b.dataset.x,1);asPintar();});
   const ch=$('#aschat');ch.innerHTML='';
-  if(!as.hist.length)ch.innerHTML=`<div class="asa"><div class="h"><span class="tag ia2">interpretación · LLM</span></div><p>Preguntame qué conviene diseñar, por qué un atributo está en su etapa o qué corte, cuello o color gana terreno. Contesto sólo con lo que mide CICLO.</p></div>`;
+  if(!as.hist.length)ch.innerHTML=`<div class="asa"><div class="h"><span class="tag ia2">interpretado · LLM</span></div><p>${D.chips.length?`Estás armando ${escH(dzNombre())}. Preguntame si conviene, qué cambiar o qué se le parece.`:'Armá algo en Diseñar o subí una foto, y preguntame.'} Cada respuesta trae el dato que la sostiene.</p></div>`;
   as.hist.forEach(m=>{
-    if(m.role==='user'){const d=document.createElement('div');d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}
     const d=document.createElement('div');
+    if(m.role==='user'){d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}
     if(m.error){d.className='asa err';d.innerHTML=`<p>${escH(m.error)}</p>`;ch.appendChild(d);return;}
-    const r=m.r;d.className='asa';
-    d.innerHTML=`<div class="h"><span class="tag ia2">interpretación · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">fuera de los datos</span>':''}</div>
-      ${r.accion?`<div class="acc serif ${señalPalabra(r.accion).cls}">${escH(r.accion)}</div>`:''}<p>${escH(r.respuesta)}</p>
-      ${r.regla?`<p class="ascap" style="margin:8px 0 0">La regla fija de CICLO para tu perfil dice <b>${escH(r.regla)}</b>: el modelo se apartó.</p>`:''}
-      ${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}
-      ${r.atributos.length?`<div class="chips">${r.atributos.map(id=>{const o=REC.find(x=>x.id===id);return o?`<button type="button" data-r="${id}">Ver ${escH(o.n)} en Recorridos</button>`:'';}).join('')}</div>`:''}`;
+    if(m.aviso){d.className='asa aviso';d.innerHTML=m.aviso;ch.appendChild(d);return;}
+    const r=m.r,E=m.E,filas=r.atributos.filter(id=>E.serie[id]).map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span>${asSpark(E.serie[id])}<span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
+    d.className='asa';
+    d.innerHTML=`<div class="h"><span class="tag ia2">interpretado · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">no lo tengo medido</span>':''}</div>
+      ${r.accion?`<div class="acc serif ${señalPalabra(r.accion).cls}">${señalPalabra(r.accion).icono} ${escH(r.accion)}</div>`:''}
+      <p class="asleer">${escH(r.respuesta)}</p>
+      ${r.regla?`<p class="ascap">La regla fija de CICLO para tu perfil dice <b class="${señalPalabra(r.regla).cls}">${escH(r.regla)}</b>; el modelo se apartó. Las dos quedan a la vista.</p>`:''}
+      <div class="asdatos"><span class="lbl">El dato</span>${filas||'<p class="ascap">Esto no lo tengo medido: ninguna serie de CICLO lo respalda.</p>'}${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}</div>
+      ${r.acciones.length?`<div class="asacciones"><span class="lbl">Probá</span>${r.acciones.map((a,i)=>`<button type="button" class="kbtn" data-a="${m.i}:${i}">${escH(a.texto)}</button>`).join('')}</div>`:''}`;
     ch.appendChild(d);
   });
-  $$('#aschat [data-r]').forEach(b=>b.addEventListener('click',()=>{recSel=b.dataset.r;mostrar('recorridos');pintarRecorridos();}));
-  const ult=[...as.hist].reverse().find(m=>m.r),sug=ult?ult.r.siguiente:AS_SUG;
+  $$('#aschat [data-a]').forEach(b=>b.onclick=()=>{const [mi,ai]=b.dataset.a.split(':').map(Number);asAplicar(as.hist.find(m=>m.i===mi).r.acciones[ai]);});
+  $$('#aschat [data-look]').forEach(b=>b.onclick=()=>window.open(b.dataset.look,'_blank','noopener'));
+  const ult=[...as.hist].reverse().find(m=>m.r),sug=ult&&ult.r.siguiente.length?ult.r.siguiente:asSugerencias();
   $('#assug').innerHTML=sug.map(t=>`<button type="button">${escH(t)}</button>`).join('');
   $$('#assug button').forEach(b=>b.addEventListener('click',()=>{$('#astexto').value=b.textContent;asPreguntar();}));
   $('#asenviar').disabled=as.ocupado;$('#asenviar').textContent=as.ocupado?'Pensando…':'Preguntar';
   ch.lastElementChild?.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+/* aplicar un cambio sugerido sobre el diseño, sin perder el resto */
+function asAplicar(a){
+  if(!a)return;const antes=dzValor(a.paso)||'nada';dz[a.paso]=a.valor;
+  if(a.paso==='material'&&dz.estampa&&!dzEstampas().includes(dz.estampa))dz.estampa=null;
+  as.hist.push({role:'assistant',aviso:`<p><span class="lbl">Aplicado</span> ${escH(DZ_NOMBRE[a.paso])}: ${escH(antes)} → <b>${escH(dzValor(a.paso))}</b>. <button type="button" class="gvolver" id="asverficha">Ver la ficha →</button></p>`});
+  asPintar();const v=$('#asverficha');if(v)v.onclick=()=>{mostrar('disenar');dzIr('fin');};
+}
+/* «Mostrame qué se le parece en pasarela»: no es una pregunta para el modelo, es CLIP */
+function asParecidos(){
+  let fotos=[];
+  if(as.looks)fotos=as.looks;else{const c=TAX.cortes.find(x=>x.id===dz.corte),t=dzTipo();
+    if(c&&c.clip_jeans)fotos=dzFotos(DIS.prendas.find(p=>p.id==='jeans').cortes.find(x=>x.id===c.clip_jeans),6).map(f=>({u:vogueFoto(f.f,1280),s:vogueFoto(f.f,320),d:`${f.d} · ${TEMP[f.s]||''} ${f.y}`}));
+    else if(t&&t.clip_corte)fotos=dzFotos(DIS.prendas.flatMap(p=>p.cortes).find(x=>x.id===t.clip_corte),6).map(f=>({u:vogueFoto(f.f,1280),s:vogueFoto(f.f,320),d:`${f.d} · ${TEMP[f.s]||''} ${f.y}`}));}
+  as.hist.push({role:'user',content:'Mostrame qué se le parece en pasarela'});
+  as.hist.push({role:'assistant',aviso:fotos.length?`<div class="h"><span class="tag ia2">interpretado · CLIP</span></div><p>${as.looks?'Los looks de Vogue más parecidos a tu imagen':'Looks de Vogue que CLIP eligió para tu corte'}. Son referencia de forma, no recomendación.</p><div class="aslooks">${fotos.map(f=>`<button type="button" data-look="${f.u}"><img loading="lazy" alt="${escH(f.d)}" src="${f.s}"><span>${escH(f.d)}</span></button>`).join('')}</div>`
+    :'<p>Para eso necesito una imagen o un corte con referencias de pasarela. Subí una foto a la izquierda, o elegí un jean o un abrigo en Diseñar.</p>'});
+  asPintar();
+}
+/* la foto: CLIP lee los atributos y los looks parecidos; se muestran como chips que se pueden sacar */
+async function asFoto(file){
+  if(!file||!file.type.startsWith('image/')){$('#asclipest').textContent='Ese archivo no es una imagen.';return;}
+  const url=URL.createObjectURL(file);$('#asprev').innerHTML=`<img class="asimg" src="${url}" alt="La imagen que subiste">`;
+  const est=t=>{$('#asclipest').textContent=t;};
+  try{
+    await clipIndice();est('Bajando el modelo CLIP (89 MB, sólo la primera vez)…');await clipModelo();est('Leyendo la imagen…');
+    const {T,proc,model}=CLIP.mod,img=await T.RawImage.fromURL(url),{image_embeds}=await model(await proc(img));
+    const R=clipLeer(Float32Array.from(image_embeds.data)),idx=CLIP.idx;
+    as.clip=R.atr.filter((a,i)=>i<4&&a.p>=.12).map(a=>({n:a.n,p:a.p}));
+    as.looks=R.orden.slice(0,6).map(i=>({u:vogueFoto(idx.f[i],1280),s:vogueFoto(idx.f[i],320),d:`${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]}`}));
+    est(as.clip.length?'Esto es lo que leyó CLIP (interpretación). Sacá lo que no va antes de preguntar.':'CLIP no reconoció con claridad ningún atributo: preguntá igual, o probá con otra foto.');
+    asPintar();
+  }catch(e){console.error(e);est('No se pudo leer la imagen: '+(e.message||e));}
 }
 async function asAbrir(){
   asPintar();
   if(!as.datos)try{as.datos=await fetch('llm/ciclo_datos.md').then(r=>{if(!r.ok)throw 0;return r.text();});}
     catch(e){as.hist.push({role:'assistant',error:'No pude leer llm/ciclo_datos.md. Abrí la app desde un servidor (python3 -m http.server), no con doble clic.'});asPintar();}
 }
+let asN=0;
 async function asPreguntar(){
   const texto=$('#astexto').value.trim(),key=$('#askey').value.trim();
   if(!texto||as.ocupado)return;
-  if(!key){as.hist.push({role:'assistant',error:'Pegá primero tu API key de Groq (paso 1).'});asPintar();return;}
+  if(/parece en pasarela/i.test(texto)){$('#astexto').value='';asParecidos();return;}
+  if(!key){as.hist.push({role:'assistant',error:'Pegá primero tu API key de Groq (a la izquierda).'});asPintar();return;}
   if(!as.datos){await asAbrir();if(!as.datos)return;}
   $('#astexto').value='';as.hist.push({role:'user',content:texto});as.ocupado=true;asPintar();
-  // las fichas se eligen con las dos últimas preguntas, así «¿y para hombre?» sigue hablando de lo mismo
-  const recientes=as.hist.filter(m=>m.role==='user').slice(-2).map(m=>m.content).join(' ');
-  const E=asElegir(as.datos,recientes),system=`${AS_INSTR}\n\n${asQuien()}\n\n=== DATOS ===\n${E.datos}\n=== FIN DE DATOS ===`;
-  const mensajes=as.hist.filter(m=>m.role==='user'||m.r).slice(-10).map(m=>({role:m.role,content:m.role==='user'?m.content:m.r.respuesta}));
+  const D=asDiseno(),O=asOpciones(),clipTxt=as.clip.map(c=>c.n).join(', ');
+  const recientes=as.hist.filter(m=>m.role==='user').slice(-2).map(m=>m.content).join(' ')+' '+D.chips.map(c=>c.v).join(' ')+' '+clipTxt;
+  const E=asElegir(as.datos,recientes,D.ids);
+  const opc=Object.keys(O).length?'OPCIONES (paso: valores posibles para "acciones"):\n'+Object.entries(O).map(([k,v])=>`${k}: ${v.join(', ')}`).join('\n'):'OPCIONES: ninguna (no hay diseño armado).';
+  const system=`${AS_INSTR}\n\n${asQuien()}\nTU DISEÑO: ${D.chips.length?D.txt:'todavía no armó nada'}.\n${clipTxt?`EN SU IMAGEN, CLIP LEYÓ (interpretado, confirmado por el diseñador): ${clipTxt}.\n`:''}${opc}\n\n=== DATOS ===\n${E.datos}\n=== FIN DE DATOS ===`;
+  const mensajes=as.hist.filter(m=>m.role==='user'||m.r).slice(-8).map(m=>({role:m.role,content:m.role==='user'?m.content:m.r.respuesta}));
   const modelo=$('#asmodelo').value;
-  $('#asprompt').textContent=system;$('#astok').textContent=`Unos ${Math.round(system.length/3.5)} tokens de instrucciones y datos. Fichas que leyó: ${E.usadas.length?E.usadas.join(' · '):'ninguna, sólo el resumen'}.`;
+  $('#asprompt').textContent=system;$('#astok').textContent=`Unos ${Math.round(system.length/3.5)} tokens de instrucciones y datos. Leyó: ${E.usadas.length?E.usadas.join(' · '):'sólo el resumen'}.`;
   try{
     const res=await fetch(AS_API,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},
-      body:JSON.stringify({model:modelo,temperature:0.3,max_tokens:900,response_format:{type:'json_object'},
+      body:JSON.stringify({model:modelo,temperature:0.3,max_tokens:1000,response_format:{type:'json_object'},
         ...(modelo.startsWith('openai/gpt-oss')?{reasoning_effort:'low',include_reasoning:false}:{}),
         messages:[{role:'system',content:system},...mensajes]})});
     const data=await res.json().catch(()=>({}));
     if(!res.ok)throw {st:res.status,msg:data.error&&data.error.message};
     const raw=(data.choices?.[0]?.message?.content||'').replace(/<think>[\s\S]*?<\/think>/g,''),i=raw.indexOf('{'),f=raw.lastIndexOf('}');
     let j=null;try{j=JSON.parse(raw.slice(i,f+1));}catch(e){}
-    const r=j&&asNormalizar(j,E.ids);
+    const r=j&&asNormalizar(j,E.ids,O);
     if(!r||!r.respuesta)throw {msg:'El modelo no devolvió una respuesta válida. Probá de nuevo.'};
     const id1=r.atributos.length===1?r.atributos[0]:null;r.regla=r.accion&&id1&&E.reglas[id1]&&E.reglas[id1]!==r.accion?E.reglas[id1]:'';
-    as.hist.push({role:'assistant',r,modelo});
+    as.hist.push({role:'assistant',r,E,modelo,i:asN++});
   }catch(e){as.hist.push({role:'assistant',error:asError(e instanceof TypeError?0:e.st,e.msg)});}
   as.ocupado=false;asPintar();$('#astexto').focus();
 }
@@ -2438,6 +2538,7 @@ $('#askey').value=asLeer('groq_key');
 $('#askey').addEventListener('input',()=>asGuardar('groq_key',$('#askey').value.trim()));
 $('#asmodelo').value=asLeer('ciclo.as_modelo')||'openai/gpt-oss-120b';
 $('#asmodelo').addEventListener('change',()=>asGuardar('ciclo.as_modelo',$('#asmodelo').value));
+$('#asfile').addEventListener('change',e=>asFoto(e.target.files[0]));
 $('#asform').addEventListener('submit',e=>{e.preventDefault();asPreguntar();});
 $('#astexto').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();asPreguntar();}});
 /* pico de una capa de búsqueda sin 2025 (salto de medición de Google): «abierto» si el máximo es el último año bueno */

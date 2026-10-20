@@ -177,6 +177,31 @@ for (const p of DIS.prendas.filter(p => p.id !== 'jeans')) {
 }
 linea('Estampas', 'prenda: estampas', DIS.estampas.map(e => `${e.n}${e.grupo ? ' (' + (ETAPA[e.grupo] || 'sin etapa') + ')' : ''}`).join(', '));
 
+// ---------- señales de Diseñar: cada hoja de la taxonomía con su serie propia o prestada (sólo las que nombra la pregunta) ----------
+L.push('\n## Señales de Diseñar');
+L.push('Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestada de»: la de un pariente. id es lo que se usa en "atributos" y "acciones".');
+const hojaDe = ref => { const i = ref.indexOf(':'), k = ref.slice(0, i), v = ref.slice(i + 1);
+  if (k === 'tipo') { const [pr, t] = v.split('/'); const P = TAX.prendas.find(x => x.id === pr); return P && P.tipos.find(x => x.id === t); }
+  if (k === 'corte') return TAX.cortes.find(x => x.id === v); if (k === 'tiro') return TAX.tiros.find(x => x.id === v);
+  if (k === 'mat') return TAX.materiales.flatMap(g => g.items).find(x => x.id === v); if (k === 'estampa') return TAX.estampas.flatMap(f => f.items).find(x => x.id === v);
+  if (k === 'det') return TAX.detalles.find(x => x.id === v); if (k === 'rec') return { rec: v, n: (REC.find(o => o.id === v) || { n: v }).n }; if (k === 'km') return { km: v, n: v }; return null; };
+const serieDe = h => h && (h.serie || h.rec || (h.jeans ? 'jamplio' : null));
+const senal = h => { if (h && h.je && h.je.length) { const d = cuotaT(h.je, 2024) - cuotaT(h.je, 2022); return { g: null, d, je: true, et: h.km ? ETAPA[h.km] : null }; }
+  const g = serieDe(h); if (!g) return null; const d = h.jeans ? h.jeans.map(terreno).filter(x => x != null).reduce((a, b, _, A) => a + b / A.length, 0) : terreno(g);
+  return d == null ? null : { g, d, et: h.km ? ETAPA[h.km] : null }; };
+const hojas = [...TAX.prendas.flatMap(p => p.tipos.map(t => ({ eje: 'tipo', paso: 'tipo', prenda: p, h: t, nombre: `${p.n} · ${t.n}` }))),
+  ...TAX.cortes.map(h => ({ eje: 'corte', paso: 'corte', h, nombre: `Corte · ${h.n}` })), ...TAX.tiros.map(h => ({ eje: 'tiro', paso: 'tiro', h, nombre: h.n })),
+  ...TAX.materiales.flatMap(g => g.items.map(h => ({ eje: 'material', paso: 'material', h, nombre: `Material · ${h.n}` }))),
+  ...TAX.detalles.map(h => ({ eje: 'detalle', paso: 'detalle', h, nombre: `Detalle · ${h.n}` })),
+  ...TAX.estampas.flatMap(f => f.items.filter(i => i.id !== 'liso').map(h => ({ eje: 'estampa', paso: 'estampa', h, nombre: `Estampa · ${h.n}` })))];
+for (const x of hojas) {
+  const h = x.h, propia = senal(h), lender = !propia && h.presta_de ? hojaDe(h.presta_de) : null, prest = lender ? senal(lender) : null, q = propia || prest;
+  const id = `${x.eje}_${x.prenda ? x.prenda.id + '_' : ''}${h.id}`;
+  linea(x.nombre, `id: ${id}`, `busca: ${[h.n, h.en, x.prenda && x.prenda.n].filter(Boolean).join(', ').toLowerCase()}`, `paso: ${x.paso}`, `valor: ${h.id}`,
+    q ? `señal: ${sig(q.d)} puntos ${q.je ? 'en su parte de las búsquedas de jeans' : 'en la búsqueda mundial'} 2022→2024` : 'sin dato: ni serie propia ni de un pariente',
+    q && q.et ? `etapa: ${q.et}` : null, propia ? 'dato: propio' : prest ? `dato: prestado de ${lender.n.toLowerCase()} (${h.presta_porque})` : null, q && q.g ? `serie: ${q.g}` : null);
+}
+
 // ---------- límites (va siempre) ----------
 L.push(`
 ## Lo que CICLO no puede responder

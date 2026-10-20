@@ -131,6 +131,128 @@ Si diseñás por tu cuenta (sin producción ni stock), «Esperar» pasa a ser «
 - Tops · Corset | prenda: tops | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 39 %, +8,0 puntos; Marrón: 13 %, +3,0 puntos; Gris: 10 %, -4,0 puntos; Azul marino: 9 %, -3,0 puntos
 - Estampas | prenda: estampas | Liso, Lunares (En retorno), Rayas, Floral (Saturada), Animal print (En retorno), Cuadros (En retorno), Encaje (En retorno), Gamuza
 
+## Señales de Diseñar
+Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestada de»: la de un pariente. id es lo que se usa en "atributos" y "acciones".
+- Pantalones · Largo | id: tipo_pantalones_largo | busca: largo, pantalones | paso: tipo | valor: largo | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: jamplio
+- Pantalones · Short | id: tipo_pantalones_short | busca: short, pantalones | paso: tipo | valor: short | señal: +3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: pantalones_short
+- Pantalones · Bermuda | id: tipo_pantalones_bermuda | busca: bermuda, pantalones | paso: tipo | valor: bermuda | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: prestado de largo (Hermano: el mismo pantalón, hasta la rodilla. (Antes tomaba el cargo, que no es su pariente en el árbol.)) | serie: jamplio
+- Pantalones · Capri | id: tipo_pantalones_capri | busca: capri, pantalones | paso: tipo | valor: capri | señal: -4 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: pantalones_capri
+- Faldas · Mini | id: tipo_faldas_mini | busca: mini, faldas | paso: tipo | valor: mini | señal: +17 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: faldas_mini
+- Faldas · Midi | id: tipo_faldas_midi | busca: midi, faldas | paso: tipo | valor: midi | señal: +17 puntos en la búsqueda mundial 2022→2024 | dato: prestado de mini (Hermano: la misma falda, más corta. «midi skirt» no llegó a 12 años con señal hasta 2024.) | serie: faldas_mini
+- Faldas · Maxi | id: tipo_faldas_maxi | busca: maxi, faldas | paso: tipo | valor: maxi | señal: +21 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: faldas_maxi
+- Vestidos · Slip | id: tipo_vestidos_slip | busca: slip, vestidos | paso: tipo | valor: slip | señal: -19 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: vestidos_slip
+- Vestidos · Camisero | id: tipo_vestidos_camisero | busca: camisero, vestidos | paso: tipo | valor: camisero | señal: -10 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: vestidos_camisero
+- Vestidos · Cruzado | id: tipo_vestidos_cruzado | busca: cruzado, vestidos | paso: tipo | valor: cruzado | señal: -26 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: vestidos_cruzado
+- Vestidos · Tubo | id: tipo_vestidos_tubo | busca: tubo, vestidos | paso: tipo | valor: tubo | señal: -15 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: vestidos_tubo
+- Vestidos · Evasé | id: tipo_vestidos_evase | busca: evasé, vestidos | paso: tipo | valor: evase | señal: +8 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: vestidos_evase
+- Remeras y tops · Remera | id: tipo_remeras_remera | busca: remera, remeras y tops | paso: tipo | valor: remera | señal: -7 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: remeras_remera
+- Remeras y tops · Musculosa | id: tipo_remeras_musculosa | busca: musculosa, remeras y tops | paso: tipo | valor: musculosa | señal: +1 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: remeras_musculosa
+- Remeras y tops · Top | id: tipo_remeras_top | busca: top, remeras y tops | paso: tipo | valor: top | señal: -17 puntos en la búsqueda mundial 2022→2024 | dato: prestado de corset (Hermano: misma familia de tops al cuerpo.) | serie: corset
+- Remeras y tops · Corset | id: tipo_remeras_corset | busca: corset, remeras y tops | paso: tipo | valor: corset | señal: -17 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: corset
+- Camisas · Clásica | id: tipo_camisas_clasica | busca: clásica, camisas | paso: tipo | valor: clasica | señal: -31 puntos en la búsqueda mundial 2022→2024 | dato: prestado de blusa (Hermano: la única camisa con serie. «button down shirt» fue ruido (máximo 2).) | serie: camisas_blusa
+- Camisas · Oversize | id: tipo_camisas_oversize | busca: oversize, camisas | paso: tipo | valor: oversize | señal: -31 puntos en la búsqueda mundial 2022→2024 | dato: prestado de blusa (Hermano: la única camisa con serie. «oversized shirt» fue ruido.) | serie: camisas_blusa
+- Camisas · Cropped | id: tipo_camisas_cropped | busca: cropped, camisas | paso: tipo | valor: cropped | señal: -31 puntos en la búsqueda mundial 2022→2024 | dato: prestado de blusa (Hermano: la única camisa con serie. «cropped shirt» fue ruido.) | serie: camisas_blusa
+- Camisas · Blusa | id: tipo_camisas_blusa | busca: blusa, camisas | paso: tipo | valor: blusa | señal: -31 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: camisas_blusa
+- Buzos · Hoodie | id: tipo_buzos_hoodie | busca: hoodie, buzos | paso: tipo | valor: hoodie | señal: +2 puntos en la búsqueda mundial 2022→2024 | dato: prestado de buzo / athleisure (Padre: la serie «hoodie» mide los buzos en general y no distingue entre variantes.) | serie: buzo
+- Buzos · Canguro con cierre | id: tipo_buzos_zip | busca: canguro con cierre, zip-up hoodie, buzos | paso: tipo | valor: zip | señal: +2 puntos en la búsqueda mundial 2022→2024 | dato: prestado de buzo / athleisure (Padre: la serie «hoodie» mide los buzos en general y no distingue entre variantes.) | serie: buzo
+- Buzos · Cuello redondo | id: tipo_buzos_redondo | busca: cuello redondo, crewneck, buzos | paso: tipo | valor: redondo | señal: +2 puntos en la búsqueda mundial 2022→2024 | dato: prestado de buzo / athleisure (Padre: la serie «hoodie» mide los buzos en general y no distingue entre variantes.) | serie: buzo
+- Sweaters · Cuello redondo | id: tipo_sweaters_redondo | busca: cuello redondo, sweaters | paso: tipo | valor: redondo | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: prestado de cardigan (Hermano: misma familia de punto; el sweater suelto no tiene serie propia.) | serie: buzos_cardigan
+- Sweaters · Cuello en V | id: tipo_sweaters_cuello_v | busca: cuello en v, sweaters | paso: tipo | valor: cuello_v | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: prestado de cardigan (Hermano: misma familia de punto; el cuello en V no tiene serie propia.) | serie: buzos_cardigan
+- Sweaters · Polera | id: tipo_sweaters_polera | busca: polera, turtleneck, sweaters | paso: tipo | valor: polera | señal: -26 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: buzos_polera
+- Sweaters · Cardigan | id: tipo_sweaters_cardigan | busca: cardigan, sweaters | paso: tipo | valor: cardigan | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: buzos_cardigan
+- Camperas y abrigos · Trench | id: tipo_abrigos_trench | busca: trench, camperas y abrigos | paso: tipo | valor: trench | señal: +12 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: propio | serie: trench
+- Camperas y abrigos · Blazer | id: tipo_abrigos_blazer | busca: blazer, camperas y abrigos | paso: tipo | valor: blazer | sin dato: ni serie propia ni de un pariente
+- Camperas y abrigos · Campera | id: tipo_abrigos_campera | busca: campera, camperas y abrigos | paso: tipo | valor: campera | señal: 0 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: abrigos_campera
+- Camperas y abrigos · Tapado | id: tipo_abrigos_tapado | busca: tapado, camperas y abrigos | paso: tipo | valor: tapado | señal: +12 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: prestado de trench (Hermano: el otro abrigo largo de la familia.) | serie: trench
+- Camperas y abrigos · Capa | id: tipo_abrigos_capa | busca: capa, camperas y abrigos | paso: tipo | valor: capa | señal: +1 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: propio | serie: capa
+- Camperas y abrigos · Kimono | id: tipo_abrigos_kimono | busca: kimono, camperas y abrigos | paso: tipo | valor: kimono | señal: -12 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: propio | serie: kimono
+- Camperas y abrigos · Tapado de piel | id: tipo_abrigos_piel | busca: tapado de piel, camperas y abrigos | paso: tipo | valor: piel | sin dato: ni serie propia ni de un pariente
+- Camperas y abrigos · Puffer | id: tipo_abrigos_puffer | busca: puffer, camperas y abrigos | paso: tipo | valor: puffer | señal: 0 puntos en la búsqueda mundial 2022→2024 | dato: prestado de campera (Hermano: la otra campera corta de la familia. «puffer jacket» no llegó a 12 años con señal hasta 2024.) | serie: abrigos_campera
+- Enteritos · Mono largo | id: tipo_enteritos_largo | busca: mono largo, enteritos | paso: tipo | valor: largo | señal: -19 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: enteritos_largo
+- Enteritos · Mono corto | id: tipo_enteritos_corto | busca: mono corto, enteritos | paso: tipo | valor: corto | señal: +11 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: enteritos_corto
+- Enteritos · Jardinero | id: tipo_enteritos_jardinero | busca: jardinero, enteritos | paso: tipo | valor: jardinero | señal: -2 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: enteritos_jardinero
+- Corte · Skinny | id: corte_skinny | busca: skinny | paso: corte | valor: skinny | señal: -8 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Saturada | dato: propio
+- Corte · Slim | id: corte_slim | busca: slim | paso: corte | valor: slim | señal: -1 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Saturada | dato: propio
+- Corte · Straight | id: corte_straight | busca: straight | paso: corte | valor: straight | señal: -8 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Saturada | dato: propio
+- Corte · Tapered | id: corte_tapered | busca: tapered | paso: corte | valor: tapered | señal: -3 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Saturada | dato: propio
+- Corte · Cigarette | id: corte_cigarette | busca: cigarette | paso: corte | valor: cigarette | señal: -1 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Saturada | dato: prestado de slim (Hermano: el corte más parecido, recto y angosto.)
+- Corte · Bootcut | id: corte_bootcut | busca: bootcut | paso: corte | valor: bootcut | señal: +1 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Saturada | dato: propio
+- Corte · Flare | id: corte_flare | busca: flare | paso: corte | valor: flare | señal: -1 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Saturada | dato: propio
+- Corte · Wide leg | id: corte_wideleg | busca: wide leg | paso: corte | valor: wideleg | señal: +3 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Pico | dato: propio
+- Corte · Baggy | id: corte_baggy | busca: baggy | paso: corte | valor: baggy | señal: +13 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Pico | dato: propio
+- Corte · Barrel | id: corte_barrel | busca: barrel | paso: corte | valor: barrel | señal: +3 puntos en su parte de las búsquedas de jeans 2022→2024 | etapa: Pico | dato: propio
+- Tiro bajo | id: tiro_bajo | busca: tiro bajo | paso: tiro | valor: bajo | sin dato: ni serie propia ni de un pariente
+- Tiro medio | id: tiro_medio | busca: tiro medio | paso: tiro | valor: medio | sin dato: ni serie propia ni de un pariente
+- Tiro alto | id: tiro_alto | busca: tiro alto | paso: tiro | valor: alto | sin dato: ni serie propia ni de un pariente
+- Material · Jersey | id: material_jersey | busca: jersey, jersey | paso: material | valor: jersey | sin dato: ni serie propia ni de un pariente
+- Material · Morley | id: material_rib | busca: morley, rib knit | paso: material | valor: rib | sin dato: ni serie propia ni de un pariente
+- Material · Frisa | id: material_frenchterry | busca: frisa, french terry | paso: material | valor: frenchterry | sin dato: ni serie propia ni de un pariente
+- Material · Polar | id: material_fleece | busca: polar, fleece | paso: material | valor: fleece | señal: -11 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: fleece
+- Material · Punto trenzado | id: material_cable | busca: punto trenzado, cable knit | paso: material | valor: cable | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: cable
+- Material · Bouclé | id: material_boucle | busca: bouclé, bouclé | paso: material | valor: boucle | señal: +10 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: boucle
+- Material · Algodón liso | id: material_algodon | busca: algodón liso, cotton plain weave | paso: material | valor: algodon | señal: 0 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: algodon
+- Material · Popelina | id: material_popelina | busca: popelina, poplin | paso: material | valor: popelina | señal: +19 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: popelina
+- Material · Piqué | id: material_pique | busca: piqué, piqué | paso: material | valor: pique | sin dato: ni serie propia ni de un pariente
+- Material · Gabardina | id: material_gabardina | busca: gabardina, twill / gabardine | paso: material | valor: gabardina | señal: +12 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: prestado de trench (La gabardina es la tela del trench.) | serie: trench
+- Material · Corderoy | id: material_corduroy | busca: corderoy, corduroy | paso: material | valor: corduroy | señal: +1 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: corduroy
+- Material · Lona | id: material_lona | busca: lona, canvas | paso: material | valor: lona | sin dato: ni serie propia ni de un pariente
+- Material · Denim rígido | id: material_denimrigido | busca: denim rígido, rigid denim | paso: material | valor: denimrigido | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: prestado de largo (El denim se mide por los jeans: las tres series de jean.) | serie: jamplio
+- Material · Denim con elastano | id: material_denimelastano | busca: denim con elastano, stretch denim | paso: material | valor: denimelastano | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: prestado de largo (El denim se mide por los jeans: las tres series de jean.) | serie: jamplio
+- Material · Denim lavado | id: material_denimlavado | busca: denim lavado, washed denim | paso: material | valor: denimlavado | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: prestado de largo (El denim se mide por los jeans: las tres series de jean.) | serie: jamplio
+- Material · Lana | id: material_lana | busca: lana, wool | paso: material | valor: lana | señal: +20 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: lana
+- Material · Merino | id: material_merino | busca: merino, merino | paso: material | valor: merino | señal: +17 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: merino
+- Material · Cashmere | id: material_cashmere | busca: cashmere, cashmere | paso: material | valor: cashmere | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: cashmere
+- Material · Tweed | id: material_tweed | busca: tweed, tweed | paso: material | valor: tweed | señal: +3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: tweed
+- Material · Paño | id: material_pano | busca: paño, wool melton | paso: material | valor: pano | señal: +11 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: pano
+- Material · Lino | id: material_lino | busca: lino, linen | paso: material | valor: lino | señal: +8 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: lino
+- Material · Seda | id: material_seda | busca: seda, silk | paso: material | valor: seda | señal: -5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: seda
+- Material · Satén | id: material_satenseda | busca: satén, satin | paso: material | valor: satenseda | señal: -7 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: satenseda
+- Material · Cuero | id: material_cuero | busca: cuero, leather | paso: material | valor: cuero | señal: +1 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: propio | serie: cuero
+- Material · Gamuza | id: material_gamuza | busca: gamuza, suede | paso: material | valor: gamuza | señal: +29 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: gamuza
+- Material · Cuerina | id: material_cuerina | busca: cuerina, faux leather | paso: material | valor: cuerina | señal: +1 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: prestado de cuero (Hermano: imita al cuero y se lee con su serie.) | serie: cuero
+- Material · Poliéster | id: material_poliester | busca: poliéster, polyester | paso: material | valor: poliester | señal: -3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: poliester
+- Material · Nylon | id: material_nylon | busca: nylon, nylon | paso: material | valor: nylon | sin dato: ni serie propia ni de un pariente
+- Material · Acrílico | id: material_acrilico | busca: acrílico, acrylic | paso: material | valor: acrilico | sin dato: ni serie propia ni de un pariente
+- Material · Lycra | id: material_elastano | busca: lycra, spandex / elastane | paso: material | valor: elastano | señal: -3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: elastano
+- Material · Neoprene | id: material_neoprene | busca: neoprene, neoprene / scuba | paso: material | valor: neoprene | señal: -4 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: neoprene
+- Material · Gasa | id: material_gasa | busca: gasa, chiffon | paso: material | valor: gasa | señal: -8 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: gasa
+- Material · Tul | id: material_tul | busca: tul, tulle | paso: material | valor: tul | señal: -11 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: tul
+- Material · Organza | id: material_organza | busca: organza, organza | paso: material | valor: organza | señal: -5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: organza
+- Material · Crepé | id: material_crepe | busca: crepé, crepe | paso: material | valor: crepe | sin dato: ni serie propia ni de un pariente
+- Detalle · Encaje | id: detalle_encaje | busca: encaje | paso: detalle | valor: encaje | señal: 0 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: propio | serie: encaje
+- Detalle · Bolsillos cargo | id: detalle_cargo | busca: bolsillos cargo | paso: detalle | valor: cargo | señal: -8 puntos en la búsqueda mundial 2022→2024 | etapa: Pico | dato: propio | serie: cargo
+- Detalle · Bordado | id: detalle_bordado | busca: bordado | paso: detalle | valor: bordado | señal: -3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: bordado
+- Detalle · Volados | id: detalle_volados | busca: volados | paso: detalle | valor: volados | señal: -1 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: volados
+- Detalle · Tachas | id: detalle_tachas | busca: tachas | paso: detalle | valor: tachas | señal: -3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: tachas
+- Detalle · Cut-outs | id: detalle_cutouts | busca: cut-outs | paso: detalle | valor: cutouts | señal: -26 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: cutouts
+- Detalle · Plisado | id: detalle_plisado | busca: plisado | paso: detalle | valor: plisado | señal: +12 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: plisado
+- Detalle · Acolchado | id: detalle_acolchado | busca: acolchado | paso: detalle | valor: acolchado | señal: +11 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: acolchado
+- Detalle · Flecos | id: detalle_flecos | busca: flecos | paso: detalle | valor: flecos | señal: +1 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: flecos
+- Detalle · Pedrería | id: detalle_pedreria | busca: pedrería | paso: detalle | valor: pedreria | señal: -6 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: pedreria
+- Estampa · Rayas | id: estampa_rayas | busca: rayas | paso: estampa | valor: rayas | señal: +12 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: rayas
+- Estampa · Bretón | id: estampa_breton | busca: bretón | paso: estampa | valor: breton | señal: +12 puntos en la búsqueda mundial 2022→2024 | dato: prestado de rayas (Familia: la búsqueda mide las rayas, no cada variante.) | serie: rayas
+- Estampa · Diplomática | id: estampa_pinstripe | busca: diplomática | paso: estampa | valor: pinstripe | señal: +12 puntos en la búsqueda mundial 2022→2024 | dato: prestado de rayas (Familia: la búsqueda mide las rayas, no cada variante.) | serie: rayas
+- Estampa · Bengala | id: estampa_bengal | busca: bengala | paso: estampa | valor: bengal | señal: +12 puntos en la búsqueda mundial 2022→2024 | dato: prestado de rayas (Familia: la búsqueda mide las rayas, no cada variante.) | serie: rayas
+- Estampa · Toldo | id: estampa_awning | busca: toldo | paso: estampa | valor: awning | señal: +12 puntos en la búsqueda mundial 2022→2024 | dato: prestado de rayas (Familia: la búsqueda mide las rayas, no cada variante.) | serie: rayas
+- Estampa · Lunares | id: estampa_lunares | busca: lunares | paso: estampa | valor: lunares | señal: -3 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: propio | serie: lunares
+- Estampa · Pin dot | id: estampa_pindot | busca: pin dot | paso: estampa | valor: pindot | señal: -3 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: prestado de lunares (Familia: la búsqueda mide los lunares, no su tamaño.) | serie: lunares
+- Estampa · Escocés (tartán) | id: estampa_cuadros | busca: escocés (tartán) | paso: estampa | valor: cuadros | sin dato: ni serie propia ni de un pariente
+- Estampa · Vichy | id: estampa_gingham | busca: vichy | paso: estampa | valor: gingham | sin dato: ni serie propia ni de un pariente
+- Estampa · Príncipe de Gales | id: estampa_pow | busca: príncipe de gales | paso: estampa | valor: pow | sin dato: ni serie propia ni de un pariente
+- Estampa · Ventana | id: estampa_windowpane | busca: ventana | paso: estampa | valor: windowpane | sin dato: ni serie propia ni de un pariente
+- Estampa · Rombos (argyle) | id: estampa_argyle | busca: rombos (argyle) | paso: estampa | valor: argyle | sin dato: ni serie propia ni de un pariente
+- Estampa · Leopardo | id: estampa_animal | busca: leopardo | paso: estampa | valor: animal | señal: +8 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: propio | serie: animal
+- Estampa · Cebra | id: estampa_cebra | busca: cebra | paso: estampa | valor: cebra | señal: +8 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: prestado de leopardo (Familia: la búsqueda mide la estampa animal por el leopardo.) | serie: animal
+- Estampa · Pitón | id: estampa_piton | busca: pitón | paso: estampa | valor: piton | señal: +8 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: prestado de leopardo (Familia: la búsqueda mide la estampa animal por el leopardo.) | serie: animal
+- Estampa · Vaca | id: estampa_vaca | busca: vaca | paso: estampa | valor: vaca | señal: +8 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: prestado de leopardo (Familia: la búsqueda mide la estampa animal por el leopardo.) | serie: animal
+- Estampa · Floral | id: estampa_floral | busca: floral | paso: estampa | valor: floral | señal: +6 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: propio | serie: floral
+- Estampa · Paisley | id: estampa_paisley | busca: paisley | paso: estampa | valor: paisley | señal: +6 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: prestado de floral (Familia: motivo orgánico, se lee con el floral.) | serie: floral
+- Estampa · Toile de Jouy | id: estampa_toile | busca: toile de jouy | paso: estampa | valor: toile | sin dato: ni serie propia ni de un pariente
+- Estampa · Camuflado | id: estampa_camo | busca: camuflado | paso: estampa | valor: camo | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: camo
+- Estampa · Tie-dye | id: estampa_tiedye | busca: tie-dye | paso: estampa | valor: tiedye | señal: -15 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: tiedye
+- Estampa · Chevron | id: estampa_chevron | busca: chevron | paso: estampa | valor: chevron | sin dato: ni serie propia ni de un pariente
+- Estampa · Espiga | id: estampa_espiga | busca: espiga | paso: estampa | valor: espiga | señal: -6 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: espiga
+
 ## Lo que CICLO no puede responder
 - No detecta lo emergente: la pasarela pública llega hasta 2023.
 - No hay calzado: la app trabaja con ropa, por decisión.

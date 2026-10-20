@@ -30,8 +30,8 @@ Netlify publishes `app/` with no build command. The only external dependency is 
 - **Views** are sections `#v-<name>` (portada, radar, detalle, etapas, recorridos, marcas, retornos,
   consulta, racional) toggled by `mostrar(v)`; nav links use `data-v`. Each view has a `pintar*()`
   renderer that builds SVG charts by hand (no chart library).
-- **K-means runs in the browser** (`kRand`/`kInit`/`kLloyd`/`kFit`/`kName`): 18 attributes, 4 standardized
-  features (runway level/momentum, search level/momentum). k=4 starts from the stored `KM.cent` centroids so
+- **K-means runs in the browser** (`kRand`/`kInit`/`kLloyd`/`kFit`/`kName`): 17 attributes (no footwear), 4
+  standardized features (runway level/momentum, search level/momentum through 2024). k=4 starts from the stored `KM.cent` centroids so
   results are deterministic; other k use seeded random restarts. Clusters get stage names by nearest
   `KPROTO` prototype. New trends are **assigned to the nearest centroid, never retrained into the model**
   (a bug fixed earlier: retraining made each new trend its own cluster and renamed the rest).

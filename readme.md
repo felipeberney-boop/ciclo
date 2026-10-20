@@ -75,7 +75,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | Portada | Dos entradas: por prenda o por el índice |
 | Radar | Los atributos con su paleta medida y su posición en el ciclo |
 | Detalle | El recorrido de un atributo por las cuatro capas |
-| El ciclo | K-means sobre 18 atributos, con validación |
+| El ciclo | K-means sobre 17 atributos, con validación |
 | Recorridos | De la pasarela a la búsqueda, y los jeans por corte |
 | Marcas | Lyst Index, 34 trimestres |
 | Retornos | Qué vuelve y cada cuánto |
@@ -125,18 +125,23 @@ entorno en Netlify (`GROQ_API_KEY`). El `.gitignore` bloquea `.env` y similares.
 
 ## El modelo
 
-K-means sobre 18 atributos que existen a la vez en la pasarela y en Google Trends, con cuatro variables
-estandarizadas: nivel y momento en pasarela, nivel y momento en búsqueda.
+K-means sobre 17 atributos que existen a la vez en la pasarela y en Google Trends, con cuatro variables
+estandarizadas: nivel y momento en pasarela, nivel y momento en búsqueda. La búsqueda llega hasta 2024:
+nivel 2023–24 contra su máximo, momento 2023–24 contra 2020–21 (`codigo/recalcular_kmeans_sin_2025.py`).
 
-`k = 4` por silhouette (0,326, el mejor entre k=2 y k=5). Con k=6 sube apenas (0,336) pero aparecen
-grupos de un solo atributo que no dicen nada.
+`k = 4`. Sin 2025 la silhouette casi no distingue entre 2, 3 y 4 grupos (0,387 · 0,384 · 0,373): los datos
+no piden cuatro, pero con menos no se separan etapas. Con 4, dos grupos tienen un solo atributo.
 
 Los grupos que encontró, leídos como etapas:
 
 - **En ascenso** — Y2K
-- **En pico** — Jeans amplios · Jeans medios · Buzo/hoodie · Floral · Capa · Trench · Cargo · Blazer oversize
-- **En retorno** — Lunares · Cuero · Animal print · Encaje · Cuadros · Piel · Zapatilla chunky
-- **Saturada** — Jeans ajustados · Kimono
+- **En pico** — Jeans amplios · Jeans medios · Buzo/hoodie · Floral · Trench · Cargo · Blazer oversize
+- **Saturada** — Jeans ajustados · Lunares · Cuero · Kimono · Capa · Encaje · Cuadros · Piel
+- **En retorno** — Animal print
+
+Hasta el 20/10/2026 el modelo usaba la búsqueda 2024–25, y con el salto de Google cinco atributos
+(lunares, cuero, encaje, cuadros, piel) parecían «en retorno». Sin ese año pasan a «saturada»; capa pasa
+de «pico» a «saturada». Está en `decisiones.md`.
 
 Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022) y Google Shopping
 (2021-22→2024-25). Los jeans ajustados, en «saturada», caen 39 % en Amazon mientras los amplios suben 79 %.
@@ -177,10 +182,11 @@ la URL exacta de Kaggle.
 
 - **No detectamos lo emergente.** La pasarela pública llega hasta 2023.
 - **El corpus mezcla menswear y womenswear.** Separarlo exige volver a agregar desde el archivo original.
-- **No medimos calzado**, que es donde Lyst ve las señales más fuertes de 2023 y 2024.
+- **No hay calzado, por decisión:** la app trabaja con ropa. Es donde Lyst ve las señales más fuertes de
+  2023 y 2024.
 - **Google Trends tiene deriva:** el salto de medición empieza en 2025 (cambio medio +18,9 contra +3,2
   histórico; 12 de 16 series tocan su máximo ese año) y sigue en 2026. La búsqueda se mide hasta 2024; 2025
-  se dibuja tenue y 2026 se excluye. El K-means todavía usa el momento 2024–25: está pendiente recalcularlo.
+  se dibuja tenue y 2026 se excluye. El K-means usa la búsqueda hasta 2024.
 - **Lyst recalibró su fórmula en Q1-26.** Es un corte en la serie, no un crecimiento real: las métricas
   se calculan dentro de cada tramo, nunca a través.
 - **Zara 2018–22 y Mix de marcas son sintéticos.** Correlación casi nula entre variables. Sirven para
@@ -190,8 +196,7 @@ la URL exacta de Kaggle.
 
 ## Qué falta
 
-Separar pasarela y venta por género, sumar calzado y recalcular el K-means sin el momento de búsqueda
-2024–25. IA-5 ya corre en vivo (Recorridos → «Pedir lectura en vivo»), sólo en la app oficial: GitHub
+Separar pasarela y venta por género. IA-5 ya corre en vivo (Recorridos → «Pedir lectura en vivo»), sólo en la app oficial: GitHub
 Pages no tiene funciones.
 
 ## Estructura del repositorio

@@ -20,7 +20,6 @@ const ATR = {
   'Encaje': ['lace', 'a sheer lace dress'],
   'Cuadros': ['a plaid check pattern', 'a tartan outfit'],
   'Piel': ['a fur coat', 'a faux fur jacket'],
-  'Zapatilla chunky': ['chunky sneakers', 'big dad sneakers'],
   'Cargo': ['cargo pants with utility pockets', 'utilitarian military cargo clothing'],
   'Y2K': ['Y2K early 2000s style outfit', 'low-rise pants and a baby tee'],
   'Blazer oversize': ['an oversized blazer', 'a boxy oversized suit jacket'],

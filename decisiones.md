@@ -536,3 +536,37 @@ pico hasta 2024, el mismo que dibuja la app. El momento de búsqueda todavía us
 
 **Por qué un botón y no automático.** Cada lectura es una llamada que cuesta y tarda. La recomendación
 fija sigue a la vista: las dos se pueden comparar.
+
+## 2026-10-20 · El K-means sin 2025, y sin calzado
+
+**Problema.** Desde el 13/10 estaba pendiente: el K-means medía la búsqueda con 2024–25, y 2025 es el año
+del salto de medición de Google. Cuatro de las variables del modelo dependían de ese año: el nivel
+(promedio 2024–25 sobre el máximo) y el momento (2024–25 contra 2021–22).
+
+**Cómo lo recalculamos.** Encontramos el script original (`kmeans_ciclo.py`) y las 35 series mundiales
+con las que se detrendea. Con la definición vieja se reproducen los 18 valores de la app con error menor a
+0,001, así que la base es la misma. La nueva corre la ventana un año: nivel 2023–24 sobre el máximo hasta
+2024, momento 2023–24 contra 2020–21. Pasarela y validación no cambian. Queda en
+`codigo/recalcular_kmeans_sin_2025.py`.
+
+**Calzado afuera.** La app trabaja con ropa: no va a haber calzado. «Zapatilla chunky» sale del K-means y
+de la consulta por imagen (IA-6, `prompt_consulta_por_imagen_v3.md`). El modelo pasa a 17 atributos. Deja
+de ser un pendiente y pasa a ser un límite declarado por decisión.
+
+**Qué cambió.** Seis atributos cambian de etapa. Lunares, cuero, encaje, cuadros y piel pasan de «en
+retorno» a «saturada»: su retorno era el salto de 2025. Capa pasa de «pico» a «saturada». «En retorno»
+queda con un solo atributo, animal print. Pico (7), saturada (8) e Y2K en ascenso se mantienen. Los
+movimientos más grandes del momento son cargo (−0,09 → +0,64) e Y2K (−0,07 → +0,81): con la base 2021–22
+ya estaban arriba y la suba no se veía.
+
+**k=4, con la silhouette en contra.** Sin 2025 la silhouette es 0,387 con k=2, 0,384 con k=3 y 0,373 con
+k=4. Antes k=4 era el mejor; ahora los datos no lo piden, aunque la diferencia es chica. Nos quedamos con 4
+porque con menos grupos no se separan etapas, y lo decimos en la pantalla del modelo: dos grupos tienen un
+solo atributo (Y2K y animal print).
+
+**Lo que no se tocó.** Los textos de Recorridos usan la búsqueda corregida por la mediana (13/10), donde
+2025 sí cuenta: lunares sube de 37 a 64 en 2025 y su texto de «retorno cada seis años» se sostiene ahí,
+aunque el K-means ahora lo ponga en «saturada». Son dos lecturas distintas: el K-means mira 2023–24 contra
+2020–21. El de animal print decía «otra vez 2025» y la serie sube en 2024: se corrigió. La nota de
+`prompt_lectura_recomendacion_v2.md` que dice que el momento usa 2024–25 ya no vale; no se edita porque los
+prompts no se pisan.

@@ -16,6 +16,7 @@ Scripts de extracción, cálculo y render. Ninguno es parte del sitio: el sitio 
 | `diseno_catalogo.json` | Catálogo del recorrido Diseñar: prendas, cortes, colores y estampas, con los textos para CLIP |
 | `calcular_textos_diseno.mjs` | Embeddings de texto CLIP del catálogo |
 | `armar_diseno.py` | Fotos de referencia y colores que ganan presencia en la pasarela → `app/diseno/diseno.json` |
+| `recalcular_kmeans_sin_2025.py` | Recalcula nivel y momento de búsqueda del K-means sin 2025 y los centroides; pide el CSV de capas de Drive (numpy, scikit-learn) |
 | `calcular_cono.py` | Reproduce el cono de 2030 (búsqueda detrendeada, sin 2025) y lo compara con el JSON guardado |
 | `verificar_pasarela.py` | Recalcula la pasarela desde el parquet original de Vogue y la compara con el repo |
 | `prueba_busqueda_contra_ventas_visuelle.py` | ¿La búsqueda predice la venta? Contra las ventas reales de VISUELLE |

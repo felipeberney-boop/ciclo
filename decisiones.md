@@ -678,3 +678,20 @@ resto, y «Armar la ficha» junta todas las señales.
 **Un bug viejo.** Las muestras de estampa nunca se habían visto: `url("…")` dentro de un `style` con comillas
 dobles cortaba el atributo.
 
+## 2026-10-20 · Los jeans reagrupados y el K-means otra vez
+
+**Qué cambió.** Mom y boyfriend dejan de contar como «amplios» y pasan a «medios», como dice la taxonomía.
+`codigo/regrupar_jeans.py` reconstruye la serie mundial de cada grupo: el volumen total de jeans sale de
+serie ÷ participación en cada grupo, y el grupo nuevo es participación × total. Control: los ajustados, que
+no cambian de términos, se reproducen con un error máximo de 0,3 sobre 100. Se regeneran JE, REC, GREL y el
+CSV, y el K-means con `codigo/recalcular_kmeans_sin_2025.py`.
+
+**Qué movió.** Mom tuvo su pico en 2020–21 y después cayó: sin él, los amplios suben +161 % en el momento
+de búsqueda y los medios bajan −34 %. Jeans amplios y cargo quedan juntos en «pico»; los medios pasan a
+«saturada»; lunares, cuero, encaje, cuadros, piel y animal print forman «en retorno». Silhouette con k=4:
+0,320 (no es la mejor; se queda en 4 por lo mismo de siempre).
+
+**Un error de nombre que salió con esto.** El nombrador era goloso: el par grupo–etapa más cercano primero.
+Al último grupo le quedaba la etapa sobrante, y Y2K —subiendo +81 %— salía «saturada». Ahora los cuatro
+centros toman juntos la combinación de etapas con menor distancia total. Y2K vuelve a «en ascenso».
+

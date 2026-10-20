@@ -132,15 +132,16 @@ K-means sobre 17 atributos que existen a la vez en la pasarela y en Google Trend
 estandarizadas: nivel y momento en pasarela, nivel y momento en búsqueda. La búsqueda llega hasta 2024:
 nivel 2023–24 contra su máximo, momento 2023–24 contra 2020–21 (`codigo/recalcular_kmeans_sin_2025.py`).
 
-`k = 4`. Sin 2025 la silhouette casi no distingue entre 2, 3 y 4 grupos (0,387 · 0,384 · 0,373): los datos
-no piden cuatro, pero con menos no se separan etapas. Con 4, dos grupos tienen un solo atributo.
+`k = 4`. La silhouette no elige cuatro (k=2 0,361 · k=3 0,287 · k=4 0,320 · k=5 0,348): los datos no piden
+cuatro, pero con menos no se separan etapas. Con 4, Y2K queda solo en su grupo. Los grupos se nombran por la
+combinación de etapas teóricas más cercana a los cuatro centros a la vez.
 
-Los grupos que encontró, leídos como etapas:
+Los grupos que encontró, leídos como etapas (jeans ya reagrupados: mom y boyfriend cuentan en los medios):
 
 - **En ascenso** — Y2K
-- **En pico** — Jeans amplios · Jeans medios · Buzo/hoodie · Floral · Trench · Cargo · Blazer oversize
-- **Saturada** — Jeans ajustados · Lunares · Cuero · Kimono · Capa · Encaje · Cuadros · Piel
-- **En retorno** — Animal print
+- **En pico** — Jeans amplios · Cargo
+- **Saturada** — Jeans medios · Jeans ajustados · Buzo/hoodie · Floral · Kimono · Capa · Trench · Blazer oversize
+- **En retorno** — Lunares · Cuero · Animal print · Encaje · Cuadros · Piel
 
 Hasta el 20/10/2026 el modelo usaba la búsqueda 2024–25, y con el salto de Google cinco atributos
 (lunares, cuero, encaje, cuadros, piel) parecían «en retorno». Sin ese año pasan a «saturada»; capa pasa

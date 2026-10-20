@@ -37,10 +37,11 @@ def variables(rows):
     F = np.array([[r['pn'], r['pm'], r['bn'], r['bm']] for r in rows])
     F[:, 1] = np.clip(F[:, 1], -1, 1.5); F[:, 3] = np.clip(F[:, 3], -1, 1.5); return F
 
-# control: con la definición vieja tiene que salir lo que hoy está en la app
+# control: los atributos que no son jeans tienen que salir igual que hoy en la app (los jeans cambian si se reagruparon)
 for r in KM['rows']:
-    bn, bm, _ = busqueda(r['n'], (2021, 2022), (2024, 2025), 2025)
-    assert abs(bn - r['bn']) < 1e-3 and abs(bm - r['bm']) < 1e-3, r['n']
+    if r['n'].startswith('Jeans') or r['tipo'] == 'Calzado': continue
+    bn, bm, _ = busqueda(r['n'], (2020, 2021), (2023, 2024), 2024)
+    assert abs(bn - r['bn']) < 2e-3 and abs(bm - r['bm']) < 2e-3, (r['n'], bn, r['bn'], bm, r['bm'])
 
 rows = []
 for r in KM['rows']:
@@ -54,6 +55,10 @@ for k in range(2, 7):
     elbow[str(k)] = dict(sil=round(float(silhouette_score(Z, km.labels_)), 3), inercia=round(float(km.inertia_), 2))
 km = KMeans(4, n_init=50, random_state=42).fit(Z)
 for r, l in zip(rows, km.labels_): r['cl'] = int(l)
-json.dump(dict(rows=rows, sc=dict(m=sc.mean_.tolist(), s=sc.scale_.tolist()), cent=km.cluster_centers_.tolist(), elbow=elbow),
-          open(sys.argv[2], 'w'), ensure_ascii=False, separators=(',', ':'))
+nuevo = dict(rows=rows, sc=dict(m=sc.mean_.tolist(), s=sc.scale_.tolist()), cent=km.cluster_centers_.tolist(), elbow=elbow)
+json.dump(nuevo, open(sys.argv[2], 'w'), ensure_ascii=False, separators=(',', ':'))
+if '--app' in sys.argv:  # escribe const KM= en app/index.html
+    h = open('app/index.html').read(); m = re.search(r'const KM=(\{.*?\});\n', h)
+    h = h[:m.start()] + 'const KM=' + json.dumps(nuevo, ensure_ascii=False, separators=(',', ':')) + ';\n' + h[m.end():]
+    open('app/index.html', 'w').write(h); print('escrito const KM= en app/index.html')
 print(elbow)

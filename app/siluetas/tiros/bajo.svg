@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Tiro bajo">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 53 58 C 52 98 55 106 57 132 L 64.0 330 L 96 330 L 100 148 L 104 330 L 136.0 330 L 143 132 C 145 106 148 98 147 58 Z"/>
+<path d="M 53 48 L 147 48 L 147 58 L 53 58 Z" stroke-width="1.02"/>
+<path d="M 100 102 L 100 148" stroke-width="1.02"/>
+<path d="M 60 45 L 60 61" stroke-width="1.02"/>
+<path d="M 140 45 L 140 61" stroke-width="1.02"/>
+<circle cx="100" cy="53.0" r="2.3" stroke-width="1.02"/>
+<path d="M 55 61 C 59 72 66 78 73 80" stroke-width="1.02"/>
+<path d="M 145 61 C 141 72 134 78 127 80" stroke-width="1.02"/>
+</g></svg>

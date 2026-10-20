@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Tiro alto">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 53 20 C 52 60 55 106 57 132 L 64.0 330 L 96 330 L 100 148 L 104 330 L 136.0 330 L 143 132 C 145 106 148 60 147 20 Z"/>
+<path d="M 53 8 L 147 8 L 147 20 L 53 20 Z" stroke-width="1.02"/>
+<path d="M 100 64 L 100 148" stroke-width="1.02"/>
+<path d="M 60 5 L 60 23" stroke-width="1.02"/>
+<path d="M 140 5 L 140 23" stroke-width="1.02"/>
+<circle cx="100" cy="14.0" r="2.3" stroke-width="1.02"/>
+<path d="M 55 23 C 59 34 66 40 73 42" stroke-width="1.02"/>
+<path d="M 145 23 C 141 34 134 40 127 42" stroke-width="1.02"/>
+</g></svg>

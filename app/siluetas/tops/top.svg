@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Top">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 66 70 C 80 62 120 62 134 70 L 138 150 L 62 150 Z"/>
+<path d="M 72 66 L 76 22" stroke-width="1.02"/>
+<path d="M 128 66 L 124 22" stroke-width="1.02"/>
+<path d="M 64 80 C 84 88 116 88 136 80" stroke-width="1.02"/>
+<path d="M 62 142 L 138 142" stroke-width="1.02"/>
+</g></svg>

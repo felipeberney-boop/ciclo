@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Bermuda">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 53 36 C 52 76 55 106 57 132 L 61.1 248 L 96 248 L 100 148 L 104 248 L 138.9 248 L 143 132 C 145 106 148 76 147 36 Z"/>
+<path d="M 53 24 L 147 24 L 147 36 L 53 36 Z" stroke-width="1.02"/>
+<path d="M 100 80 L 100 148" stroke-width="1.02"/>
+<path d="M 60 21 L 60 39" stroke-width="1.02"/>
+<path d="M 140 21 L 140 39" stroke-width="1.02"/>
+<circle cx="100" cy="30.0" r="2.3" stroke-width="1.02"/>
+<path d="M 55 39 C 59 50 66 56 73 58" stroke-width="1.02"/>
+<path d="M 145 39 C 141 50 134 56 127 58" stroke-width="1.02"/>
+<path d="M 61.6 240 L 96 240" stroke-width="1.02"/>
+<path d="M 104 240 L 138.4 240" stroke-width="1.02"/>
+</g></svg>

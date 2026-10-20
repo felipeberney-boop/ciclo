@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Capri">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 53 36 C 52 76 55 106 57 132 L 62.7 292 L 96 292 L 100 148 L 104 292 L 137.3 292 L 143 132 C 145 106 148 76 147 36 Z"/>
+<path d="M 53 24 L 147 24 L 147 36 L 53 36 Z" stroke-width="1.02"/>
+<path d="M 100 80 L 100 148" stroke-width="1.02"/>
+<path d="M 60 21 L 60 39" stroke-width="1.02"/>
+<path d="M 140 21 L 140 39" stroke-width="1.02"/>
+<circle cx="100" cy="30.0" r="2.3" stroke-width="1.02"/>
+<path d="M 55 39 C 59 50 66 56 73 58" stroke-width="1.02"/>
+<path d="M 145 39 C 141 50 134 56 127 58" stroke-width="1.02"/>
+<path d="M 63.2 284 L 96 284" stroke-width="1.02"/>
+<path d="M 104 284 L 136.8 284" stroke-width="1.02"/>
+</g></svg>

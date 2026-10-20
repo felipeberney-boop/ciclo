@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Falda maxi">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 62 36 L 138 36 L 182 326 L 18 326 Z"/>
+<path d="M 62 24 L 138 24 L 138 36 L 62 36 Z" stroke-width="1.02"/>
+<circle cx="100" cy="30" r="2.3" stroke-width="1.02"/>
+<path d="M 112 36 L 112 76" stroke-width="1.02"/>
+<path d="M 70.8 60 L 53.6 322" stroke-width="1.02"/>
+<path d="M 129.2 60 L 146.4 322" stroke-width="1.02"/>
+</g></svg>

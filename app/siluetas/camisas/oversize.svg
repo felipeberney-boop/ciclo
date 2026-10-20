@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Camisa oversize">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 76 32 L 36 50 L 22 210 L 42 214 L 50 92 L 50 280 L 150 280 L 150 92 L 158 214 L 178 210 L 164 50 L 124 32 C 114 42 86 42 76 32 Z"/>
+<path d="M 76 32 L 88 52 L 100 42 L 112 52 L 124 32" stroke-width="1.02"/>
+<path d="M 100 42 L 100 280" stroke-width="1.02"/>
+<circle cx="104" cy="70" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="104" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="138" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="172" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="206" r="2.3" stroke-width="1.02"/>
+<path d="M 24 200 L 43 204" stroke-width="1.02"/>
+<path d="M 176 200 L 157 204" stroke-width="1.02"/>
+</g></svg>

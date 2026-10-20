@@ -33,15 +33,6 @@
      "sil": "jeans/corte_wide-leg"
     },
     {
-     "id": "mom",
-     "n": "Mom",
-     "en": "high-waisted mom jeans",
-     "busq": "mom",
-     "grupo": "Jeans baggy",
-     "rec": "jamplio",
-     "sil": "jeans/corte_tapered"
-    },
-    {
      "id": "barrel",
      "n": "Barrel",
      "en": "curved barrel-leg jeans",

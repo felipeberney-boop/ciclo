@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Vestido tubo">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 76 30 L 60 40 L 56 70 L 66 72 L 70 56 C 66 100 64 130 68 150 C 64 200 66 250 70 286 L 130 286 C 134 250 136 200 132 150 C 136 130 134 100 130 56 L 134 72 L 144 70 L 140 40 L 124 30 C 114 40 86 40 76 30 Z"/>
+<path d="M 76 30 C 86 44 114 44 124 30" stroke-width="1.02"/>
+<path d="M 70 150 C 90 154 110 154 130 150" stroke-width="1.02"/>
+<path d="M 100 230 L 100 286" stroke-width="1.02"/>
+</g></svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Camisa clásica">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 76 32 L 54 44 L 34 210 L 54 214 L 62 92 L 62 270 L 138 270 L 138 92 L 146 214 L 166 210 L 146 44 L 124 32 C 114 42 86 42 76 32 Z"/>
+<path d="M 76 32 L 88 52 L 100 42 L 112 52 L 124 32" stroke-width="1.02"/>
+<path d="M 100 42 L 100 270" stroke-width="1.02"/>
+<circle cx="104" cy="70" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="104" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="138" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="172" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="206" r="2.3" stroke-width="1.02"/>
+<path d="M 36 200 L 55 204" stroke-width="1.02"/>
+<path d="M 164 200 L 145 204" stroke-width="1.02"/>
+</g></svg>

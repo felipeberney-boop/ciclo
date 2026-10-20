@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Vestido cruzado">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 74 30 L 54 40 L 42 78 L 60 84 L 64 66 L 64 140 L 50 286 L 150 286 L 136 140 L 136 66 L 140 84 L 158 78 L 146 40 L 126 30 C 116 70 108 100 100 120 C 92 100 84 70 74 30 Z"/>
+<path d="M 74 30 L 120 132" stroke-width="1.02"/>
+<path d="M 126 30 L 96 108" stroke-width="1.02"/>
+<path d="M 64 140 C 90 146 112 146 136 140" stroke-width="1.02"/>
+<path d="M 136 140 L 156 176" stroke-width="1.02"/>
+<path d="M 136 140 L 148 186" stroke-width="1.02"/>
+<path d="M 120 132 L 132 286" stroke-width="1.02"/>
+</g></svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Tapado">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 82 34 C 76 44 62 42 52 48 L 30 196 L 50 200 L 60 110 L 54 290 L 146 290 L 140 110 L 150 200 L 170 196 L 148 48 C 138 42 124 44 118 34 C 108 44 92 44 82 34 Z"/>
+<path d="M 82 34 L 72 58 L 86 66 L 100 104" stroke-width="1.02"/>
+<path d="M 118 34 L 128 58 L 114 66 L 100 104" stroke-width="1.02"/>
+<path d="M 104 104 L 104 290" stroke-width="1.02"/>
+<circle cx="94" cy="130" r="2.3" stroke-width="1.02"/>
+<circle cx="94" cy="170" r="2.3" stroke-width="1.02"/>
+<circle cx="94" cy="210" r="2.3" stroke-width="1.02"/>
+<path d="M 62 186 L 82 186" stroke-width="1.02"/>
+<path d="M 118 186 L 138 186" stroke-width="1.02"/>
+</g></svg>

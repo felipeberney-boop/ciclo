@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Vestido slip">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 64 62 C 80 54 120 54 136 62 L 140 150 L 152 286 L 48 286 L 60 150 Z"/>
+<path d="M 70 62 L 74 18" stroke-width="1.02"/>
+<path d="M 130 62 L 126 18" stroke-width="1.02"/>
+<path d="M 66 70 C 84 80 116 80 134 70" stroke-width="1.02"/>
+<path d="M 52 270 C 80 276 120 276 148 270" stroke-width="1.02"/>
+</g></svg>

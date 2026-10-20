@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Blusa">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 78 34 C 60 34 40 46 34 74 C 32 92 44 104 58 100 L 62 92 L 64 230 L 136 230 L 138 92 L 142 100 C 156 104 168 92 166 74 C 160 46 140 34 122 34 C 112 46 88 46 78 34 Z"/>
+<path d="M 78 34 C 88 48 112 48 122 34" stroke-width="1.02"/>
+<path d="M 100 46 L 92 70" stroke-width="1.02"/>
+<path d="M 100 46 L 108 70" stroke-width="1.02"/>
+<path d="M 46 70 C 44 84 48 92 58 96" stroke-width="1.02"/>
+<path d="M 154 70 C 156 84 152 92 142 96" stroke-width="1.02"/>
+<path d="M 64 222 C 88 228 112 228 136 222" stroke-width="1.02"/>
+</g></svg>

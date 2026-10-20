@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Jardinero">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 70 90 L 130 90 L 134 150 C 140 170 144 200 142 240 L 136 330 L 104 330 L 100 196 L 96 330 L 64 330 L 58 240 C 56 200 60 170 66 150 Z"/>
+<path d="M 74 90 L 70 30" stroke-width="1.02"/>
+<path d="M 126 90 L 130 30" stroke-width="1.02"/>
+<path d="M 82 104 L 118 104 L 118 128 L 82 128 Z" stroke-width="1.02"/>
+<circle cx="74" cy="96" r="2.3" stroke-width="1.02"/>
+<circle cx="126" cy="96" r="2.3" stroke-width="1.02"/>
+<path d="M 66 150 C 88 156 112 156 134 150" stroke-width="1.02"/>
+</g></svg>

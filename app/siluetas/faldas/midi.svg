@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Falda midi">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 62 36 L 138 36 L 168 226 L 32 226 Z"/>
+<path d="M 62 24 L 138 24 L 138 36 L 62 36 Z" stroke-width="1.02"/>
+<circle cx="100" cy="30" r="2.3" stroke-width="1.02"/>
+<path d="M 112 36 L 112 76" stroke-width="1.02"/>
+<path d="M 75.0 60 L 62.0 222" stroke-width="1.02"/>
+<path d="M 125.0 60 L 138.0 222" stroke-width="1.02"/>
+</g></svg>

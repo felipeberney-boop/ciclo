@@ -28,8 +28,8 @@ function grab(name) { // mismo parser que extraer_series_de_la_app.js
   }
   return eval('(' + js.slice(st, j) + ')');
 }
-const [KM, REC, GREL, PERFIL, CONSEJO, DIS, JE, KPROTO] =
-  ['KM', 'REC', 'GREL', 'PERFIL', 'CONSEJO', 'DIS', 'JE', 'KPROTO'].map(grab);
+const [KM, REC, GREL, PERFIL, CONSEJO, DIS, JE, KPROTO, TAX] =
+  ['KM', 'REC', 'GREL', 'PERFIL', 'CONSEJO', 'DIS', 'JE', 'KPROTO', 'TAX'].map(grab);
 
 // etapa de cada atributo: el mismo código de la app (kClip … kName), con k=4 desde KM.cent
 const KST = { asc: { n: 'En ascenso' }, pico: { n: 'Pico' }, sat: { n: 'Saturada' }, ret: { n: 'En retorno' }, emer: { n: 'Emergente' } };
@@ -42,8 +42,9 @@ const ET_IDX = { Emergente: 0, 'En ascenso': 1, Pico: 2, Saturada: 3, 'En retorn
 
 // sinónimos para encontrar cada ficha desde la pregunta (en minúscula y sin tildes)
 const BUSCA = {
-  jamplio: 'baggy, wide leg, mom, barrel, boyfriend, relaxed, jean ancho, jeans anchos, pantalon ancho, jean amplio',
-  jmedio: 'jean recto, jeans rectos, straight, bootcut, flare, oxford, tapered, jean medio',
+  jamplio: 'baggy, wide leg, barrel, relaxed, jean ancho, jeans anchos, pantalon ancho, jean amplio',
+  // mom y boyfriend: alias de búsqueda, no cortes (mom = straight de tiro alto relajado; boyfriend = tapered relajado)
+  jmedio: 'jean recto, jeans rectos, straight, bootcut, flare, oxford, tapered, jean medio, mom, boyfriend',
   jajust: 'skinny, chupin, slim, jeggings, jean ajustado, jean al cuerpo',
   buzo: 'buzo, hoodie, canguro, capucha, athleisure, sudadera, sweatshirt',
   cuero: 'cuero, leather, campera de cuero, cuerina, eco cuero',
@@ -152,7 +153,19 @@ const pts = v => `${v > 0 ? '+' : ''}${v.toFixed(1).replace('.', ',')} puntos`;
 const colores = c => c && c.colores ? 'colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): ' + c.colores.slice(0, 4).map(x => `${x.n}: ${Math.round(x.ahora)} %, ${pts(x.cambio)}`).join('; ') : null;
 const opciones = (lista, que) => lista ? `${que} (CLIP, % de la pasarela 2022–23 y cambio desde 2018–19): ` +
   lista.map(x => `${x.n}${x.solo ? ' (sólo ' + x.solo + ')' : ''}: ${Math.round(x.ahora)} %, ${pts(x.cambio)}`).join('; ') : null;
-for (const p of DIS.prendas) {
+// el jean es pantalón + denim; los cortes salen de la taxonomía, con sus alias de búsqueda sumados
+const cuotaT = (ts, y) => ts.reduce((a, t) => a + (JE.terms[t] ? cuota(t, y) : 0), 0);
+for (const c of TAX.cortes) {
+  const busq = c.je ? `búsqueda: ${Math.round(cuotaT(c.je, 2025))} % de las búsquedas de jeans en 2025 (${sig(cuotaT(c.je, 2025) - cuotaT(c.je, 2023))} puntos desde 2023)` : 'sin serie de búsqueda';
+  const dj = c.clip_jeans ? DIS.prendas.find(p => p.id === 'jeans').cortes.find(x => x.id === c.clip_jeans) : null;
+  linea(`Pantalón largo · ${c.n}`, 'prenda: jeans', `corte: ${c.d}`, c.km ? `atributo: ${c.km} (etapa: ${ETAPA[c.km] || 'sin etapa'})` : null, busq, dj ? colores(dj.color) : null);
+}
+linea('Tiro', 'prenda: jeans', 'bajo, medio o alto: ninguna fuente de CICLO lo mide, se elige por diseño');
+linea('Materiales', 'prenda: materiales', TAX.materiales.map(g => `${g.grupo}: ${g.items.map(i => i.n.toLowerCase()).join(', ')}`).join('; '),
+  'con serie medida: cuero y gamuza; cuando el material es denim, la prenda se llama jean (short de jean = short + denim)');
+linea('Estampas por material', 'prenda: estampas', Object.entries(TAX.estampa_por_material).map(([g, L]) => `${g}: ${L.join(', ')}`).join('; '),
+  'lo que no está en la lista no se produce en ese material (por ejemplo, lunares en denim) y CICLO no lo propone');
+for (const p of DIS.prendas.filter(p => p.id !== 'jeans')) {
   for (const c of p.cortes) {
     const busq = p.id === 'jeans' && c.busq && JE.terms[c.busq]
       ? `búsqueda: ${Math.round(cuota(c.busq, 2025))} % de las búsquedas de jeans en 2025 (${sig(cuota(c.busq, 2025) - cuota(c.busq, 2023))} puntos desde 2023)` : null;

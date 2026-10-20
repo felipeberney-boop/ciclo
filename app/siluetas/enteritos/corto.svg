@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 340" width="200" height="340" role="img" aria-label="Mono corto">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 76 30 L 56 40 L 50 86 L 64 88 L 66 66 L 64 150 C 60 170 58 190 60 214 L 96 214 L 100 196 L 104 214 L 140 214 C 142 190 140 170 136 150 L 134 66 L 136 88 L 150 86 L 144 40 L 124 30 C 114 46 86 46 76 30 Z"/>
+<path d="M 76 30 L 100 70 L 124 30" stroke-width="1.02"/>
+<path d="M 64 150 C 88 156 112 156 136 150" stroke-width="1.02"/>
+<path d="M 100 70 L 100 196" stroke-width="1.02"/>
+<path d="M 61 206 L 96 206" stroke-width="1.02"/>
+<path d="M 104 206 L 139 206" stroke-width="1.02"/>
+</g></svg>

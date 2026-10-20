@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Sweater">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 80 36 C 62 38 42 48 36 70 L 24 206 L 48 210 L 58 118 L 56 270 L 144 270 L 142 118 L 152 210 L 176 206 L 164 70 C 158 48 138 38 120 36 C 112 46 88 46 80 36 Z"/>
+<path d="M 80 36 C 88 52 112 52 120 36" stroke-width="1.02"/>
+<path d="M 84 42 C 92 56 108 56 116 42" stroke-width="1.02"/>
+<path d="M 56 254 L 144 254" stroke-width="1.02"/>
+<path d="M 26 194 L 49 198" stroke-width="1.02"/>
+<path d="M 174 194 L 151 198" stroke-width="1.02"/>
+<path d="M 70 262 L 70 268" stroke-width="1.02"/>
+<path d="M 86 262 L 86 268" stroke-width="1.02"/>
+<path d="M 100 262 L 100 268" stroke-width="1.02"/>
+<path d="M 114 262 L 114 268" stroke-width="1.02"/>
+<path d="M 130 262 L 130 268" stroke-width="1.02"/>
+</g></svg>

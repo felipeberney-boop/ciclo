@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Vestido camisero">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 72 30 L 50 44 L 34 112 L 52 116 L 62 76 L 62 150 L 54 286 L 146 286 L 138 150 L 138 76 L 148 116 L 166 112 L 150 44 L 128 30 C 116 40 84 40 72 30 Z"/>
+<path d="M 72 30 L 86 48 L 100 40 L 114 48 L 128 30" stroke-width="1.02"/>
+<path d="M 100 40 L 100 286" stroke-width="1.02"/>
+<path d="M 62 150 L 138 150" stroke-width="1.02"/>
+<path d="M 62 158 L 138 158" stroke-width="1.02"/>
+<circle cx="104" cy="64" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="92" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="120" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="186" r="2.3" stroke-width="1.02"/>
+<circle cx="104" cy="216" r="2.3" stroke-width="1.02"/>
+</g></svg>

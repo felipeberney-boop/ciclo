@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Puffer">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 76 30 C 60 32 44 42 36 62 C 26 110 22 160 20 210 L 50 214 L 58 120 L 54 236 L 146 236 L 142 120 L 150 214 L 180 210 C 178 160 174 110 164 62 C 156 42 140 32 124 30 L 124 12 L 76 12 Z"/>
+<path d="M 100 12 L 100 236" stroke-width="1.02"/>
+<path d="M 56 82 C 80 88 120 88 144 82" stroke-width="1.02"/>
+<path d="M 56 122 C 80 128 120 128 144 122" stroke-width="1.02"/>
+<path d="M 55 162 C 80 168 120 168 145 162" stroke-width="1.02"/>
+<path d="M 54 200 C 80 206 120 206 146 200" stroke-width="1.02"/>
+<path d="M 30 104 L 50 108" stroke-width="1.02"/>
+<path d="M 26 150 L 48 154" stroke-width="1.02"/>
+<path d="M 170 104 L 150 108" stroke-width="1.02"/>
+<path d="M 174 150 L 152 154" stroke-width="1.02"/>
+</g></svg>

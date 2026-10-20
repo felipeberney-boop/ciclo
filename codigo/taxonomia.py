@@ -62,18 +62,22 @@ PRENDAS = [
     dict(id='oversize', n='Oversize', d='Más ancha y más larga, de hombro caído.', sil='camisas/oversize'),
     dict(id='cropped', n='Cropped', d='Corta, por encima de la cintura.', sil='camisas/cropped'),
     dict(id='blusa', n='Blusa', d='Más liviana y suelta, sin cuello de camisa.', sil='camisas/blusa', solo='mujer')]),
-  dict(id='buzos', n='Buzos y sweaters', d='De punto grueso, para abrigar.', sil='buzos/sweater', tipos=[
-    dict(id='buzo', n='Buzo', d='De frisa o algodón, con o sin capucha.', sil='buzos/capucha', pasos=['fit', 'cuello', 'manga'], clip='buzos', km='Buzo / hoodie', rec='buzo'),
-    dict(id='sweater', n='Sweater', d='De lana o hilo, cuello redondo.', sil='buzos/sweater'),
-    dict(id='cardigan', n='Cárdigan', d='Abierto adelante, con botones.', sil='buzos/cardigan'),
-    dict(id='polera', n='Polera', d='Sweater de cuello alto.', sil='buzos/polera')]),
+  dict(id='buzos', n='Buzos', d='De frisa o polar, para el día a día.', sil='buzos/capucha', tipos=[
+    dict(id='hoodie', n='Hoodie', d='Capucha y bolsillo canguro, cerrado adelante.', sil='buzos/capucha', pasos=['fit', 'manga'], clip='buzos'),
+    dict(id='zip', n='Canguro con cierre', d='Capucha y cierre entero adelante.', sil='buzos/zip', pasos=['fit', 'manga'], clip='buzos', en='zip-up hoodie'),
+    dict(id='redondo', n='Cuello redondo', d='Sin capucha: el buzo clásico.', sil='buzos/redondo', pasos=['fit', 'manga'], clip='buzos', en='crewneck')]),
+  dict(id='sweaters', n='Sweaters', d='De punto de lana o hilo.', sil='buzos/sweater', tipos=[
+    dict(id='redondo', n='Cuello redondo', d='El sweater de siempre.', sil='buzos/sweater'),
+    dict(id='cuello_v', n='Cuello en V', d='Escote en V, deja ver la camisa.', sil='sweaters/cuello_v'),
+    dict(id='polera', n='Polera', d='Cuello alto que se dobla.', sil='buzos/polera', en='turtleneck'),
+    dict(id='cardigan', n='Cardigan', d='Abierto adelante, con botones.', sil='buzos/cardigan')]),
   dict(id='abrigos', n='Camperas y abrigos', d='La capa de afuera.', sil='abrigos/trench', tipos=[
     dict(id='trench', n='Trench', d='Gabardina cruzada con cinturón.', sil='abrigos/trench', km='Trench', rec='trench', clip_corte='trench'),
     dict(id='blazer', n='Blazer', d='Saco de sastrería, aquí más grande.', sil='abrigos/blazer', km='Blazer oversize', clip_corte='blazer'),
     dict(id='campera', n='Campera', d='Corta, a la cadera, con cierre.', sil='abrigos/cuero', clip_corte='cuero'),
     dict(id='tapado', n='Tapado', d='Abrigo largo de paño.', sil='abrigos/tapado'),
-    dict(id='capa', n='Capa', d='Sin mangas, cae desde los hombros.', sil='abrigos/capa', km='Capa', rec='capa', clip_corte='capa'),
-    dict(id='kimono', n='Kimono', d='Abierto, de mangas anchas y rectas.', sil='abrigos/kimono', km='Kimono', rec='kimono', clip_corte='kimono'),
+    dict(id='capa', n='Capa', d='Prenda sin mangas que cae desde el hombro, sobre el abrigo.', secundario=True, sil='abrigos/capa', km='Capa', rec='capa', clip_corte='capa'),
+    dict(id='kimono', n='Kimono', d='Abrigo liviano abierto, de mangas anchas y rectas.', secundario=True, sil='abrigos/kimono', km='Kimono', rec='kimono', clip_corte='kimono'),
     dict(id='piel', n='Tapado de piel', d='Piel o piel sintética.', sil='abrigos/piel', km='Piel', clip_corte='piel'),
     dict(id='puffer', n='Puffer', d='Acolchado, relleno de pluma o sintético.', sil='abrigos/puffer')]),
   dict(id='enteritos', n='Enteritos', d='Arriba y abajo en una sola pieza.', sil='enteritos/largo', tipos=[
@@ -84,30 +88,50 @@ PRENDAS = [
 
 # ---------- material, agrupado como se muestra ----------
 M = lambda id, n, d, tex, **k: dict(id=id, n=n, d=d, tex=tex, **k)
-MATERIALES = [
-  dict(grupo='De punto', items=[M('jersey', 'Jersey de algodón', 'El punto de la remera.', 'materiales/jersey'),
-    M('rib', 'Rib (morley)', 'Punto acanalado, elástico.', 'materiales/rib'), M('frenchterry', 'French terry', 'Frisa sin perchar: rulos del lado de adentro.', 'materiales/jersey'),
-    M('fleece', 'Fleece', 'Frisa perchada, suave y abrigada.', 'materiales/lana'), M('cable', 'Cable knit', 'Tejido de trenzas.', 'materiales/cable'),
-    M('boucle', 'Bouclé', 'Hilado con rulos, de superficie rugosa.', 'materiales/boucle')]),
-  dict(grupo='Planos de algodón', items=[M('algodon', 'Algodón liso', 'Tafetán: la trama más simple.', 'materiales/tafetan'),
-    M('popelina', 'Popelina', 'Algodón fino y apretado, de camisa.', 'materiales/tafetan'), M('pique', 'Piqué', 'Trama en panal, de chomba.', 'materiales/pique'),
-    M('gabardina', 'Gabardina', 'Sarga firme, de trench y pantalón.', 'materiales/denim'), M('corduroy', 'Corduroy (pana)', 'Costillas de pelo en relieve.', 'materiales/corduroy'),
-    M('lona', 'Lona', 'Algodón grueso y resistente.', 'materiales/tafetan')]),
-  dict(grupo='Denim', items=[M('denimrigido', 'Denim rígido', 'Sarga de algodón, sin elastano.', 'materiales/denim'),
-    M('denimelastano', 'Denim con elastano', 'Sarga con algo de stretch.', 'materiales/denim'), M('denimlavado', 'Denim lavado', 'Sarga aclarada con lavados.', 'materiales/denim')]),
-  dict(grupo='Lanas', items=[M('lana', 'Lana', 'Fibra animal, abriga.', 'materiales/lana'), M('merino', 'Merino', 'Lana fina, no pica.', 'materiales/jersey'),
-    M('cashmere', 'Cashmere', 'Lana de cabra, muy suave.', 'materiales/lana'), M('tweed', 'Tweed', 'Lana rústica de hilos de colores.', 'materiales/tweed'),
-    M('pano', 'Paño', 'Lana abatanada, de tapado.', 'materiales/lana')]),
-  dict(grupo='Naturales finos', items=[M('lino', 'Lino', 'Fibra vegetal fresca, con irregularidades.', 'materiales/lino'),
-    M('seda', 'Seda', 'Fibra animal liviana y brillante.', 'materiales/saten'), M('satenseda', 'Satén de seda', 'Seda de cara brillante.', 'materiales/saten')]),
-  dict(grupo='Pieles', items=[M('cuero', 'Cuero', 'Piel curtida.', 'materiales/cuero', km='Cuero', rec='cuero'),
-    M('gamuza', 'Gamuza (suede)', 'Cuero del lado del revés, aterciopelado.', 'estampas/estampa_gamuza', rec='gamuza'),
-    M('cuerina', 'Cuerina (eco-leather)', 'Imitación de cuero sintética.', 'materiales/cuero')]),
-  dict(grupo='Sintéticos', items=[M('poliester', 'Poliéster', 'Fibra sintética, no se arruga.', 'materiales/sintetico'),
-    M('nylon', 'Nylon', 'Sintético liviano y resistente.', 'materiales/sintetico'), M('acrilico', 'Acrílico', 'Imita la lana en tejidos de punto.', 'materiales/lana'),
-    M('elastano', 'Elastano', 'La fibra que da stretch.', 'materiales/jersey'), M('neoprene', 'Neoprene', 'Espuma forrada, con cuerpo.', 'materiales/sintetico')]),
-  dict(grupo='Livianos', items=[M('gasa', 'Gasa (chiffon)', 'Transparente y vaporosa.', 'materiales/gasa'), M('tul', 'Tul', 'Red fina y transparente.', 'materiales/gasa'),
-    M('organza', 'Organza', 'Transparente y rígida.', 'materiales/gasa'), M('crepe', 'Crepe', 'Superficie granulada, cae bien.', 'materiales/tafetan')]),
+MATERIALES = [  # nombre rioplatense (el título), término de industria (en), qué es (d) y un color de base para la muestra
+  dict(grupo='De punto', items=[
+    M('jersey', 'Jersey', 'Punto liso y liviano, la tela de la remera.', 'materiales/jersey', en='jersey', color='#C9C2B6'),
+    M('rib', 'Morley', 'Punto acanalado y elástico, el de los puños y las musculosas al cuerpo.', 'materiales/rib', en='rib knit', color='#BDB4A6'),
+    M('frenchterry', 'Frisa', 'Punto afelpado por dentro, la tela del buzo.', 'materiales/jersey', en='french terry', color='#A9A79F'),
+    M('fleece', 'Polar', 'Punto sintético cardado de los dos lados, abriga y no pesa.', 'materiales/lana', en='fleece', color='#B7AE9F'),
+    M('cable', 'Punto trenzado', 'Tejido grueso con trenzas en relieve, el del sweater de invierno.', 'materiales/cable', en='cable knit', color='#D8CDB8'),
+    M('boucle', 'Bouclé', 'Hilado con rulitos: superficie rugosa, de saco y tapado.', 'materiales/boucle', en='bouclé', color='#E2DACB')]),
+  dict(grupo='Planos de algodón', items=[
+    M('algodon', 'Algodón liso', 'Tejido plano simple, el de la camisa de todos los días.', 'materiales/tafetan', en='cotton plain weave', color='#E6E1D6'),
+    M('popelina', 'Popelina', 'Algodón fino, apretado y brillante, de camisa de vestir.', 'materiales/tafetan', en='poplin', color='#EEEBE4'),
+    M('pique', 'Piqué', 'Trama en relieve de panal, la de la chomba.', 'materiales/pique', en='piqué', color='#E8E3D8'),
+    M('gabardina', 'Gabardina', 'Plano diagonal, firme, la tela del trench y del cargo.', 'materiales/denim', en='twill / gabardine', color='#B7A27F'),
+    M('corduroy', 'Corderoy', 'Costillas de pelo en relieve, de pantalón y saco.', 'materiales/corduroy', en='corduroy', color='#8A6A47'),
+    M('lona', 'Lona', 'Algodón grueso y resistente, de campera de trabajo.', 'materiales/tafetan', en='canvas', color='#C2B396')]),
+  dict(grupo='Denim', items=[
+    M('denimrigido', 'Denim rígido', 'Sarga de algodón sin elastano: marca y se amolda con el uso.', 'materiales/denim', en='rigid denim', color='#415A78'),
+    M('denimelastano', 'Denim con elastano', 'Sarga con stretch, el jean que no hay que domar.', 'materiales/denim', en='stretch denim', color='#4B6584'),
+    M('denimlavado', 'Denim lavado', 'Sarga aclarada con lavados, más blanda.', 'materiales/denim', en='washed denim', color='#7E97B4')]),
+  dict(grupo='Lanas', items=[
+    M('lana', 'Lana', 'Fibra de oveja: abriga, respira.', 'materiales/lana', en='wool', color='#9A8F7E'),
+    M('merino', 'Merino', 'Lana fina que no pica, de sweater liviano.', 'materiales/jersey', en='merino', color='#A89F90'),
+    M('cashmere', 'Cashmere', 'Lana de cabra, muy suave y cara.', 'materiales/lana', en='cashmere', color='#C8B9A3'),
+    M('tweed', 'Tweed', 'Lana rústica de hilos mezclados, de saco y falda.', 'materiales/tweed', en='tweed', color='#8C7E68'),
+    M('pano', 'Paño', 'Lana abatanada y compacta, la del tapado.', 'materiales/lana', en='wool melton', color='#5E584F')]),
+  dict(grupo='Naturales finos', items=[
+    M('lino', 'Lino', 'Fibra vegetal fresca, se arruga y queda bien arrugada.', 'materiales/lino', en='linen', color='#D9CDB4'),
+    M('seda', 'Seda', 'Fibra animal liviana, con brillo y caída.', 'materiales/saten', en='silk', color='#D8C9B5'),
+    M('satenseda', 'Satén', 'Tejido de cara brillante, el del vestido slip.', 'materiales/saten', en='satin', color='#C4B29A')]),
+  dict(grupo='Pieles', items=[
+    M('cuero', 'Cuero', 'Piel curtida.', 'materiales/cuero', km='Cuero', rec='cuero', en='leather', color='#5C3B26'),
+    M('gamuza', 'Gamuza', 'El revés del cuero, mate y aterciopelado.', 'materiales/gamuza', rec='gamuza', en='suede', color='#9A7B5B'),
+    M('cuerina', 'Cuerina', 'Imitación sintética del cuero.', 'materiales/cuero', en='faux leather', color='#3B2C22')]),
+  dict(grupo='Sintéticos', items=[
+    M('poliester', 'Poliéster', 'Fibra sintética que no se arruga.', 'materiales/sintetico', en='polyester', color='#C9C6C0'),
+    M('nylon', 'Nylon', 'Sintético liviano y resistente, de campera y mochila.', 'materiales/sintetico', en='nylon', color='#55595C'),
+    M('acrilico', 'Acrílico', 'Imita a la lana en el tejido de punto, más barato.', 'materiales/lana', en='acrylic', color='#B5ACA0'),
+    M('elastano', 'Lycra', 'La fibra que da stretch; se mezcla con otras.', 'materiales/jersey', en='spandex / elastane', color='#2F2E2C'),
+    M('neoprene', 'Neoprene', 'Espuma forrada: tiene cuerpo y no se arruga.', 'materiales/sintetico', en='neoprene / scuba', color='#3E4447')]),
+  dict(grupo='Livianos', items=[
+    M('gasa', 'Gasa', 'Transparente y vaporosa.', 'materiales/gasa', en='chiffon', color='#E9E2DA'),
+    M('tul', 'Tul', 'Red fina y transparente, de falda y velo.', 'materiales/gasa', en='tulle', color='#EFE9E4'),
+    M('organza', 'Organza', 'Transparente y rígida: arma volumen.', 'materiales/gasa', en='organza', color='#ECE6DE'),
+    M('crepe', 'Crepé', 'Plano de superficie rugosa, cae pesado.', 'materiales/tafetan', en='crepe', color='#CFC4B6')]),
 ]
 # detalles y aplicaciones: un eje aparte del material. El encaje es un tejido real, pero no un material base.
 DETALLES = [M('encaje', 'Encaje', 'Tejido calado, aplicado o en paneles.', 'estampas/estampa_encaje', km='Encaje', rec='encaje'),
@@ -140,24 +164,28 @@ G = {g['grupo']: [i['id'] for i in g['items']] for g in MATERIALES}
 DENIM, PUNTO, PLANOS, LANAS, FINOS, PIELES, SINT, LIV = (G[k] for k in ['Denim', 'De punto', 'Planos de algodón', 'Lanas', 'Naturales finos', 'Pieles', 'Sintéticos', 'Livianos'])
 MATERIAL_POR_PRENDA = {
   'pantalones': DENIM + ['algodon', 'gabardina', 'corduroy', 'lona', 'lino', 'lana', 'pano', 'tweed', 'satenseda', 'cuero', 'cuerina', 'gamuza',
-                         'poliester', 'nylon', 'crepe', 'jersey', 'frenchterry', 'fleece'],
+                         'poliester', 'nylon', 'frenchterry', 'fleece'],
   'faldas': DENIM + ['algodon', 'popelina', 'gabardina', 'corduroy', 'lino', 'seda', 'satenseda', 'lana', 'tweed', 'pano', 'boucle', 'cuero', 'cuerina',
-                     'gamuza', 'jersey', 'rib', 'poliester', 'gasa', 'tul', 'organza', 'crepe'],
+                     'gamuza', 'poliester', 'gasa', 'tul', 'organza'],
   'vestidos': ['denimrigido', 'denimlavado', 'algodon', 'popelina', 'pique', 'lino', 'seda', 'satenseda', 'jersey', 'rib', 'cable', 'merino', 'cashmere',
                'cuero', 'poliester', 'neoprene', 'gasa', 'tul', 'organza', 'crepe'],
   'remeras/remera': ['jersey', 'rib', 'pique', 'algodon', 'lino', 'merino', 'poliester', 'elastano'],
   'remeras/musculosa': ['jersey', 'rib', 'algodon', 'lino', 'seda', 'satenseda', 'poliester'],
-  'remeras/top': ['jersey', 'rib', 'seda', 'satenseda', 'gasa', 'tul', 'crepe', 'cuero', 'cuerina', 'denimrigido', 'elastano'],
+  'remeras/top': ['jersey', 'rib', 'seda', 'satenseda', 'gasa', 'tul', 'cuero', 'cuerina', 'denimrigido', 'elastano'],
   'remeras/corset': ['satenseda', 'seda', 'algodon', 'denimrigido', 'cuero', 'cuerina', 'tul'],
-  'camisas': ['algodon', 'popelina', 'lino', 'seda', 'satenseda', 'gasa', 'crepe', 'corduroy', 'denimrigido', 'denimlavado', 'poliester'],
-  'buzos/buzo': ['frenchterry', 'fleece', 'jersey', 'poliester', 'acrilico'],
-  'buzos': ['cable', 'merino', 'cashmere', 'lana', 'boucle', 'acrilico', 'rib', 'jersey'],
+  'camisas': ['algodon', 'popelina', 'lino', 'seda', 'satenseda', 'corduroy', 'denimrigido', 'denimlavado', 'poliester'],
+  'camisas/blusa': ['algodon', 'popelina', 'lino', 'seda', 'satenseda', 'gasa', 'crepe', 'poliester'],
+  'buzos': ['frenchterry', 'fleece', 'poliester', 'algodon'],
+  'sweaters': ['cable', 'merino', 'cashmere', 'lana', 'boucle', 'acrilico', 'rib'],
   'abrigos': ['gabardina', 'lona', 'corduroy', 'denimrigido', 'denimlavado', 'cuero', 'cuerina', 'gamuza', 'lana', 'pano', 'tweed', 'boucle',
               'cashmere', 'nylon', 'poliester', 'fleece', 'satenseda'],
   'abrigos/puffer': ['nylon', 'poliester', 'satenseda'],
+  'abrigos/blazer': ['lana', 'pano', 'tweed', 'boucle', 'cashmere', 'lino', 'corduroy', 'gabardina', 'denimrigido', 'cuero', 'satenseda', 'poliester'],
+  'abrigos/capa': ['lana', 'pano', 'tweed', 'boucle', 'cashmere', 'gabardina', 'cuero'],
+  'abrigos/kimono': ['seda', 'satenseda', 'lino', 'algodon', 'gasa', 'poliester'],
   'abrigos/trench': ['gabardina', 'algodon', 'cuero', 'cuerina', 'nylon'],
   'abrigos/piel': ['cuero', 'gamuza', 'cuerina', 'poliester'],
-  'enteritos': DENIM + ['algodon', 'gabardina', 'lona', 'lino', 'corduroy', 'crepe', 'satenseda', 'jersey', 'poliester'],
+  'enteritos': DENIM + ['algodon', 'gabardina', 'lona', 'lino', 'corduroy', 'satenseda', 'poliester'],
 }
 TODAS = [i['id'] for f in ESTAMPAS for i in f['items']]
 NO = lambda *ids: [e for e in TODAS if e not in ids]
@@ -173,12 +201,12 @@ ESTAMPA_POR_MATERIAL = {  # las que se producen en cada grupo de material (por g
 }
 ESTAMPA_POR_PRENDA = {  # además del material: lo que no se hace en esa prenda
   'pantalones': NO('toile', 'awning', 'breton'), 'abrigos': NO('pindot', 'tiedye', 'awning', 'breton', 'toile'),
-  'buzos': NO('toile', 'pow', 'windowpane', 'bengal', 'pinstripe'),
+  'buzos': NO('toile', 'pow', 'windowpane', 'bengal', 'pinstripe'), 'sweaters': NO('toile', 'camo', 'tiedye', 'pow', 'windowpane', 'bengal'),
 }
 DETALLE_POR_PRENDA = {
   'pantalones': ['cargo', 'bordado', 'tachas', 'plisado', 'flecos'], 'faldas': ['encaje', 'bordado', 'volados', 'plisado', 'cargo', 'flecos', 'pedreria', 'tachas'],
   'vestidos': ['encaje', 'bordado', 'volados', 'cutouts', 'plisado', 'flecos', 'pedreria'], 'remeras': ['encaje', 'bordado', 'cutouts', 'pedreria', 'tachas', 'volados'],
-  'camisas': ['encaje', 'bordado', 'volados', 'plisado'], 'buzos': ['bordado', 'tachas', 'acolchado'],
+  'camisas': ['encaje', 'bordado', 'volados', 'plisado'], 'buzos': ['bordado', 'tachas'], 'sweaters': ['bordado', 'tachas', 'pedreria'],
   'abrigos': ['bordado', 'tachas', 'acolchado', 'flecos', 'cargo'], 'enteritos': ['cargo', 'bordado', 'cutouts', 'plisado'],
 }
 
@@ -192,9 +220,11 @@ PRESTA = {
   'tipo:pantalones/bermuda': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, hasta la rodilla. (Antes tomaba el cargo, que no es su pariente en el árbol.)'),
   'tipo:pantalones/capri': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, cortado a media pierna.'),
   'tipo:remeras/top': ('rec:corset', 'Hermano: misma familia de tops al cuerpo.'),
-  'tipo:buzos/sweater': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),
-  'tipo:buzos/cardigan': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),
-  'tipo:buzos/polera': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),
+  'tipo:buzos/hoodie': ('rec:buzo', 'Padre: la serie «hoodie» mide los buzos en general y no distingue entre variantes.'),
+  'tipo:buzos/zip': ('rec:buzo', 'Padre: la serie «hoodie» mide los buzos en general y no distingue entre variantes.'),
+  'tipo:buzos/redondo': ('rec:buzo', 'Padre: la serie «hoodie» mide los buzos en general y no distingue entre variantes.'),
+  'tipo:sweaters/redondo': ('tipo:sweaters/cardigan', 'Hermano: misma familia de punto; el sweater suelto no tiene serie propia.'),
+  'tipo:sweaters/cuello_v': ('tipo:sweaters/cardigan', 'Hermano: misma familia de punto; el cuello en V no tiene serie propia.'),
   'tipo:abrigos/tapado': ('tipo:abrigos/trench', 'Hermano: el otro abrigo largo de la familia.'),
   'tipo:abrigos/puffer': ('tipo:abrigos/campera', 'Hermano: la otra campera corta de la familia. «puffer jacket» no llegó a 12 años con señal hasta 2024.'),
   'tipo:faldas/midi': ('tipo:faldas/mini', 'Hermano: la misma falda, más corta. «midi skirt» no llegó a 12 años con señal hasta 2024.'),
@@ -217,6 +247,7 @@ PRESTA = {
 }
 def hoja(ref):
     k, v = ref.split(':', 1)
+    v = {'buzos/polera': 'sweaters/polera', 'buzos/cardigan': 'sweaters/cardigan'}.get(v, v) if k == 'tipo' else v  # se mudaron a Sweaters
     if k == 'tipo': pr, t = v.split('/'); return next(x for x in next(p for p in PRENDAS if p['id'] == pr)['tipos'] if x['id'] == t)
     if k == 'corte': return next(x for x in CORTES if x['id'] == v)
     if k == 'tiro': return next(x for x in TIROS if x['id'] == v)

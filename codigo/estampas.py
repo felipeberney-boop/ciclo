@@ -33,7 +33,11 @@ textura('denim', 'denim', ''.join(f'<path d="M {x} 0 L {x+120} 120" stroke-width
 textura('corduroy', 'corduroy', ''.join(f'<rect x="{x}" y="-1" width="6" height="122" fill="currentColor" stroke="none" opacity=".45"/><path d="M {x+1.5} 0 L {x+1.5} 120" stroke-width=".8"/>' for x in range(0, 120, 10)))
 # cuero: el grano, celdas irregulares
 random.seed(7)
-textura('cuero', 'cuero', rep(lambda x, y: f'<path d="M {x:.1f} {y:.1f} q {random.uniform(-5,5):.1f} {random.uniform(-5,5):.1f} {random.uniform(6,11):.1f} {random.uniform(-3,3):.1f}" stroke-width=".9" opacity=".6"/>', 46))
+# cuero: un marrón plano se lee como cuero; encima, un grano muy leve (antes la textura no se leía como nada)
+textura('cuero', 'cuero', rep(lambda x, y: f'<path d="M {x:.1f} {y:.1f} q {random.uniform(-3,3):.1f} {random.uniform(-3,3):.1f} {random.uniform(3,6):.1f} {random.uniform(-1.5,1.5):.1f}" stroke-width=".6" opacity=".14"/>', 60))
+# gamuza: mate, apenas el pelo
+random.seed(13)
+textura('gamuza', 'gamuza', rep(lambda x, y: f'<circle cx="{x:.1f}" cy="{y:.1f}" r=".7" fill="currentColor" stroke="none" opacity="{random.uniform(.06,.14):.2f}"/>', 160, borde=2))
 # punto jersey: hileras de V chiquitas
 textura('punto jersey', 'jersey', ''.join(f'<path d="M 0 {y}' + ' l 3 6 l 3 -6' * 20 + '" stroke-width=".9" opacity=".7"/>' for y in range(2, 120, 8)))
 # rib: costillas de punto, verticales y finas

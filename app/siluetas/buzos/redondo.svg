@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300" role="img" aria-label="Buzo cuello redondo">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 80 38 C 62 42 42 50 36 70 L 24 206 L 48 210 L 58 118 L 56 270 L 144 270 L 142 118 L 152 210 L 176 206 L 164 70 C 158 50 138 42 120 38 C 112 50 88 50 80 38 Z"/>
+<path d="M 80 38 C 88 54 112 54 120 38" stroke-width="1.02"/>
+<path d="M 82 46 C 90 60 110 60 118 46" stroke-width="1.02"/>
+<path d="M 56 250 L 144 250" stroke-width="1.02"/>
+<path d="M 56 262 L 144 262" stroke-width="1.02"/>
+<path d="M 26 186 L 49 190" stroke-width="1.02"/>
+<path d="M 26 196 L 49 200" stroke-width="1.02"/>
+<path d="M 174 186 L 151 190" stroke-width="1.02"/>
+<path d="M 174 196 L 151 200" stroke-width="1.02"/>
+</g></svg>

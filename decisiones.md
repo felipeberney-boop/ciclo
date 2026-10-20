@@ -570,3 +570,8 @@ aunque el K-means ahora lo ponga en «saturada». Son dos lecturas distintas: el
 2020–21. El de animal print decía «otra vez 2025» y la serie sube en 2024: se corrigió. La nota de
 `prompt_lectura_recomendacion_v2.md` que dice que el momento usa 2024–25 ya no vale; no se edita porque los
 prompts no se pisan.
+
+**La clave, conectada (20/10/2026).** Con `GROQ_API_KEY` cargada en Netlify, Groq devolvió 404: ya no
+ofrece Llama. La función pasa a `openai/gpt-oss-120b` (`prompt_lectura_recomendacion_v3.md`). La primera
+lectura real ya muestra que el modelo y la recomendación fija pueden no coincidir (jeans baggy en high
+fashion: «Entrar» contra «Esperar»), y eso es justamente lo que la interfaz deja comparar.

@@ -1,9 +1,9 @@
-// IA-5 · Lectura y recomendación en vivo (prompts/prompt_lectura_recomendacion_v2.md).
+// IA-5 · Lectura y recomendación en vivo (prompts/prompt_lectura_recomendacion_v3.md).
 // Recibe sólo métricas ya calculadas por la app, nunca una fila de la base. El prompt se arma acá,
 // no en el navegador: el cliente manda números y claves de una lista cerrada, no texto libre.
 // La clave vive en Netlify como GROQ_API_KEY; GROQ_MODEL es opcional.
 
-const MODELO = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+const MODELO = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
 
 const CLIENTES = {
   fast: { n: 'fast fashion (high street: Zara, H&M, Shein)', prod: '6 semanas', hasta: 2026 },
@@ -80,7 +80,9 @@ export default async req => {
     body: JSON.stringify({
       model: MODELO,
       temperature: 0.3,
-      max_tokens: 200,
+      max_tokens: 500,
+      reasoning_effort: 'low',
+      include_reasoning: false,
       response_format: { type: 'json_object' },
       messages: [{ role: 'system', content: SISTEMA }, { role: 'user', content: armarPrompt(d) }],
     }),
@@ -93,7 +95,7 @@ export default async req => {
   const accion = typeof out?.accion === 'string' ? out.accion.trim().replace(/^\w/, ch => ch.toUpperCase()) : '';
   const frase = typeof out?.frase === 'string' ? out.frase.trim().slice(0, 400) : '';
   if (!validas.includes(accion) || !frase) return json({ error: 'La respuesta no tuvo la forma pedida.' }, 502);
-  return json({ accion, frase, modelo: MODELO, prompt: 'v2' });
+  return json({ accion, frase, modelo: MODELO, prompt: 'v3' });
 };
 
 export const config = { path: '/api/lectura' };

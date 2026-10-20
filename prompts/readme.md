@@ -6,7 +6,8 @@ número siguiente, no se pisa el anterior.
 | Archivo | Para qué | Estado |
 |---|---|---|
 | `prompt_lectura_recomendacion_v1.md` | IA-5 · leer el grupo y recomendar | reemplazado por v2 |
-| `prompt_lectura_recomendacion_v2.md` | IA-5 · leer un atributo y recomendar, en vivo (función de Netlify) | en uso |
+| `prompt_lectura_recomendacion_v2.md` | IA-5 · leer un atributo y recomendar, en vivo (función de Netlify) | reemplazado por v3 |
+| `prompt_lectura_recomendacion_v3.md` | IA-5 · lo mismo, con `gpt-oss-120b` (Groq ya no tiene Llama) | en uso |
 | `prompt_consulta_por_imagen_v1.md` | IA-6 · atributos a partir de una foto | reemplazado por v2 |
 | `prompt_consulta_por_imagen_v2.md` | IA-6 · CLIP en el navegador: atributos, looks parecidos y años | reemplazado por v3 |
 | `prompt_consulta_por_imagen_v3.md` | IA-6 · lo mismo, con 17 atributos (sin calzado) | en uso |

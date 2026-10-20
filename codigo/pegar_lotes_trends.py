@@ -1,5 +1,6 @@
 """CICLO · pega los lotes de Google Trends del plan (datasets/plan_exportacion_trends.csv) a la serie anual mundial.
-Uso: python3 codigo/pegar_lotes_trends.py   (lee datasets/trends_lotes/lote_01.csv … lote_09.csv)
+Uso: python3 codigo/pegar_lotes_trends.py   (lee todos los .csv de datasets/trends_lotes/, con el nombre que tengan:
+el lote se reconoce por los términos de cada archivo)
 
 Cada lote es el CSV que baja Google Trends desde «Interés a lo largo del tiempo» (multiTimeline): trench coat + 4 términos,
 mundial, «2004 – presente». Trench coat es el ancla: ya está medido en trends_mundo__web_anual.csv.
@@ -32,7 +33,7 @@ def leer_lote(ruta):
     return {n: {y: st.mean(v) for y, v in d.items()} for n, d in anual.items()}
 
 informe, nuevas = [], []
-for ruta in sorted(glob.glob('datasets/trends_lotes/lote_*.csv')):
+for ruta in sorted(glob.glob('datasets/trends_lotes/*.csv')):
     L = leer_lote(ruta); a = L.get('trench coat')
     if not a: informe.append(f'- {ruta}: sin columna «trench coat», no entra.'); continue
     ys = [y for y in Y if y in a and a[y] > 0]

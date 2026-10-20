@@ -80,6 +80,15 @@ teléfono no existe.
 
 **Presentación.** 20 láminas generadas por código, recortadas a 17 al ensayarla.
 
+## v1.1 · 20/10/2026 · Netlify, Groq en vivo, el asistente y Diseñar por taxonomía
+
+App oficial en Netlify con IA-5 en vivo y «Preguntar» (el LLM de la clase, con la API key de cada uno). K-means
+sin 2025 y sin calzado (17 atributos). Estética de revista. Después, siete frentes: la entrada de tres
+preguntas siempre, `señal()` como única fuente de color de estado, la taxonomía nueva (jean = pantalón +
+denim), 35 materiales y detalles, combinaciones imposibles fuera, recomendación sólo con evidencia, el
+contador de dato medido y la barra que acumula. Commits `d9f6c4f` a `e6a401a`; la versión anterior quedó en
+`diseno/prototipos/versiones_de_la_app/app_2026-10-20_9035227.html`.
+
 ## Lo que falta para la Entrega 3
 
 - Conectar la Groq API en vivo. Hoy IA-5 corre con prompt fijo.

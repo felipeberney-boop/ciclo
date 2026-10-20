@@ -1822,7 +1822,10 @@ function dzValor(p){
   if(p==='color'){const c=dzColores().L.find(x=>x.id===v);return c&&c.n;}
   if(p==='estampa')return dzEst(v).n;if(p==='detalle')return TAX.detalles.find(x=>x.id===v).n;return null;
 }
-function dzIr(p){dz.paso=p;pintarDisenar();window.scrollTo({top:0,behavior:'instant'});}
+function dzIr(p){ // después de la primera elección, cada paso abre en los pasos, no arriba del título
+  dz.paso=p;pintarDisenar();const n=$('#dzpasos');
+  if(dz.prenda&&n)window.scrollTo({top:n.getBoundingClientRect().top+window.scrollY-12,behavior:'instant'});else window.scrollTo({top:0,behavior:'instant'});
+}
 function dzSiguiente(p){const P=dzPasos();return P[P.indexOf(p)+1]||'fin';}
 function dzElegir(p,v){
   dz[p]=v;

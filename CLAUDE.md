@@ -38,6 +38,9 @@ Netlify publishes `app/` with no build command. The only external dependency is 
 - **«Preguntar» (`#v-asistente`)** is the class V2 pattern: the user pastes a Groq key (localStorage `groq_key`)
   and the browser calls Groq directly with `app/llm/ciclo_datos.md` as DATOS (only the parts the question names).
   That file is generated: run `node codigo/armar_datos_llm.js` after changing any data constant.
+- **Diseñar** runs on `TAX` (from `codigo/taxonomia.py`; rerun it after touching drawings or tables). Every state color
+  comes from `señal()` / `señalPalabra()` and the `s-<estado>` CSS classes; never assign a state color by hand.
+  The app always opens on the 3-question gate; only a link with `c`, `v` and `pu` skips it.
 - The "cliente" selector (fast / premium / nicho) changes recommendations (`CONSEJO`, `PLAZO`) and re-renders.
 
 ## Design rules that apply in code

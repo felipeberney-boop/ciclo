@@ -70,8 +70,8 @@ Sin conexión funciona igual, con las tipografías del sistema.
 
 | | |
 |---|---|
-| Entrada | Cuatro preguntas: país, público, marca o por tu cuenta, categoría |
-| Diseñar | Paso a paso: prenda → corte → color → estampa → tu diseño, con referencias y recomendación |
+| Entrada | Tres preguntas, siempre: para quién diseñás, marca o por tu cuenta, y la categoría |
+| Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal de cada opción, una barra con lo elegido y la ficha final |
 | Portada | Dos entradas: por prenda o por el índice |
 | Radar | Los atributos con su paleta medida y su posición en el ciclo |
 | Detalle | El recorrido de un atributo por las cuatro capas |

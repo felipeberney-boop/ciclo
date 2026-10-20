@@ -640,3 +640,41 @@ Recorridos se leyeran peor: cuatro grupos en cuatro grises no se distinguen. Vue
 sirven sólo para separar líneas y grupos. Gana/pierde terreno sigue en negro: está en dos columnas con su
 signo, y en verde y rojo se confundía con Entrar y Salir. Los subtítulos de sección (Bodoni) suben a 36–60 px
 y llevan una regla de 1 px arriba: abren sección en vez de ser un tamaño intermedio.
+
+## 2026-10-20 · Siete frentes: entrada, señal, taxonomía, materiales, combinaciones, dos capas y la barra
+
+**La entrada, siempre.** La app abre en las tres preguntas aunque haya respuestas guardadas: vienen marcadas y
+alcanza con «Continuar». Sólo un link que trae el perfil (`c`, `v`, `pu`) la saltea. Se borra `perfilListo`
+y sale la barra de perfil del header: cambiar de cliente a mitad de camino recalculaba todo y hacía sentir la
+app inestable. «Cambiar perfil» queda al final del menú. La categoría suma contemporary.
+
+**La tesis de color, otra vez y con arquitectura.** Una tarjeta podía decir «recomendado» con borde rojo, y
+«gana presencia» salía en rojo: el borde, el texto y el ícono decidían su color cada uno por su lado. Ahora una
+sola función, `señal(atributo, perfil)`, devuelve estado, palabra, porqué, clase e ícono, con cuatro estados:
+entrar (verde), esperar (ámbar), salir (rojo) y **sin-dato (neutro, no rojo)**. En el CSS el color sale sólo de
+la clase `s-<estado>`. La regla queda: **negro = medido, salmón = interpretado por un modelo, los tres de
+semáforo reservados para la señal**, siempre con la palabra y un ícono.
+
+**Taxonomía.** El jean no es una prenda: es pantalón + denim. Prenda › tipo › corte › tiro, y material,
+detalle y estampa como ejes aparte (`codigo/taxonomia.py`). Mom, boyfriend y jeggings dejan de ser cortes y
+quedan como alias de búsqueda: sus series suman a straight, tapered y skinny. En Recorridos y el K-means los
+grupos agregados siguen como se midieron en septiembre (las dos búsquedas viejas dentro de «amplios");
+recalcularlos es un pendiente declarado.
+
+**Materiales y detalles.** 35 materiales en ocho grupos; el encaje pasa a detalles. Sólo se ofrece lo que se
+produce en cada prenda. 16 texturas dibujadas (no fotografiadas: las fotos no tienen licencia).
+
+**Recomendaciones que no pueden ser falsas.** Las combinaciones imposibles no se ofrecen (lunares en denim,
+camuflado en satén, toile en punto). La ficha recomienda sólo si el corte o tipo, la estampa y el detalle
+tienen serie, con al menos una serie medida —CLIP solo no alcanza, es interpretación—, y escribe de dónde sale
+cada número. Si no puede escribir esa línea, dice «Sin recomendación».
+
+**Dos capas a la vista.** Todo el vocabulario (117 atributos) aparece con dibujo y definición; cada panel
+cuenta «x de n con dato medido». Lo que no tiene serie se ve neutro, no rechazado.
+
+**La barra.** Lo elegido se acumula en chips en una barra fija abajo; cada chip vuelve a su paso sin perder el
+resto, y «Armar la ficha» junta todas las señales.
+
+**Un bug viejo.** Las muestras de estampa nunca se habían visto: `url("…")` dentro de un `style` con comillas
+dobles cortaba el atributo.
+

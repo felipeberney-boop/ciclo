@@ -16,6 +16,9 @@ Scripts de extracción, cálculo y render. Ninguno es parte del sitio: el sitio 
 | `diseno_catalogo.json` | Catálogo del recorrido Diseñar: prendas, cortes, colores y estampas, con los textos para CLIP |
 | `calcular_textos_diseno.mjs` | Embeddings de texto CLIP del catálogo |
 | `armar_diseno.py` | Fotos de referencia y colores que ganan presencia en la pasarela → `app/diseno/diseno.json` |
+| `taxonomia.py` | La taxonomía de Diseñar (prendas, tipos, cortes, tiros, materiales, detalles, estampas y qué combina con qué) → `app/diseno/taxonomia.json` y `const TAX=` |
+| `dibujar_taxonomia.py` | Las siluetas de la taxonomía nueva (pantalones, faldas, vestidos, camisas, buzos, abrigos, enteritos, tiros) |
+| `estampas.py` | Las texturas de material, 120×120 sin costura |
 | `armar_datos_llm.js` | Arma `app/llm/ciclo_datos.md`, la fuente de datos de «Preguntar» (IA-8), con los datos de la app. Correrlo cada vez que cambian |
 | `recalcular_kmeans_sin_2025.py` | Recalcula nivel y momento de búsqueda del K-means sin 2025 y los centroides; pide el CSV de capas de Drive (numpy, scikit-learn) |
 | `calcular_cono.py` | Reproduce el cono de 2030 (búsqueda detrendeada, sin 2025) y lo compara con el JSON guardado |

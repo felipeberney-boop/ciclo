@@ -780,3 +780,7 @@ se corrija, trae el dato y la serie en cada respuesta y termina en cambios que s
 calzado»). Para accesorios está el plan en `datasets/plan_exportacion_trends_3.csv` (gorra, piluso, tote,
 cinturón de cuero, anteojos de sol), junto con «toile de jouy» para reemplazar a «toile».
 
+**Calzado, de vuelta (20/10/2026).** Se revierte la decisión de dejar el calzado afuera: suma variedad. Entra
+igual que todo lo demás, sólo con dato: plan 3, lotes 21 y 22 (zapatillas, botinetas, mocasines, chatitas,
+sandalias, plataformas, guillerminas, botas texanas). Hasta que las series pasen el filtro, no aparece en la app.
+

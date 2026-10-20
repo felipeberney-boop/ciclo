@@ -1,0 +1,4 @@
+# La app es un único HTML estático: sin build, se publica la carpeta app/ tal cual.
+[build]
+  publish = "app"
+  command = ""

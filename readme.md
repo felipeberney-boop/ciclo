@@ -16,8 +16,9 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 
 | | |
 |---|---|
-| App publicada | https://felipeberney-boop.github.io/ciclo/ |
-| Cómo se publica | GitHub Pages, automático: cada push que toca `app/` la vuelve a publicar (`.github/workflows/publicar_app.yml`) |
+| App publicada (oficial) | https://ciclo-udesa.netlify.app |
+| Espejo | https://felipeberney-boop.github.io/ciclo/ |
+| Cómo se publica | Netlify publica la carpeta `app/` sin build (`netlify.toml`). GitHub Pages la vuelve a publicar en cada push que toca `app/` (`.github/workflows/publicar_app.yml`) |
 
 ## Captura
 
@@ -59,8 +60,8 @@ cd app
 python3 -m http.server 8000
 ```
 
-Publicada en GitHub Pages desde la carpeta `app/`, sin comando de build. También sirve cualquier hosting estático
-(Netlify: *publish directory* = `app`).
+Publicada en Netlify desde la carpeta `app/`, sin comando de build (*publish directory* = `app`, fijado en
+`netlify.toml`). GitHub Pages publica la misma carpeta como espejo.
 
 Lo único que carga de afuera son las tipografías (Google Fonts: Archivo, Bodoni Moda, IBM Plex Mono).
 Sin conexión funciona igual, con las tipografías del sistema.
@@ -200,11 +201,12 @@ ciclo/
 ├── decisiones.md              registro fechado de lo que probamos y descartamos
 ├── historial.md               las versiones del proyecto, de la hipótesis al prototipo
 ├── .gitignore
+├── netlify.toml               configuración de Netlify: publica app/ sin build
 ├── datasets/                  diccionario y links de descarga (los CSV no se suben)
 ├── datasets_procesados/       las series que consume la app
 ├── diseno/                    referencias y prototipos por versión
 ├── prompts/                   prompts del LLM, versionados
 ├── codigo/                    scripts de extracción, cálculo y render
 ├── entregas/                  estado del proyecto en cada entrega
-└── app/                       lo que se publica en GitHub Pages
+└── app/                       lo que se publica (Netlify, con GitHub Pages de espejo)
 ```

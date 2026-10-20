@@ -71,3 +71,31 @@ textura('sintético', 'sintetico', ''.join(f'<rect x="-1" y="{y}" width="122" he
 # encaje y acolchado, como detalle (no material): acolchado en rombos
 textura('acolchado', 'acolchado', ''.join(f'<path d="M {x} 0 L {x+120} 120" stroke-width="1.2" opacity=".6"/><path d="M {x} 120 L {x+120} 0" stroke-width="1.2" opacity=".6"/>' for x in range(-120, 120, 30)))
 print('listo:', len(os.listdir(B)), 'texturas')
+
+# ---------- detalles y aplicaciones (app/siluetas/detalles) y dos estampas que faltaban ----------
+def ficha(carpeta, nombre, ruta, cuerpo):
+    os.makedirs(f'app/siluetas/{carpeta}', exist_ok=True)
+    open(f'app/siluetas/{carpeta}/{ruta}.svg', 'w').write(
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Muestra de {nombre}">'
+        f'<defs><clipPath id="c"><rect width="120" height="120"/></clipPath></defs><g clip-path="url(#c)" fill="none" stroke="currentColor">{cuerpo}</g></svg>\n')
+# bordado: florcitas de puntada, en grilla corrida
+flor_b = lambda x, y: ''.join(f'<path d="M {x} {y} l {dx} {dy}" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>' for dx, dy in [(0,-7),(6,-3),(6,4),(0,7),(-6,4),(-6,-3)]) + f'<circle cx="{x}" cy="{y}" r="1.6" fill="currentColor" stroke="none"/>'
+ficha('detalles', 'bordado', 'bordado', ''.join(flor_b(x, y) for y in (15, 75) for x in (15, 75)) + ''.join(flor_b(x, y) for y in (45, 105) for x in (45, 105)) +
+      ''.join(f'<path d="M {x} {y} l 4 0" stroke-width="1" opacity=".5"/>' for y in range(0, 120, 30) for x in range(26, 120, 60)))
+# volados: hileras de ondas superpuestas
+ficha('detalles', 'volados', 'volados', ''.join(f'<path d="M 0 {y}' + ''.join(f' q 7.5 {9} 15 0' for _ in range(8)) + f'" stroke-width="1.4" opacity=".8"/><path d="M 0 {y-6} L 120 {y-6}" stroke-width=".7" opacity=".4"/>' for y in range(14, 125, 20)))
+# cut-outs: aberturas en gota, con su contorno
+ficha('detalles', 'cut-outs', 'cutouts', ''.join(f'<path d="M {x} {y-12} C {x+9} {y-2} {x+9} {y+8} {x} {y+12} C {x-9} {y+8} {x-9} {y-2} {x} {y-12} Z" fill="currentColor" fill-opacity=".85" stroke-width="1"/>' for y in (30, 90) for x in (30, 90)))
+# tachas: pirámides de metal
+ficha('detalles', 'tachas', 'tachas', ''.join(f'<path d="M {x-5} {y} L {x} {y-5} L {x+5} {y} L {x} {y+5} Z" fill="currentColor" fill-opacity=".75" stroke-width=".8"/><path d="M {x-5} {y} L {x+5} {y} M {x} {y-5} L {x} {y+5}" stroke-width=".6" opacity=".5"/>' for y in range(10, 120, 20) for x in range(10 if (y // 20) % 2 == 0 else 20, 120, 20)))
+# plisado: pliegues verticales con su sombra
+ficha('detalles', 'plisado', 'plisado', ''.join(f'<rect x="{x}" y="-1" width="5" height="122" fill="currentColor" stroke="none" opacity=".22"/><path d="M {x} 0 L {x} 120" stroke-width="1.2"/>' for x in range(0, 120, 12)))
+# flecos: hileras de tiras colgando
+ficha('detalles', 'flecos', 'flecos', ''.join(f'<path d="M 0 {y} L 120 {y}" stroke-width="2" opacity=".8"/>' + ''.join(f'<path d="M {x} {y} L {x+1} {y+26}" stroke-width=".9" opacity=".75"/>' for x in range(1, 120, 4)) for y in (4, 64)))
+# pedrería: cristales facetados
+ficha('detalles', 'pedrería', 'pedreria', ''.join(f'<circle cx="{x}" cy="{y}" r="4" fill="currentColor" fill-opacity=".25" stroke-width="1"/><path d="M {x-4} {y} L {x+4} {y} M {x} {y-4} L {x} {y+4} M {x-2.8} {y-2.8} L {x+2.8} {y+2.8}" stroke-width=".5" opacity=".7"/>' for y in range(12, 120, 24) for x in range(12 if (y // 24) % 2 == 0 else 24, 120, 24)))
+# corazones y geométrico (estampas que Tendencias nombraba sin dibujo)
+cor = lambda x, y, r=7: f'<path d="M {x} {y+r} C {x-r*1.6} {y} {x-r} {y-r*1.1} {x} {y-r*.35} C {x+r} {y-r*1.1} {x+r*1.6} {y} {x} {y+r} Z" fill="currentColor" stroke="none"/>'
+ficha('estampas', 'corazones', 'estampa_corazones', ''.join(cor(x, y) for y in range(15, 120, 30) for x in range(15 if (y // 30) % 2 == 0 else 30, 135, 30)))
+ficha('estampas', 'geométrico', 'estampa_geometrico', ''.join(f'<path d="M {x} {y} l 15 -15 l 15 15 l -15 15 Z" fill="currentColor" fill-opacity="{.85 if (x // 30 + y // 30) % 2 else .25}" stroke="none"/>' for y in range(15, 135, 30) for x in range(0, 120, 30)))
+print('listo: detalles y estampas nuevas')

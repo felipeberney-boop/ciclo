@@ -112,10 +112,10 @@ MATERIALES = [
 # detalles y aplicaciones: un eje aparte del material. El encaje es un tejido real, pero no un material base.
 DETALLES = [M('encaje', 'Encaje', 'Tejido calado, aplicado o en paneles.', 'estampas/estampa_encaje', km='Encaje', rec='encaje'),
   M('cargo', 'Bolsillos cargo', 'Bolsillos de fuelle a los costados.', 'pantalones/cargo', km='Cargo', rec='cargo'),
-  M('bordado', 'Bordado', 'Dibujo hecho con hilo.', None), M('volados', 'Volados', 'Tiras fruncidas que ondulan.', None),
-  M('tachas', 'Tachas', 'Apliques de metal.', None), M('cutouts', 'Cut-outs', 'Aberturas que dejan ver la piel.', None),
-  M('plisado', 'Plisado', 'Pliegues fijos y parejos.', None), M('acolchado', 'Acolchado', 'Costuras en rombo con relleno.', 'materiales/acolchado'),
-  M('flecos', 'Flecos', 'Tiras sueltas en el borde.', None), M('pedreria', 'Pedrería', 'Apliques de cristal o mostacillas.', None)]
+  M('bordado', 'Bordado', 'Dibujo hecho con hilo.', 'detalles/bordado'), M('volados', 'Volados', 'Tiras fruncidas que ondulan.', 'detalles/volados'),
+  M('tachas', 'Tachas', 'Apliques de metal.', 'detalles/tachas'), M('cutouts', 'Cut-outs', 'Aberturas que dejan ver la piel.', 'detalles/cutouts'),
+  M('plisado', 'Plisado', 'Pliegues fijos y parejos.', 'detalles/plisado'), M('acolchado', 'Acolchado', 'Costuras en rombo con relleno.', 'materiales/acolchado'),
+  M('flecos', 'Flecos', 'Tiras sueltas en el borde.', 'detalles/flecos'), M('pedreria', 'Pedrería', 'Apliques de cristal o mostacillas.', 'detalles/pedreria')]
 
 # ---------- estampas, por familia (las dibujadas en app/siluetas/estampas) ----------
 E = lambda id, n, sil, **k: dict(id=id, n=n, sil=f'estampas/estampa_{sil}', **k)
@@ -233,7 +233,7 @@ for k, v in DETALLE_POR_PRENDA.items(): assert set(v) <= ids_det, (k, set(v) - i
 
 # ---------- los dibujos que usa, embebidos (la app no carga archivos sueltos) ----------
 usados = {c['sil'] for c in CORTES} | {t['sil'] for t in TIROS} | {p['sil'] for p in PRENDAS} | {t['sil'] for p in PRENDAS for t in p['tipos']} | \
-         {i['tex'] for g in MATERIALES for i in g['items']} | {d['tex'] for d in DETALLES if d['tex']} | {i['sil'] for f in ESTAMPAS for i in f['items'] if i['sil']}
+         {i['tex'] for g in MATERIALES for i in g['items']} | {'estampas/estampa_corazones', 'estampas/estampa_geometrico', 'estampas/estampa_rayas', 'estampas/estampa_lunares', 'estampas/estampa_floral', 'estampas/estampa_gamuza'} | {d['tex'] for d in DETALLES if d['tex']} | {i['sil'] for f in ESTAMPAS for i in f['items'] if i['sil']}
 # los que ya viajan en DIS (app/diseno/diseno.json, de codigo/armar_diseno.py) no se repiten: la app busca en los dos
 _h = open('app/index.html').read()
 en_dis = set(json.loads(_h.split('\nconst DIS=')[1].split('\n')[0][:-1])['svg']) if '\nconst DIS=' in _h else set()

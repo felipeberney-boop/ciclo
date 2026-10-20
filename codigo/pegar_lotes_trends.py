@@ -32,12 +32,16 @@ def leer_lote(ruta):
             anual[n].setdefault(y, []).append(0.5 if v.strip() == '<1' else float(v or 0))
     return {n: {y: st.mean(v) for y, v in d.items()} for n, d in anual.items()}
 
+def correlacion(x, y):  # statistics.correlation recién existe en Python 3.10
+    mx, my = st.mean(x), st.mean(y)
+    return sum((a - mx) * (b - my) for a, b in zip(x, y)) / (sum((a - mx) ** 2 for a in x) * sum((b - my) ** 2 for b in y)) ** .5
+
 informe, nuevas = [], []
 for ruta in sorted(glob.glob('datasets/trends_lotes/*.csv')):
     L = leer_lote(ruta); a = L.get('trench coat')
     if not a: informe.append(f'- {ruta}: sin columna «trench coat», no entra.'); continue
     ys = [y for y in Y if y in a and a[y] > 0]
-    r = st.correlation([a[y] for y in ys], [trench[y] for y in ys])
+    r = correlacion([a[y] for y in ys], [trench[y] for y in ys])
     if r < 0.95: informe.append(f'- {ruta}: el ancla no pega (r = {r:.2f}), no entra.'); continue
     k = st.median(trench[y] / a[y] for y in ys)
     for termino, serie in L.items():
@@ -59,3 +63,17 @@ with open(BASE, 'w', newline='') as f:
 os.makedirs('datasets/trends_lotes', exist_ok=True)
 open('datasets/trends_lotes/informe.md', 'w').write('# Lotes de Google Trends: qué entró y qué no\n\n' + '\n'.join(informe) + '\n')
 print('\n'.join(informe)); print(f'{len(ids)} series nuevas en {BASE}')
+
+# 5. a la app: GREL de cada serie nueva, dividida por la mediana de las 16 originales de cada año y sobre su máximo desde 2010
+import json
+ORIG = ['jamplio', 'jmedio', 'jajust', 'cargo', 'buzo', 'trench', 'capa', 'kimono', 'cuero', 'gamuza', 'encaje', 'rayas', 'lunares', 'floral', 'animal', 'corset']
+W = {}
+for f in filas: W.setdefault(f['atributo_id'], {})[int(f['anio'])] = float(f['indice_0_100'])
+med = {y: st.median(W[k][y] for k in ORIG) for y in Y}
+h = open('app/index.html').read(); i = h.index('\nconst GREL=') + len('\nconst GREL=')
+G, j = json.JSONDecoder().raw_decode(h, i)
+for aid in ids:
+    rel = {y: W[aid][y] / med[y] for y in Y}; mx = max(rel[y] for y in Y if y >= 2010) or 1
+    G[aid] = [round(rel[y] / mx * 100, 1) if y >= 2010 else None for y in Y]
+open('app/index.html', 'w').write(h[:i] + json.dumps(G, ensure_ascii=False, separators=(',', ':')) + h[j:])
+print(f'GREL: {len(G)} series en la app')

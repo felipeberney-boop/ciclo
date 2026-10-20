@@ -218,8 +218,22 @@ def hoja(ref):
     if k == 'mat': return next(i for g in MATERIALES for i in g['items'] if i['id'] == v)
     if k == 'estampa': return next(i for f in ESTAMPAS for i in f['items'] if i['id'] == v)
     raise KeyError(ref)
+# ---------- series propias nuevas (codigo/pegar_lotes_trends.py): la hoja pasa a dato directo y deja de pedir prestado ----------
+import csv as _csv
+SERIES = {}
+for r in _csv.DictReader(open('datasets/plan_exportacion_trends.csv')): SERIES[r['hoja_taxonomia']] = r['termino']
+_hay = {r['atributo_id'] for r in _csv.DictReader(open('datasets_procesados/series_google_trends/trends_mundo__web_anual.csv'))}
+def hoja_ref(ref):
+    k, v = ref.split(':', 1)
+    if k == 'det': return next(d for d in DETALLES if d['id'] == v)
+    return hoja(ref)
+for ref, termino in SERIES.items():
+    aid = ref.split(':')[1].replace('/', '_')
+    if aid in _hay:
+        h = hoja_ref(ref); h['serie'], h['termino'] = aid, termino
+        PRESTA.pop(ref, None)
 for ref, (de, porque) in PRESTA.items():
-    h = hoja(ref); assert not any(h.get(x) for x in ('km', 'rec', 'je', 'jeans')), ('ya tiene serie propia', ref)
+    h = hoja(ref); assert not any(h.get(x) for x in ('km', 'rec', 'je', 'jeans', 'serie')), ('ya tiene serie propia', ref)
     if de.split(':')[0] in ('tipo', 'corte', 'mat', 'estampa'): hoja(de)  # el pariente existe
     h['presta_de'], h['presta_porque'] = de, porque
 

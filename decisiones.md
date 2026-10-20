@@ -733,3 +733,9 @@ colores del vocabulario): **26 directo, 39 prestado, 63 sin dato**. El plan para
 en `datasets/plan_exportacion_trends.csv` (36 términos en 9 lotes con trench coat de ancla) y se pega con
 `codigo/pegar_lotes_trends.py`.
 
+**Las 36 búsquedas nuevas, pegadas (20/10/2026).** Entraron 32 de 36 (el ancla pega en los nueve lotes). Las hojas
+con dato directo pasan de 26 a 58; quedan 36 prestadas y 34 sin dato. Las nuevas se leen como las 16 de antes
+(peso frente a las otras búsquedas de moda, con la mediana de las 16 originales, para que sumar series no mueva las
+que ya estaban), pero no entran al K-means: no tienen pasarela medida. Cable knit, tweed, capri y bermuda no
+alcanzaron (pocos años útiles o serie plana) y siguen prestadas.
+

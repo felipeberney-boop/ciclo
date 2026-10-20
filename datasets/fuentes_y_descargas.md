@@ -163,3 +163,14 @@ fecha en que lo bajamos y su licencia.
 | Fashion Dataset, 15.702 vestidos | Etiquetado por estampa pero sin fecha: no sirve para series |
 | Runways since 2011 | 6.655 desfiles y 132.118 imágenes sin etiquetas; queda para medir color |
 | Marcas argentinas | Fuera del alcance del proyecto |
+
+## Google Trends · 36 términos nuevos (20/10/2026)
+
+Exportados a mano desde Google Trends, mundial, «2004 – presente», mensual, todas las categorías, el 20/10/2026.
+Nueve comparaciones de trench coat (ancla) + 4 términos; los links y la hoja de la taxonomía de cada término están
+en `datasets/plan_exportacion_trends.csv`, los CSV tal como se bajaron en `datasets/trends_lotes/`. Se pegan con
+`codigo/pegar_lotes_trends.py`: promedio anual 2004–2025, escala del ancla (el trench de cada lote correlaciona 1,00
+con el ya medido) y cada serie a su propio máximo. Entraron 32; quedaron afuera cable knit (8 años útiles), tweed
+(plana), capri pants (0) y bermuda shorts (7), que siguen con dato prestado. Uso bajo los términos de Google, con
+atribución y sin redistribuir el export.
+

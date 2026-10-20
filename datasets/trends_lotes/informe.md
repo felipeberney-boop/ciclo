@@ -1,0 +1,38 @@
+# Lotes de Google Trends: qué entró y qué no
+
+- ruffles → det:volados: entra (22 años útiles, ancla r = 1.00).
+- embroidery → det:bordado: entra (22 años útiles, ancla r = 1.00).
+- pleated skirt → det:plisado: entra (21 años útiles, ancla r = 1.00).
+- quilted jacket → det:acolchado: entra (17 años útiles, ancla r = 1.00).
+- fleece → mat:fleece: entra (22 años útiles, ancla r = 1.00).
+- cable knit: 8 años útiles, no entra; sigue prestado.
+- boucle → mat:boucle: entra (22 años útiles, ancla r = 1.00).
+- tulle → mat:tul: entra (22 años útiles, ancla r = 1.00).
+- satin → mat:satenseda: entra (22 años útiles, ancla r = 1.00).
+- tweed: plana, no entra; sigue prestado.
+- cashmere → mat:cashmere: entra (22 años útiles, ancla r = 1.00).
+- chiffon → mat:gasa: entra (22 años útiles, ancla r = 1.00).
+- denim shorts → tipo:pantalones/short: entra (13 años útiles, ancla r = 1.00).
+- capri pants: 0 años útiles, no entra; sigue prestado.
+- corduroy → mat:corduroy: entra (22 años útiles, ancla r = 1.00).
+- linen → mat:lino: entra (22 años útiles, ancla r = 1.00).
+- shirt dress → tipo:vestidos/camisero: entra (22 años útiles, ancla r = 1.00).
+- wrap dress → tipo:vestidos/cruzado: entra (21 años útiles, ancla r = 1.00).
+- bodycon dress → tipo:vestidos/tubo: entra (15 años útiles, ancla r = 1.00).
+- jumpsuit → tipo:enteritos/largo: entra (22 años útiles, ancla r = 1.00).
+- romper → tipo:enteritos/corto: entra (22 años útiles, ancla r = 1.00).
+- overalls → tipo:enteritos/jardinero: entra (22 años útiles, ancla r = 1.00).
+- puffer jacket → tipo:abrigos/puffer: entra (12 años útiles, ancla r = 1.00).
+- cardigan → tipo:buzos/cardigan: entra (22 años útiles, ancla r = 1.00).
+- mini skirt → tipo:faldas/mini: entra (22 años útiles, ancla r = 1.00).
+- midi skirt → tipo:faldas/midi: entra (12 años útiles, ancla r = 1.00).
+- maxi skirt → tipo:faldas/maxi: entra (15 años útiles, ancla r = 1.00).
+- slip dress → tipo:vestidos/slip: entra (21 años útiles, ancla r = 1.00).
+- turtleneck → tipo:buzos/polera: entra (22 años útiles, ancla r = 1.00).
+- blouse → tipo:camisas/blusa: entra (22 años útiles, ancla r = 1.00).
+- tank top → tipo:remeras/musculosa: entra (22 años útiles, ancla r = 1.00).
+- bermuda shorts: 7 años útiles, no entra; sigue prestado.
+- fringe → det:flecos: entra (22 años útiles, ancla r = 1.00).
+- sequins → det:pedreria: entra (22 años útiles, ancla r = 1.00).
+- camo → estampa:camo: entra (22 años útiles, ancla r = 1.00).
+- tie dye → estampa:tiedye: entra (22 años útiles, ancla r = 1.00).

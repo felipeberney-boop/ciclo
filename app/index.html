@@ -724,7 +724,7 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 .asdato .n{font-weight:500}.asdato .v{font-family:var(--mono);font-size:11px;color:var(--ink-2)}.asspark{color:var(--ink)}
 .asacciones{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .asacciones .lbl{width:100%}
-.asa.aviso{border-left-style:solid!important}
+.asa.asnota{border-left-style:solid!important}
 .aslooks{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:10px}
 .aslooks button{border:1px solid var(--rule);background:var(--card);padding:0;cursor:pointer;text-align:left;font:inherit;font-size:10.5px;color:var(--ink-2)}
 .aslooks img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover}.aslooks span{display:block;padding:4px 6px}
@@ -2445,7 +2445,7 @@ function asPintar(){
     const d=document.createElement('div');
     if(m.role==='user'){d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}
     if(m.error){d.className='asa err';d.innerHTML=`<p>${escH(m.error)}</p>`;ch.appendChild(d);return;}
-    if(m.aviso){d.className='asa aviso';d.innerHTML=m.aviso;ch.appendChild(d);return;}
+    if(m.aviso){d.className='asa asnota';d.innerHTML=m.aviso;ch.appendChild(d);return;}
     const r=m.r,E=m.E,filas=r.atributos.filter(id=>E.serie[id]).map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span>${asSpark(E.serie[id])}<span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
     d.className='asa';
     d.innerHTML=`<div class="h"><span class="tag ia2">interpretado · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">no lo tengo medido</span>':''}</div>

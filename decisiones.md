@@ -575,3 +575,30 @@ prompts no se pisan.
 ofrece Llama. La función pasa a `openai/gpt-oss-120b` (`prompt_lectura_recomendacion_v3.md`). La primera
 lectura real ya muestra que el modelo y la recomendación fija pueden no coincidir (jeans baggy en high
 fashion: «Entrar» contra «Esperar»), y eso es justamente lo que la interfaz deja comparar.
+
+## 2026-10-20 · Preguntale a CICLO: el LLM de la clase, hecho para CICLO
+
+**Qué pidió la cátedra.** Un LLM para la app como los de la clase. Por ahora, la versión que corre con la API
+key de cada uno y en el navegador (V1/V2), no la de servidor (V3/V4).
+
+**Cómo funciona.** Una vista nueva, «Preguntar». Se pega la API key de Groq (queda en el navegador) y se
+pregunta en lenguaje natural. El modelo recibe el perfil elegido en la app y DATOS: un Markdown con el
+formato de los ejemplos de la clase. Contesta un JSON que la página valida y muestra en salmón.
+
+**La fuente de datos es nuestra y se genera.** `app/llm/ciclo_datos.md` lo arma `codigo/armar_datos_llm.js`
+desde las constantes de la app: cómo leer cada número y de qué capa sale, etapas, perfiles, la regla fija
+por etapa y perfil, un resumen de los 20 atributos, una ficha por atributo (pasarela, búsqueda hasta 2024,
+peso afuera, Argentina, validación, lectura, sinónimos), lo de Diseñar (cortes, fits, cuellos, mangas,
+colores leídos por CLIP) y lo que CICLO no puede responder. Escribirlo a mano lo habría desactualizado con
+el primer cambio del modelo.
+
+**Lo que no copiamos de los ejemplos.** El documento entero pesa ~7.700 tokens y el plan gratis da 8.000 por
+minuto. Se manda lo general siempre y sólo las fichas que nombra la conversación: ~2.900 tokens por pregunta.
+
+**Lo que corregimos al probarlo.** Contestó «Entrar» para high fashion en pico aunque la regla estaba en
+DATOS: ahora la página calcula la regla y la pega en la ficha, y avisa si el modelo se aparta. Confundió dos
+cuellos porque la línea decía «Halter 17 % (+7,8)»: ahora dice «Halter: 17 %, +7,8 puntos». Detalle y
+pruebas en `prompts/prompt_asistente_v1.md`.
+
+**IA-5 sigue igual.** La lectura de Recorridos usa la clave guardada en Netlify; «Preguntar» no depende de
+ella.

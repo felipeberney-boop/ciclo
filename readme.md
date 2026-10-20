@@ -80,6 +80,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | Marcas | Lyst Index, 34 trimestres |
 | Retornos | Qué vuelve y cada cuánto |
 | Consulta | Subir una prenda y recibir su etapa |
+| Preguntar | Chat con un LLM que contesta con los datos de CICLO y tu perfil (pegás tu API key de Groq) |
 | Método | Fuentes, recortes y límites declarados |
 
 ## Fuentes de datos
@@ -104,7 +105,7 @@ Las series ya procesadas que usa la app están en `datasets_procesados/`.
 
 ## Dónde interviene la IA
 
-Seis puntos. Tres corren una sola vez, en batch; tres se disparan con el usuario.
+Ocho puntos. Tres corren una sola vez, en batch; el resto se dispara con el usuario.
 
 | | Momento | Técnica | Cuándo |
 |---|---|---|---|
@@ -115,13 +116,15 @@ Seis puntos. Tres corren una sola vez, en batch; tres se disparan con el usuario
 | IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE, desde una función de Netlify | en vivo, en la app oficial |
 | IA-6 | Consulta por imagen | CLIP en el navegador: zero-shot + looks parecidos | en vivo |
 | IA-7 | Diseñar: referencias y colores | CLIP sobre la pasarela de Vogue | batch |
+| IA-8 | Preguntale a CICLO | LLM (Groq) desde el navegador, con tu API key y `llm/ciclo_datos.md` | en vivo |
 
 **La regla que atraviesa todo:** el modelo de lenguaje nunca ve una fila de la base. Recibe métricas ya
 calculadas —nivel, momento, crecimiento, distancia al pico— y el tipo de cliente. Todo lo que devuelve
 aparece en la interfaz marcado como interpretación. Los prompts están versionados en `prompts/`.
 
-**Claves de API:** no hay ninguna en el repositorio. La clave de Groq se configura como variable de
-entorno en Netlify (`GROQ_API_KEY`). El `.gitignore` bloquea `.env` y similares.
+**Claves de API:** no hay ninguna en el repositorio. IA-5 usa la clave de Groq configurada como variable de
+entorno en Netlify (`GROQ_API_KEY`). IA-8, «Preguntar», funciona como la V2 de la clase: cada uno pega su
+API key en la página y queda guardada sólo en su navegador. El `.gitignore` bloquea `.env` y similares.
 
 ## El modelo
 

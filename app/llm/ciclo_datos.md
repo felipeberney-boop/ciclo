@@ -1,0 +1,139 @@
+# CICLO · datos para el asistente
+
+CICLO es una app de la materia Sistemas generativos e IA para Diseño (UdeSA, 2026). Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja con ropa: no hay calzado.
+Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: 2026-10-20.
+
+## Cómo leer los números
+- Pasarela | fuente: Vogue Runway, 1,28 millones de looks, 2010–2023 | medido | nivel: dónde está 2022–23 contra su propio máximo (100 % = en su pico) | momento: 2021–23 contra 2018–20
+- Búsqueda | fuente: Google Trends mundo, dividido por el promedio de 35 términos de moda de cada año | medido | va hasta 2024: en 2025 Google cambió cómo mide y casi todo salta a la vez, 2026 se excluye | nivel: 2023–24 contra su máximo | momento: 2023–24 contra 2020–21
+- Peso afuera 2023→2025 | fuente: Google Trends mundo, cada año dividido por la mediana de 16 búsquedas de moda | medido | cuántos puntos gana o pierde frente a las otras búsquedas; corrige el salto de 2025
+- Argentina | fuente: Google Trends Argentina | medido | Argentina no tuvo el salto de 2025
+- Validación | fuente: Google Shopping 2021–22→2024–25 y reseñas de Amazon 2019→2022 | medido | el modelo no las usa; sirven para ver si acertó
+- Etapa | fuente: K-means (k=4) sobre los cuatro números de pasarela y búsqueda | calculado | los grupos los nombramos nosotros por el prototipo más cercano
+- Colores, fits, cuellos y mangas | fuente: CLIP leyendo la pasarela 2018–19 contra 2022–23 | interpretación de un modelo, no venta
+- Recomendación | fuente: regla fija de CICLO según etapa y perfil | interpretación
+
+## Etapas
+- Emergente | casi nadie lo busca todavía pero la pasarela lo empuja | CICLO no lo detecta: la pasarela pública termina en 2023
+- En ascenso | sube en pasarela y en búsqueda
+- Pico | búsqueda alta, cerca de su máximo, y la pasarela ya no acelera
+- Saturada | búsqueda baja o cayendo y la pasarela también: ya lo tiene todo el mercado
+- En retorno | vuelve a subir algo que ya tuvo su ciclo
+
+## Perfiles
+- Fast fashion | perfil: fast | high street · Zara, H&M, Shein | lead time: 6 semanas | ventana: la prenda tiene que leerse actual 1 año | decide hasta: 2026 | error medido a esa distancia: ±12 puntos
+- Contemporary | perfil: medio | bridge · COS, Massimo Dutti, Arket | lead time: 4 meses | ventana: la prenda tiene que leerse actual 2 años | decide hasta: 2027 | error medido a esa distancia: ±16 puntos
+- High fashion | perfil: premium | prêt-à-porter de lujo · Loewe, Miu Miu, Bottega Veneta | lead time: 6 meses | ventana: la prenda tiene que leerse actual 3 años | decide hasta: 2028 | error medido a esa distancia: ±19 puntos
+- Diseñador emergente | perfil: nicho | marca de autor · colección propia | lead time: 3 meses | ventana: la prenda tiene que leerse actual 5 años | decide hasta: 2030 | error medido a esa distancia: ±25 puntos
+
+## Qué conviene según etapa y perfil
+Si diseñás por tu cuenta (sin producción ni stock), «Esperar» pasa a ser «Explorar»: podés empezar a diseñarlo ya y decidir la serie cuando la señal se confirme.
+- Fast fashion · Emergente | perfil: fast | acción: Entrar | por qué: Es el momento: tenés seis semanas de lead time y el high street todavía no lo tiene.
+- Fast fashion · En ascenso | perfil: fast | acción: Entrar | por qué: Todavía hay margen. Si salís en dos ciclos llegás antes que la competencia directa.
+- Fast fashion · Pico | perfil: fast | acción: Entrar | por qué: Está en pico. Con tu plazo llegás, pero es el último tren.
+- Fast fashion · Saturada | perfil: fast | acción: Salir | por qué: Ya lo tienen todos. Producir ahora es competir por precio.
+- Fast fashion · En retorno | perfil: fast | acción: Esperar | por qué: Está volviendo, pero todavía no. Vigilalo mes a mes.
+- High fashion · Emergente | perfil: premium | acción: Entrar | por qué: Con seis meses de lead time, esta es tu ventana. Cuando baje al high street vos ya estás vendiendo.
+- High fashion · En ascenso | perfil: premium | acción: Entrar | por qué: Justo a tiempo. Un ciclo más y llegás cuando la calle ya lo tiene.
+- High fashion · Pico | perfil: premium | acción: Esperar | por qué: Con seis meses de lead time llegarías al pico ya pasado. Conviene esperar el retorno.
+- High fashion · Saturada | perfil: premium | acción: Salir | por qué: Saturado. Para una casa de high fashion, entrar acá diluye la percepción de valor.
+- High fashion · En retorno | perfil: premium | acción: Esperar | por qué: El retorno es tu oportunidad natural, pero todavía es temprano para comprometer producción.
+- Contemporary · Emergente | perfil: medio | acción: Esperar | por qué: Todavía es muy temprano para tu volumen: si no se confirma, te comés el stock.
+- Contemporary · En ascenso | perfil: medio | acción: Entrar | por qué: Es tu punto dulce. Con cuatro meses de lead time llegás mientras sigue subiendo y tenés escala para aprovecharlo.
+- Contemporary · Pico | perfil: medio | acción: Entrar | por qué: Está en pico y tu plazo te deja llegar. Producí corto y no renueves.
+- Contemporary · Saturada | perfil: medio | acción: Salir | por qué: Saturado. Acá sólo se compite por precio y ahí te gana el high street.
+- Contemporary · En retorno | perfil: medio | acción: Esperar | por qué: El retorno todavía no tiene volumen. Esperá a que la búsqueda confirme.
+- Diseñador emergente · Emergente | perfil: nicho | acción: Entrar | por qué: Es exactamente tu terreno: paleta angosta, poca competencia, alto diferencial.
+- Diseñador emergente · En ascenso | perfil: nicho | acción: Entrar | por qué: Todavía es tuyo. Cuando se ensanche la paleta va a dejar de serlo.
+- Diseñador emergente · Pico | perfil: nicho | acción: Salir | por qué: En pico ya no diferencia. Buscá lo que está emergiendo.
+- Diseñador emergente · Saturada | perfil: nicho | acción: Salir | por qué: Saturado. Para una marca de autor esto ya es ruido.
+- Diseñador emergente · En retorno | perfil: nicho | acción: Entrar | por qué: Un revival bien leído es la mejor jugada de una marca de autor: nostalgia con firma propia.
+
+## Resumen: todos los atributos
+- Jeans baggy | id: jamplio | etapa: Pico | búsqueda: 91 % de su pico, momento +3 % | afuera 2023→2025: +13
+- Jeans rectos | id: jmedio | etapa: Pico | búsqueda: 95 % de su pico, momento +6 % | afuera 2023→2025: -5
+- Jeans skinny | id: jajust | etapa: Saturada | búsqueda: 24 % de su pico, momento -39 % | afuera 2023→2025: -6
+- Buzo / hoodie | id: buzo | etapa: Pico | búsqueda: 87 % de su pico, momento -10 % | afuera 2023→2025: -16
+- Floral | id: floral | etapa: Pico | búsqueda: 87 % de su pico, momento +17 % | afuera 2023→2025: -4
+- Lunares | id: lunares | etapa: Saturada | búsqueda: 32 % de su pico, momento -29 % | afuera 2023→2025: +32
+- Cuero | id: cuero | etapa: Saturada | búsqueda: 29 % de su pico, momento -11 % | afuera 2023→2025: -2
+- Animal print | id: animal | etapa: En retorno | búsqueda: 26 % de su pico, momento -32 % | afuera 2023→2025: +11
+- Kimono | id: kimono | etapa: Saturada | búsqueda: 41 % de su pico, momento -20 % | afuera 2023→2025: -15
+- Capa | id: capa | etapa: Saturada | búsqueda: 42 % de su pico, momento -5 % | afuera 2023→2025: +7
+- Trench | id: trench | etapa: Pico | búsqueda: 58 % de su pico, momento +18 % | afuera 2023→2025: +3
+- Encaje | id: encaje | etapa: Saturada | búsqueda: 23 % de su pico, momento -20 % | afuera 2023→2025: +3
+- Cuadros | id: cuadros | etapa: Saturada | búsqueda: 19 % de su pico, momento -29 %
+- Piel | id: piel | etapa: Saturada | búsqueda: 43 % de su pico, momento -2 %
+- Cargo | id: cargo | etapa: Pico | búsqueda: 88 % de su pico, momento +64 % | afuera 2023→2025: -53
+- Y2K | id: y2k | etapa: En ascenso | búsqueda: 95 % de su pico, momento +81 %
+- Blazer oversize | id: blazer | etapa: Pico | búsqueda: 84 % de su pico, momento +15 %
+- Corset | id: corset | etapa: sin etapa (no entra al K-means: Vogue no lo etiqueta) | afuera 2023→2025: -27
+- Rayas | id: rayas | etapa: sin etapa (no entra al K-means: Vogue no lo etiqueta) | afuera 2023→2025: +14
+- Gamuza | id: gamuza | etapa: sin etapa (no entra al K-means: Vogue no lo etiqueta) | afuera 2023→2025: +50
+
+## Fichas de atributos
+- Jeans baggy | id: jamplio | busca: baggy, wide leg, mom, barrel, boyfriend, relaxed, jean ancho, jeans anchos, pantalon ancho, jean amplio | tipo: Jeans | etapa: Pico | pasarela: 61 % de su pico, momento -7 %, pico en 2021 | búsqueda: 91 % de su pico, momento +3 %, sigue subiendo (máximo en 2024) | afuera 2023→2025: +13 puntos | en Argentina todavía sube (máximo en 2025) | Google Shopping: +95 % | reseñas de Amazon: +79 % | lectura: El corte que toma la posta. En búsqueda pasa del 13 % de los jeans en 2012 al 55 % en 2025, y cruza al ajustado en 2021, en la web y en Google Shopping el mismo año. Adentro del grupo no todo sube igual: el mom jean tocó techo en 2021 y ya cae, mientras baggy, wide leg y barrel siguen subiendo. La pasarela de denim lo venía mostrando desde 2016.
+- Jeans rectos | id: jmedio | busca: jean recto, jeans rectos, straight, bootcut, flare, oxford, tapered, jean medio | tipo: Jeans | etapa: Pico | pasarela: 61 % de su pico, momento -7 %, pico en 2021 | búsqueda: 95 % de su pico, momento +6 %, sigue subiendo (máximo en 2024) | afuera 2023→2025: -5 puntos | Google Shopping: +99 % | reseñas de Amazon: sin dato | lectura: El corte que crece callado. Recto, bootcut y flare suben sin pausa desde 2015, y en 2025 la búsqueda de medios ya iguala a la de ajustados. Es la transición: quien deja el skinny muchas veces pasa primero por el recto antes de llegar al amplio.
+- Jeans skinny | id: jajust | busca: skinny, chupin, slim, jeggings, jean ajustado, jean al cuerpo | tipo: Jeans | etapa: Saturada | pasarela: 61 % de su pico, momento -7 %, pico en 2021 | búsqueda: 24 % de su pico, momento -39 %, pico en 2021 | afuera 2023→2025: -6 puntos | en Argentina tocó techo en 2016 | Google Shopping: +53 % | reseñas de Amazon: -39 % | lectura: El ciclo completo, de subida a salida. Dominó la búsqueda de jeans de 2009 a 2020 —hasta el 73 % en 2012— y desde 2021 pierde terreno. En Argentina el chupín tocó techo en 2016, cuatro años después que el mundo. En el catálogo de Zara 2024, las cinco prendas ajustadas estaban en promoción.
+- Buzo / hoodie | id: buzo | busca: buzo, hoodie, canguro, capucha, athleisure, sudadera, sweatshirt | tipo: Tejidos y buzos | etapa: Pico | pasarela: 38 % de su pico, momento +4 %, pico en 2021 | búsqueda: 87 % de su pico, momento -10 %, sigue subiendo (máximo en 2024) | afuera 2023→2025: -16 puntos | en Argentina tocó techo en 2023 | Google Shopping: -16 % | reseñas de Amazon: +64 % | lectura: La cadena completa, con nombres. Raf Simons lo lleva a la pasarela en los 2000, T by Alexander Wang lo instala entre 2010 y 2014, Vetements lo explota después de 2015. La búsqueda de «hoodie» crece sin pausa desde 2016, y en Argentina «buzo oversize» toca techo en 2023.
+- Floral | id: floral | busca: floral, flores, flor, estampado floral | tipo: Estampa | etapa: Pico | pasarela: 45 % de su pico, momento -10 %, pico en 2018 | búsqueda: 87 % de su pico, momento +17 %, sigue subiendo (máximo en 2024) | afuera 2023→2025: -4 puntos | Google Shopping: +95 % | reseñas de Amazon: +7 % | lectura: Sube en pasarela desde 2009 y se queda arriba. En la búsqueda es estacional y crece un poco todos los años: un atributo que nunca se va, igual que en el catálogo de Zara, donde aparece todos los junios.
+- Lunares | id: lunares | busca: lunares, polka dot, topos, puntos | tipo: Estampa | etapa: Saturada | pasarela: 32 % de su pico, momento -30 %, pico en 2015 | búsqueda: 32 % de su pico, momento -29 %, pico en 2019 | afuera 2023→2025: +32 puntos | Google Shopping: +24 % | reseñas de Amazon: +10 % | lectura: En pasarela tuvo su momento entre 2014 y 2017, con Red Valentino. En la búsqueda vuelve cada seis años: 2013, 2019 y 2025. Es el retorno más regular que medimos.
+- Cuero | id: cuero | busca: cuero, leather, campera de cuero, cuerina, eco cuero | tipo: Material | etapa: Saturada | pasarela: 30 % de su pico, momento -45 %, pico en 2018 | búsqueda: 29 % de su pico, momento -11 %, sigue subiendo (máximo en 2024) | afuera 2023→2025: -2 puntos | en Argentina tocó techo en 2022 | Google Shopping: +29 % | reseñas de Amazon: +48 % | lectura: La pasarela tiene la campera de cuero desde siempre. Lo que cambia es abajo: la búsqueda de «faux leather» se multiplica por nueve entre 2004 y 2021. La versión barata llega a la búsqueda antes de que el original se sature — la misma huella que medimos en el catálogo, con 10 de 28 prendas sintéticas.
+- Animal print | id: animal | busca: animal print, leopardo, leopard, cebra, zebra, serpiente, vaca | tipo: Estampa | etapa: En retorno | pasarela: 7 % de su pico, momento -84 %, pico en 2019 | búsqueda: 26 % de su pico, momento -32 %, pico en 2012 | afuera 2023→2025: +11 puntos | en Argentina tocó techo en 2015 | Google Shopping: +5 % | reseñas de Amazon: +149 % | lectura: El pico de pasarela de 2019 lo explica casi entero un solo desfile: Vetements, con 82 de los 117 looks. Por eso no lo tomamos como señal. La búsqueda, en cambio, marca retornos cada cinco a ocho años: 2012, 2020 y otra vez 2024.
+- Kimono | id: kimono | busca: kimono | tipo: Abrigo | etapa: Saturada | pasarela: 42 % de su pico, momento -8 %, pico en 2021 | búsqueda: 41 % de su pico, momento -20 %, pico en 2018 | afuera 2023→2025: -15 puntos | Google Shopping: +11 % | reseñas de Amazon: +53 % | lectura: El contraejemplo, y lo mostramos a propósito. La búsqueda de «kimono jacket» toca techo en 2018 y la pasarela recién en 2021. Esta vino de la calle —festivales, estética boho— y la pasarela la adoptó después. No todo baja de arriba.
+- Capa | id: capa | busca: capa, cape, poncho | tipo: Abrigo | etapa: Saturada | pasarela: 43 % de su pico, momento -3 %, pico en 2021 | búsqueda: 42 % de su pico, momento -5 %, pico en 2015 | afuera 2023→2025: +7 puntos | Google Shopping: sin dato | reseñas de Amazon: sin dato | lectura: Crece en pasarela desde 2010, con Valentino, The Row y Balenciaga. En la búsqueda sube de a poco, con un pico cada invierno. Todavía no cerró ningún ciclo.
+- Trench | id: trench | busca: trench, gabardina, piloto | tipo: Abrigo | etapa: Pico | pasarela: 40 % de su pico, momento -17 %, pico en 2021 | búsqueda: 58 % de su pico, momento +18 %, sigue subiendo (máximo en 2024) | afuera 2023→2025: +3 puntos | Google Shopping: +16 % | reseñas de Amazon: +43 % | lectura: Burberry lo tiene fijo en la pasarela y la búsqueda crece sostenida desde 2004, con un pulso cada otoño. Es un básico, no una tendencia: sirve de control, igual que el liso en el catálogo.
+- Encaje | id: encaje | busca: encaje, lace, puntilla, transparencia | tipo: Material | etapa: Saturada | pasarela: 30 % de su pico, momento -32 %, pico en 2016 | búsqueda: 23 % de su pico, momento -20 %, pico en 2016 | afuera 2023→2025: +3 puntos | Google Shopping: +33 % | reseñas de Amazon: +1 % | lectura: Pasarela y búsqueda tocan techo el mismo año, 2016. Cuando las dos puntas coinciden, la tendencia no bajó por la cadena: salió de las dos a la vez.
+- Cuadros | id: cuadros | busca: cuadros, plaid, tartan, escoces, pata de gallo, cuadrille | tipo: Estampa | etapa: Saturada | pasarela: 37 % de su pico, momento -23 %, pico en 2018 | búsqueda: 19 % de su pico, momento -29 %, pico en 2004 | Google Shopping: -30 % | reseñas de Amazon: +25 %
+- Piel | id: piel | busca: piel, fur, tapado de piel, piel sintetica, peluche | tipo: Material | etapa: Saturada | pasarela: 28 % de su pico, momento -34 %, pico en 2011 | búsqueda: 43 % de su pico, momento -2 %, pico en 2004 | Google Shopping: sin dato | reseñas de Amazon: sin dato
+- Cargo | id: cargo | busca: cargo, bolsillos, utilitario, militar, pantalon cargo | tipo: Pantalones | etapa: Pico | pasarela: 46 % de su pico, momento -8 %, pico en 2021 | búsqueda: 88 % de su pico, momento +64 %, pico en 2023 | afuera 2023→2025: -53 puntos | en Argentina tocó techo en 2023 | Google Shopping: +27 % | reseñas de Amazon: +23 % | lectura: El ciclo cerrado más limpio. La pasarela utilitaria llega a su punto más alto en 2021 y la búsqueda de «cargo pants» en 2023, en el mundo y en Argentina el mismo año. Dos años de retraso, y hoy en bajada.
+- Y2K | id: y2k | busca: y2k, dosmil, 2000, tiro bajo, baby tee, early 2000s | tipo: Estética | etapa: En ascenso | pasarela: 21 % de su pico, momento +65 %, pico en 2013 | búsqueda: 95 % de su pico, momento +81 %, pico en 2022 | Google Shopping: +203 % | reseñas de Amazon: sin dato
+- Blazer oversize | id: blazer | busca: blazer, saco, sastrero, oversize, americana | tipo: Abrigo | etapa: Pico | pasarela: 42 % de su pico, momento -11 %, pico en 2013 | búsqueda: 84 % de su pico, momento +15 %, pico en 2022 | Google Shopping: +89 % | reseñas de Amazon: +105 %
+- Corset | id: corset | busca: corset, corse, bustier | tipo: Remeras y tops | etapa: sin etapa | búsqueda: pico en 2022 | afuera 2023→2025: -27 puntos | en Argentina tocó techo en 2023 | lectura: Sin etiqueta confiable en pasarela. En la búsqueda es un retorno de manual: quieto durante una década, explota en 2021–2022 en el mundo y en 2023 en Argentina.
+- Rayas | id: rayas | busca: rayas, rayado, stripes, marinero, navy | tipo: Estampa | etapa: sin etapa | búsqueda: sigue subiendo (máximo en 2024) | afuera 2023→2025: +14 puntos | lectura: Crece estable desde 2004 con picos cada verano del hemisferio norte. No hay pasarela: el modelo de visión que etiquetó Vogue no reconoce rayas.
+- Gamuza | id: gamuza | busca: gamuza, suede, ante | tipo: Material | etapa: sin etapa | búsqueda: sigue subiendo (máximo en 2024) | afuera 2023→2025: +50 puntos | lectura: Tuvo un primer momento entre 2015 y 2017 y vuelve fuerte en 2024–2025. En el catálogo de Zara de 2024 ya era el cuarto material: llegó al mainstream justo en la subida del segundo ciclo.
+
+## Diseñar: qué conviene en cada prenda
+- Jeans · Baggy | prenda: jeans | atributo: Jeans baggy (etapa: Pico) | búsqueda: 27 % de las búsquedas de jeans en 2025 (+8 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Wide leg | prenda: jeans | atributo: Jeans baggy (etapa: Pico) | búsqueda: 13 % de las búsquedas de jeans en 2025 (+3 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Mom | prenda: jeans | atributo: Jeans baggy (etapa: Pico) | búsqueda: 6 % de las búsquedas de jeans en 2025 (-6 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Barrel | prenda: jeans | atributo: Jeans baggy (etapa: Pico) | búsqueda: 6 % de las búsquedas de jeans en 2025 (+5 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Recto | prenda: jeans | atributo: Jeans rectos (etapa: Pico) | búsqueda: 5 % de las búsquedas de jeans en 2025 (0 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Bootcut | prenda: jeans | atributo: Jeans rectos (etapa: Pico) | búsqueda: 8 % de las búsquedas de jeans en 2025 (+1 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Flare | prenda: jeans | atributo: Jeans rectos (etapa: Pico) | búsqueda: 7 % de las búsquedas de jeans en 2025 (-1 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Tapered | prenda: jeans | atributo: Jeans rectos (etapa: Pico) | búsqueda: 2 % de las búsquedas de jeans en 2025 (0 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Skinny | prenda: jeans | atributo: Jeans skinny (etapa: Saturada) | búsqueda: 12 % de las búsquedas de jeans en 2025 (-5 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Jeans · Slim | prenda: jeans | atributo: Jeans skinny (etapa: Saturada) | búsqueda: 8 % de las búsquedas de jeans en 2025 (-1 puntos desde 2023) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Azul medio: 48 %, +4,8 puntos; Azul claro / lavado: 17 %, +1,8 puntos; Marrón: 11 %, -0,9 puntos; Gris: 6 %, +0,6 puntos
+- Pantalones · Cargo | prenda: pantalones | atributo: Cargo (etapa: Pico) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 23 %, -1,3 puntos; Verde / oliva: 21 %, -1,3 puntos; Gris: 14 %, +1,3 puntos; Marrón: 14 %, +2,7 puntos
+- Remeras · Al cuerpo | prenda: remeras | fit en la pasarela (CLIP): 2 %, -0,3 puntos desde 2018–19
+- Remeras · Regular | prenda: remeras | fit en la pasarela (CLIP): 1 %, -0,5 puntos desde 2018–19
+- Remeras · Relaxed | prenda: remeras | fit en la pasarela (CLIP): 7 %, +1,3 puntos desde 2018–19
+- Remeras · Oversized | prenda: remeras | fit en la pasarela (CLIP): 32 %, -10,3 puntos desde 2018–19
+- Remeras · Boxy | prenda: remeras | fit en la pasarela (CLIP): 35 %, +8,0 puntos desde 2018–19
+- Remeras · Cropped | prenda: remeras | fit en la pasarela (CLIP): 22 %, +1,8 puntos desde 2018–19
+- Remeras · cuellos, mangas y colores | prenda: remeras | cuellos (CLIP, % de la pasarela 2022–23 y cambio desde 2018–19): Cuello redondo: 22 %, -4,5 puntos; Escote en V: 2 %, +1,0 puntos; Escote scoop: 1 %, +0,7 puntos; Escote bote: 28 %, +3,2 puntos; Escote cuadrado: 1 %, +0,5 puntos; Polera: 17 %, -12,2 puntos; Halter (sólo mujer): 17 %, +7,8 puntos; Cuello drapeado (sólo mujer): 2 %, +1,0 puntos; Mock neck: 11 %, +2,5 puntos | mangas (CLIP, % de la pasarela 2022–23 y cambio desde 2018–19): Manga corta: 26 %, +4,7 puntos; Manga larga: 20 %, -17,0 puntos; Sin manga: 9 %, +4,3 puntos; Manga tres cuartos: 12 %, +3,0 puntos; Hombro caído: 5 %, +3,5 puntos; Raglan: 0 %, -0,2 puntos; Manga abullonada (sólo mujer): 8 %, +1,5 puntos; Manga globo (sólo mujer): 21 %, +0,2 puntos | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 36 %, -7,2 puntos; Gris: 17 %, -1,8 puntos; Rosa: 14 %, +2,5 puntos; Blanco / crudo: 11 %, +3,3 puntos
+- Buzos · Al cuerpo | prenda: buzos | fit en la pasarela (CLIP): 12 %, -0,7 puntos desde 2018–19
+- Buzos · Regular | prenda: buzos | fit en la pasarela (CLIP): 12 %, +0,6 puntos desde 2018–19
+- Buzos · Relaxed | prenda: buzos | fit en la pasarela (CLIP): 4 %, -1,7 puntos desde 2018–19
+- Buzos · Oversized | prenda: buzos | fit en la pasarela (CLIP): 14 %, -0,6 puntos desde 2018–19
+- Buzos · Boxy | prenda: buzos | fit en la pasarela (CLIP): 49 %, -1,4 puntos desde 2018–19
+- Buzos · Cropped | prenda: buzos | fit en la pasarela (CLIP): 9 %, +3,8 puntos desde 2018–19
+- Buzos · cuellos, mangas y colores | prenda: buzos | cuellos (CLIP, % de la pasarela 2022–23 y cambio desde 2018–19): Cuello redondo: 13 %, -6,8 puntos; Capucha: 60 %, +4,8 puntos; Escote en V: 1 %, +0,5 puntos; Mock neck: 26 %, +3,8 puntos; Polera: 1 %, -2,3 puntos | mangas (CLIP, % de la pasarela 2022–23 y cambio desde 2018–19): Manga larga: 14 %, -7,8 puntos; Manga corta: 12 %, -2,9 puntos; Hombro caído: 10 %, -2,2 puntos; Raglan: 15 %, -1,7 puntos; Manga globo (sólo mujer): 49 %, +14,5 puntos | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 26 %, 0,0 puntos; Blanco / crudo: 14 %, -4,5 puntos; Celeste: 13 %, +1,1 puntos; Gris: 10 %, +3,2 puntos
+- Abrigos · Trench | prenda: abrigos | atributo: Trench (etapa: Pico) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 20 %, +4,4 puntos; Beige / camel: 17 %, +4,9 puntos; Azul marino: 17 %, -2,8 puntos; Marrón: 17 %, 0,0 puntos
+- Abrigos · Campera de cuero | prenda: abrigos | atributo: Cuero (etapa: Saturada) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 46 %, +5,8 puntos; Marrón: 18 %, +1,5 puntos; Azul marino: 10 %, -4,0 puntos; Beige / camel: 8 %, +5,2 puntos
+- Abrigos · Capa | prenda: abrigos | atributo: Capa (etapa: Saturada) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 28 %, +0,5 puntos; Beige / camel: 13 %, +2,1 puntos; Marrón: 12 %, +0,8 puntos; Rosa: 8 %, +1,7 puntos
+- Abrigos · Kimono | prenda: abrigos | atributo: Kimono (etapa: Saturada) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Blanco / crudo: 27 %, +7,9 puntos; Negro: 15 %, -7,2 puntos; Rosa: 15 %, -0,6 puntos; Gris: 13 %, +0,4 puntos
+- Abrigos · Blazer oversize | prenda: abrigos | atributo: Blazer oversize (etapa: Pico) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 19 %, -2,0 puntos; Gris: 15 %, +1,7 puntos; Marrón: 11 %, 0,0 puntos; Beige / camel: 10 %, +2,7 puntos
+- Abrigos · Tapado de piel | prenda: abrigos | atributo: Piel (etapa: Saturada) | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 21 %, +7,0 puntos; Marrón: 21 %, -5,7 puntos; Gris: 15 %, +3,0 puntos; Rosa: 12 %, +2,0 puntos
+- Tops · Corset | prenda: tops | colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): Negro: 39 %, +8,0 puntos; Marrón: 13 %, +3,0 puntos; Gris: 10 %, -4,0 puntos; Azul marino: 9 %, -3,0 puntos
+- Estampas | prenda: estampas | Liso, Lunares (Saturada), Rayas, Floral (Pico), Animal print (En retorno), Cuadros (Saturada), Encaje (Saturada), Gamuza
+
+## Lo que CICLO no puede responder
+- No detecta lo emergente: la pasarela pública llega hasta 2023.
+- No hay calzado: la app trabaja con ropa, por decisión.
+- No separa hombre y mujer: Vogue y las ventas de H&M mezclan menswear y womenswear.
+- No pronostica: de 2025 en adelante sólo muestra la mediana de la historia, con su error.
+- La búsqueda llega hasta 2024 (2025 tiene el salto de medición de Google; 2026 se excluye).
+- Lyst cambió su fórmula en Q1-26: no se compara a través de ese corte.
+- Zara 2018–22 y el mix de marcas son datos sintéticos: sirven para mostrar el método, no para concluir.
+- No tiene precios, ventas por marca ni datos de Pinterest, TikTok o Instagram.

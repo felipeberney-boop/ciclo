@@ -8,6 +8,7 @@ número siguiente, no se pisa el anterior.
 | `prompt_lectura_recomendacion_v1.md` | IA-5 · leer el grupo y recomendar | reemplazado por v2 |
 | `prompt_lectura_recomendacion_v2.md` | IA-5 · leer un atributo y recomendar, en vivo (función de Netlify) | reemplazado por v3 |
 | `prompt_lectura_recomendacion_v3.md` | IA-5 · lo mismo, con `gpt-oss-120b` (Groq ya no tiene Llama) | en uso |
+| `prompt_asistente_v1.md` | IA-8 · Preguntale a CICLO: chat con la API key de cada uno y `llm/ciclo_datos.md` | en uso |
 | `prompt_consulta_por_imagen_v1.md` | IA-6 · atributos a partir de una foto | reemplazado por v2 |
 | `prompt_consulta_por_imagen_v2.md` | IA-6 · CLIP en el navegador: atributos, looks parecidos y años | reemplazado por v3 |
 | `prompt_consulta_por_imagen_v3.md` | IA-6 · lo mismo, con 17 atributos (sin calzado) | en uso |
@@ -16,5 +17,6 @@ número siguiente, no se pisa el anterior.
 **Regla que atraviesa todo:** el modelo de lenguaje nunca recibe una fila de la base. Recibe métricas ya
 calculadas. Lo que devuelve aparece en la interfaz marcado como interpretación, nunca como dato.
 
-**Claves de API.** Ninguna está acá ni en ningún otro archivo del repositorio. La de Groq se configura
-como variable de entorno en Netlify (`GROQ_API_KEY`).
+**Claves de API.** Ninguna está acá ni en ningún otro archivo del repositorio. IA-5 usa la de Groq guardada
+como variable de entorno en Netlify (`GROQ_API_KEY`). IA-8 usa la que pega cada uno en la página, que queda
+en su navegador.

@@ -38,7 +38,7 @@ ALIAS = {'mom': dict(corte='straight', tiro='alto', fit='relaxed'), 'boyfriend':
 # ---------- niveles 1 y 2 · prenda y tipo ----------
 PRENDAS = [
   dict(id='pantalones', n='Pantalones', d='De la cintura para abajo, con dos piernas.', sil='pantalones/largo', tipos=[
-    dict(id='largo', n='Largo', d='Hasta el tobillo.', sil='pantalones/largo', pasos=['corte', 'tiro']),
+    dict(id='largo', n='Largo', d='Hasta el tobillo.', sil='pantalones/largo', pasos=['corte', 'tiro'], jeans=['jamplio', 'jmedio', 'jajust']),
     dict(id='short', n='Short', d='Por encima de la mitad del muslo.', sil='pantalones/short', pasos=['tiro']),
     dict(id='bermuda', n='Bermuda', d='Hasta la rodilla.', sil='pantalones/bermuda', pasos=['tiro']),
     dict(id='capri', n='Capri', d='A media pantorrilla.', sil='pantalones/capri', pasos=['tiro'])]),
@@ -181,6 +181,47 @@ DETALLE_POR_PRENDA = {
   'camisas': ['encaje', 'bordado', 'volados', 'plisado'], 'buzos': ['bordado', 'tachas', 'acolchado'],
   'abrigos': ['bordado', 'tachas', 'acolchado', 'flecos', 'cargo'], 'enteritos': ['cargo', 'bordado', 'cutouts', 'plisado'],
 }
+
+# ---------- dato prestado: cuando una hoja no tiene serie propia ----------
+# Orden del préstamo: hermano de la misma familia → padre en el árbol → el atributo suelto sin cruzar con la prenda.
+# Nunca se salta a otra familia sin parentesco. Referencias: tipo:<prenda>/<tipo>, corte:, tiro:, mat:, det:, estampa:,
+# rec:<id con búsqueda>, km:<atributo del K-means>, je:<término de jean>. Los colores sin lectura de CLIP para esa prenda
+# toman el color suelto en toda la pasarela (se calcula en la app).
+PRESTA = {
+  'tipo:pantalones/short': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, más corto. Short no tiene serie propia todavía.'),
+  'tipo:pantalones/bermuda': ('rec:cargo', 'Misma familia utilitaria de pantalón corto: la bermuda se busca junto al cargo.'),
+  'tipo:pantalones/capri': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, cortado a media pierna.'),
+  'tipo:remeras/top': ('rec:corset', 'Hermano: misma familia de tops al cuerpo.'),
+  'tipo:buzos/sweater': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),
+  'tipo:buzos/cardigan': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),
+  'tipo:buzos/polera': ('tipo:buzos/buzo', 'Hermano: misma familia de punto abrigado.'),
+  'tipo:abrigos/tapado': ('tipo:abrigos/trench', 'Hermano: el otro abrigo largo de la familia.'),
+  'corte:cigarette': ('corte:slim', 'Hermano: el corte más parecido, recto y angosto.'),
+  'tiro:alto': ('je:mom', 'La única búsqueda de jean que nombra el tiro: «mom», un recto de tiro alto.'),
+  'tiro:bajo': ('km:Y2K', 'Padre: el tiro bajo es la marca del Y2K, que sí tiene serie.'),
+  'mat:cuerina': ('mat:cuero', 'Hermano: imita al cuero y se lee con su serie.'),
+  'mat:denimrigido': ('tipo:pantalones/largo', 'El denim se mide por los jeans: las tres series de jean.'),
+  'mat:denimelastano': ('tipo:pantalones/largo', 'El denim se mide por los jeans: las tres series de jean.'),
+  'mat:denimlavado': ('tipo:pantalones/largo', 'El denim se mide por los jeans: las tres series de jean.'),
+  'mat:gabardina': ('tipo:abrigos/trench', 'La gabardina es la tela del trench.'),
+  **{f'estampa:{e}': ('estampa:rayas', 'Familia: la búsqueda mide las rayas, no cada variante.') for e in ('breton', 'pinstripe', 'bengal', 'awning')},
+  'estampa:pindot': ('estampa:lunares', 'Familia: la búsqueda mide los lunares, no su tamaño.'),
+  **{f'estampa:{e}': ('estampa:cuadros', 'Familia: la búsqueda mide los cuadros, no cada trama.') for e in ('gingham', 'pow', 'windowpane', 'argyle')},
+  **{f'estampa:{e}': ('estampa:animal', 'Familia: la búsqueda mide la estampa animal por el leopardo.') for e in ('cebra', 'piton', 'vaca')},
+  'estampa:paisley': ('estampa:floral', 'Familia: motivo orgánico, se lee con el floral.'),
+}
+def hoja(ref):
+    k, v = ref.split(':', 1)
+    if k == 'tipo': pr, t = v.split('/'); return next(x for x in next(p for p in PRENDAS if p['id'] == pr)['tipos'] if x['id'] == t)
+    if k == 'corte': return next(x for x in CORTES if x['id'] == v)
+    if k == 'tiro': return next(x for x in TIROS if x['id'] == v)
+    if k == 'mat': return next(i for g in MATERIALES for i in g['items'] if i['id'] == v)
+    if k == 'estampa': return next(i for f in ESTAMPAS for i in f['items'] if i['id'] == v)
+    raise KeyError(ref)
+for ref, (de, porque) in PRESTA.items():
+    h = hoja(ref); assert not any(h.get(x) for x in ('km', 'rec', 'je', 'jeans')), ('ya tiene serie propia', ref)
+    if de.split(':')[0] in ('tipo', 'corte', 'mat', 'estampa'): hoja(de)  # el pariente existe
+    h['presta_de'], h['presta_porque'] = de, porque
 
 # ---------- control: todo lo que se nombra existe ----------
 ids_mat = {i['id'] for g in MATERIALES for i in g['items']}

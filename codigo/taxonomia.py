@@ -218,7 +218,7 @@ DETALLE_POR_PRENDA = {
 PRESTA = {
   'tipo:pantalones/short': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, más corto. Short no tiene serie propia todavía.'),
   'tipo:pantalones/bermuda': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, hasta la rodilla. (Antes tomaba el cargo, que no es su pariente en el árbol.)'),
-  'tipo:pantalones/capri': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, cortado a media pierna.'),
+  'tipo:pantalones/capri': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, cortado a media pierna. «capris» se mueve con el verano, no con la moda (sólo estación).'),
   'tipo:remeras/top': ('rec:corset', 'Hermano: misma familia de tops al cuerpo.'),
   'tipo:buzos/hoodie': ('rec:buzo', 'Padre: la serie «hoodie» mide los buzos en general y no distingue entre variantes.'),
   'tipo:buzos/zip': ('rec:buzo', 'Padre: la serie «hoodie» mide los buzos en general y no distingue entre variantes.'),
@@ -235,6 +235,8 @@ PRESTA = {
   'tiro:alto': ('je:mom', 'La única búsqueda de jean que nombra el tiro: «mom», un recto de tiro alto.'),
   'tiro:bajo': ('km:Y2K', 'Padre: el tiro bajo es la marca del Y2K, que sí tiene serie.'),
   'mat:cuerina': ('mat:cuero', 'Hermano: imita al cuero y se lee con su serie.'),
+  'mat:cashmere': ('mat:lana', 'Hermano: misma familia de lanas. «cashmere» se mueve con el invierno, no con la moda (sólo estación).'),
+  'mat:pano': ('mat:lana', 'Hermano: misma familia de lanas. «wool coat» se mueve con el invierno, no con la moda (sólo estación).'),
   'mat:denimrigido': ('tipo:pantalones/largo', 'El denim se mide por los jeans: las tres series de jean.'),
   'mat:denimelastano': ('tipo:pantalones/largo', 'El denim se mide por los jeans: las tres series de jean.'),
   'mat:denimlavado': ('tipo:pantalones/largo', 'El denim se mide por los jeans: las tres series de jean.'),
@@ -244,6 +246,7 @@ PRESTA = {
   **{f'estampa:{e}': ('estampa:cuadros', 'Familia: la búsqueda mide los cuadros, no cada trama.') for e in ('gingham', 'pow', 'windowpane', 'argyle')},
   **{f'estampa:{e}': ('estampa:animal', 'Familia: la búsqueda mide la estampa animal por el leopardo.') for e in ('cebra', 'piton', 'vaca')},
   'estampa:paisley': ('estampa:floral', 'Familia: motivo orgánico, se lee con el floral.'),
+  'estampa:toile': ('estampa:floral', 'Familia: estampa figurativa, se lee con el floral. «toile» medía tela y moldes de costura, y «toile de jouy» volvió en cero.'),
 }
 def hoja(ref):
     k, v = ref.split(':', 1)

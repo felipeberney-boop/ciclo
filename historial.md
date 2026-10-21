@@ -110,6 +110,12 @@ Sweaters por separado; fuera los contadores; siluetas enteras; cuero y gamuza co
 Tendencias explicados. Preguntar pasa a ser una herramienta: sabe qué estás diseñando, lee una imagen con CLIP,
 trae el dato con su serie y termina en un cambio que se aplica con un botón.
 
+## v1.5 · 21/10/2026 · El filtro de estación y por qué no hay calzado
+
+Plan 3 de Google Trends (accesorios y calzado): no entra ninguno. Filtro nuevo de estación sobre todas las series:
+caen capris, cashmere y wool coat. Toile confirmado como término equivocado. El calzado queda pendiente por la
+pasarela (CLIP). 71 hojas con dato propio, 48 prestadas, 12 sin dato.
+
 ## Lo que falta para la Entrega 3
 
 - Conectar la Groq API en vivo. Hoy IA-5 corre con prompt fijo.

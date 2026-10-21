@@ -21,6 +21,12 @@ UTIL = [y for y in Y if y <= 2024]  # el análisis corta en 2024: 2025 y 2026 tr
 DESCARTE = {t: 'máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil' for t in ['button down shirt', 'oversized shirt', 'cropped shirt', 'jersey knit',
     'ribbed top', 'french terry', 'pique polo', 'canvas jacket', 'nylon jacket', 'acrylic sweater', 'crepe fabric', 'chevron print']}
 DESCARTE['bermudas'] = 'mide otra cosa: estacionalidad 0,26 y picos sueltos (2009-06, 2014-03, 2019-11) que no son verano: la isla, no el pantalón'
+# plan 3 (21/10/2026): accesorios y calzado no entran a la app; cada término con su razón
+for t, por in {'baseball cap': 'ruido', 'leather belt': 'ruido', 'ankle boots': 'ruido', 'cowboy boots': 'ruido',
+               'mary janes': 'sin señal', 'platform shoes': 'sin señal', 'ballet flats': 'sin señal', 'toile de jouy': 'sin señal: cero en los 21 años',
+               'sunglasses': 'sólo estación', 'sandals': 'sólo estación', 'bucket hat': 'marginal (máximo 9)', 'loafers': 'marginal (máximo 7)',
+               'tote bag': 'pasa, pero un término genérico no hace una categoría', 'sneakers': 'pasa, pero un término genérico no hace una categoría'}.items():
+    DESCARTE[t] = f'plan 3, {por}; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial)'
 DESCARTE['toile'] = 'mide otra cosa: en francés es «tela» y en costura la prueba de un molde; cae de 70 a 33 sin ciclo. Falta bajar «toile de jouy»'
 filas = list(csv.DictReader(open(BASE)))
 trench = {int(r['anio']): float(r['indice_0_100']) for r in filas if r['atributo_id'] == 'trench'}
@@ -36,6 +42,8 @@ def leer_lote(ruta):
         if y > 2025: continue
         for n, v in zip(nombres, fila[1:]):
             anual[n].setdefault(y, []).append(0.5 if v.strip() == '<1' else float(v or 0))
+    global MENSUAL
+    MENSUAL = anual
     return {n: {y: st.mean(v) for y, v in d.items()} for n, d in anual.items()}
 
 def correlacion(x, y):  # statistics.correlation recién existe en Python 3.10
@@ -43,7 +51,7 @@ def correlacion(x, y):  # statistics.correlation recién existe en Python 3.10
     return sum((a - mx) * (b - my) for a, b in zip(x, y)) / (sum((a - mx) ** 2 for a in x) * sum((b - my) ** 2 for b in y)) ** .5
 
 informe, nuevas = [], []
-for ruta in sorted(glob.glob('datasets/trends_lotes/*.csv') + glob.glob('datasets/trends_lotes/plan2/*.csv')):
+for ruta in sorted(glob.glob('datasets/trends_lotes/*.csv') + glob.glob('datasets/trends_lotes/plan2/*.csv') + glob.glob('datasets/trends_lotes/plan3/*.csv')):
     L = leer_lote(ruta); a = L.get('trench coat')
     if not a: informe.append(f'- {ruta}: sin columna «trench coat», no entra.'); continue
     ys = [y for y in UTIL if y in a and a[y] > 0]
@@ -57,6 +65,11 @@ for ruta in sorted(glob.glob('datasets/trends_lotes/*.csv') + glob.glob('dataset
         v = {y: serie.get(y, 0) * k for y in Y}; mx = max(v[y] for y in UTIL) or 1  # a su máximo hasta 2024
         utiles = sum(1 for y in UTIL if serie.get(y, 0) >= 1)
         plana = st.pstdev([v[y] for y in UTIL]) / mx < 0.05
+        # sólo estación: si se mueve más dentro de cada año que entre años, es el verano o el invierno, no la moda
+        meses = [MENSUAL[termino][y] for y in UTIL if MENSUAL[termino].get(y)]
+        estacion = st.mean(max(m) - min(m) for m in meses); nivel = max(st.mean(m) for m in meses) - min(st.mean(m) for m in meses)
+        if nivel == 0 or estacion > 1.5 * nivel:
+            informe.append(f'- {termino}: sólo estación (se mueve {estacion:.1f} dentro del año y {nivel:.1f} entre años), no entra; sigue prestado.'); continue
         if utiles < 12 or plana:
             informe.append(f'- {termino}: {"plana" if plana else f"{utiles} años útiles"}, no entra; sigue prestado.'); continue
         hoja = PLAN[termino]['hoja_taxonomia']; aid = hoja.split(':')[1].replace('/', '_')

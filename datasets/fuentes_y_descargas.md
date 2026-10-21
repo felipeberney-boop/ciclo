@@ -196,3 +196,18 @@ presente», mensual), exportados el 20/10/2026; los CSV en `datasets/trends_lote
 - **Por el corte en 2024 salieron dos del primer plan:** puffer jacket y midi skirt quedan en 11 años útiles; pasan
   a prestado (de la campera y de la mini).
 
+## Google Trends · plan 3, accesorios y calzado (21/10/2026)
+
+`datasets/plan_exportacion_trends_3.csv`, lotes 19 a 22 (trench coat de ancla), exportados el 21/10/2026; los CSV en
+`datasets/trends_lotes/plan3/`. **No se incorporó ninguno.** Sirven: tote bag (máx 26), sneakers (máx 34), pero son
+demasiado genéricos para una categoría; marginales: bucket hat (9), loafers (7); sólo estación: sunglasses, sandals;
+sin señal: mary janes, platform shoes, ballet flats, toile de jouy (cero en los 21 años); ruido: baseball cap, leather
+belt, ankle boots, cowboy boots. El calzado se va a medir por la pasarela (CLIP), no por la búsqueda.
+
+**Filtro de estación, aplicado a todo** (`codigo/pegar_lotes_trends.py`): si la amplitud estacional media supera 1,5
+veces el rango del nivel anual (2004–2024), la serie mide la estación y no entra. Se cayeron capris, cashmere y wool
+coat, que habían entrado en los planes 1 y 2.
+
+**Por qué «toile» no está.** Una serie con mucho volumen midiendo el término equivocado es peor que no tener serie:
+«toile» (máximo 83) es «tela» en francés y la prueba de un molde en costura, y «toile de jouy» volvió en cero.
+

@@ -1,7 +1,7 @@
 # CICLO · datos para el asistente
 
 CICLO es una app de la materia Sistemas generativos e IA para Diseño (UdeSA, 2026). Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja con ropa: no hay calzado.
-Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: 2026-10-20.
+Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: 2026-10-21.
 
 ## Cómo leer los números
 - Pasarela | fuente: Vogue Runway, 1,28 millones de looks, 2010–2023 | medido | nivel: dónde está 2022–23 contra su propio máximo (100 % = en su pico) | momento: 2021–23 contra 2018–20
@@ -136,7 +136,7 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 - Pantalones · Largo | id: tipo_pantalones_largo | busca: largo, pantalones | paso: tipo | valor: largo | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: jamplio
 - Pantalones · Short | id: tipo_pantalones_short | busca: short, pantalones | paso: tipo | valor: short | señal: +3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: pantalones_short
 - Pantalones · Bermuda | id: tipo_pantalones_bermuda | busca: bermuda, pantalones | paso: tipo | valor: bermuda | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: prestado de largo (Hermano: el mismo pantalón, hasta la rodilla. (Antes tomaba el cargo, que no es su pariente en el árbol.)) | serie: jamplio
-- Pantalones · Capri | id: tipo_pantalones_capri | busca: capri, pantalones | paso: tipo | valor: capri | señal: -4 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: pantalones_capri
+- Pantalones · Capri | id: tipo_pantalones_capri | busca: capri, pantalones | paso: tipo | valor: capri | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: prestado de largo (Hermano: el mismo pantalón, cortado a media pierna. «capris» se mueve con el verano, no con la moda (sólo estación).) | serie: jamplio
 - Faldas · Mini | id: tipo_faldas_mini | busca: mini, faldas | paso: tipo | valor: mini | señal: +17 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: faldas_mini
 - Faldas · Midi | id: tipo_faldas_midi | busca: midi, faldas | paso: tipo | valor: midi | señal: +17 puntos en la búsqueda mundial 2022→2024 | dato: prestado de mini (Hermano: la misma falda, más corta. «midi skirt» no llegó a 12 años con señal hasta 2024.) | serie: faldas_mini
 - Faldas · Maxi | id: tipo_faldas_maxi | busca: maxi, faldas | paso: tipo | valor: maxi | señal: +21 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: faldas_maxi
@@ -201,9 +201,9 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 - Material · Denim lavado | id: material_denimlavado | busca: denim lavado, washed denim | paso: material | valor: denimlavado | señal: +9 puntos en la búsqueda mundial 2022→2024 | dato: prestado de largo (El denim se mide por los jeans: las tres series de jean.) | serie: jamplio
 - Material · Lana | id: material_lana | busca: lana, wool | paso: material | valor: lana | señal: +20 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: lana
 - Material · Merino | id: material_merino | busca: merino, merino | paso: material | valor: merino | señal: +17 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: merino
-- Material · Cashmere | id: material_cashmere | busca: cashmere, cashmere | paso: material | valor: cashmere | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: cashmere
+- Material · Cashmere | id: material_cashmere | busca: cashmere, cashmere | paso: material | valor: cashmere | señal: +20 puntos en la búsqueda mundial 2022→2024 | dato: prestado de lana (Hermano: misma familia de lanas. «cashmere» se mueve con el invierno, no con la moda (sólo estación).) | serie: lana
 - Material · Tweed | id: material_tweed | busca: tweed, tweed | paso: material | valor: tweed | señal: +3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: tweed
-- Material · Paño | id: material_pano | busca: paño, wool melton | paso: material | valor: pano | señal: +11 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: pano
+- Material · Paño | id: material_pano | busca: paño, wool melton | paso: material | valor: pano | señal: +20 puntos en la búsqueda mundial 2022→2024 | dato: prestado de lana (Hermano: misma familia de lanas. «wool coat» se mueve con el invierno, no con la moda (sólo estación).) | serie: lana
 - Material · Lino | id: material_lino | busca: lino, linen | paso: material | valor: lino | señal: +8 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: lino
 - Material · Seda | id: material_seda | busca: seda, silk | paso: material | valor: seda | señal: -5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: seda
 - Material · Satén | id: material_satenseda | busca: satén, satin | paso: material | valor: satenseda | señal: -7 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: satenseda
@@ -247,7 +247,7 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 - Estampa · Vaca | id: estampa_vaca | busca: vaca | paso: estampa | valor: vaca | señal: +8 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: prestado de leopardo (Familia: la búsqueda mide la estampa animal por el leopardo.) | serie: animal
 - Estampa · Floral | id: estampa_floral | busca: floral | paso: estampa | valor: floral | señal: +6 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: propio | serie: floral
 - Estampa · Paisley | id: estampa_paisley | busca: paisley | paso: estampa | valor: paisley | señal: +6 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: prestado de floral (Familia: motivo orgánico, se lee con el floral.) | serie: floral
-- Estampa · Toile de Jouy | id: estampa_toile | busca: toile de jouy | paso: estampa | valor: toile | sin dato: ni serie propia ni de un pariente
+- Estampa · Toile de Jouy | id: estampa_toile | busca: toile de jouy | paso: estampa | valor: toile | señal: +6 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: prestado de floral (Familia: estampa figurativa, se lee con el floral. «toile» medía tela y moldes de costura, y «toile de jouy» volvió en cero.) | serie: floral
 - Estampa · Camuflado | id: estampa_camo | busca: camuflado | paso: estampa | valor: camo | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: camo
 - Estampa · Tie-dye | id: estampa_tiedye | busca: tie-dye | paso: estampa | valor: tiedye | señal: -15 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: tiedye
 - Estampa · Chevron | id: estampa_chevron | busca: chevron | paso: estampa | valor: chevron | sin dato: ni serie propia ni de un pariente

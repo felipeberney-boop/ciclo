@@ -9,11 +9,11 @@
 - boucle → mat:boucle: entra (21 años útiles, ancla r = 1.00).
 - tulle → mat:tul: entra (21 años útiles, ancla r = 1.00).
 - satin → mat:satenseda: entra (21 años útiles, ancla r = 1.00).
-- tweed: plana, no entra; sigue prestado.
-- cashmere → mat:cashmere: entra (21 años útiles, ancla r = 1.00).
+- tweed: sólo estación (se mueve 3.3 dentro del año y 1.9 entre años), no entra; sigue prestado.
+- cashmere: sólo estación (se mueve 10.0 dentro del año y 4.6 entre años), no entra; sigue prestado.
 - chiffon → mat:gasa: entra (21 años útiles, ancla r = 1.00).
 - denim shorts → tipo:pantalones/short: entra (12 años útiles, ancla r = 1.00).
-- capri pants: 0 años útiles, no entra; sigue prestado.
+- capri pants: sólo estación (se mueve 0.5 dentro del año y 0.2 entre años), no entra; sigue prestado.
 - corduroy → mat:corduroy: entra (21 años útiles, ancla r = 1.00).
 - linen → mat:lino: entra (21 años útiles, ancla r = 1.00).
 - shirt dress → tipo:vestidos/camisero: entra (21 años útiles, ancla r = 1.00).
@@ -43,7 +43,7 @@
 - bomber jacket → tipo:abrigos/campera: entra (21 años útiles, ancla r = 1.00).
 - a line dress → tipo:vestidos/evase: entra (18 años útiles, ancla r = 1.00).
 - mid rise jeans: 9 años útiles, no entra; sigue prestado.
-- capris → tipo:pantalones/capri: entra (21 años útiles, ancla r = 1.00).
+- capris: sólo estación (se mueve 8.6 dentro del año y 2.9 entre años), no entra; sigue prestado.
 - bermudas: descartado, mide otra cosa: estacionalidad 0,26 y picos sueltos (2009-06, 2014-03, 2019-11) que no son verano: la isla, no el pantalón. Sigue prestado.
 - cable knit sweater → mat:cable: entra (13 años útiles, ancla r = 1.00).
 - tweed jacket → mat:tweed: entra (21 años útiles, ancla r = 1.00).
@@ -56,7 +56,7 @@
 - canvas jacket: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
 - wool sweater → mat:lana: entra (21 años útiles, ancla r = 1.00).
 - merino wool → mat:merino: entra (21 años útiles, ancla r = 1.00).
-- wool coat → mat:pano: entra (21 años útiles, ancla r = 1.00).
+- wool coat: sólo estación (se mueve 7.1 dentro del año y 4.0 entre años), no entra; sigue prestado.
 - silk dress → mat:seda: entra (21 años útiles, ancla r = 1.00).
 - polyester → mat:poliester: entra (21 años útiles, ancla r = 1.00).
 - nylon jacket: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
@@ -70,3 +70,17 @@
 - toile: descartado, mide otra cosa: en francés es «tela» y en costura la prueba de un molde; cae de 70 a 33 sin ciclo. Falta bajar «toile de jouy». Sigue prestado.
 - chevron print: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
 - herringbone → estampa:espiga: entra (21 años útiles, ancla r = 1.00).
+- baseball cap: descartado, plan 3, ruido; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- bucket hat: descartado, plan 3, marginal (máximo 9); accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- tote bag: descartado, plan 3, pasa, pero un término genérico no hace una categoría; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- leather belt: descartado, plan 3, ruido; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- sunglasses: descartado, plan 3, sólo estación; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- toile de jouy: descartado, plan 3, sin señal: cero en los 21 años; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- sneakers: descartado, plan 3, pasa, pero un término genérico no hace una categoría; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- ankle boots: descartado, plan 3, ruido; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- loafers: descartado, plan 3, marginal (máximo 7); accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- ballet flats: descartado, plan 3, sin señal; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- sandals: descartado, plan 3, sólo estación; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- platform shoes: descartado, plan 3, sin señal; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- mary janes: descartado, plan 3, sin señal; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- cowboy boots: descartado, plan 3, ruido; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.

@@ -780,7 +780,30 @@ se corrija, trae el dato y la serie en cada respuesta y termina en cambios que s
 calzado»). Para accesorios está el plan en `datasets/plan_exportacion_trends_3.csv` (gorra, piluso, tote,
 cinturón de cuero, anteojos de sol), junto con «toile de jouy» para reemplazar a «toile».
 
-**Calzado, de vuelta (20/10/2026).** Se revierte la decisión de dejar el calzado afuera: suma variedad. Entra
-igual que todo lo demás, sólo con dato: plan 3, lotes 21 y 22 (zapatillas, botinetas, mocasines, chatitas,
-sandalias, plataformas, guillerminas, botas texanas). Hasta que las series pasen el filtro, no aparece en la app.
+## 2026-10-21 · Accesorios y calzado no entran, y el filtro de estación
 
+**Se deshace la vuelta del calzado.** Lo probamos con 14 términos de accesorios y calzado (plan 3). Pasan 2, y son
+demasiado genéricos para ser una decisión de diseño: «tote bag» y «sneakers». Los estilos concretos —guillerminas,
+plataformas, chatitas, botinetas, botas texanas— están por debajo de la resolución de Google Trends a escala mundial,
+y los que sí miden algo, como «sandals» y «sunglasses», miden la estación. Dos categorías con un término genérico cada
+una son peores que no tenerlas: no entran a la app.
+
+**El camino para medir el calzado es la pasarela, no la búsqueda.** El índice CLIP (`app/clip/`) ya tiene 14.000
+looks embebidos: sumar un atributo es escribir sus frases y puntuarlo contra esos looks, sin bajar nada. Eso da
+frecuencia en pasarela por temporada, que para calzado es mejor dato: un zapato de pasarela es una decisión de
+diseño; una búsqueda de «sandals» en junio es alguien que quiere comprar sandalias. Pendiente: botas texanas,
+botinetas, plataformas, mocasines, chatitas, guillerminas, zapatillas, piluso, gorra, cinturón ancho.
+
+**Filtro nuevo: sólo estación.** Una serie que se mueve más dentro de cada año que entre años (amplitud estacional
+media > 1,5 × rango del nivel anual, 2004–2024) mide el verano o el invierno, no la moda. Sandals pasaba todos los
+filtros anteriores (máximo 46, 252 meses con señal) pero se mueve 20 puntos dentro del año y 11,6 entre años. Corrido
+sobre todo lo incorporado, se caen tres: **capris** (8,6 contra 2,9), **cashmere** (10,0 contra 4,6) y **wool coat**
+(7,1 contra 4,0). Capris parecía un ciclo completo, pero su forma es el verano repetido; vuelve a prestado del pantalón
+largo. Cashmere y paño toman la serie de lana.
+
+**Toile, otra vez.** «toile de jouy» volvió en cero absoluto en los 21 años, lo que confirma que «toile» (máximo 83)
+medía tela y moldes de costura, no la estampa. Ya estaba afuera desde el plan 2; la hoja toma prestado del floral.
+Studded se revisó con el mismo criterio: salta +104 % en 2026 como el resto y no es estacional (0,42); se queda.
+Bermudas ya estaba afuera.
+
+**Conteo.** Sobre 131 hojas: **71 directo, 48 prestado, 12 sin dato**.

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Zapatillas">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 24 132 C 24 112 30 98 46 92 L 92 78 C 104 74 114 80 122 90 C 136 104 160 108 176 114 C 184 118 186 128 184 140 L 24 140 Z"/>
+<path d="M 24 140 L 184 140 L 184 150 L 24 150 Z" stroke-width="1.02"/>
+<path d="M 70 86 L 84 110" stroke-width="1.02"/>
+<path d="M 82 82 L 96 104" stroke-width="1.02"/>
+<path d="M 94 80 L 106 100" stroke-width="1.02"/>
+<path d="M 46 112 C 80 118 130 120 176 124" stroke-width="1.02"/>
+</g></svg>

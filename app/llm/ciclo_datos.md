@@ -168,6 +168,19 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 - Camperas y abrigos · Kimono | id: tipo_abrigos_kimono | busca: kimono, camperas y abrigos | paso: tipo | valor: kimono | señal: -12 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: propio | serie: kimono
 - Camperas y abrigos · Tapado de piel | id: tipo_abrigos_piel | busca: tapado de piel, camperas y abrigos | paso: tipo | valor: piel | sin dato: ni serie propia ni de un pariente
 - Camperas y abrigos · Puffer | id: tipo_abrigos_puffer | busca: puffer, camperas y abrigos | paso: tipo | valor: puffer | señal: 0 puntos en la búsqueda mundial 2022→2024 | dato: prestado de campera (Hermano: la otra campera corta de la familia. «puffer jacket» no llegó a 12 años con señal hasta 2024.) | serie: abrigos_campera
+- Calzado · Zapatillas | id: tipo_calzado_zapatillas | busca: zapatillas, sneakers, calzado | paso: tipo | valor: zapatillas | señal: -13 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: calzado_zapatillas
+- Calzado · Botinetas | id: tipo_calzado_botinetas | busca: botinetas, ankle boots, calzado | paso: tipo | valor: botinetas | sin dato: ni serie propia ni de un pariente
+- Calzado · Mocasines | id: tipo_calzado_mocasines | busca: mocasines, loafers, calzado | paso: tipo | valor: mocasines | señal: +16 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: calzado_mocasines
+- Calzado · Chatitas | id: tipo_calzado_chatitas | busca: chatitas, ballet flats, calzado | paso: tipo | valor: chatitas | sin dato: ni serie propia ni de un pariente
+- Calzado · Sandalias | id: tipo_calzado_sandalias | busca: sandalias, sandals, calzado | paso: tipo | valor: sandalias | sin dato: ni serie propia ni de un pariente
+- Calzado · Plataformas | id: tipo_calzado_plataformas | busca: plataformas, platform shoes, calzado | paso: tipo | valor: plataformas | sin dato: ni serie propia ni de un pariente
+- Calzado · Guillerminas | id: tipo_calzado_guillerminas | busca: guillerminas, mary janes, calzado | paso: tipo | valor: guillerminas | sin dato: ni serie propia ni de un pariente
+- Calzado · Botas texanas | id: tipo_calzado_texanas | busca: botas texanas, cowboy boots, calzado | paso: tipo | valor: texanas | sin dato: ni serie propia ni de un pariente
+- Accesorios · Tote | id: tipo_accesorios_tote | busca: tote, tote bag, accesorios | paso: tipo | valor: tote | señal: +7 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: accesorios_tote
+- Accesorios · Piluso | id: tipo_accesorios_piluso | busca: piluso, bucket hat, accesorios | paso: tipo | valor: piluso | sin dato: ni serie propia ni de un pariente
+- Accesorios · Gorra | id: tipo_accesorios_gorra | busca: gorra, baseball cap, accesorios | paso: tipo | valor: gorra | sin dato: ni serie propia ni de un pariente
+- Accesorios · Cinturón | id: tipo_accesorios_cinturon | busca: cinturón, leather belt, accesorios | paso: tipo | valor: cinturon | sin dato: ni serie propia ni de un pariente
+- Accesorios · Anteojos de sol | id: tipo_accesorios_anteojos | busca: anteojos de sol, sunglasses, accesorios | paso: tipo | valor: anteojos | sin dato: ni serie propia ni de un pariente
 - Enteritos · Mono largo | id: tipo_enteritos_largo | busca: mono largo, enteritos | paso: tipo | valor: largo | señal: -19 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: enteritos_largo
 - Enteritos · Mono corto | id: tipo_enteritos_corto | busca: mono corto, enteritos | paso: tipo | valor: corto | señal: +11 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: enteritos_corto
 - Enteritos · Jardinero | id: tipo_enteritos_jardinero | busca: jardinero, enteritos | paso: tipo | valor: jardinero | señal: -2 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: enteritos_jardinero

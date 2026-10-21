@@ -211,3 +211,7 @@ coat, que habían entrado en los planes 1 y 2.
 **Por qué «toile» no está.** Una serie con mucho volumen midiendo el término equivocado es peor que no tener serie:
 «toile» (máximo 83) es «tela» en francés y la prueba de un molde en costura, y «toile de jouy» volvió en cero.
 
+**Actualización (21/10/2026).** Con calzado y accesorios en Diseñar, los términos del plan 3 que pasan todos los
+filtros sí entran como dato propio de su hoja: sneakers (zapatillas), loafers (mocasines) y tote bag (tote). Siguen
+afuera bucket hat (11 años útiles), sunglasses y sandals (sólo estación) y los de ruido o sin señal.
+

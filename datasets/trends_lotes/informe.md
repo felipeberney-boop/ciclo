@@ -70,17 +70,17 @@
 - toile: descartado, mide otra cosa: en francés es «tela» y en costura la prueba de un molde; cae de 70 a 33 sin ciclo. Falta bajar «toile de jouy». Sigue prestado.
 - chevron print: descartado, máximo bajo 6 o menos de 24 meses con señal: ruido, no señal débil. Sigue prestado.
 - herringbone → estampa:espiga: entra (21 años útiles, ancla r = 1.00).
-- baseball cap: descartado, plan 3, ruido; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- bucket hat: descartado, plan 3, marginal (máximo 9); accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- tote bag: descartado, plan 3, pasa, pero un término genérico no hace una categoría; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- leather belt: descartado, plan 3, ruido; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- sunglasses: descartado, plan 3, sólo estación; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- toile de jouy: descartado, plan 3, sin señal: cero en los 21 años; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- sneakers: descartado, plan 3, pasa, pero un término genérico no hace una categoría; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- ankle boots: descartado, plan 3, ruido; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- loafers: descartado, plan 3, marginal (máximo 7); accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- ballet flats: descartado, plan 3, sin señal; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- sandals: descartado, plan 3, sólo estación; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- platform shoes: descartado, plan 3, sin señal; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- mary janes: descartado, plan 3, sin señal; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
-- cowboy boots: descartado, plan 3, ruido; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial). Sigue prestado.
+- baseball cap: descartado, plan 3, ruido: el estilo concreto está por debajo de la resolución de Google Trends mundial. Sigue prestado.
+- bucket hat: 11 años útiles, no entra; sigue prestado.
+- tote bag → tipo:accesorios/tote: entra (21 años útiles, ancla r = 1.00).
+- leather belt: descartado, plan 3, ruido: el estilo concreto está por debajo de la resolución de Google Trends mundial. Sigue prestado.
+- sunglasses: sólo estación (se mueve 12.0 dentro del año y 6.4 entre años), no entra; sigue prestado.
+- toile de jouy: descartado, plan 3, sin señal: cero en los 21 años: el estilo concreto está por debajo de la resolución de Google Trends mundial. Sigue prestado.
+- sneakers → tipo:calzado/zapatillas: entra (21 años útiles, ancla r = 0.98).
+- ankle boots: descartado, plan 3, ruido: el estilo concreto está por debajo de la resolución de Google Trends mundial. Sigue prestado.
+- loafers → tipo:calzado/mocasines: entra (20 años útiles, ancla r = 0.98).
+- ballet flats: descartado, plan 3, sin señal: el estilo concreto está por debajo de la resolución de Google Trends mundial. Sigue prestado.
+- sandals: sólo estación (se mueve 20.1 dentro del año y 11.6 entre años), no entra; sigue prestado.
+- platform shoes: descartado, plan 3, sin señal: el estilo concreto está por debajo de la resolución de Google Trends mundial. Sigue prestado.
+- mary janes: descartado, plan 3, sin señal: el estilo concreto está por debajo de la resolución de Google Trends mundial. Sigue prestado.
+- cowboy boots: descartado, plan 3, ruido: el estilo concreto está por debajo de la resolución de Google Trends mundial. Sigue prestado.

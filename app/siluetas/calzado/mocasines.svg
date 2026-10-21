@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Mocasines">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 30 140 C 26 124 32 112 48 108 L 108 102 C 132 100 160 112 176 124 C 182 130 182 138 178 140 Z"/>
+<path d="M 30 140 L 178 140 L 178 148 L 30 148 Z" stroke-width="1.02"/>
+<path d="M 96 104 C 110 112 140 114 158 114" stroke-width="1.02"/>
+<path d="M 112 108 L 140 108 L 140 116 L 112 116 Z" stroke-width="1.02"/>
+</g></svg>

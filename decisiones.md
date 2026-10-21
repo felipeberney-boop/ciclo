@@ -807,3 +807,16 @@ Studded se revisó con el mismo criterio: salta +104 % en 2026 como el resto y n
 Bermudas ya estaba afuera.
 
 **Conteo.** Sobre 131 hojas: **71 directo, 48 prestado, 12 sin dato**.
+
+**Calzado y accesorios, en Diseñar, sin inventar (21/10/2026).** A pedido del grupo, Calzado (zapatillas, botinetas,
+mocasines, chatitas, sandalias, plataformas, guillerminas, botas texanas) y Accesorios (tote, piluso, gorra,
+cinturón, anteojos de sol) aparecen como prendas en Diseñar, con dibujo y definición. Tienen dato propio sólo los que
+pasan todos los filtros: **zapatillas, mocasines y tote**. Piluso quedó en 11 años útiles; sandalias y anteojos los saca
+el filtro de estación; el resto es ruido o no tiene señal. Esos se ven como «sin dato directo»: se pueden explorar,
+no se recomiendan, y no toman prestado de un hermano porque un estilo de calzado no dice nada de otro. El camino
+para medirlos sigue siendo la pasarela (CLIP).
+
+**Todas las series, en los gráficos.** El ciclo, las barras de Tendencias y el recorrido usaban sólo las 16 series
+originales. Ahora suman cada hoja con serie propia (65 en total), con un filtro por grupo en El ciclo. Las nuevas
+sólo tienen búsqueda: el recorrido lo dice.
+

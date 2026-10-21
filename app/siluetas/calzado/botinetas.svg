@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Botinetas">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 60 40 L 104 40 L 106 110 C 126 116 160 122 172 134 L 172 150 L 46 150 L 46 128 C 50 110 56 80 60 40 Z"/>
+<path d="M 46 150 L 46 160 L 72 160 L 72 150" stroke-width="1.02"/>
+<path d="M 104 40 L 104 104" stroke-width="1.02"/>
+<path d="M 60 48 L 104 48" stroke-width="1.02"/>
+</g></svg>

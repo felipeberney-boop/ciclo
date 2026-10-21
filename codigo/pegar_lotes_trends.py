@@ -24,9 +24,8 @@ DESCARTE['bermudas'] = 'mide otra cosa: estacionalidad 0,26 y picos sueltos (200
 # plan 3 (21/10/2026): accesorios y calzado no entran a la app; cada término con su razón
 for t, por in {'baseball cap': 'ruido', 'leather belt': 'ruido', 'ankle boots': 'ruido', 'cowboy boots': 'ruido',
                'mary janes': 'sin señal', 'platform shoes': 'sin señal', 'ballet flats': 'sin señal', 'toile de jouy': 'sin señal: cero en los 21 años',
-               'sunglasses': 'sólo estación', 'sandals': 'sólo estación', 'bucket hat': 'marginal (máximo 9)', 'loafers': 'marginal (máximo 7)',
-               'tote bag': 'pasa, pero un término genérico no hace una categoría', 'sneakers': 'pasa, pero un término genérico no hace una categoría'}.items():
-    DESCARTE[t] = f'plan 3, {por}; accesorios y calzado no entran (los estilos concretos están por debajo de la resolución de Google Trends mundial)'
+               }.items():  # sunglasses y sandals los saca el filtro de estación; tote bag, sneakers, bucket hat y loafers pasan por los filtros
+    DESCARTE[t] = f'plan 3, {por}: el estilo concreto está por debajo de la resolución de Google Trends mundial'
 DESCARTE['toile'] = 'mide otra cosa: en francés es «tela» y en costura la prueba de un molde; cae de 70 a 33 sin ciclo. Falta bajar «toile de jouy»'
 filas = list(csv.DictReader(open(BASE)))
 trench = {int(r['anio']): float(r['indice_0_100']) for r in filas if r['atributo_id'] == 'trench'}

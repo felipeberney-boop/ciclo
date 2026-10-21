@@ -116,6 +116,11 @@ Plan 3 de Google Trends (accesorios y calzado): no entra ninguno. Filtro nuevo d
 caen capris, cashmere y wool coat. Toile confirmado como término equivocado. El calzado queda pendiente por la
 pasarela (CLIP). 71 hojas con dato propio, 48 prestadas, 12 sin dato.
 
+## v1.6 · 21/10/2026 · Calzado y accesorios en Diseñar, y todas las series en los gráficos
+
+Calzado y Accesorios como prendas (13 dibujos nuevos); zapatillas, mocasines y tote con dato propio. El ciclo,
+Tendencias y el recorrido pasan de 16 a 65 series, con filtro por grupo.
+
 ## Lo que falta para la Entrega 3
 
 - Conectar la Groq API en vivo. Hoy IA-5 corre con prompt fijo.

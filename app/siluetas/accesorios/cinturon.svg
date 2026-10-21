@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Cinturón">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 10 86 L 190 86 L 190 114 L 10 114 Z"/>
+<path d="M 120 80 L 152 80 L 152 120 L 120 120 Z" stroke-width="1.02"/>
+<path d="M 126 100 L 160 100" stroke-width="1.02"/>
+<circle cx="40" cy="100" r="2.3" stroke-width="1.02"/>
+<circle cx="60" cy="100" r="2.3" stroke-width="1.02"/>
+<circle cx="80" cy="100" r="2.3" stroke-width="1.02"/>
+</g></svg>

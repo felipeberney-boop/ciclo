@@ -80,6 +80,21 @@ PRENDAS = [
     dict(id='kimono', n='Kimono', d='Abrigo liviano abierto, de mangas anchas y rectas.', secundario=True, sil='abrigos/kimono', km='Kimono', rec='kimono', clip_corte='kimono'),
     dict(id='piel', n='Tapado de piel', d='Piel o piel sintética.', sil='abrigos/piel', km='Piel', clip_corte='piel'),
     dict(id='puffer', n='Puffer', d='Acolchado, relleno de pluma o sintético.', sil='abrigos/puffer')]),
+  dict(id='calzado', n='Calzado', d='Lo que va en el pie.', sil='calzado/zapatillas', tipos=[
+    dict(id='zapatillas', n='Zapatillas', d='De lona o cuero, con suela de goma.', sil='calzado/zapatillas', en='sneakers'),
+    dict(id='botinetas', n='Botinetas', d='Bota corta, hasta el tobillo.', sil='calzado/botinetas', en='ankle boots'),
+    dict(id='mocasines', n='Mocasines', d='Sin cordones, de cuero, con antifaz.', sil='calzado/mocasines', en='loafers'),
+    dict(id='chatitas', n='Chatitas', d='Bajas, de punta redonda, sin taco.', sil='calzado/chatitas', en='ballet flats'),
+    dict(id='sandalias', n='Sandalias', d='Abiertas, de tiras.', sil='calzado/sandalias', en='sandals'),
+    dict(id='plataformas', n='Plataformas', d='Con suela alta y pareja.', sil='calzado/plataformas', en='platform shoes'),
+    dict(id='guillerminas', n='Guillerminas', d='Chatitas con tira y botón en el empeine.', sil='calzado/guillerminas', en='mary janes'),
+    dict(id='texanas', n='Botas texanas', d='Caña alta, punta y taco de cowboy.', sil='calzado/texanas', en='cowboy boots')]),
+  dict(id='accesorios', n='Accesorios', d='Lo que completa el look.', sil='accesorios/tote', tipos=[
+    dict(id='tote', n='Tote', d='Bolso abierto de dos manijas.', sil='accesorios/tote', en='tote bag'),
+    dict(id='piluso', n='Piluso', d='Sombrero de tela con ala caída.', sil='accesorios/piluso', en='bucket hat'),
+    dict(id='gorra', n='Gorra', d='Con visera, de béisbol.', sil='accesorios/gorra', en='baseball cap'),
+    dict(id='cinturon', n='Cinturón', d='De cuero, con hebilla.', sil='accesorios/cinturon', en='leather belt'),
+    dict(id='anteojos', n='Anteojos de sol', d='Con lentes oscuros.', sil='accesorios/anteojos', en='sunglasses')]),
   dict(id='enteritos', n='Enteritos', d='Arriba y abajo en una sola pieza.', sil='enteritos/largo', tipos=[
     dict(id='largo', n='Mono largo', d='Con pierna larga.', sil='enteritos/largo'),
     dict(id='corto', n='Mono corto', d='Con pierna de short.', sil='enteritos/corto'),
@@ -185,6 +200,10 @@ MATERIAL_POR_PRENDA = {
   'abrigos/kimono': ['seda', 'satenseda', 'lino', 'algodon', 'gasa', 'poliester'],
   'abrigos/trench': ['gabardina', 'algodon', 'cuero', 'cuerina', 'nylon'],
   'abrigos/piel': ['cuero', 'gamuza', 'cuerina', 'poliester'],
+  'calzado': ['cuero', 'gamuza', 'cuerina', 'lona', 'denimrigido', 'satenseda', 'nylon', 'poliester'],
+  'calzado/sandalias': ['cuero', 'cuerina', 'gamuza', 'lona'], 'calzado/texanas': ['cuero', 'gamuza', 'cuerina'],
+  'accesorios': ['cuero', 'cuerina', 'lona', 'algodon', 'nylon', 'denimrigido', 'gamuza', 'satenseda'],
+  'accesorios/anteojos': [], 'accesorios/cinturon': ['cuero', 'cuerina', 'gamuza', 'lona'],
   'enteritos': DENIM + ['algodon', 'gabardina', 'lona', 'lino', 'corduroy', 'satenseda', 'poliester'],
 }
 TODAS = [i['id'] for f in ESTAMPAS for i in f['items']]
@@ -200,14 +219,15 @@ ESTAMPA_POR_MATERIAL = {  # las que se producen en cada grupo de material (por g
   'Livianos': ['liso', 'lunares', 'pindot', 'floral', 'paisley', 'animal', 'rayas'],
 }
 ESTAMPA_POR_PRENDA = {  # además del material: lo que no se hace en esa prenda
-  'pantalones': NO('toile', 'awning', 'breton'), 'abrigos': NO('pindot', 'tiedye', 'awning', 'breton', 'toile'),
+  'pantalones': NO('toile', 'awning', 'breton'), 'calzado': ['liso', 'animal', 'cebra', 'piton', 'vaca', 'camo', 'cuadros'],
+  'accesorios': ['liso', 'rayas', 'animal', 'cebra', 'cuadros', 'camo', 'floral', 'lunares', 'paisley'], 'abrigos': NO('pindot', 'tiedye', 'awning', 'breton', 'toile'),
   'buzos': NO('toile', 'pow', 'windowpane', 'bengal', 'pinstripe'), 'sweaters': NO('toile', 'camo', 'tiedye', 'pow', 'windowpane', 'bengal'),
 }
 DETALLE_POR_PRENDA = {
   'pantalones': ['cargo', 'bordado', 'tachas', 'plisado', 'flecos'], 'faldas': ['encaje', 'bordado', 'volados', 'plisado', 'cargo', 'flecos', 'pedreria', 'tachas'],
   'vestidos': ['encaje', 'bordado', 'volados', 'cutouts', 'plisado', 'flecos', 'pedreria'], 'remeras': ['encaje', 'bordado', 'cutouts', 'pedreria', 'tachas', 'volados'],
   'camisas': ['encaje', 'bordado', 'volados', 'plisado'], 'buzos': ['bordado', 'tachas'], 'sweaters': ['bordado', 'tachas', 'pedreria'],
-  'abrigos': ['bordado', 'tachas', 'acolchado', 'flecos', 'cargo'], 'enteritos': ['cargo', 'bordado', 'cutouts', 'plisado'],
+  'abrigos': ['bordado', 'tachas', 'acolchado', 'flecos', 'cargo'], 'enteritos': ['cargo', 'bordado', 'cutouts', 'plisado'], 'calzado': ['tachas', 'flecos', 'bordado'], 'accesorios': ['tachas', 'flecos', 'bordado', 'pedreria'],
 }
 
 # ---------- dato prestado: cuando una hoja no tiene serie propia ----------

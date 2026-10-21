@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Guillerminas">
+<g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+<path d="M 30 140 C 26 126 34 116 50 114 C 82 110 108 116 128 118 C 152 118 170 126 178 134 L 178 140 Z"/>
+<path d="M 30 140 L 178 140 L 178 146 L 30 146 Z" stroke-width="1.02"/>
+<path d="M 84 114 C 90 98 106 96 112 116" stroke-width="1.02"/>
+<circle cx="106" cy="104" r="2.3" stroke-width="1.02"/>
+<path d="M 30 146 L 30 152 L 50 152 L 50 146" stroke-width="1.02"/>
+</g></svg>

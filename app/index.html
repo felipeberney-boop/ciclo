@@ -2344,7 +2344,7 @@ function pintarVivo(o){
   const b=$('#rvivob');if(b)b.addEventListener('click',async()=>{
     VIVO[key]='…';pintarVivo(o);
     try{const res=await fetch('/api/lectura',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)});
-      VIVO[key]=res.status===404?{error:'La lectura en vivo corre sólo en la app oficial: ciclo-udesa.netlify.app.'}
+      VIVO[key]=res.status===404?{error:'La lectura en vivo necesita un servidor y corre sólo en ciclo-udesa.netlify.app (hoy pausado). Para preguntarle a un modelo desde acá, usá Preguntar.'}
         :await res.json().then(j=>res.ok?j:{error:j.error||'No se pudo leer.'}).catch(()=>({error:'No se pudo leer.'}));}
     catch{VIVO[key]={error:'Sin conexión.'};}
     if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);

@@ -820,3 +820,11 @@ para medirlos sigue siendo la pasarela (CLIP).
 originales. Ahora suman cada hoja con serie propia (65 en total), con un filtro por grupo en El ciclo. Las nuevas
 sólo tienen búsqueda: el recorrido lo dice.
 
+## 2026-10-21 · GitHub Pages pasa a ser la app oficial
+
+La cuenta gratuita de Netlify se quedó sin créditos y rechaza los deploys (automáticos y directos) desde el commit
+`e2c4e4b`. GitHub Pages publica lo mismo en cada push y pasa a ser la URL oficial:
+https://felipeberney-boop.github.io/ciclo/. Netlify queda como espejo, y es el único lugar donde corre la lectura en
+vivo de IA-5 (necesita la función con la clave guardada); vuelve cuando se renueven los créditos o se pase a un plan
+pago. «Preguntar» no depende de Netlify: usa la clave de cada uno desde el navegador.
+

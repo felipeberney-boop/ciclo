@@ -16,9 +16,9 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 
 | | |
 |---|---|
-| App publicada (oficial) | https://ciclo-udesa.netlify.app |
-| Espejo | https://felipeberney-boop.github.io/ciclo/ |
-| Cómo se publica | Netlify publica la carpeta `app/` sin build (`netlify.toml`). GitHub Pages la vuelve a publicar en cada push que toca `app/` (`.github/workflows/publicar_app.yml`) |
+| App publicada (oficial) | https://felipeberney-boop.github.io/ciclo/ |
+| Espejo | https://ciclo-udesa.netlify.app — **pausado**: la cuenta gratuita de Netlify se quedó sin créditos en octubre de 2026 y no publica desde el commit `e2c4e4b`; muestra una versión anterior |
+| Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). Netlify publica la misma carpeta sin build (`netlify.toml`) cuando tiene créditos |
 
 ## Captura
 
@@ -60,8 +60,9 @@ cd app
 python3 -m http.server 8000
 ```
 
-Publicada en Netlify desde la carpeta `app/`, sin comando de build (*publish directory* = `app`, fijado en
-`netlify.toml`). GitHub Pages publica la misma carpeta como espejo.
+Publicada en GitHub Pages desde la carpeta `app/`, sin comando de build. Netlify publica la misma carpeta
+(*publish directory* = `app`, fijado en `netlify.toml`) como espejo, y es el único lugar donde corre la lectura en
+vivo de IA-5, que necesita una función de servidor; hoy está pausado por falta de créditos.
 
 Lo único que carga de afuera son las tipografías (Google Fonts: Archivo, Bodoni Moda, IBM Plex Mono).
 Sin conexión funciona igual, con las tipografías del sistema.
@@ -113,7 +114,7 @@ Ocho puntos. Tres corren una sola vez, en batch; el resto se dispara con el usua
 | IA-2 | Enlace de registros entre las 8 fuentes | Comparación de pares + clasificación | batch |
 | IA-3 | Agrupar atributos | K-means no supervisado, k=4 | al cargar |
 | IA-4 | Ubicar una tendencia nueva | Asignación al centroide más cercano | en vivo |
-| IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE, desde una función de Netlify | en vivo, en la app oficial |
+| IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE, desde una función de Netlify | en vivo, sólo en Netlify (pausado) |
 | IA-6 | Consulta por imagen | CLIP en el navegador: zero-shot + looks parecidos | en vivo |
 | IA-7 | Diseñar: referencias y colores | CLIP sobre la pasarela de Vogue | batch |
 | IA-8 | Preguntale a CICLO | LLM (Groq) desde el navegador, con tu API key y `llm/ciclo_datos.md` | en vivo |
@@ -226,5 +227,5 @@ ciclo/
 ├── prompts/                   prompts del LLM, versionados
 ├── codigo/                    scripts de extracción, cálculo y render
 ├── entregas/                  estado del proyecto en cada entrega
-└── app/                       lo que se publica (Netlify, con GitHub Pages de espejo)
+└── app/                       lo que se publica (GitHub Pages, con Netlify de espejo)
 ```

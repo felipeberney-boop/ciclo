@@ -791,7 +791,7 @@ main a:not([class]){color:inherit}
         <div>
           <span class="lbl">01 · Tendencias</span>
           <h1>Qué se está moviendo</h1>
-          <p class="sub">Doce atributos leídos en los catálogos de nueve marcas. Las cinco capas ya tienen fuente, y siete atributos tienen además su recorrido en pasarela y búsqueda: abrí la ficha para verlo.</p>
+          <p class="sub">Arriba, lo que gana y pierde terreno en la búsqueda mundial, medido. Abajo, doce atributos: su etapa es la del K-means cuando el atributo está en el modelo, y la paleta viene de un catálogo de demostración (sintético). Abrí la ficha para ver su recorrido y qué conviene para tu perfil.</p>
         </div>
       </div>
       <hr class="rule">
@@ -1176,11 +1176,11 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       <div class="tw"><table>
         <thead><tr><th>Lo que ves</th><th>Origen</th><th>Cómo se obtiene</th></tr></thead>
         <tbody>
-          <tr><td class="k">Paleta de cada atributo</td><td><span class="tag real">medido</span></td><td>Frecuencia real de cada color en los 660 productos de Zara 2018–22. La estampa a rayas existe solo en negro y naranja, 18 productos cada uno.</td></tr>
-          <tr><td class="k">Cuántos colores tolera una estampa</td><td><span class="tag real">medido</span></td><td>Tabla de contingencia estampa × color, chi² = 782,6 con p ≈ 3·10⁻¹²⁹. Es la estructura más fuerte que encontramos.</td></tr>
+          <tr><td class="k">Paleta de cada atributo</td><td><span class="tag demo">demostración</span></td><td>Frecuencia de cada color en los 660 productos de Zara 2018–22, un archivo sintético (decisiones.md, 08/09): muestra el método, no es una conclusión. La estampa a rayas existe solo en negro y naranja, 18 productos cada uno.</td></tr>
+          <tr><td class="k">Cuántos colores tolera una estampa</td><td><span class="tag demo">demostración</span></td><td>Tabla de contingencia estampa × color, chi² = 782,6 con p ≈ 3·10⁻¹²⁹. Es la estructura más fuerte del archivo, pero el archivo es sintético (Zara 2018–22): demuestra el método, no dice nada de la moda.</td></tr>
           <tr><td class="k">Reparto de proporciones</td><td><span class="tag real">medido</span></td><td>Minería de texto sobre las descripciones reales del catálogo de Zara de febrero 2024: 38 prendas amplias, 16 rectas, 5 ajustadas sobre 228 únicas.</td></tr>
-          <tr><td class="k">Grupo en liquidación</td><td><span class="tag real">medido</span></td><td>K-means k=4 sobre 1.814 productos de 8 marcas. Un grupo de 375 con 44,4 % de descuento y el 100 % en rebaja, transversal a marcas y precios.</td></tr>
-          <tr><td class="k">Etapa del ciclo</td><td><span class="tag demo">estimada</span></td><td>Las fichas de Tendencias muestran la etapa del K-means cuando el atributo está en el modelo (siete de las doce); las otras cinco, la estimada sobre el catálogo sintético de Zara, y la pista dice cuál es cada una.</td></tr>
+          <tr><td class="k">Grupo en liquidación</td><td><span class="tag demo">sin verificar</span></td><td>K-means k=4 sobre 1.814 productos de 8 marcas. Un grupo de 375 con 44,4 % de descuento y el 100 % en rebaja, transversal a marcas y precios. No encontramos en el repo de qué archivo sale; queda fuera de las conclusiones hasta verificarlo.</td></tr>
+          <tr><td class="k">Etapa del ciclo</td><td><span class="tag demo">estimada</span></td><td>Las fichas de Tendencias muestran la etapa del K-means cuando el atributo está en el modelo (seis de las doce); las otras seis, la estimada sobre el catálogo sintético de Zara, y la pista dice cuál es cada una. La recomendación nunca sale de la etapa estimada: rayas y gamuza recomiendan por su serie de búsqueda, y las cuatro sin serie no recomiendan.</td></tr>
           <tr><td class="k">Capa de pasarela</td><td><span class="tag real">medido</span></td><td><b>Vogue Runway</b> (HuggingFace, traopia): 1.281.633 imágenes con diseñador, temporada y etiquetas. Usamos las de la sección «Collection», sin novias, 2000–2023, y medimos qué parte de los looks de cada año lleva cada etiqueta. Las etiquetas vienen de un modelo de visión genérico: antes de 2010 detecta menos.</td></tr>
           <tr><td class="k">Capa de búsqueda</td><td><span class="tag real">medido</span></td><td><b>Google Trends</b>: 65 series mundiales en inglés (16 de septiembre y 49 de los planes de octubre, con «trench coat» de ancla) y 14 términos en español para Argentina; índice mensual promediado por año y corregido por el crecimiento general de las búsquedas de moda. El análisis corta en 2024: 2025 y 2026 traen un salto de medición que afecta a casi todos los términos a la vez. Qué entró y qué no, término por término: <code>datasets/trends_lotes/informe.md</code>.</td></tr>
           <tr><td class="k">Hasta 2030 · el cono</td><td><span class="tag ia">no es un pronóstico</span></td><td>Probamos cuatro formas de predecir la búsqueda —suavizado con tendencia amortiguada (error a 5 años 22,1 contra 21,6 de su base), análogos históricos (15,9 contra 15,5), reversión a la media (21,7 contra 21,6) y la etapa del ciclo como regla (62,9 % contra 62,9 %)— y ninguna le gana a repetir el último valor. La línea punteada es dónde quedaría cada curva si se moviera como la mediana de la historia; la banda, cuánto se movió de verdad la búsqueda a cada distancia, medido con 2025 corregido adentro (±8,8 a un año, ±23,1 a cinco). La ventana de cada categoría marca hasta dónde ese error todavía sirve para decidir. <b>No entra al K-means.</b></td></tr>
@@ -1545,10 +1545,12 @@ const tuQuien=()=>vinculo==='propia'?'tu cliente':'tu marca';
 let detSel=null;
 function abrirDetalle(id){
   const t=T.find(x=>x.id===id);detSel=id;const v=$('#v-detalle');
-  const [acc,arg]=consejo(cliente,t.et);
+  // la recomendación sale de señal(), como en el resto de la app: etapa del K-means, si no la serie, si no nada.
+  // Nunca de la etapa estimada sobre el catálogo sintético (antes decía «Entrar, está en pico» para el cuero, que el K-means pone en retorno)
+  const sg=señal({grupo:KMAP[t.id]||null,rec:DMAP[t.id]&&REC.some(o=>o.id===DMAP[t.id])?DMAP[t.id]:null});
   const CLI={fast:'fast fashion',medio:'contemporary',premium:'high fashion',nicho:'diseño emergente'}[cliente];
   v.innerHTML=`
-    <button class="back" id="volver">← Volver al radar</button>
+    <button class="back" id="volver">← Volver a Tendencias</button>
     <div class="vhead">
       <div>
         <span class="lbl">01 · Tendencias · ${t.k} · ${t.fuente}</span>
@@ -1569,12 +1571,12 @@ function abrirDetalle(id){
           <dt>${vinculo==='propia'?'Para':'Cliente'}</dt><dd>${vinculo==='propia'?'Tu cliente · '+CLI:'Tu marca · '+CLI}</dd>
         </dl>
         <div class="ai">
-          <div class="h"><span class="lbl" style="color:var(--accent)">Lectura de la IA</span><span class="tag ia2">interpretación</span></div>
+          <div class="h"><span class="lbl" style="color:var(--accent)">Lectura</span><span class="tag ia2">interpretación · escrita por el equipo</span></div>
           <p>${t.lect}</p>
           <div class="rec">
-            <div class="a serif ${señalPalabra(acc).cls}">${acc}</div>
+            <div class="a serif ${sg.cls}"><span aria-hidden="true">${sg.icono}</span> ${sg.estado==='sin-dato'?'Sin recomendación':sg.palabra}</div>
             <div class="t">Recomendación · ${tuQuien()} · ${CLI}</div>
-            <div class="d">${arg}</div>
+            <div class="d">${sg.porque}</div>
           </div>
         </div>
       </div>

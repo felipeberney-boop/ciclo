@@ -1108,3 +1108,19 @@ perfil» sigue volviendo a las preguntas. La versión anterior quedó en
 **El espejo de Netlify.** Seguía mostrando la versión de octubre, con la portada vieja sin calzado, y es fácil entrar
 por error. Netlify rechaza los deploys por falta de créditos y no se puede actualizar desde acá; `netlify.toml` suma una
 redirección 301 de todo a la app oficial, que se aplica en el próximo deploy que Netlify acepte.
+
+## 2026-10-26 · La ficha de Tendencias recomendaba con datos de demostración
+
+**El problema.** Con Tendencias como pantalla principal, la ficha abierta de cada atributo recomendaba con
+`consejo(cliente, t.et)`: la etapa estimada sobre el catálogo sintético de Zara 2018–22. El cuero decía «K-means: en
+retorno» arriba y «Entrar: está en pico, es el último tren» abajo, para fast fashion. Ahora la recomendación sale de
+`señal()`, como en el resto de la app: la etapa del K-means y la regla de tu perfil (cuero, fast fashion: Esperar; nicho:
+Entrar); si no está en el modelo, la tendencia de su serie (rayas y gamuza: Entrar); si no tiene ninguna de las dos,
+«Sin recomendación» (corazones, punto, geométrico, liso). Verificado en las doce fichas con dos perfiles. La «Lectura»
+de cada ficha es un texto que escribimos nosotros: dejó de llamarse «Lectura de la IA».
+
+**Cifras que se presentaban como medidas.** En Método, la paleta de cada atributo y el chi² estampa × color (782,6) salen
+de Zara 2018–22, el archivo que el 08/09 declaramos sintético: pasan a «demostración». «Grupo en liquidación: 1.814
+productos de 8 marcas» no tiene fuente en ningún documento del repo: pasa a «sin verificar». El subtítulo de Tendencias
+decía «doce atributos leídos en los catálogos de nueve marcas»; ahora dice qué parte es medida y cuál de demostración.
+El guion de la presentación (`entregas/entrega_3/presentacion_guion.md`) sale con estas correcciones.

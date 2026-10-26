@@ -1010,3 +1010,27 @@ atributo está en el K-means, la pista muestra esa etapa; si no, la estimada; y 
 … 2004–2025» para la búsqueda (son 65 series, cortadas en 2024). El pie decía «Google Trends · 49 términos» y
 «Reddit · 4.857 menciones», una cifra sin origen: la documentada es 4.404 posts, 2012–2025. Buscar por imagen decía
 «ninguno de los 18»; CLIP lee 17. «Última lectura» pasa del 23/09 al 21/10, el día del último lote de Google Trends.
+
+## 2026-10-26 · CLIP en Preguntar: el mismo umbral que Buscar por imagen, y el progreso a la vista
+
+**Una foto, dos respuestas.** Para la misma foto, Buscar por imagen decía «No determinado: ningún atributo pasa 0,35»,
+y Preguntar armaba cuatro chips desde 0,12 y se los pasaba al modelo como «CLIP leyó… confirmado por el diseñador»,
+aunque nadie había confirmado nada. Ahora las dos vistas usan `CLIP_UMBRAL = 0,35` (el de la validación,
+`prompts/prompt_consulta_por_imagen_v2.md`). Por debajo, Preguntar dice cuál fue el más cercano y no le pasa nada al
+modelo. Cada chip muestra su probabilidad, y el prompt dice lo que pasó de verdad: «más de 0,35; el diseñador lo vio y
+no lo sacó».
+
+**La espera.** La primera consulta baja 7 MB de índice y 89 MB de modelo: con 4G lento son unos 40 s y unos 7
+minutos, y sólo se veía un texto fijo. En Preguntar, durante el índice no se veía nada, porque el aviso se escribía en
+la otra vista. Ahora las dos bajadas cuentan megas («Bajando el modelo CLIP: 34 de 89 MB»), en la vista que las pidió, y
+Preguntar avisa el peso antes de elegir la foto, como ya hacía Buscar por imagen. Al abrir la app no se baja nada de
+`clip/`: se midió en la URL publicada (1,7 s hasta poder usarla con 4G lento, 3,8 s con 3G).
+
+**«El dato».** Los atributos que nombraba la respuesta y no tenían serie desaparecían sin aviso, y la columna de la
+señal salía vacía, porque el resumen de DATOS trae `etapa` y `afuera`, no `señal`. Ahora hay una fila por atributo:
+mini-gráfico con sus años, o «sin serie de búsqueda», y la etapa del K-means con el número afuera.
+
+**Cómo se probó.** Playwright de punta a punta, con CLIP real en el navegador y Groq simulado: un trench del índice da
+Trench 0,50 y Blazer oversize 0,42, que llegan como chips y al prompt; una foto ambigua (Y2K 0,33) no le pasa nada al
+modelo; la respuesta trae palabra, serie y una acción que cambia el diseño y abre la ficha. Con una clave real de Groq
+falta probarlo una vez desde la URL publicada.

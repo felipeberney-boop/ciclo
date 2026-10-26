@@ -702,7 +702,7 @@ main a:not([class]){color:inherit}
 .asa .asleer{font-family:"Bodoni Moda",serif;font-size:21px;line-height:1.35;max-width:52ch}
 .asdatos{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule)}
 .asdato{display:grid;grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr);gap:12px;align-items:center;padding:6px 0;font-size:13px}
-.asdato .n{font-weight:500}.asdato .v{font-family:var(--mono);font-size:11px;color:var(--ink-2)}.asspark{color:var(--ink)}
+.asdato .n{font-weight:500}.asnos,.asanios{font-family:var(--mono);font-size:10px;color:var(--ink-3)}.asanios{display:block}.aspp{font-family:var(--mono);font-size:10px;color:var(--ink-3)}.asdato .v{font-family:var(--mono);font-size:11px;color:var(--ink-2)}.asspark{color:var(--ink)}
 .asacciones{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .asacciones .lbl{width:100%}
 .asa.asnota{border-left-style:solid!important}
@@ -1078,7 +1078,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
           <div class="ascard"><span class="lbl">Tu diseño</span><div id="asdis" class="aschips"></div></div>
           <div class="ascard">
             <span class="lbl">Una foto o un boceto</span>
-            <p class="ascap">CLIP la lee en este navegador; la imagen no sale de tu computadora. Si leyó algo que no va, sacalo.</p>
+            <p class="ascap">CLIP la lee en este navegador; la imagen no sale de tu computadora. Si leyó algo que no va, sacalo. La primera vez baja el modelo y el índice (unos 96 MB); después quedan guardados.</p>
             <label class="asfoto"><input type="file" id="asfile" accept="image/*"><span>Elegir una imagen</span></label>
             <div id="asprev"></div><div id="asclip" class="aschips"></div><p class="ascap" id="asclipest"></p>
           </div>
@@ -2094,7 +2094,7 @@ function pintarDisenar(){
 }
 /* ---------- consulta por imagen: CLIP en el navegador (IA-6) ----------
    índice: codigo/armar_indice_clip.py · textos: codigo/calcular_textos_clip.mjs · validación: prompts/prompt_consulta_por_imagen_v2.md */
-const CLIP={idx:null,txt:null,mod:null};
+const CLIP={idx:null,txt:null,mod:null},CLIP_UMBRAL=0.35; // por debajo, la app no adivina (validación: prompts/prompt_consulta_por_imagen_v2.md)
 const CLIP_TF='https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.2';
 const CLIP_TAG={'Jeans baggy':'denim','Jeans rectos':'denim','Jeans skinny':'denim','Buzo / hoodie':'buzo','Cuero':'cuero','Lunares':'lunares',
   'Floral':'floral','Animal print':'animal','Encaje':'encaje','Kimono':'kimono','Capa':'capa','Trench':'trench'};
@@ -2104,18 +2104,29 @@ const TEMP={S:'Spring',F:'Fall',R:'Resort',P:'Pre-Fall'};
 let K4=null;
 function kEtapaN(nm){if(!K4){const P=KM.rows.map(kZ),F=kFit(P,4);K4={F,N:kName(F.C,4)};}
   const i=KM.rows.findIndex(r=>r.n===nm);return i<0?null:K4.N[K4.F.L[i]];}
-async function clipIndice(){
-  if(CLIP.idx)return;
-  qEstado('Bajando el índice de 14.000 looks (8 MB)…');
-  const [m,b,t]=await Promise.all([fetch('clip/looks.json').then(r=>r.json()),fetch('clip/looks.bin').then(r=>r.arrayBuffer()),fetch('clip/atributos.json').then(r=>r.json())]);
+/* baja un archivo contando bytes, para poder decir cuánto falta */
+async function clipBajar(url,cada){const r=await fetch(url);if(!r.ok)throw new Error(url+': '+r.status);
+  const tot=+r.headers.get('content-length')||0;if(!r.body||!tot){const b=await r.arrayBuffer();cada(b.byteLength,b.byteLength);return b;}
+  const rd=r.body.getReader(),partes=[];let n=0;for(;;){const {done,value}=await rd.read();if(done)break;partes.push(value);n+=value.length;cada(n,tot);}
+  const out=new Uint8Array(n);let o=0;partes.forEach(p=>{out.set(p,o);o+=p.length;});return out.buffer;}
+const mb=b=>(b/1048576).toFixed(b<1048576*10?1:0).replace('.',',');
+async function clipIndice(est){
+  if(CLIP.idx)return;est=est||qEstado;
+  const vis={};const avisar=()=>{const n=Object.values(vis).reduce((a,x)=>a+x[0],0),t=Object.values(vis).reduce((a,x)=>a+x[1],0);
+    est(`Bajando el índice de 14.000 looks: ${mb(n)} de ${t?mb(t):'8'} MB (sólo la primera vez)…`);};
+  const baja=u=>clipBajar(u,(n,t)=>{vis[u]=[n,t];avisar();});avisar();
+  const [m,b,t]=await Promise.all([baja('clip/looks.json').then(x=>JSON.parse(new TextDecoder().decode(x))),baja('clip/looks.bin'),fetch('clip/atributos.json').then(r=>r.json())]);
   CLIP.idx=Object.assign(m,{Q:new Int8Array(b)});CLIP.txt=t;
 }
-async function clipModelo(){
-  if(CLIP.mod)return;
-  qEstado('Bajando el modelo CLIP (89 MB, sólo la primera vez)…');
-  const T=await import(CLIP_TF);
-  const proc=await T.AutoProcessor.from_pretrained('Xenova/clip-vit-base-patch32');
-  const model=await T.CLIPVisionModelWithProjection.from_pretrained('Xenova/clip-vit-base-patch32',{dtype:'q8'});
+async function clipModelo(est){
+  if(CLIP.mod)return;est=est||qEstado;
+  est('Bajando el modelo CLIP (89 MB, sólo la primera vez; después queda guardado en el navegador)…');
+  const T=await import(CLIP_TF),vis={};
+  const progress_callback=p=>{if(p.status!=='progress'||!p.total)return;vis[p.file]=[p.loaded,p.total];
+    const n=Object.values(vis).reduce((a,x)=>a+x[0],0),t=Object.values(vis).reduce((a,x)=>a+x[1],0);
+    est(`Bajando el modelo CLIP: ${mb(n)} de ${mb(Math.max(t,89*1048576))} MB (sólo la primera vez; después queda guardado)…`);};
+  const proc=await T.AutoProcessor.from_pretrained('Xenova/clip-vit-base-patch32',{progress_callback});
+  const model=await T.CLIPVisionModelWithProjection.from_pretrained('Xenova/clip-vit-base-patch32',{dtype:'q8',progress_callback});
   CLIP.mod={T,proc,model};
 }
 function clipVectorDelIndice(i){const {Q,dim,escala}=CLIP.idx,v=new Float32Array(dim);for(let d=0;d<dim;d++)v[d]=Q[i*dim+d]/escala;return v;}
@@ -2135,7 +2146,7 @@ function clipPintar(R,mismo){
   const baseEtiqueta=t=>{const b=idx.atributos.indexOf(t);let c=0;for(let i=0;i<idx.n;i++)c+=(idx.m[i]>>b)&1;return c/idx.n;};
   const q=$('#qres');q.innerHTML='';
   const top=R.atr[0];
-  if(top.p<0.35){const d=document.createElement('p');d.className='note a';d.style.margin='0';
+  if(top.p<CLIP_UMBRAL){const d=document.createElement('p');d.className='note a';d.style.margin='0';
     d.innerHTML=`<b>No determinado.</b> Ningún atributo pasa 0,35 de probabilidad: la imagen no se parece claramente a ninguno de los 17. Abajo van los tres más cercanos, para orientar, no como respuesta.`;q.appendChild(d);}
   R.atr.slice(0,3).forEach(a=>{
     const et=kEtapaN(a.n),v=a.validacion,tg=CLIP_TAG[a.n];
@@ -2445,7 +2456,9 @@ function asElegir(doc,texto,prefer){
   const serie={},nombre={};todas.forEach(l=>{const id=asCampo(l,'id');if(!id)return;nombre[id]=l.slice(2).split(' | ')[0];
     const g=asCampo(l,'serie')||(GREL[id]?id:null);if(g&&GREL[g])serie[id]=g;});
   return {datos:partes.map(p=>p.join('\n').trim()).join('\n\n'),usadas:[...fichas,...senales].map(l=>l.slice(2).split(' | ')[0]),
-    ids:todas.map(l=>asCampo(l,'id')).filter(Boolean),reglas,serie,nombre,senal:Object.fromEntries(todas.map(l=>[asCampo(l,'id'),asCampo(l,'señal')]))};
+    ids:todas.map(l=>asCampo(l,'id')).filter(Boolean),reglas,serie,nombre,
+    senal:Object.fromEntries(todas.map(l=>{const et=asCampo(l,'etapa'),af=asCampo(l,'afuera 2022→2024');
+      return [asCampo(l,'id'),asCampo(l,'señal')||[et&&'etapa '+et.toLowerCase()+' (K-means)',af&&'afuera '+af.replace(/\s*puntos$/,'')+' puntos, 2022→2024'].filter(Boolean).join(' · ')];}))};
 }
 const asQuien=()=>`Quien pregunta ${vinculo==='propia'?'diseña por su cuenta (sin producción ni stock)':'trabaja para una marca'}, ${publico==='mujer'?'diseña para mujer':publico==='hombre'?'diseña para hombre':'diseña sin género'}, perfil: ${cliente}.`;
 /* no confiamos a ciegas en el modelo: recortamos, validamos la acción, los ids y cada cambio contra OPCIONES */
@@ -2469,7 +2482,7 @@ function asError(st,msg){
 function asSpark(g){
   const v=(GREL[g]||[]).map((x,i)=>({y:2004+i,x})).filter(p=>p.x!=null&&p.y<=ANIO_G);if(v.length<3)return '';
   const W=150,H=34,mx=Math.max(...v.map(p=>p.x)),X=i=>2+i/(v.length-1)*(W-4),Y=x=>H-3-(x/mx)*(H-6);
-  return `<svg class="asspark" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="1.4" points="${v.map((p,i)=>X(i).toFixed(1)+','+Y(p.x).toFixed(1)).join(' ')}"/><circle cx="${X(v.length-1)}" cy="${Y(v[v.length-1].x)}" r="2.2" fill="currentColor"/></svg>`;
+  return `<span class="aspk"><svg class="asspark" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="1.4" points="${v.map((p,i)=>X(i).toFixed(1)+','+Y(p.x).toFixed(1)).join(' ')}"/><circle cx="${X(v.length-1)}" cy="${Y(v[v.length-1].x)}" r="2.2" fill="currentColor"/><title>Búsqueda mundial ${v[0].y}–${v[v.length-1].y}</title></svg><span class="asanios">${v[0].y}–${v[v.length-1].y}</span></span>`;
 }
 function asSugerencias(){
   const c=TAX.cortes.find(x=>x.id===dz.corte),t=dzTipo(),nm=c?c.n.toLowerCase():t?dzNombreTipo().toLowerCase():null;
@@ -2481,7 +2494,7 @@ function asPintar(){
   $('#asdis').innerHTML=D.chips.length?D.chips.map(c=>`<button type="button" class="aschip" data-ir="${c.paso}"><span>${c.n}</span>${escH(c.v)}</button>`).join('')+`<p class="ascap">${(PERFIL[cliente]||PERFIL.premium).n} · ${vinculo==='propia'?'por tu cuenta':'para una marca'}</p>`
     :`<p class="ascap">Todavía no armaste nada. <button type="button" class="gvolver" id="asirdis">Ir a Diseñar →</button></p>`;
   $$('#asdis [data-ir]').forEach(b=>b.onclick=()=>{mostrar('disenar');dzIr(b.dataset.ir);});if($('#asirdis'))$('#asirdis').onclick=()=>mostrar('disenar');
-  $('#asclip').innerHTML=as.clip.map((c,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar"><span>leí</span>${escH(c.n)} ×</button>`).join('');
+  $('#asclip').innerHTML=as.clip.map((c,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar"><span>leí</span>${escH(c.n)} <span class="aspp">${c.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('');
   $$('#asclip [data-x]').forEach(b=>b.onclick=()=>{as.clip.splice(+b.dataset.x,1);asPintar();});
   const ch=$('#aschat');ch.innerHTML='';
   if(!as.hist.length)ch.innerHTML=`<div class="asa"><div class="h"><span class="tag ia2">interpretado · LLM</span></div><p>${D.chips.length?`Estás armando ${escH(dzNombre())}. Preguntame si conviene, qué cambiar o qué se le parece.`:'Armá algo en Diseñar o subí una foto, y preguntame.'} Cada respuesta trae el dato que la sostiene.</p></div>`;
@@ -2490,7 +2503,7 @@ function asPintar(){
     if(m.role==='user'){d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}
     if(m.error){d.className='asa err';d.innerHTML=`<p>${escH(m.error)}</p>`;ch.appendChild(d);return;}
     if(m.aviso){d.className='asa asnota';d.innerHTML=m.aviso;ch.appendChild(d);return;}
-    const r=m.r,E=m.E,filas=r.atributos.filter(id=>E.serie[id]).map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span>${asSpark(E.serie[id])}<span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
+    const r=m.r,E=m.E,filas=r.atributos.map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span>${E.serie[id]?asSpark(E.serie[id]):'<span class="asnos">sin serie de búsqueda</span>'}<span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
     d.className='asa';
     d.innerHTML=`<div class="h"><span class="tag ia2">interpretado · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">no lo tengo medido</span>':''}</div>
       ${r.accion?`<div class="acc serif ${señalPalabra(r.accion).cls}">${señalPalabra(r.accion).icono} ${escH(r.accion)}</div>`:''}
@@ -2532,12 +2545,13 @@ async function asFoto(file){
   const url=URL.createObjectURL(file);$('#asprev').innerHTML=`<img class="asimg" src="${url}" alt="La imagen que subiste">`;
   const est=t=>{$('#asclipest').textContent=t;};
   try{
-    await clipIndice();est('Bajando el modelo CLIP (89 MB, sólo la primera vez)…');await clipModelo();est('Leyendo la imagen…');
+    await clipIndice(est);await clipModelo(est);est('Leyendo la imagen…');
     const {T,proc,model}=CLIP.mod,img=await T.RawImage.fromURL(url),{image_embeds}=await model(await proc(img));
     const R=clipLeer(Float32Array.from(image_embeds.data)),idx=CLIP.idx;
-    as.clip=R.atr.filter((a,i)=>i<4&&a.p>=.12).map(a=>({n:a.n,p:a.p}));
+    as.clip=R.atr.filter((a,i)=>i<3&&a.p>=CLIP_UMBRAL).map(a=>({n:a.n,p:a.p}));const cerca=R.atr[0];
     as.looks=R.orden.slice(0,6).map(i=>({u:vogueFoto(idx.f[i],1280),s:vogueFoto(idx.f[i],320),d:`${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]}`}));
-    est(as.clip.length?'Esto es lo que leyó CLIP (interpretación). Sacá lo que no va antes de preguntar.':'CLIP no reconoció con claridad ningún atributo: preguntá igual, o probá con otra foto.');
+    est(as.clip.length?'Esto es lo que leyó CLIP (interpretación, con más de 0,35 de probabilidad). Sacá lo que no va antes de preguntar.'
+      :`CLIP no reconoció con claridad ningún atributo: ninguno pasa 0,35 (el más cercano es ${/^[A-Z0-9]+$/.test(cerca.n.split(' ')[0])?cerca.n:cerca.n.toLowerCase()}, ${cerca.p.toFixed(2).replace('.',',')}). No se lo pasamos al modelo; preguntá igual, o probá con otra foto.`);
     asPintar();
   }catch(e){console.error(e);est('No se pudo leer la imagen: '+(e.message||e));}
 }
@@ -2558,7 +2572,7 @@ async function asPreguntar(){
   const recientes=as.hist.filter(m=>m.role==='user').slice(-2).map(m=>m.content).join(' ')+' '+D.chips.map(c=>c.v).join(' ')+' '+clipTxt;
   const E=asElegir(as.datos,recientes,D.ids);
   const opc=Object.keys(O).length?'OPCIONES (paso: valores posibles para "acciones"):\n'+Object.entries(O).map(([k,v])=>`${k}: ${v.join(', ')}`).join('\n'):'OPCIONES: ninguna (no hay diseño armado).';
-  const system=`${AS_INSTR}\n\n${asQuien()}\nTU DISEÑO: ${D.chips.length?D.txt:'todavía no armó nada'}.\n${clipTxt?`EN SU IMAGEN, CLIP LEYÓ (interpretado, confirmado por el diseñador): ${clipTxt}.\n`:''}${opc}\n\n=== DATOS ===\n${E.datos}\n=== FIN DE DATOS ===`;
+  const system=`${AS_INSTR}\n\n${asQuien()}\nTU DISEÑO: ${D.chips.length?D.txt:'todavía no armó nada'}.\n${clipTxt?`EN SU IMAGEN, CLIP LEYÓ (interpretado, más de 0,35 de probabilidad; el diseñador lo vio y no lo sacó): ${clipTxt}.\n`:''}${opc}\n\n=== DATOS ===\n${E.datos}\n=== FIN DE DATOS ===`;
   const mensajes=as.hist.filter(m=>m.role==='user'||m.r).slice(-8).map(m=>({role:m.role,content:m.role==='user'?m.content:m.r.respuesta}));
   const modelo=$('#asmodelo').value;
   $('#asprompt').textContent=system;$('#astok').textContent=`Unos ${Math.round(system.length/3.5)} tokens de instrucciones y datos. Leyó: ${E.usadas.length?E.usadas.join(' · '):'sólo el resumen'}.`;

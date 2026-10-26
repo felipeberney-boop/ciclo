@@ -197,9 +197,9 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 - Tiro bajo | id: tiro_bajo | busca: tiro bajo | paso: tiro | valor: bajo | sin dato: ni serie propia ni de un pariente
 - Tiro medio | id: tiro_medio | busca: tiro medio | paso: tiro | valor: medio | sin dato: ni serie propia ni de un pariente
 - Tiro alto | id: tiro_alto | busca: tiro alto | paso: tiro | valor: alto | sin dato: ni serie propia ni de un pariente
-- Material · Jersey | id: material_jersey | busca: jersey, jersey | paso: material | valor: jersey | sin dato: ni serie propia ni de un pariente
+- Material · Jersey | id: material_jersey | busca: jersey, jersey | paso: material | valor: jersey | señal: -7 puntos en la búsqueda mundial 2022→2024 | dato: prestado de remera (Es la tela de la remera: se lee con su serie, como la gabardina con la del trench.) | serie: remeras_remera
 - Material · Morley | id: material_rib | busca: morley, rib knit | paso: material | valor: rib | sin dato: ni serie propia ni de un pariente
-- Material · Frisa | id: material_frenchterry | busca: frisa, french terry | paso: material | valor: frenchterry | sin dato: ni serie propia ni de un pariente
+- Material · Frisa | id: material_frenchterry | busca: frisa, french terry | paso: material | valor: frenchterry | señal: +2 puntos en la búsqueda mundial 2022→2024 | dato: prestado de buzo / athleisure (Es la tela del buzo: se lee con la serie de buzos, como la gabardina con la del trench.) | serie: buzo
 - Material · Polar | id: material_fleece | busca: polar, fleece | paso: material | valor: fleece | señal: -11 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: fleece
 - Material · Punto trenzado | id: material_cable | busca: punto trenzado, cable knit | paso: material | valor: cable | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: cable
 - Material · Bouclé | id: material_boucle | busca: bouclé, bouclé | paso: material | valor: boucle | señal: +10 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: boucle
@@ -225,7 +225,7 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 - Material · Cuerina | id: material_cuerina | busca: cuerina, faux leather | paso: material | valor: cuerina | señal: +1 puntos en la búsqueda mundial 2022→2024 | etapa: En retorno | dato: prestado de cuero (Hermano: imita al cuero y se lee con su serie.) | serie: cuero
 - Material · Poliéster | id: material_poliester | busca: poliéster, polyester | paso: material | valor: poliester | señal: -3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: poliester
 - Material · Nylon | id: material_nylon | busca: nylon, nylon | paso: material | valor: nylon | sin dato: ni serie propia ni de un pariente
-- Material · Acrílico | id: material_acrilico | busca: acrílico, acrylic | paso: material | valor: acrilico | sin dato: ni serie propia ni de un pariente
+- Material · Acrílico | id: material_acrilico | busca: acrílico, acrylic | paso: material | valor: acrilico | señal: +20 puntos en la búsqueda mundial 2022→2024 | dato: prestado de lana (Imita a la lana en el punto: se lee con la lana, como el cashmere y el paño.) | serie: lana
 - Material · Lycra | id: material_elastano | busca: lycra, spandex / elastane | paso: material | valor: elastano | señal: -3 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: elastano
 - Material · Neoprene | id: material_neoprene | busca: neoprene, neoprene / scuba | paso: material | valor: neoprene | señal: -4 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: neoprene
 - Material · Gasa | id: material_gasa | busca: gasa, chiffon | paso: material | valor: gasa | señal: -8 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: gasa
@@ -263,7 +263,7 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 - Estampa · Toile de Jouy | id: estampa_toile | busca: toile de jouy | paso: estampa | valor: toile | señal: +6 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: prestado de floral (Familia: estampa figurativa, se lee con el floral. «toile» medía tela y moldes de costura, y «toile de jouy» volvió en cero.) | serie: floral
 - Estampa · Camuflado | id: estampa_camo | busca: camuflado | paso: estampa | valor: camo | señal: +5 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: camo
 - Estampa · Tie-dye | id: estampa_tiedye | busca: tie-dye | paso: estampa | valor: tiedye | señal: -15 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: tiedye
-- Estampa · Chevron | id: estampa_chevron | busca: chevron | paso: estampa | valor: chevron | sin dato: ni serie propia ni de un pariente
+- Estampa · Chevron | id: estampa_chevron | busca: chevron | paso: estampa | valor: chevron | señal: -6 puntos en la búsqueda mundial 2022→2024 | dato: prestado de espiga (Hermano: el mismo zigzag, sin el corte en cada vértice. «chevron print» fue ruido (máximo bajo 6).) | serie: espiga
 - Estampa · Espiga | id: estampa_espiga | busca: espiga | paso: estampa | valor: espiga | señal: -6 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: espiga
 
 ## Lo que CICLO no puede responder

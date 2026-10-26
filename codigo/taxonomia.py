@@ -206,6 +206,25 @@ MATERIAL_POR_PRENDA = {
   'accesorios/anteojos': [], 'accesorios/cinturon': ['cuero', 'cuerina', 'gamuza', 'lona'],
   'enteritos': DENIM + ['algodon', 'gabardina', 'lona', 'lino', 'corduroy', 'satenseda', 'poliester'],
 }
+# qué es cada estampa (26/10/2026): ninguna hoja sin su definición
+DEF_ESTAMPA = {
+  'liso': 'Sin estampa: la tela en un solo color.',
+  'rayas': 'Franjas paralelas de dos o más colores.', 'breton': 'Rayas marineras: azul sobre crudo, finas y parejas.',
+  'pinstripe': 'Rayas finísimas y espaciadas sobre fondo oscuro, la del traje.', 'bengal': 'Rayas medianas del mismo ancho que el fondo, la de la camisa.',
+  'awning': 'Rayas anchas y marcadas, como la lona de un toldo.',
+  'lunares': 'Círculos repetidos sobre un fondo liso.', 'pindot': 'Lunares diminutos, casi un punteado.',
+  'cuadros': 'Líneas de varios colores y anchos que se cruzan.', 'gingham': 'Cuadros chicos de dos colores, el del mantel de picnic.',
+  'pow': 'Cuadro fino en grises con otro más grande encima, el del saco de lana.', 'windowpane': 'Líneas finas que arman cuadros grandes, como el marco de una ventana.',
+  'argyle': 'Rombos cruzados por líneas en diagonal, el del sweater de golf.',
+  'animal': 'Las rosetas del leopardo.', 'cebra': 'Franjas irregulares en blanco y negro.', 'piton': 'Escamas de serpiente.',
+  'vaca': 'Manchas grandes e irregulares sobre fondo blanco.',
+  'floral': 'Flores, en cualquier escala y estilo.', 'paisley': 'Gota curva de origen persa, con relleno ornamental.',
+  'toile': 'Escenas campestres dibujadas en un solo color sobre fondo claro.', 'camo': 'Manchas verdes, marrones y arena, la del uniforme militar.',
+  'tiedye': 'Teñido anudado: círculos y manchas difusas de color.', 'chevron': 'Zigzag continuo de franjas en V.',
+  'espiga': 'Zigzag cortado en cada vértice, el del tejido de lana.',
+}
+for _f in ESTAMPAS:
+    for _i in _f['items']: _i['d'] = DEF_ESTAMPA[_i['id']]
 TODAS = [i['id'] for f in ESTAMPAS for i in f['items']]
 NO = lambda *ids: [e for e in TODAS if e not in ids]
 ESTAMPA_POR_MATERIAL = {  # las que se producen en cada grupo de material (por grupo; liso va siempre)
@@ -236,6 +255,10 @@ DETALLE_POR_PRENDA = {
 # rec:<id con búsqueda>, km:<atributo del K-means>, je:<término de jean>. Los colores sin lectura de CLIP para esa prenda
 # toman el color suelto en toda la pasarela (se calcula en la app).
 PRESTA = {
+  'estampa:chevron': ('estampa:espiga', 'Hermano: el mismo zigzag, sin el corte en cada vértice. «chevron print» fue ruido (máximo bajo 6).'),
+  'mat:frenchterry': ('rec:buzo', 'Es la tela del buzo: se lee con la serie de buzos, como la gabardina con la del trench.'),
+  'mat:jersey': ('tipo:remeras/remera', 'Es la tela de la remera: se lee con su serie, como la gabardina con la del trench.'),
+  'mat:acrilico': ('mat:lana', 'Imita a la lana en el punto: se lee con la lana, como el cashmere y el paño.'),
   'tipo:pantalones/short': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, más corto. Short no tiene serie propia todavía.'),
   'tipo:pantalones/bermuda': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, hasta la rodilla. (Antes tomaba el cargo, que no es su pariente en el árbol.)'),
   'tipo:pantalones/capri': ('tipo:pantalones/largo', 'Hermano: el mismo pantalón, cortado a media pierna. «capris» se mueve con el verano, no con la moda (sólo estación).'),

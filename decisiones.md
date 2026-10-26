@@ -1059,3 +1059,26 @@ pulgar, pero:
 
 Verificado con Playwright: ancho de página igual al del teléfono en las 44 combinaciones (11 vistas × 2 anchos × 2
 temas), sin errores de JavaScript.
+
+## 2026-10-26 · Las hojas sin dato: cuatro préstamos y ninguna tarjeta vacía
+
+**El conteo estaba viejo.** El 21/10 decía 131 hojas: 71 directo, 48 prestado, 12 sin dato. Con calzado y accesorios en
+Diseñar, contado con la misma función de la app (`dzSeñal`), eran 133: 74 medidas, 38 prestadas y 21 sin dato. Diez de
+esas 21 son calzado y accesorios, que no piden prestado por decisión (un estilo de calzado no dice nada de otro) y
+ahora cuentan sus dos intentos.
+
+**Cuatro préstamos con pariente razonable**, con el precedente de la gabardina, que se lee con el trench:
+- chevron ← espiga: el mismo zigzag sin el corte en el vértice; «chevron print» fue ruido.
+- frisa ← buzos: es la tela del buzo.
+- jersey ← remera: es la tela de la remera.
+- acrílico ← lana: la imita en el punto, como el cashmere y el paño.
+
+**Quedan sin dato, con dibujo y definición:** tiro medio, morley, piqué, lona, nylon y crepé. Ninguno tiene un pariente
+que diga algo de él. El morley es la tela del puño y de la musculosa; pedirle prestado a la musculosa sería elegir una
+de sus dos prendas.
+
+**Ninguna tarjeta vacía.** Las 24 estampas no tenían definición (el campo no existía) y «Liso» era un rectángulo de
+color sin texto. Ahora todas dicen qué son (`DEF_ESTAMPA` en `codigo/taxonomia.py`). Liso sigue siendo la muestra
+lisa en tu color, porque eso es.
+
+**Conteo nuevo:** 133 hojas, 74 medidas, 42 prestadas, 17 sin dato (10 de calzado y accesorios).

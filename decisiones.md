@@ -854,3 +854,44 @@ pausados, el deploy vivo es GitHub Pages y la app no los usa. Se dejan por si al
 la clave se guarda y pasa a «Preguntar», la respuesta sale con su marca de interpretación, modelo y versión de
 prompt, y un 401 muestra el aviso de clave rechazada. No hubo errores de JavaScript ni scroll horizontal. Con una
 clave real falta probarlo una vez desde la URL publicada.
+
+## 2026-10-25 · El K-means ya cortaba en 2024: verificado
+
+El pendiente «recalcular el K-means sin el momento 2024–25» seguía apareciendo en las listas, aunque se había hecho
+el 20/10. Lo verificamos: `codigo/recalcular_kmeans_sin_2025.py`, corrido con el CSV de capas de `datos_limpios/`
+(nivel 2023–24, momento 2023–24 contra 2020–21, máximo hasta 2024, k=4 reentrenado), da **exactamente** las 17 filas
+de `const KM=` de la app: nivel, momento y grupo, con diferencia 0. No hay nada que recalcular. El CSV de entrada no
+está en el repo; vive en `datos_limpios/` de la carpeta de Drive del grupo, y hace falta para repetir esta prueba.
+
+## 2026-10-25 · Calzado por pasarela con CLIP: la prueba chica
+
+**Qué probamos.** Antes de sumar el calzado a Diseñar, una prueba sin tocar la app (`codigo/probar_calzado_clip.mjs`):
+10 estilos (los 8 de Diseñar más botas altas y stilettos), dos frases y tres plantillas cada uno, puntuados contra los
+14.000 looks ya embebidos. Cada look va al estilo más parecido. Después miramos a mano los 8 looks más seguros de
+cada estilo.
+
+**Qué vimos.** CLIP no mira el zapato: mira el look entero y adivina el zapato por el estilo de la ropa.
+
+| Estilo | Los 8 más seguros | Qué está leyendo |
+|---|---|---|
+| Zapatillas | 8 de 8 con zapatillas | streetwear (buzos, camperas deportivas) |
+| Botas texanas | 7 de 8 | el look western (sombrero, flecos, denim) |
+| Botas altas | 6 de 8 | botas, pero también pantalón de cuero |
+| Botinetas | 5 de 8, con confianza muy baja (7 looks ≥ 0,5 en 14.000) | botas de cualquier altura |
+| Mocasines | 5 de 8 | sastrería de hombre |
+| Sandalias | 4 de 8 | ropa de verano y piel a la vista |
+| Chatitas | ninguna | «ballet»: tutús y bailarinas |
+| Plataformas | ninguna; se queda con 21–31 % de los looks sin seguridad | es el cajón de lo que no encaja |
+| Guillerminas | ninguna | ruido |
+| Stilettos | no se ven los pies | vestidos de noche |
+
+**Qué significa.** Para los estilos atados a una forma de vestir (zapatillas, botas texanas, botas altas), la
+frecuencia en pasarela es usable, siempre como *interpretado*. La de zapatillas, por ejemplo, va de 2,7 % de los looks
+en 2010 a 9,7 % en 2019 y 11 % en 2021, y baja a 8,9 % en 2023. Pero lo que mide es «looks de estilo deportivo», no
+«zapatillas», y hay que decirlo así. Para chatitas, plataformas, guillerminas y stilettos, CLIP sobre el look entero
+no sirve: haría falta recortar los pies de cada foto, y eso sí obliga a bajar las imágenes.
+
+**Pendiente de decidir, no de programar.** La señal exige al menos una serie medida y CLIP es interpretación, así que
+el calzado leído por pasarela saldría igual como «Sin recomendación». Las opciones son: (a) mostrarlo sólo como
+frecuencia en pasarela, sin señal; (b) cambiar la regla para el calzado; (c) dejarlo afuera. Hasta decidir, no
+entra a la app.

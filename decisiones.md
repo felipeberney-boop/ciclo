@@ -1082,3 +1082,16 @@ color sin texto. Ahora todas dicen qué son (`DEF_ESTAMPA` en `codigo/taxonomia.
 lisa en tu color, porque eso es.
 
 **Conteo nuevo:** 133 hojas, 74 medidas, 42 prestadas, 17 sin dato (10 de calzado y accesorios).
+
+## 2026-10-26 · Los jeans por corte, hasta 2024 y con el reagrupado
+
+Al regenerar las capturas apareció que «Los jeans, por corte» seguía con números de antes del reagrupado del 20/10 y
+con 2025 adentro. El gráfico llegaba a 2025 («Amplios 47 %») y marcaba a mano «2021: el amplio pasa al ajustado». Los
+textos decían que los amplios pasan «del 13 % en 2012 al 55 % en 2025» y que «adentro de los amplios» el recto de tiro
+alto ya cae, pero desde el reagrupado ese término cuenta en los medios.
+
+Con `JE` vigente y el corte en 2024: los amplios pasan del 5 % (2012) al 41 % (2024) y cruzan al ajustado en 2024 en la
+web y en 2021 en Google Shopping. El cruce ahora se calcula. Adentro de los amplios suben los cuatro (baggy, wide leg,
+barrel y relaxed tienen su máximo en 2024). La historia de «mirar adentro del grupo» pasó a los medios: el recto de tiro
+alto picó en 2021 y cae (17 → 10), mientras straight, bootcut y flare están en su máximo. Los tres gráficos chicos
+también cortan en 2024, y la leyenda del recorrido dice «2010–2024, 2025 apagado».

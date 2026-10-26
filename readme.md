@@ -186,8 +186,9 @@ Google Trends se usa bajo los términos de servicio de Google, con atribución y
 H&M es de una competencia de Kaggle: uso académico y no comercial. El Lyst Index es contenido
 editorial de Lyst, citado por trimestre y sin redistribuir el informe.
 
-**Queda una pendiente:** el dataset de Zara de febrero 2024 no se pudo verificar porque no tenemos
-la URL exacta de Kaggle.
+El Zara de febrero 2024 es «ZARA Sales» de Kaggle (`xontoloyo/data-penjualan-zara`), con licencia MIT.
+Lo identificamos por tamaño y fecha porque no se había guardado el link; el detalle está en
+`datasets/fuentes_y_descargas.md`.
 
 ## Límites declarados
 
@@ -209,8 +210,8 @@ la URL exacta de Kaggle.
 
 ## Qué falta
 
-Separar pasarela y venta por género (declarado como límite en Método). Medir el calzado en la pasarela con
-CLIP. Confirmar la licencia del Zara de febrero 2024 (falta la URL de Kaggle).
+Separar pasarela y venta por género (declarado como límite en Método). Leer el calzado recortando los pies de
+cada foto, que es lo único que permitiría medir chatitas, plataformas o guillerminas en la pasarela.
 
 ## Estructura del repositorio
 

@@ -138,8 +138,8 @@ prompt v3 y deja de decir que no hay calzado. Zoe Dottori Greco deja el grupo. L
 
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado
   como límite en la pantalla de Método, no simulado.
-- Confirmar la licencia del Zara de febrero 2024: falta pegar la URL de Kaggle en
-  `datasets/fuentes_y_descargas.md` (las otras ya se verificaron el 13/10).
+- Confirmar byte a byte el Zara de febrero 2024 (identificado: «ZARA Sales» de xontoloyo, MIT) en
+  `datasets/fuentes_y_descargas.md`.
 
 ---
 

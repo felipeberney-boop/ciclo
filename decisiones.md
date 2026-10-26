@@ -923,3 +923,13 @@ Se saca su nombre de los materiales vigentes: la lista de integrantes del readme
 readme de las series, que la nombraba como contacto de la carpeta de Drive. Las láminas de la Entrega 2 y las copias de
 versiones anteriores de la app quedan como se entregaron, porque registran quién hizo esas entregas. No era
 colaboradora del repositorio de GitHub ni autora de ningún commit, así que ahí no había nada que sacar.
+
+## 2026-10-26 · El Zara de febrero 2024 tiene fuente: MIT
+
+Era la única fuente sin verificar, porque nadie del grupo guardó el link. «DATASETS LINKS», en el Drive, no lo tiene.
+Las fichas de Kaggle se arman en el navegador y no se pueden leer automáticamente, así que consultamos la API pública
+(`/api/v1/datasets/view` y `/list`) de los cinco datasets de Zara con columnas parecidas. Coincide uno solo:
+«ZARA Sales» (`xontoloyo/data-penjualan-zara`). Es un `zara.csv` de 83.147 bytes, el mismo tamaño (81 kB) que «FEB
+2024 - ZARA» en el Drive, subido el 27/02/2024, ocho días después del scrape del 19/02. Licencia **MIT**. Los otros
+cuatro son de 2025 y traen un CSV de 6,5 MB o sólo tableros de Power BI y PDF. Queda anotado como identificado por
+tamaño y fecha en `datasets/fuentes_y_descargas.md`, con lo que falta para confirmarlo byte a byte.

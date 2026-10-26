@@ -3,16 +3,15 @@
 Las series procesadas que usa la app, exportadas a CSV plano. Armadas el **13/10/2026**, también
 para poder compartirlas con otros grupos de la cátedra.
 Proyecto CICLO — Sistemas generativos e IA para Diseño, UdeSA, 2º semestre 2026.
-Berney · Dobler · Dottori Greco.
+Berney · Dobler.
 
 ---
 
 ## Leé esto primero: qué hay y qué no
 
 **Los CSV crudos de Google Trends, tal como se exportaron, no están en este paquete.** No están en el
-repositorio del proyecto ni en los archivos de trabajo: viven en la carpeta de Drive del grupo, que
-comparte Zoe Dottori Greco (`zdottorigreco@udesa.edu.ar`). Si necesitás el export original, pedíselo
-a ella o a Felipe.
+repositorio del proyecto ni en los archivos de trabajo: viven en la carpeta de Drive del grupo. Si
+necesitás el export original, pedíselo a Felipe Berney.
 
 Lo que sí está acá son **las series ya procesadas** que alimentan la app. Son datos reales y
 verificables, pero pasaron por dos transformaciones que tenés que conocer antes de usarlos; están

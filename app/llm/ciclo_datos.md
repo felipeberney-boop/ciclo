@@ -1,7 +1,7 @@
 # CICLO · datos para el asistente
 
-CICLO es una app de la materia Sistemas generativos e IA para Diseño (UdeSA, 2026). Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja con ropa: no hay calzado.
-Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: 2026-10-21.
+CICLO es una app de la materia Sistemas generativos e IA para Diseño (UdeSA, 2026). Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja sobre todo con ropa; del calzado sólo mide zapatillas y mocasines en la búsqueda, y zapatillas y botas texanas en la pasarela.
+Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: 2026-10-26.
 
 ## Cómo leer los números
 - Pasarela | fuente: Vogue Runway, 1,28 millones de looks, 2010–2023 | medido | nivel: dónde está 2022–23 contra su propio máximo (100 % = en su pico) | momento: 2021–23 contra 2018–20
@@ -168,14 +168,14 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 - Camperas y abrigos · Kimono | id: tipo_abrigos_kimono | busca: kimono, camperas y abrigos | paso: tipo | valor: kimono | señal: -12 puntos en la búsqueda mundial 2022→2024 | etapa: Saturada | dato: propio | serie: kimono
 - Camperas y abrigos · Tapado de piel | id: tipo_abrigos_piel | busca: tapado de piel, camperas y abrigos | paso: tipo | valor: piel | sin dato: ni serie propia ni de un pariente
 - Camperas y abrigos · Puffer | id: tipo_abrigos_puffer | busca: puffer, camperas y abrigos | paso: tipo | valor: puffer | señal: 0 puntos en la búsqueda mundial 2022→2024 | dato: prestado de campera (Hermano: la otra campera corta de la familia. «puffer jacket» no llegó a 12 años con señal hasta 2024.) | serie: abrigos_campera
-- Calzado · Zapatillas | id: tipo_calzado_zapatillas | busca: zapatillas, sneakers, calzado | paso: tipo | valor: zapatillas | señal: -13 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: calzado_zapatillas
-- Calzado · Botinetas | id: tipo_calzado_botinetas | busca: botinetas, ankle boots, calzado | paso: tipo | valor: botinetas | sin dato: ni serie propia ni de un pariente
-- Calzado · Mocasines | id: tipo_calzado_mocasines | busca: mocasines, loafers, calzado | paso: tipo | valor: mocasines | señal: +16 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: calzado_mocasines
-- Calzado · Chatitas | id: tipo_calzado_chatitas | busca: chatitas, ballet flats, calzado | paso: tipo | valor: chatitas | sin dato: ni serie propia ni de un pariente
-- Calzado · Sandalias | id: tipo_calzado_sandalias | busca: sandalias, sandals, calzado | paso: tipo | valor: sandalias | sin dato: ni serie propia ni de un pariente
-- Calzado · Plataformas | id: tipo_calzado_plataformas | busca: plataformas, platform shoes, calzado | paso: tipo | valor: plataformas | sin dato: ni serie propia ni de un pariente
-- Calzado · Guillerminas | id: tipo_calzado_guillerminas | busca: guillerminas, mary janes, calzado | paso: tipo | valor: guillerminas | sin dato: ni serie propia ni de un pariente
-- Calzado · Botas texanas | id: tipo_calzado_texanas | busca: botas texanas, cowboy boots, calzado | paso: tipo | valor: texanas | sin dato: ni serie propia ni de un pariente
+- Calzado · Zapatillas | id: tipo_calzado_zapatillas | busca: zapatillas, sneakers, calzado | paso: tipo | valor: zapatillas | señal: -13 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: calzado_zapatillas | pasarela (interpretado, CLIP, sin señal): 8,9 % de los looks en 2023, 2,7 % en 2010, máximo 11,0 % en 2021; lee looks deportivos: buzos, camperas y pantalones de jogging
+- Calzado · Botinetas | id: tipo_calzado_botinetas | busca: botinetas, ankle boots, calzado | paso: tipo | valor: botinetas | sin dato: ni serie propia ni de un pariente | pasarela: no se puede medir con CLIP (la confianza es muy baja: confunde botas de cualquier altura)
+- Calzado · Mocasines | id: tipo_calzado_mocasines | busca: mocasines, loafers, calzado | paso: tipo | valor: mocasines | señal: +16 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: calzado_mocasines | pasarela: no se puede medir con CLIP (lee sastrería de hombre, no el zapato (5 de 8 looks con mocasines))
+- Calzado · Chatitas | id: tipo_calzado_chatitas | busca: chatitas, ballet flats, calzado | paso: tipo | valor: chatitas | sin dato: ni serie propia ni de un pariente | pasarela: no se puede medir con CLIP (lee «ballet»: tutús y bailarinas, no el zapato (0 de 8))
+- Calzado · Sandalias | id: tipo_calzado_sandalias | busca: sandalias, sandals, calzado | paso: tipo | valor: sandalias | sin dato: ni serie propia ni de un pariente | pasarela: no se puede medir con CLIP (lee ropa de verano y piel a la vista, no el zapato (4 de 8))
+- Calzado · Plataformas | id: tipo_calzado_plataformas | busca: plataformas, platform shoes, calzado | paso: tipo | valor: plataformas | sin dato: ni serie propia ni de un pariente | pasarela: no se puede medir con CLIP (se queda con los looks que no encajan en nada (0 de 8))
+- Calzado · Guillerminas | id: tipo_calzado_guillerminas | busca: guillerminas, mary janes, calzado | paso: tipo | valor: guillerminas | sin dato: ni serie propia ni de un pariente | pasarela: no se puede medir con CLIP (no las distingue: ruido (0 de 8))
+- Calzado · Botas texanas | id: tipo_calzado_texanas | busca: botas texanas, cowboy boots, calzado | paso: tipo | valor: texanas | sin dato: ni serie propia ni de un pariente | pasarela (interpretado, CLIP, sin señal): 1,7 % de los looks en 2023, 1,2 % en 2010, máximo 3,0 % en 2021; lee el look western: sombrero, flecos, denim
 - Accesorios · Tote | id: tipo_accesorios_tote | busca: tote, tote bag, accesorios | paso: tipo | valor: tote | señal: +7 puntos en la búsqueda mundial 2022→2024 | dato: propio | serie: accesorios_tote
 - Accesorios · Piluso | id: tipo_accesorios_piluso | busca: piluso, bucket hat, accesorios | paso: tipo | valor: piluso | sin dato: ni serie propia ni de un pariente
 - Accesorios · Gorra | id: tipo_accesorios_gorra | busca: gorra, baseball cap, accesorios | paso: tipo | valor: gorra | sin dato: ni serie propia ni de un pariente
@@ -268,7 +268,7 @@ Cada opción de Diseñar con su señal. «propia»: serie de esa hoja; «prestad
 
 ## Lo que CICLO no puede responder
 - No detecta lo emergente: la pasarela pública llega hasta 2023.
-- No hay calzado: la app trabaja con ropa, por decisión.
+- Calzado: sólo zapatillas y mocasines tienen serie de búsqueda. La pasarela de calzado la lee CLIP (interpretación, sin señal), y sólo sirve para zapatillas y botas texanas.
 - No separa hombre y mujer: Vogue y las ventas de H&M mezclan menswear y womenswear.
 - No pronostica: de 2025 en adelante sólo muestra la mediana de la historia, con su error.
 - La búsqueda llega hasta 2024 (2025 tiene el salto de medición de Google; 2026 se excluye).

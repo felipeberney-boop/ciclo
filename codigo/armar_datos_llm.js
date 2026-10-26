@@ -28,8 +28,8 @@ function grab(name) { // mismo parser que extraer_series_de_la_app.js
   }
   return eval('(' + js.slice(st, j) + ')');
 }
-const [KM, REC, GREL, PERFIL, CONSEJO, DIS, JE, KPROTO, TAX] =
-  ['KM', 'REC', 'GREL', 'PERFIL', 'CONSEJO', 'DIS', 'JE', 'KPROTO', 'TAX'].map(grab);
+const [KM, REC, GREL, PERFIL, CONSEJO, DIS, JE, KPROTO, TAX, CALZ_PAS] =
+  ['KM', 'REC', 'GREL', 'PERFIL', 'CONSEJO', 'DIS', 'JE', 'KPROTO', 'TAX', 'CALZ_PAS'].map(grab);
 
 // etapa de cada atributo: el mismo código de la app (kClip … kName), con k=4 desde KM.cent
 const KST = { asc: { n: 'En ascenso' }, pico: { n: 'Pico' }, sat: { n: 'Saturada' }, ret: { n: 'En retorno' }, emer: { n: 'Emergente' } };
@@ -90,7 +90,7 @@ const linea = (...c) => L.push('- ' + c.filter(Boolean).join(' | '));
 // ---------- encabezado (va siempre) ----------
 L.push(`# CICLO · datos para el asistente
 
-CICLO es una app de la materia Sistemas generativos e IA para Diseño (UdeSA, 2026). Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja con ropa: no hay calzado.
+CICLO es una app de la materia Sistemas generativos e IA para Diseño (UdeSA, 2026). Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja sobre todo con ropa; del calzado sólo mide zapatillas y mocasines en la búsqueda, y zapatillas y botas texanas en la pasarela.
 Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: ${new Date().toISOString().slice(0, 10)}.
 
 ## Cómo leer los números
@@ -189,6 +189,11 @@ const serieDe = h => h && (h.serie || h.rec || (h.jeans ? 'jamplio' : null));
 const senal = h => { if (h && h.je && h.je.length) { const d = cuotaT(h.je, 2024) - cuotaT(h.je, 2022); return { g: null, d, je: true, et: h.km ? ETAPA[h.km] : null }; }
   const g = serieDe(h); if (!g) return null; const d = h.jeans ? h.jeans.map(terreno).filter(x => x != null).reduce((a, b, _, A) => a + b / A.length, 0) : terreno(g);
   return d == null ? null : { g, d, et: h.km ? ETAPA[h.km] : null }; };
+// calzado en la pasarela (CALZ_PAS): frecuencia leída por CLIP, interpretación; nunca da señal
+const pasCalzado = id => { const L = CALZ_PAS.lee[id], Y = CALZ_PAS.anios, f = v => v.toFixed(1).replace('.', ',');
+  if (!L) return CALZ_PAS.no[id] ? `pasarela: no se puede medir con CLIP (${CALZ_PAS.no[id]})` : null;
+  const v = L.v, mx = Math.max(...v);
+  return `pasarela (interpretado, CLIP, sin señal): ${f(v[v.length - 1])} % de los looks en ${Y[Y.length - 1]}, ${f(v[0])} % en ${Y[0]}, máximo ${f(mx)} % en ${Y[v.indexOf(mx)]}; lee ${L.lee}`; };
 const hojas = [...TAX.prendas.flatMap(p => p.tipos.map(t => ({ eje: 'tipo', paso: 'tipo', prenda: p, h: t, nombre: `${p.n} · ${t.n}` }))),
   ...TAX.cortes.map(h => ({ eje: 'corte', paso: 'corte', h, nombre: `Corte · ${h.n}` })), ...TAX.tiros.map(h => ({ eje: 'tiro', paso: 'tiro', h, nombre: h.n })),
   ...TAX.materiales.flatMap(g => g.items.map(h => ({ eje: 'material', paso: 'material', h, nombre: `Material · ${h.n}` }))),
@@ -199,14 +204,15 @@ for (const x of hojas) {
   const id = `${x.eje}_${x.prenda ? x.prenda.id + '_' : ''}${h.id}`;
   linea(x.nombre, `id: ${id}`, `busca: ${[h.n, h.en, x.prenda && x.prenda.n].filter(Boolean).join(', ').toLowerCase()}`, `paso: ${x.paso}`, `valor: ${h.id}`,
     q ? `señal: ${sig(q.d)} puntos ${q.je ? 'en su parte de las búsquedas de jeans' : 'en la búsqueda mundial'} 2022→2024` : 'sin dato: ni serie propia ni de un pariente',
-    q && q.et ? `etapa: ${q.et}` : null, propia ? 'dato: propio' : prest ? `dato: prestado de ${lender.n.toLowerCase()} (${h.presta_porque})` : null, q && q.g ? `serie: ${q.g}` : null);
+    q && q.et ? `etapa: ${q.et}` : null, propia ? 'dato: propio' : prest ? `dato: prestado de ${lender.n.toLowerCase()} (${h.presta_porque})` : null, q && q.g ? `serie: ${q.g}` : null,
+    x.prenda && x.prenda.id === 'calzado' ? pasCalzado(h.id) : null);
 }
 
 // ---------- límites (va siempre) ----------
 L.push(`
 ## Lo que CICLO no puede responder
 - No detecta lo emergente: la pasarela pública llega hasta 2023.
-- No hay calzado: la app trabaja con ropa, por decisión.
+- Calzado: sólo zapatillas y mocasines tienen serie de búsqueda. La pasarela de calzado la lee CLIP (interpretación, sin señal), y sólo sirve para zapatillas y botas texanas.
 - No separa hombre y mujer: Vogue y las ventas de H&M mezclan menswear y womenswear.
 - No pronostica: de 2025 en adelante sólo muestra la mediana de la historia, con su error.
 - La búsqueda llega hasta 2024 (2025 tiene el salto de medición de Google; 2026 se excluye).

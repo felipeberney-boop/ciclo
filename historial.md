@@ -127,11 +127,17 @@ Tendencias y el recorrido pasan de 16 a 65 series, con filtro por grupo.
 misma de «Preguntar». Prompt v4 (el peso en la búsqueda pasa a 2022→2024). Netlify queda pausado y señalado como
 tal. La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-25_9a92475.html`.
 
+## v1.8 · 26/10/2026 · El calzado en la pasarela
+
+Cada estilo de calzado en Diseñar suma su línea de pasarela leída por CLIP, como interpretación y sin señal. Zapatillas
+y botas texanas con su curva de 2010 a 2023; el resto, con el motivo por el que CLIP no puede medirlo. El chat pasa a
+prompt v3 y deja de decir que no hay calzado. Zoe Dottori Greco deja el grupo. La versión anterior quedó en
+`diseno/prototipos/versiones_de_la_app/app_2026-10-26_745a5aa.html`.
+
 ## Lo que falta para la Entrega 3
 
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado
   como límite en la pantalla de Método, no simulado.
-- Sumar calzado medido en la pasarela (CLIP), que es donde el contraste con Lyst no coincide.
 - Confirmar la licencia del Zara de febrero 2024: falta pegar la URL de Kaggle en
   `datasets/fuentes_y_descargas.md` (las otras ya se verificaron el 13/10).
 

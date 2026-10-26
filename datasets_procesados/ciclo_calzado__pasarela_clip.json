@@ -1,0 +1,69 @@
+{
+ "fuente": "Vogue Runway, 1.000 looks por año (app/clip/), cada look asignado al estilo de calzado más parecido según CLIP ViT-B/32 (codigo/probar_calzado_clip.mjs)",
+ "anios": [
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023
+ ],
+ "lee": {
+  "zapatillas": {
+   "v": [
+    2.7,
+    1.8,
+    2.7,
+    3.7,
+    4.5,
+    5.3,
+    5.9,
+    8.8,
+    10.8,
+    9.7,
+    8.5,
+    11,
+    9,
+    8.9
+   ],
+   "lee": "looks deportivos: buzos, camperas y pantalones de jogging",
+   "ok": "8 de 8"
+  },
+  "texanas": {
+   "v": [
+    1.2,
+    0.3,
+    0.3,
+    0.2,
+    0.7,
+    0.4,
+    0.5,
+    1.5,
+    1.2,
+    1.4,
+    2.3,
+    3,
+    2.2,
+    1.7
+   ],
+   "lee": "el look western: sombrero, flecos, denim",
+   "ok": "7 de 8"
+  }
+ },
+ "no": {
+  "mocasines": "lee sastrería de hombre, no el zapato (5 de 8 looks con mocasines)",
+  "botinetas": "la confianza es muy baja: confunde botas de cualquier altura",
+  "sandalias": "lee ropa de verano y piel a la vista, no el zapato (4 de 8)",
+  "chatitas": "lee «ballet»: tutús y bailarinas, no el zapato (0 de 8)",
+  "plataformas": "se queda con los looks que no encajan en nada (0 de 8)",
+  "guillerminas": "no las distingue: ruido (0 de 8)"
+ }
+}

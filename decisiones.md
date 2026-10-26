@@ -895,3 +895,31 @@ no sirve: haría falta recortar los pies de cada foto, y eso sí obliga a bajar 
 el calzado leído por pasarela saldría igual como «Sin recomendación». Las opciones son: (a) mostrarlo sólo como
 frecuencia en pasarela, sin señal; (b) cambiar la regla para el calzado; (c) dejarlo afuera. Hasta decidir, no
 entra a la app.
+
+## 2026-10-26 · Calzado: la pasarela como frecuencia, sin señal
+
+**Decisión del grupo.** De las tres opciones que quedaron abiertas el 25/10, el calzado se muestra como
+**frecuencia en pasarela, sin señal**, y se queda en la app. Cada tarjeta de calzado en Diseñar suma una línea
+«Pasarela», marcada como *interpretado · CLIP*:
+
+- **Zapatillas y botas texanas**, los dos estilos que pasaron la revisión a mano, muestran la parte de los looks de cada
+  año (2010–2023) con una curva punteada, la convención de lo interpretado. Dicen qué está leyendo CLIP: looks
+  deportivos y el look western. Zapatillas: 2,7 % en 2010, máximo 11,0 % en 2021, 8,9 % en 2023. Botas texanas: entre
+  0,2 % y 3,0 %, es decir, entre 2 y 30 looks por año, y hay que leerlo con eso en mente.
+- **Los otros seis** dicen por qué la pasarela no los puede medir, en lugar de dejar el lugar vacío.
+
+La señal no cambia: sigue saliendo sólo de la búsqueda (zapatillas y mocasines). Los datos están en
+`const CALZ_PAS=` y en `datasets_procesados/ciclo_calzado__pasarela_clip.json`, y salen de
+`codigo/probar_calzado_clip.mjs`.
+
+**Lo que había que alinear.** El chat tenía una regla que decía «CICLO no tiene calzado ni accesorios» y, a la vez,
+recibía las fichas de calzado en DATOS. Ahora tiene prompt v3 (`prompts/prompt_asistente_v3.md`) y un
+`app/llm/ciclo_datos.md` regenerado, con la línea de pasarela de cada estilo. La vista Método y el readme dejan de
+decir que el calzado queda afuera y explican cuánto se mide.
+
+## 2026-10-26 · Zoe Dottori Greco deja el grupo
+
+Se saca su nombre de los materiales vigentes: la lista de integrantes del readme, el pie de la portada de la app y el
+readme de las series, que la nombraba como contacto de la carpeta de Drive. Las láminas de la Entrega 2 y las copias de
+versiones anteriores de la app quedan como se entregaron, porque registran quién hizo esas entregas. No era
+colaboradora del repositorio de GitHub ni autora de ningún commit, así que ahí no había nada que sacar.

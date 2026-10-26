@@ -10,7 +10,6 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 
 - Felipe Berney
 - Abril Dobler
-- Zoe Dottori Greco
 
 ## Link al sitio
 
@@ -194,8 +193,10 @@ la URL exacta de Kaggle.
 
 - **No detectamos lo emergente.** La pasarela pública llega hasta 2023.
 - **El corpus mezcla menswear y womenswear.** Separarlo exige volver a agregar desde el archivo original.
-- **No hay calzado, por decisión:** la app trabaja con ropa. Es donde Lyst ve las señales más fuertes de
-  2023 y 2024.
+- **El calzado se mide poco.** La búsqueda sólo separa zapatillas y mocasines; los estilos concretos
+  (chatitas, guillerminas, plataformas) están debajo de la resolución de Google Trends. En la pasarela, CLIP mira el
+  look entero y adivina el zapato por la ropa: sólo zapatillas y botas texanas pasan la revisión a mano, y se
+  muestran como frecuencia interpretada, sin señal. Es donde Lyst ve las señales más fuertes de 2023 y 2024.
 - **Google Trends tiene deriva:** el salto de medición empieza en 2025 (cambio medio +18,9 contra +3,2
   histórico; 12 de 16 series tocan su máximo ese año) y sigue en 2026. La búsqueda se mide hasta 2024; 2025
   se dibuja tenue y 2026 se excluye. El K-means usa la búsqueda hasta 2024.

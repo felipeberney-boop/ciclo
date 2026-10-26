@@ -42,8 +42,9 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   attribute, never another family); the UI always says where a borrowed number comes from.
 - **Diseñar** runs on `TAX` (from `codigo/taxonomia.py`; rerun it after touching drawings or tables). Every state color
   comes from `señal()` / `señalPalabra()` and the `s-<estado>` CSS classes; never assign a state color by hand.
-  The app always opens on the 3-question gate; only a link with `c`, `v` and `pu` skips it. The CICLO mark and «Cambiar
-  perfil» both reopen it (`abrirGate(vista)`). `tendencia(d)` describes (▲/■/▼ in ink, El ciclo and Tendencias) and is
+  The app always opens on the 3-question gate; only a link with `c`, `v` and `pu` skips it. After it, the app lands on Tendencias (`radar`), the
+  main screen; the CICLO mark goes to Tendencias and «Cambiar perfil» reopens the gate (`abrirGate(vista)`). Nav order:
+  Tendencias · Diseñar · El ciclo · Buscar por imagen · Preguntar · Más. `tendencia(d)` describes (▲/■/▼ in ink, El ciclo and Tendencias) and is
   never a state color; `señal()` decides, and without a K-means stage it says Entrar/Esperar/Salir from the trend.
 - The "cliente" selector (fast / premium / nicho) changes recommendations (`CONSEJO`, `PLAZO`) and re-renders.
 

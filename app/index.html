@@ -736,13 +736,13 @@ main a:not([class]){color:inherit}
   <header class="mast">
     <div class="row1">
       <span class="side">N.º 01 — Primavera 2026</span>
-      <button class="mk" id="home" title="Cambiar perfil">CICLO</button>
+      <button class="mk" id="home" title="Tendencias">CICLO</button>
       <span class="side r">Última lectura 21.10.2026</span>
     </div>
     <nav id="nav" aria-label="Secciones">
+      <a data-v="radar" class="nav-dz">Tendencias</a>
+      <a data-v="disenar">Diseñar</a>
       <a data-v="recorridos">El ciclo</a>
-      <a data-v="disenar" class="nav-dz">Diseñar</a>
-      <a data-v="radar">Tendencias</a>
       <a data-v="consulta">Buscar por imagen</a>
       <a data-v="asistente">Preguntar</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
@@ -789,7 +789,7 @@ main a:not([class]){color:inherit}
     <section class="view" id="v-radar" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">03 · Tendencias</span>
+          <span class="lbl">01 · Tendencias</span>
           <h1>Qué se está moviendo</h1>
           <p class="sub">Doce atributos leídos en los catálogos de nueve marcas. Las cinco capas ya tienen fuente, y siete atributos tienen además su recorrido en pasarela y búsqueda: abrí la ficha para verlo.</p>
         </div>
@@ -915,7 +915,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-recorridos" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">01 · El ciclo</span>
+          <span class="lbl">03 · El ciclo</span>
           <h1>¿Cuándo estuvo de moda, y cuánto tardó en volver?</h1>
           <p class="sub">Para cada atributo: su último pico en la búsqueda mundial, si hoy sube o baja, cuántos años pasaron, y —cuando la serie tiene dos picos— cada cuánto vuelve. Tocá uno para ver su recorrido completo.</p>
         </div>
@@ -1551,7 +1551,7 @@ function abrirDetalle(id){
     <button class="back" id="volver">← Volver al radar</button>
     <div class="vhead">
       <div>
-        <span class="lbl">03 · Tendencias · ${t.k} · ${t.fuente}</span>
+        <span class="lbl">01 · Tendencias · ${t.k} · ${t.fuente}</span>
         <h1>${t.n}</h1>
         <p class="sub">${t.med}.</p>
       </div>
@@ -3000,7 +3000,7 @@ const GATE={
        medio:['Contemporary','Básicos con diseño, calidad media.'],
        fast:['Streetwear / fast fashion','Volumen, rotación rápida.'],
        nicho:['Emergente / de autor','Series cortas, identidad propia.']}}};
-let gateDestino='disenar',gatePaso=1;
+let gateDestino='radar',gatePaso=1;
 const ETAPAS_C=['emergente','en ascenso','en pico','saturada','en retorno'];
 function gateResumen(cli,acc){const e=[0,1,2,3,4].filter(i=>consejo(cli,i)[0]===acc).map(i=>ETAPAS_C[i]);return e.length?e.join(', '):'—';}
 /* la entrada es la portada de la app: se ve siempre. Lo que quedó de una visita anterior viene marcado y alcanza con «Continuar» */
@@ -3054,7 +3054,7 @@ function gateElegir(){
   publico=gateSel.publico||'todos';vinculo=gateSel.vinculo||'marca';ponerCliente(gateSel.cliente);guardarPerfil();
   if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);
 }
-function abrirGate(destino){gateDestino=destino&&destino!=='perfil'?destino:'disenar';gatePaso=1;pintarGate();mostrar('perfil');}
+function abrirGate(destino){gateDestino=destino&&destino!=='perfil'?destino:'radar';gatePaso=1;pintarGate();mostrar('perfil');}
 $('#gvolver').addEventListener('click',()=>{gatePaso=Math.max(1,gatePaso-1);pintarGate();$('#ggrid .gcard')?.focus();});
 $('#navperfil').addEventListener('click',()=>abrirGate(vista));
 let publico='todos';
@@ -3112,18 +3112,18 @@ function pintarPipe(){
 }
 $$('#hfilt .chip').forEach(b=>b.addEventListener('click',()=>{
   historia=b.dataset.h;$$('#hfilt .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));pintarMarcas();}));
-$('#home').addEventListener('click',()=>abrirGate(vista));
+$('#home').addEventListener('click',()=>{if(vista!=='perfil')mostrar('radar');}); // la marca lleva a Tendencias, la pantalla principal; en las tres preguntas no saltea nada
 /* el arranque: todas las vistas empiezan ocultas y sólo esto decide cuál se ve. Si algo falla, el gate y un aviso,
    nunca una pantalla equivocada sin explicación (el <script> de abajo cubre un error antes de llegar acá) */
 function arranqueFallido(e){
   console.error('CICLO no arrancó bien:',e);
-  try{abrirGate('disenar');}catch(e2){$$('main .view').forEach(x=>x.hidden=x.id!=='v-perfil');}
+  try{abrirGate('radar');}catch(e2){$$('main .view').forEach(x=>x.hidden=x.id!=='v-perfil');}
   const a=document.getElementById('aviso');
   if(a){a.hidden=false;a.textContent='Algo falló al cargar la app. Elegí tu perfil para seguir; si vuelve a pasar, recargá la página.';}
 }
 try{
   extenderREC();pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
-  if(!leerLink())abrirGate('disenar'); // la entrada son las tres preguntas, siempre; sólo un link con el perfil la saltea
+  if(!leerLink())abrirGate('radar'); // la entrada son las tres preguntas, siempre, y después Tendencias; sólo un link con el perfil la saltea
 }catch(e){arranqueFallido(e);}
 window.CICLO_LISTO=true;
 </script>

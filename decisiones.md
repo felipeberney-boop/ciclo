@@ -1095,3 +1095,16 @@ web y en 2021 en Google Shopping. El cruce ahora se calcula. Adentro de los ampl
 barrel y relaxed tienen su máximo en 2024). La historia de «mirar adentro del grupo» pasó a los medios: el recto de tiro
 alto picó en 2021 y cae (17 → 10), mientras straight, bootcut y flare están en su máximo. Los tres gráficos chicos
 también cortan en 2024, y la leyenda del recorrido dice «2010–2024, 2025 apagado».
+
+## 2026-10-26 · Tendencias pasa a ser la pantalla principal
+
+**Decisión del grupo.** Lo principal de CICLO es ver qué está en tendencia y moviéndose; Diseñar es una función de la
+app, no la puerta. El menú queda Tendencias · Diseñar · El ciclo · Buscar por imagen · Preguntar (numeradas 01, 02, 03 en
+ese orden). La app sigue abriendo en las tres preguntas, porque el perfil decide qué recomendar, y al contestarlas lleva
+a Tendencias. La marca CICLO lleva a Tendencias desde cualquier vista (en las tres preguntas no saltea nada); «Cambiar
+perfil» sigue volviendo a las preguntas. La versión anterior quedó en
+`diseno/prototipos/versiones_de_la_app/app_2026-10-26_2b2e1f1.html`.
+
+**El espejo de Netlify.** Seguía mostrando la versión de octubre, con la portada vieja sin calzado, y es fácil entrar
+por error. Netlify rechaza los deploys por falta de créditos y no se puede actualizar desde acá; `netlify.toml` suma una
+redirección 301 de todo a la app oficial, que se aplica en el próximo deploy que Netlify acepte.

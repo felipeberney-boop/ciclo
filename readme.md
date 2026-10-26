@@ -22,7 +22,8 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 ## Capturas
 
 La app arranca con tres preguntas —para quién diseñás, si trabajás para una marca o por tu cuenta, y la
-categoría— y con eso decide qué mostrarte. Tocar la marca CICLO vuelve a esas preguntas.
+categoría— y con eso decide qué mostrarte. Después abre en **Tendencias**, la pantalla principal; la marca CICLO
+lleva ahí desde cualquier vista, y «Cambiar perfil» vuelve a las preguntas.
 
 ![La entrada: ¿para quién diseñás?](entregas/entrega_3/capturas/captura_01_entrada.png)
 
@@ -78,10 +79,10 @@ Sin conexión funciona igual, con las tipografías del sistema.
 
 | | |
 |---|---|
-| Entrada | Tres preguntas, siempre: para quién diseñás, marca o por tu cuenta, y la categoría. La marca CICLO y «Cambiar perfil» vuelven acá |
+| Entrada | Tres preguntas, siempre: para quién diseñás, marca o por tu cuenta, y la categoría. Después, Tendencias. «Cambiar perfil» vuelve acá |
+| Tendencias | La pantalla principal: qué gana y qué pierde terreno afuera, y doce atributos con su paleta y su etapa. La marca CICLO lleva acá |
 | El ciclo | Cuándo picó cada uno de los 65 atributos con serie y cuánto tardó en volver; el recorrido de cada uno por pasarela, búsqueda y Reddit hasta 2030, y los jeans por corte |
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
-| Tendencias | Qué gana y qué pierde terreno afuera, y doce atributos con su paleta y su etapa |
 | Buscar por imagen | Subir una prenda: CLIP en el navegador dice qué atributos ve y qué looks de pasarela se le parecen |
 | Preguntar | Chat con un LLM que contesta con los datos de CICLO, tu perfil, tu diseño y lo que CLIP leyó de tu foto (pegás tu API key de Groq) |
 | El modelo | K-means sobre 17 atributos, paso a paso, con validación externa |

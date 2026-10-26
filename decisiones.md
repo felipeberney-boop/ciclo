@@ -967,3 +967,25 @@ y Diseñar es el lugar donde lo encuentra quien quiere diseñar unas botas texan
 
 Corrección de paso: el título de cada panel de Diseñar se pisaba con el borde superior de las tarjetas cuando no había
 bajada; ahora hay aire entre los dos.
+
+## 2026-10-26 · El semáforo, otra vez: la tendencia en negro y la señal con su palabra
+
+**Lo que quedaba.** No había ninguna recomendación ni ningún «gana presencia» en rojo, y ningún color de estado escrito
+a mano (grep limpio). Pero `señal()`, cuando un atributo no tiene etapa del K-means, devolvía verde o rojo con la
+palabra «Gana/Pierde presencia»: las 65 tarjetas de El ciclo, las barras de «Qué gana y qué pierde terreno» y la mitad
+de las tarjetas de Diseñar se pintaban con el color de la decisión para decir un dato. En la misma fila de estampas
+convivían «▼ Salir» y «▼ Pierde presencia» en el mismo rojo. Es lo que el 20/10 ya habíamos sacado.
+
+**Decisión.** Dos funciones, dos cosas. `tendencia(d)` describe: ▲ gana, ■ estable, ▼ pierde, en tinta; la usan El
+ciclo y Tendencias. `señal()` decide: sin etapa del K-means, la tendencia decide y lo dice con la palabra de acción
+(Entrar, Esperar o Explorar, Salir), y el porqué lo aclara («sin etapa en el K-means: decide si gana o pierde terreno
+afuera»). Si la tendencia la leyó CLIP, describe y no recomienda: es interpretación, y la regla de evidencia ya decía que
+CLIP solo no alcanza.
+
+**El oscuro.** El bloque editorial apagaba `--accent`, `--alert` y `--ok` con `:root`, pero el oscuro original los
+definía con `:root:not([data-theme="light"])`, que pesa más: en oscuro volvían el lavanda (links, rótulos, el punto de
+la pista de etapa, el logo al pasar el mouse), el rosa (bordes de las notas) y el verde. Ahora los dos bloques oscuros
+del final los redefinen. Los links sin clase dejan el azul del navegador y los campos tienen foco en tinta.
+
+**Cómo se verificó.** Playwright en las 11 vistas, 1400 y 393, claro y oscuro: todo elemento con color fuera de un
+`s-<estado>` es una serie de gráfico, un punto del K-means o la paleta de una prenda.

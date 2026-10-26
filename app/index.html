@@ -477,6 +477,7 @@ td.k{font-weight:600;white-space:nowrap}
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --paper:#0E0D0B; --paper-2:#171614; --card:#171614;
+  --accent:var(--ink); --accent-soft:transparent; --alert:var(--ink); --alert-soft:transparent; --ok:var(--ink);
     --ink:#F6F0EB; --ink-2:#BDB6AC; --ink-3:#878178;
     --rule:#36332E; --rule-2:#25231F;
     --act-entrar:#72C38A; --act-esperar:#E3A83F; --act-salir:#EE7D6B;
@@ -484,6 +485,7 @@ td.k{font-weight:600;white-space:nowrap}
 }
 :root[data-theme="dark"]{
   --paper:#0E0D0B; --paper-2:#171614; --card:#171614;
+  --accent:var(--ink); --accent-soft:transparent; --alert:var(--ink); --alert-soft:transparent; --ok:var(--ink);
   --ink:#F6F0EB; --ink-2:#BDB6AC; --ink-3:#878178;
   --rule:#36332E; --rule-2:#25231F;
   --act-entrar:#72C38A; --act-esperar:#E3A83F; --act-salir:#EE7D6B;
@@ -566,7 +568,9 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 
 /* la señal: el único lugar donde se asigna un color de estado. Todo lo demás lee var(--sen) */
 :root{--sen-entrar:var(--act-entrar);--sen-esperar:var(--act-esperar);--sen-salir:var(--act-salir);--sen-sin-dato:var(--ink-3)}
-.s-entrar{--sen:var(--sen-entrar)}.s-esperar{--sen:var(--sen-esperar)}.s-salir{--sen:var(--sen-salir)}.s-sin{--sen:var(--sen-sin-dato)}
+.tend{--sen:var(--ink-2)}
+main a:not([class]){color:inherit}
+:is(input,textarea,select):focus-visible{outline:2px solid var(--ink);outline-offset:2px}.s-entrar{--sen:var(--sen-entrar)}.s-esperar{--sen:var(--sen-esperar)}.s-salir{--sen:var(--sen-salir)}.s-sin{--sen:var(--sen-sin-dato)}
 .sen,.a.serif[class*="s-"],.acc.serif[class*="s-"],b[class*="s-"],dt[class*="s-"]{color:var(--sen)!important}
 .sen{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 .dzc[class*="s-"]{border-color:var(--rule);border-top:3px solid var(--sen)}
@@ -671,7 +675,7 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 
 /* ---------- el ciclo ---------- */
 .ciclos{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:36px}
-.ciclo{display:flex;flex-direction:column;gap:10px;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--rule)!important;border-top:4px solid var(--sen)!important;padding:16px 18px;cursor:pointer;min-height:44px}
+.ciclo{display:flex;flex-direction:column;gap:10px;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--rule)!important;border-top:2px solid var(--ink)!important;padding:16px 18px;cursor:pointer;min-height:44px}
 .ciclo:hover{border-color:var(--ink)!important}.ciclo:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .ciclo.on{box-shadow:inset 0 0 0 1px var(--ink);border-color:var(--ink)!important}
 .ciclo .cn{font-size:28px;line-height:1}.ciclo .cf{font-size:14.5px;line-height:1.5;color:var(--ink)}
@@ -1149,7 +1153,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         </div>
       </div>
       <hr class="rule">
-      <p class="note colores"><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series. El resto es negro, crema y blanco.</p>
+      <p class="note colores"><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va en negro, con ▲ o ▼. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series. El resto es negro, crema y blanco.</p>
       <div class="tw"><table>
         <thead><tr><th>Lo que ves</th><th>Origen</th><th>Cómo se obtiene</th></tr></thead>
         <tbody>
@@ -1503,9 +1507,15 @@ function señal(at,perfil){
     let [a,por]=CONSEJO[perfil.cliente][et.et];if(perfil.vinculo==='propia'&&a==='Esperar'){a='Explorar';por=EXPLORAR;}
     return señalDe(SEN_ACC[a],a,`Etapa ${et.n.toLowerCase()} (K-means)${num?` · ${num}, ${fuente}`:''}. ${por}`,extra);
   }
-  if(d!=null){const e=d>umbral?'entrar':d<-umbral?'salir':'esperar';return señalDe(e,SEN_TEND[e],`${num}, ${fuente}.`,extra);}
+  if(d!=null){const e=d>umbral?'entrar':d<-umbral?'salir':'esperar';
+    if(at.interpretado)return señalDe(e,SEN_TEND[e],`${num}, ${fuente}. Lo leyó CLIP: describe, no recomienda.`,Object.assign(extra,{cls:'tend'}));
+    const a=e==='entrar'?'Entrar':e==='salir'?'Salir':perfil.vinculo==='propia'?'Explorar':'Esperar';
+    return señalDe(e,a,`Sin etapa en el K-means: decide si gana o pierde terreno afuera (${SEN_TEND[e].toLowerCase()}). ${num}, ${fuente}.`,extra);}
   return señalDe('sin-dato',SIN_DATO,'No tenemos serie medida para esto: se puede explorar, pero CICLO no lo recomienda.',extra);
 }
+/* la tendencia, para lo que describe y no decide (El ciclo, «qué gana y qué pierde terreno»): tinta, nunca semáforo */
+function tendencia(d,umbral){umbral=umbral!=null?umbral:3;const e=d==null?'sin-dato':d>umbral?'entrar':d<-umbral?'salir':'esperar';
+  return {estado:e,icono:SEN[e].icono,palabra:e==='sin-dato'?SIN_DATO:SEN_TEND[e],cls:'tend',d};}
 const senBadge=s=>`<span class="sen ${s.cls}"><span aria-hidden="true">${s.icono}</span> ${s.palabra}</span>`;
 function consejo(cli,et){const c=CONSEJO[cli][et]; // la regla fija; el color lo pone señal()
   return vinculo==='propia'&&c[0]==='Esperar'?['Explorar',EXPLORAR]:c;}
@@ -1904,7 +1914,7 @@ function dzElegir(p,v){
 function dzTarjeta({id,n,en,d,vis,s,dato,attr,on,nota,extra}){
   return `<button class="dzc ${s.cls}${on?' on':''}" type="button" ${attr}="${id}" aria-pressed="${!!on}"><span class="dzimg">${vis}${nota?`<span class="dzsilnota">${nota}</span>`:''}</span>
     <span class="dzb"><span class="dzn">${n}</span>${en?`<span class="dzen">${en}</span>`:''}${d?`<span class="dzdef">${d}</span>`:''}<span class="dzm">${senBadge(s)}${dzProc(s)}</span>
-    ${s.liso?'':`<span class="dzq">${s.proc==='prestado'?`Sin serie propia. Mostrando: ${s.de}, ${s.num}.<br>Por qué: ${s.presta_porque}`:s.estado==='sin-dato'?'Ni serie propia ni de un pariente: se puede explorar, no se recomienda.':dato||s.num}</span>`}${extra||''}</span></button>`;
+    ${s.liso?'':`<span class="dzq">${s.proc==='prestado'?`Sin serie propia. Mostrando: ${s.de}${s.num?', '+s.num:s.etapa?', etapa '+s.etapa.toLowerCase():''}.<br>Por qué: ${s.presta_porque}`:s.estado==='sin-dato'?'Ni serie propia ni de un pariente: se puede explorar, no se recomienda.':dato||s.num}</span>`}${extra||''}</span></button>`;
 }
 const dzDatoTxt=s=>s.cuota!=null?`${Math.round(s.cuota)} % ${s.interpretado?'de la pasarela':'de las búsquedas de jeans'} · ${s.num}`:s.num?`${s.num} afuera`:'';
 /* calzado: la frecuencia en pasarela leída por CLIP, punteada porque es interpretación; nunca da señal */
@@ -2222,7 +2232,7 @@ function cicloDe(o){
     // el último año sólo es pico si es el máximo de toda la serie; el primero, si lo es (y entonces «o antes»)
     if(k===ys.length-1){if(a===maxG)picos.push(y);}else if(k===0){if(a===maxG||prom>=15)picos.push(y);}else if(prom>=15)picos.push(y);});
   if(!picos.length)picos.push(ys.reduce((m,y)=>val(y)>val(m)?y:m,ys[0]));
-  const ultimo=picos[picos.length-1],sg=señal({d:terreno(o.id),fuente:'búsqueda mundial 2022→2024'});
+  const ultimo=picos[picos.length-1],sg=tendencia(terreno(o.id));
   const anios=ANIO_G-ultimo,ciclo=picos.length>=2?ultimo-picos[picos.length-2]:null;
   const nm=o.n.split(' /')[0].toLowerCase(),N=o.n.split(' /')[0],ult=ultimo===ys[0]?ultimo+' o antes':String(ultimo);let f;
   if(anios===0)f=`${N} está en su máximo: 2024 es su punto más alto${sg.estado==='entrar'?' y sigue ganando terreno':''}.`;
@@ -2255,7 +2265,7 @@ function llegoAca(o){
 }
 function pintarTerreno(){
   const L=REC.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d),mx=Math.max(...L.map(x=>Math.abs(x.d)));
-  const fila=x=>{const sg=señal({d:x.d,fuente:'búsqueda mundial 2022→2024'});return `<button class="tfila ${sg.cls}" data-r="${x.o.id}" type="button" title="${sg.palabra}: ${sg.porque}"><span class="tn">${x.o.n}</span><span class="tb"><i style="width:${Math.round(Math.abs(x.d)/mx*100)}%;background:var(--sen)"></i></span><span class="tv">${x.d>0?'+':''}${Math.round(x.d)}</span></button>`;};
+  const fila=x=>{const sg=tendencia(x.d);return `<button class="tfila ${sg.cls}" data-r="${x.o.id}" type="button" title="${sg.palabra}, búsqueda mundial 2022→2024"><span class="tn">${x.o.n}</span><span class="tb"><i style="width:${Math.round(Math.abs(x.d)/mx*100)}%;background:var(--sen)"></i></span><span class="tv">${x.d>0?'+':''}${Math.round(x.d)}</span></button>`;};
   $('#terreno').innerHTML=`<div class="th"><span class="lbl">Qué gana y qué pierde terreno afuera</span><span class="tag real">medido</span></div>
     <p class="tsub">Búsqueda mundial de 2022 a 2024, comparada con las otras búsquedas de moda. Tocá uno para ver su recorrido.</p>
     <div class="tcols"><div><div class="tt">Gana terreno</div>${L.filter(x=>x.d>2).slice(0,5).map(fila).join('')}</div>

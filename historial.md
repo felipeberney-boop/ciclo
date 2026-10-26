@@ -154,6 +154,16 @@ su commit:
 
 Commits `64c25a9` a este. La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-26_d589243.html`.
 
+## Presentación · Entrega 3
+
+15 láminas en Figma Slides: https://www.figma.com/slides/wLpAepURdWysie7wF8ed2p
+
+Portada · hipótesis · unidad de análisis · fuentes · modelo K-means · validación externa
+· cómo se lee · Tendencias · Diseñar · El ciclo · CLIP · Preguntar · el cono · límites honestos · cierre.
+Todos los números salen de `decisiones.md`, `historial.md` y `v-racional` de la app. Generada 26/10/2026.
+
+---
+
 ## Lo que falta para la Entrega 3
 
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado

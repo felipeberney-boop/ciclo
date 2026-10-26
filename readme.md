@@ -16,6 +16,7 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 | | |
 |---|---|
 | App publicada (oficial) | https://felipeberney-boop.github.io/ciclo/ |
+| Presentación Entrega 3 (Figma Slides) | https://www.figma.com/slides/wLpAepURdWysie7wF8ed2p |
 | Espejo | https://ciclo-udesa.netlify.app — **pausado**: la cuenta gratuita de Netlify se quedó sin créditos en octubre de 2026 y no publica desde el commit `e2c4e4b`; muestra una versión anterior |
 | Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). `netlify.toml` y `netlify/functions/` quedan en el repo pausados: la app no depende de ellos |
 

@@ -156,11 +156,14 @@ Commits `64c25a9` a este. La versión anterior quedó en `diseno/prototipos/vers
 
 ## Presentación · Entrega 3
 
-15 láminas en Figma Slides: https://www.figma.com/slides/wLpAepURdWysie7wF8ed2p
+22 láminas en Figma Slides: https://www.figma.com/slides/wLpAepURdWysie7wF8ed2p
 
 Portada · hipótesis · unidad de análisis · fuentes · modelo K-means · validación externa
-· cómo se lee · Tendencias · Diseñar · El ciclo · CLIP · Preguntar · el cono · límites honestos · cierre.
+· cómo se lee · Tendencias · Diseñar · El ciclo · CLIP · Preguntar · predicción · límites · cierre
++ sección demo en vivo (D0–D4, flujo animado, arquitectura, QR, embed, instrucciones).
 Todos los números salen de `decisiones.md`, `historial.md` y `v-racional` de la app. Generada 26/10/2026.
+
+Prototipo navegable (para embed en Slides): https://www.figma.com/proto/uuMIRgbWaRSp84w7hhmR6n?node-id=1-2&scaling=scale-down-width
 
 ---
 

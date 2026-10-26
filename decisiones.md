@@ -931,5 +931,6 @@ Las fichas de Kaggle se arman en el navegador y no se pueden leer automáticamen
 (`/api/v1/datasets/view` y `/list`) de los cinco datasets de Zara con columnas parecidas. Coincide uno solo:
 «ZARA Sales» (`xontoloyo/data-penjualan-zara`). Es un `zara.csv` de 83.147 bytes, el mismo tamaño (81 kB) que «FEB
 2024 - ZARA» en el Drive, subido el 27/02/2024, ocho días después del scrape del 19/02. Licencia **MIT**. Los otros
-cuatro son de 2025 y traen un CSV de 6,5 MB o sólo tableros de Power BI y PDF. Queda anotado como identificado por
-tamaño y fecha en `datasets/fuentes_y_descargas.md`, con lo que falta para confirmarlo byte a byte.
+cuatro son de 2025 y traen un CSV de 6,5 MB o sólo tableros de Power BI y PDF. Después lo confirmamos con la copia del
+Drive: 83.147 bytes exactos, 252 filas, 228 SKU y todas del 19/02/2024. Con esto, las fuentes del proyecto tienen
+todas su licencia revisada.

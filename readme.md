@@ -187,8 +187,8 @@ H&M es de una competencia de Kaggle: uso académico y no comercial. El Lyst Inde
 editorial de Lyst, citado por trimestre y sin redistribuir el informe.
 
 El Zara de febrero 2024 es «ZARA Sales» de Kaggle (`xontoloyo/data-penjualan-zara`), con licencia MIT.
-Lo identificamos por tamaño y fecha porque no se había guardado el link; el detalle está en
-`datasets/fuentes_y_descargas.md`.
+No se había guardado el link: lo identificamos y verificamos contra la copia del Drive (mismo tamaño
+exacto, filas, SKU y fecha). El detalle está en `datasets/fuentes_y_descargas.md`.
 
 ## Límites declarados
 

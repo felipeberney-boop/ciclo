@@ -111,10 +111,12 @@ fecha en que lo bajamos y su licencia.
 - Contenido: 252 filas, 228 SKU únicos. Un solo scrape, el **2024-02-19**. Precios en USD.
 - Descargado: 08/09/2026
 - Fuente: «ZARA Sales», https://www.kaggle.com/datasets/xontoloyo/data-penjualan-zara, archivo `zara.csv`.
-  **Identificado por tamaño y fecha** (26/10/2026), porque nadie del grupo guardó el link: el archivo de Kaggle
-  pesa 83.147 bytes, lo mismo (81 kB) que «FEB 2024 - ZARA» en el Drive del grupo, y se subió el 27/02/2024, ocho días
-  después del scrape. Ninguno de los otros datasets de Zara en Kaggle es un CSV de ese tamaño. Queda confirmarlo
-  byte a byte con el tamaño exacto que muestra Drive en «Información del archivo».
+  **Verificado el 26/10/2026.** Nadie del grupo había guardado el link. «FEB 2024 - ZARA», la copia del Drive,
+  pesa exactamente 83.147 bytes, igual que `zara.csv` en Kaggle. Tiene 252 filas, 228 SKU, todas con `scraped_at`
+  2024-02-19, separador `;` y 16 columnas: `Product ID`, `Product Position`, `Promotion`, `Product Category`,
+  `Seasonal`, `Sales Volume`, `brand`, `url`, `sku`, `name`, `description`, `price`, `currency`, `scraped_at`,
+  `terms`, `section`. Se subió a Kaggle el 27/02/2024. Ninguno de los otros datasets de Zara en Kaggle es un CSV de ese
+  tamaño. No se comparó el hash, porque bajar de Kaggle pide cuenta.
 - Licencia: **MIT**, declarada por quien lo subió (consultada con la API de Kaggle el 26/10/2026). Ojo: el
   scrape es de zara.com, así que MIT cubre la compilación, no el copy de Zara. Uso académico y citando la fuente.
 - **Mitad real, mitad sintético** (verificado el 13/10/2026). Hay que separar las columnas:

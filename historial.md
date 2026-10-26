@@ -134,6 +134,26 @@ y botas texanas con su curva de 2010 a 2023; el resto, con el motivo por el que 
 prompt v3 y deja de decir que no hay calzado. Zoe Dottori Greco deja el grupo. La versión anterior quedó en
 `diseno/prototipos/versiones_de_la_app/app_2026-10-26_745a5aa.html`.
 
+## v1.9 · 26/10/2026 · Auditoría: integridad, semáforo y celular
+
+Una auditoría con Playwright en las once vistas, a 1400 y 393 px, en claro y en oscuro, y nueve frentes, cada uno con
+su commit:
+
+- **Fuera la portada vieja.** La marca CICLO llevaba a un menú de septiembre, sin calzado ni accesorios y sin salida.
+  Ahora abre el cambio de perfil; la bajada y la firma pasan al gate y al colofón.
+- **El calzado, contado como resultado.** Dos intentos (Google Trends y CLIP), estilo por estilo, en Diseñar y en Método.
+- **El semáforo.** Que algo gane o pierda terreno va en negro; el color queda para Entrar, Esperar y Salir, con su
+  palabra. En oscuro dejan de volver el lavanda, el rosa y el verde.
+- **Integridad.** Retornos se calcula con la serie y la regla de El ciclo, hasta 2024 (lunares: cada 7 años, no 6).
+  Tendencias muestra la etapa del K-means cuando existe. Cifras alineadas en Método y el pie. Los jeans por corte, hasta
+  2024 y con el reagrupado.
+- **CLIP en Preguntar** con el umbral de Buscar por imagen (0,35), bajadas con progreso y «El dato» completo.
+- **Celular.** Gráficos legibles que se deslizan, El ciclo plegado (de 22.000 a 10.200 px), el menú entero a la vista.
+- **Hojas sin dato.** Cuatro préstamos y las 24 estampas con definición: 74 medidas, 42 prestadas, 17 sin dato.
+- **Capturas y documentación.** 16 capturas nuevas, reproducibles con `codigo/capturar_pantallas_de_la_app.js`.
+
+Commits `64c25a9` a este. La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-26_d589243.html`.
+
 ## Lo que falta para la Entrega 3
 
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado

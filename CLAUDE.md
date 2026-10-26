@@ -11,7 +11,7 @@ lifecycle stages: emergente, en ascenso, en pico, saturada, en retorno. Everythi
 
 ## Running
 
-There is no build, no package.json and no tests. The whole site is one file, `app/index.html` (~170 KB,
+There is no build, no package.json and no tests. The whole site is one file, `app/index.html` (~720 KB,
 inline CSS + one inline `<script>`).
 
 ```bash
@@ -23,12 +23,12 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
 ## App architecture (`app/index.html`)
 
 - **Data is embedded as JS constants** near the top of the script (`REC`, `KM`, `JE`, `LYST`, `SERIE`,
-  `HIST`, `RDS`, `RETS`, `COL`, `KST`, `KPROTO`…), each written as a single-line `const NAME={...};`.
+  `HIST`, `RDS`, `COL`, `KST`, `KPROTO`, `CALZ_PAS`, `CALZ_BUSQ`…), each written as a single-line `const NAME={...};`.
   `datasets_procesados/*.json` are exports of these constants, not inputs the app loads.
   `codigo/extraer_series_de_la_app.js` parses `const NAME=` up to the top-level `;`, so keep that form if
   you edit them.
-- **Views** are sections `#v-<name>` (portada, radar, detalle, etapas, recorridos, marcas, retornos,
-  consulta, asistente, racional) toggled by `mostrar(v)`; nav links use `data-v`. Each view has a `pintar*()`
+- **Views** are sections `#v-<name>` (perfil = the gate, disenar, radar, detalle, etapas, recorridos, marcas, retornos,
+  consulta, asistente, racional; the old portada was removed on 26/10) toggled by `mostrar(v)`; nav links use `data-v`. Each view has a `pintar*()`
   renderer that builds SVG charts by hand (no chart library).
 - **K-means runs in the browser** (`kRand`/`kInit`/`kLloyd`/`kFit`/`kName`): 17 attributes (no footwear), 4
   standardized features (runway level/momentum, search level/momentum through 2024). k=4 starts from the stored `KM.cent` centroids so
@@ -42,7 +42,9 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   attribute, never another family); the UI always says where a borrowed number comes from.
 - **Diseñar** runs on `TAX` (from `codigo/taxonomia.py`; rerun it after touching drawings or tables). Every state color
   comes from `señal()` / `señalPalabra()` and the `s-<estado>` CSS classes; never assign a state color by hand.
-  The app always opens on the 3-question gate; only a link with `c`, `v` and `pu` skips it.
+  The app always opens on the 3-question gate; only a link with `c`, `v` and `pu` skips it. The CICLO mark and «Cambiar
+  perfil» both reopen it (`abrirGate(vista)`). `tendencia(d)` describes (▲/■/▼ in ink, El ciclo and Tendencias) and is
+  never a state color; `señal()` decides, and without a K-means stage it says Entrar/Esperar/Salir from the trend.
 - The "cliente" selector (fast / premium / nicho) changes recommendations (`CONSEJO`, `PLAZO`) and re-renders.
 
 ## Design rules that apply in code
@@ -65,14 +67,16 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
 
 ## Scripts (`codigo/`)
 
-Offline helpers, not part of the site. They use hard-coded relative paths from their original working
-directory that don't match the repo layout, so adjust before running:
+Offline helpers, not part of the site. Most use hard-coded relative paths from their original working
+directory that don't match the repo layout, so adjust before running (`taxonomia.py`, `armar_datos_llm.js` and
+`capturar_pantallas_de_la_app.js` run as-is from the repo root):
 
 - `extraer_series_de_la_app.js` reads `app_recuperada.html` → writes `datos_app.json`
 - `calcular_geometria_de_graficos.js` reads `./datos_app.json` → writes `geom.json`
 - `generar_laminas_entrega_2.py` → 20 slide SVGs (1920×1080) into `entrega2_svg/`
 - `renderizar_laminas_a_png.js` reads `entrega2_svg/` → PNG (Playwright)
-- `capturar_pantallas_de_la_app.js` opens `repo/index.html` → screenshots (Playwright)
+- `capturar_pantallas_de_la_app.js` (run from the repo root, app served) → the 16 screenshots in
+  `entregas/entrega_3/capturas/` used by the readme. It never shows an LLM answer (no simulated responses)
 
 Requires `npm install playwright` / `pip install pillow`.
 

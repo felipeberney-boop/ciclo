@@ -19,26 +19,34 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 | Espejo | https://ciclo-udesa.netlify.app — **pausado**: la cuenta gratuita de Netlify se quedó sin créditos en octubre de 2026 y no publica desde el commit `e2c4e4b`; muestra una versión anterior |
 | Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). `netlify.toml` y `netlify/functions/` quedan en el repo pausados: la app no depende de ellos |
 
-## Captura
+## Capturas
 
 La app arranca con tres preguntas —para quién diseñás, si trabajás para una marca o por tu cuenta, y la
-categoría— y con eso decide qué mostrarte:
+categoría— y con eso decide qué mostrarte. Tocar la marca CICLO vuelve a esas preguntas.
 
-![La entrada: ¿para quién diseñás?](entregas/entrega_3/capturas/captura_01_entrada_publico.png)
+![La entrada: ¿para quién diseñás?](entregas/entrega_3/capturas/captura_01_entrada.png)
 
-Después, **Diseñar**: elegís prenda, corte, color y estampa, y en cada paso la app te marca lo que conviene
-según tu perfil y lo que gana terreno afuera. Todo es dibujo plano —cortes, fits, cuellos y estampas en tu
-color— para ver la forma sin el ruido de una foto; las fotos de pasarela quedan como referencia al final. Vos decidís:
+**Diseñar**: elegís prenda, tipo, corte, material, color, estampa y detalle, y cada opción trae su señal —Entrar,
+Esperar o Salir, en color y con la palabra— y de dónde sale: medido, interpretado o prestado de un pariente. Lo que
+no tiene dato se ve igual, con su dibujo y su definición, y dice por qué no se recomienda.
 
-![Diseñar: elegí la prenda](entregas/entrega_3/capturas/captura_03_disenar_prenda.png)
+![Diseñar: la estampa, con la señal y la procedencia de cada opción](entregas/entrega_3/capturas/captura_03_disenar_estampa.png)
 
-![Tu diseño, con referencias](entregas/entrega_3/capturas/captura_06_tu_diseno.png)
+![La ficha: recomienda sólo con evidencia y dice de dónde sale cada número](entregas/entrega_3/capturas/captura_04_tu_diseno.png)
 
-Para ver el detalle, cada tendencia de la pasarela a la búsqueda hasta 2030 (la punteada no es un pronóstico):
+El calzado es donde más probamos y menos medimos. La pantalla lo cuenta estilo por estilo:
 
-![Recorridos hasta 2030](entregas/entrega_3/capturas/captura_07_recorridos_hasta_2030.png)
+![Calzado: los dos intentos, búsqueda y pasarela](entregas/entrega_3/capturas/captura_05_calzado_dos_intentos.png)
 
-Todas las capturas actuales en `entregas/entrega_3/capturas/`; las de la Entrega 2, en `entregas/entrega_2/capturas/`.
+**El ciclo**: cuándo picó cada atributo y cuánto tardó en volver, y el recorrido de cada uno hasta 2030 (la
+punteada no es un pronóstico):
+
+![El ciclo](entregas/entrega_3/capturas/captura_06_el_ciclo.png)
+
+![El recorrido hasta 2030](entregas/entrega_3/capturas/captura_07_recorrido_hasta_2030.png)
+
+Las 16 capturas actuales —incluidas teléfono y modo oscuro— están en `entregas/entrega_3/capturas/` y se regeneran con
+`node codigo/capturar_pantallas_de_la_app.js`; las de la Entrega 2, en `entregas/entrega_2/capturas/`.
 
 ## Hipótesis
 
@@ -70,17 +78,15 @@ Sin conexión funciona igual, con las tipografías del sistema.
 
 | | |
 |---|---|
-| Entrada | Tres preguntas, siempre: para quién diseñás, marca o por tu cuenta, y la categoría |
-| Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal de cada opción, una barra con lo elegido y la ficha final |
-| Portada | Dos entradas: por prenda o por el índice |
-| Radar | Los atributos con su paleta medida y su posición en el ciclo |
-| Detalle | El recorrido de un atributo por las cuatro capas |
-| El ciclo | K-means sobre 17 atributos, con validación |
-| Recorridos | De la pasarela a la búsqueda, y los jeans por corte |
+| Entrada | Tres preguntas, siempre: para quién diseñás, marca o por tu cuenta, y la categoría. La marca CICLO y «Cambiar perfil» vuelven acá |
+| El ciclo | Cuándo picó cada uno de los 65 atributos con serie y cuánto tardó en volver; el recorrido de cada uno por pasarela, búsqueda y Reddit hasta 2030, y los jeans por corte |
+| Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
+| Tendencias | Qué gana y qué pierde terreno afuera, y doce atributos con su paleta y su etapa |
+| Buscar por imagen | Subir una prenda: CLIP en el navegador dice qué atributos ve y qué looks de pasarela se le parecen |
+| Preguntar | Chat con un LLM que contesta con los datos de CICLO, tu perfil, tu diseño y lo que CLIP leyó de tu foto (pegás tu API key de Groq) |
+| El modelo | K-means sobre 17 atributos, paso a paso, con validación externa |
 | Marcas | Lyst Index, 34 trimestres |
-| Retornos | Qué vuelve y cada cuánto |
-| Consulta | Subir una prenda y recibir su etapa |
-| Preguntar | Chat con un LLM que contesta con los datos de CICLO y tu perfil (pegás tu API key de Groq) |
+| Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |
 | Método | Fuentes, recortes y límites declarados |
 
 ## Fuentes de datos
@@ -92,7 +98,7 @@ bajamos y la licencia de cada uno. En `datasets/diccionario.md`, qué significa 
 | Capa | Fuente | Volumen usado | Período |
 |---|---|---|---|
 | Pasarela | Vogue Runway | 902.566 looks de colección | 2000–2023 |
-| Búsqueda | Google Trends | 49 términos | 2004–2025 |
+| Búsqueda | Google Trends | 65 series mundiales + 14 términos en Argentina | 2004–2024 |
 | Compra | Google Shopping | 25 términos | 2008–2025 |
 | Redes | Reddit vía Arctic Shift | 4.404 posts de r/femalefashionadvice | 2012–2025 |
 | Marcas | Lyst Index | 34 trimestres, 55 marcas | Q1-18 a Q2-26 |
@@ -143,9 +149,9 @@ Los grupos que encontró, leídos como etapas (jeans ya reagrupados: mom y boyfr
 - **Saturada** — Jeans medios · Jeans ajustados · Buzo/hoodie · Floral · Kimono · Capa · Trench · Blazer oversize
 - **En retorno** — Lunares · Cuero · Animal print · Encaje · Cuadros · Piel
 
-Hasta el 20/10/2026 el modelo usaba la búsqueda 2024–25, y con el salto de Google cinco atributos
-(lunares, cuero, encaje, cuadros, piel) parecían «en retorno». Sin ese año pasan a «saturada»; capa pasa
-de «pico» a «saturada». Está en `decisiones.md`.
+Hasta el 20/10/2026 el modelo usaba la búsqueda 2024–25. Sacar ese año y después reagrupar los jeans (mom y
+boyfriend a los medios) movió varios atributos de grupo; los pasos intermedios están en `decisiones.md`. La
+asignación de arriba es la vigente y se reproduce exacta con `codigo/recalcular_kmeans_sin_2025.py`.
 
 Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022) y Google Shopping
 (2021-22→2024-25). Los jeans ajustados, en «saturada», caen 39 % en Amazon mientras los amplios suben 79 %.
@@ -155,10 +161,11 @@ Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022
 - **La etapa se codifica como posición en una pista, no como color.** Hay cinco etapas y el color ya
   está ocupado por la ropa, que es el dato que la usuaria vino a ver. La posición es además el canal
   perceptual más preciso (Munzner).
-- **El color dice una sola cosa: si conviene avanzar o frenar.** Verde, ámbar y rojo son la señal —Entrar o
-  Gana presencia, Esperar o Estable, Salir o Pierde presencia—, siempre con la palabra y un ícono; lo que no
-  tiene dato es neutro. De dónde sale el dato se dice sin color: ● medido, ◇ interpretado (punteado), ↪ prestado.
-  Los gráficos usan color sólo para separar sus series. El resto es negro, crema y blanco.
+- **El color dice una sola cosa: si conviene avanzar o frenar.** Verde, ámbar y rojo son la señal —Entrar,
+  Esperar (o Explorar, si trabajás por tu cuenta), Salir—, siempre con la palabra y un ícono; lo que no tiene dato
+  es neutro. Que algo gane o pierda terreno es un dato, no una decisión: va en negro, con ▲ o ▼. De dónde sale el
+  dato se dice sin color: ● medido, ◇ interpretado (punteado), ↪ prestado. Los gráficos usan color sólo para separar
+  sus series. El resto es negro, crema y blanco, también en modo oscuro.
 - **Se lee como una revista.** Bodoni Moda enorme para los títulos contra IBM Plex Mono chiquita y en
   mayúsculas para las etiquetas; grilla asimétrica, texto en columnas de 60–70 caracteres, reglas de 1 px y
   nada de esquinas redondeadas, sombras ni botones con relleno.
@@ -194,10 +201,11 @@ exacto, filas, SKU y fecha). El detalle está en `datasets/fuentes_y_descargas.m
 
 - **No detectamos lo emergente.** La pasarela pública llega hasta 2023.
 - **El corpus mezcla menswear y womenswear.** Separarlo exige volver a agregar desde el archivo original.
-- **El calzado se mide poco.** La búsqueda sólo separa zapatillas y mocasines; los estilos concretos
-  (chatitas, guillerminas, plataformas) están debajo de la resolución de Google Trends. En la pasarela, CLIP mira el
-  look entero y adivina el zapato por la ropa: sólo zapatillas y botas texanas pasan la revisión a mano, y se
-  muestran como frecuencia interpretada, sin señal. Es donde Lyst ve las señales más fuertes de 2023 y 2024.
+- **El calzado se mide poco, y lo intentamos dos veces.** Google Trends (14 términos): entran «sneakers» y
+  «loafers»; «sandals» mide el verano, y los demás son ruido o vuelven sin señal. CLIP sobre 14.000 looks de pasarela:
+  acierta zapatillas (8 de 8) y botas texanas (7 de 8), pero lee la ropa, no el zapato; chatitas, plataformas y
+  guillerminas, 0 de 8. Quedan cinco estilos que ninguna fuente mide; se muestran igual en Diseñar, con el motivo.
+  Es donde Lyst ve las señales más fuertes de 2023 y 2024.
 - **Google Trends tiene deriva:** el salto de medición empieza en 2025 (cambio medio +18,9 contra +3,2
   histórico; 12 de 16 series tocan su máximo ese año) y sigue en 2026. La búsqueda se mide hasta 2024; 2025
   se dibuja tenue y 2026 se excluye. El K-means usa la búsqueda hasta 2024.

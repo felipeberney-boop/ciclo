@@ -950,3 +950,20 @@ link viejo a `#portada` cae en las tres preguntas. Lo que la portada decía y no
 («Cruzamos 1,28 millones de looks…», ahora con veintiún años de búsqueda, 2004–2024, por el corte) y la firma de la
 materia, los autores y los docentes van al pie del gate; la materia y los autores, también al colofón de cada vista.
 La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-26_d589243.html`.
+
+## 2026-10-26 · El calzado, contado como resultado
+
+Probamos dos caminos independientes y el calzado sigue casi sin medir. Eso dejó de ser un pendiente: es un resultado,
+y Diseñar es el lugar donde lo encuentra quien quiere diseñar unas botas texanas.
+
+- **En cada tarjeta** de calzado y accesorios, debajo de «sin dato directo», va por qué no entra la búsqueda
+  (`const CALZ_BUSQ=`, de `datasets/trends_lotes/informe.md`) y, en calzado, por qué no la mide la pasarela.
+- **Al pie del paso**, «Lo intentamos dos veces»: estilo por estilo, qué dijo Google Trends (21/10), qué acertó CLIP
+  en sus 8 looks más seguros (25/10) y qué queda. Señal para zapatillas y mocasines; frecuencia interpretada para
+  zapatillas y botas texanas; cinco estilos (botinetas, sandalias, chatitas, plataformas, guillerminas) que no mide
+  ninguna de las dos fuentes. Con los criterios del filtro y el camino que falta: recortar los pies de cada foto.
+- **Método** suma una fila «Calzado · dos intentos» con los números, en lugar de una frase al final.
+- El chat recibe el motivo de la búsqueda en cada ficha de calzado y accesorios (`codigo/armar_datos_llm.js`).
+
+Corrección de paso: el título de cada panel de Diseñar se pisaba con el borde superior de las tarjetas cuando no había
+bajada; ahora hay aire entre los dos.

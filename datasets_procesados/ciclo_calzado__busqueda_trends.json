@@ -1,0 +1,20 @@
+{
+ "fuente": "Google Trends mundial, plan 3 (21/10/2026): 14 términos de calzado y accesorios contra «trench coat» (datasets/plan_exportacion_trends_3.csv, datasets/trends_lotes/informe.md)",
+ "si": {
+  "zapatillas": "«sneakers»: 21 años útiles",
+  "mocasines": "«loafers»: 20 años útiles",
+  "tote": "«tote bag»: 21 años útiles"
+ },
+ "no": {
+  "botinetas": "«ankle boots» es ruido: máximo bajo 6 o menos de 24 meses con señal",
+  "texanas": "«cowboy boots» es ruido: máximo bajo 6 o menos de 24 meses con señal",
+  "chatitas": "«ballet flats» vuelve sin señal: el estilo está por debajo de la resolución mundial de Google Trends",
+  "plataformas": "«platform shoes» vuelve sin señal: por debajo de la resolución mundial",
+  "guillerminas": "«mary janes» vuelve sin señal: por debajo de la resolución mundial",
+  "sandalias": "«sandals» mide la estación, no la moda: se mueve 20,1 puntos dentro de cada año y 11,6 entre años",
+  "piluso": "«bucket hat» tiene 11 años útiles; el mínimo es 12",
+  "gorra": "«baseball cap» es ruido: máximo bajo 6 o menos de 24 meses con señal",
+  "cinturon": "«leather belt» es ruido: máximo bajo 6 o menos de 24 meses con señal",
+  "anteojos": "«sunglasses» mide la estación: se mueve 12,0 puntos dentro de cada año y 6,4 entre años"
+ }
+}

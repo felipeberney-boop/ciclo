@@ -28,8 +28,8 @@ function grab(name) { // mismo parser que extraer_series_de_la_app.js
   }
   return eval('(' + js.slice(st, j) + ')');
 }
-const [KM, REC, GREL, PERFIL, CONSEJO, DIS, JE, KPROTO, TAX, CALZ_PAS] =
-  ['KM', 'REC', 'GREL', 'PERFIL', 'CONSEJO', 'DIS', 'JE', 'KPROTO', 'TAX', 'CALZ_PAS'].map(grab);
+const [KM, REC, GREL, PERFIL, CONSEJO, DIS, JE, KPROTO, TAX, CALZ_PAS, CALZ_BUSQ] =
+  ['KM', 'REC', 'GREL', 'PERFIL', 'CONSEJO', 'DIS', 'JE', 'KPROTO', 'TAX', 'CALZ_PAS', 'CALZ_BUSQ'].map(grab);
 
 // etapa de cada atributo: el mismo código de la app (kClip … kName), con k=4 desde KM.cent
 const KST = { asc: { n: 'En ascenso' }, pico: { n: 'Pico' }, sat: { n: 'Saturada' }, ret: { n: 'En retorno' }, emer: { n: 'Emergente' } };
@@ -205,6 +205,7 @@ for (const x of hojas) {
   linea(x.nombre, `id: ${id}`, `busca: ${[h.n, h.en, x.prenda && x.prenda.n].filter(Boolean).join(', ').toLowerCase()}`, `paso: ${x.paso}`, `valor: ${h.id}`,
     q ? `señal: ${sig(q.d)} puntos ${q.je ? 'en su parte de las búsquedas de jeans' : 'en la búsqueda mundial'} 2022→2024` : 'sin dato: ni serie propia ni de un pariente',
     q && q.et ? `etapa: ${q.et}` : null, propia ? 'dato: propio' : prest ? `dato: prestado de ${lender.n.toLowerCase()} (${h.presta_porque})` : null, q && q.g ? `serie: ${q.g}` : null,
+    x.prenda && ['calzado', 'accesorios'].includes(x.prenda.id) && CALZ_BUSQ.no[h.id] ? `búsqueda: no entra (${CALZ_BUSQ.no[h.id]})` : null,
     x.prenda && x.prenda.id === 'calzado' ? pasCalzado(h.id) : null);
 }
 

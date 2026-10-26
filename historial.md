@@ -165,6 +165,8 @@ Todos los números salen de `decisiones.md`, `historial.md` y `v-racional` de la
 
 Prototipo navegable (para embed en Slides): https://www.figma.com/proto/uuMIRgbWaRSp84w7hhmR6n?node-id=1-2&scaling=scale-down-width
 
+Presentación web interactiva: https://felipeberney-boop.github.io/ciclo/presentacion/
+
 ---
 
 ## Lo que falta para la Entrega 3

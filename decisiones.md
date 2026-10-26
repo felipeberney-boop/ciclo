@@ -934,3 +934,19 @@ Las fichas de Kaggle se arman en el navegador y no se pueden leer automáticamen
 cuatro son de 2025 y traen un CSV de 6,5 MB o sólo tableros de Power BI y PDF. Después lo confirmamos con la copia del
 Drive: 83.147 bytes exactos, 252 filas, 228 SKU y todas del 19/02/2024. Con esto, las fuentes del proyecto tienen
 todas su licencia revisada.
+
+## 2026-10-26 · Fuera la portada vieja; CICLO abre el cambio de perfil
+
+**El síntoma.** «Calzado y accesorios no aparecen en prendas». En Diseñar sí aparecen: los 8 de calzado y los 5 de
+accesorios, con dibujo, definición y «sin dato directo», en los tres públicos y a 1400 y 393 px (verificado con
+Playwright, local y en GitHub Pages). `dzVisible` no mira el dato: sólo esconde lo marcado `solo: 'mujer'` cuando se
+diseña para hombre. Lo que no tenía calzado era la **portada vieja** («Empezá por una prenda / El índice»): un menú
+escrito a mano en septiembre con siete prendas, al que se llegaba tocando la marca CICLO y del que no se podía salir
+sin el botón atrás del navegador (ni `abrirGate` ni `leerLink` la aceptaban como destino).
+
+**Decisión.** La marca CICLO abre el cambio de perfil, igual que «Cambiar perfil» en el menú: dos entradas al mismo
+lugar, y al confirmar vuelve a la vista donde estabas. `v-portada` sale del HTML, del CSS y de la lista de vistas; un
+link viejo a `#portada` cae en las tres preguntas. Lo que la portada decía y no estaba en otro lado se muda: la bajada
+(«Cruzamos 1,28 millones de looks…», ahora con veintiún años de búsqueda, 2004–2024, por el corte) y la firma de la
+materia, los autores y los docentes van al pie del gate; la materia y los autores, también al colofón de cada vista.
+La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-26_d589243.html`.

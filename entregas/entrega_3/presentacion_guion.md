@@ -68,3 +68,103 @@ recomiendan.
 
 **15 · Qué sigue.** Calcular la etapa desde las curvas para todos los atributos. La pasarela mes a mes, para volver a
 probar si adelanta a una resolución más fina: es la única versión de la hipótesis que todavía no pudimos descartar.
+
+---
+
+# Guion de la demo en vivo (5 minutos)
+
+App: https://felipeberney-boop.github.io/ciclo/
+Tener abierta en una pestaña antes de empezar. Tener también la API key de Groq en el portapapeles.
+Foto de prueba: cualquier prenda con patrón reconocible (rayas, cuero, jeans anchos).
+
+## Paso 1 — La entrada (0:00–0:45)
+
+Abrir la app. Aparecen tres preguntas.
+
+> «Antes de mostrarte nada la app necesita saber para quién diseñás,
+> porque el mismo dato puede decir "entrá" a un fast fashion
+> y "esperá" a una marca premium.»
+
+Elegir: **para una marca**, **premium**, **ropa de mujer**.
+La app va directo a **Tendencias**.
+
+---
+
+## Paso 2 — Tendencias y una ficha (0:45–2:00)
+
+> «Esta es la pantalla principal. Cada tarjeta es un atributo —
+> un corte, una estampa, un material— con su etapa y su señal.»
+
+Señalar las tarjetas de color: verde = Entrar, ámbar = Esperar, rojo = Salir.
+
+Hacer click en **Jeans amplios** (etapa: Pico, señal: Esperar).
+
+> «El modelo los ubicó en Pico: subieron 79 % en reseñas de Amazon
+> y 95 % en Google Shopping —datos que el K-means no vio.
+> Para premium, Esperar: ya está en el mainstream.»
+
+Mostrar el gráfico de la ficha (pasarela vs búsqueda).
+Cambiar el perfil a **nicho** con el selector — la señal pasa a Salir.
+
+> «El dato no cambia. Lo que cambia es la recomendación.»
+
+Volver a premium.
+
+---
+
+## Paso 3 — Diseñar (2:00–3:15)
+
+Ir a **Diseñar** desde el menú.
+
+> «Si estás diseñando algo concreto, empezás acá.»
+
+Elegir: **Pantalón → Denim → Amplio → Alto → Relajado**.
+Mostrar la barra que se llena con lo elegido.
+
+> «La ficha dice: Esperar. Medido. Viene de pasarela y búsqueda.
+> Si elegimos ajustado en cambio —»
+
+Cambiar a **Ajustado**. La señal pasa a Salir.
+
+> «Salir. El mismo jean, distinto corte, conclusión opuesta.
+> Eso no se ve si medís "jeans" como un todo.»
+
+---
+
+## Paso 4 — Preguntar (3:15–4:30)
+
+Ir a **Preguntar** desde el menú.
+Pegar la API key de Groq cuando la pida.
+
+> «Este es el único lugar donde entra un modelo de lenguaje.
+> Y nunca ve una fila de datos: lee métricas que ya calculamos.»
+
+Escribir: *«Estoy diseñando un jean amplio para una marca premium,
+¿qué me recomendás para la próxima temporada?»*
+
+Esperar la respuesta (suele tardar 3–5 segundos).
+
+> «La respuesta llega marcada como interpretación.
+> El dato —el +79 % de Amazon, la etapa Pico— es nuestro.
+> La lectura es del modelo.»
+
+---
+
+## Cierre (4:30–5:00)
+
+> «Lo que construimos no predice el futuro. Describe el presente
+> con más resolución que «esto está de moda».
+> Y es honesto sobre lo que no sabe.»
+
+Mostrar la URL en pantalla: **felipeberney-boop.github.io/ciclo**
+
+---
+
+## Plan B
+
+| Problema | Qué hacer |
+|----------|-----------|
+| Groq no responde o la key no funciona | Saltar Paso 4. Ir a **Buscar por imagen** en su lugar: subir la foto de prueba, mostrar cómo CLIP identifica el atributo. Decir: «El LLM funciona igual; lo dejamos para que lo prueben ustedes después.» |
+| La app no carga (GitHub Pages caído) | Abrir la copia local: `cd app && python3 -m http.server 8000`, usar `localhost:8000`. Tenerla instalada antes. |
+| CLIP no devuelve resultado | Mostrar la pantalla de **Método** en su lugar y recorrer la tabla de qué está medido y qué interpretado. Dura lo mismo y muestra la honestidad del proyecto. |
+| Se va el tiempo en Paso 2 | Saltar Paso 3 (Diseñar). Pasar directo a Preguntar o al cierre. |

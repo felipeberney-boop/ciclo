@@ -18,7 +18,7 @@ inline CSS + one inline `<script>`).
 cd app && python3 -m http.server 8000
 ```
 
-Netlify publishes `app/` with no build command. The only external dependency is Google Fonts.
+GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar_app.yml`). The only external dependency is Google Fonts.
 
 ## App architecture (`app/index.html`)
 
@@ -59,8 +59,9 @@ Netlify publishes `app/` with no build command. The only external dependency is 
 - **No number without its source.** Each card states which data layer can and cannot answer.
 - **The LLM never sees a data row**, only precomputed metrics (level, momentum, growth, distance to peak)
   plus client type; its output is shown labelled as interpretation. Prompts live in `prompts/` and are
-  versioned: add `_v2.md` etc., never overwrite an existing version. No API keys in the repo; Groq uses
-  `GROQ_API_KEY` in Netlify (IA-5 currently runs on a fixed prompt, not live).
+  versioned: add `_v2.md` etc., never overwrite an existing version. No API keys in the repo; IA-5 («Pedir lectura en vivo»,
+  `lvPedir()`) and «Preguntar» both call Groq from the browser with the user's own key (localStorage `groq_key`).
+  Netlify (`netlify.toml`, `netlify/functions/`) is paused and unused; the live deploy is GitHub Pages.
 
 ## Scripts (`codigo/`)
 

@@ -121,14 +121,19 @@ pasarela (CLIP). 71 hojas con dato propio, 48 prestadas, 12 sin dato.
 Calzado y Accesorios como prendas (13 dibujos nuevos); zapatillas, mocasines y tote con dato propio. El ciclo,
 Tendencias y el recorrido pasan de 16 a 65 series, con filtro por grupo.
 
+## v1.7 · 25/10/2026 · IA-5 en vivo en la app oficial
+
+«Pedir lectura en vivo» deja de depender de Netlify: llama a Groq desde el navegador con la clave de cada uno, la
+misma de «Preguntar». Prompt v4 (el peso en la búsqueda pasa a 2022→2024). Netlify queda pausado y señalado como
+tal. La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-25_9a92475.html`.
+
 ## Lo que falta para la Entrega 3
 
-- Conectar la Groq API en vivo. Hoy IA-5 corre con prompt fijo.
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado
   como límite en la pantalla de Método, no simulado.
-- Sumar calzado, que es donde el contraste con Lyst no coincide.
-- Verificar la licencia exacta de las cuatro fuentes marcadas *a verificar* en
-  `datasets/fuentes_y_descargas.md`.
+- Sumar calzado medido en la pasarela (CLIP), que es donde el contraste con Lyst no coincide.
+- Confirmar la licencia del Zara de febrero 2024: falta pegar la URL de Kaggle en
+  `datasets/fuentes_y_descargas.md` (las otras ya se verificaron el 13/10).
 
 ---
 

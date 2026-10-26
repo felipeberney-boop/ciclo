@@ -828,3 +828,29 @@ https://felipeberney-boop.github.io/ciclo/. Netlify queda como espejo, y es el �
 vivo de IA-5 (necesita la función con la clave guardada); vuelve cuando se renueven los créditos o se pase a un plan
 pago. «Preguntar» no depende de Netlify: usa la clave de cada uno desde el navegador.
 
+
+## 2026-10-25 · IA-5 en vivo desde el navegador, y Netlify pausado
+
+**Problema.** El pase a GitHub Pages había dejado roto el botón «Pedir lectura en vivo» de Recorridos. La app
+seguía llamando a `/api/lectura`, la función de Netlify. En Pages ese POST devuelve 405, no 404, así que el aviso
+previsto no aparecía y se veía «No se pudo leer.». La lectura en vivo, que es lo que separa la app de una
+maqueta, no andaba en la URL oficial.
+
+**Decisión.** IA-5 pasa a funcionar como «Preguntar», el patrón V2 de la clase: el navegador llama a Groq con la
+clave que pega cada uno (`groq_key`, la misma en las dos pantallas). Si no hay clave, el botón la pide ahí mismo.
+El servidor existía para no exponer una clave del proyecto; con la clave de cada usuario esa razón ya no aplica.
+Lo que importaba de la función se conserva: el prompt se arma con texto fijo y números de la app, sin texto libre
+de quien la usa, y la salida se valida (una de las tres acciones permitidas y una frase no vacía). Prompt nuevo:
+`prompts/prompt_lectura_recomendacion_v4.md`.
+
+**Lo que corregimos al pasarlo.** v3 decía que el peso en la búsqueda se medía «2023→2025», y el subtítulo de
+«Qué gana y qué pierde terreno» decía «de 2023 a 2025». `terreno()` mide 2022→2024 desde el corte en 2024. Los dos
+dicen ahora 2022→2024. La respuesta en vivo también suma el ícono de la señal, que le faltaba.
+
+**Netlify.** `netlify.toml` y `netlify/functions/lectura.mjs` quedan en el repo con un aviso arriba: están
+pausados, el deploy vivo es GitHub Pages y la app no los usa. Se dejan por si algún día hace falta un servidor.
+
+**Cómo se probó.** Playwright en escritorio (1280) y teléfono (390), con Groq simulado: sin clave aparece el campo,
+la clave se guarda y pasa a «Preguntar», la respuesta sale con su marca de interpretación, modelo y versión de
+prompt, y un 401 muestra el aviso de clave rechazada. No hubo errores de JavaScript ni scroll horizontal. Con una
+clave real falta probarlo una vez desde la URL publicada.

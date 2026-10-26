@@ -1,3 +1,6 @@
+// PAUSADO desde el 25/10/2026. El deploy vivo es GitHub Pages (.github/workflows/publicar_app.yml) y la app no
+// depende de Netlify: IA-5 y «Preguntar» llaman a Groq desde el navegador con la clave de cada usuario.
+// Se deja por si vuelve a hacer falta un servidor (ver decisiones.md, 21/10 y 25/10/2026).
 // IA-5 · Lectura y recomendación en vivo (prompts/prompt_lectura_recomendacion_v3.md).
 // Recibe sólo métricas ya calculadas por la app, nunca una fila de la base. El prompt se arma acá,
 // no en el navegador: el cliente manda números y claves de una lista cerrada, no texto libre.

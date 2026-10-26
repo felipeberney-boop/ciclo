@@ -300,6 +300,7 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--in
 .vivo .h{width:100%;display:flex;align-items:center;gap:8px}
 .vivo .dline{margin-top:0}
 .vivo .vm{font-size:11.5px;color:var(--ink-3)}
+.vivo .vkey{font:inherit;font-size:13px;flex:1 1 220px;min-width:0;padding:7px 2px;border:0;border-bottom:1px solid var(--ink);background:transparent;color:var(--ink)}
 .as{display:grid;grid-template-columns:300px 1fr;gap:24px;margin-top:20px;align-items:start}
 .ascard{border:1px solid var(--rule);border-radius:4px;padding:14px 16px;background:var(--card);margin-bottom:12px}
 .ascap{font-size:12.5px;line-height:1.5;color:var(--ink-2);margin:6px 0 8px}
@@ -2305,7 +2306,7 @@ function pintarTerreno(){
   const L=REC.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d),mx=Math.max(...L.map(x=>Math.abs(x.d)));
   const fila=x=>{const sg=señal({d:x.d,fuente:'búsqueda mundial 2022→2024'});return `<button class="tfila ${sg.cls}" data-r="${x.o.id}" type="button" title="${sg.palabra}: ${sg.porque}"><span class="tn">${x.o.n}</span><span class="tb"><i style="width:${Math.round(Math.abs(x.d)/mx*100)}%;background:var(--sen)"></i></span><span class="tv">${x.d>0?'+':''}${Math.round(x.d)}</span></button>`;};
   $('#terreno').innerHTML=`<div class="th"><span class="lbl">Qué gana y qué pierde terreno afuera</span><span class="tag real">medido</span></div>
-    <p class="tsub">Búsqueda mundial de 2023 a 2025, comparada con las otras búsquedas de moda. Tocá uno para ver su recorrido.</p>
+    <p class="tsub">Búsqueda mundial de 2022 a 2024, comparada con las otras búsquedas de moda. Tocá uno para ver su recorrido.</p>
     <div class="tcols"><div><div class="tt">Gana terreno</div>${L.filter(x=>x.d>2).slice(0,5).map(fila).join('')}</div>
     <div><div class="tt">Pierde terreno</div>${L.filter(x=>x.d<-2).reverse().slice(0,5).map(fila).join('')}</div></div>`;
   $$('#terreno .tfila').forEach(b=>b.addEventListener('click',()=>{recSel=b.dataset.r;pintarRecorridos();mostrar('recorridos');}));
@@ -2326,8 +2327,45 @@ function pintarDecision(o){
       <dt>Tu ventana</dt><dd>hasta ${P.hasta} · ±${Math.round(P.banda)}</dd></dl>`;
   pintarVivo(o);
 }
-/* IA-5 en vivo: la función de Netlify recibe sólo estas métricas, nunca una fila, y arma el prompt v2 */
+/* IA-5 en vivo (prompts/prompt_lectura_recomendacion_v4.md): como Preguntar, la página le habla directo a Groq con la
+   clave que pegó cada uno. El modelo recibe sólo estas métricas, nunca una fila, y el prompt se arma acá con texto fijo. */
 const VIVO={};
+const LV_MODELO='openai/gpt-oss-120b',LV_PROMPT='v4';
+const LV_CLI={fast:'fast fashion (high street: Zara, H&M, Shein)',medio:'contemporary (bridge: COS, Massimo Dutti, Arket)',
+  premium:'high fashion (prêt-à-porter de lujo)',nicho:'diseñador emergente (marca de autor)'};
+const LV_SISTEMA=`Sos analista de tendencias de CICLO. Leés métricas ya calculadas sobre un atributo de moda (un color, una estampa, un corte o un material) y decís qué conviene hacer con él.
+Reglas:
+- Usá sólo los datos que te paso. No inventes cifras, marcas, temporadas ni fuentes.
+- Escribí en castellano rioplatense, sin jerga, para diseñadores. Tono directo.
+- La frase cita al menos un número de los datos, tal como aparece.
+- Respondé sólo con JSON: {"accion": "...", "frase": "..."}.`;
+const lvPct=v=>v==null?'sin dato':(v>0?'+':'')+Math.round(v*100)+' %',lvDec=v=>v==null?'sin dato':v.toFixed(2).replace('.',','),
+  lvSig=v=>v==null?'sin dato':(v>0?'+':'')+v.toFixed(2).replace('.',',');
+function lvPrompt(d){
+  const P=PERFIL[d.cliente]||PERFIL.premium,c=LV_CLI[d.cliente]||LV_CLI.premium;
+  const quien=d.vinculo==='propia'?`Diseña por su cuenta para un cliente ${c}: no compromete producción ni stock, así que en vez de esperar puede explorar.`:`Trabaja para una marca ${c}.`;
+  return `Cliente: ${quien} Plazo de producción: ${P.prod}. Decide para colecciones hasta ${P.hasta}.
+
+Atributo: ${d.atributo}
+Etapa según el K-means: ${d.etapa??'sin etapa'}
+Pasarela (Vogue Runway, hasta 2023): nivel ${lvDec(d.pn)} sobre 1, momento ${lvSig(d.pm)}, pico en ${d.pico_pas??'sin dato'}
+Búsqueda (Google Trends mundo, hasta 2024): nivel ${lvDec(d.bn)} sobre 1, momento ${lvSig(d.bm)}, ${d.bus_abierto?`sigue subiendo (máximo en ${d.pico_bus}, el último año medido)`:`pico en ${d.pico_bus??'sin dato'}`}
+Peso en la búsqueda frente a otras de moda, 2022→2024: ${d.terreno==null?'sin dato':(d.terreno>0?'+':'')+Math.round(d.terreno)+' puntos'}
+Validación: Google Shopping 2022→2025 ${lvPct(d.shop)}, reseñas de Amazon 2019→2022 ${lvPct(d.amz)}
+
+Objetivo: una acción (${d.vinculo==='propia'?'Entrar, Explorar o Salir':'Entrar, Esperar o Salir'}) y una sola frase, de menos de 40 palabras, que la justifique con un número de arriba.`;
+}
+async function lvPedir(d,clave){
+  const res=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+clave},
+    body:JSON.stringify({model:LV_MODELO,temperature:0.3,max_tokens:500,reasoning_effort:'low',include_reasoning:false,response_format:{type:'json_object'},
+      messages:[{role:'system',content:LV_SISTEMA},{role:'user',content:lvPrompt(d)}]})});
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok)return {error:asError(res.status,data.error&&data.error.message)};
+  let out=null;try{out=JSON.parse(data.choices[0].message.content);}catch(e){}
+  const validas=d.vinculo==='propia'?['Entrar','Explorar','Salir']:['Entrar','Esperar','Salir'];
+  const accion=typeof out?.accion==='string'?out.accion.trim().replace(/^\w/,ch=>ch.toUpperCase()):'',frase=typeof out?.frase==='string'?out.frase.trim().slice(0,400):'';
+  return validas.includes(accion)&&frase?{accion,frase,modelo:LV_MODELO,prompt:LV_PROMPT}:{error:'La respuesta no tuvo la forma pedida. Probá de nuevo.'};
+}
 const escH=t=>String(t).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
 function vivoDatos(o){
   const km=KM.rows.find(r=>r.n.split(' /')[0]===o.n.split(' /')[0]);if(!km)return null;const et=etapaDe(o.n),pg=picoBusq(o,'g');
@@ -2338,15 +2376,16 @@ function pintarVivo(o){
   const box=$('#rvivo');if(!box)return;const d=vivoDatos(o),key=[d.atributo,cliente,vinculo].join('|'),r=VIVO[key];
   const tag=`<span class="tag ia2">interpretación · Groq en vivo</span>`;
   if(r&&r.accion) box.innerHTML=`<div class="h">${tag}<span class="mono vm">${escH(r.modelo)} · prompt ${escH(r.prompt)}</span></div>
-      <div class="dline"><span class="a serif ${señalPalabra(r.accion).cls}">${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
-  else box.innerHTML=`<button type="button" class="kbtn ghost" id="rvivob"${r==='…'?' disabled':''}>${r==='…'?'Pensando…':'Pedir lectura en vivo'}</button>
-      <span class="vm">${r&&r.error?escH(r.error):'Un modelo de lenguaje lee las métricas de este atributo para '+tuQuien()+'. No ve ningún dato crudo.'}</span>`;
+      <div class="dline"><span class="a serif ${señalPalabra(r.accion).cls}"><span class="ico" aria-hidden="true">${señalPalabra(r.accion).icono}</span> ${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
+  else{const sinClave=!asLeer('groq_key');
+    box.innerHTML=`${sinClave?`<input class="vkey" id="rvivok" type="password" autocomplete="off" spellcheck="false" placeholder="Tu API key de Groq · gsk_…" aria-label="API key de Groq">`:''}
+      <button type="button" class="kbtn ghost" id="rvivob"${r==='…'?' disabled':''}>${r==='…'?'Pensando…':'Pedir lectura en vivo'}</button>
+      <span class="vm">${r&&r.error?escH(r.error):sinClave?'Pegá tu clave de Groq: se guarda sólo en este navegador, la misma que usa Preguntar. La sacás gratis en <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>.':'Un modelo de lenguaje lee las métricas de este atributo para '+tuQuien()+'. No ve ningún dato crudo.'}</span>`;}
   const b=$('#rvivob');if(b)b.addEventListener('click',async()=>{
+    const k=$('#rvivok');if(k&&k.value.trim()){asGuardar('groq_key',k.value.trim());const a=$('#askey');if(a)a.value=k.value.trim();}
+    const clave=asLeer('groq_key');if(!clave){VIVO[key]={error:'Falta tu API key de Groq.'};pintarVivo(o);return;}
     VIVO[key]='…';pintarVivo(o);
-    try{const res=await fetch('/api/lectura',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)});
-      VIVO[key]=res.status===404?{error:'La lectura en vivo necesita un servidor y corre sólo en ciclo-udesa.netlify.app (hoy pausado). Para preguntarle a un modelo desde acá, usá Preguntar.'}
-        :await res.json().then(j=>res.ok?j:{error:j.error||'No se pudo leer.'}).catch(()=>({error:'No se pudo leer.'}));}
-    catch{VIVO[key]={error:'Sin conexión.'};}
+    try{VIVO[key]=await lvPedir(d,clave);}catch(e){VIVO[key]={error:asError(0)};}
     if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);
   });
 }

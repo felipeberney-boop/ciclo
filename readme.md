@@ -18,7 +18,7 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 |---|---|
 | App publicada (oficial) | https://felipeberney-boop.github.io/ciclo/ |
 | Espejo | https://ciclo-udesa.netlify.app — **pausado**: la cuenta gratuita de Netlify se quedó sin créditos en octubre de 2026 y no publica desde el commit `e2c4e4b`; muestra una versión anterior |
-| Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). Netlify publica la misma carpeta sin build (`netlify.toml`) cuando tiene créditos |
+| Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). `netlify.toml` y `netlify/functions/` quedan en el repo pausados: la app no depende de ellos |
 
 ## Captura
 
@@ -60,9 +60,9 @@ cd app
 python3 -m http.server 8000
 ```
 
-Publicada en GitHub Pages desde la carpeta `app/`, sin comando de build. Netlify publica la misma carpeta
-(*publish directory* = `app`, fijado en `netlify.toml`) como espejo, y es el único lugar donde corre la lectura en
-vivo de IA-5, que necesita una función de servidor; hoy está pausado por falta de créditos.
+Publicada en GitHub Pages desde la carpeta `app/`, sin comando de build. Nada corre en un servidor: los dos
+modelos de lenguaje (IA-5 e IA-8) llaman a Groq desde el navegador con la clave que pega cada uno. Netlify
+(`netlify.toml`, `netlify/functions/`) quedó pausado desde el 25/10/2026 y la app no lo usa.
 
 Lo único que carga de afuera son las tipografías (Google Fonts: Archivo, Bodoni Moda, IBM Plex Mono).
 Sin conexión funciona igual, con las tipografías del sistema.
@@ -114,7 +114,7 @@ Ocho puntos. Tres corren una sola vez, en batch; el resto se dispara con el usua
 | IA-2 | Enlace de registros entre las 8 fuentes | Comparación de pares + clasificación | batch |
 | IA-3 | Agrupar atributos | K-means no supervisado, k=4 | al cargar |
 | IA-4 | Ubicar una tendencia nueva | Asignación al centroide más cercano | en vivo |
-| IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE, desde una función de Netlify | en vivo, sólo en Netlify (pausado) |
+| IA-5 | Leer y recomendar | LLM (Groq) con prompt RACE, desde el navegador con tu API key | en vivo |
 | IA-6 | Consulta por imagen | CLIP en el navegador: zero-shot + looks parecidos | en vivo |
 | IA-7 | Diseñar: referencias y colores | CLIP sobre la pasarela de Vogue | batch |
 | IA-8 | Preguntale a CICLO | LLM (Groq) desde el navegador, con tu API key y `llm/ciclo_datos.md` | en vivo |
@@ -123,9 +123,9 @@ Ocho puntos. Tres corren una sola vez, en batch; el resto se dispara con el usua
 calculadas —nivel, momento, crecimiento, distancia al pico— y el tipo de cliente. Todo lo que devuelve
 aparece en la interfaz marcado como interpretación. Los prompts están versionados en `prompts/`.
 
-**Claves de API:** no hay ninguna en el repositorio. IA-5 usa la clave de Groq configurada como variable de
-entorno en Netlify (`GROQ_API_KEY`). IA-8, «Preguntar», funciona como la V2 de la clase: cada uno pega su
-API key en la página y queda guardada sólo en su navegador. El `.gitignore` bloquea `.env` y similares.
+**Claves de API:** no hay ninguna en el repositorio. IA-5 (Recorridos → «Pedir lectura en vivo») e IA-8
+(«Preguntar») funcionan como la V2 de la clase: cada uno pega su API key de Groq en la página, queda guardada
+sólo en su navegador y es la misma para los dos. El `.gitignore` bloquea `.env` y similares.
 
 ## El modelo
 
@@ -208,8 +208,8 @@ la URL exacta de Kaggle.
 
 ## Qué falta
 
-Separar pasarela y venta por género. IA-5 ya corre en vivo (Recorridos → «Pedir lectura en vivo»), sólo en la app oficial: GitHub
-Pages no tiene funciones.
+Separar pasarela y venta por género (declarado como límite en Método). Medir el calzado en la pasarela con
+CLIP. Confirmar la licencia del Zara de febrero 2024 (falta la URL de Kaggle).
 
 ## Estructura del repositorio
 
@@ -219,13 +219,13 @@ ciclo/
 ├── decisiones.md              registro fechado de lo que probamos y descartamos
 ├── historial.md               las versiones del proyecto, de la hipótesis al prototipo
 ├── .gitignore
-├── netlify.toml               configuración de Netlify: publica app/ sin build
-├── netlify/functions/         lectura.mjs: IA-5 en vivo (Groq), la única parte con servidor
+├── netlify.toml               pausado: el deploy vivo es GitHub Pages
+├── netlify/functions/         pausado: lectura.mjs, la versión con servidor de IA-5
 ├── datasets/                  diccionario y links de descarga (los CSV no se suben)
 ├── datasets_procesados/       las series que consume la app
 ├── diseno/                    referencias y prototipos por versión
 ├── prompts/                   prompts del LLM, versionados
 ├── codigo/                    scripts de extracción, cálculo y render
 ├── entregas/                  estado del proyecto en cada entrega
-└── app/                       lo que se publica (GitHub Pages, con Netlify de espejo)
+└── app/                       lo que se publica (GitHub Pages)
 ```

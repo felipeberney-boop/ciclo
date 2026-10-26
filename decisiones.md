@@ -989,3 +989,24 @@ del final los redefinen. Los links sin clase dejan el azul del navegador y los c
 
 **Cómo se verificó.** Playwright en las 11 vistas, 1400 y 393, claro y oscuro: todo elemento con color fuera de un
 `s-<estado>` es una serie de gráfico, un punto del K-means o la paleta de una prenda.
+
+## 2026-10-26 · Retornos hasta 2024, una sola etapa por atributo y las cifras que no coincidían
+
+**Retornos se apoyaba en 2025.** «Lunares vuelve cada seis años: 2013, 2019, 2025» salía de `const RETS=`, una serie
+cruda normalizada al máximo de 2025: justo el año que el resto de la app declara contaminado por el salto de medición
+de Google. Además contradecía a El ciclo, que con la serie corregida decía «siete años» para lunares. Ahora Retornos
+se calcula en vivo con la misma serie (`GREL`, 2010–2024), la misma regla de pico (`cicloDe`: un máximo que se despega
+15 puntos de lo que lo rodea) y una condición más: los dos picos tienen que caer dentro de la serie, porque un pico en
+el primer año corregido pudo ser anterior. Resultado: 10 de 65 atributos con retorno medido, uno con tres picos
+(plisado, 2012 · 2015 · 2020); lunares 2012 → 2019, animal print 2012 → 2020. Corset y kimono, que estaban en la lista,
+tienen un solo pico hasta 2024: salen. 2025 se dibuja apagado, con punto hueco, como en el resto. `RETS` deja de existir.
+
+**Dos etapas para el mismo atributo.** La pista de las fichas de Tendencias mostraba la etapa estimada sobre el
+catálogo sintético de Zara: lunares «saturada», cuero «pico», mientras El modelo los pone «en retorno». Ahora, si el
+atributo está en el K-means, la pista muestra esa etapa; si no, la estimada; y debajo dice cuál es («K-means · pasarela
+× búsqueda» o «estimada · catálogo sintético»). En la ficha abierta, el K-means va primero.
+
+**Cifras.** Método decía silhouette 0,37 (la de antes de reagrupar los jeans; la vigente es 0,32 con k=4) y «35 términos
+… 2004–2025» para la búsqueda (son 65 series, cortadas en 2024). El pie decía «Google Trends · 49 términos» y
+«Reddit · 4.857 menciones», una cifra sin origen: la documentada es 4.404 posts, 2012–2025. Buscar por imagen decía
+«ninguno de los 18»; CLIP lee 17. «Última lectura» pasa del 23/09 al 21/10, el día del último lote de Google Trends.

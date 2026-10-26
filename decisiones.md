@@ -1034,3 +1034,28 @@ mini-gráfico con sus años, o «sin serie de búsqueda», y la etapa del K-mean
 Trench 0,50 y Blazer oversize 0,42, que llegan como chips y al prompt; una foto ambigua (Y2K 0,33) no le pasa nada al
 modelo; la respuesta trae palabra, serie y una acción que cambia el diseño y abre la ficha. Con una clave real de Groq
 falta probarlo una vez desde la URL publicada.
+
+## 2026-10-26 · El celular, en serio
+
+Lo revisamos a 393 px en las once vistas, claro y oscuro. No había scroll horizontal y los botones daban para el
+pulgar, pero:
+
+- **Gráficos ilegibles.** Marcas, el retraso y los jeans por corte (El ciclo), el K-means y la curva de Retornos se
+  achicaban al ancho del teléfono y sus rótulos quedaban en 3 a 7 px reales. En el celular ahora conservan un ancho
+  donde ningún rótulo baja de unos 9 px y se deslizan de costado dentro de su caja, con un aviso «Deslizá el gráfico
+  →». Hizo falta `min-width: 0` en sus contenedores de grilla: sin eso, la página entera se ensanchaba a 958 px.
+- **El ciclo medía 22.000 px** (26 pantallas) antes de llegar al gráfico, y abajo repetía los 65 atributos como botones.
+  Ahora muestra doce tarjetas y «Ver los 65 atributos»; la lista repetida queda plegada en «Ver otro atributo». La
+  tarjeta elegida queda marcada al tocarla (antes la marca no se movía). Pasa a 10.200 px en el celular y a 6.000 en
+  escritorio.
+- **El menú** era un carril de 762 px en 361 que escondía Preguntar, Más y Cambiar perfil sin ningún aviso. Ahora va en
+  dos renglones, todo a la vista, con links de 44 px de alto.
+- **Los pasos de Diseñar** ocupaban tres renglones con flechas sueltas (una pantalla entera antes del contenido). En el
+  celular van en una fila que se desliza, con el paso actual centrado; en escritorio entran los diez en una fila.
+- **La tabla de El modelo** medía 552 px en una caja de 517 con scroll invisible: la columna Grupo parecía cortada
+  («Saturac», «En reto»). Ahora entra.
+- Tres textos decían «2004–2025» para la búsqueda (el epígrafe del retraso, la lista de capas y el detalle de
+  Tendencias); dicen «hasta 2024».
+
+Verificado con Playwright: ancho de página igual al del teléfono en las 44 combinaciones (11 vistas × 2 anchos × 2
+temas), sin errores de JavaScript.

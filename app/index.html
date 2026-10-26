@@ -455,7 +455,7 @@ td.k{font-weight:600;white-space:nowrap}
   font-size:11px;line-height:1.5;padding:5px 8px;border-radius:3px;opacity:0;transition:opacity .1s;z-index:60;white-space:pre}
 @media (max-width:1000px){
   .mast{padding:16px 18px 0}
-  .mast nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+  .mast nav{justify-content:center;flex-wrap:wrap;row-gap:0}
   .mast .row1{grid-template-columns:1fr}.mast .side{display:none}
   .mk{font-size:27px;text-align:center}
   .view{padding:22px 18px 50px}
@@ -713,6 +713,23 @@ main a:not([class]){color:inherit}
 
 .ciclofilt{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:0;margin-bottom:4px}
 
+/* ---------- celular (26/10/2026) ---------- */
+.chdesliza{display:none}
+@media (max-width:600px){
+  #jshare,#lag,#bump,#kplot{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  :is(div,figure):has(> :is(#jshare,#lag,#bump,#cycsvg)),:is(div,figure):has(> figure > :is(#jshare,#lag,#bump,#cycsvg)){min-width:0;max-width:100%}
+  #jshare,#lag,#bump,#cycsvg{max-width:100%}
+  #cycsvg{overflow-x:auto}#cycsvg>svg{min-width:470px}#jshare>svg{min-width:900px}#lag>svg{min-width:830px}#bump>svg{min-width:630px}#kplot>svg{min-width:560px}
+  .chdesliza{display:block;margin:6px 0 0;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+}
+.ciclos.corto .ciclo:nth-of-type(n+13):not(.on){display:none}
+.ciclomas{grid-column:1/-1;justify-self:start}
+.rfiltd{margin:18px 0 6px}.rfiltd>summary{cursor:pointer;padding:10px 0;list-style:none}.rfiltd>summary::-webkit-details-marker{display:none}
+.rfiltd>summary::after{content:" +"}.rfiltd[open]>summary::after{content:" −"}.rfiltd>summary:hover{color:var(--ink)}
+@media (max-width:600px){.mast nav a,.navmas,.navperfil{padding:14px 8px 13px!important;letter-spacing:.12em!important}.gvolver{padding:12px 0!important}}
+.dzpasos .dzp{padding:8px 9px!important;margin:0!important}.dzsep{margin:0 1px}
+@media (max-width:760px){.dzpasos{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:0}.dzpasos::-webkit-scrollbar{display:none}.dzsep{display:none}.dzp{flex:none}}
+.ktab :is(th,td){padding-left:5px!important;padding-right:5px!important}.ktab th{letter-spacing:.08em!important}
 </style>
 
 <div class="app">
@@ -850,7 +867,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
             <div class="khead" style="margin-top:6px"><div class="seg" id="kaxis" role="group" aria-label="Ejes del gráfico">
               <button data-a="b" aria-pressed="true">Búsqueda</button><button data-a="p" aria-pressed="false">Pasarela</button></div>
               <div style="display:flex;gap:8px;align-items:center"><button class="kbtn ghost" id="kstep">Paso a paso</button><span class="mono" id="kit" style="font-size:11px;color:var(--ink-3)"></span></div></div>
-            <div id="kplot" style="margin-top:10px"></div>
+            <div id="kplot" style="margin-top:10px"></div><p class="chdesliza" aria-hidden="true">Deslizá el gráfico →</p>
             <div class="leg2" id="kleg"></div>
             <details class="kd"><summary>Ver cálculo</summary><div class="kcalc" id="kcalc"></div></details>
             <p class="note" style="margin-top:12px">El modelo usa las <b>cuatro</b> variables a la vez; el gráfico muestra dos. Cambiá los ejes para ver la otra mitad. Las cruces son los centros de cada grupo.</p>
@@ -907,7 +924,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       <div class="ciclos" id="ciclos"></div>
       <h2 class="h3" id="rtitulo">El recorrido</h2>
       <div class="decide" id="rdecide" aria-live="polite"></div>
-      <div class="filters" id="rfilt" role="group" aria-label="Atributo"></div>
+      <details class="rfiltd"><summary class="lbl">Ver otro atributo · la lista completa</summary><div class="filters" id="rfilt" role="group" aria-label="Atributo"></div></details>
       <div class="lys">
         <div>
           <div class="leg" id="rleg"></div>
@@ -929,7 +946,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       <h3 class="h3">Los jeans, por corte</h3>
       <p class="sub" style="margin-top:8px">Todos los jeans en un solo lugar, separados por silueta: <b>amplios</b> (baggy, wide leg, barrel y relaxed), <b>medios</b> (straight, bootcut, flare y tapered) y <b>ajustados</b> (skinny y slim). Las búsquedas del recto de tiro alto y del tapered relajado cuentan dentro de los medios, como en Diseñar (antes de octubre estaban en los amplios). Qué parte de la búsqueda de jeans se lleva cada corte, año por año.</p>
       <div class="lys" style="grid-template-columns:1fr">
-        <div><figure><div id="jshare"></div>
+        <div><figure><div id="jshare"></div><p class="chdesliza" aria-hidden="true">Deslizá el gráfico →</p>
           <figcaption>Google Trends mundo, 13 términos en tres consultas con «skinny jeans» como ancla común · suma por corte · dato medido.</figcaption></figure></div>
       </div>
       <div class="three-j">
@@ -942,8 +959,8 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       <h3 class="h3">El retraso, atributo por atributo</h3>
       <p class="sub" style="margin-top:8px">Año en que cada atributo tocó su máximo en la pasarela y en la búsqueda mundial. Un anillo vacío quiere decir que la búsqueda todavía sube: el pico real está a la derecha, fuera del gráfico.</p>
       <div class="lys" style="grid-template-columns:1fr">
-        <div><figure><div id="lag"></div>
-          <figcaption>Pasarela: cuota de looks con la etiqueta sobre el total del año, 2010–2023. Búsqueda: promedio anual de Google Trends, 2004–2025. Datos medidos.</figcaption></figure></div>
+        <div><figure><div id="lag"></div><p class="chdesliza" aria-hidden="true">Deslizá el gráfico →</p>
+          <figcaption>Pasarela: cuota de looks con la etiqueta sobre el total del año, 2010–2023. Búsqueda: promedio anual de Google Trends hasta 2024 (2025 trae el salto de medición de Google). Datos medidos.</figcaption></figure></div>
       </div>
       <div class="cyc" style="margin-top:18px">
         <div>
@@ -979,7 +996,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       </div>
       <div class="lys">
         <div>
-          <figure style="margin-top:4px"><div id="bump"></div>
+          <figure style="margin-top:4px"><div id="bump"></div><p class="chdesliza" aria-hidden="true">Deslizá el gráfico →</p>
             <figcaption>Posición en el top 20 del Lyst Index, 34 trimestres. Arriba es mejor; cuando la línea se corta, la marca salió del ranking. Pasá el mouse por cualquiera para seguirla.</figcaption></figure>
         </div>
         <div>
@@ -1054,7 +1071,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         <div>
           <span class="lbl" id="retlbl">La curva</span>
           <figure style="margin-top:14px">
-            <div id="cycsvg"></div>
+            <div id="cycsvg"></div><p class="chdesliza" aria-hidden="true">Deslizá el gráfico →</p>
             <figcaption>Google Trends mundial, peso frente a las otras búsquedas de moda, sobre su máximo de 2010–2024: la misma serie y la misma regla de El ciclo (un pico se despega al menos 15 puntos de lo que lo rodea). Un pico en el primer año no cuenta, porque pudo ser antes. 2025 va apagado, con punto hueco: el salto de medición de Google. Dato medido.</figcaption>
           </figure>
           <p class="note" style="margin-top:18px" id="retnota"></p>
@@ -1393,7 +1410,7 @@ const CAPAS=['Pasarela','Redes','Búsqueda','Mainstream','Liquidación'];
 const FUENTE=[
  {n:'Vogue Runway',d:'1.281.633 imágenes de desfile · 2000–2023 · diseñador, temporada y etiquetas por look',ok:true},
  {n:'Reddit + Lyst + alfombra roja',d:'Reddit: 4.404 posts de r/femalefashionadvice que nombran el término, 2012–2025 · Lyst Index: 34 trimestres · Launchmetrics: Met Gala 2025 · Pinterest y TikTok: piden cuenta, pendientes',ok:true},
- {n:'Google Trends',d:'35 términos en el mundo y 14 en Argentina · promedio anual 2004–2025',ok:true},
+ {n:'Google Trends',d:'65 series en el mundo y 14 términos en Argentina · promedio anual, hasta 2024',ok:true},
  {n:'H&M + Amazon + Zara 2024',d:'H&M: 30,6 M de compras 2018–2020 · Amazon: 1,1 M de reseñas 2012–2023 · Google Shopping 2008–2025 · Zara feb-2024: 228 prendas reales',ok:true},
  {n:'Wish 2020 + Mix de marcas',d:'Wish: 1.341 productos ultra baratos, verano 2020 · Mix de marcas 2025: sintético, sólo para el método',ok:true},
 ];
@@ -1602,7 +1619,7 @@ function abrirDetalle(id){
   }
   const rm=REC.find(r=>r.id===(DMAP[t.id]||''));
   if(rm){
-    $('#cclbl').textContent='Pasarela, búsqueda y redes · 2004–2025';
+    $('#cclbl').textContent='Pasarela, búsqueda y redes · hasta 2024';
     $('#dleg').innerHTML=recLeyenda(rm);
     $('#casc').appendChild(recChart(rm));
     $('#ccap').textContent='Datos medidos. Cada curva, índice 0–100 de su propio máximo; los puntos marcan el pico de cada capa.';
@@ -2012,6 +2029,7 @@ function pintarDisenar(){
   if(!pr&&dz.paso!=='prenda')dz.paso='prenda';else if(pr&&!t&&!['prenda','tipo'].includes(dz.paso))dz.paso='tipo';
   $('#dzpasos').innerHTML=P.map((p,i)=>`<button type="button" class="dzp${dz.paso===p?' on':''}" data-p="${p}" ${(p!=='prenda'&&!pr)||(p!=='prenda'&&p!=='tipo'&&!t)?'disabled':''}><span class="dzpn">${String(i+1).padStart(2,'0')}</span><span class="dzpt">${DZ_NOMBRE[p]}</span></button>`).join('<span class="dzsep" aria-hidden="true">›</span>');
   $$('#dzpasos .dzp').forEach(b=>b.onclick=()=>dzIr(b.dataset.p));
+  const pa=$('#dzpasos .dzp.on'),pz=$('#dzpasos');if(pa&&pz.scrollWidth>pz.clientWidth)pz.scrollLeft=pa.offsetLeft-pz.clientWidth/2+pa.offsetWidth/2;
   const saltear=p=>`<div class="dzacc"><button type="button" class="gvolver" id="dzsaltar">Seguir sin elegir ${DZ_NOMBRE[p].toLowerCase()} →</button></div>`;
   const conSaltear=p=>{const x=$('#dzsaltar');if(x)x.onclick=()=>{dz[p]=null;dzIr(dzSiguiente(p));};};
   const enlazar=(attr,p)=>$$(`#dzcuerpo [${attr}]`).forEach(b=>b.onclick=()=>dzElegir(p,b.getAttribute(attr)));
@@ -2271,15 +2289,19 @@ function cicloDe(o){
   if(ciclo)f+=` Entre sus dos últimos picos pasaron ${numTxt(ciclo)} años.`;
   return {o,ultimo,anios,ciclo,sg,f,nm,picos,desde:ys[0]};
 }
+const CICLO_CORTO=12;let cicloTodos=false; // doce tarjetas a la vista; el resto, a un toque
 function pintarCiclos(){
   const L=REC.filter(o=>cicloGrupo==='todos'||o.tipo===cicloGrupo).map(cicloDe).filter(Boolean).sort((a,b)=>({entrar:0,esperar:1,salir:2,'sin-dato':3}[a.sg.estado]-{entrar:0,esperar:1,salir:2,'sin-dato':3}[b.sg.estado])||a.anios-b.anios);
   const grupos=REC_ORDEN.filter(g=>REC.some(o=>o.tipo===g));
   $('#ciclos').innerHTML=`<div class="ciclofilt" role="group" aria-label="Grupo">${['todos',...grupos].map(g=>`<button type="button" class="chip" data-g="${g}" aria-pressed="${cicloGrupo===g}">${g==='todos'?'Todos':g==='Estampa'?'Estampas':g==='Material'?'Materiales':g}</button>`).join('')}</div>`+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">
     <span class="cn serif">${c.o.n.split(' /')[0]}</span><span class="cf">${c.f}</span>
     <span class="cm"><span><b>${c.ultimo}${c.ultimo===2010?'*':''}</b>último pico</span><span><b>${c.anios===0?'ahora':c.anios+' año'+(c.anios>1?'s':'')}</b>desde el pico</span><span><b>${c.ciclo?c.ciclo+' años':'—'}</b>entre picos</span><span>${senBadge(c.sg)}</span></span></button>`).join('')+
+    (L.length>CICLO_CORTO?`<button type="button" class="kbtn ghost ciclomas" aria-expanded="${cicloTodos}">${cicloTodos?'Mostrar menos':`Ver los ${L.length} atributos`}</button>`:'')+
     `<p class="note">Búsqueda mundial frente a las otras búsquedas de moda, 2010–2024 (2025 y 2026 tienen el salto de medición de Google) <span class="proc">● medido</span>. Un pico es un máximo que se despega al menos 15 puntos de lo que lo rodea. Sube o baja: 2022→2024. *2010 es donde empieza la serie corregida: el pico pudo ser antes.</p>`;
-  $$('#ciclos [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;pintarCiclos();});
-  $$('#ciclos .ciclo').forEach(b=>b.onclick=()=>{recSel=b.dataset.r;pintarRecorridos();$('#rtitulo').scrollIntoView({behavior:'smooth'});});
+  $$('#ciclos [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;cicloTodos=false;pintarCiclos();});
+  $('#ciclos').classList.toggle('corto',!cicloTodos);
+  const mas=$('#ciclos .ciclomas');if(mas)mas.onclick=()=>{cicloTodos=!cicloTodos;pintarCiclos();if(!cicloTodos)$('#ciclos').scrollIntoView({behavior:'instant'});};
+  $$('#ciclos .ciclo').forEach(b=>b.onclick=()=>{recSel=b.dataset.r;pintarRecorridos();pintarCiclos();$('#rtitulo').scrollIntoView({behavior:'smooth'});});
 }
 /* ---------- recorridos: pasarela × búsqueda × redes ---------- */
 let recSel='jamplio';

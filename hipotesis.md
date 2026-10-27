@@ -9,8 +9,8 @@ tendencia.» Junta tres afirmaciones: que la pasarela **adelanta** a la búsqued
 puede **identificar la etapa** del presente.
 
 **Cómo queda:** cruzando pasarela y búsqueda, CICLO distingue los atributos que suben de los que no, y esa lectura
-coincide con fuentes que el modelo nunca vio. No predice, y la pasarela no adelanta a escala anual. A escala de
-temporada todavía no se probó.
+coincide con fuentes que el modelo nunca vio. No predice, y la pasarela no adelanta a la búsqueda:
+ni por año ni por temporada. Pasarela y búsqueda se mueven juntas, a la vez.
 
 ---
 
@@ -48,11 +48,26 @@ pero **no distingue «en retorno» de «saturada»** (p = 0,88).
 | Con más series, sí | Un modelo global sobre las 16 series, validado dejando afuera cada una (13/10) | Tampoco: −2,0 % a un año, +0,4 % a dos, −2,6 % a tres, −5,8 % a cinco |
 | La búsqueda predice la venta | VISUELLE: 5.577 productos de Nunalie con venta semanal real, SS17–AW19 (13/10) | Por producto, r = +0,036: explica el 0,1 % y fuera de muestra es 6,5 % peor que el promedio de la categoría. Por categoría y temporada (134 grupos), r = +0,184: cerca del 4 %. El momento, nada |
 | La pasarela adelanta a la búsqueda, a escala anual | Correlación con rezagos, en niveles y en cambios año a año (13/10) | Máxima sin rezago (+0,43), cae a +0,12 con dos años. En cambios, pasan 2 de 65 pruebas: lo que da el azar |
+| La pasarela adelanta a la búsqueda, por temporada | 14 atributos, cada desfile contra la misma temporada del año anterior y la búsqueda mensual contra el mismo mes del año anterior, rezagos de 0 a 18 meses, 10.000 barajadas, criterio commiteado antes (27/10) | Ningún rezago de 3 a 18 meses pasa: medianas entre −0,04 y +0,04 (p de 0,13 a 0,86; hacía falta menos de 0,007). Sólo el rezago 0 asoma (+0,08, p = 0,026) y tampoco pasa la corrección |
 | Los datasets iniciales sirven | K-means y árbol sobre Zara 2018–22 y el mix de marcas (08/09) | Sintéticos: el árbol acierta 50,8 % contra una base de 50,2 % |
 
 ---
 
-## Sin probar todavía: la pasarela, temporada a temporada
+## Probado el 27/10: la pasarela, temporada a temporada → refutado
+
+**Resultado.** Con el criterio fijado y commiteado antes de calcular
+(`datasets/pruebas/prueba_temporada_preregistro.md`, `codigo/prueba_temporada.py`), la pasarela **no adelanta** a la
+búsqueda a escala de temporada. Entraron 14 atributos (Lunares quedó afuera: 7 looks por temporada; Floral no se
+exportó). Ningún rezago entre 3 y 18 meses tiene una mediana distinta de cero: van de −0,04 a +0,04, con p entre 0,13 y
+0,86. Atributo por atributo no hay un patrón: cada uno cambia de signo según el rezago. La única señal, chica, está en
+el rezago 0 (+0,08, p = 0,026, que no pasa la corrección por siete rezagos): las dos capas se mueven juntas, que es lo
+mismo que se vio a escala anual. Resultado completo en `datasets/pruebas/prueba_temporada_resultado.json`.
+
+**Qué cierra.** La primera afirmación de la hipótesis original —«señales tempranas de los desfiles»— queda rechazada
+con la mejor resolución que permiten los datos públicos. CICLO lee el presente cruzando capas; no anticipa.
+
+Lo que sigue es el plan tal como se escribió antes de correrla.
+
 
 **Qué sigue vivo.** A escala anual la pasarela no adelanta. Pero un adelanto de seis a nueve meses —el desfile de
 febrero, la búsqueda del otoño siguiente— queda adentro del mismo año, y con datos anuales no se puede ver.

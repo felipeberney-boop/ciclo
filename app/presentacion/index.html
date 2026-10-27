@@ -285,6 +285,10 @@ const LAMINAS=[
  cuerpo:'Ventas reales de una marca, con su búsqueda alineada. La búsqueda no predice lo que vende un producto.',
  dib:'visuelle',
  notas:'VISUELLE (HumaticsLAB): 5.577 productos de Nunalie, SS17 a AW19. Con 5.577 productos +0,036 «da significativo» y no sirve para nada: es la diferencia entre significativo y útil. Fuera de muestra, el modelo con búsqueda es 6,5 % peor que predecir el promedio de la categoría. Agregado por categoría y temporada (134 grupos) el nivel explica cerca del 4 %. El momento —lo que sostiene la lectura de etapa— no tiene ninguna señal.'},
+{id:'temporada',sec:'¿Se puede predecir?',titulo:'Tampoco por temporada',bajada:'La última prueba',fecha:'27 oct',ancha:true,
+ cuerpo:'Cada desfile contra la búsqueda de 3 a 18 meses después, en 14 atributos. La pasarela no adelanta: se mueven juntas, a la vez.',
+ dib:'temporada',
+ notas:'Criterio commiteado antes de calcular. Cada desfile se compara con la misma temporada del año anterior, y la búsqueda con el mismo mes del año anterior, para que el invierno no parezca un adelanto. Mediana de rho por rezago: 0 meses +0,08 (p 0,026), 3 m 0,00, 6 m 0,00, 9 m −0,04, 12 m −0,02, 15 m +0,01, 18 m +0,04; hacía falta p menor a 0,007. Vogue trae la temporada, no la fecha del desfile: el mes es aproximado. Lunares quedó afuera por pocos looks; floral no se exportó.'},
 {id:'predecir-queda',sec:'¿Se puede predecir?',titulo:'Leer el presente',bajada:'Lo que quedó en pie',fecha:'Sep – Oct',
  cuerpo:'CICLO deja de ser un predictor. Dice dónde está cada atributo hoy, y eso coincide con Lyst, que el modelo nunca vio.',
  filas:[
@@ -462,6 +466,7 @@ const DIB={
     <p class="fuente">Los tres caen en los grupos que el modelo llama pico y ascenso.</p></div>`,
   trench:()=>graficoTrench(),
   reddit:()=>graficoReddit(),
+  temporada:()=>graficoTemporada(),
   toile:()=>`<div class="cifras" style="--n:2"><div class="cifra"><span class="n">83</span><span class="t">«toile»: el máximo de la serie. Tela y moldes de costura.</span></div>
     <div class="cifra"><span class="n">0</span><span class="t">«toile de jouy», la estampa, en 21 años.</span></div></div>`,
   estacion:()=>graficoEstacion(),
@@ -516,6 +521,18 @@ function graficoReddit(){
       <span style="font:500 12px var(--mono);text-align:right">${v>0?'+':''}${v} %</span></div>`;};
   return `<div style="display:grid;gap:7px">${REDDIT.map(fila).join('')}</div>
     <p class="fuente">En negro, lo que el modelo pone en ascenso o pico. Crecimiento en r/femalefashionadvice, 2023–24 contra 2020–21.</p>`;
+}
+/* mediana de rho por rezago, de codigo/prueba_temporada.py (27/10) */
+const TEMPORADA=[[0,.079],[3,-.000],[6,-.001],[9,-.043],[12,-.024],[15,.008],[18,.044]];
+function graficoTemporada(){
+  const W=760,H=240,L=40,R=10,T=20,B=40,max=.2,y=v=>T+(H-T-B)/2*(1-v/max),bw=(W-L-R)/TEMPORADA.length;
+  const barras=TEMPORADA.map(([m,v],i)=>{const X=L+i*bw,y0=y(0),y1=y(v);
+    return `<rect x="${X+bw*.28}" y="${Math.min(y0,y1)}" width="${bw*.44}" height="${Math.max(1.5,Math.abs(y1-y0))}" rx="3" fill="${m?'var(--ink)':'var(--ink-3)'}"/>
+      <text x="${X+bw/2}" y="${H-B+20}" text-anchor="middle">${m} m</text>`;}).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Correlación entre el cambio de la pasarela y el de la búsqueda, por rezago de 0 a 18 meses: todas cerca de cero" style="font:12px var(--mono);color:var(--ink-3)">
+    ${[.2,0,-.2].map(v=>`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="${v?'var(--rule-2)':'var(--rule)'}"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end">${v>0?'+':''}${String(v).replace('.',',')}</text>`).join('')}
+    <g fill="var(--ink-3)">${barras}</g></svg>
+    <p class="fuente">Mediana entre 14 atributos de la correlación entre desfile y búsqueda, a cada distancia. Ninguna barra pasa la prueba contra el azar.</p>`;
 }
 function graficoEstacion(){
   /* dos barras: cuánto se mueve dentro de cada año contra entre años */

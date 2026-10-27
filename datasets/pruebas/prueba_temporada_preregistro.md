@@ -82,3 +82,10 @@ Se informa salga como salga: en `decisiones.md`, `hipotesis.md`, Método y el ma
 - **Ceros:** varias series mensuales tienen meses en 0 o «<1». El cambio de la búsqueda es log(x+1) del mes m menos
   log(x+1) del mes m−12, con «<1» tomado como 0,5.
 - **Mínimo de pares:** un atributo entra a un rezago si tiene al menos 10 pares desfile–búsqueda en ese rezago.
+
+## Resultado · 27/10/2026, después de los commits de arriba
+
+**H se rechaza.** Entraron 14 atributos; Lunares quedó afuera (7,4 looks por temporada principal). Mediana de rho por
+rezago, con su p contra 10.000 barajadas: 0 m +0,079 (p 0,026) · 3 m −0,000 (0,50) · 6 m −0,001 (0,51) · 9 m −0,043
+(0,86) · 12 m −0,024 (0,72) · 15 m +0,008 (0,42) · 18 m +0,044 (0,13). Ningún rezago de 3 a 18 meses es positivo con
+p < 0,007. Detalle por atributo en `prueba_temporada_resultado.json`.

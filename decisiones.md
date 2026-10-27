@@ -1340,3 +1340,24 @@ ordenar) y la etiqueta de los colores que dice que son looks de pasarela, no bú
 fuente o explican por qué no lo hay y ofrecen una alternativa; ninguna inventa un número. Quedan dos imperfecciones: un
 id que se cuela en una respuesta y un «vuelve» con −3 puntos que exagera lo que dice el dato. El modelo no es
 determinista: la prueba se puede repetir con el mismo script.
+
+## 2026-10-27 · La pasarela, temporada a temporada: tampoco adelanta
+
+La última afirmación de la hipótesis original que seguía viva. A escala anual la pasarela no adelantaba a la búsqueda,
+pero un adelanto de seis a nueve meses cabe adentro de un año y con datos anuales no se podía ver. Se probó por
+temporada, con el diseño, las etiquetas y el criterio commiteados antes de tener la búsqueda mensual
+(`datasets/pruebas/prueba_temporada_preregistro.md`, commit `613352c`; enmienda 1 con los lotes bajados y antes de
+calcular, `751c22d`).
+
+**Cómo.** Vogue Runway (903.000 looks, 2003–2023) agregado por temporada; cada temporada ubicada en el mes de su desfile
+por calendario, porque Vogue no trae la fecha. Búsqueda mensual de Google Trends (plan 4: tres lotes nuevos, más cinco
+términos que ya estaban). Todo contra el mismo momento del año anterior, para que la estación no parezca un adelanto.
+Spearman por atributo a 0, 3, 6, 9, 12, 15 y 18 meses; la mediana entre atributos contra 10.000 barajadas; Bonferroni
+por siete rezagos (α ≈ 0,007).
+
+**Resultado: se rechaza.** Entraron 14 atributos (Lunares, afuera por pocos looks; Floral no se exportó). De 3 a 18
+meses las medianas van de −0,04 a +0,04, con p entre 0,13 y 0,86, y atributo por atributo no hay patrón. Sólo asoma el
+rezago 0 (+0,08, p = 0,026, no pasa la corrección): las capas se mueven juntas. Con esto, la hipótesis queda cerrada:
+CICLO lee el presente cruzando capas y distingue lo que sube de lo que no (Reddit); no predice y la pasarela no
+adelanta, ni por año ni por temporada. Está en `hipotesis.md`, en Método y en el making of (lámina «Tampoco por
+temporada»).

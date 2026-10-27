@@ -187,11 +187,17 @@ Ocho detalles vistos como un diseñador que entra por primera vez: el chat se ac
 Tendencias sin jerga, la bajada que dice qué hacer, Diseñar con la primera decisión a la vista, Marcas y Método
 ordenados, el K-means en tonos que no se confunden con la señal y la entrada centrada.
 
+## v1.15 · 27/10/2026 · La hipótesis, cerrada
+
+La última prueba que faltaba: si la pasarela adelanta a la búsqueda por temporada, de 3 a 18 meses. Preregistrada antes
+de tener los datos, con 14 atributos: se rechaza. CICLO lee el presente; no anticipa. El estado completo de la
+hipótesis está en `hipotesis.md`.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).
 
-**Making of (27/10).** 27 láminas alrededor de tres preguntas (¿se puede predecir?, ¿qué se puede medir?, ¿cómo lo usa
+**Making of (27/10).** 28 láminas alrededor de tres preguntas (¿se puede predecir?, ¿qué se puede medir?, ¿cómo lo usa
 un diseñador?), con las citas textuales del ida y vuelta, cómo pedir, el pipeline, el rol de la IA, los commits por
 día, la prueba con Reddit, la demo y el cierre. Notas del orador con la tecla N; cada lámina tiene su link (`#trench`, `#semaforo`…). La
 versión anterior quedó en `diseno/prototipos/versiones_de_la_presentacion/`.

@@ -83,6 +83,11 @@ unos 20 años: unas 40 temporadas principales por atributo.
 ruidosas; puede que sólo los grandes (denim, cuero, floral, cargo) tengan señal suficiente. Y si aparece un adelanto,
 hay que mirarlo con el mismo cuidado que el «casi-hallazgo» del 13/10, que se desarmó al pasar de niveles a cambios.
 
+**Estado (27/10).** El diseño, las etiquetas, el criterio y la corrección por cantidad de pruebas están fijados en
+`datasets/pruebas/prueba_temporada_preregistro.md`, commiteado antes de tener los datos. El parquet de Vogue ya está
+bajado. Falta la búsqueda mensual de los atributos de CICLO: tres lotes de Google Trends
+(`datasets/plan_exportacion_trends_4.csv`, lotes 23 a 25).
+
 **¿Entra antes del 17/11?** Sí, con margen: son unos tres días de trabajo y faltan tres semanas. Si da que sí, es el
 mejor cierre posible para la entrega final, porque rescata la primera afirmación de la hipótesis original («señales
 tempranas de los desfiles») con una prueba que se pudo haber caído. Si da que no, cierra la pregunta con la mejor

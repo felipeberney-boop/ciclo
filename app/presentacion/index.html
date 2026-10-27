@@ -258,6 +258,14 @@ const LAMINAS=[
  dib:'lyst',
  notas:'Jeans anchos +55 % (2024), cargo +56 % (2022), corset +74 % (2021), del informe anual de Lyst. Lyst entró después, como un jurado que no vio nuestras cuentas: coincide donde el modelo se la juega. También con Amazon: los jeans ajustados, en «saturada», caen 39 % en reseñas entre 2019 y 2022 mientras los amplios suben 79 %. Pero la correlación atributo por atributo contra Amazon no da nada (n = 11): es contraste en casos, no validación estadística. Dónde no coincide: calzado.'},
 
+{id:'reddit',sec:'¿Se puede predecir?',titulo:'Lo que sube, sube afuera',bajada:'La prueba',fecha:'27 oct',
+ filas:[
+  {q:'Felipe',k:'pedido',f:'27/10',c:'¿Por qué no se comprueba mi hipótesis, y cómo hacemos para que se compruebe?'},
+  {q:'Felipe',k:'devolucion',f:'27/10',c:'No me gusta esto de las entrevistas, es un quilombo. ¿Cómo hacemos?',g:true},
+  {q:'Claude',k:'resultado',t:'Reddit, que el modelo no vio. El criterio, escrito y commiteado antes de calcular.'}],
+ dib:'reddit',
+ notas:'Hipótesis reformulada: cruzando pasarela y búsqueda, CICLO distingue lo que sube de lo que no, y esa lectura coincide con una fuente que el modelo no vio. Resultado: p = 0,0013 (η² = 0,88) barajando las etapas 10.000 veces; que los tres de arriba caigan en los tres primeros lugares de 14 pasa 1 vez en 364. Control por rangos, agregado después: p = 0,047. Lo que no se sostiene: retorno y saturada no se distinguen (p = 0,88). Límites: 14 atributos, uno solo en ascenso, y Reddit y Google reflejan en parte lo mismo. Al buscar los datos se vieron por arriba; por eso la medida es la misma que ya usaba el modelo.'},
+
 /* ── 2 · ¿Qué se puede medir? ───────────────────────────────────────────── */
 {id:'medir-pedido',sec:'¿Qué se puede medir?',titulo:'¿Qué se puede medir?',bajada:'Lo que pedí',fecha:'13 oct',
  filas:[
@@ -411,6 +419,7 @@ const DIB={
     .map(([n,a])=>`<div class="cifra" style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:baseline"><span class="n" style="font-size:clamp(34px,3.4vw,52px)">${n}</span><span class="t"><b>${a}</b> · según Lyst</span></div>`).join('')}
     <p class="fuente">Los tres caen en los grupos que el modelo llama pico y ascenso.</p></div>`,
   trench:()=>graficoTrench(),
+  reddit:()=>graficoReddit(),
   toile:()=>`<div class="cifras" style="--n:2"><div class="cifra"><span class="n">83</span><span class="t">«toile»: el máximo de la serie. Tela y moldes de costura.</span></div>
     <div class="cifra"><span class="n">0</span><span class="t">«toile de jouy», la estampa, en 21 años.</span></div></div>`,
   estacion:()=>graficoEstacion(),
@@ -452,6 +461,19 @@ function graficoTrench(){
       return `<text x="${x(i)}" y="${y(v[i])-10}" text-anchor="middle" fill="var(--ink-2)">${MES[i%12]}</text>`;}).join('')}
     ${anios}</svg>
     <p class="fuente">Google Trends, «trench coat», mundial, mensual. Exportado el 20/10/2026.</p>`;
+}
+/* crecimiento en Reddit (2023–24 contra 2020–21), de codigo/prueba_reddit.py; arriba = ascenso o pico según el modelo */
+const REDDIT=[['Y2K',258,1],['Cargo',187,1],['Jeans baggy',130,1],['Trench',59],['Buzo / hoodie',15],['Lunares',13],['Floral',-6],
+  ['Encaje',-12],['Cuero',-17],['Animal print',-32],['Kimono',-35],['Cuadros',-35],['Jeans skinny',-39],['Jeans rectos',-79]];
+function graficoReddit(){
+  const max=258,cero=24; /* % del ancho donde cae el cero */
+  const fila=([n,v,arriba])=>{const w=Math.abs(v)/max*(100-cero),x=v>=0?cero:cero-w;
+    return `<div style="display:grid;grid-template-columns:118px 1fr 52px;gap:10px;align-items:center;font:400 13.5px var(--sans);color:${arriba?'var(--ink)':'var(--ink-3)'}">
+      <span style="${arriba?'font-weight:600':''}">${n}</span><span style="position:relative;height:12px"><span style="position:absolute;left:${cero}%;top:-3px;bottom:-3px;width:1px;background:var(--rule)"></span>
+      <span style="position:absolute;left:${x}%;width:${w}%;top:0;bottom:0;border-radius:3px;background:${arriba?'var(--ink)':'var(--rule)'}"></span></span>
+      <span style="font:500 12px var(--mono);text-align:right">${v>0?'+':''}${v} %</span></div>`;};
+  return `<div style="display:grid;gap:7px">${REDDIT.map(fila).join('')}</div>
+    <p class="fuente">En negro, lo que el modelo pone en ascenso o pico. Crecimiento en r/femalefashionadvice, 2023–24 contra 2020–21.</p>`;
 }
 function graficoEstacion(){
   /* dos barras: cuánto se mueve dentro de cada año contra entre años */

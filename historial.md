@@ -156,16 +156,11 @@ Commits `64c25a9` a este. La versión anterior quedó en `diseno/prototipos/vers
 
 ## Presentación · Entrega 3
 
-22 láminas en Figma Slides: https://www.figma.com/slides/wLpAepURdWysie7wF8ed2p
+Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).
 
-Portada · hipótesis · unidad de análisis · fuentes · modelo K-means · validación externa
-· cómo se lee · Tendencias · Diseñar · El ciclo · CLIP · Preguntar · predicción · límites · cierre
-+ sección demo en vivo (D0–D4, flujo animado, arquitectura, QR, embed, instrucciones).
-Todos los números salen de `decisiones.md`, `historial.md` y `v-racional` de la app. Generada 26/10/2026.
-
-Prototipo navegable (para embed en Slides): https://www.figma.com/proto/uuMIRgbWaRSp84w7hhmR6n?node-id=1-2&scaling=scale-down-width
-
-Presentación web interactiva: https://felipeberney-boop.github.io/ciclo/presentacion/
+El 26/10 también se armaron 22 láminas en Figma Slides y un prototipo navegable en Figma. El 27/10 salen del
+repositorio: la referencia de la cátedra es una página web, y el prototipo de Figma ya no coincidía con la app. El
+prototipo navegable es la app publicada.
 
 ---
 

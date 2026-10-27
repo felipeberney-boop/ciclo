@@ -1124,3 +1124,13 @@ de Zara 2018–22, el archivo que el 08/09 declaramos sintético: pasan a «demo
 productos de 8 marcas» no tiene fuente en ningún documento del repo: pasa a «sin verificar». El subtítulo de Tendencias
 decía «doce atributos leídos en los catálogos de nueve marcas»; ahora dice qué parte es medida y cuál de demostración.
 El guion de la presentación (`entregas/entrega_3/presentacion_guion.md`) sale con estas correcciones.
+
+## 2026-10-27 · Una sola presentación: la web
+
+La presentación de la Entrega 3 existía en dos formatos: la web (`app/presentacion/`) y 22 láminas en Figma Slides,
+con un prototipo navegable en Figma para embeber. La referencia que dio la cátedra (el making of de Valonia) es una
+página web, y mantener dos formatos a una semana de la entrega duplica el trabajo.
+
+**Queda la web como única presentación.** Las Slides y el prototipo de Figma salen del readme y del historial. El
+prototipo no se actualiza: ya no coincidía con la app, y una réplica en Figma vuelve a quedar vieja con el próximo cambio. El prototipo navegable es la app publicada. Los
+archivos de Figma de las Entregas 1 y 2 siguen enlazados como registro de esas entregas.

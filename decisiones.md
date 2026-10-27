@@ -1300,3 +1300,25 @@ modelo global, VISUELLE, el adelanto anual de la pasarela) y sin probar (el adel
 corrigió una afirmación: el corset de Lyst coincidía con el modelo de septiembre, de 18 atributos; el K-means de hoy no
 lo tiene. La prueba por temporada no puede ser mes a mes del lado de la pasarela: Vogue trae temporada y año, no la
 fecha del desfile.
+
+## 2026-10-27 · La primera impresión de un diseñador: ocho detalles
+
+Recorrido con Playwright como alguien que entra por primera vez. Se arreglaron los ocho, en orden de impacto:
+
+1. **La clave de Groq ya no aparece en el medio.** En Preguntar es «Activar el chat · 1 minuto», arriba de todo, con
+   tres pasos (entrar a console.groq.com con Google, crear la clave, pegarla); con la clave puesta queda en una línea.
+   Si preguntás sin clave, se abre sola. En el recorrido, «Pedir lectura en vivo» es un solo botón y los pasos aparecen
+   recién al tocarlo.
+2. **Las tarjetas de Tendencias, sin jerga.** Dibujo, paleta, nombre, tipo y la pista de la etapa con su fuente; las
+   cifras, la mini-serie y «5/60 meses» quedan en la ficha. Que la paleta es de un catálogo de demostración se dice una
+   vez, en la nota de abajo de la grilla, en vez de en cada tarjeta.
+3. **La bajada de Tendencias dice qué hacer:** «Tocá cualquiera para ver su recorrido y diseñar con él».
+4. **Diseñar:** el título más chico, para que «¿Qué prenda?» quede a la vista.
+5. **Marcas:** las tres dimensiones nuevas de Lyst, en tres tarjetas (estaban sueltas, renglón por renglón).
+6. **Método:** «Cómo leer los colores» decía «negro, crema y blanco». Ahora explica el azul y el verde y rojo de
+   gana y pierde presencia.
+7. **El modelo:** los grupos del K-means usaban el verde, el naranja y el ámbar de los gráficos, y «Pico» en verde se
+   confundía con «Entrar». Ahora tienen tonos propios que no son ni la señal ni el azul (violeta, rosa, pizarra, marrón).
+8. **La entrada:** las tres opciones, centradas bajo la pregunta.
+
+Capturas del readme e imágenes de la presentación regeneradas.

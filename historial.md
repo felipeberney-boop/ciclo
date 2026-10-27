@@ -180,6 +180,12 @@ pregunta sólo lo que falta. El link de Diseñar se puede compartir con su estad
 Prompt v4 de «Preguntar»: nunca inventa un dato y nunca se queda en el «no»; contesta con lo más cercano que sí está
 medido, diciendo de dónde sale. El chat recibe ahora los rankings y los colores por corte que antes no le llegaban.
 
+## v1.14 · 27/10/2026 · La primera impresión
+
+Ocho detalles vistos como un diseñador que entra por primera vez: el chat se activa en tres pasos, las tarjetas de
+Tendencias sin jerga, la bajada que dice qué hacer, Diseñar con la primera decisión a la vista, Marcas y Método
+ordenados, el K-means en tonos que no se confunden con la señal y la entrada centrada.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

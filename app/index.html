@@ -853,6 +853,30 @@ body.con-barra #arriba{bottom:96px}
   background:var(--card);border-radius:14px;box-shadow:inset 0 0 0 2px var(--azul);font-size:15px;max-width:none!important;scroll-margin-top:72px}
 .app .dzfijo button{font:inherit;font-size:14px;color:var(--azul);background:none;border:0;cursor:pointer;padding:4px 0}
 #rtitulo{scroll-margin-top:72px}
+/* los grupos del K-means: tonos que no son ni la señal ni el azul (27/10) */
+:root{--k-asc:#7b61a8;--k-pico:#c2477f;--k-sat:#5f6b7a;--k-ret:#8a5a3c;--k-emer:#b08fc7}
+/* Diseñar: el título más chico, para que la primera decisión quede a la vista */
+.app #v-disenar .vhead h1{font-size:clamp(32px,3.6vw,46px)!important}
+.app #v-disenar .vhead .sub{font-size:18px!important;margin-top:10px!important}
+.app #v-disenar{padding-top:40px!important}
+/* Marcas: las tres dimensiones de Lyst, una tarjeta cada una */
+.app .stack{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.app .stack>div{background:var(--card);border-radius:14px;padding:16px 18px}
+.app .stack .n{margin:0;font-size:28px;font-weight:600;color:var(--ink-3)}
+.app .stack .t{margin:6px 0 2px;font-size:19px;font-weight:600}
+.app .stack .e{font-size:13px;color:var(--ink-3)}
+.app .stack .d{margin:8px 0 0;font-size:15px;line-height:1.45;color:var(--ink-2)}
+@media (max-width:760px){.app .stack{grid-template-columns:1fr}}
+/* la entrada: las opciones centradas bajo la pregunta */
+.app .gate{margin-left:auto!important;margin-right:auto!important}
+.app .ggrid{justify-content:center;margin-left:auto;margin-right:auto}
+/* activar el chat: un resumen azul; los pasos, numerados */
+.app .asact summary{cursor:pointer;list-style:none;color:var(--azul);font-size:17px;font-weight:600}
+.app .asact summary::-webkit-details-marker{display:none}
+.app .asact.ok summary{color:var(--ink-3);font-weight:400;font-size:15px}
+.app .aspasos{margin:12px 0 12px;padding-left:20px;font-size:15px;line-height:1.5;color:var(--ink-2)}.app .aspasos li{margin:6px 0}
+.app .vact summary{list-style:none;display:inline-block;cursor:pointer}.app .vact summary::-webkit-details-marker{display:none}
+.app .vact[open] summary{margin-bottom:10px}.app .vact .vm{display:block;margin:0 0 10px}.app .vact .kbtn{margin-top:10px}
 /* siempre claro, como las páginas de producto: <html data-theme="light"> apaga el oscuro automático (27/10) */
 body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf);letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
 .app,.app *,.tip,.tip *{font-family:var(--sf)!important;font-variation-settings:normal!important}
@@ -990,7 +1014,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         <div>
           <span class="lbl">01 · Tendencias</span>
           <h1>Qué se está moviendo</h1>
-          <p class="sub">Arriba, lo que gana y pierde terreno en la búsqueda mundial, medido. Abajo, doce atributos: su etapa es la del K-means cuando el atributo está en el modelo, y la paleta viene de un catálogo de demostración (sintético). Abrí la ficha para ver su recorrido y qué conviene para tu perfil.</p>
+          <p class="sub">Lo que está ganando y perdiendo terreno afuera, y en qué etapa está cada atributo. Tocá cualquiera para ver su recorrido y diseñar con él.</p>
         </div>
       </div>
       <hr class="rule">
@@ -1003,7 +1027,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         <span class="count" id="cnt"></span>
       </div>
       <div class="grid" id="grid"></div>
-      <p class="note"><b>Cómo leer la pista de abajo de cada ficha.</b> El punto marca en qué etapa del ciclo está el atributo; la barra, cuánto camino lleva recorrido. La posición es el dato — el color de la ficha es el de la prenda, no el de la etapa.</p>
+      <p class="note"><b>Cómo leer cada tarjeta.</b> El punto de la pista marca en qué etapa está el atributo, y abajo dice de dónde sale: el K-means (pasarela y búsqueda) o una estimación. Los colores de cada tarjeta son de un catálogo de demostración (sintético): muestran el método, no son una conclusión.</p>
     </section>
 
     <!-- ================= DETALLE ================= -->
@@ -1291,19 +1315,23 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       <hr class="rule">
       <div class="as">
         <div class="asL">
+          <details class="ascard asact" id="asclave">
+            <summary id="asclaves">Activar el chat · 1 minuto</summary>
+            <ol class="aspasos">
+              <li>Entrá a <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>. Es gratis y podés entrar con tu cuenta de Google.</li>
+              <li>Tocá «Create API Key» y copiá la clave: empieza con <code>gsk_</code>.</li>
+              <li>Pegala acá. Se guarda sólo en este navegador y viaja sólo a Groq.</li>
+            </ol>
+            <input id="askey" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="Tu clave de Groq">
+            <label class="ascap" for="asmodelo" style="display:block;margin-top:12px">Modelo</label>
+            <select id="asmodelo"><option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option><option value="openai/gpt-oss-20b">openai/gpt-oss-20b (más rápido)</option></select>
+          </details>
           <div class="ascard"><span class="lbl">Tu diseño</span><div id="asdis" class="aschips"></div></div>
           <div class="ascard">
             <span class="lbl">Una foto o un boceto</span>
             <p class="ascap">CLIP la lee en este navegador; la imagen no sale de tu computadora. Si leyó algo que no va, sacalo. La primera vez baja el modelo y el índice (unos 96 MB); después quedan guardados.</p>
             <label class="asfoto"><input type="file" id="asfile" accept="image/*"><span>Elegir una imagen</span></label>
             <div id="asprev"></div><div id="asclip" class="aschips"></div><p class="ascap" id="asclipest"></p>
-          </div>
-          <div class="ascard">
-            <span class="lbl">Tu API key de Groq</span>
-            <p class="ascap">Se guarda sólo en este navegador y viaja sólo a api.groq.com. La sacás gratis en <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>.</p>
-            <input id="askey" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="API key de Groq">
-            <label class="ascap" for="asmodelo" style="display:block;margin-top:10px">Modelo</label>
-            <select id="asmodelo"><option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option><option value="openai/gpt-oss-20b">openai/gpt-oss-20b (más rápido)</option></select>
           </div>
           <details class="ascard asver"><summary class="lbl">Qué se le mandó al modelo</summary>
             <p class="ascap" id="astok">Todavía nada.</p>
@@ -1371,7 +1399,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         </div>
       </div>
       <hr class="rule">
-      <p class="note colores"><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va en negro, con ▲ o ▼. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series. El resto es negro, crema y blanco.</p>
+      <p class="note colores"><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va con ▲ o ▼, y sólo la palabra lleva el mismo verde o rojo («Gana presencia», «Pierde presencia»); «Estable» va en negro. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series, y los grupos del K-means tienen tonos que no son de la señal. Hay un solo color más, el azul, y significa «se puede tocar»: botones, links y la opción elegida. El resto es blanco, gris y negro.</p>
       <div class="tw"><table>
         <thead><tr><th>Lo que ves</th><th>Origen</th><th>Cómo se obtiene</th></tr></thead>
         <tbody>
@@ -1580,19 +1608,10 @@ function ficha(t){
   const sw=document.createElement('div');sw.className='swatches';
   t.sw.forEach(c=>{const i=document.createElement('i');i.style.background=COL[c];
     i.title=c;sw.appendChild(i);});
-  b.appendChild(sw);b.appendChild(swc);
+  b.appendChild(sw);
   const body=document.createElement('div');body.className='pbody';
-  body.innerHTML=`<div class="ptop"><h3 class="pname serif">${t.n}</h3><span class="pkind">${t.k}</span></div>
-    <div class="pmeta">${t.prod} prendas${t.cols?` · ${t.cols} color${t.cols>1?'es':''}`:''}<br>${t.nota}</div>`;
-  const sp=document.createElement('div');
-  sp.style.cssText='display:flex;align-items:flex-end;justify-content:space-between;gap:8px;flex-wrap:nowrap';
-  const mini=miniSerie(t.id);
-  sp.appendChild(mini||spark(t.curva));
-  const tg=document.createElement('span');
-  if(mini){tg.className='tag real';tg.textContent=t.pres+'/60 meses';}
-  else{tg.className='tag demo';tg.textContent='sin serie';}
-  sp.appendChild(tg);
-  body.appendChild(sp);
+  // para mirar de un vistazo: el nombre y la etapa; las cifras y la serie, en la ficha (27/10)
+  body.innerHTML=`<div class="ptop"><h3 class="pname serif">${t.n}</h3><span class="pkind">${t.k}</span></div>`;
   body.appendChild(pista(ef.et,ef.de));
   b.appendChild(body);
   b.addEventListener('click',()=>abrirDetalle(t.id));
@@ -2598,7 +2617,7 @@ function pintarTerreno(){
   const L=REC.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d),mx=Math.max(...L.map(x=>Math.abs(x.d)));
   const fila=x=>{const sg=tendencia(x.d);return `<button class="tfila ${sg.cls}" data-r="${x.o.id}" type="button" title="${sg.palabra}, búsqueda mundial 2022→2024"><span class="tn">${x.o.n}</span><span class="tb"><i style="width:${Math.round(Math.abs(x.d)/mx*100)}%;background:var(--sen)"></i></span><span class="tv">${x.d>0?'+':''}${Math.round(x.d)}</span></button>`;};
   $('#terreno').innerHTML=`<div class="th"><span class="lbl">Qué gana y qué pierde terreno afuera</span><span class="tag real">medido</span></div>
-    <p class="tsub">Búsqueda mundial de 2022 a 2024, comparada con las otras búsquedas de moda. Tocá uno para ver su recorrido.</p>
+    <p class="tsub">Búsqueda mundial de 2022 a 2024, comparada con las otras búsquedas de moda. Tocá uno para ver su recorrido y diseñar con él.</p>
     <div class="tcols"><div><div class="tt">Gana terreno</div>${L.filter(x=>x.d>2).slice(0,5).map(fila).join('')}</div>
     <div><div class="tt">Pierde terreno</div>${L.filter(x=>x.d<-2).reverse().slice(0,5).map(fila).join('')}</div></div>`;
   $$('#terreno .tfila').forEach(b=>b.addEventListener('click',()=>{recSel=b.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();}));
@@ -2670,9 +2689,13 @@ function pintarVivo(o){
   if(r&&r.accion) box.innerHTML=`<div class="h">${tag}<span class="mono vm">${escH(r.modelo)} · prompt ${escH(r.prompt)}</span></div>
       <div class="dline"><span class="a serif ${señalPalabra(r.accion).cls}"><span class="ico" aria-hidden="true">${señalPalabra(r.accion).icono}</span> ${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
   else{const sinClave=!asLeer('groq_key');
-    box.innerHTML=`${sinClave?`<input class="vkey" id="rvivok" type="password" autocomplete="off" spellcheck="false" placeholder="Tu API key de Groq · gsk_…" aria-label="API key de Groq">`:''}
+    box.innerHTML=sinClave&&!(r&&r.error)?`<details class="vact"><summary class="kbtn ghost">Pedir lectura en vivo</summary>
+        <p class="vm">Hace falta activar el chat una vez (1 minuto): entrá a <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a> con tu cuenta de Google, tocá «Create API Key» y pegá la clave acá. Se guarda sólo en este navegador.</p>
+        <input class="vkey" id="rvivok" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="Tu clave de Groq">
+        <button type="button" class="kbtn" id="rvivob">Pedir la lectura</button></details>`
+      :`${sinClave?`<input class="vkey" id="rvivok" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="Tu clave de Groq">`:''}
       <button type="button" class="kbtn ghost" id="rvivob"${r==='…'?' disabled':''}>${r==='…'?'Pensando…':'Pedir lectura en vivo'}</button>
-      <span class="vm">${r&&r.error?escH(r.error):sinClave?'Pegá tu clave de Groq: se guarda sólo en este navegador, la misma que usa Preguntar. La sacás gratis en <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>.':'Un modelo de lenguaje lee las métricas de este atributo para '+tuQuien()+'. No ve ningún dato crudo.'}</span>`;}
+      <span class="vm">${r&&r.error?escH(r.error):'Un modelo de lenguaje lee las métricas de este atributo para '+tuQuien()+'. No ve ningún dato crudo.'}</span>`;}
   const b=$('#rvivob');if(b)b.addEventListener('click',async()=>{
     const k=$('#rvivok');if(k&&k.value.trim()){asGuardar('groq_key',k.value.trim());const a=$('#askey');if(a)a.value=k.value.trim();}
     const clave=asLeer('groq_key');if(!clave){VIVO[key]={error:'Falta tu API key de Groq.'};pintarVivo(o);return;}
@@ -2877,7 +2900,7 @@ async function asPreguntar(){
   const texto=$('#astexto').value.trim(),key=$('#askey').value.trim();
   if(!texto||as.ocupado)return;
   if(/parece en pasarela/i.test(texto)){$('#astexto').value='';asParecidos();return;}
-  if(!key){as.hist.push({role:'assistant',error:'Pegá primero tu API key de Groq (a la izquierda).'});asPintar();return;}
+  if(!key){$('#asclave').open=true;$('#askey').focus();as.hist.push({role:'assistant',error:'Primero activá el chat: son tres pasos, en «Activar el chat». Lo hacés una sola vez.'});asPintar();return;}
   if(!as.datos){await asAbrir();if(!as.datos)return;}
   $('#astexto').value='';as.hist.push({role:'user',content:texto});as.ocupado=true;asPintar();
   const D=asDiseno(),O=asOpciones(),clipTxt=as.clip.map(c=>c.n).join(', ');
@@ -2905,7 +2928,9 @@ async function asPreguntar(){
   as.ocupado=false;asPintar();$('#astexto').focus();
 }
 $('#askey').value=asLeer('groq_key');
-$('#askey').addEventListener('input',()=>asGuardar('groq_key',$('#askey').value.trim()));
+/* con clave, una línea; sin clave, los tres pasos a la vista cuando hacen falta */
+function asEstadoClave(){const k=$('#askey').value.trim();$('#asclaves').textContent=k?'Chat activado ✓ · cambiar clave':'Activar el chat · 1 minuto';$('#asclave').classList.toggle('ok',!!k);}
+$('#askey').addEventListener('input',()=>{asGuardar('groq_key',$('#askey').value.trim());asEstadoClave();});asEstadoClave();
 $('#asmodelo').value=asLeer('ciclo.as_modelo')||'openai/gpt-oss-120b';
 $('#asmodelo').addEventListener('change',()=>asGuardar('ciclo.as_modelo',$('#asmodelo').value));
 $('#asfile').addEventListener('change',e=>asFoto(e.target.files[0]));
@@ -3097,7 +3122,7 @@ const KM={"rows":[{"n":"Jeans baggy","tipo":"Jeans","pn":0.609,"pm":-0.07,"bn":0
 
 /* ---------- etapas: K-means (pasarela × búsqueda) ---------- */
 let kK=4, kAx='b', kExtra=[], kStepState=null;
-const KST={asc:{n:'En ascenso',c:'--s1',et:1},pico:{n:'Pico',c:'--s3',et:2},sat:{n:'Saturada',c:'--s2',et:3},ret:{n:'En retorno',c:'--s4',et:4}};
+const KST={asc:{n:'En ascenso',c:'--k-asc',et:1},pico:{n:'Pico',c:'--k-pico',et:2},sat:{n:'Saturada',c:'--k-sat',et:3},ret:{n:'En retorno',c:'--k-ret',et:4}};
 const kAll=()=>KM.rows.concat(kExtra);
 const kClip=(v,i)=> (i===1||i===3)?Math.max(-1,Math.min(1.5,v)):v;
 const kZ=r=>[r.pn,r.pm,r.bn,r.bm].map((v,i)=>(kClip(v,i)-KM.sc.m[i])/KM.sc.s[i]);
@@ -3111,7 +3136,7 @@ function kLloyd(P,C,maxIt=100){let L=[],it=0;for(;it<maxIt;it++){L=P.map(p=>{let
 function kFit(P,k){if(k===4)return kLloyd(P,KM.cent.map(c=>c.slice()));let best=null;const rnd=kRand(42);
   for(let r=0;r<20;r++){const f=kLloyd(P,kInit(P,k,rnd));if(!best||f.inertia<best.inertia)best=f}return best}
 const KPROTO=[['asc',[.6,.4,.7,.4]],['pico',[.5,0,.9,0]],['sat',[.45,-.15,.25,-.3]],['ret',[.25,-.4,.4,.1]],['emer',[.8,.6,.15,.6]]];
-KST.emer={n:'Emergente',c:'--s5',et:0};
+KST.emer={n:'Emergente',c:'--k-emer',et:0};
 function kName(C,k){ // asignación óptima: la combinación de etapas (sin repetir) con menor distancia total a los prototipos.
   // Antes era golosa (el par más cercano primero) y podía dejarle al último grupo la etapa que sobraba: Y2K, subiendo +81 %, salía «Saturada».
   const Pz=KPROTO.map(([key,p])=>[key,p.map((v,i)=>(kClip(v,i)-KM.sc.m[i])/KM.sc.s[i])]);

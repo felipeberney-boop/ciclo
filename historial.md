@@ -175,6 +175,11 @@ para lo que se toca, siempre en claro. Diseñar funciona como un configurador. L
 Cada cosa de Tendencias abre su ficha con un botón «Diseñar con este…» que entra a Diseñar con el atributo fijo y
 pregunta sólo lo que falta. El link de Diseñar se puede compartir con su estado.
 
+## v1.13 · 27/10/2026 · El chat contesta con lo más cercano
+
+Prompt v4 de «Preguntar»: nunca inventa un dato y nunca se queda en el «no»; contesta con lo más cercano que sí está
+medido, diciendo de dónde sale. El chat recibe ahora los rankings y los colores por corte que antes no le llegaban.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

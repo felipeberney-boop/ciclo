@@ -2681,7 +2681,7 @@ function pintarVivo(o){
     if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);
   });
 }
-/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v3.md) ----------
+/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v4.md) ----------
    Como en la V2 de la clase: la API key la pega cada uno, queda en este navegador y la página le habla directo a Groq,
    con llm/ciclo_datos.md como DATOS (sólo las partes que nombran la pregunta, el diseño y la imagen: el plan gratis da
    8.000 tokens por minuto). Lo propio de CICLO: sabe qué estás diseñando (la barra de Diseñar), lee una foto con CLIP
@@ -2690,8 +2690,11 @@ function pintarVivo(o){
 const AS_API='https://api.groq.com/openai/v1/chat/completions';
 const AS_INSTR=`Sos el asistente de CICLO dentro de una herramienta de diseño: quien pregunta está armando una prenda y tiene una duda concreta.
 Reglas:
-- Usá únicamente la información de DATOS. Cada número que digas tiene que estar en DATOS, tal cual. No inventes cifras, marcas, temporadas, fuentes ni años.
-- Si algo no está en DATOS, poné "fuera_de_datos": true y decí «esto no lo tengo medido»; si sirve, ofrecé lo que sí mide CICLO que se acerque.
+- NUNCA digas que tenés un dato que no está en DATOS. Cada número que digas tiene que estar en DATOS, tal cual, con su unidad (si DATOS dice «puntos», decí puntos, no %). No inventes cifras, años, marcas, temporadas ni fuentes, y no redondees hacia lo que suena mejor.
+- Pero NUNCA te quedes en el «no». Si lo que pide no está, decí en una frase qué no tenés y contestá con lo más cercano que sí está en DATOS, en este orden: un hermano de la misma familia, después el padre, después el atributo suelto sin cruzar con la prenda. Decí siempre qué estás mostrando en lugar de qué («de X no tengo serie; muestro Y, su pariente, porque…»). Si DATOS ya trae «prestado de», usá esa misma explicación.
+- Si pregunta por «ahora», 2025, 2026 o más adelante: explicá el corte en una frase, con lo que dice DATOS, y contestá con lo último medido (2022→2024). Si pide futuro, decí que CICLO no pronostica y mostrá hacia dónde venía.
+- Sólo si no hay nada cercano —ni hermano, ni padre, ni atributo suelto— decí que no, poné "fuera_de_datos": true y en "siguiente" ofrecé una pregunta parecida que sí puedas contestar.
+- Cerrá siempre con algo accionable sobre su diseño: un cambio en "acciones" si hay OPCIONES; si no, la última oración de "respuesta" dice qué elegir o probar en Diseñar.
 - Hablá del diseño que está armando (TU DISEÑO) y de lo que CLIP leyó en su imagen, si hay: no le hagas repetir nada.
 - Decí si cada dato es medido, interpretado (CLIP) o prestado de un pariente, como dice DATOS.
 - Recomendá según su perfil. Si una ficha trae «para vos (regla de CICLO)», esa es la acción: usala y explicá su porqué. Sólo te apartás si un dato lo justifica, y lo decís.
@@ -2747,12 +2750,19 @@ function asElegir(doc,texto,prefer){
   if(pide('estampa|print')&&O.estampa)sen.filter(l=>asCampo(l,'paso')==='estampa'&&O.estampa.includes(asCampo(l,'valor'))&&!/sin dato/.test(l)).forEach(sumar);
   if(pide('tiro')&&O.tiro)sen.filter(l=>asCampo(l,'paso')==='tiro').forEach(sumar);
   if(pide('corte')&&O.corte)sen.filter(l=>asCampo(l,'paso')==='corte').forEach(sumar);
+  // pregunta general («¿qué material está de moda?») sin diseño armado: los que más suben y los que más caen, con dato propio
+  const ranking=paso=>{const L=sen.filter(l=>asCampo(l,'paso')===paso&&/dato: propio/.test(l)).map(l=>[l,parseFloat(((asCampo(l,'señal')||'').match(/[-+]?\d+(?:,\d+)?/)||[''])[0].replace(',','.'))]).filter(x=>!isNaN(x[1])).sort((a,b)=>b[1]-a[1]);
+    return [...L.slice(0,5),...L.slice(-3)].map(x=>x[0]);};
+  [['material|tela','material'],['estampa|print','estampa'],['corte','corte'],['tiro','tiro'],['detalle','detalle']].forEach(([k,paso])=>{if(pide(k)&&!O[paso])ranking(paso).forEach(sumar);});
   sen.filter(nombra).forEach(sumar);
   const senales=elegidas.slice(0,16);
+  // los colores y la búsqueda de cada corte o prenda que nombra (antes esta sección no llegaba nunca)
+  const porPrenda=(S['Diseñar: qué conviene en cada prenda']||[]).filter(l=>l.startsWith('- ')).filter(nombra).slice(0,3);
   const del=(sec,pred)=>(S[sec]||[]).filter(l=>!l.startsWith('- ')||pred(l));
   const partes=[S.intro,S['Cómo leer los números'],S['Etapas'],del('Perfiles',l=>asCampo(l,'perfil')===cliente),
     del('Qué conviene según etapa y perfil',l=>asCampo(l,'perfil')===cliente),S['Resumen: todos los atributos'],
     fichas.length?['## Fichas de atributos',...fichas]:null,senales.length?['## Señales de Diseñar',...senales]:null,
+    porPrenda.length?['## Diseñar: qué conviene en cada prenda',...porPrenda]:null,
     S['Lo que CICLO no puede responder']].filter(Boolean);
   const todas=[...(S['Resumen: todos los atributos']||[]),...fichas,...senales].filter(l=>l.startsWith('- '));
   const serie={},nombre={};todas.forEach(l=>{const id=asCampo(l,'id');if(!id)return;nombre[id]=l.slice(2).split(' | ')[0];

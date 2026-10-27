@@ -2,7 +2,7 @@
 
 **Fecha:** 26/10/2026
 **Modelo:** Groq, `openai/gpt-oss-120b` (o `gpt-oss-20b`), con `reasoning_effort: low`
-**Estado:** en uso · reemplaza a la v2
+**Estado:** reemplazado por la v4 (27/10/2026)
 
 ## Qué cambió desde v2
 

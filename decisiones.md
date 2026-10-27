@@ -1270,3 +1270,24 @@ el de una ficha.
 `serie`, `km`, `clip_jeans`); «Buzo / athleisure» va a la prenda Buzos. Los tres grupos de corte de Tendencias (amplio,
 recto, ajustado) abren en su corte más buscado (baggy, straight, skinny) y el botón lo nombra. «Corazones» y
 «Geométrico» no están en el vocabulario de Diseñar: su ficha lo dice en lugar del botón.
+
+## 2026-10-27 · El chat no se queda en el «no lo tengo medido» (prompt v4)
+
+A «¿qué material está de moda ahora?» el chat contestaba que no lo tenía medido y ahí terminaba. Dos causas, y se
+arreglaron las dos.
+
+**Los datos no le llegaban.** Las señales de materiales sólo entraban si ya había una prenda armada, y la sección de
+colores por corte de `ciclo_datos.md` no entraba nunca. Ahora, ante una pregunta general por material, estampa, corte,
+tiro o detalle sin diseño, recibe los cinco que más suben y los tres que más caen con dato propio; y recibe los colores
+del corte o la prenda que nombra. `ciclo_datos.md` se regeneró: el corte de 2024 trae sus números (69 de 70 series, el
+trench en abril), y de paso recogió el arreglo de los jeans por corte del 26/10, que no había llegado al archivo.
+
+**El prompt lo mandaba a decir que no.** v4 (`prompts/prompt_asistente_v4.md`): nunca decir que se tiene un dato que
+no se tiene (cada número tal cual, con su unidad: si DATOS dice puntos, son puntos); y nunca quedarse en el «no»: decir
+qué falta y contestar con lo más cercano con la jerarquía de préstamo de la app (hermano → padre → atributo suelto),
+diciendo qué se muestra en lugar de qué. «Ahora» o después de 2024: el corte en una frase y lo último medido. Siempre
+termina en algo accionable. Sólo sin nada cercano dice que no y ofrece una pregunta parecida.
+
+**Prueba.** `codigo/probar_asistente.js` hace seis preguntas reales a la app (material ahora, color para un jean
+baggy, botinetas, 2027, falda de cuero, lunares). Necesita una clave de Groq; las respuestas van a
+`datasets/pruebas/asistente_v4_respuestas.md`.

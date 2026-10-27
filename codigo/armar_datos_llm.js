@@ -216,7 +216,7 @@ L.push(`
 - Calzado: sólo zapatillas y mocasines tienen serie de búsqueda. La pasarela de calzado la lee CLIP (interpretación, sin señal), y sólo sirve para zapatillas y botas texanas.
 - No separa hombre y mujer: Vogue y las ventas de H&M mezclan menswear y womenswear.
 - No pronostica: de 2025 en adelante sólo muestra la mediana de la historia, con su error.
-- La búsqueda llega hasta 2024 (2025 tiene el salto de medición de Google; 2026 se excluye).
+- La búsqueda llega hasta 2024. De 2025 y 2026 no hay lectura: Google cambió cómo mide y en 2026 69 de 70 series saltan a la vez (mediana +99 %), incluido el ancla, el trench coat, que siempre picó en otoño del norte y en 2026 pica en abril. Lo último medido es 2022→2024.
 - Lyst cambió su fórmula en Q1-26: no se compara a través de ese corte.
 - Zara 2018–22 y el mix de marcas son datos sintéticos: sirven para mostrar el método, no para concluir.
 - No tiene precios, ventas por marca ni datos de Pinterest, TikTok o Instagram.`);

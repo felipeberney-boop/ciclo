@@ -1291,3 +1291,12 @@ termina en algo accionable. Sólo sin nada cercano dice que no y ofrece una preg
 **Prueba.** `codigo/probar_asistente.js` hace seis preguntas reales a la app (material ahora, color para un jean
 baggy, botinetas, 2027, falda de cuero, lunares). Necesita una clave de Groq; las respuestas van a
 `datasets/pruebas/asistente_v4_respuestas.md`.
+
+## 2026-10-27 · El estado de la hipótesis, en un solo lugar
+
+`hipotesis.md` ordena en tres columnas lo que nos van a preguntar: verificado (Reddit con prueba formal y CLIP; Amazon,
+Google Shopping y Lyst como casos coherentes sin prueba formal, y por qué no alcanzan), refutado (los cuatro métodos, el
+modelo global, VISUELLE, el adelanto anual de la pasarela) y sin probar (el adelanto por temporada). Al armarlo se
+corrigió una afirmación: el corset de Lyst coincidía con el modelo de septiembre, de 18 atributos; el K-means de hoy no
+lo tiene. La prueba por temporada no puede ser mes a mes del lado de la pasarela: Vogue trae temporada y año, no la
+fecha del desfile.

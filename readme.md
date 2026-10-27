@@ -179,7 +179,8 @@ Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022
   «denim» agregado, los amplios y los ajustados se cancelan y no se ve nada.
 - **Ningún número aparece sin su fuente.** Cada ficha declara qué capa puede y qué capa no puede responder.
 
-El registro completo de lo que se probó y se descartó está en `decisiones.md`.
+El registro completo de lo que se probó y se descartó está en `decisiones.md`. Qué parte de la hipótesis está verificada,
+qué está refutada y qué falta probar, con cada prueba y su fuente, está en `hipotesis.md`.
 La evolución del proyecto, versión por versión, está en `historial.md` — y cada versión tiene su commit
 fechado en el historial de este repositorio.
 

@@ -74,3 +74,11 @@ Se informa salga como salga: en `decisiones.md`, `hipotesis.md`, Método y el ma
 - La fecha de cada desfile es aproximada (por temporada), así que un rezago de 3 meses tiene un margen de ±1 mes.
 - Las etiquetas de Vogue las puso un modelo de visión y no siempre separan bien (Floral junta varias).
 - Es correlación: aunque aparezca un adelanto, no prueba que el desfile cause la búsqueda.
+
+## Enmienda 1 · 27/10/2026, con los lotes bajados y antes de calcular
+
+- **Floral queda afuera:** el lote 23 se exportó sin «floral dress».
+- **Animal print usa «leopard»** en vez de «leopard print»: es el término que trae el lote 24.
+- **Ceros:** varias series mensuales tienen meses en 0 o «<1». El cambio de la búsqueda es log(x+1) del mes m menos
+  log(x+1) del mes m−12, con «<1» tomado como 0,5.
+- **Mínimo de pares:** un atributo entra a un rezago si tiene al menos 10 pares desfile–búsqueda en ese rezago.

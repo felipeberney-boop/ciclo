@@ -1156,3 +1156,29 @@ de CICLO lleva un dato real y de dónde sale. Testimonios, precios y newsletter 
 
 Se desestimó rediseñar todo a lo Stytrix: a una semana de la Entrega 3 dejaba la app y la presentación a medias. La
 versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-27_7e5ebfd.html`.
+
+## 2026-10-27 · La presentación pasa a ser un making of
+
+La presentación web tomaba la estética de la referencia de la cátedra (el making of de Valonia) pero no su
+estructura: era una presentación de resultados. Ahora cuenta el proceso, alrededor de tres preguntas, cada una con
+lo que pedimos, el pivot y lo que quedó en pie: **¿Se puede predecir?** (no: cuatro métodos y VISUELLE; queda leer el
+presente), **¿Qué se puede medir?** (2026 contaminado, el trench en abril, toile y el filtro de estación) y **¿Cómo lo
+usa un diseñador?** (el paso a paso, la ensalada de frutas, el rojo que volvía, el calzado y la capa de uso).
+
+**Las citas son textuales.** Salen de las transcripciones de Claude Code del 13/10 al 27/10, con la ortografía
+corregida y las palabras intactas; «(…)» marca un corte. Las de septiembre no existen: el repositorio y las
+transcripciones arrancan en octubre. Lo que no tiene cita va como texto, en tercera persona, sin comillas. Algunos
+pedidos son textos largos que se pegaron en la conversación; van como pedidos de Felipe porque así se enviaron.
+
+**Dos correcciones de contenido.** «Validado contra Amazon, Google Shopping y Lyst» no se sostiene: atributo por
+atributo, contra Amazon no hay correlación (n = 11). La lámina dice «coincide con Lyst», y los casos de Amazon van a
+las notas. «26 términos descartados» tampoco se pudo reconstruir con un criterio único; la lámina habla de toile y
+de las sandalias, con sus números.
+
+**Así de simple.** Una idea por lámina, cuerpo de 25 palabras como máximo, tres números como máximo; el resto, en las
+notas del orador (tecla N). Monocroma: el color sólo aparece en la lámina que explica la señal.
+
+**Para la Entrega 4.** Todo el contenido es una lista (`LAMINAS`) que se dibuja con los mismos componentes
+(encabezado, fila de diálogo, imágenes, visual). Sumar una lámina es agregar un objeto: la numeración, los puntos de
+la barra y los links (`#id`) salen solos, y el id no cambia aunque cambie el orden. La versión anterior quedó en
+`diseno/prototipos/versiones_de_la_presentacion/`.

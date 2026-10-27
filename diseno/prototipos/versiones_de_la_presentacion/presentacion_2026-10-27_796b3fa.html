@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="CICLO, Entrega 3 — Una app que ubica atributos de moda en su ciclo de vida usando datos de pasarela, búsqueda y venta. UdeSA, Sistemas generativos e IA para Diseño, 2026.">
+<meta name="robots" content="noindex">
+<title>CICLO · Entrega 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%224%22 fill=%22%23F6F0EB%22/%3E%3Ctext x=%2216%22 y=%2222%22 text-anchor=%22middle%22 font-size=%2218%22 font-family=%22serif%22 fill=%22%231D1C1A%22%3EC%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #F6F0EB; --ink: #1D1C1A; --soft: #7A7470; --faint: #E4DDD6; --line: rgba(29,28,26,.12);
+  --green: #3F6B4A; --amber: #9D640D; --red: #B02B31; --blue: #3A6B9A;
+  --serif: "Bodoni Moda", Georgia, serif; --mono: "IBM Plex Mono", "Courier New", monospace;
+  --m: clamp(28px, 5.5vw, 88px);
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--mono); overflow: hidden; -webkit-font-smoothing: antialiased; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
+/* ── deck & slides ── */
+#deck { position: fixed; inset: 0 0 68px 0; }
+.slide { position: absolute; inset: 0; display: grid;
+  grid-template-columns: 5fr 7fr; grid-template-rows: auto minmax(0,1fr) auto;
+  column-gap: clamp(28px,4vw,72px); padding: clamp(24px,5.5vh,56px) var(--m) 12px;
+  opacity: 0; transform: translateX(20px); pointer-events: none;
+  transition: opacity .4s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+.slide.on  { opacity: 1; transform: none; pointer-events: auto; }
+.slide.past { transform: translateX(-20px); }
+.slide > header { grid-column: 1/-1; display: grid; grid-template-columns: 1fr auto;
+  align-items: baseline; column-gap: 20px;
+  padding-bottom: clamp(14px,2.4vh,24px); margin-bottom: clamp(16px,3vh,32px);
+  border-bottom: 1px solid var(--line); }
+h1, h2, h3 { margin: 0; font-weight: 400; }
+h2 { font: 400 clamp(36px,4vw,58px)/1 var(--serif); letter-spacing: -.02em; }
+h3 { grid-column: 1; margin-top: 6px; font: italic 400 clamp(17px,1.6vw,23px)/1.2 var(--serif); color: var(--green); }
+.when { grid-column: 2; grid-row: 1; margin: 0; font: 500 11px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--soft); }
+
+/* ── left column: log of decisions / data ── */
+.log { grid-column: 1; grid-row: 2; margin: 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column; gap: clamp(12px,2.2vh,22px);
+  min-height: 0; overflow-y: auto; scrollbar-width: none; }
+.row { display: grid; grid-template-columns: 96px 1fr; column-gap: 16px; align-items: start; }
+.tag { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 3px; }
+.tag b { font: 600 10px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
+.pill { display: inline-block; padding: 3px 8px 4px; border-radius: 9px; font: 600 10.5px/1 var(--mono); letter-spacing: .03em; }
+.row.dato .tag b  { color: var(--ink); }
+.row.dato .pill   { color: var(--ink); box-shadow: inset 0 0 0 1px rgba(29,28,26,.4); }
+.row.hallazgo .tag b { color: var(--green); }
+.row.hallazgo .pill  { color: var(--bg); background: var(--green); }
+.row.limite .tag b   { color: var(--red); }
+.row.limite .pill    { color: var(--bg); background: var(--red); }
+.row.señal .tag b    { color: var(--amber); }
+.row.señal .pill     { color: var(--amber); box-shadow: inset 0 0 0 1px rgba(157,100,13,.6); }
+.row.decision .tag b { color: var(--blue); }
+.row.decision .pill  { color: var(--bg); background: var(--blue); }
+.row q { quotes: "«" "»"; font: 400 clamp(16px,1.3vw,19px)/1.44 var(--serif); color: var(--ink); }
+.row.big q { font-size: clamp(21px,1.9vw,27px); line-height: 1.3; }
+.row p { margin: 0; font-size: clamp(13.5px,1vw,15px); line-height: 1.55; color: var(--soft); }
+.row.signal-row { grid-template-columns: 1fr; gap: 10px; }
+.signal-row .signals { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.sig { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 6px; font: 500 14px/1 var(--mono); }
+.sig.e { background: rgba(63,107,74,.1); color: var(--green); }
+.sig.w { background: rgba(157,100,13,.1); color: var(--amber); }
+.sig.s { background: rgba(176,43,49,.1); color: var(--red); }
+.sig .icon { font-size: 18px; line-height: 1; }
+
+/* ── right column: pictures ── */
+.pics { grid-column: 2; grid-row: 2/4; position: relative; min-height: 0;
+  display: grid; grid-template-rows: minmax(0,1fr) auto; gap: 10px; }
+.pics .stage { position: relative; min-height: 0; }
+.pics figure { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
+.pics figure.on { opacity: 1; pointer-events: auto; }
+.pics img { width: 100%; height: 100%; object-fit: contain; object-position: center top;
+  cursor: zoom-in; filter: drop-shadow(0 16px 40px rgba(29,28,26,.18)); border-radius: 4px; }
+.pics .bar { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 12px; }
+.pics .cap { font: italic 14px/1.3 var(--serif); color: var(--soft); }
+.pics .count { margin: 0; font: 500 11px var(--mono); letter-spacing: .12em; color: var(--soft); font-variant-numeric: tabular-nums; }
+.pics .nav { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  box-shadow: inset 0 0 0 1px rgba(29,28,26,.2); font-size: 13px; }
+.pics .nav:hover { box-shadow: inset 0 0 0 1px var(--green); }
+.pics:has(figure:only-child) .bar .nav,
+.pics:has(figure:only-child) .count { display: none; }
+.pics figcaption { display: none; }
+
+/* ── full-width slide variant ── */
+.slide.full { grid-template-columns: 1fr; }
+.slide.full > *:not(header) { grid-column: 1/-1; }
+
+/* ── cover ── */
+.slide.cover { grid-template-columns: 4fr 6fr; grid-template-rows: 1fr;
+  padding-top: clamp(24px,4.5vh,52px); padding-bottom: clamp(24px,4.5vh,52px); }
+.cover-text { grid-column: 1; grid-row: 1; display: grid; grid-template-rows: 1fr auto auto auto; align-items: end; }
+.cover h1 { font: 400 clamp(96px,11vw,180px)/.84 var(--serif); letter-spacing: -.04em; }
+.cover .sub { margin: 14px 0 0 .06em; font: italic 400 clamp(26px,2.8vw,44px)/1 var(--serif); color: var(--green); }
+.cover .by { display: flex; flex-direction: column; gap: 7px; margin: clamp(36px,8vh,88px) 0 0 .12em;
+  font: 500 10.5px/1 var(--mono); letter-spacing: .24em; text-transform: uppercase; color: var(--soft); }
+.cover .by span + span { color: rgba(29,28,26,.35); letter-spacing: .18em; }
+.cover-visual { grid-column: 2; grid-row: 1; margin: 0; min-height: 0; display: grid; place-items: center; }
+
+/* ── sources grid ── */
+.sources { grid-column: 1/-1; grid-row: 2; display: grid;
+  grid-template-columns: repeat(4,1fr); grid-auto-rows: 1fr;
+  gap: clamp(16px,2.4vh,26px) clamp(20px,2.8vw,44px); min-height: 0; }
+.src { display: grid; grid-template-rows: auto auto 1fr; gap: 4px;
+  padding-top: 10px; border-top: 1px solid var(--line); min-height: 0; }
+.src.wide { grid-column: span 2; }
+.src .num { font: 400 clamp(30px,3vw,46px)/1 var(--serif); }
+.src .num.none { color: var(--faint); }
+.src .lbl { font-size: 13px; color: var(--soft); }
+.src .lbl b { color: var(--ink); font-weight: 600; margin-right: 6px; }
+.src svg { width: 100%; height: 100%; min-height: 0; margin-top: 8px; }
+
+/* ── pipeline ── */
+.pipe { grid-column: 1/-1; grid-row: 2; display: grid; grid-template-columns: repeat(4,1fr);
+  gap: clamp(18px,2.4vw,38px); margin: 0; padding: 0; list-style: none; align-content: center; }
+.pipe li { position: relative; display: grid; gap: 10px; align-content: start; }
+.pipe .n { position: relative; z-index: 1; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  font: 400 18px var(--serif); background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--green); color: var(--green); }
+.pipe li:not(:last-child)::before { content: ""; position: absolute; left: 38px; right: calc(-1 * clamp(18px,2.4vw,38px)); top: 19px; height: 1.5px; background: rgba(63,107,74,.4); }
+.pipe b { margin-top: 8px; font: 400 21px/1.15 var(--serif); }
+.pipe p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--soft); }
+.pipe li:first-child .n, .pipe li:last-child .n { background: var(--green); color: var(--bg); }
+
+/* ── validation / numbers ── */
+.valid { grid-column: 1; grid-row: 2; display: flex; flex-direction: column; gap: clamp(16px,2.8vh,28px); min-height: 0; overflow-y: auto; scrollbar-width: none; }
+.vrow { display: grid; grid-template-columns: auto 1fr; gap: 0 16px; padding: 16px 20px; border-radius: 8px; background: rgba(29,28,26,.04); border-left: 3px solid transparent; }
+.vrow.ok  { border-color: var(--green); }
+.vrow.ko  { border-color: var(--red); }
+.vrow .tag2 { grid-column: 1; font: 500 10px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--soft); padding-top: 3px; }
+.vrow .val  { font: 400 clamp(28px,2.8vw,42px)/1 var(--serif); color: var(--ink); }
+.vrow .delta { font: 600 13px/1 var(--mono); padding: 2px 8px; border-radius: 4px; margin-left: 10px; }
+.delta.up  { background: rgba(63,107,74,.12); color: var(--green); }
+.delta.dn  { background: rgba(176,43,49,.12); color: var(--red); }
+.vrow .note { grid-column: 2; margin-top: 5px; font-size: 13px; color: var(--soft); }
+
+/* ── model clusters ── */
+.clusters { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
+.cluster { padding: 16px 18px; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--line); }
+.cluster .stage { font: 600 10px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; margin-bottom: 8px; }
+.cluster .name { font: 400 clamp(20px,1.9vw,26px)/1.1 var(--serif); margin-bottom: 6px; }
+.cluster .attrs { font: 300 12.5px/1.7 var(--mono); color: var(--soft); }
+.cluster.e { box-shadow: inset 0 0 0 1px rgba(63,107,74,.4); background: rgba(63,107,74,.05); }
+.cluster.e .stage { color: var(--green); }
+.cluster.w { box-shadow: inset 0 0 0 1px rgba(157,100,13,.3); background: rgba(157,100,13,.04); }
+.cluster.w .stage { color: var(--amber); }
+.cluster.s { box-shadow: inset 0 0 0 1px rgba(176,43,49,.3); background: rgba(176,43,49,.04); }
+.cluster.s .stage { color: var(--red); }
+.cluster.r { box-shadow: inset 0 0 0 1px rgba(29,28,26,.2); }
+.cluster.r .stage { color: var(--soft); }
+.kstats { grid-column: 1/-1; display: flex; gap: 20px; padding-top: 14px; border-top: 1px solid var(--line); font: 300 12px var(--mono); color: var(--soft); }
+.kstats b { font-weight: 500; color: var(--ink); margin-right: 4px; }
+
+/* ── CLIP stats ── */
+.clip-stats { grid-column: 1; grid-row: 2; display: flex; flex-direction: column; gap: clamp(14px,2.4vh,24px); min-height: 0; overflow-y: auto; scrollbar-width: none; }
+.auc-big { font: 400 clamp(72px,8vw,120px)/1 var(--serif); color: var(--ink); }
+.auc-big span { font-size: clamp(28px,3vw,44px); color: var(--soft); margin-left: 4px; }
+.stat-line { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.stat-line .label { font: 300 14px var(--mono); color: var(--soft); }
+.stat-line .val { font: 500 14px var(--mono); color: var(--ink); }
+.stat-line .val.ok { color: var(--green); }
+.stat-line .val.ko { color: var(--red); }
+
+/* ── prediction table ── */
+.pred-table { grid-column: 1; grid-row: 2; display: flex; flex-direction: column; gap: 0; min-height: 0; overflow-y: auto; scrollbar-width: none; }
+.pred-head { display: grid; grid-template-columns: 1fr auto auto; gap: 20px; padding: 0 16px 10px; border-bottom: 2px solid var(--ink); font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--soft); }
+.pred-row { display: grid; grid-template-columns: 1fr auto auto; gap: 20px; padding: 12px 16px; border-bottom: 1px solid var(--line); font: 300 14px var(--mono); }
+.pred-row .method { color: var(--ink); }
+.pred-row .err { font: 500 14px var(--mono); color: var(--soft); font-variant-numeric: tabular-nums; }
+.pred-row .base { font: 500 14px var(--mono); color: var(--soft); font-variant-numeric: tabular-nums; }
+.pred-row.highlight { background: rgba(176,43,49,.05); }
+.pred-row.highlight .method { color: var(--ink); font-weight: 500; }
+.pred-note { padding: 14px 16px 0; font: italic 400 14px var(--serif); color: var(--soft); }
+
+/* ── limits ── */
+.limits { grid-column: 1/-1; grid-row: 2; display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(2,1fr);
+  gap: clamp(18px,2.8vh,30px) clamp(20px,2.6vw,44px); margin: 0; padding: 0; list-style: none; min-height: 0; counter-reset: l; }
+.limits li { display: grid; grid-template-rows: auto auto 1fr; gap: 8px; padding-top: 12px;
+  border-top: 1px solid var(--line); counter-increment: l; }
+.limits li::before { content: counter(l, decimal-leading-zero); font: 500 10.5px/1 var(--mono); letter-spacing: .16em; color: var(--red); }
+.limits b { font: 400 clamp(18px,1.7vw,24px)/1.2 var(--serif); }
+.limits p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--soft); }
+
+/* ── demo / iframe ── */
+.demo-cta { grid-column: 1/-1; display: grid; place-items: center; min-height: 0; gap: 24px; }
+.demo-cta .url { font: 400 clamp(28px,3vw,44px)/1.2 var(--serif); color: var(--soft); }
+.demo-cta .url b { color: var(--ink); }
+.open-btn { display: inline-flex; align-items: center; gap: 10px; padding: 18px 36px; border-radius: 40px;
+  font: 500 16px var(--mono); color: var(--bg); background: var(--ink);
+  box-shadow: 0 4px 24px rgba(29,28,26,.18); transition: transform .2s, box-shadow .2s; }
+.open-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(29,28,26,.28); }
+.open-btn .arrow { font-size: 20px; }
+
+/* ── cierre ── */
+.cierre-text { grid-column: 1; grid-row: 1; display: grid; grid-template-rows: 1fr auto auto auto auto; align-items: end; }
+.cierre-text h1 { font-size: clamp(80px,9.5vw,150px); }
+.cierre-text .url { margin: 18px 0 0 .08em; font: italic 400 clamp(18px,1.7vw,24px)/1.2 var(--serif); color: var(--green); }
+.cierre-text .next { margin: 28px 0 0 .1em; font: 300 14px/1.6 var(--mono); color: var(--soft); max-width: 44ch; }
+.qr-wrap { grid-column: 2; grid-row: 1; display: grid; place-items: center; }
+.qr-wrap img { width: clamp(160px,18vw,240px); padding: 14px; background: var(--ink); border-radius: 12px; display: block; }
+
+/* ── bottom nav ── */
+#line { position: fixed; left: var(--m); right: var(--m); bottom: 0; height: 68px;
+  display: flex; align-items: center; gap: 24px; border-top: 1px solid var(--line); background: var(--bg); }
+#line .part { display: flex; flex-direction: column; gap: 7px; }
+#line .part > span { font: 500 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: rgba(29,28,26,.3); transition: color .3s; white-space: nowrap; }
+#line .part.on > span { color: var(--ink); }
+#line .dots { display: flex; gap: 5px; }
+#line .dots button { width: 20px; height: 3.5px; padding: 0; border-radius: 2px; background: rgba(29,28,26,.15); transition: background .3s; }
+#line .dots button.done { background: rgba(63,107,74,.45); }
+#line .dots button[aria-current="step"] { background: var(--green); }
+
+/* ── zoom overlay ── */
+#zoom { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px;
+  background: rgba(246,240,235,.95); cursor: zoom-out; animation: fade .22s ease; }
+#zoom img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px;
+  box-shadow: 0 32px 80px rgba(29,28,26,.25); }
+
+/* ── live iframe overlay ── */
+#live { position: fixed; inset: 0; z-index: 40; background: var(--bg); animation: fade .3s ease; }
+#live iframe { width: 100%; height: 100%; border: 0; display: block; }
+#back { position: fixed; left: 16px; bottom: 16px; z-index: 41; padding: 9px 16px; border-radius: 20px;
+  font: 500 13.5px var(--mono); background: rgba(246,240,235,.9); backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 0 1px rgba(63,107,74,.5), 0 6px 24px rgba(29,28,26,.15); transition: box-shadow .2s; }
+#back:hover { box-shadow: inset 0 0 0 1px var(--green), 0 8px 28px rgba(29,28,26,.2); }
+
+@keyframes fade { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .slide, .pics figure { transition: none; } }
+body.on-cover #line { opacity: 0; pointer-events: none; }
+#line { transition: opacity .4s; }
+
+/* ── mobile ── */
+@media (max-width: 760px) {
+  #deck { bottom: 52px; }
+  .slide, .slide.cover, .slide.full { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: auto;
+    align-content: start; row-gap: 20px; overflow-y: auto; padding: 24px 18px 28px; -webkit-overflow-scrolling: touch; }
+  .slide > *, .slide.full > *:not(header) { grid-column: 1 !important; grid-row: auto !important; }
+  .slide > header { grid-template-columns: 1fr; margin-bottom: 0; }
+  .when { grid-column: 1; grid-row: auto; margin-top: 8px; }
+  h2 { font-size: 34px; }
+  .log { overflow: visible; }
+  .row { grid-template-columns: 1fr; row-gap: 5px; }
+  .tag { flex-direction: row; align-items: center; gap: 8px; }
+  .pics { height: 50vh; }
+  .cover h1 { font-size: 80px; }
+  .cover .by { margin-top: 24px; }
+  .sources { grid-template-columns: 1fr 1fr; }
+  .clusters, .limits { grid-template-columns: 1fr; }
+  .pipe { grid-template-columns: 1fr; }
+  .pipe li:not(:last-child)::before { display: none; }
+  #line { left: 14px; right: 14px; gap: 6px; height: 52px; }
+  #line .part > span { display: none; }
+  #line .dots button { width: 10px; }
+}
+</style>
+</head>
+<body>
+<main id="deck">
+
+  <!-- ─── PORTADA ─────────────────────────────────────────────────────── -->
+  <section class="slide cover" data-section="Inicio">
+    <div class="cover-text">
+      <h1>CICLO</h1>
+      <p class="sub">Entrega 3</p>
+      <p class="by">
+        <span>Felipe Berney · Abril Dobler</span>
+        <span>Sistemas generativos e IA para Diseño · K534/K576</span>
+        <span>UdeSA · 03.11.2026</span>
+      </p>
+    </div>
+    <figure class="cover-visual" id="cover-chart"></figure>
+  </section>
+
+  <!-- ─── LA HIPÓTESIS ────────────────────────────────────────────────── -->
+  <section class="slide" data-section="La hipótesis">
+    <header>
+      <h2>La hipótesis</h2>
+      <p class="when">Agosto 2026</p>
+    </header>
+    <ol class="log">
+      <li class="row decision">
+        <span class="tag"><b>La pregunta</b><span class="pill">punto de partida</span></span>
+        <q>Cruzando datos de pasarela, búsqueda y venta, ¿se puede ubicar un atributo de moda en su ciclo de vida?</q>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>Tres capas</b><span class="pill">dato</span></span>
+        <p>Pasarela — qué muestran los diseñadores.<br>Búsqueda — qué busca la gente.<br>Venta — qué compra el mercado masivo.</p>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>Resolución</b><span class="pill">dato</span></span>
+        <p>Las tres capas tienen resolución temporal. Se pueden comparar año a año. Eso es lo que permite cruzarlas.</p>
+      </li>
+      <li class="row hallazgo big">
+        <span class="tag"><b>El límite</b><span class="pill">hallazgo</span></span>
+        <q>La mitad sí: leer el presente. La mitad no: anticipar el futuro.</q>
+      </li>
+    </ol>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_01_entrada.png" alt="La entrada de la app — las tres preguntas"><figcaption>La entrada — las tres preguntas</figcaption></figure>
+      </div>
+      <div class="bar"><p class="cap">La entrada — las tres preguntas</p></div>
+    </div>
+  </section>
+
+  <!-- ─── LA UNIDAD ───────────────────────────────────────────────────── -->
+  <section class="slide" data-section="La hipótesis">
+    <header>
+      <h2>La unidad de análisis</h2>
+      <h3>El cambio conceptual más importante</h3>
+      <p class="when">1 sep 2026</p>
+    </header>
+    <ol class="log">
+      <li class="row limite big">
+        <span class="tag"><b>El problema</b><span class="pill">límite</span></span>
+        <q>«Tendencia» no existe en ningún dataset. No hay esa columna en Vogue, ni en Google, ni en H&M.</q>
+      </li>
+      <li class="row hallazgo">
+        <span class="tag"><b>La solución</b><span class="pill">hallazgo</span></span>
+        <p>La unidad pasa a ser el <b>atributo</b> — un color, una estampa, un corte, un material — porque es lo único que aparece a la vez en la pasarela, la búsqueda y el catálogo.</p>
+      </li>
+      <li class="row decision">
+        <span class="tag"><b>La consecuencia</b><span class="pill">decisión</span></span>
+        <p>Todo lo que vino después depende de esta decisión. Permite cruzar los datos sin etiquetas manuales.</p>
+      </li>
+    </ol>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_11_el_modelo.png" alt="La pantalla de Método en la app"><figcaption>La pantalla de Método</figcaption></figure>
+      </div>
+      <div class="bar"><p class="cap">La pantalla de Método — qué está medido y qué interpretado</p></div>
+    </div>
+  </section>
+
+  <!-- ─── FUENTES ──────────────────────────────────────────────────────── -->
+  <section class="slide full" data-section="Los datos">
+    <header>
+      <h2>Las fuentes</h2>
+      <p class="when">Sep – Oct 2026</p>
+    </header>
+    <div class="sources" id="fuentes"></div>
+  </section>
+
+  <!-- ─── EL HALLAZGO: 2026 ────────────────────────────────────────────── -->
+  <section class="slide" data-section="Los datos">
+    <header>
+      <h2>2026 está contaminado</h2>
+      <h3>El hallazgo más inesperado</h3>
+      <p class="when">Oct 2026</p>
+    </header>
+    <ol class="log">
+      <li class="row limite big">
+        <span class="tag"><b>El hallazgo</b><span class="pill">límite</span></span>
+        <q>Desde 2025, Google cambió cómo mide. En 2026, 69 de 70 series suben a la vez.</q>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>La evidencia</b><span class="pill">dato</span></span>
+        <p>Mediana +99% en 2026. El trench coat, que siempre picó entre septiembre y febrero, pica en abril. Es la medición, no la moda.</p>
+      </li>
+      <li class="row decision">
+        <span class="tag"><b>La decisión</b><span class="pill">decisión</span></span>
+        <p>Todo el análisis corta en 2024. Sin el ancla del trench coat no lo hubiéramos visto. <b>74 atributos con dato propio, 42 prestados, 17 sin dato.</b> Declarado en la app.</p>
+      </li>
+    </ol>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_13_metodo.png" alt="Pantalla de Método en la app"><figcaption>Método — qué entra y qué queda afuera</figcaption></figure>
+      </div>
+      <div class="bar"><p class="cap">Método — cada atributo con su procedencia declarada</p></div>
+    </div>
+  </section>
+
+  <!-- ─── EL MODELO ───────────────────────────────────────────────────── -->
+  <section class="slide" data-section="El modelo">
+    <header>
+      <h2>K-means, k = 4</h2>
+      <h3>Sin etiquetas de etapa — el algoritmo solo agrupa</h3>
+      <p class="when">Sep 2026</p>
+    </header>
+    <div class="clusters" id="clusters">
+      <div class="cluster e">
+        <div class="stage">▲ Entrar</div>
+        <div class="name">En ascenso</div>
+        <div class="attrs">alta velocidad de crecimiento en búsqueda<br>presencia creciente en pasarela</div>
+      </div>
+      <div class="cluster w">
+        <div class="stage">■ Esperar</div>
+        <div class="name">En pico</div>
+        <div class="attrs">nivel de búsqueda máximo<br>presencia en venta masiva</div>
+      </div>
+      <div class="cluster s">
+        <div class="stage">▼ Salir</div>
+        <div class="name">Saturada</div>
+        <div class="attrs">búsqueda en descenso<br>sobre-representado en catálogos masivos</div>
+      </div>
+      <div class="cluster r">
+        <div class="stage">○ Observar</div>
+        <div class="name">En retorno</div>
+        <div class="attrs">ciclo cerrado identificado<br>señal de búsqueda resurgiendo</div>
+      </div>
+      <div class="kstats">
+        <span><b>17</b> atributos</span>
+        <span><b>k = 4</b> grupos</span>
+        <span><b>Silhouette 0,32</b></span>
+        <span><b>k = 2</b> da 0,36 pero no separa ascenso de pico</span>
+      </div>
+    </div>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_08_tendencias.png" alt="Tendencias — la pantalla principal"><figcaption>Tendencias — cada tarjeta muestra la etapa</figcaption></figure>
+      </div>
+      <div class="bar"><p class="cap">Tendencias — la etapa del K-means en cada tarjeta</p></div>
+    </div>
+  </section>
+
+  <!-- ─── VALIDACIÓN ──────────────────────────────────────────────────── -->
+  <section class="slide" data-section="El modelo">
+    <header>
+      <h2>Validación externa</h2>
+      <h3>El modelo no vio ninguno de estos datos</h3>
+    </header>
+    <div class="valid">
+      <div class="vrow ok">
+        <div class="tag2">Jeans ajustados · Amazon 2019–22</div>
+        <div><span class="val">−39 %</span><span class="delta dn">Saturada ▼</span></div>
+        <div class="note">El modelo los puso en «Saturada». El dato de Amazon confirma el descenso.</div>
+      </div>
+      <div class="vrow ok">
+        <div class="tag2">Jeans amplios · Amazon + Google Shopping</div>
+        <div><span class="val">+79 % · +95 %</span><span class="delta up">Pico ■</span></div>
+        <div class="note">El modelo los puso en «Pico». Los datos de venta y búsqueda coinciden.</div>
+      </div>
+      <div class="vrow ok">
+        <div class="tag2">Y2K · búsquedas de compra</div>
+        <div><span class="val">+203 %</span><span class="delta up">En ascenso ▲</span></div>
+        <div class="note">El único atributo en «En ascenso» en ese grupo. El dato de shopping lo confirma.</div>
+      </div>
+    </div>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_08_tendencias.png" alt="Tendencias con señales de colores"><figcaption>Las señales en la pantalla principal</figcaption></figure>
+        <figure><img src="capturas/captura_16_oscuro_tendencias.png" alt="Modo oscuro — tendencias"><figcaption>La misma pantalla en modo oscuro</figcaption></figure>
+      </div>
+      <div class="bar">
+        <div class="pics__arrows" style="display:flex;gap:8px">
+          <button class="nav" aria-label="anterior">←</button>
+          <button class="nav" aria-label="siguiente">→</button>
+        </div>
+        <p class="cap">Las señales Entrar / Esperar / Salir</p>
+        <span class="count">1 / 2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CÓMO SE LEE ─────────────────────────────────────────────────── -->
+  <section class="slide" data-section="La app">
+    <header>
+      <h2>Cómo se lee</h2>
+      <h3>El color significa una sola cosa</h3>
+    </header>
+    <ol class="log">
+      <li class="row signal-row">
+        <div class="signals">
+          <div class="sig e"><span class="icon">▲</span> Entrar</div>
+          <div class="sig w"><span class="icon">■</span> Esperar</div>
+          <div class="sig s"><span class="icon">▼</span> Salir</div>
+        </div>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>La regla</b><span class="pill">dato</span></span>
+        <p>El color es solo la señal, siempre con su palabra. Que algo suba o baje en un gráfico va en negro, sin color.</p>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>Procedencia</b><span class="pill">dato</span></span>
+        <p><b>● medido</b> — dato propio medido directamente.<br><b>↪ prestado</b> — serie de un pariente del atributo.<br><b>◇ interpretado</b> — calculado o estimado por un modelo.</p>
+      </li>
+      <li class="row limite">
+        <span class="tag"><b>Sin dato</b><span class="pill">límite</span></span>
+        <p>Si no hay serie medida: «sin dato», siempre declarado. Nunca se esconde.</p>
+      </li>
+    </ol>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_08_tendencias.png" alt="Sistema de señales en Tendencias"><figcaption>El sistema de señales</figcaption></figure>
+      </div>
+      <div class="bar"><p class="cap">Verde = Entrar · ámbar = Esperar · rojo = Salir</p></div>
+    </div>
+  </section>
+
+  <!-- ─── TENDENCIAS ──────────────────────────────────────────────────── -->
+  <section class="slide" data-section="La app">
+    <header>
+      <h2>Tendencias</h2>
+      <h3>La pantalla principal</h3>
+    </header>
+    <ol class="log">
+      <li class="row dato">
+        <span class="tag"><b>Cada tarjeta</b><span class="pill">dato</span></span>
+        <p>Etapa del K-means · señal · procedencia (medido / prestado / sin dato).</p>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>El perfil</b><span class="pill">dato</span></span>
+        <p>El perfil (fast / premium / nicho) cambia la recomendación pero no el dato. El mismo dato puede decir «Entrar» a un fast fashion y «Esperar» a una marca premium.</p>
+      </li>
+      <li class="row hallazgo">
+        <span class="tag"><b>65 series</b><span class="pill">hallazgo</span></span>
+        <p>65 series de Google Trends, con filtro de estación, cortadas en 2024. Las que no entran al K-means aparecen igual, con su motivo declarado.</p>
+      </li>
+    </ol>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_08_tendencias.png" alt="Tendencias — la pantalla principal"><figcaption>Tendencias</figcaption></figure>
+        <figure><img src="capturas/captura_14_celular_disenar.png" alt="Diseñar en celular"><figcaption>En el celular</figcaption></figure>
+      </div>
+      <div class="bar">
+        <div class="pics__arrows" style="display:flex;gap:8px">
+          <button class="nav" aria-label="anterior">←</button>
+          <button class="nav" aria-label="siguiente">→</button>
+        </div>
+        <p class="cap">La pantalla principal</p>
+        <span class="count">1 / 2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DISEÑAR ──────────────────────────────────────────────────────── -->
+  <section class="slide" data-section="La app">
+    <header>
+      <h2>Diseñar</h2>
+      <h3>Para quién diseñás algo concreto hoy</h3>
+    </header>
+    <ol class="log">
+      <li class="row dato">
+        <span class="tag"><b>Taxonomía</b><span class="pill">dato</span></span>
+        <p>Prenda → corte → material → estampa. Jean = pantalón + denim. Cada combinación es una hoja del árbol.</p>
+      </li>
+      <li class="row hallazgo big">
+        <span class="tag"><b>El ejemplo</b><span class="pill">hallazgo</span></span>
+        <q>Jean amplio → Esperar. Jean ajustado → Salir. El mismo material, distinto corte, conclusión opuesta.</q>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>La barra</b><span class="pill">dato</span></span>
+        <p>Acumula lo elegido. La ficha final recomienda solo con evidencia; sin serie medida, dice «sin dato» y no recomienda.</p>
+      </li>
+    </ol>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_02_disenar_prenda.png" alt="Diseñar — elegir prenda"><figcaption>Elegir la prenda</figcaption></figure>
+        <figure><img src="capturas/captura_03_disenar_estampa.png" alt="Diseñar — elegir estampa"><figcaption>Elegir la estampa</figcaption></figure>
+        <figure><img src="capturas/captura_04_tu_diseno.png" alt="Tu diseño — la ficha final"><figcaption>La ficha final</figcaption></figure>
+      </div>
+      <div class="bar">
+        <div class="pics__arrows" style="display:flex;gap:8px">
+          <button class="nav" aria-label="anterior">←</button>
+          <button class="nav" aria-label="siguiente">→</button>
+        </div>
+        <p class="cap">Diseñar — de la prenda a la ficha</p>
+        <span class="count">1 / 3</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EL CICLO ─────────────────────────────────────────────────────── -->
+  <section class="slide" data-section="La app">
+    <header>
+      <h2>El ciclo</h2>
+      <h3>¿La pasarela anticipa la búsqueda?</h3>
+    </header>
+    <ol class="log">
+      <li class="row dato">
+        <span class="tag"><b>La correlación</b><span class="pill">dato</span></span>
+        <p>Correlación máxima entre pasarela y búsqueda: <b>+0,43 sin rezago</b>. Con 2 años de rezago: +0,12.</p>
+      </li>
+      <li class="row limite big">
+        <span class="tag"><b>Lo que no se sostiene</b><span class="pill">límite</span></span>
+        <q>La hipótesis de que la pasarela anticipa no se sostiene año a año.</q>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>Lo que sí</b><span class="pill">dato</span></span>
+        <p>Ciclos cerrados: 0 a 2 años entre el pico en pasarela y el pico en búsqueda. La correlación es más fuerte en el mismo período que con rezago.</p>
+      </li>
+      <li class="row decision">
+        <span class="tag"><b>Lo que falta</b><span class="pill">decisión</span></span>
+        <p>La resolución mes a mes todavía no se pudo probar. Es la única versión de la hipótesis que no descartamos.</p>
+      </li>
+    </ol>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_06_el_ciclo.png" alt="El ciclo — correlación pasarela vs búsqueda"><figcaption>El ciclo — correlación</figcaption></figure>
+        <figure><img src="capturas/captura_07_recorrido_hasta_2030.png" alt="Proyección hasta 2030"><figcaption>Proyección — la punteada hasta 2030</figcaption></figure>
+      </div>
+      <div class="bar">
+        <div class="pics__arrows" style="display:flex;gap:8px">
+          <button class="nav" aria-label="anterior">←</button>
+          <button class="nav" aria-label="siguiente">→</button>
+        </div>
+        <p class="cap">El ciclo — correlación y proyección</p>
+        <span class="count">1 / 2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CLIP ─────────────────────────────────────────────────────────── -->
+  <section class="slide" data-section="La app">
+    <header>
+      <h2>Buscar por imagen</h2>
+      <h3>CLIP ViT-B/32 — visión por computadora</h3>
+    </header>
+    <div class="clip-stats">
+      <div><span class="auc-big">0,90<span>AUC mediano</span></span></div>
+      <div class="stat-line"><span class="label">Atributos evaluados</span><span class="val">17</span></div>
+      <div class="stat-line"><span class="label">Atributo correcto en top-3</span><span class="val ok">67–92 %</span></div>
+      <div class="stat-line"><span class="label">Calzado: zapatillas (8/8)</span><span class="val ok">✓ correcto</span></div>
+      <div class="stat-line"><span class="label">Calzado: botas texanas (7/8)</span><span class="val ok">✓ correcto</span></div>
+      <div class="stat-line"><span class="label">Calzado: chatitas, plataformas (0/8)</span><span class="val ko">✗ lee la ropa, no el zapato</span></div>
+      <div class="stat-line"><span class="label">Estilos de calzado sin señal</span><span class="val ko">5 / declarados en la app</span></div>
+    </div>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_09_buscar_por_imagen.png" alt="Buscar por imagen — CLIP"><figcaption>Buscar por imagen</figcaption></figure>
+        <figure><img src="capturas/captura_05_calzado_dos_intentos.png" alt="Calzado — dos intentos fallidos"><figcaption>Calzado — dos intentos</figcaption></figure>
+      </div>
+      <div class="bar">
+        <div class="pics__arrows" style="display:flex;gap:8px">
+          <button class="nav" aria-label="anterior">←</button>
+          <button class="nav" aria-label="siguiente">→</button>
+        </div>
+        <p class="cap">CLIP — lo que puede y lo que no</p>
+        <span class="count">1 / 2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PREGUNTAR ────────────────────────────────────────────────────── -->
+  <section class="slide" data-section="La app">
+    <header>
+      <h2>Preguntar</h2>
+      <h3>El LLM nunca ve una fila de datos</h3>
+    </header>
+    <ol class="log">
+      <li class="row limite big">
+        <span class="tag"><b>La regla</b><span class="pill">límite</span></span>
+        <q>El modelo de lenguaje lee métricas ya calculadas, nunca los datos crudos.</q>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>Cómo funciona</b><span class="pill">dato</span></span>
+        <p>La API key es del usuario, llamada directa desde el navegador. Ninguna clave queda en el repo. Powered by Groq.</p>
+      </li>
+      <li class="row hallazgo">
+        <span class="tag"><b>La respuesta</b><span class="pill">hallazgo</span></span>
+        <p>Siempre marcada como <b>◇ interpretación</b>. El dato es nuestro. La lectura es del modelo.</p>
+      </li>
+      <li class="row dato">
+        <span class="tag"><b>chi² = 782,6</b><span class="pill">dato</span></span>
+        <p>p ≈ 3·10⁻¹²⁹ — las respuestas del LLM no son aleatorias respecto del dato: el modelo sí lee la señal.</p>
+      </li>
+    </ol>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_10_preguntar.png" alt="Preguntar — la interfaz del LLM"><figcaption>Preguntar</figcaption></figure>
+      </div>
+      <div class="bar"><p class="cap">Preguntar — el LLM con la API key del usuario</p></div>
+    </div>
+  </section>
+
+  <!-- ─── PREDICCIÓN ───────────────────────────────────────────────────── -->
+  <section class="slide" data-section="Los límites">
+    <header>
+      <h2>La predicción</h2>
+      <h3>Ningún método le gana a repetir el último valor</h3>
+    </header>
+    <div class="pred-table">
+      <div class="pred-head">
+        <span>Método</span>
+        <span>Error a 1 año</span>
+        <span>Error a 5 años</span>
+      </div>
+      <div class="pred-row"><span class="method">Suavizado con tendencia amortiguada</span><span class="err">22,1</span><span class="base">vs 21,6 base</span></div>
+      <div class="pred-row"><span class="method">Análogos históricos</span><span class="err">15,9</span><span class="base">vs 15,5 base</span></div>
+      <div class="pred-row"><span class="method">Reversión a la media</span><span class="err">21,7</span><span class="base">vs 21,6 base</span></div>
+      <div class="pred-row"><span class="method">Etapa del ciclo como regla</span><span class="err">62,9 %</span><span class="base">vs 62,9 % base</span></div>
+      <div class="pred-row highlight"><span class="method">Repetir el último valor (base)</span><span class="err">±8,8</span><span class="base">±23,1</span></div>
+      <p class="pred-note">La punteada hasta 2030 no es un pronóstico: es donde quedaría la curva si se moviera como la mediana de su historia.</p>
+    </div>
+    <div class="pics">
+      <div class="stage">
+        <figure class="on"><img src="capturas/captura_07_recorrido_hasta_2030.png" alt="Proyección hasta 2030"><figcaption>La proyección punteada hasta 2030</figcaption></figure>
+      </div>
+      <div class="bar"><p class="cap">La proyección — mediana de la historia, no pronóstico</p></div>
+    </div>
+  </section>
+
+  <!-- ─── LÍMITES ──────────────────────────────────────────────────────── -->
+  <section class="slide full" data-section="Los límites">
+    <header>
+      <h2>Límites declarados</h2>
+    </header>
+    <ol class="limits">
+      <li><b>Sin género</b><p>No hay columna de género en Vogue ni en H&M. No se simuló: se declara en Método.</p></li>
+      <li><b>Google Trends 2025–26</b><p>Contaminados por cambio de medición. Todo el análisis corta en 2024.</p></li>
+      <li><b>Pasarela no anticipa</b><p>Correlación máxima sin rezago (+0,43). Con 2 años: +0,12. La hipótesis no se sostiene a escala anual.</p></li>
+      <li><b>Calzado sin señal</b><p>CLIP lee la ropa, no el zapato. 5 estilos sin medición, declarados atributo por atributo.</p></li>
+      <li><b>Datos sintéticos</b><p>Zara 2018–22 y Mix de marcas son demostraciones de método, no señales de moda. Rotulados así en la app.</p></li>
+      <li><b>6 fichas sin K-means</b><p>Su etapa se estimó sobre un catálogo sintético. No recomiendan con esa etapa: usan su serie de búsqueda o no recomiendan.</p></li>
+    </ol>
+  </section>
+
+  <!-- ─── DEMO EN VIVO ─────────────────────────────────────────────────── -->
+  <section class="slide cover" data-section="Demo">
+    <div class="cover-text" style="grid-template-rows: 1fr auto auto auto">
+      <h1 style="font-size: clamp(72px,8.5vw,140px)">Demo<br>en vivo</h1>
+      <div class="demo-cta" style="display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-top:32px">
+        <p class="url" style="margin:0;font:400 clamp(13px,1.2vw,16px)/1.4 var(--mono);color:var(--soft)">felipeberney-boop.github.io/ciclo</p>
+        <button class="open-btn" id="abrir-app">
+          <span>Abrir la app</span><span class="arrow">→</span>
+        </button>
+      </div>
+      <p class="by" style="margin-top:clamp(28px,6vh,56px)">
+        <span>Tendencias → ficha → Diseñar → Preguntar</span>
+        <span>5 minutos · tener API key de Groq</span>
+      </p>
+    </div>
+    <figure class="cover-visual" id="demo-visual"></figure>
+  </section>
+
+  <!-- ─── CIERRE ───────────────────────────────────────────────────────── -->
+  <section class="slide cover" data-section="Cierre">
+    <div class="cierre-text cover-text">
+      <h1>CICLO</h1>
+      <p class="sub">Un instrumento descriptivo,<br>no un predictor.</p>
+      <p class="url">felipeberney-boop.github.io/ciclo</p>
+      <p class="next">
+        Próximo paso: calcular la etapa desde las curvas para todos los atributos.<br>
+        La pasarela mes a mes: la única versión de la hipótesis que no pudimos descartar.
+      </p>
+      <p class="by" style="margin-top: clamp(20px,4vh,40px)">
+        <span>Felipe Berney · Abril Dobler</span>
+        <span>UdeSA · Sistemas generativos e IA para Diseño · 2026</span>
+      </p>
+    </div>
+    <div class="qr-wrap" id="qr-wrap"></div>
+  </section>
+
+</main>
+
+<!-- ── bottom nav ── -->
+<nav id="line"></nav>
+
+<!-- ── overlays ── -->
+<div id="zoom" hidden><img src="" alt=""></div>
+<div id="live" hidden>
+  <iframe src="" title="CICLO — app en vivo" loading="lazy"></iframe>
+  <button id="back">← volver</button>
+</div>
+
+<script>
+const APP_URL = 'https://felipeberney-boop.github.io/ciclo/';
+
+// ── slides & navigation ──────────────────────────────────────────────────────
+const deck   = document.getElementById('deck');
+const slides = [...deck.querySelectorAll('.slide')];
+const navEl  = document.getElementById('line');
+let cur = 0, picIdx = {};
+
+function goTo(n, dir) {
+  n = Math.max(0, Math.min(slides.length - 1, n));
+  if (n === cur) return;
+  slides[cur].classList.remove('on');
+  slides[cur].classList.toggle('past', n > cur);
+  if (n < cur) slides[cur].classList.remove('past');
+  cur = n;
+  slides.forEach((s, i) => {
+    if (i < cur) s.classList.add('past');
+    else s.classList.remove('past');
+  });
+  slides[cur].classList.add('on');
+  document.body.classList.toggle('on-cover', slides[cur].classList.contains('cover'));
+  history.replaceState(null, '', '#' + (cur + 1));
+  updateNav();
+}
+
+function next() {
+  const s = slides[cur];
+  const figs = [...s.querySelectorAll('.pics figure')];
+  const onIdx = figs.findIndex(f => f.classList.contains('on'));
+  if (onIdx < figs.length - 1) {
+    figs[onIdx].classList.remove('on');
+    figs[onIdx + 1].classList.add('on');
+    updatePicBar(s, onIdx + 1, figs.length);
+    return;
+  }
+  goTo(cur + 1);
+}
+
+function prev() {
+  const s = slides[cur];
+  const figs = [...s.querySelectorAll('.pics figure')];
+  const onIdx = figs.findIndex(f => f.classList.contains('on'));
+  if (onIdx > 0) {
+    figs[onIdx].classList.remove('on');
+    figs[onIdx - 1].classList.add('on');
+    updatePicBar(s, onIdx - 1, figs.length);
+    return;
+  }
+  goTo(cur - 1);
+}
+
+function updatePicBar(slide, idx, total) {
+  const count = slide.querySelector('.pics .count');
+  if (count) count.textContent = `${idx + 1} / ${total}`;
+}
+
+// wire up in-slide nav buttons
+slides.forEach(s => {
+  const navBtns = s.querySelectorAll('.pics .nav');
+  const figs = [...s.querySelectorAll('.pics figure')];
+  if (navBtns.length >= 2 && figs.length > 1) {
+    navBtns[0].addEventListener('click', e => { e.stopPropagation();
+      const i = figs.findIndex(f => f.classList.contains('on'));
+      if (i > 0) { figs[i].classList.remove('on'); figs[i-1].classList.add('on'); updatePicBar(s, i-1, figs.length); }
+    });
+    navBtns[1].addEventListener('click', e => { e.stopPropagation();
+      const i = figs.findIndex(f => f.classList.contains('on'));
+      if (i < figs.length - 1) { figs[i].classList.remove('on'); figs[i+1].classList.add('on'); updatePicBar(s, i+1, figs.length); }
+    });
+  }
+});
+
+// ── bottom nav ───────────────────────────────────────────────────────────────
+function buildNav() {
+  const sections = [];
+  slides.forEach((s, i) => {
+    const sec = s.dataset.section;
+    if (!sections.length || sections[sections.length-1].name !== sec)
+      sections.push({ name: sec, start: i, slides: [] });
+    sections[sections.length-1].slides.push(i);
+  });
+  sections.forEach(sec => {
+    const part = document.createElement('div');
+    part.className = 'part';
+    part.innerHTML = `<span>${sec.name}</span><div class="dots">${sec.slides.map(i => `<button data-idx="${i}" aria-label="Ir a la lámina ${i+1}">${''}</button>`).join('')}</div>`;
+    part.querySelectorAll('button').forEach(b => b.addEventListener('click', () => goTo(+b.dataset.idx)));
+    navEl.appendChild(part);
+  });
+}
+
+function updateNav() {
+  const btns = navEl.querySelectorAll('.dots button');
+  const parts = navEl.querySelectorAll('.part');
+  btns.forEach(b => {
+    const i = +b.dataset.idx;
+    b.classList.toggle('done', i < cur);
+    b.toggleAttribute('aria-current', i === cur);
+    if (i === cur) b.setAttribute('aria-current', 'step');
+    else b.removeAttribute('aria-current');
+  });
+  parts.forEach(p => {
+    const indices = [...p.querySelectorAll('button')].map(b => +b.dataset.idx);
+    p.classList.toggle('on', indices.includes(cur));
+  });
+}
+
+// ── keyboard ─────────────────────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (document.getElementById('live').hidden === false) {
+    if (e.key === 'Escape') closeLive();
+    return;
+  }
+  if (!document.getElementById('zoom').hidden) {
+    document.getElementById('zoom').hidden = true; return;
+  }
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft')  { e.preventDefault(); prev(); }
+  if (e.key === 'ArrowDown')  { e.preventDefault(); nextPic(); }
+  if (e.key === 'ArrowUp')    { e.preventDefault(); prevPic(); }
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+  if (e.key === 'Enter') openLive();
+});
+
+function nextPic() {
+  const s = slides[cur]; const figs = [...s.querySelectorAll('.pics figure')];
+  const i = figs.findIndex(f => f.classList.contains('on'));
+  if (i < figs.length - 1) { figs[i].classList.remove('on'); figs[i+1].classList.add('on'); updatePicBar(s, i+1, figs.length); }
+}
+function prevPic() {
+  const s = slides[cur]; const figs = [...s.querySelectorAll('.pics figure')];
+  const i = figs.findIndex(f => f.classList.contains('on'));
+  if (i > 0) { figs[i].classList.remove('on'); figs[i-1].classList.add('on'); updatePicBar(s, i-1, figs.length); }
+}
+
+// ── image zoom ───────────────────────────────────────────────────────────────
+const zoomEl = document.getElementById('zoom');
+const zoomImg = zoomEl.querySelector('img');
+document.addEventListener('click', e => {
+  const img = e.target.closest('.pics img');
+  if (img && zoomEl.hidden) { zoomImg.src = img.src; zoomImg.alt = img.alt; zoomEl.hidden = false; return; }
+  if (!zoomEl.hidden) zoomEl.hidden = true;
+});
+
+// ── live iframe ───────────────────────────────────────────────────────────────
+const liveEl = document.getElementById('live');
+const liveIframe = liveEl.querySelector('iframe');
+
+function openLive() {
+  liveIframe.src = APP_URL;
+  liveEl.hidden = false;
+}
+function closeLive() {
+  liveEl.hidden = true;
+  liveIframe.src = '';
+}
+document.getElementById('abrir-app')?.addEventListener('click', openLive);
+document.getElementById('back').addEventListener('click', closeLive);
+
+// ── sources grid ──────────────────────────────────────────────────────────────
+function dots(n, w, color) {
+  const pitch = 7, cols = Math.floor(w / pitch), r = 2.4;
+  const rows = Math.ceil(n / cols);
+  let s = '';
+  for (let k = 0; k < n; k++)
+    s += `<circle cx="${(k % cols) * pitch + r}" cy="${Math.floor(k / cols) * pitch + r}" r="${r}" fill="${color}"/>`;
+  return `<svg viewBox="0 0 ${w} ${rows * pitch}" preserveAspectRatio="xMinYMin meet">${s}</svg>`;
+}
+function bars(n, color) {
+  let s = '';
+  for (let k = 0; k < n; k++)
+    s += `<rect x="${(k % 13) * 20}" y="${Math.floor(k / 13) * 12}" width="14" height="8" rx="2" fill="${color}"/>`;
+  return `<svg viewBox="0 0 260 ${Math.ceil(n/13)*12}" preserveAspectRatio="xMinYMin meet">${s}</svg>`;
+}
+document.getElementById('fuentes').innerHTML = [
+  ['wide', '1.281.633', 'Vogue Runway', '2000–2023 · imágenes con diseñador, temporada y etiquetas', dots(120, 640, '#3F6B4A')],
+  ['', '65', 'Google Trends', 'series mundiales en inglés, cortadas en 2024', bars(65, '#9D640D')],
+  ['', '30,6 M', 'H&M', 'transacciones 2019–2023, mes a mes', dots(60, 300, '#3A6B9A')],
+  ['', '34', 'Lyst Index', 'trimestres Q1-18 a Q2-26', bars(34, '#7A7470')],
+  ['', '4.404', 'Reddit', 'posts r/femalefashionadvice 2012–2025', dots(48, 300, '#9D640D')],
+  ['', '—', 'Amazon · Wish · Zara', 'reseñas y catálogos — validación externa', dots(18, 200, 'rgba(29,28,26,.2)')],
+].map(([cls, n, name, note, viz]) =>
+  `<div class="src ${cls}"><span class="num${n==='—'?' none':''}">${n}</span><span class="lbl"><b>${name}</b>${note}</span>${viz}</div>`
+).join('');
+
+// ── cover visual ──────────────────────────────────────────────────────────────
+(function coverChart() {
+  const el = document.getElementById('cover-chart');
+  if (!el) return;
+  const W = 600, H = 520;
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  // Draw 4 stylized cluster curves
+  const curves = [
+    { color: '#3F6B4A', d: 'M 60 400 C 120 380, 180 260, 300 200 S 480 160, 560 180', label: 'En ascenso', lx: 380, ly: 150 },
+    { color: '#9D640D', d: 'M 20 300 C 80 240, 180 180, 280 200 S 440 260, 580 290', label: 'En pico', lx: 500, ly: 265 },
+    { color: '#B02B31', d: 'M 20 220 C 80 180, 180 200, 300 260 S 480 340, 580 380', label: 'Saturada', lx: 490, ly: 356 },
+    { color: 'rgba(29,28,26,.3)', d: 'M 60 460 C 140 440, 220 420, 320 400 S 460 380, 560 340', label: 'En retorno', lx: 460, ly: 315 },
+  ];
+  // Axes
+  const ax = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  ax.setAttribute('x1', 40); ax.setAttribute('y1', 20); ax.setAttribute('x2', 40); ax.setAttribute('y2', 480);
+  ax.setAttribute('stroke', 'rgba(29,28,26,.15)'); ax.setAttribute('stroke-width', '1');
+  svg.appendChild(ax);
+  const ay = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  ay.setAttribute('x1', 40); ay.setAttribute('y1', 480); ay.setAttribute('x2', 590); ay.setAttribute('y2', 480);
+  ay.setAttribute('stroke', 'rgba(29,28,26,.15)'); ay.setAttribute('stroke-width', '1');
+  svg.appendChild(ay);
+  // Year labels
+  ['2004','2010','2016','2024'].forEach((y, i) => {
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    t.setAttribute('x', 60 + i * 175); t.setAttribute('y', 500);
+    t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', '11');
+    t.setAttribute('fill', 'rgba(29,28,26,.4)'); t.setAttribute('font-family', 'IBM Plex Mono, monospace');
+    t.textContent = y; svg.appendChild(t);
+  });
+  curves.forEach(c => {
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', c.d); path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', c.color); path.setAttribute('stroke-width', '2.5');
+    path.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(path);
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    t.setAttribute('x', c.lx); t.setAttribute('y', c.ly);
+    t.setAttribute('font-size', '12'); t.setAttribute('fill', c.color);
+    t.setAttribute('font-family', 'IBM Plex Mono, monospace'); t.setAttribute('font-weight', '500');
+    t.textContent = c.label; svg.appendChild(t);
+  });
+  el.appendChild(svg);
+})();
+
+// ── QR code (inline SVG, simple) ─────────────────────────────────────────────
+(function qr() {
+  const wrap = document.getElementById('qr-wrap');
+  if (!wrap) return;
+  wrap.innerHTML = `<div style="text-align:center">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231D1C1A'/%3E%3Ctext x='100' y='110' text-anchor='middle' font-size='14' fill='%23F6F0EB' font-family='monospace'%3ESCANEAR QR%3C/text%3E%3C/svg%3E" alt="QR CICLO" style="width:200px;border-radius:8px">
+    <p style="margin:12px 0 0;font:300 12px var(--mono);color:var(--soft)">felipeberney-boop.github.io/ciclo</p>
+  </div>`;
+  // replace with actual QR if available
+  fetch('../presentacion/ciclo_qr.svg').then(r => r.ok ? r.text() : null).then(svg => {
+    if (svg) wrap.innerHTML = svg + `<p style="margin:12px 0 0;font:300 12px var(--mono);color:var(--soft)">felipeberney-boop.github.io/ciclo</p>`;
+  }).catch(() => {});
+})();
+
+// ── demo visual (right side of demo slide) ────────────────────────────────────
+(function demoVisual() {
+  const el = document.getElementById('demo-visual');
+  if (!el) return;
+  el.innerHTML = `<img src="capturas/captura_01_entrada.png" style="width:100%;height:100%;object-fit:contain;object-position:center;border-radius:8px;filter:drop-shadow(0 20px 50px rgba(29,28,26,.2))" alt="CICLO app — la entrada">`;
+})();
+
+// ── init ──────────────────────────────────────────────────────────────────────
+buildNav();
+const start = parseInt(location.hash.slice(1)) - 1;
+const startIdx = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start));
+slides[startIdx].classList.add('on');
+cur = startIdx;
+document.body.classList.toggle('on-cover', slides[cur].classList.contains('cover'));
+updateNav();
+</script>
+</body>
+</html>

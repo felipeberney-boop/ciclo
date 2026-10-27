@@ -166,6 +166,11 @@ stytrix.com, sin su naranja (el color sigue siendo sólo la señal). Capturas re
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).
 
+**Making of (27/10).** 25 láminas alrededor de tres preguntas (¿se puede predecir?, ¿qué se puede medir?, ¿cómo lo usa
+un diseñador?), con las citas textuales del ida y vuelta, cómo pedir, el pipeline, el rol de la IA, los commits por
+día, la demo y el cierre. Notas del orador con la tecla N; cada lámina tiene su link (`#trench`, `#semaforo`…). La
+versión anterior quedó en `diseno/prototipos/versiones_de_la_presentacion/`.
+
 El 26/10 también se armaron 22 láminas en Figma Slides y un prototipo navegable en Figma. El 27/10 salen del
 repositorio: la referencia de la cátedra es una página web, y el prototipo de Figma ya no coincidía con la app. El
 prototipo navegable es la app publicada.

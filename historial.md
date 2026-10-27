@@ -170,6 +170,11 @@ producto de Apple, sin su marca: tipografía del sistema, gris perla y tarjetas 
 para lo que se toca, siempre en claro. Diseñar funciona como un configurador. La versión anterior quedó en
 `diseno/prototipos/versiones_de_la_app/app_2026-10-27_c639966_antes_de_apple.html`.
 
+## v1.12 · 27/10/2026 · De Tendencias a Diseñar, en un clic
+
+Cada cosa de Tendencias abre su ficha con un botón «Diseñar con este…» que entra a Diseñar con el atributo fijo y
+pregunta sólo lo que falta. El link de Diseñar se puede compartir con su estado.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

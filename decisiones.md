@@ -1252,3 +1252,21 @@ fotos de pasarela no tienen licencia, así que las prendas siguen dibujadas.
 
 Versiones anteriores: `diseno/prototipos/versiones_de_la_app/app_2026-10-27_c639966_antes_de_apple.html` y
 `diseno/prototipos/versiones_de_la_presentacion/`. Capturas regeneradas; la del modo oscuro se reemplaza por el panel «Más».
+
+## 2026-10-27 · De Tendencias a Diseñar, en un clic
+
+Tendencias era para mirar; ahora es la puerta a diseñar. Todo lo que muestra abre su ficha con el gráfico de su
+serie: las 12 fichas, las barras de «qué gana y qué pierde terreno» (llevan al recorrido de El ciclo) y los colores de
+cada ficha. Arriba del gráfico, un botón «Diseñar con este corte / material / estampa / color · nombre →».
+
+**Cómo entra.** El botón arma el mismo estado `dz` que el recorrido a mano y entra por `mostrar('disenar')`; nada de
+camino paralelo. Lo clickeado queda como atributo fijo (`dz.fijo`), con una línea arriba de los pasos y «Quitar ×».
+Un corte abre en pantalones → largo → ese corte y sigue desde el tiro; un material, una estampa o un color abren en el
+paso de prenda, con sólo las prendas (y los tipos) que lo admiten, y su propio paso se saltea. Al cambiar de prenda,
+el fijo se vuelve a aplicar. El link de Diseñar ahora lleva el estado (`dz`, `paso`, `fijo`): se comparte igual que
+el de una ficha.
+
+**De qué hoja sale cada cosa.** Las 65 series encuentran su hoja por los campos que ya tenía la taxonomía (`rec`,
+`serie`, `km`, `clip_jeans`); «Buzo / athleisure» va a la prenda Buzos. Los tres grupos de corte de Tendencias (amplio,
+recto, ajustado) abren en su corte más buscado (baggy, straight, skinny) y el botón lo nombra. «Corazones» y
+«Geométrico» no están en el vocabulario de Diseñar: su ficha lo dice en lugar del botón.

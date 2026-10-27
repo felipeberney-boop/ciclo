@@ -843,6 +843,16 @@ body.con-barra #arriba{bottom:96px}
   --paper:#f5f5f7;--paper-2:#ffffff;--card:#ffffff;--ink:#1d1d1f;--ink-2:#424245;--ink-3:#7a7a7a;
   --rule:#e0e0e0;--rule-2:#f0f0f0;--azul:#0066cc;--azul-foco:#0071e3;--accent:var(--azul);--mono:var(--sf);
   --r-card:18px;--r-row:12px;--sombra:none}
+/* de Tendencias a Diseñar: el botón arriba del gráfico, los colores de la ficha y el atributo fijo */
+.app .dzdesde{display:flex;flex-direction:column;align-items:center;gap:14px;margin:26px auto 8px}
+.app #rdz{align-items:flex-start;margin:14px 0 18px}
+.app .dzcols{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;font-size:14px;color:var(--ink-3)}
+.app .dzcols .chip{margin:0!important}
+.app .dzaviso{margin:0;font-size:15px;color:var(--ink-3)}
+.app .dzfijo{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:18px 0 14px;padding:12px 16px;
+  background:var(--card);border-radius:14px;box-shadow:inset 0 0 0 2px var(--azul);font-size:15px;max-width:none!important;scroll-margin-top:72px}
+.app .dzfijo button{font:inherit;font-size:14px;color:var(--azul);background:none;border:0;cursor:pointer;padding:4px 0}
+#rtitulo{scroll-margin-top:72px}
 /* siempre claro, como las páginas de producto: <html data-theme="light"> apaga el oscuro automático (27/10) */
 body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf);letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
 .app,.app *,.tip,.tip *{font-family:var(--sf)!important;font-variation-settings:normal!important}
@@ -1746,6 +1756,7 @@ function abrirDetalle(id){
         <span class="lbl">01 · Tendencias · ${t.k} · ${t.fuente}</span>
         <h1>${t.n}</h1>
         <p class="sub">${t.med}.</p>
+        ${dzEnFicha(t)}
       </div>
     </div>
     <hr class="rule">
@@ -2125,18 +2136,95 @@ function dzValor(p){
   if(p==='estampa')return dzEst(v).n;if(p==='detalle')return TAX.detalles.find(x=>x.id===v).n;return null;
 }
 function dzIr(p){ // después de la primera elección, cada paso abre en los pasos, no arriba del título
-  dz.paso=p;pintarDisenar();const n=$('#dzpasos');
+  dz.paso=p;pintarDisenar();if(vista==='disenar')escribirLink(false);const n=$('#dzpasos');
   if(dz.prenda&&n)window.scrollTo({top:n.getBoundingClientRect().top+window.scrollY-12,behavior:'instant'});else window.scrollTo({top:0,behavior:'instant'});
 }
-function dzSiguiente(p){const P=dzPasos();return P[P.indexOf(p)+1]||'fin';}
+function dzSiguiente(p){const P=dzPasos();let i=P.indexOf(p)+1;
+  while(P[i]&&P[i]!=='fin'&&dz.fijo&&dz.fijo.k===P[i]&&dz[P[i]])i++; // el atributo fijo ya está elegido: no se pregunta
+  return P[i]||'fin';}
 function dzElegir(p,v){
   dz[p]=v;
   if(p==='prenda'){DZ_ELEC.slice(1).forEach(k=>dz[k]=null);}
   if(p==='tipo'){['corte','tiro','fit','cuello','manga','material','color','estampa','detalle'].forEach(k=>dz[k]=null);}
   if(p==='material'){if(dz.estampa&&!dzEstampas().includes(dz.estampa))dz.estampa=null;if(dz.color&&!dzColores().L.some(c=>c.id===dz.color))dz.color=null;}
   if(p==='corte'&&dz.color&&!dzColores().L.some(c=>c.id===dz.color))dz.color=null;
+  dzFijoAplicar();
   dzIr(dzSiguiente(p));
 }
+/* ---------- de Tendencias a Diseñar en un clic (27/10) ----------
+   Lo que se clickea en Tendencias o El ciclo se traduce a una hoja de la taxonomía y entra como un atributo fijo
+   (dz.fijo): arma el mismo estado que el recorrido a mano, pregunta sólo lo que falta y se saca con un clic. */
+const T_A_HOJA={rayas:['estampa','rayas'],floral:['estampa','floral'],lunares:['estampa','lunares'],liso:['estampa','liso'],
+  cuero:['material','cuero'],punto:['material','jersey'],gamuza:['material','gamuza'],
+  amplio:['corte','baggy'],recto:['corte','straight'],ajustado:['corte','skinny']}; // cada grupo de corte, por su corte más buscado
+const REC_JEANS={jamplio:'baggy',jmedio:'straight',jajust:'skinny'};
+const PALETA_MAT={cuero:'cuero',punto:'jersey',lana:'lana',gamuza:'gamuza'};
+const DZ_LISTA={corte:()=>TAX.cortes,tiro:()=>TAX.tiros,prenda:()=>TAX.prendas,material:()=>TAX.materiales.flatMap(g=>g.items),
+  estampa:()=>TAX.estampas.flatMap(f=>f.items),detalle:()=>TAX.detalles,color:()=>TAX.colores};
+function hojaDz(k,v,pr){
+  if(k==='tipo'){const P=TAX.prendas.find(x=>x.id===pr),x=P&&P.tipos.find(y=>y.id===v);return x?{k,v,pr,n:x.n}:null;}
+  const x=(DZ_LISTA[k]?DZ_LISTA[k]():[]).find(y=>y.id===v);return x?{k,v,n:x.n}:null;
+}
+function hojaDeRec(id){
+  if(REC_JEANS[id])return hojaDz('corte',REC_JEANS[id]);
+  const m=o=>['rec','serie','km','clip_jeans'].some(c=>o[c]===id);
+  for(const k of ['corte','tiro']){const x=DZ_LISTA[k]().find(m);if(x)return hojaDz(k,x.id);}
+  for(const P of TAX.prendas){const x=P.tipos.find(m);if(x)return hojaDz('tipo',x.id,P.id);if(m(P))return hojaDz('prenda',P.id);}
+  for(const k of ['material','estampa','detalle','color']){const x=DZ_LISTA[k]().find(m);if(x)return hojaDz(k,x.id);}
+  return id==='buzo'?hojaDz('prenda','buzos'):null; // «buzo / athleisure» no tiene hoja propia: es la prenda entera
+}
+const DZ_CON={corte:'con este corte',tiro:'con este tiro',tipo:'esta prenda',prenda:'esta prenda',material:'con este material',estampa:'con esta estampa',detalle:'con este detalle',color:'con este color'};
+const attrDz=h=>`data-dz='${JSON.stringify(h).replace(/'/g,'&#39;')}'`;
+const botonDz=h=>h?`<button type="button" class="kbtn dzcon" ${attrDz(h)}>Diseñar ${DZ_CON[h.k]} · ${h.n} →</button>`:'';
+function dzEnFicha(t){
+  const a=T_A_HOJA[t.id],h=a?hojaDz(a[0],a[1]):null;
+  const cols=[...new Set(t.sw||[])].map(c=>TAX.colores.some(x=>x.id===c)?hojaDz('color',c):PALETA_MAT[c]?hojaDz('material',PALETA_MAT[c]):null).filter(Boolean);
+  return `<div class="dzdesde">${h?botonDz(h):`<p class="dzaviso">${t.n} todavía no está en el vocabulario de Diseñar.</p>`}${cols.length?
+    `<div class="dzcols"><span>Sus colores, para diseñar:</span>${cols.map(x=>`<button type="button" class="chip" ${attrDz(x)}>${x.n}</button>`).join('')}</div>`:''}</div>`;
+}
+function dzCompat(pr,ti){ // ¿esta prenda (y tipo) admite el atributo fijo?
+  const f=dz.fijo;if(!f||!pr)return true;
+  if(f.k==='corte'||f.k==='tiro')return pr==='pantalones'&&(!ti||ti==='largo');
+  if(f.k==='tipo')return pr===f.pr&&(!ti||ti===f.v);
+  if(f.k==='prenda')return pr===f.v;
+  if(f.k==='color')return true;
+  if(f.k==='detalle')return (TAX.detalle_por_prenda[pr]||[]).includes(f.v);
+  const P=TAX.prendas.find(x=>x.id===pr),tipos=ti?[ti]:(P?P.tipos.map(x=>x.id):[]);
+  return tipos.some(x=>{
+    if(f.k==='material')return (TAX.material_por_prenda[pr+'/'+x]||TAX.material_por_prenda[pr]||[]).includes(f.v);
+    if(f.k==='estampa'){const e=TAX.estampa_por_prenda[pr];return !e||e.includes(f.v);}return true;});
+}
+const dzFijoMatOk=grupo=>{const f=dz.fijo;if(!f||f.k!=='estampa')return true;const e=TAX.estampa_por_material[grupo];return !e||e.includes(f.v);};
+function dzFijoAplicar(){
+  const f=dz.fijo;if(!f)return;
+  if(f.k==='corte'||f.k==='tiro'){if(dz.prenda==='pantalones'&&dz.tipo==='largo')dz[f.k]=f.v;}
+  else if(f.k==='tipo'){if(dz.prenda===f.pr&&!dz.tipo)dz.tipo=f.v;}
+  else if(f.k!=='prenda'&&dzCompat(dz.prenda,dz.tipo))dz[f.k]=f.v;
+}
+const dzPrimerPasoLibre=()=>dzPasos().find(p=>p!=='fin'&&!dz[p])||'fin';
+function disenarCon(h){
+  if(!h)return;DZ_ELEC.forEach(k=>dz[k]=null);
+  if(h.k==='corte'||h.k==='tiro'){dz.prenda='pantalones';dz.tipo='largo';dz[h.k]=h.v;}
+  else if(h.k==='tipo'){dz.prenda=h.pr;dz.tipo=h.v;}
+  else if(h.k==='prenda')dz.prenda=h.v;
+  else dz[h.k]=h.v;
+  dz.fijo=h;dz.paso=dzPrimerPasoLibre();mostrar('disenar');
+  $('#dzfijo')?.scrollIntoView({block:'start'}); // directo a lo que falta, sin el título de la vista
+}
+function dzPintarFijo(){
+  let e=$('#dzfijo');if(!e){e=document.createElement('p');e.id='dzfijo';e.className='dzfijo';$('#dzpasos').before(e);}
+  const f=dz.fijo;e.hidden=!f;if(!f){e.innerHTML='';return;}
+  e.innerHTML=`<span>Diseñando con <b>${f.n}</b> (${(DZ_NOMBRE[f.k]||'Prenda').toLowerCase()}), desde Tendencias. Sólo te preguntamos lo que falta.</span><button type="button" id="dzquitar">Quitar ${f.n} ×</button>`;
+  $('#dzquitar').onclick=()=>{dz.fijo=null;pintarDisenar();escribirLink(false);};
+}
+function dzDesdeLink(qs){
+  if(!qs.has('dz')&&!qs.has('fijo'))return;
+  DZ_ELEC.forEach(k=>dz[k]=null);
+  (qs.get('dz')||'').split(',').filter(Boolean).forEach(x=>{const [k,v]=x.split(':');if(DZ_ELEC.includes(k))dz[k]=v;});
+  const f=(qs.get('fijo')||'').split(':');dz.fijo=f[0]?hojaDz(f[0],f[1],f[2]||undefined):null;
+  dz.paso=qs.get('paso')||dzPrimerPasoLibre();
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-dz]');if(b)disenarCon(JSON.parse(b.dataset.dz));});
 /* ---- una tarjeta: dibujo, nombre, definición y la señal; todo el color sale de la señal ---- */
 function dzTarjeta({id,n,en,d,vis,s,dato,attr,on,nota,extra}){
   return `<button class="dzc ${s.cls}${on?' on':''}" type="button" ${attr}="${id}" aria-pressed="${!!on}"><span class="dzimg">${vis}${nota?`<span class="dzsilnota">${nota}</span>`:''}</span>
@@ -2220,13 +2308,13 @@ function pintarDisenar(){
   const C=$('#dzcuerpo'),pr=dzPrenda(),t=dzTipo(),cl=dzClip(),P=dzPasos(),hex=(dzColores().L.find(x=>x.id===dz.color)||{}).hex;
   if(!pr&&dz.paso!=='prenda')dz.paso='prenda';else if(pr&&!t&&!['prenda','tipo'].includes(dz.paso))dz.paso='tipo';
   $('#dzpasos').innerHTML=P.map((p,i)=>`<button type="button" class="dzp${dz.paso===p?' on':''}" data-p="${p}" ${(p!=='prenda'&&!pr)||(p!=='prenda'&&p!=='tipo'&&!t)?'disabled':''}><span class="dzpn">${String(i+1).padStart(2,'0')}</span><span class="dzpt">${DZ_NOMBRE[p]}</span></button>`).join('<span class="dzsep" aria-hidden="true">›</span>');
-  $$('#dzpasos .dzp').forEach(b=>b.onclick=()=>dzIr(b.dataset.p));
+  $$('#dzpasos .dzp').forEach(b=>b.onclick=()=>dzIr(b.dataset.p));dzPintarFijo();
   const pa=$('#dzpasos .dzp.on'),pz=$('#dzpasos');if(pa&&pz.scrollWidth>pz.clientWidth)pz.scrollLeft=pa.offsetLeft-pz.clientWidth/2+pa.offsetWidth/2;
   const saltear=p=>`<div class="dzacc"><button type="button" class="gvolver" id="dzsaltar">Seguir sin elegir ${DZ_NOMBRE[p].toLowerCase()} →</button></div>`;
   const conSaltear=p=>{const x=$('#dzsaltar');if(x)x.onclick=()=>{dz[p]=null;dzIr(dzSiguiente(p));};};
   const enlazar=(attr,p)=>$$(`#dzcuerpo [${attr}]`).forEach(b=>b.onclick=()=>dzElegir(p,b.getAttribute(attr)));
   if(dz.paso==='prenda'){
-    const L=TAX.prendas.filter(dzVisible).map(p=>{const tv=p.tipos.filter(dzVisible),con=tv.filter(x=>dzSeñal(x).estado!=='sin-dato').length;
+    const L=TAX.prendas.filter(dzVisible).filter(p=>dzCompat(p.id,null)).map(p=>{const tv=p.tipos.filter(dzVisible),con=tv.filter(x=>dzSeñal(x).estado!=='sin-dato').length;
       return {id:p.id,n:p.n,d:p.d,vis:dzSil(p.sil,p.n),s:señalDe('sin-dato','',''),attr:'data-pr',on:dz.prenda===p.id,dato:''};});
     C.innerHTML=`<div class="dzhead"><h2 class="dzh">¿Qué prenda?</h2></div><p class="dzsub">El jean no es una prenda: es un pantalón de denim, y lo elegís en material.</p>
       <div class="dzgrid">${L.map(x=>`<button class="dzc dzc-prenda${x.on?' on':''}" type="button" data-pr="${x.id}"><span class="dzimg">${x.vis}</span><span class="dzb"><span class="dzn">${x.n}</span><span class="dzdef">${x.d}</span>
@@ -2234,7 +2322,7 @@ function pintarDisenar(){
     enlazar('data-pr','prenda');
   }else if(dz.paso==='tipo'){
     const T0=x=>{const s=dzSeñal(x);return {id:x.id,n:x.n,en:x.en,d:x.d,vis:dzSil(x.sil,x.n),s,dato:s.num?`${s.num} afuera`:'',attr:'data-ti',on:dz.tipo===x.id,extra:pr.id==='calzado'?dzPasCalzado(x.id):pr.id==='accesorios'?dzBusqCalzado(x.id):''};};
-    const L=pr.tipos.filter(x=>dzVisible(x)&&!x.secundario).map(T0).sort(dzOrden),L2=pr.tipos.filter(x=>dzVisible(x)&&x.secundario).map(T0);
+    const L=pr.tipos.filter(x=>dzVisible(x)&&!x.secundario&&dzCompat(pr.id,x.id)).map(T0).sort(dzOrden),L2=pr.tipos.filter(x=>dzVisible(x)&&x.secundario&&dzCompat(pr.id,x.id)).map(T0);
     const SING={pantalones:'pantalón',faldas:'falda',vestidos:'vestido',remeras:'remera o top',camisas:'camisa',buzos:'buzo',sweaters:'sweater',abrigos:'campera o abrigo',enteritos:'enterito',calzado:'calzado',accesorios:'accesorio'};
     C.innerHTML=dzPanel(`¿Qué tipo de ${SING[pr.id]||pr.n.toLowerCase()}?`,'',L,'')+(L2.length?`<h3 class="dzh3">También</h3><div class="dzgrid">${L2.map(dzTarjeta).join('')}</div>`:'')+(pr.id==='calzado'?'<section class="czint"><h3 class="dzh3">Lo intentamos dos veces</h3><p class="czlead">El calzado es donde más probamos y menos medimos. Dos de ocho estilos tienen señal; uno más se lee en la pasarela, como interpretación. Los otros cinco no los mide ninguna de las dos fuentes, y por eso no se recomiendan: se pueden diseñar, pero CICLO no dice si conviene.</p><div class="czt"><div class="czf czh"><b>Estilo</b><span>Búsqueda · Google Trends, 21/10</span><span>Pasarela · CLIP, 25/10</span><span>Qué queda</span></div><div class="czf"><b>Zapatillas</b><span><i>Búsqueda</i>entra · «sneakers», 21 años</span><span><i>Pasarela</i>8 de 8 · lee looks deportivos</span><span><i>Queda</i>Señal por búsqueda, y la pasarela como interpretación</span></div><div class="czf"><b>Mocasines</b><span><i>Búsqueda</i>entra · «loafers», 20 años</span><span><i>Pasarela</i>5 de 8 · lee sastrería de hombre</span><span><i>Queda</i>Señal por búsqueda</span></div><div class="czf"><b>Botas texanas</b><span><i>Búsqueda</i>ruido · «cowboy boots»</span><span><i>Pasarela</i>7 de 8 · lee el look western</span><span><i>Queda</i>Sólo pasarela, interpretada: sin señal</span></div><div class="czf"><b>Botinetas</b><span><i>Búsqueda</i>ruido · «ankle boots»</span><span><i>Pasarela</i>5 de 8, confianza muy baja</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Sandalias</b><span><i>Búsqueda</i>estación · «sandals», 20,1 dentro del año contra 11,6 entre años</span><span><i>Pasarela</i>4 de 8 · lee ropa de verano</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Chatitas</b><span><i>Búsqueda</i>sin señal · «ballet flats»</span><span><i>Pasarela</i>0 de 8 · lee tutús y bailarinas</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Plataformas</b><span><i>Búsqueda</i>sin señal · «platform shoes»</span><span><i>Pasarela</i>0 de 8 · el cajón de lo que no encaja</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Guillerminas</b><span><i>Búsqueda</i>sin señal · «mary janes»</span><span><i>Pasarela</i>0 de 8 · ruido</span><span><i>Queda</i>Sin medición</span></div></div><p class="note dznota"><b>Búsqueda.</b> 14 términos de calzado y accesorios contra «trench coat», el mismo filtro que las otras 65 series: entra con 12 años útiles o más; es ruido si el máximo no pasa de 6 o tiene menos de 24 meses con señal; se descarta si se mueve más dentro de cada año que entre años (mide el verano, no la moda). <b>Pasarela.</b> 10 estilos, dos frases y tres plantillas cada uno, contra los 14.000 looks ya embebidos; cada look va al estilo más parecido y miramos a mano los 8 más seguros de cada uno. CLIP mira el look entero y adivina el zapato por la ropa. Medir los otros cinco exige recortar los pies de cada foto, y eso obliga a bajar las imágenes. Detalle en decisiones.md (21/10, 25/10 y 26/10).</p></section>':'<p class="note dznota">La señal sale de la etapa del K-means y tu perfil, o de la búsqueda mundial 2022→2024 frente a las otras búsquedas de moda.</p>');
     enlazar('data-ti','tipo');
@@ -2256,7 +2344,7 @@ function pintarDisenar(){
     const ok=dzMateriales(),todos=TAX.materiales.flatMap(g=>g.items).length;
     C.innerHTML=`<div class="dzhead"><h2 class="dzh">¿De qué material?</h2></div>
       <p class="dzsub">Sólo los que se usan en ${dzNombreTipo().toLowerCase()}. Cuando el material es denim, la prenda se llama jean.</p>`+
-      TAX.materiales.map(g=>{const its=g.items.filter(i=>ok.includes(i.id));if(!its.length)return '';
+      TAX.materiales.map(g=>{const its=g.items.filter(i=>ok.includes(i.id)&&dzFijoMatOk(g.grupo));if(!its.length)return '';
         return `<h3 class="dzh3">${g.grupo}</h3><div class="dzgrid">${its.map(i=>{const s=dzSeñal(i);return dzTarjeta({id:i.id,n:i.n,en:i.en,d:i.d,vis:dzTela(i.tex,i.color||'#D9CFC4'),s,dato:s.num?`${s.num} afuera`:'',attr:'data-ma',on:dz.material===i.id});}).join('')}</div>`;}).join('')+
       `<p class="note dznota">Las texturas están dibujadas, no fotografiadas: las fotos de tela que tenemos no tienen licencia. Con serie medida sólo hay cuero y gamuza; el resto se elige por diseño.</p>`+saltear('material');
     enlazar('data-ma','material');conSaltear('material');
@@ -2513,7 +2601,7 @@ function pintarTerreno(){
     <p class="tsub">Búsqueda mundial de 2022 a 2024, comparada con las otras búsquedas de moda. Tocá uno para ver su recorrido.</p>
     <div class="tcols"><div><div class="tt">Gana terreno</div>${L.filter(x=>x.d>2).slice(0,5).map(fila).join('')}</div>
     <div><div class="tt">Pierde terreno</div>${L.filter(x=>x.d<-2).reverse().slice(0,5).map(fila).join('')}</div></div>`;
-  $$('#terreno .tfila').forEach(b=>b.addEventListener('click',()=>{recSel=b.dataset.r;pintarRecorridos();mostrar('recorridos');}));
+  $$('#terreno .tfila').forEach(b=>b.addEventListener('click',()=>{recSel=b.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();}));
 }
 /* la decisión, arriba de todo: qué hacer con este atributo según quién sos */
 function etapaDe(n){const km=KM.rows.find(r=>r.n.split(' /')[0]===n.split(' /')[0]);return km?kEtapaN(km.n):null;}
@@ -2958,6 +3046,8 @@ function pintarRecorridos(){
   pintarCiclos();$('#rtitulo').textContent='El recorrido de '+o.n.split(' /')[0].toLowerCase();
   const rd=$('#rdesde');rd.textContent=recDesde2004?'ver desde que hay dos capas':'ver desde 2004';rd.onclick=()=>{recDesde2004=!recDesde2004;pintarRecorridos();};
   $('#lag').innerHTML='';$('#lag').appendChild(lagChart());
+  let rz=$('#rdz');if(!rz){rz=document.createElement('div');rz.id='rdz';rz.className='dzdesde';$('#rtitulo').after(rz);}
+  rz.innerHTML=botonDz(hojaDeRec(recSel));
   if(vista==='recorridos')escribirLink(false);
 }
 function lagChart(){
@@ -3257,7 +3347,10 @@ const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas
 let vista='perfil',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
-  return '#'+vista+(el?'/'+el:'')+`?c=${cliente}&v=${vinculo}&pu=${publico}`;
+  let q=`?c=${cliente}&v=${vinculo}&pu=${publico}`;
+  if(vista==='disenar'){const s=DZ_ELEC.filter(k=>dz[k]).map(k=>k+':'+dz[k]).join(',');
+    if(s)q+=`&dz=${s}&paso=${dz.paso}`;if(dz.fijo)q+=`&fijo=${dz.fijo.k}:${dz.fijo.v}:${dz.fijo.pr||''}`;}
+  return '#'+vista+(el?'/'+el:'')+q;
 }
 function escribirLink(nueva){
   if(leyendoLink)return;const h=linkActual();if(location.hash===h)return;
@@ -3276,6 +3369,7 @@ function leerLink(){
     vinculo=qs.get('v')==='propia'?'propia':'marca';publico=['mujer','hombre'].includes(qs.get('pu'))?qs.get('pu'):'todos';
     Object.assign(gateSel,{publico,vinculo,cliente:PLAZO[qs.get('c')]?qs.get('c'):'premium'});
     ponerCliente(gateSel.cliente);guardarPerfil();
+    if(destino==='disenar')dzDesdeLink(qs);
     if(destino==='detalle'){if(detSel)abrirDetalle(detSel);else mostrar('radar');}else mostrar(destino);
   }finally{leyendoLink=false;}
   return true;

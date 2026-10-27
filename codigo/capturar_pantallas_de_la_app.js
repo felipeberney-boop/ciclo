@@ -53,11 +53,11 @@ const PERFIL = '?c=fast&v=marca&pu=mujer';
   p = await abrir({ vista: 'etapas' }); await hasta(p, '.km'); await foto(p, 'captura_11_el_modelo');
   await foto(await abrir({ vista: 'retornos' }), 'captura_12_retornos');
   p = await abrir({ vista: 'racional' }); await hasta(p, '#v-racional table'); await foto(p, 'captura_13_metodo');
-  // celular y oscuro
+  // celular, y el panel «Más» con sus tarjetas
   p = await abrir({ ancho: 393, alto: 852, vista: 'disenar' });
   await p.evaluate(() => { dz.prenda = 'calzado'; dzIr('tipo'); }); await p.waitForTimeout(400); await foto(p, 'captura_14_celular_disenar');
   await foto(await abrir({ ancho: 393, alto: 852, vista: 'recorridos' }), 'captura_15_celular_el_ciclo');
-  p = await abrir({ tema: 'dark', vista: 'radar' }); await hasta(p, '#terreno'); await foto(p, 'captura_16_oscuro_tendencias');
+  p = await abrir({ vista: 'radar' }); await p.click('#navmas'); await p.waitForTimeout(400); await foto(p, 'captura_16_menu_mas');
 
   await b.close();
   console.log('capturas listas en ' + OUT);

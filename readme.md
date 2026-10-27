@@ -47,7 +47,7 @@ punteada no es un pronóstico):
 
 ![El recorrido hasta 2030](entregas/entrega_3/capturas/captura_07_recorrido_hasta_2030.png)
 
-Las 16 capturas actuales —incluidas teléfono y modo oscuro— están en `entregas/entrega_3/capturas/` y se regeneran con
+Las 16 capturas actuales —incluido el teléfono y el panel «Más»— están en `entregas/entrega_3/capturas/` y se regeneran con
 `node codigo/capturar_pantallas_de_la_app.js`; las de la Entrega 2, en `entregas/entrega_2/capturas/`.
 
 ## Hipótesis
@@ -73,7 +73,7 @@ Publicada en GitHub Pages desde la carpeta `app/`, sin comando de build. Nada co
 modelos de lenguaje (IA-5 e IA-8) llaman a Groq desde el navegador con la clave que pega cada uno. Netlify
 (`netlify.toml`, `netlify/functions/`) quedó pausado desde el 25/10/2026 y la app no lo usa.
 
-Lo único que carga de afuera son las tipografías (Google Fonts: Archivo, Bodoni Moda, IBM Plex Mono).
+Lo único que carga de afuera son las tipografías: la del sistema, y de Google Fonts, Inter como reemplazo de SF Pro.
 Sin conexión funciona igual, con las tipografías del sistema.
 
 ## Las pantallas
@@ -165,12 +165,16 @@ Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022
   perceptual más preciso (Munzner).
 - **El color dice una sola cosa: si conviene avanzar o frenar.** Verde, ámbar y rojo son la señal —Entrar,
   Esperar (o Explorar, si trabajás por tu cuenta), Salir—, siempre con la palabra y un ícono; lo que no tiene dato
-  es neutro. Que algo gane o pierda terreno es un dato, no una decisión: va en negro, con ▲ o ▼. De dónde sale el
-  dato se dice sin color: ● medido, ◇ interpretado (punteado), ↪ prestado. Los gráficos usan color sólo para separar
-  sus series. El resto es negro, crema y blanco, también en modo oscuro.
-- **Se lee como una revista.** Bodoni Moda enorme para los títulos contra IBM Plex Mono chiquita y en
-  mayúsculas para las etiquetas; grilla asimétrica, texto en columnas de 60–70 caracteres, reglas de 1 px y
-  nada de esquinas redondeadas, sombras ni botones con relleno.
+  es neutro. «▲ Gana presencia» y «▼ Pierde presencia» llevan el mismo verde y rojo, sólo en la palabra y la flecha.
+  De dónde sale el dato se dice sin color: ● medido, ◇ interpretado (punteado), ↪ prestado. Los gráficos usan color
+  sólo para separar sus series. Hay un único color más: **el azul, que significa «se puede tocar»** (botones de
+  acción, links, la opción elegida).
+- **Como una página de producto, pero de ropa.** Desde el 27/10 la app sigue el sistema visual de las páginas de
+  producto de Apple (sin su marca): la tipografía del sistema (SF Pro en Mac e iPhone, Inter en el resto), títulos
+  centrados en semibold, un lienzo gris perla con tarjetas blancas de 18 px, píldoras, ningún texto en mayúsculas
+  espaciadas, sin sombras en la interfaz y un bloque oscuro para lo que gana y pierde terreno. La interfaz se corre
+  para que hablen las prendas: sus dibujos y sus paletas. Siempre en claro. Antes fue una revista (Bodoni y crema,
+  20/10); las versiones viejas están en `diseno/prototipos/versiones_de_la_app/`.
 - **La entrada es por prenda y por corte.** Dentro de un mismo atributo hay ciclos opuestos: si se mira
   «denim» agregado, los amplios y los ajustados se cancelan y no se ve nada.
 - **Ningún número aparece sin su fuente.** Cada ficha declara qué capa puede y qué capa no puede responder.

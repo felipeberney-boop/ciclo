@@ -53,10 +53,14 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
 - **Color means one thing: the signal** (`señal()`: entrar green, esperar amber, salir red, sin-dato neutral), always with
   its word and icon. Provenance is never a color: `● medido`, `◇ interpretado` (dashed), `↪ prestado` as text/icon/dashed
   line. The old salmon-for-AI rule is retired (tokens `--ia`/`--ia-t` are neutral now).
-- **Stage is encoded as position on a track, not color.** The UI is monochrome (black, cream #F6F0EB, white)
-  so the only color is the garments' own palette. The one exception: the recommendation word (Entrar green,
-  Esperar/Explorar amber, Salir red, via `accCls()` and the `--act-*` tokens), always with the word itself.
-  Nothing else gets those colors. Charts keep their series colors (`--s1`…`--s6`); everything else is monochrome. The editorial style block near the end of the CSS overrides the older rules, and the «capa de uso» block (27/10) comes last: sticky one-line header, sans for anything you click, «Más» as a card panel, «Menú» sheet on mobile, rounded cards (it uses `:not(#z)` to beat the old no-radius rule).
+- **Stage is encoded as position on a track, not color.** Since 27/10 the look is an Apple-style product page
+  (the system, never the brand): system font stack `--sf` (SF Pro on Apple devices, Inter from Google Fonts elsewhere),
+  #f5f5f7 canvas, white 18px cards, pills, no uppercase-tracked labels, no UI shadows, one dark tile (`.terreno`),
+  always light (`<html data-theme="light">` disables the old dark mode). Colors: the garments' palettes, the signal
+  (Entrar green, Esperar/Explorar amber, Salir red via `accCls()`/`--act-*`, always with the word), and **one blue
+  (`--azul`, #0066cc) that only means «clickable»** (action buttons, links, the chosen option). Charts keep `--s1`…`--s6`.
+  CSS layers, later wins: original → editorial (20/10) → «capa de uso» (27/10) → «capa Apple» (27/10, last). The old
+  no-radius rule is beaten with `:not(#z)`. The presentation (`app/presentacion/`) uses the same look.
 - **Startup:** every `.view` starts `hidden`; only the boot code (wrapped in try/catch, plus a fallback
   `<script>`) decides what shows. A saved profile goes to Diseñar with the `#perfilinea` line, never silently.
 - **No number without its source.** Each card states which data layer can and cannot answer.

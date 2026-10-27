@@ -1229,3 +1229,26 @@ retorno», y no predice. El formulario del jurado, su preregistro y su script se
 
 La prueba con Reddit se suma el mismo día al making of (lámina «Lo que sube, sube afuera», al cierre del arco ¿Se puede
 predecir?) y a Método (fila «¿La etapa coincide con afuera?», con lo que se sostiene y lo que no).
+
+## 2026-10-27 · Como si Apple vendiera ropa
+
+**Por qué.** El profesor seguía viendo la interfaz «muy IA». Tres variantes (revista, revista suave y estudio) no
+convencieron. Felipe eligió el sistema visual de las páginas de producto de Apple: «como si Apple vendiese ropa y un
+software de hacer ropa encontrando tendencias, que es lo que es CICLO». Encaja con la tesis de siempre: la interfaz se
+corre para que hablen las prendas.
+
+**Qué cambió.** Una capa nueva al final del CSS («capa Apple»): tipografía del sistema (SF Pro en Mac e iPhone, Inter
+en el resto), lienzo gris perla #f5f5f7, tarjetas blancas de 18 px sin sombra, títulos centrados en semibold con
+bajada como tagline, ningún rótulo en mayúsculas espaciadas, píldoras, encabezado fino y translúcido, Diseñar como un
+configurador (lo elegido, con borde azul) y un bloque oscuro para «qué gana y qué pierde terreno». Las fichas de
+Tendencias pasan a ser tarjetas separadas. Siempre en claro: `data-theme="light"` apaga el oscuro automático. La
+presentación toma el mismo estilo y suma una lámina con este pivot.
+
+**La regla de color, ampliada.** Hasta hoy el único color de interfaz era la señal. Ahora hay uno más, el azul
+(#0066cc), y significa una sola cosa: «se puede tocar». Verde, ámbar y rojo siguen siendo sólo la señal, con su palabra.
+
+**Lo que no se tomó.** Ni el logo ni el nombre de Apple: es su sistema, no su marca. Ni su fotografía de producto: las
+fotos de pasarela no tienen licencia, así que las prendas siguen dibujadas.
+
+Versiones anteriores: `diseno/prototipos/versiones_de_la_app/app_2026-10-27_c639966_antes_de_apple.html` y
+`diseno/prototipos/versiones_de_la_presentacion/`. Capturas regeneradas; la del modo oscuro se reemplaza por el panel «Más».

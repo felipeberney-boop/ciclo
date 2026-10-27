@@ -163,11 +163,18 @@ stytrix.com, sin su naranja (el color sigue siendo sólo la señal). Capturas re
 `diseno/prototipos/versiones_de_la_app/app_2026-10-27_7e5ebfd.html`. El mismo día, «▲ Gana presencia» pasa a verde
 y «▼ Pierde presencia» a rojo (sólo la palabra y la flecha).
 
+## v1.11 · 27/10/2026 · Como si Apple vendiera ropa
+
+El profesor seguía viendo la interfaz «muy IA». La app y la presentación pasan al sistema visual de las páginas de
+producto de Apple, sin su marca: tipografía del sistema, gris perla y tarjetas blancas, títulos centrados, un solo azul
+para lo que se toca, siempre en claro. Diseñar funciona como un configurador. La versión anterior quedó en
+`diseno/prototipos/versiones_de_la_app/app_2026-10-27_c639966_antes_de_apple.html`.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).
 
-**Making of (27/10).** 26 láminas alrededor de tres preguntas (¿se puede predecir?, ¿qué se puede medir?, ¿cómo lo usa
+**Making of (27/10).** 27 láminas alrededor de tres preguntas (¿se puede predecir?, ¿qué se puede medir?, ¿cómo lo usa
 un diseñador?), con las citas textuales del ida y vuelta, cómo pedir, el pipeline, el rol de la IA, los commits por
 día, la prueba con Reddit, la demo y el cierre. Notas del orador con la tecla N; cada lámina tiene su link (`#trench`, `#semaforo`…). La
 versión anterior quedó en `diseno/prototipos/versiones_de_la_presentacion/`.

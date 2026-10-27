@@ -1,6 +1,6 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="es" data-theme="light"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>CICLO</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5,500;62.5,600;62.5,700;100,400;100,500;100,600&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5,500;62.5,600;62.5,700;100,400;100,500;100,600&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;600;700&display=swap">
 <style>
 :root{
   color-scheme:light;
@@ -834,6 +834,90 @@ body.con-barra #arriba{bottom:96px}
   #arriba{right:16px;bottom:16px}
 }
 @media (prefers-reduced-motion:reduce){.app :is(.gcard,.dzc,.ciclo):hover{transform:none}#arriba{transition:none}}
+/* ---------- capa Apple (27/10/2026) ----------
+   Como si una marca de producto mostrara ropa: la interfaz se corre y la prenda habla. Tipografía del sistema (SF Pro en
+   Apple, Inter en el resto), lienzo gris perla con tarjetas blancas de 18 px, píldoras, sin sombras en la interfaz y un
+   solo azul para lo que se toca. El verde, el ámbar y el rojo siguen siendo sólo la señal (Entrar, Esperar, Salir).
+   Referencia de sistema, no de marca: nada de logo ni nombre ajeno. Pisa al bloque editorial y a la capa de uso. */
+:root{--sf:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter",system-ui,sans-serif;
+  --paper:#f5f5f7;--paper-2:#ffffff;--card:#ffffff;--ink:#1d1d1f;--ink-2:#424245;--ink-3:#7a7a7a;
+  --rule:#e0e0e0;--rule-2:#f0f0f0;--azul:#0066cc;--azul-foco:#0071e3;--accent:var(--azul);--mono:var(--sf);
+  --r-card:18px;--r-row:12px;--sombra:none}
+/* siempre claro, como las páginas de producto: <html data-theme="light"> apaga el oscuro automático (27/10) */
+body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf);letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
+.app,.app *,.tip,.tip *{font-family:var(--sf)!important;font-variation-settings:normal!important}
+.app{max-width:none!important}
+.app :focus-visible{outline:2px solid var(--azul-foco)!important;outline-offset:2px}
+/* etiquetas: sin mayúsculas espaciadas; un rótulo gris chico, como un pie de foto */
+.app :is(.lbl,.tag,.stamp,th,.gprog,.dzpt,.colofon b,.dfacts dt,.gcard dt,.rec .t,.dzrk,.dzpn,.aviso,.mast .side,.dzp,.chip,.kbtn,.seg button,.copiar,.gvolver,.sen,.navgrupo a i,.cuenta){
+  text-transform:none!important;letter-spacing:-.01em!important;font-weight:400!important}
+.app :is(.lbl,.gprog,.dfacts dt,.gcard dt,.dzrk,.dzpn,.dzpt,th){font-size:13px!important;color:var(--ink-3)!important}
+.app .tag:not(#z){font-size:12px!important;border-radius:999px!important;padding:3px 9px!important}
+.app .sen{font-size:14px!important;font-weight:600!important}
+/* encabezado: barra fina translúcida, links chicos, CICLO en semibold */
+.app .mast{padding:0 var(--gut)!important;height:52px;gap:28px!important;border-bottom:1px solid var(--rule-2)!important;
+  background:color-mix(in srgb,var(--paper) 80%,transparent)!important}
+.app .mk{font-size:19px!important;font-weight:600!important;letter-spacing:.14em!important}
+.app .mast nav a,.app .navmas{font-size:13px!important;font-weight:400!important;color:var(--ink)!important;opacity:.8;padding:6px 10px!important;background:none!important}
+.app .mast nav a:hover,.app .navmas:hover,.app .mast nav>a[aria-current="page"],.app .navmas.on{opacity:1;background:none!important}
+.app .mast nav>a[aria-current="page"]{font-weight:600!important}
+.app .navperfil{background:var(--azul)!important;color:#fff!important;font-size:13px!important;padding:7px 15px!important}
+/* títulos: centrados, apretados, semibold; la bajada como tagline */
+.app h1{font-weight:600!important;letter-spacing:-.025em!important;line-height:1.07!important;font-size:clamp(40px,5.2vw,64px)!important}
+.app :is(h2,h3,.kbig,.h3,.dzh,.kh,.pname,.dzresn,.serif){font-weight:600!important;letter-spacing:-.02em!important}
+.app :is(.kbig,.h3){font-size:clamp(28px,3vw,40px)!important;border-top:0!important;padding-top:0!important}
+.app .vhead>div{display:block!important;text-align:center;max-width:860px;margin:0 auto}
+.app .vhead>div>.lbl{display:block;padding:0 0 12px!important;color:var(--ink-2)!important;font-size:17px!important;font-weight:600!important}
+.app .vhead .sub{margin:18px auto 0!important;max-width:40ch;font-size:21px!important;line-height:1.38!important;color:var(--ink-2)!important}
+.app .view{padding:72px var(--gut) 120px!important}
+.app .rule{border:0!important;margin:40px 0 0!important}
+/* tarjetas: blancas, 18 px, sin sombra; al pasar, nada se levanta; elegido = borde azul */
+.app :is(.gcard,.dzc,.ciclo,.terreno,.drop,.asfoto,.steps,.lys,.note):not(#z){border-radius:var(--r-card)!important;box-shadow:none!important}
+.app :is(.gcard,.dzc,.ciclo){background:var(--card)!important;border:1px solid transparent!important;transition:border-color .15s!important}
+.app :is(.gcard,.dzc,.ciclo):hover{transform:none!important;box-shadow:none!important;border-color:var(--rule)!important}
+.app :is(.gcard,.ciclo,.dzc)[aria-pressed="true"],.app :is(.gcard,.ciclo,.dzc).on,.app .dzc.sel{border:2px solid var(--azul)!important}
+.app .dzc{border-top:4px solid var(--sen,transparent)!important}
+.app .note{border:0!important;background:var(--card);padding:18px 20px!important}
+/* píldoras: el filtro elegido en negro, los botones de acción en azul */
+.app .chip{background:var(--card)!important;border:1px solid var(--rule)!important;color:var(--ink)!important;font-size:14px!important}
+.app .chip[aria-pressed="true"],.app .chip.on{background:var(--ink)!important;color:var(--paper)!important;border-color:var(--ink)!important}
+.app :is(.kbtn,#gcont,.dzarmar){background:var(--azul)!important;color:#fff!important;border:0!important;font-size:15px!important;padding:10px 20px!important}
+.app .dzchip{background:var(--card)!important;color:var(--ink)!important;border:1px solid var(--rule)!important;border-radius:999px!important}
+.app .dzchip.on{border:2px solid var(--azul)!important}
+.app .dzbarra{background:color-mix(in srgb,var(--paper) 85%,transparent)!important;border-top:1px solid var(--rule-2)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+/* nada en mayúsculas espaciadas: el rótulo chico es gris, no gritado */
+.app *{text-transform:none!important}
+.app :is(span,small,dt,dd,b,i,em,p,td,th,label,button,a,li,div):not(.mk){letter-spacing:-.01em!important}
+.app a:not(.mast a):not(.navgrupo a){color:var(--azul)}
+/* un bloque oscuro, como los de Apple: lo que gana y pierde terreno */
+.app .terreno{--ink:#f5f5f7;--ink-2:#cccccc;--ink-3:#a1a1a6;--rule:#3a3a3c;--rule-2:#333336;--card:#272729;--sen:#f5f5f7;
+  background:#272729!important;color:#f5f5f7;border:0!important;padding:28px 28px 24px!important}
+.app .terreno .tfila{background:#2f2f31!important;border-color:transparent!important;color:#f5f5f7}
+.app .terreno .tb{background:#3a3a3c!important}
+/* la entrada: una pregunta por pantalla, centrada, opciones como configurador */
+.app .gate{text-align:center;max-width:920px}
+.app .gate .sub{margin-left:auto!important;margin-right:auto!important;font-size:21px!important;color:var(--ink-2)!important}
+.app .ggrid{text-align:left}
+.app .gfirma{text-align:left;margin-top:56px}
+.app .gnav{justify-content:center}
+/* pie, panel «Más» y menú */
+.app .colofon{background:var(--paper);border-top:1px solid var(--rule)!important;font-size:12px!important;color:var(--ink-3)}
+.app .mast .navgrupo:not([hidden]){box-shadow:0 20px 40px -24px rgba(0,0,0,.25)!important;border:1px solid var(--rule-2)!important}
+.app .mast .navgrupo a{background:var(--paper)!important}
+/* Tendencias: cada atributo, una tarjeta blanca separada, la prenda arriba */
+.app .grid{gap:16px!important;border:0!important;background:none!important}
+.app .plate:not(#z){background:var(--card)!important;border:0!important;border-radius:var(--r-card)!important;overflow:hidden}
+.app .plate:hover{background:var(--card)!important;box-shadow:inset 0 0 0 1px var(--rule)}
+/* la ficha de una tendencia: el título y la bajada centrados, como una página de producto */
+.app #v-detalle .back{display:block;margin:0 auto 18px;color:var(--azul)!important;font-size:15px!important}
+.app .mast .navgrupo a em{color:var(--azul)}
+.app .navgrupo a i{background:var(--card)!important}
+#progreso{background:var(--azul)!important;height:2px}
+#arriba{box-shadow:none!important;background:rgba(210,210,215,.64)!important;border:0!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.acc details{border:0!important;background:var(--card)!important}.acc details[open]{box-shadow:inset 0 0 0 2px var(--azul)}
+.acc summary{font-size:17px!important}
+@media (max-width:760px){.app .mast{height:48px}.app h1{font-size:clamp(34px,10vw,44px)!important}.app .vhead .sub{font-size:18px!important}
+  .app .view{padding:40px 16px 88px!important}.navmenu{font:400 14px var(--sf)!important;border-color:var(--rule)!important}}
 </style>
 
 <div class="app">

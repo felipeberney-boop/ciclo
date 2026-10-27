@@ -1,8 +1,7 @@
 # Entrega 3 · en curso
 
-Estado de la app al 26/10/2026. Capturas tomadas con Playwright sobre la app servida localmente, con el perfil
-mujer · para una marca · fast fashion: 1400 × 900 en modo claro, salvo las del teléfono (393 × 852) y la de modo
-oscuro. Se regeneran con `node codigo/capturar_pantallas_de_la_app.js`. Ninguna muestra una respuesta del modelo de
+Estado de la app al 27/10/2026, con el estilo de página de producto. Capturas tomadas con Playwright sobre la app
+servida localmente, con el perfil mujer · para una marca · fast fashion: 1400 × 900, salvo las del teléfono (393 × 852). Se regeneran con `node codigo/capturar_pantallas_de_la_app.js`. Ninguna muestra una respuesta del modelo de
 lenguaje: Preguntar se captura sin pregunta, porque una respuesta simulada sería presentar como real algo que no lo es.
 
 | Captura | Qué muestra |
@@ -22,6 +21,6 @@ lenguaje: Preguntar se captura sin pregunta, porque una respuesta simulada serí
 | `captura_13_metodo.png` | Método: qué está medido y qué interpretado, fila por fila |
 | `captura_14_celular_disenar.png` | Teléfono: el calzado en Diseñar, con la fila de pasos deslizable |
 | `captura_15_celular_el_ciclo.png` | Teléfono: El ciclo, con el menú entero a la vista |
-| `captura_16_oscuro_tendencias.png` | Modo oscuro: Tendencias, sin colores fuera de la señal |
+| `captura_16_menu_mas.png` | El panel «Más»: cada vista secundaria como tarjeta, con su dato |
 
 Qué cambió desde la Entrega 2: `decisiones.md`, entradas del 13/10 al 26/10/2026, y `historial.md`, v1.1 a v1.9.

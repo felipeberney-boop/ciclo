@@ -1182,3 +1182,11 @@ notas del orador (tecla N). Monocroma: el color sólo aparece en la lámina que 
 (encabezado, fila de diálogo, imágenes, visual). Sumar una lámina es agregar un objeto: la numeración, los puntos de
 la barra y los links (`#id`) salen solos, y el id no cambia aunque cambie el orden. La versión anterior quedó en
 `diseno/prototipos/versiones_de_la_presentacion/`.
+
+## 2026-10-27 · «Gana presencia», en verde
+
+A pedido de Felipe, la palabra y la flecha de «▲ Gana presencia» van en el verde de Entrar, para que se lea de un
+vistazo que es buena noticia. Es una excepción acotada a la regla del 26/10 (la tendencia describe en tinta y el
+color es de la decisión): sólo cambia el texto de «gana presencia» (El ciclo, las fichas de Diseñar leídas por CLIP).
+«Estable» y «Pierde presencia» siguen en tinta, y las barras de «Qué gana y qué pierde terreno», también. Verificado
+en claro y oscuro. La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-27_ecf1ad7.html`.

@@ -784,6 +784,8 @@ body.on-gate .app .mast nav,body.on-gate .navmenu{display:none!important}
 .app .chip[aria-pressed="true"],.app .chip.on{border-color:var(--ink)!important;background:var(--ink)!important;color:var(--paper)!important}
 .app .kbtn{padding:10px 18px!important}
 
+/* «Gana presencia» en verde: la palabra y la flecha, nada más (pedido de Felipe, 27/10). Las barras siguen en tinta. */
+.app .sen.tend.t-entrar{color:var(--act-entrar)!important}
 /* progreso de lectura y volver arriba */
 #progreso{position:fixed;top:0;left:0;right:0;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:0 50%;z-index:80;pointer-events:none}
 body.on-gate #progreso{display:none}
@@ -1632,14 +1634,14 @@ function señal(at,perfil){
     return señalDe(SEN_ACC[a],a,`Etapa ${et.n.toLowerCase()} (K-means)${num?` · ${num}, ${fuente}`:''}. ${por}`,extra);
   }
   if(d!=null){const e=d>umbral?'entrar':d<-umbral?'salir':'esperar';
-    if(at.interpretado)return señalDe(e,SEN_TEND[e],`${num}, ${fuente}. Lo leyó CLIP: describe, no recomienda.`,Object.assign(extra,{cls:'tend'}));
+    if(at.interpretado)return señalDe(e,SEN_TEND[e],`${num}, ${fuente}. Lo leyó CLIP: describe, no recomienda.`,Object.assign(extra,{cls:'tend t-'+e}));
     const a=e==='entrar'?'Entrar':e==='salir'?'Salir':perfil.vinculo==='propia'?'Explorar':'Esperar';
     return señalDe(e,a,`Sin etapa en el K-means: decide si gana o pierde terreno afuera (${SEN_TEND[e].toLowerCase()}). ${num}, ${fuente}.`,extra);}
   return señalDe('sin-dato',SIN_DATO,'No tenemos serie medida para esto: se puede explorar, pero CICLO no lo recomienda.',extra);
 }
 /* la tendencia, para lo que describe y no decide (El ciclo, «qué gana y qué pierde terreno»): tinta, nunca semáforo */
 function tendencia(d,umbral){umbral=umbral!=null?umbral:3;const e=d==null?'sin-dato':d>umbral?'entrar':d<-umbral?'salir':'esperar';
-  return {estado:e,icono:SEN[e].icono,palabra:e==='sin-dato'?SIN_DATO:SEN_TEND[e],cls:'tend',d};}
+  return {estado:e,icono:SEN[e].icono,palabra:e==='sin-dato'?SIN_DATO:SEN_TEND[e],cls:'tend t-'+e,d};}
 const senBadge=s=>`<span class="sen ${s.cls}"><span aria-hidden="true">${s.icono}</span> ${s.palabra}</span>`;
 function consejo(cli,et){const c=CONSEJO[cli][et]; // la regla fija; el color lo pone señal()
   return vinculo==='propia'&&c[0]==='Esperar'?['Explorar',EXPLORAR]:c;}

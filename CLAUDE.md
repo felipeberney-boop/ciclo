@@ -44,8 +44,8 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   comes from `señal()` / `señalPalabra()` and the `s-<estado>` CSS classes; never assign a state color by hand.
   The app always opens on the 3-question gate; only a link with `c`, `v` and `pu` skips it. After it, the app lands on Tendencias (`radar`), the
   main screen; the CICLO mark goes to Tendencias and «Cambiar perfil» reopens the gate (`abrirGate(vista)`). Nav order:
-  Tendencias · Diseñar · El ciclo · Buscar por imagen · Preguntar · Más. `tendencia(d)` describes (▲/■/▼ in ink, El ciclo and Tendencias) and is
-  never a state color; `señal()` decides, and without a K-means stage it says Entrar/Esperar/Salir from the trend.
+  Tendencias · Diseñar · El ciclo · Buscar por imagen · Preguntar · Más. `tendencia(d)` describes (▲/■/▼ in ink, El ciclo and Tendencias; the one exception since 27/10: «▲ Gana presencia» text is
+  green, class `t-entrar`, bars stay ink) and is otherwise never a state color; `señal()` decides, and without a K-means stage it says Entrar/Esperar/Salir from the trend.
 - The "cliente" selector (fast / premium / nicho) changes recommendations (`CONSEJO`, `PLAZO`) and re-renders.
 
 ## Design rules that apply in code

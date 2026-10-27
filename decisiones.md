@@ -1190,3 +1190,24 @@ vistazo que es buena noticia. Es una excepción acotada a la regla del 26/10 (la
 color es de la decisión): sólo cambia el texto de «gana presencia» (El ciclo, las fichas de Diseñar leídas por CLIP).
 El mismo día, también a su pedido, «▼ Pierde presencia» pasa al rojo de Salir. «■ Estable» sigue en tinta, y las barras de «Qué gana y qué pierde terreno», también. Verificado
 en claro y oscuro. La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-27_ecf1ad7.html`.
+
+## 2026-10-27 · La hipótesis, reformulada, y la prueba del jurado
+
+**Por qué no se comprobaba.** La hipótesis de la Entrega 1 juntaba tres afirmaciones. Que la pasarela adelanta a la
+búsqueda: rechazada a escala anual (13/10). Que se puede predecir: rechazada (cuatro métodos, VISUELLE). Que se puede
+identificar la etapa: nunca se puso a prueba, porque no existe una etapa «correcta» con la cual comparar. Las
+coincidencias con Lyst eran ejemplos elegidos después de ver el modelo, no una prueba.
+
+**Lyst como prueba formal (B): descartada antes de correrla.** Las 19 señales son todas de subida, sólo dos o tres
+corresponden sin interpretación a atributos del K-means (cargo, jeans baggy), las elegimos nosotros y son de años
+distintos al corte del modelo (2024), que no se puede recalcular a 2021 o 2022 sin el CSV del Drive. Un p-valor sobre
+dos casos sería maquillaje. Lyst queda como ilustración.
+
+**La prueba del jurado (A).** Hipótesis reformulada: el K-means ubica cada atributo en una etapa que coincide con la
+que le asignan, a ciegas, personas que trabajan en diseño de moda, más de lo que daría el azar. No dice que sirva
+para predecir. Diseño, etapas del modelo congeladas y criterio de decisión en `datasets/jurado/preregistro.md`,
+commiteado **antes** de juntar respuestas: si el jurado no se pone de acuerdo entre sí (kappa < 0,20) la prueba no
+concluye; si se pone de acuerdo, H se sostiene con p < 0,05 (permutación de las etapas del modelo) y se rechaza si no.
+Formulario en `app/jurado/` (no muestra nada de CICLO, orden al azar por persona); evaluación en
+`codigo/evaluar_jurado.py`, probada con dos jurados inventados (uno parecido al modelo: se sostiene, p = 0,0001; uno al
+azar: no concluye). Las respuestas de prueba no están en el repo.

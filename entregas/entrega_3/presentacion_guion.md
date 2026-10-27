@@ -74,41 +74,47 @@ probar si adelanta a una resolución más fina: es la única versión de la hip�
 # Guion de la demo en vivo (5 minutos)
 
 App: https://felipeberney-boop.github.io/ciclo/
-Tener abierta en una pestaña antes de empezar. Tener también la API key de Groq en el portapapeles.
-Foto de prueba: cualquier prenda con patrón reconocible (rayas, cuero, jeans anchos).
+Recorrido verificado con Playwright contra la app del 27/10/2026 (pasos 1 a 3 completos; el 4 hasta pedir la clave,
+sin respuesta del modelo).
+
+**Antes de empezar.** Tener la app abierta en una pestaña y la API key de Groq en el portapapeles. Si se va a usar
+una foto propia, subirla una vez antes de la clase: la primera vez se bajan el modelo y el índice de CLIP (unos 96 MB)
+y después quedan guardados en el navegador. Los looks de ejemplo de Buscar por imagen sólo bajan el índice (8 MB).
 
 ## Paso 1 — La entrada (0:00–0:45)
 
-Abrir la app. Aparecen tres preguntas.
+Abrir la app. Aparecen tres preguntas, en este orden.
 
 > «Antes de mostrarte nada la app necesita saber para quién diseñás,
 > porque el mismo dato puede decir "entrá" a un fast fashion
-> y "esperá" a una marca premium.»
+> y "esperá" a una marca high fashion.»
 
-Elegir: **para una marca**, **premium**, **ropa de mujer**.
+Elegir: **Mujer** → **Para una marca** → **High fashion / couture**.
 La app va directo a **Tendencias**.
 
 ---
 
 ## Paso 2 — Tendencias y una ficha (0:45–2:00)
 
-> «Esta es la pantalla principal. Cada tarjeta es un atributo —
-> un corte, una estampa, un material— con su etapa y su señal.»
+> «Esta es la pantalla principal. Arriba, qué gana y qué pierde terreno en la búsqueda mundial.
+> Abajo, cada tarjeta es un atributo —un corte, una estampa, un material— con su etapa.»
 
-Señalar las tarjetas de color: verde = Entrar, ámbar = Esperar, rojo = Salir.
+Las tarjetas dicen la etapa en palabras (Pico, Saturada); el color aparece recién en la recomendación de la ficha.
 
-Hacer click en **Jeans amplios** (etapa: Pico, señal: Esperar).
+Hacer click en la tarjeta **Amplio** (corte). La ficha dice: K-means **Pico**, recomendación **■ Esperar**.
 
-> «El modelo los ubicó en Pico: subieron 79 % en reseñas de Amazon
-> y 95 % en Google Shopping —datos que el K-means no vio.
-> Para premium, Esperar: ya está en el mainstream.»
+> «El modelo lo ubicó en Pico: +50 puntos en la búsqueda mundial de 2022 a 2024, frente a las otras búsquedas
+> de moda. Con seis meses de lead time llegarías al pico ya pasado: para high fashion, Esperar.»
 
-Mostrar el gráfico de la ficha (pasarela vs búsqueda).
-Cambiar el perfil a **nicho** con el selector — la señal pasa a Salir.
+(Si preguntan por validación: en reseñas de Amazon los amplios suben 79 % entre 2019 y 2022 mientras los
+ajustados caen 39 %. Está en Más → El modelo, no en la ficha.)
 
-> «El dato no cambia. Lo que cambia es la recomendación.»
+> «El dato no cambia. Lo que cambia es la recomendación: para fast fashion la misma ficha dice Entrar,
+> y para una marca emergente, Salir.»
 
-Volver a premium.
+No cambiar el perfil en vivo: no hay selector en la ficha, y «Cambiar perfil» vuelve a las tres preguntas.
+Si se quiere mostrar, tener abiertos de antemano dos links:
+`#detalle/amplio?c=fast&v=marca&pu=mujer` (▲ Entrar) y `#detalle/amplio?c=nicho&v=marca&pu=mujer` (▼ Salir).
 
 ---
 
@@ -118,34 +124,32 @@ Ir a **Diseñar** desde el menú.
 
 > «Si estás diseñando algo concreto, empezás acá.»
 
-Elegir: **Pantalón → Denim → Amplio → Alto → Relajado**.
-Mostrar la barra que se llena con lo elegido.
+Elegir **Pantalones** → **Largo**. En el paso del corte, señalar las dos señales en la misma pantalla:
 
-> «La ficha dice: Esperar. Medido. Viene de pasarela y búsqueda.
-> Si elegimos ajustado en cambio —»
-
-Cambiar a **Ajustado**. La señal pasa a Salir.
-
-> «Salir. El mismo jean, distinto corte, conclusión opuesta.
+> «Baggy: Esperar. Skinny: Salir. El mismo pantalón, distinto corte, conclusión opuesta.
 > Eso no se ve si medís "jeans" como un todo.»
+
+Elegir **Baggy** → **Tiro bajo** → **Denim rígido**. Mostrar la barra de abajo, que se llena con lo elegido, y tocar
+**Armar la ficha →**. La ficha dice: **Jean baggy, tiro bajo · ■ Esperar**, con de dónde sale cada dato
+(medido o prestado).
 
 ---
 
 ## Paso 4 — Preguntar (3:15–4:30)
 
-Ir a **Preguntar** desde el menú.
-Pegar la API key de Groq cuando la pida.
+Ir a **Preguntar** desde el menú. Arriba aparece el diseño que se armó en el paso 3.
+Pegar la API key de Groq en el campo de la izquierda (si no está, la app avisa «Pegá primero tu API key de Groq»).
 
 > «Este es el único lugar donde entra un modelo de lenguaje.
 > Y nunca ve una fila de datos: lee métricas que ya calculamos.»
 
-Escribir: *«Estoy diseñando un jean amplio para una marca premium,
-¿qué me recomendás para la próxima temporada?»*
+Escribir: *«Estoy diseñando un jean baggy para una marca high fashion, ¿qué me recomendás para la próxima temporada?»*
+o tocar una de las preguntas sugeridas.
 
-Esperar la respuesta (suele tardar 3–5 segundos).
+Esperar la respuesta (suele tardar 3–5 segundos; con gpt-oss-20b, menos).
 
 > «La respuesta llega marcada como interpretación.
-> El dato —el +79 % de Amazon, la etapa Pico— es nuestro.
+> El dato —la etapa Pico, los +13 puntos del baggy— es nuestro.
 > La lectura es del modelo.»
 
 ---
@@ -166,5 +170,5 @@ Mostrar la URL en pantalla: **felipeberney-boop.github.io/ciclo**
 |----------|-----------|
 | Groq no responde o la key no funciona | Saltar Paso 4. Ir a **Buscar por imagen** en su lugar: subir la foto de prueba, mostrar cómo CLIP identifica el atributo. Decir: «El LLM funciona igual; lo dejamos para que lo prueben ustedes después.» |
 | La app no carga (GitHub Pages caído) | Abrir la copia local: `cd app && python3 -m http.server 8000`, usar `localhost:8000`. Tenerla instalada antes. |
-| CLIP no devuelve resultado | Mostrar la pantalla de **Método** en su lugar y recorrer la tabla de qué está medido y qué interpretado. Dura lo mismo y muestra la honestidad del proyecto. |
+| CLIP no devuelve resultado | Usar un look de ejemplo (Trench, Denim…) en vez de una foto propia: sólo baja el índice. Si tampoco anda, mostrar la pantalla de **Método** (Más → Método) en su lugar y recorrer la tabla de qué está medido y qué interpretado. Dura lo mismo y muestra la honestidad del proyecto. |
 | Se va el tiempo en Paso 2 | Saltar Paso 3 (Diseñar). Pasar directo a Preguntar o al cierre. |

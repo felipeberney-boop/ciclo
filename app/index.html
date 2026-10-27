@@ -2704,7 +2704,7 @@ function pintarVivo(o){
     if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);
   });
 }
-/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v4.md) ----------
+/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v5.md) ----------
    Como en la V2 de la clase: la API key la pega cada uno, queda en este navegador y la página le habla directo a Groq,
    con llm/ciclo_datos.md como DATOS (sólo las partes que nombran la pregunta, el diseño y la imagen: el plan gratis da
    8.000 tokens por minuto). Lo propio de CICLO: sabe qué estás diseñando (la barra de Diseñar), lee una foto con CLIP
@@ -2721,7 +2721,16 @@ Reglas:
 - Hablá del diseño que está armando (TU DISEÑO) y de lo que CLIP leyó en su imagen, si hay: no le hagas repetir nada.
 - Decí si cada dato es medido, interpretado (CLIP) o prestado de un pariente, como dice DATOS.
 - Recomendá según su perfil. Si una ficha trae «para vos (regla de CICLO)», esa es la acción: usala y explicá su porqué. Sólo te apartás si un dato lo justifica, y lo decís.
-- Estructura de nota: "respuesta" es la lectura, en 1 a 3 oraciones; el dato va en "atributos" y "datos"; el cambio va en "acciones".
+- "respuesta" tiene de 2 a 4 oraciones, en este orden: (1) si falta algo, o si pregunta por «ahora» o por después de 2024, eso primero, en una frase y con su porqué tal como está en DATOS; (2) lo más cercano que sí está, con su número y de dónde sale; (3) si la pregunta es general, qué sube más y qué cae; (4) qué hacer en su diseño. Nunca termines en «no lo tengo». El dato va también en "atributos" y "datos"; el cambio, en "acciones".
+- Cada número con su fuente exacta, como la nombra DATOS: «afuera 2022→2024» y «señal» son búsqueda mundial; «colores (CLIP, pasarela…)» es el porcentaje de looks de pasarela que leyó CLIP (interpretación), nunca búsquedas; «de su pico» es un nivel, no un crecimiento. Para decir qué sube o qué cae, usá «afuera 2022→2024» o «señal».
+- En una pregunta general («¿qué material…?», «¿qué estampa…?») nombrá los dos que más suben y uno que cae, cada uno con su número.
+- En "respuesta" y en "datos" van nombres, nunca ids (nada de «material_gamuza» ni «id: cuero»).
+- Un estilo de calzado no se toma prestado de otro. Si DATOS trae «sin dato: ni serie propia ni de un pariente», decí por qué no se mide (lo dice DATOS) y ofrecé en "siguiente" preguntar por los que sí se miden (marcados «alternativa»), sin presentarlos como dato del que pidió.
+- "fuera_de_datos" va siempre: true sólo si no había nada cercano.
+EJEMPLOS DE CÓMO TIENE QUE SONAR (las letras son de ejemplo: usá los nombres y números de DATOS):
+P: ¿Qué material está de moda ahora? → «De 2025 y 2026 no tengo lectura: [el porqué de DATOS, con sus números]. Con lo medido hasta 2024, el que más sube es A (+X puntos), después B (+Y); C y D caen. Si tu prenda lo admite, probá A.»
+P: ¿Qué va a estar de moda en 2027? → «CICLO no pronostica: lo último medido es 2022→2024. Hasta ahí, lo que más ganaba terreno era A (+X) y B (+Y), y lo que más perdía, C (−Z). Para tu perfil, A está en pico: [la regla de CICLO para esa etapa].»
+P: ¿Las botinetas están de moda? → «De botinetas CICLO no tiene medición: [los dos porqués de DATOS]. Un estilo de calzado no dice nada de otro, así que no lo tomo prestado. En calzado sí se miden A (+X) y B (−Y).» con "siguiente": ["¿Cómo vienen los A?"].
 - "acciones": hasta 2 cambios concretos sobre su diseño, sólo con pasos y valores de OPCIONES, y sólo si DATOS los respalda; "texto" en castellano y corto («Probá tiro alto»). Sin diseño u OPCIONES, [].
 - Del calzado y los accesorios CICLO mide poco: zapatillas, mocasines y tote en la búsqueda, y zapatillas y botas texanas en la pasarela (CLIP: interpretación, nunca señal). El resto no tiene dato. CICLO tampoco separa hombre y mujer en los datos, no detecta lo emergente y no pronostica: si te lo piden, decilo.
 - Castellano rioplatense, sin jerga, tono directo. En "respuesta" va sólo el texto para leer.
@@ -2778,12 +2787,15 @@ function asElegir(doc,texto,prefer){
     return [...L.slice(0,5),...L.slice(-3)].map(x=>x[0]);};
   [['material|tela','material'],['estampa|print','estampa'],['corte','corte'],['tiro','tiro'],['detalle','detalle']].forEach(([k,paso])=>{if(pide(k)&&!O[paso])ranking(paso).forEach(sumar);});
   sen.filter(nombra).forEach(sumar);
+  // lo que no tiene dato trae a sus hermanos que sí lo tienen, como alternativa para ofrecer (no como préstamo)
+  elegidas.slice().filter(l=>/sin dato/.test(l)).forEach(l=>{const pre=l.slice(2).split(' · ')[0];
+    sen.filter(x=>x.slice(2).startsWith(pre+' · ')&&/dato: propio/.test(x)).slice(0,3).forEach(x=>sumar(x+' | alternativa: no es dato de lo que preguntó'));});
   const senales=elegidas.slice(0,16);
   // los colores y la búsqueda de cada corte o prenda que nombra (antes esta sección no llegaba nunca)
   const porPrenda=(S['Diseñar: qué conviene en cada prenda']||[]).filter(l=>l.startsWith('- ')).filter(nombra).slice(0,3);
   const del=(sec,pred)=>(S[sec]||[]).filter(l=>!l.startsWith('- ')||pred(l));
   const partes=[S.intro,S['Cómo leer los números'],S['Etapas'],del('Perfiles',l=>asCampo(l,'perfil')===cliente),
-    del('Qué conviene según etapa y perfil',l=>asCampo(l,'perfil')===cliente),S['Resumen: todos los atributos'],
+    del('Qué conviene según etapa y perfil',l=>asCampo(l,'perfil')===cliente),S['Resumen: todos los atributos'],S['Qué sube y qué cae'],
     fichas.length?['## Fichas de atributos',...fichas]:null,senales.length?['## Señales de Diseñar',...senales]:null,
     porPrenda.length?['## Diseñar: qué conviene en cada prenda',...porPrenda]:null,
     S['Lo que CICLO no puede responder']].filter(Boolean);

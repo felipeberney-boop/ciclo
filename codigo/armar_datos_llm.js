@@ -130,6 +130,25 @@ for (const r of KM.rows) {
 for (const o of REC.filter(o => !KM.rows.some(r => recDe(r.n) === o)))
   linea(o.n, `id: ${o.id}`, 'etapa: sin etapa (no entra al K-means: Vogue no lo etiqueta)', `afuera 2022→2024: ${sig(terreno(o.id))}`);
 
+// ---------- qué sube y qué cae, ya ordenado (va siempre: el modelo no tiene que ordenar) ----------
+{
+  const SIN = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const filas = new Map();
+  for (const o of REC) if (terreno(o.id) != null) filas.set(o.id, { n: o.n, tipo: o.tipo || '', d: terreno(o.id) });
+  const hojas = [['Material', TAX.materiales.flatMap(g => g.items)], ['Estampa', TAX.estampas.flatMap(f => f.items)], ['Detalle', TAX.detalles],
+    ['Corte', TAX.cortes], ['Prenda', TAX.prendas.flatMap(p => p.tipos.map(x => Object.assign({}, x, { n: p.n + ' · ' + x.n })))]];
+  for (const [tipo, L] of hojas) for (const x of L) for (const id of [x.serie, x.rec].filter(Boolean))
+    if (GREL[id] && terreno(id) != null && !filas.has(id)) filas.set(id, { n: x.n, tipo, d: terreno(id) });
+  const todas = [...filas.values()].sort((a, b) => b.d - a.d);
+  const lista = L2 => L2.map(f => `${f.n} ${sig(f.d)}`).join(', ');
+  L.push('\n## Qué sube y qué cae', 'Búsqueda mundial, puntos ganados o perdidos de 2022 a 2024 frente a las otras búsquedas de moda (medido). Ya ordenado: el primero es el que más sube; el último, el que más cae.');
+  L.push(`- Todos | más suben: ${lista(todas.slice(0, 5))} | más caen: ${lista(todas.slice(-5).reverse())}`);
+  for (const tipo of ['Material', 'Estampa', 'Prenda', 'Detalle', 'Corte']) {
+    const g = todas.filter(f => SIN(f.tipo).startsWith(SIN(tipo)));
+    if (g.length >= 4) L.push(`- ${{ Material: 'Materiales', Estampa: 'Estampas', Prenda: 'Prendas', Detalle: 'Detalles', Corte: 'Cortes' }[tipo]} | más suben: ${lista(g.slice(0, 3))} | más caen: ${lista(g.slice(-3).reverse())}`);
+  }
+}
+
 // ---------- fichas detalladas (sólo las que nombra la pregunta) ----------
 L.push('\n## Fichas de atributos');
 for (const r of KM.rows) {
@@ -150,7 +169,7 @@ L.push('\n## Diseñar: qué conviene en cada prenda');
 const Yi = y => JE.Y.indexOf(y), tot = y => Object.values(JE.terms).reduce((a, v) => a + (v[Yi(y)] || 0), 0);
 const cuota = (t, y) => (JE.terms[t][Yi(y)] || 0) / tot(y) * 100;
 const pts = v => `${v > 0 ? '+' : ''}${v.toFixed(1).replace('.', ',')} puntos`;
-const colores = c => c && c.colores ? 'colores (CLIP, pasarela 2022–23 y cambio desde 2018–19): ' + c.colores.slice(0, 4).map(x => `${x.n}: ${Math.round(x.ahora)} %, ${pts(x.cambio)}`).join('; ') : null;
+const colores = c => c && c.colores ? 'colores en la pasarela (porcentaje de looks leído por CLIP, interpretación; no son búsquedas), 2022–23 y cambio desde 2018–19: ' + c.colores.slice(0, 4).map(x => `${x.n}: ${Math.round(x.ahora)} %, ${pts(x.cambio)}`).join('; ') : null;
 const opciones = (lista, que) => lista ? `${que} (CLIP, % de la pasarela 2022–23 y cambio desde 2018–19): ` +
   lista.map(x => `${x.n}${x.solo ? ' (sólo ' + x.solo + ')' : ''}: ${Math.round(x.ahora)} %, ${pts(x.cambio)}`).join('; ') : null;
 // el jean es pantalón + denim; los cortes salen de la taxonomía, con sus alias de búsqueda sumados

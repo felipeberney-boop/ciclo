@@ -2,7 +2,7 @@
 
 **Fecha:** 27/10/2026
 **Modelo:** Groq, `openai/gpt-oss-120b` (o `gpt-oss-20b`), con `reasoning_effort: low`
-**Estado:** en uso · reemplaza a la v3
+**Estado:** reemplazado por la v5 (27/10/2026), después de probarlo con seis preguntas reales
 
 ## Qué cambió desde v3
 
@@ -62,5 +62,5 @@ OPCIONES (paso: valores posibles para "acciones"): {corte, tiro, material, estam
 
 ## Prueba
 
-`codigo/probar_asistente.js` hace seis preguntas reales a la app con la clave de Groq de quien lo corre y guarda las
-respuestas en `datasets/pruebas/asistente_v4_respuestas.md`.
+`codigo/probar_asistente.js` hace seis preguntas reales a la app con la clave de Groq de quien lo corre ; con v4 las respuestas
+mostraron lo que corrige la v5.

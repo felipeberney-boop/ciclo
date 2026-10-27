@@ -1322,3 +1322,21 @@ Recorrido con Playwright como alguien que entra por primera vez. Se arreglaron l
 8. **La entrada:** las tres opciones, centradas bajo la pregunta.
 
 Capturas del readme e imágenes de la presentación regeneradas.
+
+## 2026-10-27 · El chat, probado con seis preguntas reales: v4 no alcanzó, v5 sí
+
+Con la clave de Groq del grupo se corrieron seis preguntas reales sobre la app (`codigo/probar_asistente.js`, con un
+minuto entre preguntas por el límite del plan gratis). v4 usaba bien los datos pero ignoraba la mitad de las reglas:
+no explicaba el corte de 2024, a botinetas y a 2027 contestaba «no tengo datos» y ahí terminaba, decía «48 % de las
+búsquedas» de un color que es el 48 % de los looks de pasarela leídos por CLIP, y ordenaba mal lo que más cae.
+
+**v5** (`prompts/prompt_asistente_v5.md`): la respuesta con un orden explícito (qué falta o el corte → lo más cercano
+con su número y su fuente → qué sube y qué cae → qué hacer), tres ejemplos con letras en vez de números, la fuente de
+cada número por nombre y sin ids, y el calzado sin préstamo entre estilos (se ofrece preguntar por los que sí se miden).
+Y en los datos, no en el prompt: una sección «Qué sube y qué cae» ya ordenada (el modelo lee el orden en vez de
+ordenar) y la etiqueta de los colores que dice que son looks de pasarela, no búsquedas.
+
+**Resultado** (`datasets/pruebas/asistente_v5_respuestas.md`, sin editar): las seis contestan con un dato real y su
+fuente o explican por qué no lo hay y ofrecen una alternativa; ninguna inventa un número. Quedan dos imperfecciones: un
+id que se cuela en una respuesta y un «vuelve» con −3 puntos que exagera lo que dice el dato. El modelo no es
+determinista: la prueba se puede repetir con el mismo script.

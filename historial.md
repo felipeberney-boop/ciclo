@@ -178,7 +178,8 @@ pregunta sólo lo que falta. El link de Diseñar se puede compartir con su estad
 ## v1.13 · 27/10/2026 · El chat contesta con lo más cercano
 
 Prompt v4 de «Preguntar»: nunca inventa un dato y nunca se queda en el «no»; contesta con lo más cercano que sí está
-medido, diciendo de dónde sale. El chat recibe ahora los rankings y los colores por corte que antes no le llegaban.
+medido, diciendo de dónde sale. Probado con seis preguntas reales, no alcanzó: la v5, el mismo día, ordena la respuesta,
+trae ejemplos y recibe un ranking ya calculado de qué sube y qué cae. El chat recibe ahora los rankings y los colores por corte que antes no le llegaban.
 
 ## v1.14 · 27/10/2026 · La primera impresión
 

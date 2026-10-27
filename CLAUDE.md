@@ -56,7 +56,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
 - **Stage is encoded as position on a track, not color.** The UI is monochrome (black, cream #F6F0EB, white)
   so the only color is the garments' own palette. The one exception: the recommendation word (Entrar green,
   Esperar/Explorar amber, Salir red, via `accCls()` and the `--act-*` tokens), always with the word itself.
-  Nothing else gets those colors. Charts keep their series colors (`--s1`…`--s6`); everything else is monochrome. The editorial style block at the end of the CSS overrides the older rules.
+  Nothing else gets those colors. Charts keep their series colors (`--s1`…`--s6`); everything else is monochrome. The editorial style block near the end of the CSS overrides the older rules, and the «capa de uso» block (27/10) comes last: sticky one-line header, sans for anything you click, «Más» as a card panel, «Menú» sheet on mobile, rounded cards (it uses `:not(#z)` to beat the old no-radius rule).
 - **Startup:** every `.view` starts `hidden`; only the boot code (wrapped in try/catch, plus a fallback
   `<script>`) decides what shows. A saved profile goes to Diseñar with the `#perfilinea` line, never silently.
 - **No number without its source.** Each card states which data layer can and cannot answer.

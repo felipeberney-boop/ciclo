@@ -1134,3 +1134,25 @@ página web, y mantener dos formatos a una semana de la entrega duplica el traba
 **Queda la web como única presentación.** Las Slides y el prototipo de Figma salen del readme y del historial. El
 prototipo no se actualiza: ya no coincidía con la app, y una réplica en Figma vuelve a quedar vieja con el próximo cambio. El prototipo navegable es la app publicada. Los
 archivos de Figma de las Entregas 1 y 2 siguen enlazados como registro de esas entregas.
+
+## 2026-10-27 · La capa de uso: navegar como una herramienta profesional
+
+Referencia: stytrix.com (diseño de ropa con IA). Lo que la hace fácil de navegar no es el color sino el orden: un
+encabezado de una línea, el menú en letra legible, cada herramienta en una tarjeta con lo que hace y un dato, y un
+solo botón oscuro. CICLO tenía el menú en mayúsculas espaciadas de 10,5 px, cuatro vistas escondidas detrás de «Más»
+que se desplegaban en la misma línea, y el menú visible durante las tres preguntas de entrada.
+
+**Qué se tomó.** Encabezado fijo de una línea (CICLO, secciones, «Cambiar perfil» como botón negro). Lo que se toca
+—menú, botones, filtros— pasa a Archivo de 14 px en minúscula; la mono chiquita queda para etiquetas y datos. «Más»
+abre un panel de cuatro tarjetas (qué hace cada vista, un dato con su fuente, «Abrir →»). En el celular, un botón
+«Menú» abre la lista entera a pantalla completa. Tarjetas con esquinas y una sombra al pasar el mouse. Una línea
+de lectura arriba y un botón para volver. Método pasa de tabla de 26 filas a acordeón: la tabla sigue en el HTML.
+Durante la entrada no se ve el menú: un solo camino a la vez.
+
+**Qué no se tomó.** El naranja: en CICLO el color es sólo la señal (Entrar, Esperar, Salir), y unas pastillas o
+botones naranjas competirían con ella. Las cifras de marketing sin fuente («80 % más productividad»): cada pastilla
+de CICLO lleva un dato real y de dónde sale. Testimonios, precios y newsletter no aplican. La estética de revista
+(Bodoni en los títulos, crema, negro y blanco) se queda: el cambio es de uso, no de identidad.
+
+Se desestimó rediseñar todo a lo Stytrix: a una semana de la Entrega 3 dejaba la app y la presentación a medias. La
+versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-27_7e5ebfd.html`.

@@ -154,6 +154,14 @@ su commit:
 
 Commits `64c25a9` a este. La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-26_d589243.html`.
 
+## v1.10 · 27/10/2026 · La capa de uso
+
+Navegar como una herramienta profesional, sin perder la revista. Encabezado fijo de una línea, menú en letra legible,
+«Más» como panel de tarjetas con un dato y su fuente, menú a pantalla completa en el celular, tarjetas con esquinas,
+línea de lectura y botón para volver arriba, Método en acordeón. Durante la entrada no se ve el menú. Referencia:
+stytrix.com, sin su naranja (el color sigue siendo sólo la señal). Capturas regeneradas. La versión anterior quedó en
+`diseno/prototipos/versiones_de_la_app/app_2026-10-27_7e5ebfd.html`.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -23,7 +23,7 @@ const PERFIL = '?c=fast&v=marca&pu=mujer';
     return p;
   };
   const foto = async (p, nombre) => { await p.screenshot({ path: `${OUT}/${nombre}.png` }); console.log('·', nombre); await p.context().close(); };
-  const hasta = async (p, sel, margen = 24) => { await p.evaluate(([s, m]) => { const e = document.querySelector(s); window.scrollTo(0, e.getBoundingClientRect().top + window.scrollY - m); }, [sel, margen]); await p.waitForTimeout(300); };
+  const hasta = async (p, sel, margen = 24) => { await p.evaluate(([s, m]) => { const e = document.querySelector(s); const mast = document.querySelector('.mast'); window.scrollTo(0, e.getBoundingClientRect().top + window.scrollY - m - (mast ? mast.offsetHeight : 0)); /* el encabezado queda fijo arriba */ }, [sel, margen]); await p.waitForTimeout(300); };
 
   // la entrada: las tres preguntas
   await foto(await abrir(), 'captura_01_entrada');

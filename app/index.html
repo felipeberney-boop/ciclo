@@ -730,6 +730,107 @@ main a:not([class]){color:inherit}
 .dzpasos .dzp{padding:8px 9px!important;margin:0!important}.dzsep{margin:0 1px}
 @media (max-width:760px){.dzpasos{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:0}.dzpasos::-webkit-scrollbar{display:none}.dzsep{display:none}.dzp{flex:none}}
 .ktab :is(th,td){padding-left:5px!important;padding-right:5px!important}.ktab th{letter-spacing:.08em!important}
+/* ---------- capa de uso (27/10/2026) ----------
+   Lo que se toca va en sans, legible y en minúscula; la mono chiquita queda para etiquetas y datos. El encabezado
+   es una sola línea fija; «Más» abre tarjetas; en el celular, un menú. Cajas con esquinas y sombra al pasar.
+   Sin color nuevo: sigue siendo negro, crema y blanco. :not(#z) le gana a la regla que quitaba las esquinas. */
+:root{--sans:"Archivo",system-ui,-apple-system,sans-serif;--r-card:14px;--r-row:10px;--sombra:0 14px 34px -18px rgba(14,13,11,.32)}
+.app .mast nav a,.app .navmas,.app .navperfil,.app .chip,.app .seg button,.app .kbtn,.app .copiar,.app .gvolver,.app .dzp{
+  font-family:var(--sans)!important;font-variation-settings:"wdth" 100!important;font-size:14px!important;
+  letter-spacing:0!important;text-transform:none!important;font-weight:500!important}
+.app .chip,.app .seg button,.app .dzp{font-size:13.5px!important}
+
+/* encabezado: CICLO a la izquierda, secciones al centro, perfil a la derecha; queda pegado arriba */
+.app .mast{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:24px;padding:12px var(--gut);
+  border-bottom:1px solid var(--rule);background:color-mix(in srgb,var(--paper) 92%,transparent);
+  -webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px)}
+.app .mast .row1{display:block}
+.app .mast .side{display:none}
+.app .mk{font-size:26px;letter-spacing:.26em;margin:0}
+.app .mast nav{flex:1;display:flex;align-items:center;justify-content:flex-end;gap:4px;margin:0;flex-wrap:nowrap}
+.app .mast nav a,.app .navmas{color:var(--ink-2)!important;padding:8px 12px!important;border:0!important;border-radius:999px;transition:background .15s,color .15s}
+.app .mast nav a:not(#z),.app .navmas:not(#z),.app .navperfil:not(#z),.app .navmenu:not(#z){border-radius:999px!important}
+.app .mast nav a:hover,.app .navmas:hover{color:var(--ink)!important;background:var(--rule-2)}
+.app .mast nav>a[aria-current="page"],.app .navmas.on,.app .navmas[aria-expanded="true"]{color:var(--ink)!important;background:var(--rule-2)}
+.app .navmas::after{content:" ▾";font-size:11px}
+.app .navperfil{margin-left:10px;background:var(--ink)!important;color:var(--paper)!important;border:0!important;text-decoration:none!important;padding:9px 16px!important;cursor:pointer}
+.app .navperfil:hover{opacity:.86}
+body.on-gate .app .mast nav,body.on-gate .navmenu{display:none!important}
+.navmenu{display:none}
+
+/* «Más»: un panel de tarjetas, como una página de herramientas */
+.app .mast .navgrupo:not([hidden]){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+  position:absolute;top:calc(100% + 8px);right:var(--gut);width:min(680px,calc(100vw - 32px));padding:12px;
+  background:var(--card);border:1px solid var(--rule);box-shadow:var(--sombra)}
+.app .mast .navgrupo:not(#z){border-radius:18px!important}
+.app .mast .navgrupo a{display:flex!important;flex-direction:column;align-items:flex-start;gap:8px;padding:16px 18px!important;
+  white-space:normal;color:var(--ink)!important;background:var(--paper);border:1px solid transparent!important}
+.app .mast .navgrupo a:not(#z){border-radius:var(--r-card)!important}
+.app .mast .navgrupo a:hover,.app .mast .navgrupo a[aria-current="page"]{background:var(--paper)!important;border-color:var(--ink)!important}
+.navgrupo a b{font-size:17px;font-weight:600}
+.navgrupo a span{font-size:14px;line-height:1.45;color:var(--ink-2);font-weight:400}
+.navgrupo a i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.04em;padding:3px 10px;border:1px solid var(--rule);background:var(--card)}
+.navgrupo a i:not(#z){border-radius:999px!important}
+.navgrupo a em{font-style:normal;font-size:13.5px;font-weight:600;margin-top:2px}
+
+/* cajas: esquinas, y se levantan al pasar */
+.app :is(.gcard,.dzc,.ciclo,.terreno,.drop,.asfoto,.steps,.lys):not(#z){border-radius:var(--r-card)!important}
+.app .tfila:not(#z){border-radius:var(--r-row)!important}
+.app :is(.chip,.kbtn,.seg button,.dzp,.copiar,.gvolver):not(#z){border-radius:999px!important}
+.app .gcard{border:1px solid var(--rule)!important;background:var(--card)!important;padding:22px 22px 18px!important}
+.app .gcard,.app .dzc,.app .ciclo{transition:transform .18s ease,box-shadow .18s ease,border-color .18s}
+.app :is(.gcard,.dzc,.ciclo):hover{transform:translateY(-2px);box-shadow:var(--sombra)}
+.app .chip{border:1px solid var(--rule)!important;padding:6px 14px!important;margin:0 6px 6px 0;color:var(--ink-2)}
+.app .chip[aria-pressed="true"],.app .chip.on{border-color:var(--ink)!important;background:var(--ink)!important;color:var(--paper)!important}
+.app .kbtn{padding:10px 18px!important}
+
+/* progreso de lectura y volver arriba */
+#progreso{position:fixed;top:0;left:0;right:0;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:0 50%;z-index:80;pointer-events:none}
+body.on-gate #progreso{display:none}
+#arriba{position:fixed;right:20px;bottom:20px;z-index:70;width:44px;height:44px;display:grid;place-items:center;font:500 18px var(--sans);
+  color:var(--ink);background:var(--card);border:1px solid var(--rule);box-shadow:var(--sombra);cursor:pointer;
+  opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s,transform .2s}
+#arriba:not(#z){border-radius:50%!important}
+#arriba.ver{opacity:1;transform:none;pointer-events:auto}
+body.con-barra #arriba{bottom:96px}
+
+/* Método en acordeón: cada fila se abre si la tocás */
+.acc{margin-top:28px;display:grid;gap:8px}
+.acc details{background:var(--card);border:1px solid var(--rule)}
+.acc details:not(#z){border-radius:var(--r-row)!important}
+.acc details[open]{border-color:var(--ink)}
+.acc summary{display:flex;align-items:center;gap:12px;padding:15px 18px;cursor:pointer;list-style:none;font:500 15.5px var(--sans)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .k{flex:1}
+.acc summary::after{content:"+";font:400 20px var(--sans);color:var(--ink-3);width:18px;text-align:center}
+.acc details[open] summary::after{content:"−"}
+.acc .cuerpo{padding:0 18px 18px;font-size:15px;line-height:1.6;color:var(--ink-2);max-width:72ch}
+.acc .accbar{display:flex;justify-content:flex-end}
+#v-racional .tw.en-acc{display:none}
+
+/* celular: CICLO y un botón de menú; el menú ocupa la pantalla */
+@media (max-width:760px){
+  .app .mast{padding:10px 16px;gap:12px;justify-content:space-between}
+  .app .mk{font-size:22px}
+  .navmenu{display:inline-flex;align-items:center;gap:8px;font:500 14px var(--sans);color:var(--ink);background:none;
+    border:1px solid var(--rule);padding:9px 14px;cursor:pointer}
+  .app .mast nav{display:none}
+  body.menu-abierto{overflow:hidden}
+  body.menu-abierto .app .mast{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--paper)} /* el desenfoque encierra al menú fijo */
+  body.menu-abierto .app .mast nav{display:flex!important;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;
+    position:fixed;top:var(--alto-mast,57px);left:0;right:0;bottom:0;overflow:auto;padding:8px 16px 32px;background:var(--paper);z-index:61}
+  body.menu-abierto .app .mast nav>a{font-size:20px!important;padding:16px 4px!important;color:var(--ink)!important;
+    border-bottom:1px solid var(--rule)!important;background:none!important}
+  body.menu-abierto .app .mast nav>a:not(#z){border-radius:0!important}
+  body.menu-abierto .app .mast nav>a[aria-current="page"]{font-weight:700!important}
+  body.menu-abierto .app .navmas{display:none}
+  body.menu-abierto .app .mast .navgrupo{display:grid!important;grid-template-columns:1fr;position:static;width:auto;
+    padding:16px 0 0;border:0;box-shadow:none;background:none;gap:10px}
+  body.menu-abierto .app .mast .navgrupo a{background:var(--card)!important;border-color:var(--rule)!important}
+  body.menu-abierto .app .navperfil{margin:20px 0 0;padding:15px!important;text-align:center;font-size:16px!important}
+  #arriba{right:16px;bottom:16px}
+}
+@media (prefers-reduced-motion:reduce){.app :is(.gcard,.dzc,.ciclo):hover{transform:none}#arriba{transition:none}}
 </style>
 
 <div class="app">
@@ -739,6 +840,7 @@ main a:not([class]){color:inherit}
       <button class="mk" id="home" title="Tendencias">CICLO</button>
       <span class="side r">Última lectura 21.10.2026</span>
     </div>
+    <button type="button" class="navmenu" id="navmenu" aria-expanded="false" aria-controls="nav">☰ Menú</button>
     <nav id="nav" aria-label="Secciones">
       <a data-v="radar" class="nav-dz">Tendencias</a>
       <a data-v="disenar">Diseñar</a>
@@ -747,10 +849,10 @@ main a:not([class]){color:inherit}
       <a data-v="asistente">Preguntar</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
       <span class="navgrupo" id="navgrupo" hidden>
-        <a data-v="etapas">El modelo</a>
-        <a data-v="marcas">Marcas</a>
-        <a data-v="retornos">Retornos</a>
-        <a data-v="racional">Método</a>
+        <a data-v="etapas"><b>El modelo</b><span>Agrupa los atributos por cómo se mueven y lee qué etapa es cada grupo.</span><i>17 atributos · K-means, k = 4</i><em>Abrir →</em></a>
+        <a data-v="marcas"><b>Marcas</b><span>Las marcas más deseadas, trimestre por trimestre, desde 2018.</span><i>34 trimestres · Lyst Index</i><em>Abrir →</em></a>
+        <a data-v="retornos"><b>Retornos</b><span>Qué atributos picaron, se fueron y volvieron, y cada cuánto.</span><i>2010–2024 · Google Trends</i><em>Abrir →</em></a>
+        <a data-v="racional"><b>Método</b><span>Qué está medido y qué es interpretación, fuente por fuente.</span><i>26 capas y fuentes</i><em>Abrir →</em></a>
       </span>
       <button type="button" class="navperfil" id="navperfil">Cambiar perfil</button>
     </nav>
@@ -1208,7 +1310,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     </section>
 
     <footer class="colofon">
-      <div><b>CICLO</b>Sistemas generativos e IA para Diseño<br>K534/K576 · UdeSA · 2026<br>Felipe Berney · Abril Dobler<br><button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link de este diseño</button></div>
+      <div><b>CICLO</b>Sistemas generativos e IA para Diseño<br>Última lectura 21.10.2026<br>K534/K576 · UdeSA · 2026<br>Felipe Berney · Abril Dobler<br><button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link de este diseño</button></div>
       <div><b>Pasarela</b>Vogue Runway · 1,28 M looks<br>Runways since 2011 · 6.655 desfiles</div>
       <div><b>Búsqueda y redes</b>Google Trends · 65 series, 2004–2024<br>Google Shopping · 25 términos<br>Reddit · 4.404 posts, 2012–2025</div>
       <div><b>Mercado masivo</b>H&amp;M · 30,6 M compras<br>Amazon · 1,1 M reseñas<br>Wish · 1.341 productos<br>Zara feb-2024 · 252 prendas</div>
@@ -2983,7 +3085,8 @@ function mostrar(v,keepNav){
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
-  if(['etapas','marcas','retornos','racional'].includes(v)){$('#navgrupo').hidden=false;$('#navmas').setAttribute('aria-expanded','true');}
+  $('#navgrupo').hidden=true;$('#navmas').setAttribute('aria-expanded','false');
+  $('#navmas').classList.toggle('on',['etapas','marcas','retornos','racional'].includes(v));cerrarMenu();
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='asistente')asAbrir();
@@ -3095,7 +3198,34 @@ $('#copiar').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(u);b.textContent='Copiado';}catch(e){window.prompt('Copiá este link:',u);}
   setTimeout(()=>{b.textContent='Copiar link';},1800);
 });
-$('#navmas').addEventListener('click',()=>{const g=$('#navgrupo');g.hidden=!g.hidden;$('#navmas').setAttribute('aria-expanded',String(!g.hidden));});
+$('#navmas').addEventListener('click',e=>{e.stopPropagation();const g=$('#navgrupo');g.hidden=!g.hidden;$('#navmas').setAttribute('aria-expanded',String(!g.hidden));});
+/* «Más» se cierra al tocar afuera o con Escape; en el celular, el menú entero */
+function cerrarMas(){$('#navgrupo').hidden=true;$('#navmas').setAttribute('aria-expanded','false');}
+function cerrarMenu(){document.body.classList.remove('menu-abierto');$('#navmenu').setAttribute('aria-expanded','false');}
+document.addEventListener('click',e=>{if(!e.target.closest('#navgrupo,#navmas'))cerrarMas();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){cerrarMas();cerrarMenu();}});
+$('#navmenu').addEventListener('click',()=>{
+  document.documentElement.style.setProperty('--alto-mast',$('.mast').offsetHeight+'px');
+  const ab=document.body.classList.toggle('menu-abierto');$('#navmenu').setAttribute('aria-expanded',String(ab));});
+$('#navperfil').addEventListener('click',cerrarMenu);
+/* línea de lectura arriba y botón para volver */
+(function(){
+  const bar=document.createElement('div');bar.id='progreso';bar.setAttribute('aria-hidden','true');
+  const up=document.createElement('button');up.id='arriba';up.type='button';up.setAttribute('aria-label','Volver arriba');up.textContent='↑';
+  document.body.append(bar,up);up.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  let pend=false;const pintar=()=>{pend=false;const h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.transform=`scaleX(${h>0?Math.min(1,scrollY/h):0})`;up.classList.toggle('ver',scrollY>700);
+    document.body.classList.toggle('con-barra',!!$('#dzbarra')&&!$('#dzbarra').hidden);};
+  addEventListener('scroll',()=>{if(!pend){pend=true;requestAnimationFrame(pintar);}},{passive:true});addEventListener('resize',pintar);
+})();
+/* Método en acordeón: la tabla queda en el HTML y se lee fila por fila */
+(function(){
+  const tw=$('#v-racional .tw');if(!tw)return;
+  const acc=document.createElement('div');acc.className='acc';
+  acc.innerHTML=[...tw.querySelectorAll('tbody tr')].map(tr=>{const [k,o,c]=tr.children;
+    return `<details><summary><span class="k">${k.innerHTML}</span>${o.innerHTML}</summary><div class="cuerpo">${c.innerHTML}</div></details>`;}).join('');
+  tw.classList.add('en-acc');tw.after(acc);
+})();
 $$('#nav a').forEach(a=>{a.setAttribute('tabindex','0');a.setAttribute('role','link');
   a.addEventListener('click',()=>mostrar(a.dataset.v));
   a.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();mostrar(a.dataset.v);}});});

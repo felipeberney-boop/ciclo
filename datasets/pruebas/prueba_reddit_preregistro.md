@@ -1,7 +1,7 @@
 # Prueba con Reddit · preregistro
 
-Escrito y commiteado el 27/10/2026, **antes de calcular el resultado**. Reemplaza al jurado como prueba principal
-(el jurado queda disponible, pero depende de conseguir personas). Declarado: al revisar si había datos se vieron por
+Escrito y commiteado el 27/10/2026, **antes de calcular el resultado**. Reemplaza a la prueba del jurado
+(descartada: dependía de conseguir personas). Declarado: al revisar si había datos se vieron por
 arriba los últimos valores de Reddit; por eso la métrica no se elige ahora sino que es la misma que el modelo ya usa.
 
 **Hipótesis.** La etapa que el K-means le asigna a cada atributo (con pasarela y búsqueda hasta 2024) se corresponde

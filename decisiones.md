@@ -1225,4 +1225,4 @@ cargo, jeans baggy) son los tres que más crecen en Reddit. Robustez por rangos,
 
 **Hipótesis, como queda.** Cruzando pasarela y búsqueda, CICLO distingue los atributos que suben de los que no, y esa
 lectura coincide con una fuente que el modelo no vio. No distingue con respaldo externo entre «saturada» y «en
-retorno», y no predice. El jurado (`app/jurado/`) queda disponible como segunda prueba, si se consigue gente.
+retorno», y no predice. El formulario del jurado, su preregistro y su script se borraron el mismo día (quedan en el historial de git, commit `47b0d61`): la prueba con Reddit los reemplaza.

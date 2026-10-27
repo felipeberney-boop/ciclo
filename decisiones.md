@@ -1211,3 +1211,18 @@ concluye; si se pone de acuerdo, H se sostiene con p < 0,05 (permutación de las
 Formulario en `app/jurado/` (no muestra nada de CICLO, orden al azar por persona); evaluación en
 `codigo/evaluar_jurado.py`, probada con dos jurados inventados (uno parecido al modelo: se sostiene, p = 0,0001; uno al
 azar: no concluye). Las respuestas de prueba no están en el repo.
+
+## 2026-10-27 · La hipótesis, con Reddit: se sostiene para lo que sube
+
+Las entrevistas del jurado dependían de conseguir personas; se buscó un testigo que no las necesitara. Reddit no entra
+en el K-means y tiene serie para 14 de los 17 atributos. Preregistro y script commiteados antes de calcular
+(`datasets/pruebas/prueba_reddit_preregistro.md`, `codigo/prueba_reddit.py`, commit `0fa8956`); el momento en Reddit
+se mide con la misma fórmula que el modelo usa para la búsqueda. Declarado: al buscar los datos se vieron por arriba.
+
+**Resultado: se sostiene (η² = 0,88, p = 0,0013).** Los tres atributos que el modelo pone en ascenso o pico (Y2K,
+cargo, jeans baggy) son los tres que más crecen en Reddit. Robustez por rangos, agregada después: p = 0,047. Lo que
+**no** se sostiene: retorno y saturada no se distinguen en Reddit (p = 0,88).
+
+**Hipótesis, como queda.** Cruzando pasarela y búsqueda, CICLO distingue los atributos que suben de los que no, y esa
+lectura coincide con una fuente que el modelo no vio. No distingue con respaldo externo entre «saturada» y «en
+retorno», y no predice. El jurado (`app/jurado/`) queda disponible como segunda prueba, si se consigue gente.

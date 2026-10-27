@@ -36,3 +36,20 @@ que explican los grupos de etapa (η²). Contra el azar: barajar las etapas entr
 para ver si va en la dirección esperada (ascenso y pico arriba, saturada abajo).
 
 Script: `codigo/prueba_reddit.py`. Se informa el resultado salga como salga.
+
+## Resultado (27/10/2026, después del commit de arriba)
+
+**Se sostiene: η² = 0,88, p = 0,0013.** Los tres atributos que el modelo pone arriba (Y2K en ascenso; cargo y jeans
+baggy en pico) son exactamente los tres que más crecen en Reddit (+258 %, +187 %, +130 %). Que los tres de arriba
+caigan justo en los tres primeros lugares de 14 pasa por azar 1 vez en 364.
+
+**Controles agregados después, y marcados como tales (no estaban en el preregistro):**
+- Por rangos en vez de valores, para que un número extremo no infle el resultado: η² = 0,51, p = 0,047. Pasa, más
+  justo.
+- Retorno contra saturada: η² = 0,00, p = 0,88. **Reddit no distingue esas dos etapas** (−17 % y −14 % de media).
+  El modelo separa bien lo que sube de lo que no, pero la diferencia entre «en retorno» y «saturada» no tiene respaldo
+  en esta fuente.
+
+**Límites.** 14 atributos; «en ascenso» tiene uno solo. Reddit y la búsqueda no son del todo independientes: las dos
+reflejan qué le interesa a la gente. Lo que prueba es que el modelo lee lo mismo que muestra una fuente que no usó,
+no que exista una etapa «verdadera».

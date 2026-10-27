@@ -1188,5 +1188,5 @@ la barra y los links (`#id`) salen solos, y el id no cambia aunque cambie el ord
 A pedido de Felipe, la palabra y la flecha de «▲ Gana presencia» van en el verde de Entrar, para que se lea de un
 vistazo que es buena noticia. Es una excepción acotada a la regla del 26/10 (la tendencia describe en tinta y el
 color es de la decisión): sólo cambia el texto de «gana presencia» (El ciclo, las fichas de Diseñar leídas por CLIP).
-«Estable» y «Pierde presencia» siguen en tinta, y las barras de «Qué gana y qué pierde terreno», también. Verificado
+El mismo día, también a su pedido, «▼ Pierde presencia» pasa al rojo de Salir. «■ Estable» sigue en tinta, y las barras de «Qué gana y qué pierde terreno», también. Verificado
 en claro y oscuro. La versión anterior quedó en `diseno/prototipos/versiones_de_la_app/app_2026-10-27_ecf1ad7.html`.

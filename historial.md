@@ -161,7 +161,7 @@ Navegar como una herramienta profesional, sin perder la revista. Encabezado fijo
 línea de lectura y botón para volver arriba, Método en acordeón. Durante la entrada no se ve el menú. Referencia:
 stytrix.com, sin su naranja (el color sigue siendo sólo la señal). Capturas regeneradas. La versión anterior quedó en
 `diseno/prototipos/versiones_de_la_app/app_2026-10-27_7e5ebfd.html`. El mismo día, «▲ Gana presencia» pasa a verde
-(sólo la palabra y la flecha).
+y «▼ Pierde presencia» a rojo (sólo la palabra y la flecha).
 
 ## Presentación · Entrega 3
 

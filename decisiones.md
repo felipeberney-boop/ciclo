@@ -1361,3 +1361,16 @@ rezago 0 (+0,08, p = 0,026, no pasa la corrección): las capas se mueven juntas.
 CICLO lee el presente cruzando capas y distingue lo que sube de lo que no (Reddit); no predice y la pasarela no
 adelanta, ni por año ni por temporada. Está en `hipotesis.md`, en Método y en el making of (lámina «Tampoco por
 temporada»).
+
+## 2026-11-03 · De Figma al código, dicho como fue
+
+El criterio 4 de la Entrega 3 pide presentar el Figma pasado a código. **La app no se construyó leyendo el Figma**: se
+escribió directo en código con Claude Code, y el prototipo de Figma del 05/10 ya era distinto de la app de ese día (sans
+serif y pastillas contra la revista en Bodoni). En vez de reconstruir un proceso que no pasó, `entregas/entrega_3/figma_a_codigo.md`
+cuenta qué había en Figma, que el MCP de Figma se usó recién el 03/11 y sólo para leer el archivo y sacar capturas, qué se
+decidió en el código sin pasar por Figma (estados, celular, carga de CLIP, once casos de error, el oscuro apagado) y ocho
+diferencias con la devolución o el dato que provocó cada una. Cinco pares de capturas, Figma a la izquierda y la app a la
+derecha, en `entregas/entrega_3/figma_a_codigo/`.
+
+Dos cosas que salieron al escribirlo: CLIP no pesa 8 MB sino 89 (el índice es el de 8), y el registro no dice cómo se armó
+el Figma; los nombres de capa (`screen:*`, `go:*`) sugieren un script, y así queda dicho, sin afirmarlo.

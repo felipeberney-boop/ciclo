@@ -193,6 +193,12 @@ La última prueba que faltaba: si la pasarela adelanta a la búsqueda por tempor
 de tener los datos, con 14 atributos: se rechaza. CICLO lee el presente; no anticipa. El estado completo de la
 hipótesis está en `hipotesis.md`.
 
+## v1.16 · 03/11/2026 · De Figma al código
+
+Para el criterio 4: `entregas/entrega_3/figma_a_codigo.md`. La app no salió del Figma, y lo dice: qué había en Figma
+(05/10), qué se leyó con un agente (sólo el 03/11, para documentar), qué se decidió en el código y ocho diferencias con
+su causa, con cinco pares de capturas enfrentadas.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

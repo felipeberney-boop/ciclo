@@ -3,6 +3,14 @@
 Web app que ubica atributos de moda —un color, una estampa, un corte, un material— en una de cinco
 etapas de su ciclo de vida: **emergente, en ascenso, en pico, saturada o en retorno**.
 
+| | |
+|---|---|
+| **App** | https://felipeberney-boop.github.io/ciclo/ |
+| **Presentación Entrega 3** | https://felipeberney-boop.github.io/ciclo/presentacion/ |
+| **QR a la app** | [entregas/entrega_3/ciclo_qr.png](entregas/entrega_3/ciclo_qr.png) |
+| **Repositorio** | https://github.com/felipeberney-boop/ciclo |
+| De Figma al código · preguntas probables | [figma_a_codigo.md](entregas/entrega_3/figma_a_codigo.md) · [preguntas_probables.md](entregas/entrega_3/preguntas_probables.md) |
+
 Materia: *Sistemas generativos e IA para Diseño* (K534/K576) · Universidad de San Andrés · 2º semestre 2026
 Docentes: Cristian Reynaga e Iván Fardjoume
 

@@ -7,14 +7,17 @@ etapas de su ciclo de vida: **emergente, en ascenso, en pico, saturada o en reto
 
 **Presentación:** https://felipeberney-boop.github.io/ciclo/presentacion/
 
+**Repositorio:** https://github.com/felipeberney-boop/ciclo
+
+**Figma:** https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7
+
 <img src="entregas/entrega_3/ciclo_qr.png" alt="QR a la app" width="180">
 
 | | |
 |---|---|
-| **Repositorio** | https://github.com/felipeberney-boop/ciclo |
 | **También en Netlify** | https://ciclo-udesa.netlify.app |
-| **Figma · del diseño al código** | https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7 |
 | De Figma al código · preguntas probables | [figma_a_codigo.md](entregas/entrega_3/figma_a_codigo.md) · [preguntas_probables.md](entregas/entrega_3/preguntas_probables.md) |
+| Guion de la presentación y la demo | [guion_demo.md](entregas/entrega_3/guion_demo.md) |
 
 Materia: *Sistemas generativos e IA para Diseño* (K534/K576) · Universidad de San Andrés · 2º semestre 2026
 Docentes: Cristian Reynaga e Iván Fardjoume

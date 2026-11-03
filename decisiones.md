@@ -1497,3 +1497,30 @@ celular), la portada (`tendencias`) y la ficha con su procedencia se rehicieron 
 bajadas y Tendencias con el perfil. El lado Figma y las referencias de antes (revista, Apple, la tarjeta en Figma) no se
 tocan, porque cuentan la historia. Las saca `codigo/capturar_presentacion.js` y las arma
 `codigo/armar_capturas_presentacion.py`.
+
+## 2026-11-03 · La presentación, una lámina por criterio, y la demo primero
+
+**Devolución de Cristian en la presentación.** Mostrar primero el flujo de la app, y láminas más simples: confundían.
+
+**Qué queda.** Seis láminas, una por criterio de la rúbrica: portada (con el QR), la hipótesis (1), los datos (2), la IA
+(3), del diseño al código (4) y el cierre con la app, el repositorio y el Figma (5). La demo en vivo, de siete minutos,
+va entre la portada y la hipótesis, y es la prueba del criterio 1: una diseñadora toma una decisión que antes no podía
+tomar bien. Regla: una idea por lámina, hasta 25 palabras de cuerpo y tres números, sin achicar la tipografía; la de la
+IA es la excepción, porque el system prompt tiene que leerse.
+
+**La evidencia de la hipótesis.** El K-means pone los jeans ajustados en «saturada» y los amplios en «pico» sólo con
+pasarela y búsqueda; en reseñas de Amazon 2019–2022 los ajustados caen 39 % y los amplios suben 79 % (+95 % en Google
+Shopping). Son los mismos números de `app/llm/ciclo_datos.md`.
+
+**La IA ya no está repartida en tres láminas.** Una sola muestra la regla del system prompt, una línea real de lo que
+recibe y el JSON que devuelve, con la regla grande: el modelo nunca ve una fila de datos.
+
+**Todo lo demás pasa a Respaldo**, después del cierre: Reddit, la decisión, los cuatro métodos de predicción, VISUELLE,
+2025 y 2026, el calzado, el K-means, las fuentes, la procedencia, el prompt entero, lo que recibe, una respuesta real, la
+referencia, las diferencias con el Figma, lo que Figma no pregunta y cómo se hizo. La versión de catorce láminas quedó en
+`diseno/prototipos/versiones_de_la_presentacion/presentacion_2026-11-03_cba39cc_catorce_laminas.html`.
+
+**El guion.** `presentacion_guion.md` pasa a ser `guion_demo.md`: el reparto (1 + 7 + 5 + 2 minutos), qué decir en cada
+paso de la demo, la pregunta exacta (¿Qué color va con un jean baggy?, probada el 27/10 con el mismo diseño), el plan B y
+dónde cortar. `codigo/probar_demo.js` hace los siete pasos con clicks de verdad; el 03/11 pasaron los siete, con la
+llamada a Groq cortada a propósito para probar el plan B.

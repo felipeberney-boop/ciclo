@@ -26,3 +26,5 @@ cel = panel('figma_par_celular', 'app_celular_tendencias', (423, 50, 393, 852))
 cel.paste(crudo('app_celular_menu').crop((0, 0, 393, 852)), (846, 50)); guardar(cel, 'figma_par_celular')
 guardar(crudo('app_tendencias'), 'tendencias')
 guardar(crudo('app_ficha_procedencia'), 'ficha_procedencia')
+# la etapa 1 de «Del diseño al código»: el lado Figma del par del radar, solo
+Image.open(os.path.join(DEST, 'figma_par_radar.webp')).convert('RGB').crop((0, 35, 720, 485)).save(os.path.join(DEST, 'figma_original_radar.webp'), 'WEBP', quality=88)

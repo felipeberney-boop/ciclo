@@ -10,6 +10,7 @@ Scripts de extracción, cálculo y render. Ninguno es parte del sitio: el sitio 
 | `renderizar_laminas_a_png.js` | Pasa los SVG a PNG con Playwright |
 | `capturar_pantallas_de_la_app.js` | Abre la app y guarda una captura de cada vista |
 | `capturar_recorrido.js` | El recorrido de entrada y de uso, paso a paso, con clicks de verdad → `entregas/entrega_3/recorrido/` |
+| `probar_demo.js` | Los siete pasos de la demo de la Entrega 3, con clicks de verdad; con `GROQ_KEY` hace la pregunta a Groq, sin clave prueba el plan B |
 | `capturar_presentacion.js` + `armar_capturas_presentacion.py` | Las pantallas de la app que usa la presentación: saca las capturas y las pega en el lado «App» de cada par Figma \| App → `app/presentacion/capturas/` |
 | `bajar_titulos_reddit.py` | Baja los títulos de r/femalefashionadvice de un año vía Arctic Shift |
 | `contar_terminos_reddit.py` | Cuenta, por año, los posts cuyo título nombra cada término |

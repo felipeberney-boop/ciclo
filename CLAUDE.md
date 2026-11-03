@@ -18,7 +18,7 @@ inline CSS + one inline `<script>`).
 cd app && python3 -m http.server 8000
 ```
 
-GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar_app.yml`). The only external dependency is Google Fonts.
+GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar_app.yml`); it is the official URL (the QR points there). Since 03/11 Netlify (`ciclo-udesa.netlify.app`, `netlify.toml`) publishes the same `app/` folder as a second host, deployed by hand with `npx netlify-cli deploy --prod --dir app`. The only external dependency is Google Fonts.
 
 ## App architecture (`app/index.html`)
 
@@ -54,7 +54,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   its word and icon. Provenance is never a color: `● medido`, `◇ interpretado` (dashed), `↪ prestado` as text/icon/dashed
   line. The old salmon-for-AI rule is retired (tokens `--ia`/`--ia-t` are neutral now).
 - **Stage is encoded as position on a track, not color.** Since 27/10 the look is an Apple-style product page
-  (the system, never the brand): system font stack `--sf` (SF Pro on Apple devices, Inter from Google Fonts elsewhere),
+  (the system, never the brand; the reference came from the cátedra, Iván Fardjoume: Apple's DESIGN.md on shadcn.io, saved in `diseno/referencias/`): system font stack `--sf` (SF Pro on Apple devices, Inter from Google Fonts elsewhere),
   #f5f5f7 canvas, white 18px cards, pills, no uppercase-tracked labels, no UI shadows, one dark tile (`.terreno`),
   always light (`<html data-theme="light">` disables the old dark mode). Colors: the garments' palettes, the signal
   (Entrar green, Esperar/Explorar amber, Salir red via `accCls()`/`--act-*`, always with the word), and **one blue
@@ -68,7 +68,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   plus client type; its output is shown labelled as interpretation. Prompts live in `prompts/` and are
   versioned: add `_v2.md` etc., never overwrite an existing version. No API keys in the repo; IA-5 («Pedir lectura en vivo»,
   `lvPedir()`) and «Preguntar» both call Groq from the browser with the user's own key (localStorage `groq_key`).
-  Netlify (`netlify.toml`, `netlify/functions/`) is paused and unused; the live deploy is GitHub Pages.
+  `netlify/functions/` is unused (the app needs no server).
 
 ## Scripts (`codigo/`)
 

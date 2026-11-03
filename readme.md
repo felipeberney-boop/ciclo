@@ -9,6 +9,8 @@ etapas de su ciclo de vida: **emergente, en ascenso, en pico, saturada o en reto
 | **Presentación Entrega 3** | https://felipeberney-boop.github.io/ciclo/presentacion/ |
 | **QR a la app** | [entregas/entrega_3/ciclo_qr.png](entregas/entrega_3/ciclo_qr.png) |
 | **Repositorio** | https://github.com/felipeberney-boop/ciclo |
+| **También en Netlify** | https://ciclo-udesa.netlify.app |
+| **Figma · del diseño al código** | https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7 |
 | De Figma al código · preguntas probables | [figma_a_codigo.md](entregas/entrega_3/figma_a_codigo.md) · [preguntas_probables.md](entregas/entrega_3/preguntas_probables.md) |
 
 Materia: *Sistemas generativos e IA para Diseño* (K534/K576) · Universidad de San Andrés · 2º semestre 2026
@@ -25,8 +27,8 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 |---|---|
 | App publicada (oficial) | https://felipeberney-boop.github.io/ciclo/ |
 | Presentación Entrega 3 | https://felipeberney-boop.github.io/ciclo/presentacion/ |
-| Espejo | https://ciclo-udesa.netlify.app — **pausado**: la cuenta gratuita de Netlify se quedó sin créditos en octubre de 2026 y no publica desde el commit `e2c4e4b`; muestra una versión anterior |
-| Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). `netlify.toml` y `netlify/functions/` quedan en el repo pausados: la app no depende de ellos |
+| También en Netlify | https://ciclo-udesa.netlify.app — la misma app, publicada el 03/11/2026 (la cátedra acepta Netlify o Vercel). La oficial, la del QR, es la de GitHub Pages |
+| Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). Netlify publica la misma carpeta a mano: `npx netlify-cli deploy --prod --dir app`. La app no necesita servidor: `netlify/functions/` no se usa |
 
 ## Capturas
 
@@ -79,7 +81,7 @@ python3 -m http.server 8000
 
 Publicada en GitHub Pages desde la carpeta `app/`, sin comando de build. Nada corre en un servidor: los dos
 modelos de lenguaje (IA-5 e IA-8) llaman a Groq desde el navegador con la clave que pega cada uno. Netlify
-(`netlify.toml`, `netlify/functions/`) quedó pausado desde el 25/10/2026 y la app no lo usa.
+publica la misma carpeta `app/` desde el 03/11/2026; las funciones de `netlify/functions/` no se usan.
 
 Lo único que carga de afuera son las tipografías: la del sistema, y de Google Fonts, Inter como reemplazo de SF Pro.
 Sin conexión funciona igual, con las tipografías del sistema.
@@ -177,8 +179,8 @@ Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022
   De dónde sale el dato se dice sin color: ● medido, ◇ interpretado (punteado), ↪ prestado. Los gráficos usan color
   sólo para separar sus series. Hay un único color más: **el azul, que significa «se puede tocar»** (botones de
   acción, links, la opción elegida).
-- **Como una página de producto, pero de ropa.** Desde el 27/10 la app sigue el sistema visual de las páginas de
-  producto de Apple (sin su marca): la tipografía del sistema (SF Pro en Mac e iPhone, Inter en el resto), títulos
+- **Como una página de producto, pero de ropa.** Desde el 27/10 la app adapta el sistema de diseño de Apple que nos
+  pasó la cátedra como referencia (Iván Fardjoume, el DESIGN.md de shadcn.io; ver `diseno/referencias/`), sin su marca: la tipografía del sistema (SF Pro en Mac e iPhone, Inter en el resto), títulos
   centrados en semibold, un lienzo gris perla con tarjetas blancas de 18 px, píldoras, ningún texto en mayúsculas
   espaciadas, sin sombras en la interfaz y un bloque oscuro para lo que gana y pierde terreno. La interfaz se corre
   para que hablen las prendas: sus dibujos y sus paletas. Siempre en claro. Antes fue una revista (Bodoni y crema,
@@ -244,8 +246,8 @@ ciclo/
 ├── decisiones.md              registro fechado de lo que probamos y descartamos
 ├── historial.md               las versiones del proyecto, de la hipótesis al prototipo
 ├── .gitignore
-├── netlify.toml               pausado: el deploy vivo es GitHub Pages
-├── netlify/functions/         pausado: lectura.mjs, la versión con servidor de IA-5
+├── netlify.toml               Netlify publica app/ tal cual (también en GitHub Pages)
+├── netlify/functions/         sin uso: lectura.mjs, la versión con servidor de IA-5
 ├── datasets/                  diccionario y links de descarga (los CSV no se suben)
 ├── datasets_procesados/       las series que consume la app
 ├── diseno/                    referencias y prototipos por versión

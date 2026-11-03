@@ -165,8 +165,8 @@ y «▼ Pierde presencia» a rojo (sólo la palabra y la flecha).
 
 ## v1.11 · 27/10/2026 · Como si Apple vendiera ropa
 
-El profesor seguía viendo la interfaz «muy IA». La app y la presentación pasan al sistema visual de las páginas de
-producto de Apple, sin su marca: tipografía del sistema, gris perla y tarjetas blancas, títulos centrados, un solo azul
+Iván Fardjoume, docente, seguía viendo la interfaz «muy IA» y nos pasó como referencia el sistema de diseño de Apple
+publicado en shadcn.io (`diseno/referencias/`). La app y la presentación lo adaptan, sin su marca: tipografía del sistema, gris perla y tarjetas blancas, títulos centrados, un solo azul
 para lo que se toca, siempre en claro. Diseñar funciona como un configurador. La versión anterior quedó en
 `diseno/prototipos/versiones_de_la_app/app_2026-10-27_c639966_antes_de_apple.html`.
 
@@ -193,11 +193,13 @@ La última prueba que faltaba: si la pasarela adelanta a la búsqueda por tempor
 de tener los datos, con 14 atributos: se rechaza. CICLO lee el presente; no anticipa. El estado completo de la
 hipótesis está en `hipotesis.md`.
 
-## v1.16 · 03/11/2026 · De Figma al código
+## v1.16 · 03/11/2026 · Del diseño al código, y la referencia de la cátedra
 
-Para el criterio 4: `entregas/entrega_3/figma_a_codigo.md`. La app no salió del Figma, y lo dice: qué había en Figma
-(05/10), qué se leyó con un agente (sólo el 03/11, para documentar), qué se decidió en el código y ocho diferencias con
-su causa, con cinco pares de capturas enfrentadas.
+Para el criterio 4: un archivo de Figma de tres etapas (https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7). Son el
+diseño original, la devolución de la cátedra con la referencia y el sistema implementado, este último generado desde el
+código con el MCP. El documento es `entregas/entrega_3/figma_a_codigo.md`. Se corrige la atribución del cambio a Apple:
+la referencia la pasó Iván (el DESIGN.md de Apple en shadcn.io, guardado en `diseno/referencias/`); la adaptación es
+nuestra. La app vuelve a publicarse también en Netlify.
 
 ## Presentación · Entrega 3
 

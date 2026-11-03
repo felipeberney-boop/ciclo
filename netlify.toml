@@ -1,18 +1,7 @@
-# PAUSADO desde el 25/10/2026. El deploy vivo es GitHub Pages (.github/workflows/publicar_app.yml) y la app no
-# depende de Netlify: IA-5 y «Preguntar» llaman a Groq desde el navegador con la clave de cada usuario.
-# Se deja por si vuelve a hacer falta un servidor (ver decisiones.md, 21/10 y 25/10/2026).
-# El espejo quedó congelado con una versión vieja: el próximo deploy que Netlify acepte manda todo a la app oficial.
-[[redirects]]
-  from = "/*"
-  to = "https://felipeberney-boop.github.io/ciclo/:splat"
-  status = 301
-  force = true
-
-# La app es un único HTML estático: sin build, se publica la carpeta app/ tal cual.
+# Netlify publica la misma app que GitHub Pages (03/11/2026): la carpeta app/ tal cual, sin build.
+# Del 25/10 al 03/11 estuvo pausado (sin créditos) y redirigía a GitHub Pages; se reactivó porque la cátedra
+# acepta Netlify o Vercel. La app no necesita servidor: IA-5 y «Preguntar» llaman a Groq desde el navegador con la
+# clave de cada usuario. Las funciones de netlify/functions/ quedan en el repo, sin publicar (ver decisiones.md).
 [build]
   publish = "app"
   command = ""
-
-# IA-5 en vivo: la función arma el prompt y llama a Groq con GROQ_API_KEY (variable de entorno, nunca en el repo).
-[functions]
-  directory = "netlify/functions"

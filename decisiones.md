@@ -1491,3 +1491,9 @@ presentación y el QR (criterio 5).
 («Tu perfil: Mujer · Para una marca · Fast fashion · Cambiar»): antes el perfil recién se veía en la ficha. Y Preguntar
 leía como vacío un diseño que llega desde una ficha («Diseñar con esta estampa · Rayas»), porque todavía no tiene
 prenda; ahora toma el atributo fijo como diseño y le dice al modelo que falta la prenda.
+
+**Las capturas de la presentación, al día.** El lado «App» de los pares Figma | App (entrada, Tendencias, ficha,
+celular), la portada (`tendencias`) y la ficha con su procedencia se rehicieron con la app de hoy: la entrada ya sin
+bajadas y Tendencias con el perfil. El lado Figma y las referencias de antes (revista, Apple, la tarjeta en Figma) no se
+tocan, porque cuentan la historia. Las saca `codigo/capturar_presentacion.js` y las arma
+`codigo/armar_capturas_presentacion.py`.

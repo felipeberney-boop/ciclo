@@ -1,6 +1,6 @@
 # Preguntas probables · Entrega 3
 
-Quince preguntas que es probable que salgan, cada una con una respuesta corta y el número que la sostiene. Cada cifra
+Dieciséis preguntas que es probable que salgan, cada una con una respuesta corta y el número que la sostiene. Cada cifra
 está en el repo; entre paréntesis, dónde.
 
 ---
@@ -82,6 +82,12 @@ contra una base de 50,2 %. Quedan como demostración de método, rotulados así 
 ninguna recomendación. Zara febrero 2024 es mitad real (licencia MIT).
 
 **15 · ¿Cómo pasaron el Figma a código?**
-No lo pasamos: la app se escribió directo en código con Claude Code, y el Figma de la Entrega 2 ya era distinto ese
-día. El MCP de Figma se usó una sola vez, el 03/11, para leer el archivo y sacar las capturas de comparación. Los
-estados, los errores, la carga y el celular se decidieron en el código. Detalle en `figma_a_codigo.md`.
+La app no salió de un Figma: se escribió directo en código con Claude Code. Lo que la cambió fue la devolución de Iván
+(«muy IA») y la referencia que pasó: el sistema de diseño de Apple publicado en shadcn.io, que adaptamos tomando unas
+cosas y otras no. El Figma de esta entrega lo cuenta en tres etapas, y la tercera la armó el MCP de Figma a partir del
+código: figma.com/design/4lvJEf2ZjBX87sXEySXqa7. Detalle en `figma_a_codigo.md`.
+
+**16 · ¿Por qué se parece a Apple?**
+Porque esa fue la referencia de la cátedra (Iván, 27/10). Se tomó el sistema (tipografía, gris perla, tarjetas sin
+sombra, un solo azul para lo que se toca) y no la marca: ni logo, ni nombre, ni fotos. Y se le agregó lo propio: el
+color sigue siendo la señal, Entrar, Esperar y Salir, siempre con su palabra.

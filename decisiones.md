@@ -1232,10 +1232,15 @@ predecir?) y a Método (fila «¿La etapa coincide con afuera?», con lo que se 
 
 ## 2026-10-27 · Como si Apple vendiera ropa
 
-**Por qué.** El profesor seguía viendo la interfaz «muy IA». Tres variantes (revista, revista suave y estudio) no
-convencieron. Felipe eligió el sistema visual de las páginas de producto de Apple: «como si Apple vendiese ropa y un
-software de hacer ropa encontrando tendencias, que es lo que es CICLO». Encaja con la tesis de siempre: la interfaz se
-corre para que hablen las prendas.
+**Por qué.** Iván Fardjoume, docente de la cátedra, seguía viendo la interfaz «muy IA». Tres variantes (revista,
+revista suave y estudio) no convencieron. Iván nos pasó como referencia https://www.shadcn.io/blocks?page=2, el sitio
+donde está el DESIGN.md con el sistema de diseño de Apple (https://www.shadcn.io/design/apple). Sobre esa referencia
+Felipe definió qué tenía que ser CICLO: «como si Apple vendiese ropa y un software de hacer ropa encontrando
+tendencias, que es lo que es CICLO». Encaja con la tesis de siempre: la interfaz se corre para que hablen las prendas.
+
+> **Atribución corregida el 03/11/2026.** Esta entrada decía «Felipe eligió el sistema visual de las páginas de
+> producto de Apple». La referencia vino de la cátedra (Iván), y lo nuestro es la adaptación: qué se tomó, qué no y cómo
+> se implementó. Las capturas de la referencia están en `diseno/referencias/`.
 
 **Qué cambió.** Una capa nueva al final del CSS («capa Apple»): tipografía del sistema (SF Pro en Mac e iPhone, Inter
 en el resto), lienzo gris perla #f5f5f7, tarjetas blancas de 18 px sin sombra, títulos centrados en semibold con
@@ -1410,3 +1415,42 @@ Contra la app publicada, con Playwright, en un contexto limpio (sin caché ni lo
   respuesta real: no había clave en esta máquina.
 
 El guion de la demo pasa a 4 minutos y cinco pasos, con el salto de Tendencias a Diseñar y el mensaje real sin clave.
+
+## 2026-11-03 · El criterio 4, en un Figma de tres etapas, y la referencia de Iván
+
+**La atribución, corregida.** La entrada «Como si Apple vendiera ropa» (27/10) decía que Felipe había elegido el sistema
+de Apple. No fue así: Iván Fardjoume vio la interfaz «muy IA» y pasó como referencia https://www.shadcn.io/blocks?page=2,
+el sitio donde está el DESIGN.md de Apple (https://www.shadcn.io/design/apple). La referencia es de la cátedra; la
+adaptación (qué se tomó, qué no y cómo quedó en el código) es nuestra. Se corrigió la entrada con una nota fechada, y
+también historial, readme, la nota del CSS y CLAUDE.md. La devolución del 13/10 («un mar de datos») fue de Cristian
+Reynaga. Las capturas de las dos páginas de la referencia quedaron en `diseno/referencias/`, como fuente. Coinciden
+valor por valor con la capa: #f5f5f7, #0066cc, #0071e3, #272729, #7a7a7a, #e0e0e0, #f0f0f0, 18 px, 17 px, Inter de
+respaldo.
+
+**El archivo de Figma.** «CICLO · Del diseño al código» (https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7), una página
+por etapa. La 1 es el diseño original, con capturas del prototipo de la Entrega 2, láminas y propuestas, cada una con su
+fecha. La 2 tiene la devolución, la referencia capturada, las tres variantes que no convencieron y lo que se tomó y lo
+que no. La 3 es el sistema implementado, generado desde `app/index.html` con el MCP de Figma: 16 colores y 3 radios como
+variables, 24 estilos de texto, los componentes y Tendencias, Diseñar y Preguntar a 1400 y 393 armadas con instancias.
+
+**Tres cosas que no salieron como se pidieron, y por qué.**
+- El «salmón de interpretado» no existe desde el 20/10: la variable lleva el valor real, gris, con esa nota.
+- El texto va en Inter y no en SF Pro, porque SF Pro es local y no se ve en otras computadoras; es también el respaldo
+  de la app.
+- Las tarjetas de estampas y materiales llevan el color de la tela en vez de su dibujo; la de rayas sí está dibujada.
+
+**Sobre el MCP de Figma.** Las sobrescrituras de tamaño y posición dentro de una instancia se ignoran sin error. Por
+eso la etapa de la tarjeta de Tendencias es una propiedad de variante (5 etapas × 2 dibujos), y la barra de la fila
+oscura es una variante por valor, que escala con el ancho de la fila.
+
+**La presentación.** El bloque de Figma pasa a ser el recorrido de las tres etapas, con el link al archivo, la
+referencia y los pares. Los límites quedan en una sola lámina corta con sus dos ejemplos (el corte en 2024 y el
+calzado), y en la hipótesis va primero lo que se sostiene.
+
+## 2026-11-03 · Netlify, otra vez
+
+La cátedra acepta Netlify o Vercel. Netlify, pausado desde octubre por falta de créditos, volvió a aceptar deploys en
+noviembre, así que no hizo falta pasar a Vercel. `netlify.toml` deja de redirigir a GitHub Pages: publica la carpeta
+`app/` tal cual. https://ciclo-udesa.netlify.app sirve el mismo HTML que GitHub Pages (más un comentario y un script que
+Netlify agrega). GitHub Pages sigue siendo la URL oficial, la del QR. El deploy de Netlify es a mano:
+`npx netlify-cli deploy --prod --dir app`.

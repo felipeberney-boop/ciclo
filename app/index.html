@@ -934,6 +934,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .gate{text-align:center;max-width:920px}
 .app .gate .sub{margin-left:auto!important;margin-right:auto!important;font-size:21px!important;color:var(--ink-2)!important}
 .app .ggrid{text-align:left}
+.app .perfilrad:not(#z){border-radius:999px!important}@media (max-width:560px){.app .perfilrad:not(#z){border-radius:18px!important}}.app .perfilrad{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 14px;margin:22px auto 0;padding:10px 18px;background:var(--card);border-radius:999px;font-size:15px;color:var(--ink-2)}.app .perfilrad b{color:var(--ink);font-weight:600}.app .perfilrad button{font:inherit;color:var(--azul);background:none;border:0;padding:0;cursor:pointer}
 .app .ggrid.g4 .gt{font-size:26px!important}
 .app .gfirma{text-align:left;margin-top:56px}
 .app .gnav{justify-content:center}
@@ -1017,6 +1018,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
           <span class="lbl">01 · Tendencias</span>
           <h1>Qué se está moviendo</h1>
           <p class="sub">Lo que está ganando y perdiendo terreno afuera, y en qué etapa está cada atributo. Tocá cualquiera para ver su recorrido y diseñar con él.</p>
+          <p class="perfilrad" id="perfilrad"></p>
         </div>
       </div>
       <hr class="rule">
@@ -2755,10 +2757,12 @@ function asGuardar(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function asSecciones(doc){const S={intro:[]};let a='intro';for(const l of doc.split('\n')){if(l.startsWith('## ')){a=l.slice(3).trim();S[a]=[l];}else(S[a]||(S[a]=[])).push(l);}return S;}
 /* lo que está armando en Diseñar, como chips y como ids de DATOS */
 function asDiseno(){
-  const pr=dzPrenda();if(!pr)return {chips:[],ids:[],txt:''};
-  const P=dzPasos().filter(p=>p!=='fin'&&dz[p]),chips=P.map(p=>({paso:p,n:DZ_NOMBRE[p],v:dzValor(p)}));
+  // desde una ficha llega sólo el atributo (una estampa, un material, un color), sin prenda: también es un diseño
+  const val=p=>{try{return dzValor(p);}catch(e){return null;}};
+  const P=(dzPrenda()?dzPasos():['material','color','estampa','detalle']).filter(p=>p!=='fin'&&dz[p]&&val(p)),chips=P.map(p=>({paso:p,n:DZ_NOMBRE[p],v:val(p)}));
   const ids=[];if(dz.tipo)ids.push(`tipo_${dz.prenda}_${dz.tipo}`);['corte','tiro','material','estampa','detalle'].forEach(k=>{if(dz[k])ids.push(`${k}_${dz[k]}`);});
-  return {chips,ids,txt:dzNombre?chips.map(c=>`${c.n.toLowerCase()}: ${c.v}`).join(' · '):''};
+  return {chips,ids,txt:chips.map(c=>`${c.n.toLowerCase()}: ${c.v}`).join(' · ')+(dzPrenda()?'':' (todavía sin prenda)'),
+    nombre:dzPrenda()?dzNombre():chips.map(c=>c.v.toLowerCase()).join(', ')};
 }
 /* los pasos y valores que una acción puede tocar, para el diseño de ahora */
 function asOpciones(){
@@ -2847,7 +2851,7 @@ function asPintar(){
   $('#asclip').innerHTML=as.clip.map((c,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar"><span>leí</span>${escH(c.n)} <span class="aspp">${c.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('');
   $$('#asclip [data-x]').forEach(b=>b.onclick=()=>{as.clip.splice(+b.dataset.x,1);asPintar();});
   const ch=$('#aschat');ch.innerHTML='';
-  if(!as.hist.length)ch.innerHTML=`<div class="asa"><div class="h"><span class="tag ia2">interpretado · LLM</span></div><p>${D.chips.length?`Estás armando ${escH(dzNombre())}. Preguntame si conviene, qué cambiar o qué se le parece.`:'Armá algo en Diseñar o subí una foto, y preguntame.'} Cada respuesta trae el dato que la sostiene.</p></div>`;
+  if(!as.hist.length)ch.innerHTML=`<div class="asa"><div class="h"><span class="tag ia2">interpretado · LLM</span></div><p>${D.chips.length?`Estás armando ${escH(D.nombre)}. Preguntame si conviene, qué cambiar o qué se le parece.`:'Armá algo en Diseñar o subí una foto, y preguntame.'} Cada respuesta trae el dato que la sostiene.</p></div>`;
   as.hist.forEach(m=>{
     const d=document.createElement('div');
     if(m.role==='user'){d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}
@@ -3319,6 +3323,7 @@ function mostrar(v,keepNav){
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='asistente')asAbrir();
   if(v==='racional')pintarMetodoGate();
+  if(v==='radar')pintarPerfilRadar();
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }
@@ -3381,6 +3386,14 @@ function ponerCliente(c){
 function gateElegir(){
   publico=gateSel.publico||'todos';vinculo=gateSel.vinculo||'marca';ponerCliente(gateSel.cliente);guardarPerfil();
   if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);
+}
+/* Tendencias dice con qué perfil se está leyendo, y deja cambiarlo */
+function pintarPerfilRadar(){
+  const e=$('#perfilrad');if(!e)return;
+  const pub={mujer:'Mujer',hombre:'Hombre',todos:'Sin género'}[publico]||'Sin género';
+  const cat=(GATE[vinculo]||GATE.marca).c[cliente]?.[0]||(PERFIL[cliente]||PERFIL.premium).n;
+  e.innerHTML=`<span>Tu perfil: <b>${pub} · ${vinculo==='propia'?'Por tu cuenta':'Para una marca'} · ${cat}</b></span><button type="button" id="perfilradc">Cambiar</button>`;
+  $('#perfilradc').onclick=()=>abrirGate('radar');
 }
 /* Método · la entrada: lo que el gate ya no explica en cada tarjeta */
 function pintarMetodoGate(){

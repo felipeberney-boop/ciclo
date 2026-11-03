@@ -1486,3 +1486,8 @@ usaba el gate.
 dónde cae, Tendencias, la ficha, «Diseñar con…», Diseñar con el atributo fijo y Preguntar; el gate y Diseñar también a
 393 px. Las saca `codigo/capturar_recorrido.js` con clicks de verdad, sin perfil guardado. Arriba de todo, la app, la
 presentación y el QR (criterio 5).
+
+**Después, dos arreglos que salieron del recorrido.** Tendencias dice debajo del título con qué perfil está leyendo
+(«Tu perfil: Mujer · Para una marca · Fast fashion · Cambiar»): antes el perfil recién se veía en la ficha. Y Preguntar
+leía como vacío un diseño que llega desde una ficha («Diseñar con esta estampa · Rayas»), porque todavía no tiene
+prenda; ahora toma el atributo fijo como diseño y le dice al modelo que falta la prenda.

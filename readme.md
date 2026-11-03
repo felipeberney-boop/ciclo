@@ -55,7 +55,7 @@ Cada tarjeta dice sólo lo que hay que clickear. Qué cambia cada respuesta est�
 
 ![Paso 4: qué tipo de prendas, por tu cuenta](entregas/entrega_3/recorrido/paso_04_por_tu_cuenta_tipo_de_prendas.png)
 
-**5 · Cae en Tendencias con el perfil aplicado.** Arriba a la derecha, «Cambiar perfil» vuelve a las preguntas.
+**5 · Cae en Tendencias con el perfil aplicado.** Debajo del título dice con qué perfil lee; «Cambiar» vuelve a las preguntas.
 
 ![Paso 5: después de las preguntas, Tendencias](entregas/entrega_3/recorrido/paso_05_cae_en_tendencias_con_el_perfil.png)
 
@@ -83,7 +83,7 @@ En el celular, las mismas tres preguntas:
 
 <img src="entregas/entrega_3/recorrido/paso_09_disenar_con_el_atributo_fijo_celular.png" alt="Paso 9 en el celular" width="260">
 
-**10 · Preguntar.** Un chat que contesta con los datos de CICLO y tu perfil (pegás tu clave de Groq).
+**10 · Preguntar.** Un chat que contesta con los datos de CICLO, tu perfil y lo que venías diseñando (acá, Rayas). Pegás tu clave de Groq.
 
 ![Paso 10: Preguntar](entregas/entrega_3/recorrido/paso_10_preguntar.png)
 

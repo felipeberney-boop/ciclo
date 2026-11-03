@@ -1524,3 +1524,18 @@ referencia, las diferencias con el Figma, lo que Figma no pregunta y cómo se hi
 paso de la demo, la pregunta exacta (¿Qué color va con un jean baggy?, probada el 27/10 con el mismo diseño), el plan B y
 dónde cortar. `codigo/probar_demo.js` hace los siete pasos con clicks de verdad; el 03/11 pasaron los siete, con la
 llamada a Groq cortada a propósito para probar el plan B.
+
+## 2026-11-03 · La presentación termina en el Cierre
+
+La sección «Respaldo» no se usaba: sale entera, con su navegación, su CSS, los visuales que sólo dibujaba ella y las
+20 capturas que ya no muestra ninguna lámina (siguen en el historial de git). Quedan seis láminas exactas: Portada, La
+hipótesis, Los datos, La IA, Del diseño al código y Cierre; el contador termina en 06 / 06 y la última flecha se queda
+en el Cierre. `codigo/capturar_presentacion.js` saca ahora sólo la captura de Tendencias, la única de la app que usa.
+
+Antes de borrar se revisó que cada dato de esas láminas siguiera en el proyecto: en Método (Reddit, los cuatro métodos,
+2025 y 2026, el calzado, el K-means, las fuentes), en este registro (VISUELLE, el conteo 74 / 42 / 17 de las opciones de
+Diseñar, los valores de la referencia), en `figma_a_codigo.md` (las diferencias con el Figma, lo que se decidió en el
+código), en `prompts/` y `datasets/pruebas/` (el prompt y una respuesta real) y en `preguntas_probables.md` (los tokens
+por pregunta). Lo único que estaba sólo en las láminas era el tamaño del documento que lee el modelo, y queda acá:
+`app/llm/ciclo_datos.md` pesa 62 KB (62.382 bytes), pero no viaja entero: por pregunta van lo general y las fichas que
+nombra la conversación, entre 3.600 y 4.600 tokens. El gráfico de commits por día del making of salía de `git log`.

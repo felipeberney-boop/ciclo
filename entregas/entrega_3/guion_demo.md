@@ -1,7 +1,7 @@
 # Entrega 3 · guion de la presentación y de la demo (03/11/2026)
 
 Con la devolución de Cristian del 03/11: primero el flujo de la app, y láminas simples. Son seis láminas, una por
-criterio de la rúbrica, y una sección **Respaldo** al final que se abre sólo si preguntan.
+criterio de la rúbrica, y la presentación termina en el Cierre.
 
 Presentación: https://felipeberney-boop.github.io/ciclo/presentacion/ · App: https://felipeberney-boop.github.io/ciclo/
 (en la presentación, la tecla N muestra las notas de cada lámina).
@@ -15,7 +15,7 @@ Presentación: https://felipeberney-boop.github.io/ciclo/presentacion/ · App: h
 | 1 min | 04 · La IA | 3 |
 | 1 min | 05 · Del diseño al código | 4 |
 | 1 min | 06 · Cierre: app, repositorio, Figma | 5 |
-| 2 min | Preguntas | Respaldo |
+| 2 min | Preguntas | — |
 
 ## Antes de entrar
 
@@ -114,24 +114,22 @@ sistema de Apple → cómo quedó. En el código, no en Figma: los estados, el c
 
 La app, el repositorio y el Figma en pantalla. «CICLO: en qué etapa está cada atributo de moda, y qué hacer con eso.»
 
-## Si preguntan · Respaldo
+## Si preguntan
 
-Después del cierre, con la flecha derecha (o tocando «Respaldo» abajo):
+Las láminas no tienen respaldo: las respuestas están en el proyecto, donde la rúbrica pide que estén documentadas.
 
-| Pregunta probable | Lámina |
+| Pregunta probable | Dónde está |
 |---|---|
-| ¿Cómo saben que la etapa está bien? | Lo que sube, sube afuera (Reddit, p = 0,0013) |
-| ¿Qué decide exactamente el perfil? | La decisión, paso a paso |
-| ¿Por qué no predice? | ¿Se puede predecir? (cuatro métodos) |
-| ¿Y con ventas reales? | VISUELLE |
-| ¿Por qué no 2025 y 2026? | 2025 y 2026, fuera (el trench) |
-| ¿Y el calzado? | El calzado |
-| ¿Cómo es el K-means? | El K-means |
-| ¿Qué fuentes, todas? | Las fuentes |
-| ¿Dónde se ve lo medido y lo interpretado? | Calculado contra inferido |
-| ¿El prompt entero? ¿Qué recibe exactamente? ¿Una respuesta real? | El system prompt entero · Qué recibe, entero · Una respuesta real |
-| ¿Qué tomaron de la referencia? ¿Qué cambió del Figma? | La referencia de la cátedra · Las diferencias · Lo que Figma no pregunta |
-| ¿Cómo lo hicieron? | Cómo se hizo |
+| ¿Cómo saben que la etapa está bien? | Método, fila «¿La etapa coincide con afuera?» (Reddit, p = 0,0013) · `hipotesis.md` |
+| ¿Qué decide exactamente el perfil? | Método, «La entrada: qué cambia cada respuesta» |
+| ¿Por qué no predice? | Método, fila «Hasta 2030 · el cono» (cuatro métodos) |
+| ¿Y con ventas reales? | `decisiones.md`, 13/10: VISUELLE |
+| ¿Por qué no 2025 y 2026? | Método, fila «2025 y 2026 en la búsqueda» |
+| ¿Y el calzado? | Método, fila «Calzado» · en la app, Diseñar → Calzado |
+| ¿Cómo es el K-means? | Método, fila «Etapa del ciclo (K-means)» · en la app, Más → El modelo |
+| ¿El prompt entero? ¿Qué recibe? | `prompts/prompt_asistente_v5.md` · en la app, Preguntar → «Qué se le mandó al modelo» |
+| ¿Una respuesta real? | `datasets/pruebas/asistente_v5_respuestas.md` |
+| ¿Qué tomaron de la referencia? ¿Qué cambió del Figma? | `entregas/entrega_3/figma_a_codigo.md` |
 
 Más preguntas, con su respuesta: `entregas/entrega_3/preguntas_probables.md`. La presentación anterior, de catorce
 láminas, quedó en `diseno/prototipos/versiones_de_la_presentacion/presentacion_2026-11-03_cba39cc_catorce_laminas.html`.

@@ -3,11 +3,14 @@
 Web app que ubica atributos de moda —un color, una estampa, un corte, un material— en una de cinco
 etapas de su ciclo de vida: **emergente, en ascenso, en pico, saturada o en retorno**.
 
+**App:** https://felipeberney-boop.github.io/ciclo/
+
+**Presentación:** https://felipeberney-boop.github.io/ciclo/presentacion/
+
+<img src="entregas/entrega_3/ciclo_qr.png" alt="QR a la app" width="180">
+
 | | |
 |---|---|
-| **App** | https://felipeberney-boop.github.io/ciclo/ |
-| **Presentación Entrega 3** | https://felipeberney-boop.github.io/ciclo/presentacion/ |
-| **QR a la app** | [entregas/entrega_3/ciclo_qr.png](entregas/entrega_3/ciclo_qr.png) |
 | **Repositorio** | https://github.com/felipeberney-boop/ciclo |
 | **También en Netlify** | https://ciclo-udesa.netlify.app |
 | **Figma · del diseño al código** | https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7 |
@@ -30,35 +33,63 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 | También en Netlify | https://ciclo-udesa.netlify.app — la misma app, publicada el 03/11/2026 (la cátedra acepta Netlify o Vercel). La oficial, la del QR, es la de GitHub Pages |
 | Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). Netlify publica la misma carpeta a mano: `npx netlify-cli deploy --prod --dir app`. La app no necesita servidor: `netlify/functions/` no se usa |
 
-## Capturas
+## El recorrido, paso a paso
 
-La app arranca con tres preguntas —para quién diseñás, si trabajás para una marca o por tu cuenta, y la
-categoría— y con eso decide qué mostrarte. Después abre en **Tendencias**, la pantalla principal; la marca CICLO
-lleva ahí desde cualquier vista, y «Cambiar perfil» vuelve a las preguntas.
+### La entrada: tres preguntas
 
-![La entrada: ¿para quién diseñás?](entregas/entrega_3/capturas/captura_01_entrada.png)
+Cada tarjeta dice sólo lo que hay que clickear. Qué cambia cada respuesta está en la pantalla **Método** de la app.
 
-**Diseñar**: elegís prenda, tipo, corte, material, color, estampa y detalle, y cada opción trae su señal —Entrar,
-Esperar o Salir, en color y con la palabra— y de dónde sale: medido, interpretado o prestado de un pariente. Lo que
-no tiene dato se ve igual, con su dibujo y su definición, y dice por qué no se recomienda.
+**1 · ¿Para quién diseñás?** Mujer, hombre o sin género.
 
-![Diseñar: la estampa, con la señal y la procedencia de cada opción](entregas/entrega_3/capturas/captura_03_disenar_estampa.png)
+![Paso 1: ¿para quién diseñás?](entregas/entrega_3/recorrido/paso_01_para_quien_disenas.png)
 
-![La ficha: recomienda sólo con evidencia y dice de dónde sale cada número](entregas/entrega_3/capturas/captura_04_tu_diseno.png)
+**2 · ¿Trabajás para una marca o por tu cuenta?**
 
-El calzado es donde más probamos y menos medimos. La pantalla lo cuenta estilo por estilo:
+![Paso 2: ¿para una marca o por tu cuenta?](entregas/entrega_3/recorrido/paso_02_marca_o_por_tu_cuenta.png)
 
-![Calzado: los dos intentos, búsqueda y pasarela](entregas/entrega_3/capturas/captura_05_calzado_dos_intentos.png)
+**3 · Si es para una marca: qué tipo de marca.** High fashion, contemporary, fast fashion o de autor.
 
-**El ciclo**: cuándo picó cada atributo y cuánto tardó en volver, y el recorrido de cada uno hasta 2030 (la
-punteada no es un pronóstico):
+![Paso 3: qué tipo de marca](entregas/entrega_3/recorrido/paso_03_para_una_marca_categoria.png)
 
-![El ciclo](entregas/entrega_3/capturas/captura_06_el_ciclo.png)
+**4 · Si es por tu cuenta: qué tipo de prendas.** High fashion, contemporary, streetwear o de autor.
 
-![El recorrido hasta 2030](entregas/entrega_3/capturas/captura_07_recorrido_hasta_2030.png)
+![Paso 4: qué tipo de prendas, por tu cuenta](entregas/entrega_3/recorrido/paso_04_por_tu_cuenta_tipo_de_prendas.png)
 
-Las 16 capturas actuales —incluido el teléfono y el panel «Más»— están en `entregas/entrega_3/capturas/` y se regeneran con
-`node codigo/capturar_pantallas_de_la_app.js`; las de la Entrega 2, en `entregas/entrega_2/capturas/`.
+**5 · Cae en Tendencias con el perfil aplicado.** Arriba a la derecha, «Cambiar perfil» vuelve a las preguntas.
+
+![Paso 5: después de las preguntas, Tendencias](entregas/entrega_3/recorrido/paso_05_cae_en_tendencias_con_el_perfil.png)
+
+En el celular, las mismas tres preguntas:
+
+<img src="entregas/entrega_3/recorrido/paso_01_para_quien_disenas_celular.png" alt="Paso 1 en el celular" width="260"> <img src="entregas/entrega_3/recorrido/paso_02_marca_o_por_tu_cuenta_celular.png" alt="Paso 2 en el celular" width="260"> <img src="entregas/entrega_3/recorrido/paso_03_para_una_marca_categoria_celular.png" alt="Paso 3 en el celular" width="260">
+
+### El uso
+
+**6 · Tendencias, la pantalla principal.** Qué gana y qué pierde terreno afuera, y cada atributo con su etapa.
+
+![Paso 6: Tendencias](entregas/entrega_3/recorrido/paso_06_tendencias.png)
+
+**7 · Un atributo abre su ficha con el gráfico.** Acá, Rayas: su recorrido y la recomendación para tu perfil.
+
+![Paso 7: la ficha de Rayas con su gráfico](entregas/entrega_3/recorrido/paso_07_ficha_del_atributo.png)
+
+**8 · «Diseñar con esta estampa · Rayas» lleva a Diseñar.**
+
+![Paso 8: el botón Diseñar con esta estampa](entregas/entrega_3/recorrido/paso_08_boton_disenar_con.png)
+
+**9 · Diseñar, con el atributo fijo arriba.** Sólo pregunta lo que falta: prenda, tipo, material, color, detalle.
+
+![Paso 9: Diseñar con Rayas fijo arriba](entregas/entrega_3/recorrido/paso_09_disenar_con_el_atributo_fijo.png)
+
+<img src="entregas/entrega_3/recorrido/paso_09_disenar_con_el_atributo_fijo_celular.png" alt="Paso 9 en el celular" width="260">
+
+**10 · Preguntar.** Un chat que contesta con los datos de CICLO y tu perfil (pegás tu clave de Groq).
+
+![Paso 10: Preguntar](entregas/entrega_3/recorrido/paso_10_preguntar.png)
+
+Las capturas del recorrido se regeneran con `node codigo/capturar_recorrido.js` (app servida en el puerto 8000).
+Las otras 16 vistas —el ciclo, el modelo, calzado, Método— están en `entregas/entrega_3/capturas/`
+(`node codigo/capturar_pantallas_de_la_app.js`); las de la Entrega 2, en `entregas/entrega_2/capturas/`.
 
 ## Hipótesis
 

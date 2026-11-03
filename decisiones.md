@@ -1468,3 +1468,21 @@ a leer el presente. Lo refutado sigue completo en `hipotesis.md` y en las notas,
 de la hipótesis), «Tres modelos» (pasa a las notas del system prompt), «Lo que Figma no pregunta» (queda una línea en
 «Del diseño al código» y el detalle en `figma_a_codigo.md`) y la lámina de cierre (el repositorio y el QR ya están en la
 demo). Quedan 14 láminas. Abril vuelve a la firma: sigue en el grupo.
+
+## 2026-11-03 · La entrada, sólo con lo que se clickea, y el recorrido en el readme
+
+**Devolución de la presentación.** El profesor dijo que las primeras pantallas tenían demasiado texto y confundían.
+Regla para las tres preguntas: cada tarjeta muestra sólo lo que hay que clickear. Salen las bajadas de cada pregunta,
+las explicaciones de cada tarjeta («en relación de dependencia…», «freelance, por encargo…», «Womenswear»…), los
+ejemplos de marcas, la ficha de lead time, ventana, error y señales de cada categoría, y el párrafo de los 1,28
+millones de looks. Las etiquetas quedan en cuatro palabras o menos («High fashion / couture» pasa a «High fashion»,
+«Emergente / de autor» a «De autor», «Streetwear / fast fashion» a «Streetwear»).
+
+**No se borra: se mueve.** Todo eso está ahora en Método, en «La entrada: qué cambia cada respuesta», con las dos
+tablas de categorías (para una marca y por tu cuenta) calculadas de `PERFIL` y `consejo()`, las mismas fuentes que
+usaba el gate.
+
+**El readme.** El recorrido completo, una captura por paso: las tres preguntas (con las dos ramas de la categoría),
+dónde cae, Tendencias, la ficha, «Diseñar con…», Diseñar con el atributo fijo y Preguntar; el gate y Diseñar también a
+393 px. Las saca `codigo/capturar_recorrido.js` con clicks de verdad, sin perfil guardado. Arriba de todo, la app, la
+presentación y el QR (criterio 5).

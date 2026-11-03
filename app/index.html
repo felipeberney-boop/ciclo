@@ -155,7 +155,7 @@ body.on-gate .top,body.on-gate .colofon{display:none}
 .gprog b{color:var(--ink);font-weight:500}
 .gate h1{margin:10px 0 8px}
 .gate .sub{max-width:620px}
-.ggrid{display:grid;grid-template-columns:repeat(var(--gcols,3),1fr);gap:14px;margin-top:26px;align-items:stretch}
+.ggrid{display:grid;grid-template-columns:repeat(var(--gcols,3),minmax(0,1fr));gap:14px;margin-top:26px;align-items:stretch}
 .gcard{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:18px 18px 16px;cursor:pointer;transition:border-color .15s,transform .15s}
 .gcard:hover{border-color:var(--ink-2)}
 .gcard:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
@@ -169,6 +169,7 @@ body.on-gate .top,body.on-gate .colofon{display:none}
 .gvolver:hover{color:var(--ink);border-color:var(--ink-2)}
 .gnota{font-size:12px;color:var(--ink-3)}
 .gfirma{margin-top:72px;padding-top:18px;border-top:1px solid var(--rule);max-width:70ch;color:var(--ink-2);font-size:13.5px;line-height:1.65}
+.metgate{margin-top:48px;max-width:100%}.metgate h2{margin:0 0 14px}.metgate h3{margin:32px 0 0;font-size:17px}.metgate>p{max-width:75ch;line-height:1.6}.metgate td .sen{font-size:12px}
 .gfirma p{margin:0 0 10px}.gfirma .lbl{color:var(--ink-3);line-height:1.8}
 @media (max-width:760px){.ggrid{grid-template-columns:1fr}.gate{padding-top:14px}}
 .vhead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:6px}
@@ -933,6 +934,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .gate{text-align:center;max-width:920px}
 .app .gate .sub{margin-left:auto!important;margin-right:auto!important;font-size:21px!important;color:var(--ink-2)!important}
 .app .ggrid{text-align:left}
+.app .ggrid.g4 .gt{font-size:26px!important}
 .app .gfirma{text-align:left;margin-top:56px}
 .app .gnav{justify-content:center}
 /* pie, panel «Más» y menú */
@@ -988,10 +990,9 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
       <div class="gate">
         <div class="gprog" id="gprog"><b>01</b> / 03</div>
         <h1 id="gpreg">¿Para quién trabajás?</h1>
-        <p class="sub" id="gsub"></p>
         <div class="ggrid" id="ggrid"></div>
-        <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button><button class="kbtn" id="gcont" type="button" hidden>Continuar →</button><span class="gnota" id="gnota">Lo podés cambiar después con «Cambiar perfil», al final del menú.</span></div>
-        <div class="gfirma"><p>Cruzamos 1,28 millones de looks de pasarela con veintiún años de búsquedas (2004–2024), treinta millones de compras y el índice de Lyst para decir, atributo por atributo, si está emergiendo, en ascenso, en pico, saturado o volviendo.</p><p class="lbl">Sistemas generativos e IA para Diseño · K534/K576 · UdeSA · 2026 · Felipe Berney y Abril Dobler · Docentes: Cristian Reynaga e Iván Fardjoume</p></div>
+        <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button><button class="kbtn" id="gcont" type="button" hidden>Continuar →</button><span class="gnota" id="gnota">Lo podés cambiar después.</span></div>
+        <div class="gfirma"><p class="lbl">Sistemas generativos e IA para Diseño · K534/K576 · UdeSA · 2026 · Felipe Berney y Abril Dobler · Docentes: Cristian Reynaga e Iván Fardjoume</p></div>
       </div>
     </section>
 
@@ -1433,6 +1434,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
           <tr><td class="k">Preguntale a CICLO</td><td><span class="tag ia2">interpretación</span></td><td>Chat con un modelo de lenguaje (Groq, con la API key de cada uno, desde el navegador). Lee <code>llm/ciclo_datos.md</code>: métricas ya calculadas, tu perfil y la regla fija de CICLO, nunca una fila de la base. Si algo no está en ese documento, lo dice.</td></tr>
         </tbody>
       </table></div>
+      <div class="metgate" id="metgate"></div>
       <p class="note a"><b>Lo que esta versión todavía no puede hacer.</b> Las tres puntas ya están medidas en el tiempo: pasarela hasta 2023, búsqueda hasta 2024 (2025 excluido por el salto de Google), Reddit hasta octubre de 2026 (de ahí a 2030 se muestra la mediana de la historia, que no es un pronóstico), y el catálogo masivo con los 30,6 millones de compras de H&amp;M entre 2018 y 2020 más las reseñas de Amazon hasta 2023. Falta <b>separar pasarela y venta por menswear y womenswear</b>: el corpus las mezcla y hay que volver a agregarlo desde el archivo original. El calzado se mide poco, y está contado arriba, en su fila: cinco de ocho estilos no los mide ni la búsqueda ni la pasarela.</p>
     </section>
 
@@ -3316,21 +3318,23 @@ function mostrar(v,keepNav){
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='asistente')asAbrir();
+  if(v==='racional')pintarMetodoGate();
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }
 /* ---------- entrada en tres pasos: público → vínculo → categoría ---------- */
+/* cada tarjeta muestra sólo lo que se clickea; qué cambia cada respuesta está en Método (#metgate) */
 const GATE={
-  marca:{preg:'¿Qué tipo de marca?',sub:'La categoría fija tu lead time y tu ventana: hasta qué año el gráfico todavía sirve para decidir, con el error que medimos a esa distancia.',
-    c:{premium:['High fashion / couture','Prêt-à-porter de lujo · Loewe, Miu Miu, Bottega Veneta.'],
+  marca:{preg:'¿Qué tipo de marca?',
+    c:{premium:['High fashion','Prêt-à-porter de lujo · Loewe, Miu Miu, Bottega Veneta.'],
        medio:['Contemporary','Bridge · COS, Massimo Dutti, Arket.'],
        fast:['Fast fashion','High street · Zara, H&M, Gap.'],
-       nicho:['Emergente / de autor','Marca chica, colección propia.']}},
-  propia:{preg:'¿Qué tipo de prendas querés diseñar?',sub:'La categoría fija tu lead time y tu ventana. Como el riesgo de producción no es tuyo, donde a una marca le conviene esperar a vos te conviene explorar.',
+       nicho:['De autor','Marca chica, colección propia.']}},
+  propia:{preg:'¿Qué tipo de prendas querés diseñar?',
     c:{premium:['High fashion','Piezas de autor, pasarela.'],
        medio:['Contemporary','Básicos con diseño, calidad media.'],
-       fast:['Streetwear / fast fashion','Volumen, rotación rápida.'],
-       nicho:['Emergente / de autor','Series cortas, identidad propia.']}}};
+       fast:['Streetwear','Volumen, rotación rápida.'],
+       nicho:['De autor','Series cortas, identidad propia.']}}};
 let gateDestino='radar',gatePaso=1;
 const ETAPAS_C=['emergente','en ascenso','en pico','saturada','en retorno'];
 function gateResumen(cli,acc){const e=[0,1,2,3,4].filter(i=>consejo(cli,i)[0]===acc).map(i=>ETAPAS_C[i]);return e.length?e.join(', '):'—';}
@@ -3340,36 +3344,29 @@ try{const g=JSON.parse(localStorage.getItem('ciclo.perfil')||'null');
   if(g&&GATE[g.vinculo]&&PLAZO[g.cliente]){gateSel.publico=['mujer','hombre','todos'].includes(g.publico)?g.publico:null;gateSel.vinculo=g.vinculo;gateSel.cliente=g.cliente;}}catch(e){}
 function gateTarjeta(datos,attrs,on){return `<button class="gcard${on?' on':''}" type="button" aria-pressed="${!!on}" ${attrs}>${on?'<span class="gprev">tu elección anterior</span>':''}${datos}</button>`;}
 function pintarGate(){
-  const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;
+  const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;g.classList.remove('g4');
   $('#gprog').innerHTML=`<b>0${gatePaso}</b> / 03`;
-  const tit=(t,sub)=>{$('#gpreg').textContent=t;$('#gsub').textContent=sub;};
+  const tit=t=>{$('#gpreg').textContent=t;};
   const sig=()=>{gatePaso++;pintarGate();$('#ggrid .gcard')?.focus();};
   const cont=(listo,fn)=>{const c=$('#gcont');c.hidden=!listo;c.onclick=fn;};
   if(gatePaso===1){
     g.style.setProperty('--gcols',3);
-    tit('¿Para quién diseñás?','Con esto elegimos qué prendas y qué referencias mostrarte.');
-    g.innerHTML=[['mujer','Mujer','Womenswear.'],['hombre','Hombre','Menswear.'],['todos','Sin género','Prendas para cualquiera. Te mostramos referencias de las dos pasarelas.']]
-      .map(([k,t,d])=>gateTarjeta(`<span class="gt">${t}</span><span class="gd">${d}</span>`,`data-pub="${k}"`,gateSel.publico===k)).join('');
+    tit('¿Para quién diseñás?');
+    g.innerHTML=[['mujer','Mujer'],['hombre','Hombre'],['todos','Sin género']]
+      .map(([k,t])=>gateTarjeta(`<span class="gt">${t}</span>`,`data-pub="${k}"`,gateSel.publico===k)).join('');
     $$('#ggrid [data-pub]').forEach(b=>b.addEventListener('click',()=>{gateSel.publico=b.dataset.pub;sig();}));
     cont(!!gateSel.publico,sig);
   }else if(gatePaso===2){
     g.style.setProperty('--gcols',2);
-    tit('¿Trabajás para una marca o por tu cuenta?','La misma tendencia se lee distinto si el riesgo de producción es de una marca o es tuyo.');
-    g.innerHTML=gateTarjeta(`<span class="gt">Para una marca</span><span class="gd">En relación de dependencia. La producción y el stock son de la marca: la lectura tiene que cuidar ese riesgo.</span>`,'data-vinc="marca"',gateSel.vinculo==='marca')+
-                gateTarjeta(`<span class="gt">Por mi cuenta</span><span class="gd">Freelance, por encargo o con marca propia en desarrollo. Podés diseñar antes de comprometer producción.</span>`,'data-vinc="propia"',gateSel.vinculo==='propia');
+    tit('¿Trabajás para una marca o por tu cuenta?');
+    g.innerHTML=gateTarjeta(`<span class="gt">Para una marca</span>`,'data-vinc="marca"',gateSel.vinculo==='marca')+
+                gateTarjeta(`<span class="gt">Por mi cuenta</span>`,'data-vinc="propia"',gateSel.vinculo==='propia');
     $$('#ggrid [data-vinc]').forEach(b=>b.addEventListener('click',()=>{gateSel.vinculo=b.dataset.vinc;sig();}));
     cont(!!gateSel.vinculo,sig);
   }else{
-    const G=GATE[gateSel.vinculo]||GATE.marca;g.style.setProperty('--gcols',4);
-    tit(G.preg,G.sub);
-    g.innerHTML=['premium','medio','fast','nicho'].map(k=>gateTarjeta(`<span class="gt">${G.c[k][0]}</span><span class="gd">${G.c[k][1]}</span>
-      <dl><dt>Lead time</dt><dd>${PERFIL[k].prod}</dd>
-      <dt>Ventana</dt><dd>${PERFIL[k].vent} año${PERFIL[k].vent>1?'s':''}</dd>
-      <dt>Decide hasta</dt><dd>${PERFIL[k].hasta}</dd>
-      <dt>Error ahí</dt><dd>±${Math.round(PERFIL[k].banda)} puntos</dd>
-      <dt class="s-entrar sen">Entrar</dt><dd>${gateResumen(k,'Entrar')}</dd>
-      ${gateSel.vinculo==='propia'&&gateResumen(k,'Explorar')!=='—'?`<dt class="s-esperar sen">Explorar</dt><dd>${gateResumen(k,'Explorar')}</dd>`:''}
-      <dt class="s-salir sen">Salir</dt><dd>${gateResumen(k,'Salir')}</dd></dl>`,`data-cli="${k}"`,gateSel.cliente===k)).join('');
+    const G=GATE[gateSel.vinculo]||GATE.marca;g.style.setProperty('--gcols',4);g.classList.add('g4');
+    tit(G.preg);
+    g.innerHTML=['premium','medio','fast','nicho'].map(k=>gateTarjeta(`<span class="gt">${G.c[k][0]}</span>`,`data-cli="${k}"`,gateSel.cliente===k)).join('');
     $$('#ggrid [data-cli]').forEach(b=>b.addEventListener('click',()=>{gateSel.cliente=b.dataset.cli;gateElegir();}));
     cont(!!gateSel.cliente,gateElegir);
   }
@@ -3384,6 +3381,21 @@ function ponerCliente(c){
 function gateElegir(){
   publico=gateSel.publico||'todos';vinculo=gateSel.vinculo||'marca';ponerCliente(gateSel.cliente);guardarPerfil();
   if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);
+}
+/* Método · la entrada: lo que el gate ya no explica en cada tarjeta */
+function pintarMetodoGate(){
+  const m=$('#metgate');if(!m)return;
+  const fila=v=>{const antes=vinculo;vinculo=v;try{return ['premium','medio','fast','nicho'].map(k=>{const P=PERFIL[k],ex=v==='propia'?gateResumen(k,'Explorar'):'';
+    return `<tr><td class="k">${GATE[v].c[k][0]}</td><td>${GATE[v].c[k][1]}</td><td>${P.prod}</td><td>${P.vent} año${P.vent>1?'s':''}</td><td>${P.hasta}</td><td>±${Math.round(P.banda)} puntos</td>
+      <td><span class="sen s-entrar">Entrar</span> ${gateResumen(k,'Entrar')}${ex&&ex!=='—'?`<br><span class="sen s-esperar">Explorar</span> ${ex}`:''}<br><span class="sen s-salir">Salir</span> ${gateResumen(k,'Salir')}</td></tr>`;}).join('');}finally{vinculo=antes;}};
+  const tabla=v=>`<div class="tw"><table><thead><tr><th>Categoría</th><th>Qué es</th><th>Lead time</th><th>Ventana</th><th>Decide hasta</th><th>Error ahí</th><th>Señal por etapa</th></tr></thead><tbody>${fila(v)}</tbody></table></div>`;
+  m.innerHTML=`<h2>La entrada: qué cambia cada respuesta</h2>
+    <p>CICLO cruza 1,28 millones de looks de pasarela con veintiún años de búsquedas (2004–2024), treinta millones de compras y el índice de Lyst para decir, atributo por atributo, si está emergiendo, en ascenso, en pico, saturado o volviendo. Las tres preguntas de la entrada no cambian esos datos: cambian cómo se leen.</p>
+    <p><b>1 · ¿Para quién diseñás?</b> Con esto elegimos qué prendas y qué referencias mostrarte. Mujer es womenswear y hombre es menswear; sin género son prendas para cualquiera, con referencias de las dos pasarelas.</p>
+    <p><b>2 · ¿Trabajás para una marca o por tu cuenta?</b> La misma tendencia se lee distinto si el riesgo de producción es de una marca o es tuyo. <b>Para una marca</b>: en relación de dependencia, la producción y el stock son de la marca y la lectura tiene que cuidar ese riesgo. <b>Por mi cuenta</b>: freelance, por encargo o con marca propia en desarrollo; podés diseñar antes de comprometer producción, así que donde a una marca le conviene esperar, a vos te conviene explorar.</p>
+    <p><b>3 · La categoría.</b> Fija tu lead time y tu ventana: hasta qué año el gráfico todavía sirve para decidir, con el error que medimos a esa distancia.</p>
+    <h3>Si trabajás para una marca · ¿Qué tipo de marca?</h3>${tabla('marca')}
+    <h3>Si trabajás por tu cuenta · ¿Qué tipo de prendas querés diseñar?</h3>${tabla('propia')}`;
 }
 function abrirGate(destino){gateDestino=destino&&destino!=='perfil'?destino:'radar';gatePaso=1;pintarGate();mostrar('perfil');}
 $('#gvolver').addEventListener('click',()=>{gatePaso=Math.max(1,gatePaso-1);pintarGate();$('#ggrid .gcard')?.focus();});

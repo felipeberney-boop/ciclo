@@ -9,6 +9,7 @@ Scripts de extracción, cálculo y render. Ninguno es parte del sitio: el sitio 
 | `generar_laminas_entrega_2.py` | Genera las 20 láminas de la presentación como SVG de 1920×1080 |
 | `renderizar_laminas_a_png.js` | Pasa los SVG a PNG con Playwright |
 | `capturar_pantallas_de_la_app.js` | Abre la app y guarda una captura de cada vista |
+| `capturar_recorrido.js` | El recorrido de entrada y de uso, paso a paso, con clicks de verdad → `entregas/entrega_3/recorrido/` |
 | `bajar_titulos_reddit.py` | Baja los títulos de r/femalefashionadvice de un año vía Arctic Shift |
 | `contar_terminos_reddit.py` | Cuenta, por año, los posts cuyo título nombra cada término |
 | `proyectar_pasarela.py` | Elige un método por backtest y proyecta la pasarela a 2024–2026 |

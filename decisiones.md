@@ -1374,3 +1374,20 @@ derecha, en `entregas/entrega_3/figma_a_codigo/`.
 
 Dos cosas que salieron al escribirlo: CLIP no pesa 8 MB sino 89 (el índice es el de 8), y el registro no dice cómo se armó
 el Figma; los nombres de capa (`screen:*`, `go:*`) sugieren un script, y así queda dicho, sin afirmarlo.
+
+## 2026-11-03 · La presentación, en el orden de los criterios
+
+El criterio 5 pide presentar en 15 minutos la app y los puntos 2, 3 y 4. El making of estaba armado alrededor de tres
+preguntas (predecir, medir, usar) y no tenía ni el system prompt en pantalla ni lo de Figma. Se mantiene el diseño (a
+Felipe le gusta tal como está) y se reordena el contenido en cinco bloques con su tiempo: hipótesis 2, datos 3, IA 3,
+Figma al código 3, demo 4. «Making of» sale del título.
+
+**Lo que tiene que verse y no sólo decirse.** El system prompt entero, como texto (el mismo de `prompts/prompt_asistente_v5.md`
+y de `AS_INSTR` en la app, verificado línea por línea), con las reglas clave en negrita; qué recibe, con una línea real
+de `ciclo_datos.md`; qué devuelve, con una respuesta real sin editar de la prueba del 27/10. Los límites como cobertura,
+sesgos y ausencias, cada uno con cómo afecta, y dos ejemplos: el corte en 2024 (el trench) y el calzado.
+
+**Firma.** La presentación la firma sólo Felipe, que presenta solo. El QR y el link quedan en la lámina de la demo.
+
+**En el celular** las láminas con texto y un bloque a la derecha se encimaban, y una ruta larga ensanchaba la página:
+ahora cada lámina es una columna que se desliza. Verificado con Playwright, 19 láminas a 1440 y a 393, sin errores.

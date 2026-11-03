@@ -1,73 +1,64 @@
 # Entrega 3 · guion de la presentación (03/11/2026)
 
-Texto de cada lámina, verificado contra el repo el 26/10/2026. Cada cifra dice de dónde sale; si una cifra no está
-en el repo, no va. Las correcciones respecto del guion original están marcadas con **(corregido)**.
+Quince minutos en el orden de los criterios: la hipótesis (2), los datos (3), la IA (3), de Figma al código (3) y la
+demo (4). Presentación: https://felipeberney-boop.github.io/ciclo/presentacion/ (la tecla N muestra estas mismas
+notas). El texto de cada lámina sale de sus notas del orador; cada cifra está en el repo. La versión anterior (el
+making of del 27/10) quedó en `diseno/prototipos/versiones_de_la_presentacion/`.
 
-**01 · Portada.** CICLO. «Dónde está una tendencia en su ciclo de vida». Sistemas generativos e IA para Diseño
-(K534/K576), UdeSA, 2º semestre 2026. Felipe Berney · Abril Dobler **(corregido: el readme y la app nombran a los dos;
-confirmar)**. Entrega 3 · 03.11.2026.
+## Inicio
 
-**02 · La hipótesis.** Cruzando pasarela, búsqueda y venta se puede anticipar qué va a estar de moda.
+**01 · Portada** · `#portada`. CICLO ubica un atributo de moda —un color, una estampa, un corte, un material— en una de cinco etapas de su ciclo de vida. Quince minutos en cinco partes: la hipótesis (2), los datos (3), la IA (3), de Figma al código (3) y la demo (4). La app está online: el QR está en la lámina de la demo.
 
-**03 · La mitad que sí: leer el presente.** Validado contra fuentes que el modelo nunca vio (El modelo, «¿Acertó?»):
-- Jeans ajustados, en «saturada»: −39 % en reseñas de Amazon 2019–2022.
-- Jeans amplios: +79 % en Amazon y +95 % en Google Shopping.
-- Y2K, el único en ascenso: +203 % en búsquedas de compra.
-- El K-means agrupó los 17 atributos sin ver ninguno de esos datos.
-**(corregido: sale el chi² 782,6. Es la estructura de Zara 2018–22, un archivo sintético; en la app ahora está
-rotulado «demostración».)**
 
-**04 · La mitad que no: anticipar.** Cuatro métodos, ninguno le gana a repetir el último valor (Método, «Hasta 2030»):
-suavizado con tendencia amortiguada 22,1 contra 21,6 de error a 5 años · análogos históricos 15,9 contra 15,5 ·
-reversión a la media 21,7 contra 21,6 · la etapa del ciclo como regla 62,9 % contra 62,9 %.
+## 1 · Hipótesis
 
-**05 · Y no es por falta de datos.** **(corregido: no «sumamos series».)** Un solo modelo global entrenado sobre las 16
-series juntas tampoco le gana a repetir el último valor: −2,0 % a un año, −5,8 % a cinco (decisiones.md, 13/10). Y contra
-ventas reales: VISUELLE, 5.577 productos de Nunalie con ventas semanales; a nivel producto la búsqueda previa no explica
-la venta (correlación +0,036). La tendencia de un atributo, año a año, casi no tiene memoria más allá del último valor.
+**02 · La hipótesis, ajustada** (2 min) · `#hipotesis`. La hipótesis original juntaba tres afirmaciones: que la pasarela adelanta a la búsqueda («señales tempranas»), que se puede predecir, y que se puede ubicar la etapa del presente. Las dos primeras se probaron y se cayeron; la tercera se sostiene. También cambió la unidad: «tendencia» no se puede contar, el atributo sí (01/09). Todo está en hipotesis.md, con la fecha de cada prueba.
 
-**06 · Qué es CICLO entonces.** Un instrumento descriptivo, no un predictor. La punteada hasta 2030 no es un pronóstico:
-es dónde quedaría la curva si se moviera como la mediana de la historia; error medido ±8,8 a un año y ±23,1 a cinco
-(calibrado con 2025 corregido adentro, como dice Método). La ventana de cada perfil marca hasta dónde ese error sirve.
+**03 · Lo que sube, sube afuera** · `#reddit`. Por rangos, el control agregado después, p = 0,047. Límites: 14 atributos, uno solo en ascenso, y Reddit y Google reflejan en parte lo mismo. La otra prueba preregistrada, la pasarela por temporada (de 3 a 18 meses), dio que no adelanta: medianas entre −0,04 y +0,04, hacía falta p < 0,007.
 
-**07 · Las fuentes.**
-- Vogue Runway: 1.281.633 imágenes con diseñador, temporada y etiquetas, 2000–2023.
-- Google Trends: 65 series mundiales en inglés y 14 términos en español para Argentina, hasta 2024.
-- Zara febrero 2024: 228 prendas únicas, descripciones reales (licencia MIT).
-- Lyst Index: 34 trimestres, Q1-18 a Q2-26.
-**(corregido: salen «Zara 660 productos 2018–22», sintético, y «ocho marcas, 1.814 productos», que no tiene fuente en el
-repo. Si se nombran, como datasets de demostración.)**
+**04 · La decisión que hoy no se toma bien** · `#decision`. El foco se movió de la forecaster a quien diseña porque la misma lectura sirve para las dos, pero quien diseña necesita que la app le diga qué hacer en su prenda, no un tablero. Lo que no puede hacer hoy: saber si un atributo está subiendo o ya pasó su pico, y si su plazo de producción llega a tiempo. Con CICLO: la etapa (K-means sobre pasarela y búsqueda) cruzada con su plazo (fast fashion 6 semanas, high fashion 6 meses, nicho 3 meses) da Entrar, Esperar o Salir, con el porqué.
 
-**08 · El procesamiento.** De 1,28 millones de imágenes a series anuales por atributo. Tres planes de exportación de
-Google Trends con «trench coat» de ancla. **(corregido)** En los lotes nuevos entraron 49 términos y 35 no, cada uno con
-su motivo: ruido (máximo bajo 6 o menos de 24 meses con señal), menos de 12 años útiles, o estacionalidad (7 términos)
-— `datasets/trends_lotes/informe.md`. Hoy, sobre 133 hojas: **74 con dato propio, 42 prestadas, 17 sin dato** (10 de
-calzado y accesorios) **(corregido: era 71/48/12)**.
 
-**09 · El hallazgo: 2026 está contaminado.** Desde 2025 Google cambió cómo mide: en 2026, 69 de 70 series suben a la vez,
-mediana +99 %, y el trench coat, que picó siempre entre septiembre y febrero, pica en abril. Es la medición, no la moda.
-Todo el análisis corta en 2024. Sin el ancla no lo hubiéramos visto.
+## 2 · Datos
 
-**10 · Lo que no se pudo medir.** Calzado, dos intentos. Google Trends: de 8 estilos entran zapatillas y mocasines;
-sandalias mide el verano (20,1 puntos dentro del año contra 11,6 entre años). CLIP sobre 14.000 looks: zapatillas 8 de
-8, botas texanas 7 de 8, pero lee la ropa, no el zapato. Cinco estilos sin medición, en la app igual, con el motivo.
+**05 · Las fuentes** (3 min) · `#fuentes`. Vogue Runway: 1,28 millones de looks con etiquetas, 2000–2023. Google Trends: 65 series mundiales y 14 términos para Argentina, hasta 2024. H&M: 30,6 millones de compras (2018–2020). Para validar, sin entrar al modelo: Reddit (r/femalefashionadvice), Lyst Index (34 trimestres), Amazon Reviews y Google Shopping. Zara 2018–22 y el mix de marcas son sintéticos: quedan como demostración y la app lo dice. Fuentes, fechas y licencias: datasets/fuentes_y_descargas.md.
 
-**11 · El rol de la IA.** CLIP (visión) · K-means (no supervisado, 17 atributos, k = 4, silhouette 0,32; los nombres de
-los grupos los pusimos nosotros) · modelo de lenguaje (Groq, en vivo). EL MODELO DE LENGUAJE NUNCA VE UNA FILA DE DATOS.
+**06 · Del dato al número** · `#calculos`. Pasarela: proporción de looks del año que llevan el atributo; nivel = 2022–23 contra su máximo, momento = 2021–23 contra 2018–20. Búsqueda: dividida por el promedio de 35 términos de moda de cada año, para sacar el crecimiento de Google; nivel = 2023–24 contra su máximo, momento = 2023–24 contra 2020–21. El K-means usa esos cuatro números en 17 atributos, k = 4 (silhouette 0,32), y arranca de centroides guardados: da siempre lo mismo. Una tendencia nueva se asigna al centroide más cercano, nunca reentrena.
 
-**12 · Medido contra interpretado.** ● medido · ↪ prestado · punteado = interpretado. El color sólo para la señal:
-▲ Entrar · ■ Esperar · ▼ Salir · ○ Sin dato directo, siempre con la palabra. Que algo gane o pierda terreno va en negro.
+**07 · Calculado contra inferido** · `#procedencia`. Medido: sale de una fuente con un cálculo en código. Interpretado: lo dijo un modelo (CLIP o el LLM), con borde punteado. Prestado: la hoja no tiene serie propia y usa la de un pariente, siempre diciendo cuál y por qué (hermano, después padre, nunca otra familia). Hoy, de 133 hojas: 74 con dato propio, 42 prestadas y 17 sin dato. Lo que no tiene dato queda neutro, no en rojo.
 
-**13 · Demo en vivo.** Tendencias → la ficha y su recomendación → Diseñar → Preguntar con foto (guion de la demo aparte).
+**08 · Los límites** · `#limites`. Cómo afectan las conclusiones: CICLO lee el presente hasta 2024 y no detecta lo emergente (la pasarela pública llega a 2023). Lo que dice sobre la pasarela es lujo y casas grandes, no la calle. Hombre y mujer van mezclados: Vogue y H&M agregados no traen la columna, y no la simulamos. Todo esto está en la vista Método de la app y en el readme.
 
-**14 · Límites declarados.** Google Trends no tiene datos antes de 2004. La pasarela no adelanta a escala anual:
-correlación máxima sin rezago +0,43, +0,12 con dos años. No hay columna de género en Vogue ni en H&M, y no la simulamos.
-**(corregido)** Seis de las doce fichas de Tendencias no están en el K-means: su etapa es la estimada sobre un catálogo
-sintético. Ninguna recomienda con esa etapa: rayas y gamuza recomiendan por su serie de búsqueda, y las otras cuatro no
-recomiendan.
+**09 · El trench pica en abril** · `#corte-2024`. El trench coat es el ancla con la que se pegan todos los lotes de Google Trends. Siempre picó entre octubre y diciembre; en 2026 pica en abril. 69 de 70 series saltan en 2026, mediana +99 %. En 2025 ya había empezado: 12 de 16 series tocaron su récord ese año. Consecuencia: CICLO no dice nada de 2025–26 y lo explica cuando se lo preguntan.
 
-**15 · Qué sigue.** Calcular la etapa desde las curvas para todos los atributos. La pasarela mes a mes, para volver a
-probar si adelanta a una resolución más fina: es la única versión de la hipótesis que todavía no pudimos descartar.
+**10 · El calzado** · `#calzado`. Es la ausencia que más pesa: Lyst ve en calzado las señales más fuertes de 2023 y 2024, y ahí no podemos contrastar. Por eso el K-means es de 17 atributos sin calzado. Para medir botinetas, chatitas o guillerminas habría que recortar los pies de cada foto de pasarela. Un estilo de calzado nunca toma prestado el dato de otro.
+
+
+## 3 · IA
+
+**11 · Tres modelos** (3 min) · `#tres-modelos`. K-means: en el navegador, 17 atributos, 4 números cada uno. CLIP (Transformers.js, clip-vit-base-patch32): compara una foto con 14.000 looks de pasarela, también en el navegador; la foto no sale de la computadora. El LLM: gpt-oss-120b en Groq, llamado desde el navegador con la clave de cada usuario (el patrón V2 de la clase). Hay dos usos del LLM: «Preguntar» (el chat) y «Pedir lectura en vivo» en cada ficha.
+
+**12 · El system prompt** · `#system-prompt`. Lo de la derecha es el prompt entero, el mismo texto que usa la app (AS_INSTR en app/index.html). En negrita, las reglas que importan: no inventar, contestar con lo más cercano diciendo qué se muestra en lugar de qué, el corte de 2024, la fuente de cada número por nombre, y responder sólo JSON. La v5 suma tres ejemplos con letras en vez de números, para que no los copie.
+
+**13 · Qué recibe** · `#contexto`. DATOS es app/llm/ciclo_datos.md (62 KB), generado desde las constantes de la app con codigo/armar_datos_llm.js. No se manda entero: va lo general siempre y sólo las fichas que nombra la conversación, entre 3.600 y 4.600 tokens por pregunta. El plan gratis de Groq da 8.000 tokens por minuto. Lo que nunca se manda: una fila de Vogue, de Google Trends o de H&M. El modelo recibe «61 % de su pico, momento −7 %», no 1,28 millones de looks.
+
+**14 · Qué devuelve** · `#devuelve`. Cómo se evita que invente: no ve filas, sólo métricas ya calculadas; cada número tiene que estar en DATOS tal cual; la acción (Entrar, Esperar, Salir) la calcula la página con la regla fija por etapa y perfil y la pega en la ficha, así que si el modelo se aparta se ve el aviso; y la respuesta trae «datos»: qué número usó y de dónde sale, para poder chequearlo. «acciones» son cambios sobre el diseño que se aplican con un botón, sólo con valores de OPCIONES.
+
+
+## 4 · Figma → código
+
+**15 · La app no salió del Figma** (3 min) · `#figma`. Lo que sí viajó del Figma, como idea: la etapa como posición en una pista y no como color, las fichas con la paleta de la prenda arriba, los filtros en pastillas y el selector de cliente. Los tokens (colores, radios, tipografía) viven en CSS y vienen del sistema de las páginas de producto de Apple, no del Figma. Documento completo: entregas/entrega_3/figma_a_codigo.md.
+
+**16 · Las diferencias** · `#diferencias`. Con las flechas (o ↑ ↓) se pasan los cinco pares. Detalle de cada uno en entregas/entrega_3/figma_a_codigo.md. Lo curioso: la versión de Apple (27/10, por la devolución «muy IA») quedó más cerca del Figma —sans serif, pastillas, tarjetas blancas— que la revista en Bodoni que hubo en el medio. Los nombres de taller («Frisa · french terry») tampoco estaban en Figma: la regla del 20/10 es que si no se puede decir en voz alta en un taller, no va.
+
+**17 · Lo que Figma no pregunta** · `#fuera-de-figma`. El Figma muestra cada pantalla en un solo estado: con datos, sin errores, ya cargada. Estados: hover sin sombra, foco visible con teclado, lo elegido con borde azul y aria-pressed. Celular: verificado con Playwright, ancho de página igual al del teléfono. CLIP: 89 MB de modelo más 8 MB de índice, sólo en la primera consulta y con el avance a la vista. El modo oscuro existió, se auditó el 26/10 y se apagó el 27/10: la capa nueva es siempre clara.
+
+
+## 5 · Demo
+
+**18 · Ahora, en vivo** (4 min) · `#demo`. Plan B: si Groq no responde o no está la clave, Preguntar muestra «Primero activá el chat» y se pasa a Buscar por imagen con un look del índice (no necesita el modelo de 89 MB). Si se va el tiempo, saltar Diseñar. Guion en entregas/entrega_3/presentacion_guion.md.
+
+**19 · Gracias** · `#gracias`. Repositorio: github.com/felipeberney-boop/ciclo. Sistemas generativos e IA para Diseño · K534/K576 · UdeSA · 2026. Docentes: Cristian Reynaga e Iván Fardjoume.
 
 ---
 

@@ -203,6 +203,12 @@ su causa, con cinco pares de capturas enfrentadas.
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).
 
+**Entrega 3 (03/11).** 19 láminas en el orden de los criterios: la hipótesis ajustada (2 min), los datos (3: fuentes,
+cálculos, calculado contra inferido y los límites, con el corte en 2024 y el calzado de ejemplo), la IA (3: el system
+prompt entero en pantalla, qué recibe y qué devuelve), de Figma al código (3: con los cinco pares) y la demo (4, con el
+QR). Mismo diseño que el making of; deja de llamarse así. La versión anterior quedó en
+`diseno/prototipos/versiones_de_la_presentacion/presentacion_2026-11-03_abd5939_making_of.html`.
+
 **Making of (27/10).** 28 láminas alrededor de tres preguntas (¿se puede predecir?, ¿qué se puede medir?, ¿cómo lo usa
 un diseñador?), con las citas textuales del ida y vuelta, cómo pedir, el pipeline, el rol de la IA, los commits por
 día, la prueba con Reddit, la demo y el cierre. Notas del orador con la tecla N; cada lámina tiene su link (`#trench`, `#semaforo`…). La

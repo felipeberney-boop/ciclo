@@ -1391,3 +1391,22 @@ sesgos y ausencias, cada uno con cómo afecta, y dos ejemplos: el corte en 2024 
 
 **En el celular** las láminas con texto y un bloque a la derecha se encimaban, y una ruta larga ensanchaba la página:
 ahora cada lámina es una columna que se desliza. Verificado con Playwright, 19 láminas a 1440 y a 393, sin errores.
+
+## 2026-11-03 · Verificación antes de la entrega
+
+Contra la app publicada, con Playwright, en un contexto limpio (sin caché ni localStorage, como incógnito):
+
+- **El QR** (`entregas/entrega_3/ciclo_qr.png`, leído con jsQR) apunta a https://felipeberney-boop.github.io/ciclo/, que
+  responde 200. La presentación publicada ya es la nueva. El repositorio es público y el readme tiene arriba la app, la
+  presentación, el QR y el repositorio.
+- **La demo entera**, a 1400 y a 393 px: entrada (mujer, marca, high fashion) → Tendencias → ficha de Amplio (Pico,
+  ■ Esperar) → «Diseñar con este corte» (entra con el baggy fijo, en el tiro) → la ficha (Esperar) → Preguntar →
+  Buscar por imagen con el look Denim. Los cinco pasos pasan, sin errores de JavaScript ni scroll horizontal.
+- **La carga.** Primer pintado con contenido a 0,7 s en escritorio y 0,25 s en el celular emulado; al abrir hay 3
+  pedidos y 266 KB. **CLIP no se baja al abrir**: el índice (8 MB) baja con la primera consulta y el modelo (89 MB) sólo
+  con una foto propia. No hubo nada que arreglar. (El pedido decía «los 8 MB de CLIP»: son 89 de modelo más 8 de índice.)
+- **El chat sin clave** no llama a Groq: abre «Activar el chat» y dice «Primero activá el chat: son tres pasos…». Con
+  una clave inválida, «Groq rechazó la API key…»; sin conexión, «No hubo conexión con api.groq.com…». No se probó una
+  respuesta real: no había clave en esta máquina.
+
+El guion de la demo pasa a 4 minutos y cinco pasos, con el salto de Tendencias a Diseñar y el mensaje real sin clave.

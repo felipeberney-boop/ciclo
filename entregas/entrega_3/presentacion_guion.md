@@ -62,17 +62,18 @@ making of del 27/10) quedó en `diseno/prototipos/versiones_de_la_presentacion/`
 
 ---
 
-# Guion de la demo en vivo (5 minutos)
+# Guion de la demo en vivo (4 minutos)
 
 App: https://felipeberney-boop.github.io/ciclo/
-Recorrido verificado con Playwright contra la app del 27/10/2026 (pasos 1 a 3 completos; el 4 hasta pedir la clave,
-sin respuesta del modelo).
+Recorrido verificado con Playwright el 03/11/2026 contra la app publicada, en un contexto limpio (como una ventana de
+incógnito), a 1400 y a 393 px: los cinco pasos pasan y no hay errores de JavaScript. El paso 4 se probó sin clave, con
+una clave inválida y sin conexión a Groq (los tres dan un mensaje claro), no con una respuesta real del modelo.
 
 **Antes de empezar.** Tener la app abierta en una pestaña y la API key de Groq en el portapapeles. Si se va a usar
 una foto propia, subirla una vez antes de la clase: la primera vez se bajan el modelo y el índice de CLIP (unos 96 MB)
 y después quedan guardados en el navegador. Los looks de ejemplo de Buscar por imagen sólo bajan el índice (8 MB).
 
-## Paso 1 — La entrada (0:00–0:45)
+## Paso 1 — La entrada (0:00–0:20)
 
 Abrir la app. Aparecen tres preguntas, en este orden.
 
@@ -85,7 +86,7 @@ La app va directo a **Tendencias**.
 
 ---
 
-## Paso 2 — Tendencias y una ficha (0:45–2:00)
+## Paso 2 — Tendencias y una ficha (0:20–1:10)
 
 > «Esta es la pantalla principal. Arriba, qué gana y qué pierde terreno en la búsqueda mundial.
 > Abajo, cada tarjeta es un atributo —un corte, una estampa, un material— con su etapa.»
@@ -109,27 +110,23 @@ Si se quiere mostrar, tener abiertos de antemano dos links:
 
 ---
 
-## Paso 3 — Diseñar (2:00–3:15)
+## Paso 3 — Diseñar con este corte (1:10–2:00)
 
-Ir a **Diseñar** desde el menú.
+En la ficha de Amplio, tocar el botón azul **Diseñar con este corte · Baggy →**. Entra a Diseñar con el baggy fijo
+(«Diseñando con Baggy (corte), desde Tendencias. Sólo te preguntamos lo que falta.») y arranca en el tiro.
 
-> «Si estás diseñando algo concreto, empezás acá.»
+> «De mirar a diseñar en un clic: la app ya sabe el corte y pregunta sólo lo que falta.»
 
-Elegir **Pantalones** → **Largo**. En el paso del corte, señalar las dos señales en la misma pantalla:
-
-> «Baggy: Esperar. Skinny: Salir. El mismo pantalón, distinto corte, conclusión opuesta.
-> Eso no se ve si medís "jeans" como un todo.»
-
-Elegir **Baggy** → **Tiro bajo** → **Denim rígido**. Mostrar la barra de abajo, que se llena con lo elegido, y tocar
-**Armar la ficha →**. La ficha dice: **Jean baggy, tiro bajo · ■ Esperar**, con de dónde sale cada dato
-(medido o prestado).
+En el tiro, señalar las señales en la misma pantalla: tiro bajo ▲ Entrar (prestado del Y2K), tiro medio ○ Sin dato
+directo, tiro alto ▼ Salir. Elegir **Tiro bajo** → **Denim rígido** y tocar **Armar la ficha →**. La ficha dice:
+**Jean baggy, tiro bajo · ■ Esperar**, con de dónde sale cada dato (medido o prestado).
 
 ---
 
-## Paso 4 — Preguntar (3:15–4:30)
+## Paso 4 — Preguntar (2:00–3:00)
 
 Ir a **Preguntar** desde el menú. Arriba aparece el diseño que se armó en el paso 3.
-Pegar la API key de Groq en el campo de la izquierda (si no está, la app avisa «Pegá primero tu API key de Groq»).
+Pegar la API key de Groq en el campo de la izquierda (si no está, la app no llama a nada: abre «Activar el chat» y dice «Primero activá el chat: son tres pasos…»).
 
 > «Este es el único lugar donde entra un modelo de lenguaje.
 > Y nunca ve una fila de datos: lee métricas que ya calculamos.»
@@ -145,7 +142,17 @@ Esperar la respuesta (suele tardar 3–5 segundos; con gpt-oss-20b, menos).
 
 ---
 
-## Cierre (4:30–5:00)
+## Paso 5 — Buscar por imagen (3:00–3:40)
+
+Ir a **Buscar por imagen** y tocar el look de ejemplo **Denim**. Sólo baja el índice de 8 MB (en la prueba tardó menos
+de un segundo); el modelo CLIP de 89 MB baja recién con una foto propia, y la pantalla lo avisa antes.
+
+> «CLIP corre en el navegador: la foto no sale de la computadora. Y dice cuánto acierta: el atributo correcto queda
+> entre los tres primeros del 67 al 92 % de las veces.»
+
+---
+
+## Cierre (3:40–4:00)
 
 > «Lo que construimos no predice el futuro. Describe el presente
 > con más resolución que «esto está de moda».

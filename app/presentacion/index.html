@@ -308,22 +308,9 @@ const LAMINAS=[
  izqDib:'procedencia',
  img:[{s:'ficha_procedencia',p:'Una ficha: «medido», «estimada · sintético», «interpretación · escrita por el equipo»'}],
  notas:'Medido: sale de una fuente con un cálculo en código. Interpretado: lo dijo un modelo (CLIP o el LLM), con borde punteado. Prestado: la hoja no tiene serie propia y usa la de un pariente, siempre diciendo cuál y por qué (hermano, después padre, nunca otra familia). Hoy, de 133 hojas: 74 con dato propio, 42 prestadas y 17 sin dato. Lo que no tiene dato queda neutro, no en rojo.'},
-{id:'limites',sec:'2 · Datos',titulo:'Los límites',bajada:'Cobertura, sesgos y ausencias',ancha:true,
+{id:'limites',sec:'2 · Datos',titulo:'Los límites',bajada:'En una lámina',ancha:true,
  dib:'limites',
- notas:'Cómo afectan las conclusiones: CICLO lee el presente hasta 2024 y no detecta lo emergente (la pasarela pública llega a 2023). Lo que dice sobre la pasarela es lujo y casas grandes, no la calle. Hombre y mujer van mezclados: Vogue y H&M agregados no traen la columna, y no la simulamos. Todo esto está en la vista Método de la app y en el readme.'},
-{id:'corte-2024',sec:'2 · Datos',titulo:'El trench pica en abril',bajada:'Ejemplo 1: por qué todo corta en 2024',fecha:'20 oct',
- filas:[
-  {q:'Felipe',k:'pedido',f:'20/10',c:'Sube todo junto, incluido el ancla. Eso es la medición, no la moda.',g:true},
-  {q:'Claude',k:'resultado',t:'Todo el análisis corta en 2024. 2025 y 2026 se dibujan apagados.'}],
- dib:'trench',
- notas:'El trench coat es el ancla con la que se pegan todos los lotes de Google Trends. Siempre picó entre octubre y diciembre; en 2026 pica en abril. 69 de 70 series saltan en 2026, mediana +99 %. En 2025 ya había empezado: 12 de 16 series tocaron su récord ese año. Consecuencia: CICLO no dice nada de 2025–26 y lo explica cuando se lo preguntan.'},
-{id:'calzado',sec:'2 · Datos',titulo:'El calzado',bajada:'Ejemplo 2: lo que no se pudo medir',fecha:'21 – 26 oct',
- filas:[
-  {q:'Búsqueda',k:'registro',f:'21/10',t:'De 8 estilos entran zapatillas y mocasines. Sandalias mide el verano; el resto es ruido.'},
-  {q:'Pasarela',k:'registro',f:'25/10',t:'CLIP acierta zapatillas (8 de 8) y botas texanas (7 de 8), pero lee la ropa, no el zapato.'},
-  {q:'Resultado',k:'resultado',t:'Cinco estilos sin medición. Están en la app igual, con el motivo, y sin recomendación.',g:true}],
- img:[{s:'calzado',p:'«Lo intentamos dos veces», estilo por estilo'}],
- notas:'Es la ausencia que más pesa: Lyst ve en calzado las señales más fuertes de 2023 y 2024, y ahí no podemos contrastar. Por eso el K-means es de 17 atributos sin calzado. Para medir botinetas, chatitas o guillerminas habría que recortar los pies de cada foto de pasarela. Un estilo de calzado nunca toma prestado el dato de otro.'},
+ notas:'Dos ejemplos concretos. El corte en 2024: el trench coat, el ancla de todos los lotes de Google Trends, siempre picó entre octubre y diciembre; en 2026 pica en abril, y 69 de 70 series saltan a la vez (mediana +99 %). Es la medición, no la moda: todo corta en 2024. El calzado: se intentó por búsqueda (entran zapatillas y mocasines) y por pasarela con CLIP (zapatillas 8 de 8, botas texanas 7 de 8, pero lee la ropa); cinco estilos quedan sin medición, en la app con el motivo y sin recomendación. Además: hombre y mujer mezclados, la pasarela es lujo, la búsqueda es en inglés, H&M llega a 2020. Todo en Método y en el readme.'},
 
 /* ── 3 · La IA · 3 min ───────────────────────────────────────────────────── */
 {id:'tres-modelos',sec:'3 · IA',titulo:'Tres modelos',bajada:'Cada uno hace una sola cosa',fecha:'3 min',ancha:true,
@@ -351,21 +338,23 @@ const LAMINAS=[
  notas:'Cómo se evita que invente: no ve filas, sólo métricas ya calculadas; cada número tiene que estar en DATOS tal cual; la acción (Entrar, Esperar, Salir) la calcula la página con la regla fija por etapa y perfil y la pega en la ficha, así que si el modelo se aparta se ve el aviso; y la respuesta trae «datos»: qué número usó y de dónde sale, para poder chequearlo. «acciones» son cambios sobre el diseño que se aplican con un botón, sólo con valores de OPCIONES.'},
 
 /* ── 4 · De Figma al código · 3 min ──────────────────────────────────────── */
-{id:'figma',sec:'4 · Figma → código',titulo:'La app no salió del Figma',bajada:'Contado como fue',fecha:'3 min',
- cuerpo:'El prototipo de Figma es de la Entrega 2. La app se escribió directo en código, y ya eran distintos ese día.',
+{id:'figma',sec:'4 · Figma → código',titulo:'Del diseño al código',bajada:'Tres etapas',fecha:'3 min',ancha:true,
+ cuerpo:'La app no salió de un Figma: se escribió en código. Lo que la cambió fue una devolución de la cátedra con una referencia, que adaptamos.',
+ dib:'etapas',
+ notas:'El archivo de Figma de esta entrega tiene una página por etapa: figma.com/design/4lvJEf2ZjBX87sXEySXqa7. Etapa 1: el prototipo navegable de la Entrega 2 (05/10, 10 pantallas a 1440 y a 393) y las propuestas del 13/10. Etapa 2: Cristian marcó el 13/10 que la interfaz era un mar de datos; el 27/10 Iván la seguía viendo muy IA y nos pasó shadcn.io, donde está el DESIGN.md de Apple. Etapa 3: la capa Apple en el CSS, y en Figma el sistema reconstruido desde el código con el MCP: variables, estilos, componentes y las pantallas a 1400 y 393. Documento: entregas/entrega_3/figma_a_codigo.md.'},
+{id:'referencia',sec:'4 · Figma → código',titulo:'La referencia de la cátedra',bajada:'Lo que se tomó y lo que no',
  filas:[
-  {q:'Figma',k:'registro',f:'05/10',t:'10 pantallas a 1440 y las mismas 10 a 393, con 82 y 63 conexiones.'},
-  {q:'Código',k:'resultado',t:'Claude Code, sin leer el Figma: ni get_design_context ni Code Connect. 99 de 101 commits lo firman.'},
-  {q:'Agente',k:'registro',f:'03/11',t:'El MCP de Figma se usó una vez, para leer el archivo y sacar las capturas de comparación.'}],
- dib:'figmaQue',
- notas:'Lo que sí viajó del Figma, como idea: la etapa como posición en una pista y no como color, las fichas con la paleta de la prenda arriba, los filtros en pastillas y el selector de cliente. Los tokens (colores, radios, tipografía) viven en CSS y vienen del sistema de las páginas de producto de Apple, no del Figma. Documento completo: entregas/entrega_3/figma_a_codigo.md.'},
-{id:'diferencias',sec:'4 · Figma → código',titulo:'Las diferencias',bajada:'Figma a la izquierda, la app a la derecha · cada una con su causa',imgancha:true,
- img:[{s:'figma_par_portada',p:'La portada pasa a ser tres preguntas · devolución del 13/10: «un mar de datos», y separar marca de cuenta propia'},
-  {s:'figma_par_radar',p:'El radar pasa a ser Tendencias, la pantalla principal (26/10), con todo hasta 2024 (Google cambió cómo mide)'},
+  {q:'Iván',k:'devolucion',f:'27/10',t:'La interfaz se ve «muy IA». Pasa shadcn.io: ahí está el DESIGN.md de Apple.'},
+  {q:'Se tomó',k:'resultado',t:'Tipografía del sistema, gris perla, tarjetas blancas sin sombra, títulos centrados, nada en mayúsculas, un bloque oscuro, un solo azul para lo que se toca.'},
+  {q:'No se tomó',k:'eleccion',t:'El logo y el nombre (es su sistema, no su marca) y la fotografía: las fotos de pasarela no tienen licencia, las prendas siguen dibujadas.',g:true}],
+ img:[{s:'referencia_apple',p:'La referencia: el DESIGN.md de Apple en shadcn.io'},{s:'revista_antes',p:'Antes: la revista, hasta el 27/10'},{s:'tendencias',p:'Después: la capa Apple aplicada a CICLO'},{s:'figma_tarjeta_estados',p:'En Figma, desde el código: la tarjeta en 4 señales × 4 estados'}],
+ notas:'Los valores de la capa salen de esa referencia: lienzo #f5f5f7, azul #0066cc, foco #0071e3, tile oscuro #272729, radio de 18 px, cuerpo de 17 px, SF Pro con Inter de respaldo. Lo que agregamos nosotros: la señal sigue siendo color (Entrar, Esperar, Salir, con su palabra) y el azul significa sólo «se puede tocar». Capturas de la referencia en diseno/referencias/.'},
+{id:'diferencias',sec:'4 · Figma → código',titulo:'Las diferencias',bajada:'El prototipo a la izquierda, la app a la derecha · cada una con su causa',imgancha:true,
+ img:[{s:'figma_par_portada',p:'La portada pasa a ser tres preguntas · devolución de Cristian, 13/10: «un mar de datos»'},
+  {s:'figma_par_radar',p:'El radar pasa a ser Tendencias, la pantalla principal (26/10), con todo hasta 2024'},
   {s:'figma_par_detalle',p:'La caja salmón se va: «Entrar» salía en rojo (20/10). Entra «Diseñar con este corte» (27/10)'},
-  {s:'figma_par_consulta',p:'La consulta pasa a ser real (13/10): CLIP en el navegador, con cuánto acierta y qué hace si no reconoce'},
   {s:'figma_par_celular',p:'Cinco pestañas escondían la mitad de las once vistas: el menú entero (26 y 27/10)'}],
- notas:'Con las flechas (o ↑ ↓) se pasan los cinco pares. Detalle de cada uno en entregas/entrega_3/figma_a_codigo.md. Lo curioso: la versión de Apple (27/10, por la devolución «muy IA») quedó más cerca del Figma —sans serif, pastillas, tarjetas blancas— que la revista en Bodoni que hubo en el medio. Los nombres de taller («Frisa · french terry») tampoco estaban en Figma: la regla del 20/10 es que si no se puede decir en voz alta en un taller, no va.'},
+ notas:'Con las flechas (o ↑ ↓) se pasan los pares. También cambiaron los nombres: de «Jeans amplios» a baggy, wide leg, barrel; regla del 20/10: si no se puede decir en voz alta en un taller, no va. Detalle en figma_a_codigo.md.'},
 {id:'fuera-de-figma',sec:'4 · Figma → código',titulo:'Lo que Figma no pregunta',bajada:'Decidido en el código',ancha:true,
  dib:'fueraFigma',
  notas:'El Figma muestra cada pantalla en un solo estado: con datos, sin errores, ya cargada. Estados: hover sin sombra, foco visible con teclado, lo elegido con borde azul y aria-pressed. Celular: verificado con Playwright, ancho de página igual al del teléfono. CLIP: 89 MB de modelo más 8 MB de índice, sólo en la primera consulta y con el avance a la vista. El modo oscuro existió, se auditó el 26/10 y se apagó el 27/10: la capa nueva es siempre clara.'},
@@ -443,8 +432,8 @@ const DIB={
     ['Modelo de lenguaje','Pone las métricas en palabras.','Traduce']]
     .map(([t,p,c])=>`<div class="tarjeta"><span class="num">${c}</span><h3>${t}</h3><p>${p}</p></div>`).join('')}</div>`,
   commits:()=>graficoCommits(),
-  veredictos:()=>`<ul class="metodos">${[['La pasarela adelanta, por año','refutado'],['La pasarela adelanta, por temporada','refutado'],
-    ['Se puede predecir la búsqueda','refutado'],['Distingue lo que sube de lo que no','se sostiene'],['Distingue «retorno» de «saturada»','no']]
+  veredictos:()=>`<ul class="metodos">${[['Distingue lo que sube de lo que no','se sostiene'],['La pasarela adelanta, por año','refutado'],
+    ['La pasarela adelanta, por temporada','refutado'],['Se puede predecir la búsqueda','refutado'],['Distingue «retorno» de «saturada»','no']]
     .map(([t,v])=>`<li class="${v==='se sostiene'?'ok':''}">${t}<span>${v}</span></li>`).join('')}</ul>
     <p class="fuente">Cada prueba con su fecha y su p en hipotesis.md. Las dos de 27/10, con el criterio commiteado antes de calcular.</p>`,
   decision:()=>`<div class="pasos">${[['Tu perfil','Fast fashion 6 semanas, high fashion 6 meses, nicho 3 meses.'],['La etapa','El K-means, sobre pasarela y búsqueda.'],
@@ -461,10 +450,10 @@ const DIB={
     <div class="sen"><b>● medido</b><span>Sale de una fuente, con un cálculo en código.</span></div>
     <div class="sen i"><b>◇ interpretado</b><span>Lo dijo un modelo: CLIP o el LLM.</span></div>
     <div class="sen"><b>↪ prestado</b><span>La serie de un pariente, con el motivo.</span></div></div>`,
-  limites:()=>`<div class="tarjetas grandes">${[['Cobertura','Búsqueda 2004–2024. Pasarela hasta 2023. 17 atributos en el modelo; de 133 hojas, 74 con dato propio, 42 prestadas y 17 sin dato.','No ve 2025 ni 2026, y no detecta lo emergente'],
-    ['Sesgos','La pasarela es lujo y casas grandes. La búsqueda es mundial y en inglés. Hombre y mujer, mezclados. Reddit es un solo foro.','Lee lo que propone el lujo y busca el mundo, no la calle'],
-    ['Ausencias','Calzado: cinco de ocho estilos sin medición. Sin Instagram, TikTok ni Pinterest. Sin venta reciente: H&M llega a 2020.','En calzado no recomienda; la venta no valida, contrasta']]
-    .map(([t,p,c])=>`<div class="tarjeta"><h3>${t}</h3><p>${p}</p><span class="cuando">Cómo afecta: ${c}</span></div>`).join('')}</div>`,
+  limites:()=>`<div class="tarjetas grandes">${[['Hasta 2024','Desde 2025 Google cambió cómo mide: el trench, que siempre picó en otoño, en 2026 pica en abril. CICLO no dice nada de 2025 ni 2026.'],
+    ['Calzado, poco','Dos intentos, búsqueda y pasarela: cinco de ocho estilos no los mide nada. Están en la app, con el motivo y sin recomendación.'],
+    ['Sesgos','La pasarela es lujo, la búsqueda es en inglés, hombre y mujer van mezclados. No detecta lo emergente.']]
+    .map(([t,p])=>`<div class="tarjeta"><h3>${t}</h3><p>${p}</p></div>`).join('')}</div>`,
   prompt:()=>{const clave=/^(- NUNCA|- Pero NUNCA|- Si pregunta por «ahora»|- Cada número|- Decí si cada dato|Respondé SOLO)/;
     return `<pre class="prompt" tabindex="0" aria-label="El system prompt de Preguntar, versión 5">${PROMPT_V5.split('\n').map(l=>clave.test(l)?`<b>${esc(l)}</b>`:esc(l)).join('\n')}</pre>`;},
   filaMetrica:()=>`<div class="flujo" style="grid-template-columns:1fr auto 1fr">
@@ -480,9 +469,11 @@ OPCIONES (paso: valores posibles para "acciones"): {corte, tiro, material…}
 ${esc(`- Jeans baggy | tipo: Jeans | etapa: Pico | pasarela: 61 % de su pico, momento -7 %, pico en 2021 | búsqueda: 84 % de su pico, momento +161 %, sigue subiendo (máximo en 2024) | afuera 2022→2024: +50 puntos | Google Shopping: +95 % | reseñas de Amazon: +79 %`)}</pre>
     <p class="fuente">app/llm/ciclo_datos.md: 62 KB. Por pregunta viajan entre 3.600 y 4.600 tokens.</p>`,
   json:()=>`<pre class="prompt" tabindex="0" aria-label="El formato de la respuesta">${esc(PROMPT_V5.slice(PROMPT_V5.indexOf('Respondé SOLO')))}</pre>`,
-  figmaQue:()=>`<ul class="metodos">${[['Las pantallas y sus nombres','del Figma'],['La etapa como posición en una pista','del Figma'],
-    ['Colores, radios y tipografía','del código'],['Estados, errores y carga','del código'],['El celular, a 393 px','del código']]
-    .map(([t,v])=>`<li>${t}<span>${v}</span></li>`).join('')}</ul>`,
+  etapas:()=>`<div class="tarjetas">${[['1','El diseño original','El prototipo de Figma de la Entrega 2 y las propuestas del 13/10.','05/10 – 13/10'],
+    ['2','La devolución y la referencia','Cristian: «un mar de datos». Iván: «muy IA», y el sistema de Apple en shadcn.io.','13/10 – 27/10'],
+    ['3','El sistema implementado','La capa Apple en el CSS; en Figma, reconstruido desde el código con el MCP.','27/10 – 03/11']]
+    .map(([n,t,p,c])=>`<div class="tarjeta"><span class="num">Etapa ${n}</span><h3>${t}</h3><p>${p}</p><span class="cuando">${c}</span></div>`).join('')}</div>
+    <p class="fuente" style="margin-top:14px">Figma: figma.com/design/4lvJEf2ZjBX87sXEySXqa7 · una página por etapa · documento: entregas/entrega_3/figma_a_codigo.md</p>`,
   fueraFigma:()=>`<div class="tarjetas grandes" style="--n:4">${[['Estados','Reposo, hover sin sombra, foco visible con teclado, lo elegido con borde azul.'],
     ['Celular','Menú entero en vez de cinco pestañas. Gráficos que se deslizan, sin rótulos de 3 px.'],
     ['Carga','CLIP baja 89 MB más 8 de índice sólo en la primera consulta, con el avance a la vista.'],

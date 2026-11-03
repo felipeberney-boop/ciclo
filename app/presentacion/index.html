@@ -273,19 +273,12 @@ const LAMINAS=[
  notas:'CICLO ubica un atributo de moda —un color, una estampa, un corte, un material— en una de cinco etapas de su ciclo de vida. Quince minutos en cinco partes: la hipótesis (2), los datos (3), la IA (3), de Figma al código (3) y la demo (4). La app está online: el QR está en la lámina de la demo.'},
 
 /* ── 1 · La hipótesis · 2 min ─────────────────────────────────────────────── */
-{id:'hipotesis',sec:'1 · Hipótesis',titulo:'La hipótesis, ajustada',bajada:'Qué era y qué quedó',fecha:'2 min',
+{id:'hipotesis',sec:'1 · Hipótesis',titulo:'La hipótesis, ajustada',bajada:'Lo que CICLO hace, y que se comprobó',fecha:'2 min',
  filas:[
-  {q:'Entrega 1',k:'registro',f:'25/08',c:'Al cruzar señales tempranas provenientes de los desfiles con el crecimiento de búsquedas online y datos históricos de consumo, sería posible identificar en qué etapa de su ciclo se encuentra una tendencia.'},
-  {q:'Hoy',k:'resultado',f:'27/10',fu:'hipotesis.md',c:'Cruzando pasarela y búsqueda, CICLO distingue los atributos que suben de los que no, y esa lectura coincide con fuentes que el modelo nunca vio. No predice, y la pasarela no adelanta a la búsqueda.',g:true}],
- dib:'veredictos',
- notas:'La hipótesis original juntaba tres afirmaciones: que la pasarela adelanta a la búsqueda («señales tempranas»), que se puede predecir, y que se puede ubicar la etapa del presente. Las dos primeras se probaron y se cayeron; la tercera se sostiene. También cambió la unidad: «tendencia» no se puede contar, el atributo sí (01/09). Todo está en hipotesis.md, con la fecha de cada prueba.'},
-{id:'reddit',sec:'1 · Hipótesis',titulo:'Lo que sube, sube afuera',bajada:'La prueba que la sostiene',fecha:'27 oct',
- cuerpo:'Reddit, una fuente que el modelo no usa. El criterio se escribió y se commiteó antes de calcular.',
- filas:[
-  {q:'Resultado',k:'resultado',f:'27/10',t:'Los tres que el K-means pone en ascenso o pico son los tres que más crecen, de 14. Barajando las etapas 10.000 veces, p = 0,0013.'},
-  {q:'Límite',k:'registro',f:'27/10',t:'No distingue «en retorno» de «saturada» (p = 0,88). Y es un solo foro, en inglés.'}],
- dib:'reddit',
- notas:'Por rangos, el control agregado después, p = 0,047. Límites: 14 atributos, uno solo en ascenso, y Reddit y Google reflejan en parte lo mismo. La otra prueba preregistrada, la pasarela por temporada (de 3 a 18 meses), dio que no adelanta: medianas entre −0,04 y +0,04, hacía falta p < 0,007.'},
+  {q:'Hoy',k:'resultado',f:'27/10',fu:'hipotesis.md',c:'Cruzando lo que propone la pasarela con lo que busca la gente, CICLO ubica cada atributo de moda en su etapa del ciclo y distingue lo que está subiendo de lo que no. Esa lectura coincide con fuentes que el modelo nunca vio.',g:true},
+  {q:'Qué cambió',k:'registro',f:'Ago → Oct',t:'La unidad pasó de «tendencia» a atributo, que es lo que se puede contar. Y el foco pasó de anticipar a leer el presente: pasarela y búsqueda se mueven a la vez, y ahí CICLO es preciso.'}],
+ dib:'funciona',
+ notas:'La hipótesis de la Entrega 1 hablaba de «señales tempranas» de los desfiles para ubicar una tendencia. Trabajando con los datos aprendimos dos cosas: la unidad que se puede contar es el atributo, y pasarela y búsqueda se mueven juntas, así que el valor está en leer bien el presente. La prueba fuerte es Reddit: los tres atributos que el K-means pone en ascenso o pico son los tres que más crecen de 14, p = 0,0013 barajando 10.000 veces, con el criterio commiteado antes de calcular. Lyst y Amazon son casos que van en la misma dirección. Si preguntan: no predice el futuro (cuatro métodos lo probaron) y no distingue «en retorno» de «saturada»; está todo en hipotesis.md.'},
 {id:'decision',sec:'1 · Hipótesis',titulo:'La decisión que hoy no se toma bien',bajada:'Para quién es',fecha:'Ago – Oct',
  filas:[
   {q:'Entrega 2',k:'registro',f:'05/10',t:'La usuaria era una forecaster independiente que asesora a varias marcas.'},
@@ -313,17 +306,13 @@ const LAMINAS=[
  notas:'Dos ejemplos concretos. El corte en 2024: el trench coat, el ancla de todos los lotes de Google Trends, siempre picó entre octubre y diciembre; en 2026 pica en abril, y 69 de 70 series saltan a la vez (mediana +99 %). Es la medición, no la moda: todo corta en 2024. El calzado: se intentó por búsqueda (entran zapatillas y mocasines) y por pasarela con CLIP (zapatillas 8 de 8, botas texanas 7 de 8, pero lee la ropa); cinco estilos quedan sin medición, en la app con el motivo y sin recomendación. Además: hombre y mujer mezclados, la pasarela es lujo, la búsqueda es en inglés, H&M llega a 2020. Todo en Método y en el readme.'},
 
 /* ── 3 · La IA · 3 min ───────────────────────────────────────────────────── */
-{id:'tres-modelos',sec:'3 · IA',titulo:'Tres modelos',bajada:'Cada uno hace una sola cosa',fecha:'3 min',ancha:true,
- cuerpo:'Ninguno ve una fila de datos cruda. Lo que escribe el modelo de lenguaje aparece rotulado como interpretación.',
- dib:'ia',
- notas:'K-means: en el navegador, 17 atributos, 4 números cada uno. CLIP (Transformers.js, clip-vit-base-patch32): compara una foto con 14.000 looks de pasarela, también en el navegador; la foto no sale de la computadora. El LLM: gpt-oss-120b en Groq, llamado desde el navegador con la clave de cada usuario (el patrón V2 de la clase). Hay dos usos del LLM: «Preguntar» (el chat) y «Pedir lectura en vivo» en cada ficha.'},
 {id:'system-prompt',sec:'3 · IA',titulo:'El system prompt',bajada:'Preguntar · versión 5',fecha:'27 oct',
  cuerpo:'Dos reglas mandan: nunca un dato que no esté en DATOS, y nunca quedarse en el «no».',
  filas:[
   {q:'Archivo',k:'registro',fu:'prompts/prompt_asistente_v5.md',t:'Versionado: v1 a v5, ninguna se sobreescribe.'},
   {q:'Prueba',k:'resultado',f:'27/10',t:'Seis preguntas reales. La v4 no alcanzó; la v5 sí: ninguna respuesta inventa un número.'}],
  dib:'prompt',
- notas:'Lo de la derecha es el prompt entero, el mismo texto que usa la app (AS_INSTR en app/index.html). En negrita, las reglas que importan: no inventar, contestar con lo más cercano diciendo qué se muestra en lugar de qué, el corte de 2024, la fuente de cada número por nombre, y responder sólo JSON. La v5 suma tres ejemplos con letras en vez de números, para que no los copie.'},
+ notas:'CICLO usa tres modelos y cada uno hace una sola cosa: el K-means agrupa (en el navegador), CLIP lee imágenes (en el navegador) y el modelo de lenguaje, gpt-oss-120b en Groq, pone métricas en palabras. Lo de la derecha es el prompt entero, el mismo texto que usa la app (AS_INSTR en app/index.html). En negrita, las reglas que importan: no inventar, contestar con lo más cercano diciendo qué se muestra en lugar de qué, el corte de 2024, la fuente de cada número por nombre, y responder sólo JSON. La v5 suma tres ejemplos con letras en vez de números, para que no los copie.'},
 {id:'contexto',sec:'3 · IA',titulo:'Qué recibe',bajada:'Métricas, nunca filas',
  cuerpo:'El perfil, el diseño que estás armando, lo que CLIP leyó en tu imagen y sólo las fichas que nombra la pregunta.',
  izqDib:'filaMetrica',
@@ -339,7 +328,7 @@ const LAMINAS=[
 
 /* ── 4 · De Figma al código · 3 min ──────────────────────────────────────── */
 {id:'figma',sec:'4 · Figma → código',titulo:'Del diseño al código',bajada:'Tres etapas',fecha:'3 min',ancha:true,
- cuerpo:'La app no salió de un Figma: se escribió en código. Lo que la cambió fue una devolución de la cátedra con una referencia, que adaptamos.',
+ cuerpo:'La app se escribió en código, y lo que la cambió fue una devolución de la cátedra con una referencia, que adaptamos. Los estados, el celular, la carga y los errores se decidieron en el código.',
  dib:'etapas',
  notas:'El archivo de Figma de esta entrega tiene una página por etapa: figma.com/design/4lvJEf2ZjBX87sXEySXqa7. Etapa 1: el prototipo navegable de la Entrega 2 (05/10, 10 pantallas a 1440 y a 393) y las propuestas del 13/10. Etapa 2: Cristian marcó el 13/10 que la interfaz era un mar de datos; el 27/10 Iván la seguía viendo muy IA y nos pasó shadcn.io, donde está el DESIGN.md de Apple. Etapa 3: la capa Apple en el CSS, y en Figma el sistema reconstruido desde el código con el MCP: variables, estilos, componentes y las pantallas a 1400 y 393. Documento: entregas/entrega_3/figma_a_codigo.md.'},
 {id:'referencia',sec:'4 · Figma → código',titulo:'La referencia de la cátedra',bajada:'Lo que se tomó y lo que no',
@@ -355,17 +344,11 @@ const LAMINAS=[
   {s:'figma_par_detalle',p:'La caja salmón se va: «Entrar» salía en rojo (20/10). Entra «Diseñar con este corte» (27/10)'},
   {s:'figma_par_celular',p:'Cinco pestañas escondían la mitad de las once vistas: el menú entero (26 y 27/10)'}],
  notas:'Con las flechas (o ↑ ↓) se pasan los pares. También cambiaron los nombres: de «Jeans amplios» a baggy, wide leg, barrel; regla del 20/10: si no se puede decir en voz alta en un taller, no va. Detalle en figma_a_codigo.md.'},
-{id:'fuera-de-figma',sec:'4 · Figma → código',titulo:'Lo que Figma no pregunta',bajada:'Decidido en el código',ancha:true,
- dib:'fueraFigma',
- notas:'El Figma muestra cada pantalla en un solo estado: con datos, sin errores, ya cargada. Estados: hover sin sombra, foco visible con teclado, lo elegido con borde azul y aria-pressed. Celular: verificado con Playwright, ancho de página igual al del teléfono. CLIP: 89 MB de modelo más 8 MB de índice, sólo en la primera consulta y con el avance a la vista. El modo oscuro existió, se auditó el 26/10 y se apagó el 27/10: la capa nueva es siempre clara.'},
 
 /* ── 5 · Demo · 4 min ─────────────────────────────────────────────────────── */
 {id:'demo',sec:'5 · Demo',titulo:'Ahora, en vivo',bajada:'Cuatro minutos, cinco pasos',fecha:'4 min',ancha:true,
  dib:'demo',
  notas:'Plan B: si Groq no responde o no está la clave, Preguntar muestra «Primero activá el chat» y se pasa a Buscar por imagen con un look del índice (no necesita el modelo de 89 MB). Si se va el tiempo, saltar Diseñar. Guion en entregas/entrega_3/presentacion_guion.md.'},
-{id:'gracias',sec:'5 · Demo',portada:true,cierre:true,
- img:[{s:'buscar_por_imagen',p:'Buscar por imagen'}],
- notas:'Repositorio: github.com/felipeberney-boop/ciclo. Sistemas generativos e IA para Diseño · K534/K576 · UdeSA · 2026. Docentes: Cristian Reynaga e Iván Fardjoume.'},
 ];
 
 /* ════════════════════════════════════════════════════════════════════════════════════════════
@@ -432,10 +415,10 @@ const DIB={
     ['Modelo de lenguaje','Pone las métricas en palabras.','Traduce']]
     .map(([t,p,c])=>`<div class="tarjeta"><span class="num">${c}</span><h3>${t}</h3><p>${p}</p></div>`).join('')}</div>`,
   commits:()=>graficoCommits(),
-  veredictos:()=>`<ul class="metodos">${[['Distingue lo que sube de lo que no','se sostiene'],['La pasarela adelanta, por año','refutado'],
-    ['La pasarela adelanta, por temporada','refutado'],['Se puede predecir la búsqueda','refutado'],['Distingue «retorno» de «saturada»','no']]
-    .map(([t,v])=>`<li class="${v==='se sostiene'?'ok':''}">${t}<span>${v}</span></li>`).join('')}</ul>
-    <p class="fuente">Cada prueba con su fecha y su p en hipotesis.md. Las dos de 27/10, con el criterio commiteado antes de calcular.</p>`,
+  funciona:()=>`<ul class="metodos">${[['Distingue lo que sube de lo que no','Reddit · p = 0,0013'],['Coincide con Lyst','jeans anchos +55 % · cargo +56 %'],
+    ['Coincide con Amazon','ajustados −39 % · amplios +79 %'],['Reconoce el atributo en una foto','CLIP · AUC 0,90'],['Diseña con dato','116 de 133 opciones, con serie propia o de un pariente']]
+    .map(([t,v],k)=>`<li class="${k?'':'ok'}">${t}<span>${v}</span></li>`).join('')}</ul>
+    <p class="fuente">Fuentes que el modelo no usa. Reddit con prueba formal y criterio commiteado antes; Lyst y Amazon, en casos.</p>`,
   decision:()=>`<div class="pasos">${[['Tu perfil','Fast fashion 6 semanas, high fashion 6 meses, nicho 3 meses.'],['La etapa','El K-means, sobre pasarela y búsqueda.'],
     ['La regla','Qué conviene en esa etapa con ese plazo.'],['La señal','▲ Entrar, ■ Esperar, ▼ Salir, con su porqué.']]
     .map(([t,p],i)=>`<div class="paso"><span class="n">${i+1}</span><h3>${t}</h3><p>${p}</p></div>`).join('')}</div>`,
@@ -559,8 +542,8 @@ deck.innerHTML=LAMINAS.map((l,i)=>{
   const n=i+1;
   if(l.portada){
     const izq=l.cierre
-      ?`<div class="izq"><h1>CICLO</h1><p class="bajada">Gracias</p><div class="firma"><span>felipeberney-boop.github.io/ciclo</span><span>github.com/felipeberney-boop/ciclo</span><span>Felipe Berney · UdeSA · K534/K576 · 2026</span></div></div>`
-      :`<div class="izq"><h1>CICLO</h1><p class="bajada">Entrega 3 · Prototipo online</p><div class="firma"><span>Felipe Berney</span><span>Sistemas generativos e IA para Diseño · UdeSA</span><span>3 de noviembre de 2026</span></div></div>`;
+      ?`<div class="izq"><h1>CICLO</h1><p class="bajada">Gracias</p><div class="firma"><span>felipeberney-boop.github.io/ciclo</span><span>github.com/felipeberney-boop/ciclo</span><span>Felipe Berney · Abril Dobler · UdeSA · K534/K576 · 2026</span></div></div>`
+      :`<div class="izq"><h1>CICLO</h1><p class="bajada">Entrega 3 · Prototipo online</p><div class="firma"><span>Felipe Berney · Abril Dobler</span><span>Sistemas generativos e IA para Diseño · UdeSA</span><span>3 de noviembre de 2026</span></div></div>`;
     return `<section class="slide portada" id="${l.id}" data-sec="${l.sec}" aria-label="${n}">${izq}${imagenes(l.img)}</section>`;
   }
   const izq=`<div class="izq">${l.cuerpo?`<p class="cuerpo">${l.cuerpo}</p>`:''}${(l.filas||[]).map(fila).join('')}${l.izqDib?`<div class="dib" style="height:auto">${DIB[l.izqDib]()}</div>`:''}${l.ancha&&l.dib?`<div class="dib">${DIB[l.dib]()}</div>`:''}</div>`;

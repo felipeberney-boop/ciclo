@@ -1454,3 +1454,17 @@ noviembre, así que no hizo falta pasar a Vercel. `netlify.toml` deja de redirig
 `app/` tal cual. https://ciclo-udesa.netlify.app sirve el mismo HTML que GitHub Pages (más un comentario y un script que
 Netlify agrega). GitHub Pages sigue siendo la URL oficial, la del QR. El deploy de Netlify es a mano:
 `npx netlify-cli deploy --prod --dir app`.
+
+## 2026-11-03 · La hipótesis, contada por lo que funciona, y sólo lo que pide la consigna
+
+**La hipótesis ajustada, en positivo.** «Cruzando lo que propone la pasarela con lo que busca la gente, CICLO ubica cada
+atributo de moda en su etapa del ciclo y distingue lo que está subiendo de lo que no. Esa lectura coincide con fuentes
+que el modelo nunca vio.» La lámina pone adelante lo comprobado: Reddit (p = 0,0013), Lyst, Amazon, CLIP (AUC 0,90) y
+116 de 133 opciones de Diseñar con serie. Lo que cambió se dice en una línea: de «tendencia» a atributo, y de anticipar
+a leer el presente. Lo refutado sigue completo en `hipotesis.md` y en las notas, por si lo preguntan. Lo mismo en
+`hipotesis.md` y el readme.
+
+**Fuera lo que no pide la consigna.** Salen «Lo que sube, sube afuera» (la prueba de Reddit queda dentro de la lámina
+de la hipótesis), «Tres modelos» (pasa a las notas del system prompt), «Lo que Figma no pregunta» (queda una línea en
+«Del diseño al código» y el detalle en `figma_a_codigo.md`) y la lámina de cierre (el repositorio y el QR ya están en la
+demo). Quedan 14 láminas. Abril vuelve a la firma: sigue en el grupo.

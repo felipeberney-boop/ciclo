@@ -70,6 +70,10 @@ nosotros leemos qué etapa es cada grupo.
 La unidad de análisis es el **atributo**, no la prenda ni «la tendencia»: es lo único que se puede
 contar en las cinco capas a la vez.
 
+**Ajustada en la Entrega 3:** cruzando lo que propone la pasarela con lo que busca la gente, CICLO ubica cada atributo
+en su etapa y distingue lo que está subiendo de lo que no, y esa lectura coincide con fuentes que el modelo nunca vio
+(Reddit, Lyst, Amazon). El detalle, prueba por prueba, está en `hipotesis.md`.
+
 ## Cómo correrlo
 
 No tiene build ni dependencias. La carpeta `app/` es un único archivo HTML.

@@ -8,9 +8,13 @@ búsquedas online y datos históricos de consumo, sería posible identificar en 
 tendencia.» Junta tres afirmaciones: que la pasarela **adelanta** a la búsqueda, que se puede **predecir**, y que se
 puede **identificar la etapa** del presente.
 
-**Cómo queda:** cruzando pasarela y búsqueda, CICLO distingue los atributos que suben de los que no, y esa lectura
-coincide con fuentes que el modelo nunca vio. No predice, y la pasarela no adelanta a la búsqueda:
-ni por año ni por temporada. Pasarela y búsqueda se mueven juntas, a la vez.
+**La hipótesis ajustada (Entrega 3):** cruzando lo que propone la pasarela con lo que busca la gente, CICLO ubica cada
+atributo de moda en su etapa del ciclo y distingue lo que está subiendo de lo que no. Esa lectura coincide con fuentes
+que el modelo nunca vio: Reddit, con prueba formal (p = 0,0013), y Lyst y Amazon, en casos.
+
+**Qué cambió y por qué:** la unidad pasó de «tendencia» a atributo, que es lo que se puede contar en todas las capas; y
+el foco pasó de anticipar a leer el presente, porque pasarela y búsqueda se mueven juntas, a la vez (por año y por
+temporada). Ahí, en el presente, es donde CICLO es preciso.
 
 ---
 

@@ -1,14 +1,14 @@
-// CICLO · el recorrido paso a paso para el readme (03/11/2026, devolución de la presentación).
+// CICLO · el recorrido paso a paso para el readme (03/11/2026; la entrada nueva, 04/11/2026).
 // Uso, desde la raíz del repo, con la app servida (cd app && python3 -m http.server 8000):
 //   node codigo/capturar_recorrido.js [http://localhost:8000/]
-// Requiere: npm install playwright. Escribe en entregas/entrega_3/recorrido/.
+// Requiere: npm install playwright. Escribe en entregas/entrega_4/recorrido/ (el de la Entrega 3 queda en entrega_3/).
 // Todo con clicks de verdad, en una sola pestaña y sin perfil guardado, como alguien que entra por primera vez.
 // Preguntar se captura sin respuesta: una respuesta simulada sería presentar como real algo que no lo es.
 const { chromium } = require('playwright');
 const fs = require('fs');
 
 const BASE = process.argv[2] || 'http://localhost:8000/';
-const OUT = 'entregas/entrega_3/recorrido';
+const OUT = 'entregas/entrega_4/recorrido';
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
@@ -27,34 +27,39 @@ const OUT = 'entregas/entrega_3/recorrido';
 
   for (const [ancho, alto, suf] of [[1400, 900, ''], [393, 852, '_celular']]) {
     const p = await abrir(ancho, alto);
-    // la entrada
-    await foto(p, `paso_01_para_quien_disenas${suf}`);
+    // la entrada: qué estás por decidir, para quién, qué tipo de marca
+    await foto(p, `paso_01_que_estas_por_decidir${suf}`);
+    await tarjeta(p, 'data-dec', 'producir');
+    await foto(p, `paso_02_para_quien_disenas${suf}`);
     await tarjeta(p, 'data-pub', 'mujer');
-    await foto(p, `paso_02_marca_o_por_tu_cuenta${suf}`);
-    await tarjeta(p, 'data-vinc', 'propia');
-    await foto(p, `paso_04_por_tu_cuenta_tipo_de_prendas${suf}`);
-    await p.click('#gvolver');
-    await tarjeta(p, 'data-vinc', 'marca');
-    await foto(p, `paso_03_para_una_marca_categoria${suf}`);
+    await foto(p, `paso_03_tipo_de_marca${suf}`);
     await tarjeta(p, 'data-cli', 'fast');
-    await foto(p, `paso_05_cae_en_tendencias_con_el_perfil${suf}`);
+    await foto(p, `paso_04_cae_en_tendencias_con_el_perfil${suf}`);
     if (!suf) {
       // el uso
-      await hasta(p, '#terreno'); await foto(p, 'paso_06_tendencias');
-      await p.click('#grid > :first-child');
-      await p.evaluate(() => window.scrollTo(0, 380)); await foto(p, 'paso_07_ficha_del_atributo');
-      await p.evaluate(() => window.scrollTo(0, 0)); await p.focus('#v-detalle [data-dz]');
-      await foto(p, 'paso_08_boton_disenar_con');
+      await hasta(p, '#terreno'); await foto(p, 'paso_05_tendencias');
+      await p.click('#grid > .plate');
+      await p.evaluate(() => window.scrollTo(0, 0)); await foto(p, 'paso_06_ficha_del_atributo');
+      await p.focus('#v-detalle [data-dz]');
+      await foto(p, 'paso_07_boton_disenar_con');
       await p.click('#v-detalle [data-dz]');
-      await foto(p, 'paso_09_disenar_con_el_atributo_fijo');
+      await foto(p, 'paso_08_disenar_con_el_atributo_fijo');
       await p.click('#nav a[data-v="asistente"]');
-      await foto(p, 'paso_10_preguntar');
+      await foto(p, 'paso_09_preguntar');
     } else {
       await p.evaluate(() => { mostrar('radar'); });
-      await p.click('#grid > :first-child');
+      await p.click('#grid > .plate');
       await p.click('#v-detalle [data-dz]');
-      await foto(p, 'paso_09_disenar_con_el_atributo_fijo_celular');
+      await foto(p, 'paso_08_disenar_con_el_atributo_fijo_celular');
     }
+    await p.context().close();
+  }
+  // las otras dos decisiones: adónde lleva cada una
+  for (const [dec, nombre] of [['revisar', 'paso_10_si_algo_ya_paso'], ['disenar', 'paso_11_que_disenar_entra_a_disenar']]) {
+    const p = await abrir(1400, 900);
+    await tarjeta(p, 'data-dec', dec); await tarjeta(p, 'data-pub', 'mujer'); await tarjeta(p, 'data-cli', 'fast');
+    if (dec === 'revisar') await hasta(p, '#grid');
+    await foto(p, nombre);
     await p.context().close();
   }
   await b.close();

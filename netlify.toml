@@ -1,7 +1,7 @@
 # Netlify publica la misma app que GitHub Pages (03/11/2026): la carpeta app/ tal cual, sin build.
 # Del 25/10 al 03/11 estuvo pausado (sin créditos) y redirigía a GitHub Pages; se reactivó porque la cátedra
 # acepta Netlify o Vercel. La app no necesita servidor: IA-5 y «Preguntar» llaman a Groq desde el navegador con la
-# clave de cada usuario. Las funciones de netlify/functions/ quedan en el repo, sin publicar (ver decisiones.md).
+# clave de cada usuario. La función que tenía una clave del proyecto se borró el 04/11 (está en el historial de git).
 [build]
   publish = "app"
   command = ""

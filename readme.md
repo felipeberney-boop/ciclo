@@ -3,6 +3,10 @@
 Web app que ubica atributos de moda —un color, una estampa, un corte, un material— en una de cinco
 etapas de su ciclo de vida: **emergente, en ascenso, en pico, saturada o en retorno**.
 
+Es para quien diseña ropa y tiene que decidir qué diseñar, qué mandar a producir o si algo que ya hizo sigue vigente.
+Cruza lo que muestra la pasarela con lo que busca la gente y, según el tipo de marca, dice Entrar, Esperar o Salir, con
+el dato que lo sostiene. No predice: lee en qué punto está cada atributo hoy.
+
 **App:** https://felipeberney-boop.github.io/ciclo/
 
 **Presentación:** https://felipeberney-boop.github.io/ciclo/presentacion/
@@ -18,6 +22,7 @@ etapas de su ciclo de vida: **emergente, en ascenso, en pico, saturada o en reto
 | **También en Netlify** | https://ciclo-udesa.netlify.app |
 | De Figma al código · preguntas probables | [figma_a_codigo.md](entregas/entrega_3/figma_a_codigo.md) · [preguntas_probables.md](entregas/entrega_3/preguntas_probables.md) |
 | Guion de la presentación y la demo | [guion_demo.md](entregas/entrega_3/guion_demo.md) |
+| Entrega 4 · las pantallas en papel, para corregir en clase | [PDF, 13 hojas A4](entregas/entrega_4/disenos_en_papel/ciclo_disenos_en_papel_entrega_4.pdf) · página 4 del Figma |
 
 Materia: *Sistemas generativos e IA para Diseño* (K534/K576) · Universidad de San Andrés · 2º semestre 2026
 Docentes: Cristian Reynaga e Iván Fardjoume
@@ -34,65 +39,70 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 | App publicada (oficial) | https://felipeberney-boop.github.io/ciclo/ |
 | Presentación Entrega 3 | https://felipeberney-boop.github.io/ciclo/presentacion/ |
 | También en Netlify | https://ciclo-udesa.netlify.app — la misma app, publicada el 03/11/2026 (la cátedra acepta Netlify o Vercel). La oficial, la del QR, es la de GitHub Pages |
-| Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). Netlify publica la misma carpeta a mano: `npx netlify-cli deploy --prod --dir app`. La app no necesita servidor: `netlify/functions/` no se usa |
+| Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). Netlify publica la misma carpeta a mano: `npx netlify-cli deploy --prod --dir app`. La app no necesita servidor |
 
 ## El recorrido, paso a paso
 
 ### La entrada: tres preguntas
 
 Cada tarjeta dice sólo lo que hay que clickear. Qué cambia cada respuesta está en la pantalla **Método** de la app.
+Desde el 04/11 la primera pregunta es por lo que la persona vino a hacer, no por dónde trabaja (devolución de la Entrega 3).
 
-**1 · ¿Para quién diseñás?** Mujer, hombre o sin género.
+**1 · ¿Qué estás por decidir?** Qué diseñar, qué producir o si algo ya pasó.
 
-![Paso 1: ¿para quién diseñás?](entregas/entrega_3/recorrido/paso_01_para_quien_disenas.png)
+![Paso 1: ¿qué estás por decidir?](entregas/entrega_4/recorrido/paso_01_que_estas_por_decidir.png)
 
-**2 · ¿Trabajás para una marca o por tu cuenta?**
+**2 · ¿Para quién diseñás?** Mujer, hombre o sin género.
 
-![Paso 2: ¿para una marca o por tu cuenta?](entregas/entrega_3/recorrido/paso_02_marca_o_por_tu_cuenta.png)
+![Paso 2: ¿para quién diseñás?](entregas/entrega_4/recorrido/paso_02_para_quien_disenas.png)
 
-**3 · Si es para una marca: qué tipo de marca.** High fashion, contemporary, fast fashion o de autor.
+**3 · ¿Para qué tipo de marca?** Fast fashion, contemporary, high fashion o de autor.
 
-![Paso 3: qué tipo de marca](entregas/entrega_3/recorrido/paso_03_para_una_marca_categoria.png)
+![Paso 3: ¿para qué tipo de marca?](entregas/entrega_4/recorrido/paso_03_tipo_de_marca.png)
 
-**4 · Si es por tu cuenta: qué tipo de prendas.** High fashion, contemporary, streetwear o de autor.
+**4 · Cae donde corresponde a la decisión.** Qué producir entra a Tendencias, con el perfil debajo del título.
 
-![Paso 4: qué tipo de prendas, por tu cuenta](entregas/entrega_3/recorrido/paso_04_por_tu_cuenta_tipo_de_prendas.png)
+![Paso 4: después de las preguntas, Tendencias](entregas/entrega_4/recorrido/paso_04_cae_en_tendencias_con_el_perfil.png)
 
-**5 · Cae en Tendencias con el perfil aplicado.** Debajo del título dice con qué perfil lee; «Cambiar» vuelve a las preguntas.
+Si algo ya pasó, Tendencias pregunta «¿Sigue vigente?» y pone primero lo que ya hay que dejar. Qué diseñar entra a
+Diseñar, y donde la regla dice esperar, dice explorar.
 
-![Paso 5: después de las preguntas, Tendencias](entregas/entrega_3/recorrido/paso_05_cae_en_tendencias_con_el_perfil.png)
+![Si algo ya pasó: ¿sigue vigente?](entregas/entrega_4/recorrido/paso_10_si_algo_ya_paso.png)
+
+![Qué diseñar entra a Diseñar](entregas/entrega_4/recorrido/paso_11_que_disenar_entra_a_disenar.png)
 
 En el celular, las mismas tres preguntas:
 
-<img src="entregas/entrega_3/recorrido/paso_01_para_quien_disenas_celular.png" alt="Paso 1 en el celular" width="260"> <img src="entregas/entrega_3/recorrido/paso_02_marca_o_por_tu_cuenta_celular.png" alt="Paso 2 en el celular" width="260"> <img src="entregas/entrega_3/recorrido/paso_03_para_una_marca_categoria_celular.png" alt="Paso 3 en el celular" width="260">
+<img src="entregas/entrega_4/recorrido/paso_01_que_estas_por_decidir_celular.png" alt="Paso 1 en el celular" width="260"> <img src="entregas/entrega_4/recorrido/paso_02_para_quien_disenas_celular.png" alt="Paso 2 en el celular" width="260"> <img src="entregas/entrega_4/recorrido/paso_03_tipo_de_marca_celular.png" alt="Paso 3 en el celular" width="260">
 
 ### El uso
 
-**6 · Tendencias, la pantalla principal.** Qué gana y qué pierde terreno afuera, y cada atributo con su etapa.
+**5 · Tendencias, la pantalla principal.** Qué gana y qué pierde terreno afuera, y cada atributo con su etapa y su señal.
 
-![Paso 6: Tendencias](entregas/entrega_3/recorrido/paso_06_tendencias.png)
+![Paso 5: Tendencias](entregas/entrega_4/recorrido/paso_05_tendencias.png)
 
-**7 · Un atributo abre su ficha con el gráfico.** Acá, Rayas: su recorrido y la recomendación para tu perfil.
+**6 · Un atributo abre su ficha.** La señal con una línea de por qué y el gráfico; el resto, en el «?».
 
-![Paso 7: la ficha de Rayas con su gráfico](entregas/entrega_3/recorrido/paso_07_ficha_del_atributo.png)
+![Paso 6: la ficha del atributo](entregas/entrega_4/recorrido/paso_06_ficha_del_atributo.png)
 
-**8 · «Diseñar con esta estampa · Rayas» lleva a Diseñar.**
+**7 · «Diseñar con…» lleva a Diseñar.**
 
-![Paso 8: el botón Diseñar con esta estampa](entregas/entrega_3/recorrido/paso_08_boton_disenar_con.png)
+![Paso 7: el botón Diseñar con](entregas/entrega_4/recorrido/paso_07_boton_disenar_con.png)
 
-**9 · Diseñar, con el atributo fijo arriba.** Sólo pregunta lo que falta: prenda, tipo, material, color, detalle.
+**8 · Diseñar, con el atributo fijo arriba.** Sólo pregunta lo que falta.
 
-![Paso 9: Diseñar con Rayas fijo arriba](entregas/entrega_3/recorrido/paso_09_disenar_con_el_atributo_fijo.png)
+![Paso 8: Diseñar con el atributo fijo](entregas/entrega_4/recorrido/paso_08_disenar_con_el_atributo_fijo.png)
 
-<img src="entregas/entrega_3/recorrido/paso_09_disenar_con_el_atributo_fijo_celular.png" alt="Paso 9 en el celular" width="260">
+<img src="entregas/entrega_4/recorrido/paso_08_disenar_con_el_atributo_fijo_celular.png" alt="Paso 8 en el celular" width="260">
 
-**10 · Preguntar.** Un chat que contesta con los datos de CICLO, tu perfil y lo que venías diseñando (acá, Rayas). Pegás tu clave de Groq.
+**9 · Preguntar.** Un chat que contesta con los datos de CICLO, tu perfil y lo que venías diseñando. Pegás tu clave de Groq.
 
-![Paso 10: Preguntar](entregas/entrega_3/recorrido/paso_10_preguntar.png)
+![Paso 9: Preguntar](entregas/entrega_4/recorrido/paso_09_preguntar.png)
 
-Las capturas del recorrido se regeneran con `node codigo/capturar_recorrido.js` (app servida en el puerto 8000).
-Las otras 16 vistas —el ciclo, el modelo, calzado, Método— están en `entregas/entrega_3/capturas/`
-(`node codigo/capturar_pantallas_de_la_app.js`); las de la Entrega 2, en `entregas/entrega_2/capturas/`.
+Las capturas del recorrido se regeneran con `node codigo/capturar_recorrido.js` (app servida en el puerto 8000). El
+recorrido de la Entrega 3, con la entrada de antes, quedó en `entregas/entrega_3/recorrido/`. Las otras 16 vistas
+—el ciclo, el modelo, calzado, Método— están en `entregas/entrega_3/capturas/` (`node codigo/capturar_pantallas_de_la_app.js`);
+las de la Entrega 2, en `entregas/entrega_2/capturas/`.
 
 ## Hipótesis
 
@@ -119,7 +129,7 @@ python3 -m http.server 8000
 
 Publicada en GitHub Pages desde la carpeta `app/`, sin comando de build. Nada corre en un servidor: los dos
 modelos de lenguaje (IA-5 e IA-8) llaman a Groq desde el navegador con la clave que pega cada uno. Netlify
-publica la misma carpeta `app/` desde el 03/11/2026; las funciones de `netlify/functions/` no se usan.
+publica la misma carpeta `app/` desde el 03/11/2026.
 
 Lo único que carga de afuera son las tipografías: la del sistema, y de Google Fonts, Inter como reemplazo de SF Pro.
 Sin conexión funciona igual, con las tipografías del sistema.
@@ -128,7 +138,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 
 | | |
 |---|---|
-| Entrada | Tres preguntas, siempre: para quién diseñás, marca o por tu cuenta, y la categoría. Después, Tendencias. «Cambiar perfil» vuelve acá |
+| Entrada | Tres preguntas, siempre: qué estás por decidir, para quién diseñás y para qué tipo de marca. Después, Tendencias o Diseñar, según la decisión. «Cambiar perfil» vuelve acá |
 | Tendencias | La pantalla principal: qué gana y qué pierde terreno afuera, y doce atributos con su paleta y su etapa. La marca CICLO lleva acá |
 | El ciclo | Cuándo picó cada uno de los 65 atributos con serie y cuánto tardó en volver; el recorrido de cada uno por pasarela, búsqueda y Reddit hasta 2030, y los jeans por corte |
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
@@ -137,7 +147,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | El modelo | K-means sobre 17 atributos, paso a paso, con validación externa |
 | Marcas | Lyst Index, 34 trimestres |
 | Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |
-| Método | Fuentes, recortes y límites declarados |
+| Método | Qué datos se usan y cómo se cruzan, en un esquema; fuentes, recortes y límites declarados |
 
 ## Fuentes de datos
 
@@ -212,7 +222,7 @@ Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022
   está ocupado por la ropa, que es el dato que la usuaria vino a ver. La posición es además el canal
   perceptual más preciso (Munzner).
 - **El color dice una sola cosa: si conviene avanzar o frenar.** Verde, ámbar y rojo son la señal —Entrar,
-  Esperar (o Explorar, si trabajás por tu cuenta), Salir—, siempre con la palabra y un ícono; lo que no tiene dato
+  Esperar (o Explorar, si estás decidiendo qué diseñar), Salir—, siempre con la palabra y un ícono; lo que no tiene dato
   es neutro. «▲ Gana presencia» y «▼ Pierde presencia» llevan el mismo verde y rojo, sólo en la palabra y la flecha.
   De dónde sale el dato se dice sin color: ● medido, ◇ interpretado (punteado), ↪ prestado. Los gráficos usan color
   sólo para separar sus series. Hay un único color más: **el azul, que significa «se puede tocar»** (botones de
@@ -285,7 +295,6 @@ ciclo/
 ├── historial.md               las versiones del proyecto, de la hipótesis al prototipo
 ├── .gitignore
 ├── netlify.toml               Netlify publica app/ tal cual (también en GitHub Pages)
-├── netlify/functions/         sin uso: lectura.mjs, la versión con servidor de IA-5
 ├── datasets/                  diccionario y links de descarga (los CSV no se suben)
 ├── datasets_procesados/       las series que consume la app
 ├── diseno/                    referencias y prototipos por versión

@@ -4,7 +4,7 @@
 // Uso, desde la raíz del repo: node codigo/armar_datos_llm.js
 //
 // Formato: secciones «## …» y una línea por ítem, con campos separados por « | », como el menú de la
-// cafetería. Cada ficha detallada lleva «id:» y «busca:» (sinónimos); netlify/functions/asistente.mjs
+// cafetería. Cada ficha detallada lleva «id:» y «busca:» (sinónimos); la app
 // usa eso para mandar al modelo sólo las fichas que nombra la pregunta (el plan gratis de Groq da
 // 8.000 tokens por minuto y el documento entero no entra en cada pregunta).
 

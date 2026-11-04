@@ -1662,3 +1662,13 @@ prenda»). «sin validar» se sigue diciendo donde corresponde: es (a), no se es
 **Lo que no se tocó todavía.** Las pantallas de «Más» (El modelo, Marcas, Retornos y Método) sólo perdieron el rótulo de
 arriba. Para ellas quedan propuestas que no son de texto sino de estructura, y las decide Felipe: El modelo entero a
 Método, Retornos como un filtro de El ciclo, y Marcas fuera del menú porque no entra al modelo.
+
+## 2026-11-04 · El repositorio, al día
+
+La devolución pidió el repositorio completo y sincronizado. El readme abre con dos líneas de qué es y para quién, y el
+recorrido paso a paso se rehízo con la entrada nueva (`entregas/entrega_4/recorrido/`, `codigo/capturar_recorrido.js`;
+el de la Entrega 3 queda como estaba). Se borró `netlify/functions/`: desde el 25/10 la app llama a Groq desde el
+navegador y esa función no la usaba nada; está en el historial de git. En historial.md, «Lo que falta» y «Dónde ver cada
+versión» llegan a la Entrega 4. `prompts/readme.md` tenía la tabla parada en el asistente v3 y decía que IA-5 usaba una
+clave en Netlify; ahora lista hasta v6 y dice cómo es. `codigo/diseno_catalogo.json` se queda: lo leen
+`armar_diseno.py` y `calcular_textos_diseno.mjs`. La entrada ya no dice «Lo podés cambiar después».

@@ -68,7 +68,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   plus client type; its output is shown labelled as interpretation. Prompts live in `prompts/` and are
   versioned: add `_v2.md` etc., never overwrite an existing version. No API keys in the repo; IA-5 («Pedir lectura en vivo»,
   `lvPedir()`) and «Preguntar» both call Groq from the browser with the user's own key (localStorage `groq_key`).
-  `netlify/functions/` is unused (the app needs no server).
+  `netlify/functions/` was deleted on 04/11 (the app needs no server; it is in git history).
 
 ## Scripts (`codigo/`)
 

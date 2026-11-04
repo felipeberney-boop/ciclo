@@ -241,8 +241,13 @@ prototipo navegable es la app publicada.
 
 ---
 
-## Lo que falta para la Entrega 3
+## Lo que falta para la Entrega 4 (17/11)
 
+- Corregir las pantallas en papel en clase y pasar las correcciones a la app.
+- Decidir qué pasa con las pantallas de «Más»: El modelo a Método, Retornos dentro de El ciclo, Marcas fuera del menú
+  (propuesta en `decisiones.md`, 04/11).
+- El racional (`entregas/entrega_4/racional.md`) y la pirueta, «Adiviná vos».
+- Probar en vivo los prompts nuevos (`prompt_lectura_recomendacion_v5.md`, `prompt_asistente_v6.md`).
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado
   como límite en la pantalla de Método, no simulado.
 
@@ -255,6 +260,8 @@ prototipo navegable es la app publicada.
 | Registro de decisiones, fechado | `decisiones.md` |
 | Entrega 1 | `entregas/entrega_1/` |
 | Entrega 2 | `entregas/entrega_2/` |
-| App funcionando | `app/index.html` |
-| Láminas de la presentación | `diseno/prototipos/prototipo_entrega_2_laminas/` |
+| Entrega 3 | `entregas/entrega_3/` (Del diseño al código, el guion, el recorrido con la entrada de antes) |
+| Entrega 4 | `entregas/entrega_4/` (las pantallas en papel y el recorrido con la entrada nueva) |
+| App funcionando | `app/index.html`; las versiones anteriores, en `diseno/prototipos/versiones_de_la_app/` |
+| Presentación | `app/presentacion/`; las versiones anteriores, en `diseno/prototipos/versiones_de_la_presentacion/` |
 | Prompts versionados | `prompts/` |

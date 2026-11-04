@@ -1765,3 +1765,16 @@ aclara lo que son: la Entrega 1 son láminas de ideas, no pantallas, y el protot
 
 **Los prompts v5 y v6.** Siguen sin probar en vivo: no hay una clave de Groq a mano y no se pide. Cambian una sola
 línea (quién pregunta) respecto de las versiones probadas, así que el riesgo es bajo, y queda en la lista de lo que falta.
+
+## 2026-11-04 · El papel, al día con la app
+
+Cristian pidió los diseños en papel «con todo el flujo actualizado». Después de ordenar «Más» y de sumar la pirueta, el
+papel ya no coincidía con la app, así que se actualizó en Figma (página «4 · En papel · Entrega 4») y se rehízo el PDF:
+- **Hoja 13 nueva, Adiviná vos.** La ronda ya revelada, con la serie real de la remera (`GREL`, 2010–2024) y el cono de
+  la app (el valor de 2019 más la mediana de `CONO`). El trazo de «vos» es un ejemplo, y se nota: sube cuando la serie
+  baja. Los errores son los que da la app con esos números: el cono ±7 y repetir 2019 ±6, el más cerca.
+- **Hoja 09:** «Qué volvió y cada cuánto →» debajo del título, que lleva a Retornos.
+- **Hoja 12:** «Ver el modelo →», «Ver las marcas →» y «Probalo vos →», como en la app.
+- **Hoja 00:** la caja 13 con borde punteado (se llega desde la barra).
+
+Se exportaron de nuevo sólo las cuatro hojas que cambiaron (00, 09, 12 y 13), al 200 % y a 288 dpi como las demás.

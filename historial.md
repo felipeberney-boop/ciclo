@@ -230,6 +230,12 @@ decía el cono de CICLO y lo que daba repetir el último valor. En las 65 series
 El menú «Más» queda con Adiviná vos y Método. El modelo y Marcas se abren desde Método, y Retornos desde El ciclo. Los
 links de antes siguen andando.
 
+## v1.22 · 04/11/2026 · El papel, con todo el flujo
+
+El PDF pasa a 14 hojas: la 13 es Adiviná vos, con la serie real de la remera. La 09 suma el link a Retornos, la 12 los
+links a El modelo, a Marcas y a «Probalo vos», y el mapa del recorrido suma la caja 13. Las capturas del readme se
+rehicieron con la app de hoy (`entregas/entrega_4/capturas/`).
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

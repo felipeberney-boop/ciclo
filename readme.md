@@ -24,7 +24,7 @@ el dato que lo sostiene. No predice: lee en qué punto está cada atributo hoy.
 | Guion de la presentación y la demo | [guion_demo.md](entregas/entrega_3/guion_demo.md) |
 | **Entrega 4 · el racional** | [racional.md](entregas/entrega_4/racional.md): el problema, los datos, el modelo, el diseño y quién decidió qué |
 | Entrega 4 · la pirueta | [Adiviná vos](https://felipeberney-boop.github.io/ciclo/#adivina): dibujá cómo sigue una curva real y compará con lo que pasó |
-| Entrega 4 · las pantallas en papel, para corregir en clase | [PDF, 13 hojas A4](entregas/entrega_4/disenos_en_papel/ciclo_disenos_en_papel_entrega_4.pdf) · página 4 del Figma |
+| Entrega 4 · las pantallas en papel, para corregir en clase | [PDF, 14 hojas A4](entregas/entrega_4/disenos_en_papel/ciclo_disenos_en_papel_entrega_4.pdf) · página 4 del Figma |
 
 Materia: *Sistemas generativos e IA para Diseño* (K534/K576) · Universidad de San Andrés · 2º semestre 2026
 Docentes: Cristian Reynaga e Iván Fardjoume

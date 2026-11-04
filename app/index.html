@@ -990,6 +990,25 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .qmc>:last-child{margin-bottom:0}
 .app .qm.izq{margin-left:0;text-align:left}
 .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* Adiviná vos (la pirueta, 04/11): el hallazgo central como juego */
+.app .adv{max-width:860px;margin:8px auto 0}
+.app .advtop{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 10px}
+.app .advtop b:not(#z){font-size:var(--t-sub)!important;font-weight:600!important}.app .advtop span:not(#z){font-size:var(--t-eti)!important;color:var(--ink-3)}
+.app .advfig:not(#z){background:var(--card);border-radius:var(--r-card)!important;padding:16px 12px 8px}
+.app .advfig svg{width:100%;height:auto;display:block;touch-action:none;cursor:crosshair;user-select:none}
+.app .advley:not(#z){display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 4px 0;font-size:var(--t-eti)!important;color:var(--ink-2)}
+.app .advley i{display:inline-block;width:18px;height:0;border-top:2.5px solid;vertical-align:middle;margin-right:6px}
+.app .advbar{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px 0 0;flex-wrap:wrap}
+.app .advbar :is(button,span):not(#z){font-size:var(--t-cue)!important;font-weight:400!important}
+.app .advres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 0}
+.app .advres>div:not(#z){background:var(--card);border-radius:var(--r-card)!important;padding:16px 18px}
+.app .advres span:not(#z){display:block;font-size:var(--t-eti)!important;font-weight:400!important;color:var(--ink-3)}
+.app .advsub:not(#z){font-size:var(--t-cue)!important}
+.app .advres > div b:not(#z):not(.x){display:block;font-size:var(--t-dat)!important;font-weight:600!important;line-height:1.1;margin:4px 0}
+.app .advres .gana:not(#z){box-shadow:inset 0 0 0 2px var(--ink)}
+.app .advfin :is(p,li):not(#z){font-size:var(--t-cue)!important;font-weight:400!important;line-height:1.45;max-width:62ch}
+.app .advfin h2:not(#z){font-size:var(--t-sub)!important;font-weight:600!important;margin:28px 0 10px}
+@media (max-width:600px){.app .advres{grid-template-columns:1fr}}
 /* lo que no salió en la medición de escritorio: el celular y la barra. El logo CICLO es una marca, no un estilo de texto */
 .app :is(button.legi em,.rminih,.chdesliza):not(#z),.mast :is(a,button,span):not(.mk):not(#z){font-size:var(--t-eti)!important;font-weight:400!important}
 .app :is(div.gate > div.gprog,button.gcard > span.gprev,div.gnav > button.kbtn,div.gnav > span.gnota,div.gfirma > p.lbl,div > span.lbl,p.perfilrad > span,p.perfilrad > button,div.th > span.lbl,div.th > span.tag.real,div.terreno > p.tsub,div > div.tt,button.tfila.tend > span.tn,button.tfila.tend > span.tv,div.filters > button.chip,div.filters > span.count,div.ptop > span.pkind,div.ticks > span,div.track > div.tde,section.view > p.note,section.view > button.back,div.dzdesde > button.kbtn.dzcon,div.dzcols > span,div.dzcols > button.chip,i > span,dl > dt,dl > dd,dd > span.tag.real,dd > span.tag.demo,dl > dd.mono,div.h > span.lbl,div.h > span.tag.ia2,div.ai > p,div.rec > div.t,div.rec > div.d,button.legi > span,figure > figcaption,div > div.k,div > div.n,div > p.note,button.dzp > span.dzpn,button.dzp > span.dzpt,div > p.dzsub,span.dzb > span.dzdef,li > span,div.kcard > p.mono.kcap,tr > th,tr > th.r,tr > td,td > span,tr > td.r,details.kd > summary,details.kd > div.kcalc,div.kcard > p.ksub,form.kform > label,div.kbtns > button.kbtn,div.kbtns > button.kbtn.ghost,div.seg > button,div > button.kbtn.ghost,div > span.mono,div.leg2 > span,div.kcard > p.note,div > p.mono.kcap,div > div.gm,div > div.gv,div > div.gr,section.view > p.note.a,tr > td.k,td > a,td > span.tag.alert,div.ai > pre.kcalc,div.ciclofilt > button.chip,button.ciclo.tend > span.cf,span.cm > span,span.sen.tend > span,div.ciclos.corto > button.kbtn.ghost.ciclomas,div.ciclos.corto > p.note,p.note > span.proc,div.dline > p,details.vact > summary.kbtn.ghost,details.vact > p.vm,p.vm > a,details.vact > button.kbtn,dl.dfacts > dt,dl.dfacts > dd,dd > span.mono,details.rfiltd > summary.lbl,div.rgrp > span.lbl,div.rgrp > button.chip,div.clave > span,div > button.gvolver,dd.mono > span.tag.real,dd.mono > span.tag.demo,div > div.r,div > p.t,p.t > span.mono,div > p.mono,div > p,div > span.e,div > p.d,div > div.mt,div.pc > small,label.drop > p,p > span.mono,div > p.qestado,div.qej > button.chip,div.qres > p.note,ol.aspasos > li,li > a,li > code,details.ascard.asact > label.ascap,div.ascard > span.lbl,div.aschips > p.ascap,p.ascap > button.gvolver,div.ascard > p.ascap,label.asfoto > span,details.ascard.asver > summary.lbl,details.ascard.asver > p.ascap,div.asa > p,div.assug > button,form.asform > button.kbtn,b > span,div.mdc > small,div.mdc > p,div.mdc.fuera > small,div.mdc.fuera > p,div.mdclave > small,section.metdatos > p.mdnota,section.view > p.note.colores,p.note.colores > span.proc,p.note.colores > span.tag.ia2,summary > span.tag.demo,details > div.cuerpo,summary > span.tag.real,div.cuerpo > code,summary > span.tag.ia,summary > span.tag.alert,summary > span.tag.ia2,td > span.sen):not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.35!important}
@@ -1015,6 +1034,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
       <a data-v="asistente">Preguntar</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
       <span class="navgrupo" id="navgrupo" hidden>
+        <a data-v="adivina"><b>Adiviná vos</b><span>Dibujá cómo sigue una curva real y compará con lo que dice el modelo.</span><i>65 series · 2020–2024</i><em>Abrir →</em></a>
         <a data-v="etapas"><b>El modelo</b><span>Agrupa los atributos por cómo se mueven y lee qué etapa es cada grupo.</span><i>17 atributos · K-means, k = 4</i><em>Abrir →</em></a>
         <a data-v="marcas"><b>Marcas</b><span>Las marcas más deseadas, trimestre por trimestre, desde 2018.</span><i>34 trimestres · Lyst Index</i><em>Abrir →</em></a>
         <a data-v="retornos"><b>Retornos</b><span>Qué atributos picaron, se fueron y volvieron, y cada cuánto.</span><i>2010–2024 · Google Trends</i><em>Abrir →</em></a>
@@ -1314,6 +1334,16 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     </section>
 
     <!-- ================= RETORNOS ================= -->
+    <section class="view" id="v-adivina" hidden>
+      <div class="vhead">
+        <div>
+          <h1>Adiviná vos</h1>
+          <p class="sub advsub">Una curva real de búsqueda, hasta 2019. Dibujá con el dedo cómo sigue hasta 2024.</p>
+        </div>
+      </div>
+      <div class="adv" id="adv"></div>
+    </section>
+
     <section class="view" id="v-retornos" hidden>
       <div class="vhead">
         <div>
@@ -1450,7 +1480,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
           <div class="mdcol"><h3>Qué sale</h3>
             <div class="mdc"><b>La etapa</b><p>En qué punto del ciclo está: un lugar en la pista, no un color.</p></div>
             <div class="mdc"><b>La señal</b><p>Entrar, Esperar o Salir, según la etapa y tu perfil.</p></div>
-            <div class="mdc"><b>El cono</b><p>Hasta tu ventana, con el error medido a esa distancia: de ±14 a ±26 puntos. No es un pronóstico.</p></div>
+            <div class="mdc"><b>El cono</b><p>Hasta tu ventana, con el error medido a esa distancia: de ±14 a ±26 puntos. No es un pronóstico. <a href="#adivina" data-adv>Probalo vos →</a></p></div>
           </div>
         </div>
         <p class="mdnota">La IA lee, no decide: CLIP lee las imágenes y el chat sólo ve métricas ya calculadas, nunca una fila de datos. Borde gris: la fuente no entra al modelo.</p>
@@ -3361,16 +3391,17 @@ function pintarLystX(){
 /* ---------- navegación ---------- */
 function mostrar(v,keepNav){
   document.body.classList.toggle('on-gate',v==='perfil');
-  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional'].forEach(x=>{
+  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional','adivina'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
   $('#navgrupo').hidden=true;$('#navmas').setAttribute('aria-expanded','false');
-  $('#navmas').classList.toggle('on',['etapas','marcas','retornos','racional'].includes(v));cerrarMenu();
+  $('#navmas').classList.toggle('on',['etapas','marcas','retornos','racional','adivina'].includes(v));cerrarMenu();
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='asistente')asAbrir();
   if(v==='racional')pintarMetodoGate();
+  if(v==='adivina')pintarAdivina();
   if(v==='radar'){pintarPerfilRadar();pintarRadar();}
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
@@ -3459,7 +3490,7 @@ $('#navperfil').addEventListener('click',()=>abrirGate(vista));
 let publico='todos';
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
-const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional'];
+const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional','adivina'];
 let vista='perfil',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
@@ -3552,6 +3583,78 @@ function arranqueFallido(e){
   if(a){a.hidden=false;a.textContent='Algo falló al cargar la app. Elegí tu perfil para seguir; si vuelve a pasar, recargá la página.';}
 }
 try{
+/* ---------- Adiviná vos (la pirueta, 04/11) ----------
+   Una serie real de búsqueda (peso frente a las otras búsquedas de moda, GREL) hasta 2019, y la persona dibuja
+   2020–2024. Después se ven la curva real, el cono de CICLO (la mediana histórica a h años, CONO) y repetir 2019. El
+   error es el medio absoluto, en puntos. No juega un LLM: para predecir tendría que ver la serie año por año, y el
+   modelo de lenguaje nunca ve una fila de datos. */
+const ADV_CORTE=2019,ADV_FIN=2024,ADV_DESDE=2010,ADV_RONDAS=3;
+let adv=null;
+const advSeries=()=>Object.keys(GREL).filter(k=>GREL[k].slice(ADV_DESDE-2004,ADV_FIN-2004+1).every(x=>x!=null));
+const advNombre=k=>(REC.find(o=>o.id===k)||{n:k}).n.split(' /')[0];
+function advError(pred,v){let e=0;for(let y=ADV_CORTE+1;y<=ADV_FIN;y++)e+=Math.abs(pred(y)-v[y-2004]);return e/(ADV_FIN-ADV_CORTE);}
+const advModelo=v=>y=>v[ADV_CORTE-2004]+CONO[y-ADV_CORTE]['50'],advUltimo=v=>()=>v[ADV_CORTE-2004];
+function advNuevo(){const L=advSeries(),el=[];while(el.length<Math.min(ADV_RONDAS,L.length)){const k=L[Math.floor(Math.random()*L.length)];if(!el.includes(k))el.push(k);}
+  adv={rondas:el,i:0,res:[],guess:{},visto:false};}
+function advTotal(){const L=advSeries();let m=0,n=0,gm=0,gn=0;
+  for(const k of L){const v=GREL[k],em=advError(advModelo(v),v),en=advError(advUltimo(v),v);m+=em;n+=en;if(em<en-.5)gm++;else if(en<em-.5)gn++;}
+  return {series:L.length,m:m/L.length,n:n/L.length,gm,gn};}
+function advDatos(){const k=adv.rondas[adv.i],v=GREL[k],b=v[ADV_CORTE-2004],hist=v.slice(ADV_DESDE-2004,ADV_CORTE-2004+1),anios=[];
+  for(let y=ADV_CORTE+1;y<=ADV_FIN;y++)anios.push(y);
+  // la escala no puede depender de lo que pasó después: se fija con la historia, y sólo crece al revelar
+  const extra=adv.visto?[...anios.map(y=>v[y-2004]),...anios.map(y=>advModelo(v)(y)),...Object.values(adv.guess)]:[];
+  const dmax=Math.max(100,Math.ceil(Math.max(...hist)*1.8/50)*50,...extra.map(x=>Math.ceil(x/50)*50));
+  // el gráfico se dibuja al ancho real, así los rótulos de 13 px entran también en el celular
+  const W=Math.round(Math.max(300,Math.min(720,(($('#adv')||{}).clientWidth||720)-24)));
+  return {k,v,b,hist,anios,dmax,W,H:W<500?300:340,ml:44,mr:16,mt:18,mb:34};}
+function advSvg(D){const {v,b,hist,anios,dmax,W,H,ml,mr,mt,mb}=D,X=y=>ml+(y-ADV_DESDE)/(ADV_FIN-ADV_DESDE)*(W-ml-mr),Y=x=>mt+(1-Math.max(0,x)/dmax)*(H-mt-mb);
+  const lin=(pts,st)=>`<polyline fill="none" points="${pts.map(([y,x])=>X(y).toFixed(1)+','+Y(x).toFixed(1)).join(' ')}" ${st}/>`;
+  const g=anios.filter(y=>adv.guess[y]!=null).map(y=>[y,adv.guess[y]]);
+  let s=`<rect x="${X(ADV_CORTE)}" y="${mt}" width="${X(ADV_FIN)-X(ADV_CORTE)}" height="${H-mt-mb}" fill="var(--paper)"/>`;
+  [0,50,100,150,200,250,300].filter(t=>t<=dmax).forEach(t=>{s+=`<line x1="${ml}" x2="${W-mr}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--rule)"/><text x="${ml-8}" y="${Y(t)+4}" text-anchor="end" fill="var(--ink-3)" font-size="11">${t}</text>`;});
+  [ADV_DESDE,2014,ADV_CORTE,ADV_FIN].forEach(y=>{s+=`<text x="${X(y)}" y="${H-10}" text-anchor="${y===ADV_DESDE?'start':y===ADV_FIN?'end':'middle'}" fill="var(--ink-3)" font-size="11">${y}</text>`;});
+  s+=`<line x1="${X(ADV_CORTE)}" x2="${X(ADV_CORTE)}" y1="${mt}" y2="${H-mb}" stroke="var(--ink-3)" stroke-dasharray="3 4"/>`;
+  if(!g.length&&!adv.visto)s+=`<text x="${(X(ADV_CORTE)+X(ADV_FIN))/2}" y="${(mt+H-mb)/2}" text-anchor="middle" fill="var(--ink-3)" font-size="13">dibujá acá →</text>`;
+  s+=lin(hist.map((x,i)=>[ADV_DESDE+i,x]),'stroke="var(--ink)" stroke-width="3"');
+  if(adv.visto){s+=lin([[ADV_CORTE,b],...anios.map(y=>[y,v[y-2004]])],'stroke="var(--ink)" stroke-width="3"');
+    s+=lin([[ADV_CORTE,b],...anios.map(y=>[y,advModelo(v)(y)])],'stroke="var(--s2)" stroke-width="2.5" stroke-dasharray="8 5"');
+    s+=lin([[ADV_CORTE,b],[ADV_FIN,b]],'stroke="var(--ink-3)" stroke-width="2.5" stroke-dasharray="2 5"');}
+  if(g.length){s+=lin([[ADV_CORTE,b],...g],'stroke="var(--s1)" stroke-width="3"');g.forEach(([y,x])=>{s+=`<circle cx="${X(y)}" cy="${Y(x)}" r="4.5" fill="var(--s1)"/>`;});}
+  return s+`<circle cx="${X(ADV_CORTE)}" cy="${Y(b)}" r="4.5" fill="var(--ink)"/>`;}
+function advBotones(D){const listo=D.anios.every(y=>adv.guess[y]!=null),bv=$('#advver'),bb=$('#advborrar');if(!bv)return;
+  bv.disabled=!listo;bv.textContent=listo?'Ver qué pasó':'Dibujá hasta '+ADV_FIN;bb.hidden=!Object.keys(adv.guess).length;}
+function pintarAdivina(){if(!adv)advNuevo();if(adv.i>=adv.rondas.length)return advFinal();
+  const D=advDatos(),{k,v,anios,W,H,ml,mr,mt,mb,dmax}=D;
+  let res='';if(adv.visto){const r=adv.res[adv.i],min=Math.min(r.vos,r.m,r.n);
+    res=`<div class="advres">${[['Vos',r.vos],['El cono de CICLO',r.m],['Repetir '+ADV_CORTE,r.n]].map(([n,e])=>`<div class="${Math.abs(e-min)<.05?'gana':''}"><span>${n}</span><b>±${Math.round(e)}</b><span>${Math.abs(e-min)<.05?'el más cerca':'puntos de error, en promedio'}</span></div>`).join('')}</div>`;}
+  $('#adv').innerHTML=`<div class="advtop"><b>${advNombre(k)}</b><span>Ronda ${adv.i+1} de ${adv.rondas.length} · peso en la búsqueda mundial frente a las otras búsquedas de moda</span></div>
+    <div class="advfig"><svg viewBox="0 0 ${W} ${H}" id="advsvg" role="img" aria-label="Búsqueda de ${advNombre(k)}, ${ADV_DESDE}–${ADV_CORTE}; dibujá ${ADV_CORTE+1}–${ADV_FIN}">${advSvg(D)}</svg>${adv.visto?`<div class="advley"><span><i style="border-color:var(--ink)"></i>Lo que pasó</span><span><i style="border-color:var(--s1)"></i>Vos</span><span><i style="border-color:var(--s2);border-top-style:dashed"></i>El cono de CICLO</span><span><i style="border-color:var(--ink-3);border-top-style:dotted"></i>Repetir ${ADV_CORTE}</span></div>`:''}</div>
+    ${res}<div class="advbar">${adv.visto?`<button type="button" class="kbtn" id="advsig">${adv.i+1<adv.rondas.length?'Siguiente →':'Ver el resultado →'}</button>`:`<button type="button" class="kbtn" id="advver" disabled>Dibujá hasta ${ADV_FIN}</button><button type="button" class="gvolver" id="advborrar" hidden>Borrar</button>`}</div>`;
+  if(adv.visto){$('#advsig').onclick=()=>{adv.i++;adv.guess={};adv.visto=false;pintarAdivina();window.scrollTo({top:0,behavior:'smooth'});};return;}
+  // dibujar: el SVG queda, sólo se rehace su contenido, para no perder el puntero en medio del trazo
+  const sv=$('#advsvg');let dib=false,ult=null;
+  const punto=e=>{const pt=sv.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const q=pt.matrixTransform(sv.getScreenCTM().inverse());
+    const y=Math.round(ADV_DESDE+(q.x-ml)/(W-ml-mr)*(ADV_FIN-ADV_DESDE)),x=Math.max(0,Math.min(dmax,(1-(q.y-mt)/(H-mt-mb))*dmax));
+    if(y<=ADV_CORTE||y>ADV_FIN)return;
+    if(ult&&Math.abs(y-ult[0])>1){const [y0,x0]=ult;for(let z=Math.min(y0,y)+1;z<Math.max(y0,y);z++)adv.guess[z]=x0+(x-x0)*(z-y0)/(y-y0);} // un trazo rápido no deja años vacíos
+    adv.guess[y]=x;ult=[y,x];sv.innerHTML=advSvg(D);advBotones(D);etiquetasSvg();};
+  sv.addEventListener('pointerdown',e=>{dib=true;ult=null;try{sv.setPointerCapture(e.pointerId);}catch(_){}punto(e);});
+  sv.addEventListener('pointermove',e=>{if(dib)punto(e);});
+  ['pointerup','pointercancel'].forEach(t=>sv.addEventListener(t,()=>{dib=false;}));
+  $('#advver').onclick=()=>{adv.res[adv.i]={vos:advError(y=>adv.guess[y],v),m:advError(advModelo(v),v),n:advError(advUltimo(v),v)};adv.visto=true;pintarAdivina();};
+  $('#advborrar').onclick=()=>{adv.guess={};sv.innerHTML=advSvg(D);advBotones(D);etiquetasSvg();};
+}
+function advFinal(){const T=advTotal(),R=adv.res,gv=R.filter(r=>r.vos<r.m-.5).length,gu=R.filter(r=>r.n<r.m-.5).length;
+  $('#adv').innerHTML=`<div class="advfin">
+    <div class="advres"><div><span>Vos, contra el cono</span><b>${gv} de ${R.length}</b><span>rondas más cerca</span></div><div><span>Repetir ${ADV_CORTE}, contra el cono</span><b>${gu} de ${R.length}</b><span>rondas más cerca</span></div><div><span>En las ${T.series} series</span><b>${T.gn} a ${T.gm}</b><span>repetir ${ADV_CORTE} le gana al cono</span></div></div>
+    <h2>Estas curvas no se dejan adivinar</h2>
+    <p>Con el corte en ${ADV_CORTE}, en las ${T.series} series de búsqueda que tiene CICLO, repetir el último valor queda más cerca de lo que pasó que el cono ${T.gn} veces, y el cono ${T.gm}. En promedio, ±${T.n.toFixed(1).replace('.',',')} puntos contra ±${T.m.toFixed(1).replace('.',',')}. Y el cono jugó con ventaja: su mediana se calculó con estas mismas series.</p>
+    <p>Por eso CICLO no dice qué va a pasar. Lee en qué etapa está cada atributo hoy, que es lo que sí se puede medir.</p>
+    <details class="qm izq"><summary aria-label="Cómo se calcula">?</summary><div class="qmc"><p>Cada serie es el peso del término en la búsqueda mundial de Google frente a las otras búsquedas de moda, de ${ADV_DESDE} a ${ADV_FIN} (● medido; 2025 queda afuera por el salto de medición de Google). El cono sigue, desde ${ADV_CORTE}, la mediana de cuánto cambió la búsqueda a esa distancia en toda la historia. El error es el promedio de la distancia, en puntos, entre cada línea y lo que pasó, de ${ADV_CORTE+1} a ${ADV_FIN}. Las rondas salen al azar entre las ${T.series} series.</p><p>No juega un modelo de lenguaje: para adivinar tendría que ver la serie año por año, y en CICLO el modelo de lenguaje nunca ve una fila de datos.</p></div></details>
+    <div class="advbar"><button type="button" class="kbtn" id="advotra">Jugar otra vez</button><button type="button" class="gvolver" id="advtend">Ver en qué etapa está cada atributo →</button></div></div>`;
+  $('#advotra').onclick=()=>{adv=null;pintarAdivina();};$('#advtend').onclick=()=>mostrar('radar');
+}
+document.addEventListener('click',e=>{const a=e.target.closest('[data-adv]');if(a){e.preventDefault();mostrar('adivina');}});
 /* cinco estilos (04/11): un gráfico se dibuja en las unidades de su viewBox y después se escala, así que un rótulo de
    9,5 se veía de 8 o de 16 según el ancho. Esto deja cada texto de SVG en 13 px de pantalla, en 400 */
 function etiquetasSvg(){

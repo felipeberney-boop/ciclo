@@ -144,6 +144,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
 | Buscar por imagen | Subir una prenda: CLIP en el navegador dice qué atributos ve y qué looks de pasarela se le parecen |
 | Preguntar | Chat con un LLM que contesta con los datos de CICLO, tu perfil, tu diseño y lo que CLIP leyó de tu foto (pegás tu API key de Groq) |
+| Adiviná vos | Dibujás cómo sigue una curva real de búsqueda y la comparás con el cono de CICLO y con repetir el último valor: el hallazgo de que no se puede predecir, como juego |
 | El modelo | K-means sobre 17 atributos, paso a paso, con validación externa |
 | Marcas | Lyst Index, 34 trimestres |
 | Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |

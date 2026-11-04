@@ -292,6 +292,11 @@ atraviesa a todos es que el modelo no ve una fila de datos: los datos que recibe
 `codigo/armar_datos_llm.js` a partir de la app, y van sólo las fichas que nombra la pregunta. Las claves no están en el
 repositorio: cada persona pega la suya y queda en su navegador.
 
+**La pirueta: «Adiviná vos».** En «Más» y desde el cono, en Método. La persona dibuja cómo sigue una curva real de
+búsqueda desde 2019 y la compara con lo que pasó, con el cono de CICLO y con repetir el último valor. En las 65 series,
+el último valor gana 45 a 18. El LLM no juega: tendría que ver la serie, y en CICLO no ve filas de datos
+(`decisiones.md`, 04/11).
+
 **Dónde frenamos a la IA.** No decide la etapa ni la señal. No inventa respuestas en las capturas: Preguntar se muestra
 vacío. No predice: el cono dice «no es un pronóstico». Y no es la autora de las decisiones: propone variantes, y la
 elección, con su porqué, queda registrada.

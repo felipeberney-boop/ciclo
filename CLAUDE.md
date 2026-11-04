@@ -28,7 +28,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   `codigo/extraer_series_de_la_app.js` parses `const NAME=` up to the top-level `;`, so keep that form if
   you edit them.
 - **Views** are sections `#v-<name>` (perfil = the gate, disenar, radar, detalle, etapas, recorridos, marcas, retornos,
-  consulta, asistente, racional; the old portada was removed on 26/10) toggled by `mostrar(v)`; nav links use `data-v`. Each view has a `pintar*()`
+  consulta, asistente, racional, adivina (the Entrega 4 «pirueta», under Más); the old portada was removed on 26/10) toggled by `mostrar(v)`; nav links use `data-v`. Each view has a `pintar*()`
   renderer that builds SVG charts by hand (no chart library).
 - **K-means runs in the browser** (`kRand`/`kInit`/`kLloyd`/`kFit`/`kName`): 17 attributes (no footwear), 4
   standardized features (runway level/momentum, search level/momentum through 2024). k=4 starts from the stored `KM.cent` centroids so

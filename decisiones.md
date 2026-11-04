@@ -1690,3 +1690,34 @@ escrita con Claude Code) y no puede presentarse como previo. Lo humano más temp
 sin pantallas. Revisados también el prototipo navegable y las láminas de la Entrega 2 en Figma: no hay bocetos a mano
 (los frames del prototipo se llaman `screen:*`, que sugiere un script). Tampoco hay entrevistas con quien diseña para
 una marca, que es lo que mejor cerraría el ítem 1.
+
+## 2026-11-04 · La pirueta: «Adiviná vos»
+
+**Qué es.** Una pantalla (en «Más», y desde «El cono» de Método, con «Probalo vos →») donde la persona ve una curva real
+de búsqueda hasta 2019 y dibuja con el dedo cómo sigue hasta 2024. Después se revelan la curva verdadera, lo que dice
+el cono de CICLO y lo que da repetir el último valor, con el error de cada uno. Tres rondas al azar entre las 65 series,
+y al final el resultado de todas. El hallazgo más difícil de contar —que estas series no se dejan predecir— se entiende
+jugando, sin leer.
+
+**Lo que se verificó antes de construirla.** Que lo que promete es cierto: con el corte en 2019, en las 65 series
+(`GREL`, el peso de cada término frente a las otras búsquedas de moda), repetir el último valor queda más cerca de lo
+que pasó que el cono 45 veces, y el cono 18 (dos empates); error medio de 14,3 puntos contra 16,4. Con el corte en
+2017 y en 2018 da lo mismo (39 a 25, 41 a 21). El cono jugó con ventaja, porque su mediana se calculó con estas mismas
+series, y la pantalla lo dice.
+
+**Por qué esta y no «¿De qué año es tu diseño?».** La otra idea (CLIP ubica una prenda en la línea de tiempo de la
+pasarela) era una variante de Buscar por imagen y, antes de mostrarla, habría que probar que CLIP distingue años en looks
+que no vio; si no los distingue, la pieza mostraría una precisión que no tiene. «Adiviná vos» es honesta por
+construcción: muestra el límite del modelo, no una capacidad.
+
+**La nota que pide la consigna: qué IA, para qué y dónde frenamos.**
+- *Qué capacidad usamos.* Ninguna generativa adentro del juego, y es a propósito. El modelo que compite es el cono de
+  CICLO: estadística, la mediana de lo que pasó en la historia. La IA estuvo en construirla: Claude propuso las dos
+  ideas y la comparación, verificó con los datos que la promesa era cierta antes de escribir una línea, y escribió el
+  código.
+- *Dónde frenamos.* Se pensó en sumar al LLM como cuarto jugador y se descartó: para adivinar tendría que recibir la
+  serie año por año, y la regla de CICLO es que el modelo de lenguaje nunca ve una fila de datos. Romperla para un juego
+  contradiría lo que el juego enseña. Tampoco se eligieron las rondas a mano: salen al azar, aunque en alguna gane el
+  cono (pasa una de cada tres veces y se muestra igual).
+- *La decisión.* La idea 1 y su recorte son de Felipe; la recomendación de no sumar al LLM es de Claude, por la regla del
+  proyecto.

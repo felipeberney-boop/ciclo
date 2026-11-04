@@ -220,6 +220,11 @@ a cinco estilos (Título, Subtítulo, Dato, Cuerpo y Etiqueta), con un peso por 
 Cada bloque de texto de las pantallas principales se clasificó en lo que decide, lo que aclara y lo que sobra. Lo que
 aclara pasa a un «?» que se abre al tocarlo; lo que sobra se fue. La señal se ve con una sola línea de por qué.
 
+## v1.20 · 04/11/2026 · Adiviná vos
+
+La pirueta de la Entrega 4: una curva real hasta 2019, la persona dibuja cómo sigue y después ve lo que pasó, lo que
+decía el cono de CICLO y lo que daba repetir el último valor. En las 65 series, el último valor gana 45 a 18.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).
@@ -246,7 +251,7 @@ prototipo navegable es la app publicada.
 - Corregir las pantallas en papel en clase y pasar las correcciones a la app.
 - Decidir qué pasa con las pantallas de «Más»: El modelo a Método, Retornos dentro de El ciclo, Marcas fuera del menú
   (propuesta en `decisiones.md`, 04/11).
-- El racional (`entregas/entrega_4/racional.md`) y la pirueta, «Adiviná vos».
+- Revisar el racional (`entregas/entrega_4/racional.md`, en borrador) y lo marcado **[a confirmar]**.
 - Probar en vivo los prompts nuevos (`prompt_lectura_recomendacion_v5.md`, `prompt_asistente_v6.md`).
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado
   como límite en la pantalla de Método, no simulado.

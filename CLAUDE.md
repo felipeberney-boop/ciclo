@@ -83,6 +83,7 @@ directory that don't match the repo layout, so adjust before running (`taxonomia
 - `capturar_pantallas_de_la_app.js` (run from the repo root, app served) → the 17 screenshots in
   `entregas/entrega_4/capturas/` used by the readme (the 03/11 set stays in `entregas/entrega_3/capturas/`). It never shows an LLM answer (no simulated responses)
 - `capturar_recorrido.js` (same way) → the step-by-step walkthrough in `entregas/entrega_4/recorrido/` that the readme shows
+- `exportar_racional_pdf.js` (from the repo root) → `entregas/entrega_4/racional.pdf` from `racional.md`; rerun it after editing the racional. Needs `marked` besides Playwright
 
 Requires `npm install playwright` / `pip install pillow`.
 

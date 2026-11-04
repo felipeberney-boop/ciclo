@@ -1778,3 +1778,11 @@ papel ya no coincidía con la app, así que se actualizó en Figma (página «4 
 - **Hoja 00:** la caja 13 con borde punteado (se llega desde la barra).
 
 Se exportaron de nuevo sólo las cuatro hojas que cambiaron (00, 09, 12 y 13), al 200 % y a 288 dpi como las demás.
+
+## 2026-11-04 · El racional, también en PDF
+
+`codigo/exportar_racional_pdf.js` arma `entregas/entrega_4/racional.pdf` (11 páginas A4) a partir de `racional.md`, con
+la tipografía y los tonos de la app, para entregarlo o imprimirlo. El Markdown es la fuente: el PDF se rehace con el
+script después de cada cambio, y el script falla si alguna imagen no carga. Al revisarlo se cambió una imagen de los
+bocetos: la lámina «Perfil de usuario» de la Entrega 1 trae una ilustración que parece hecha con IA de imágenes y no
+puede mostrarse como previa a la IA. En su lugar va la lámina de la pregunta (25/08), que ya nombra las cinco etapas.

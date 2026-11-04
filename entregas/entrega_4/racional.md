@@ -262,8 +262,8 @@ archivos, están en `entregas/entrega_4/bocetos_previos/`.
 |---|---|
 | ![Qué medir, Entrega 1](bocetos_previos/entrega_1_25-08_18_que_medir.png) | ![Dónde entra la IA, Entrega 1](bocetos_previos/entrega_1_25-08_20_donde_entra_la_ia.png) |
 | *25/08 · Qué medir: aparición, evolución, adopción, performance y time lag, en un círculo. Es el antecedente de El ciclo.* | *25/08 · Dónde entra la IA: «interpreta esos patrones y los traduce en una recomendación».* |
-| ![Radar, Entrega 2](bocetos_previos/entrega_2_05-10_radar.png) | ![Perfil de usuario, Entrega 1](bocetos_previos/entrega_1_25-08_06_perfil_de_usuario.png) |
-| *05/10 · El radar del prototipo: tarjetas con la paleta, la serie y la etapa como posición en una pista. Las tres ideas siguen en la app.* | *25/08 · El usuario: alguien que diseña dentro de una marca.* |
+| ![Radar, Entrega 2](bocetos_previos/entrega_2_05-10_radar.png) | ![La pregunta, Entrega 1](bocetos_previos/entrega_1_25-08_02_la_pregunta.png) |
+| *05/10 · El radar del prototipo: tarjetas con la paleta, la serie y la etapa como posición en una pista. Las tres ideas siguen en la app.* | *25/08 · La pregunta: en qué momento del ciclo está una tendencia, cruzando pasarela y búsqueda. Las cinco etapas son las de hoy.* |
 
 Dos aclaraciones, para que no se lea más de lo que es. La Entrega 1 no tiene pantallas: son láminas de ideas. Y el
 prototipo de la Entrega 2 ya convivía con la IA: el sitio de esa entrega era un artifact de Claude

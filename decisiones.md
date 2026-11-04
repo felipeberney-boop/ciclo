@@ -1672,3 +1672,21 @@ navegador y esa función no la usaba nada; está en el historial de git. En hist
 versión» llegan a la Entrega 4. `prompts/readme.md` tenía la tabla parada en el asistente v3 y decía que IA-5 usaba una
 clave en Netlify; ahora lista hasta v6 y dice cómo es. `codigo/diseno_catalogo.json` se queda: lo leen
 `armar_diseno.py` y `calcular_textos_diseno.mjs`. La entrada ya no dice «Lo podés cambiar después».
+
+## 2026-11-04 · El racional, en borrador
+
+`entregas/entrega_4/racional.md` tiene los ocho ítems de la consigna, reorganizados para alguien que no cursó: no
+repite decisiones.md, lo ordena por pregunta (qué problema, qué hipótesis, qué datos, qué modelo, qué usuario, qué
+diseño, qué recorte, qué proceso). El ítem 1 trae ejemplos reales de cómo decide hoy la industria, buscados el 04/11:
+los briefs de compra de WGSN, el tablero de Heuritech (Dior y el bolso Miss Dior), el de Tagwalk, los foros de
+Première Vision (de 18 a 24 meses antes) y el circuito tienda-diseño de Zara (Harvard Business Review, 2004). Lo
+que es promesa del vendedor se dice. Lo que no se pudo verificar en la fuente primaria no entra: el número de
+2.500 a 5.000 millones de prendas sobrantes en 2023, atribuido al *State of Fashion 2025*, aparece en artículos de
+segunda mano pero no en el texto que pudimos abrir.
+
+Lo que el repositorio no sostiene solo va marcado **[a confirmar]**. El más importante: los bocetos «anteriores a
+cualquier interacción con la IA». `prototipo_felipe_1` es del 13/10, parte de una captura de la app (que ya estaba
+escrita con Claude Code) y no puede presentarse como previo. Lo humano más temprano con fecha es la Entrega 1 (25/08),
+sin pantallas. Revisados también el prototipo navegable y las láminas de la Entrega 2 en Figma: no hay bocetos a mano
+(los frames del prototipo se llaman `screen:*`, que sugiere un script). Tampoco hay entrevistas con quien diseña para
+una marca, que es lo que mejor cerraría el ítem 1.

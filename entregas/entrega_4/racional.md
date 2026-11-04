@@ -183,7 +183,7 @@ la señal no las decide la IA: las deciden el K-means y una regla fija.
 que asesora a varias marcas. Desde el 13/10 es quien diseña, porque la app dejó de mostrar todo y pasó a acompañar una
 decisión de diseño.
 
-**El recorrido.** Tres preguntas → Tendencias o Diseñar → la ficha de un atributo → «Diseñar con…» → Preguntar. Está
+**El recorrido.** Tres preguntas → Tendencias → la ficha de un atributo → «Diseñar con…» → Preguntar. Está
 paso a paso, con capturas, en el readme, y en papel, una pantalla por hoja, en
 `entregas/entrega_4/disenos_en_papel/`.
 
@@ -241,7 +241,7 @@ Tendencias con la pregunta «¿Sigue vigente?» y lo que ya hay que dejar primer
 | Pantalla | Lo primero que se ve | Por qué |
 |---|---|---|
 | La entrada | Una pregunta y sus opciones, nada más | Cada respuesta cambia la lectura; lo que cambia está en Método |
-| Tendencias | Qué gana y qué pierde terreno, en el único bloque oscuro | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal |
+| Tendencias | Qué gana y qué pierde terreno, en el único bloque oscuro | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal. Sólo lo que tiene dato medido: el catálogo sintético no se muestra |
 | La ficha | La señal grande, con una línea de por qué | Es la decisión. El gráfico la sostiene; el detalle está en el «?» |
 | Diseñar | La pregunta del paso | Un paso, una decisión; lo elegido queda en una barra abajo |
 | Método | El esquema de los datos | La devolución lo marcó como fundamental |
@@ -329,6 +329,7 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11 y el 04/11) c
 | La ramificación (04/11) | Tres variantes; recomendó «el compromiso» y cambiar «Si algo sigue vigente» por «Si algo ya pasó» | Su consigna planteó la pregunta por la decisión y eligió la variante 2 («si hace»). Al usarla la descartó el mismo día: «no funciona. Es confusa y no se entiende qué elegir. Sacala», y volvió al vínculo | Obligaba a traducir la situación a una categoría abstracta antes de ver la app; el vínculo se contesta sin pensar |
 | Tipografía y curaduría (04/11) | Midió 31 tamaños y propuso cinco estilos; clasificó cada texto en se queda, va al «?» o se borra | Lo pidió en su consigna y quiso ver la lista antes de borrar; después dio control: «tenes full control» | La devolución de Cristian: demasiados estilos y capas que no aportan |
 | La pirueta (04/11) | Recomendó «Adiviná vos» con el LLM como jugador. Al construirla, sacó al LLM | Las dos ideas son suyas; eligió la primera: «si hace». Lo del LLM lo decidió Claude | Para jugar, el LLM tendría que ver la serie, y en CICLO no ve filas de datos |
+| La app como producto (04/11) | La lista de lo que sólo tenía sentido en la cursada: el catálogo sintético en Tendencias, el laboratorio del K-means arriba de todo, textos que le hablaban a quien evalúa, la presentación dentro del sitio | El criterio es suyo: «esto es una app, no una entrega», «nada de números de entrega, criterios de evaluación, nombres de docentes». Pidió ver la lista antes y después la delegó: «hace todo lo que te parezca hacer en la lista» | Quien entra tiene que ver un producto; el rigor (fuentes, límites, pruebas) se queda |
 | Las pantallas de «Más» (04/11) | El modelo y Marcas desde Método, Retornos desde El ciclo | Lo delegó: «hace lo que te parezca» | El menú ofrecía cinco cosas iguales; tres eran detalle de otra |
 
 **Qué modelos usamos.**

@@ -242,6 +242,13 @@ La entrada por el objetivo («¿Qué estás por decidir?») se probó y se desca
 (para quién, para una marca o por tu cuenta, la categoría), con todo lo que se hizo después. La app deja de nombrar la
 materia, la facultad y los docentes. Se arregló la barra de Diseñar, que el cambio de «Más» había roto.
 
+## v1.24 · 04/11/2026 · Un producto, no una entrega
+
+Tendencias y la ficha muestran sólo datos medidos (fuera la paleta, la etapa estimada y el gráfico del catálogo
+sintético). El modelo pone arriba lo que sirve para decidir y pliega el laboratorio del K-means. Fuera de la pantalla
+los textos que le hablaban a quien evalúa, el estado interno del proyecto y las fuentes que no se usan. La presentación
+de la Entrega 3 sale del sitio publicado. El papel vuelve a la entrada por el vínculo, sin las paletas.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).
@@ -266,6 +273,7 @@ prototipo navegable es la app publicada.
 ## Lo que falta para la Entrega 4 (17/11)
 
 - Corregir las pantallas en papel en clase y pasar las correcciones a la app.
+- Renombrar el sitio de Netlify (`ciclo-udesa` → por ejemplo `ciclo-moda`): lo tiene que autorizar Felipe.
 - Leer el racional (`entregas/entrega_4/racional.md`) antes de entregarlo: la tabla de autoría ya cita las
   conversaciones, sin nada «a confirmar».
 - Probar en vivo los prompts nuevos (`prompt_lectura_recomendacion_v5.md`, `prompt_asistente_v6.md`).

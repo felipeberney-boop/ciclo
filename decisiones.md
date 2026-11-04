@@ -1869,3 +1869,11 @@ público dejó de hacer falta; el guion y el readme dicen dónde está ahora.
 
 **Lo que queda pendiente, y lo tiene que hacer Felipe:** la dirección de Netlify es `ciclo-udesa.netlify.app`. Renombrar el
 sitio (por ejemplo, a `ciclo-moda`, que está libre) es un cambio de dominio y no se hace sin su autorización explícita.
+
+## 2026-11-04 · El papel, con la entrada por el vínculo
+
+Las hojas en papel volvieron a la entrada de antes, para corregirlas en clase con el flujo que tiene la app: 01 ¿Para
+quién diseñás?, 02 ¿Trabajás para una marca o por tu cuenta?, 03 la categoría. La 05 deja de ser «¿Sigue vigente?» y
+pasa a ser Tendencias por tu cuenta, con Explorar donde la marca espera; la 07 y la 08 (Diseñar) son por tu cuenta, por
+eso dicen Explorar. En el mapa sale la flecha de la categoría a Diseñar. Las tarjetas de Tendencias pierden la paleta
+del catálogo sintético, como en la app. Se exportaron de nuevo las siete hojas que cambiaron.

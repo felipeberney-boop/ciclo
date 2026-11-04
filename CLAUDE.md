@@ -46,6 +46,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   main screen; the CICLO mark goes to Tendencias and «Cambiar perfil» reopens the gate (`abrirGate(vista)`). Nav order:
   Tendencias · Diseñar · El ciclo · Buscar por imagen · Preguntar · Más. Since 04/11 «Más» holds only Adiviná vos and Método; El modelo (`etapas`) and Marcas open from Método and Retornos from El ciclo, via `data-vista="<vista>"` links (not `data-ir`, which is the Diseñar step a chip returns to). `tendencia(d)` describes (▲/■/▼ in ink, El ciclo and Tendencias; the one exception since 27/10: «▲ Gana presencia» text is
   green and «▼ Pierde presencia» red, classes `t-entrar`/`t-salir`, bars and «Estable» stay ink) and is otherwise never a state color; `señal()` decides, and without a K-means stage it says Entrar/Esperar/Salir from the trend.
+- Tendencias lists only `T` attributes with measured data (`tieneDato()`: a K-means stage or a search series); the synthetic Zara 2018–22 catalog (palettes, estimated stage, its monthly chart) is no longer shown anywhere. Don't bring it back on screen.
 - The "cliente" selector (fast / premium / nicho) changes recommendations (`CONSEJO`, `PLAZO`) and re-renders.
 
 ## Design rules that apply in code

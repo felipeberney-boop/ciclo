@@ -1859,3 +1859,13 @@ para mostrar el trabajo.
 
 Probado con Playwright a 1400 y 393 px en todas las vistas, sin errores; el laboratorio del K-means funciona plegado.
 Versión anterior en `diseno/prototipos/versiones_de_la_app/app_2026-11-04_3dde1b6_antes_de_sacar_lo_de_cursada.html`.
+
+## 2026-11-04 · La presentación sale de la app publicada
+
+La presentación de la Entrega 3 se servía en `/ciclo/presentacion/`, dentro del sitio del producto, con el título
+«CICLO · Entrega 3» y la universidad en pantalla. Pasa a `entregas/entrega_3/presentacion/`: queda en el repositorio,
+completa, y se abre con un servidor local. El sitio publicado es sólo la app. Ya se presentó el 03/11, así que su link
+público dejó de hacer falta; el guion y el readme dicen dónde está ahora.
+
+**Lo que queda pendiente, y lo tiene que hacer Felipe:** la dirección de Netlify es `ciclo-udesa.netlify.app`. Renombrar el
+sitio (por ejemplo, a `ciclo-moda`, que está libre) es un cambio de dominio y no se hace sin su autorización explícita.

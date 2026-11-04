@@ -5,7 +5,7 @@ import os, tempfile
 from PIL import Image
 
 CRUDO = os.path.join(tempfile.gettempdir(), 'ciclo_presentacion')
-DEST = 'app/presentacion/capturas'
+DEST = 'entregas/entrega_3/presentacion/capturas'
 
 Image.open(os.path.join(CRUDO, 'app_tendencias.png')).convert('RGB').save(os.path.join(DEST, 'tendencias.webp'), 'WEBP', quality=86)
 print('· tendencias')

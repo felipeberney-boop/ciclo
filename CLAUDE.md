@@ -60,7 +60,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   (Entrar green, Esperar/Explorar amber, Salir red via `accCls()`/`--act-*`, always with the word), and **one blue
   (`--azul`, #0066cc) that only means «clickable»** (action buttons, links, the chosen option). Charts keep `--s1`…`--s6`.
   CSS layers, later wins: original → editorial (20/10) → «capa de uso» (27/10) → «capa Apple» (27/10, last). The old
-  no-radius rule is beaten with `:not(#z)`. The presentation (`app/presentacion/`) uses the same look.
+  no-radius rule is beaten with `:not(#z)`. The Entrega 3 presentation lives in `entregas/entrega_3/presentacion/` (moved out of `app/` on 04/11: the published site is the product only) and uses the same look.
 - **Startup:** every `.view` starts `hidden`; only the boot code (wrapped in try/catch, plus a fallback
   `<script>`) decides what shows. A saved profile goes to Diseñar with the `#perfilinea` line, never silently.
 - **No number without its source.** Each card states which data layer can and cannot answer.

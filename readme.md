@@ -9,8 +9,6 @@ el dato que lo sostiene. No predice: lee en qué punto está cada atributo hoy.
 
 **App:** https://felipeberney-boop.github.io/ciclo/
 
-**Presentación:** https://felipeberney-boop.github.io/ciclo/presentacion/
-
 **Repositorio:** https://github.com/felipeberney-boop/ciclo
 
 **Figma:** https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7
@@ -39,7 +37,7 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 | | |
 |---|---|
 | App publicada (oficial) | https://felipeberney-boop.github.io/ciclo/ |
-| Presentación Entrega 3 | https://felipeberney-boop.github.io/ciclo/presentacion/ |
+| Presentación Entrega 3 | [`entregas/entrega_3/presentacion/`](entregas/entrega_3/presentacion/): salió de la app publicada el 04/11 (la app es un producto, no una entrega). Se abre con `cd entregas/entrega_3/presentacion && python3 -m http.server` |
 | También en Netlify | https://ciclo-udesa.netlify.app — la misma app, publicada el 03/11/2026 (la cátedra acepta Netlify o Vercel). La oficial, la del QR, es la de GitHub Pages |
 | Cómo se publica | GitHub Pages publica la carpeta `app/` en cada push que la toca (`.github/workflows/publicar_app.yml`). Netlify publica la misma carpeta a mano: `npx netlify-cli deploy --prod --dir app`. La app no necesita servidor |
 

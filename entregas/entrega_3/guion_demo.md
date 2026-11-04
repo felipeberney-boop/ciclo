@@ -3,7 +3,7 @@
 Con la devolución de Cristian del 03/11: primero el flujo de la app, y láminas simples. Son seis láminas, una por
 criterio de la rúbrica, y la presentación termina en el Cierre.
 
-Presentación: https://felipeberney-boop.github.io/ciclo/presentacion/ · App: https://felipeberney-boop.github.io/ciclo/
+Presentación: se presentó en https://felipeberney-boop.github.io/ciclo/presentacion/; desde el 04/11 vive en `entregas/entrega_3/presentacion/` · App: https://felipeberney-boop.github.io/ciclo/
 (en la presentación, la tecla N muestra las notas de cada lámina).
 
 | Tiempo | Qué | Criterio |

@@ -4,7 +4,7 @@
 //   python3 codigo/armar_capturas_presentacion.py
 // Requiere: npm install playwright, pip install pillow.
 // Este script saca la pantalla en crudo (PNG, en la carpeta temporal del sistema, ciclo_presentacion/); el de Python
-// la pasa a .webp en app/presentacion/capturas/. Las otras dos imágenes de esa lámina no salen de la app:
+// la pasa a .webp en entregas/entrega_3/presentacion/capturas/. Las otras dos imágenes de esa lámina no salen de la app:
 // figma_original_radar (el prototipo de Figma de la Entrega 2) y referencia_apple (la referencia de la cátedra).
 const { chromium } = require('playwright');
 const fs = require('fs');

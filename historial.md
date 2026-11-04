@@ -215,6 +215,11 @@ quedó en la app, y las tarjetas de Tendencias muestran su señal. La versión a
 Método abre con el esquema de qué datos se usan, con qué clave se cruzan y qué sale. La app pasa de 31 tamaños de letra
 a cinco estilos (Título, Subtítulo, Dato, Cuerpo y Etiqueta), con un peso por tamaño, también en los gráficos.
 
+## v1.19 · 04/11/2026 · Menos texto
+
+Cada bloque de texto de las pantallas principales se clasificó en lo que decide, lo que aclara y lo que sobra. Lo que
+aclara pasa a un «?» que se abre al tocarlo; lo que sobra se fue. La señal se ve con una sola línea de por qué.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

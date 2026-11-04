@@ -1629,3 +1629,36 @@ una combinación más. Los gráficos son SVG que se escalan con su `viewBox`, as
 logo CICLO (19, Semi Bold), que es una marca y no un estilo de texto.
 
 **Lo que esto no arregla.** El tamaño ya no compite, pero el texto sigue siendo mucho: eso es la curaduría, aparte.
+
+## 2026-11-04 · Curar el texto: lo que decide, lo que aclara y lo que sobra
+
+**Devolución (Cristian).** Muchas capas, algunas útiles y otras sólo aclaraciones de uso, que no parecen conectadas;
+parece que no hay filtro sobre lo que da la IA y hay que leer muchas cosas que no aportan valor por igual.
+
+**Cómo.** Cada bloque de texto de cada pantalla, en uno de tres grupos: (a) lo que se necesita para decidir, se queda;
+(b) aclaración de uso, pasa a un «?» que se abre si lo tocan o a Método; (c) nada, se borra. El «?» es un solo
+componente (`details.qm`), un círculo gris que se vuelve azul al tocarlo, porque el azul es lo que se toca.
+
+**Lo que se fue (c).** El rótulo «0N · Vista» arriba de cada título, que repetía el menú. En Tendencias, la bajada
+«Lo que está ganando y perdiendo terreno afuera… Tocá cualquiera…» y el «12 de 12 atributos». En la ficha, «Recomendación
+· tu marca · fast fashion» (repetía el perfil) y los cuatro recuadros Color / Proporción / Material / Precio, que casi
+siempre decían «— · no aplica». En Diseñar, el título «Diseñá con lo que se mueve afuera» con su bajada (la pregunta del
+paso es el título) y la descripción de cada prenda («De la cintura para abajo, con dos piernas»): el dibujo ya lo dice.
+En El ciclo, «Para vos · … · recomendación · interpretación». En Buscar por imagen, «Todavía no hay imagen…» y «jpg · png
+· webp…». En Preguntar, el globo vacío «Armá algo en Diseñar o subí una foto…», que repetía la tarjeta y además
+llevaba la marca de «interpretado · LLM» sin ser del modelo.
+
+**Lo que pasó al «?» (b).** Cómo leer las tarjetas de Tendencias y qué mide «gana y pierde terreno»; en la ficha, el
+porqué largo de la señal, los datos del catálogo, la lectura del equipo y los pies de los gráficos; las aclaraciones
+de cada paso de Diseñar («El jean no es una prenda…»); qué es un pico en El ciclo y el porqué de su señal; cómo funciona
+CLIP y cómo se validó (el «acierta en el top 3 el 86 %» que se repetía debajo de cada atributo va una sola vez); cómo
+lee los datos Preguntar.
+
+**Lo que se queda y cambió (a).** La señal se ve con una sola línea de por qué (`señal()` devuelve ahora también
+`corto`: la frase de la regla, o «Gana presencia afuera: +12 puntos…»), y el resto va al «?». La procedencia en las
+tarjetas pasa a «● K-means» o «◇ estimada». Buscar por imagen se llama igual que en el menú (antes, «Mandá una
+prenda»). «sin validar» se sigue diciendo donde corresponde: es (a), no se esconde.
+
+**Lo que no se tocó todavía.** Las pantallas de «Más» (El modelo, Marcas, Retornos y Método) sólo perdieron el rótulo de
+arriba. Para ellas quedan propuestas que no son de texto sino de estructura, y las decide Felipe: El modelo entero a
+Método, Retornos como un filtro de El ciclo, y Marcas fuera del menú porque no entra al modelo.

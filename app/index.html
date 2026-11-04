@@ -1,20 +1,4 @@
-<!doctype html><html lang="es" data-theme="light"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}/* ---------- capa de cinco estilos (04/11/2026) ----------
-   Devolución de la Entrega 3: demasiados tamaños y estilos. Había 31 tamaños y 49 combinaciones de tamaño y peso (medido
-   con Playwright en las once vistas). Quedan cinco, con un peso por tamaño: Título, Subtítulo y Dato en 600; Cuerpo y
-   Etiqueta en 400. Los mismos del papel (página 4 del Figma), que van un 15 % más grandes para imprimir.
-   Va última y pisa a las cuatro capas de antes. Los selectores salen de medir la app, no de leer el CSS. */
-:root{--t-tit:48px;--t-sub:24px;--t-dat:34px;--t-cue:17px;--t-eti:13px}
-@media (max-width:600px){:root{--t-tit:34px}}
-.app :is(b,strong,i,em,summary span.k):not(.sen):not(#z){font-weight:inherit!important}
-/* el texto de los gráficos también es Etiqueta, medido en pantalla: lo ajusta etiquetasSvg() según la escala de cada SVG */
-/* lo que no salió en la medición de escritorio: el celular y la barra. El logo CICLO es una marca, no un estilo de texto */
-.app :is(button.legi em,.rminih,.chdesliza):not(#z),.mast :is(a,button,span):not(.mk):not(#z){font-size:var(--t-eti)!important;font-weight:400!important}
-.app :is(div.gate > div.gprog,button.gcard > span.gprev,div.gnav > button.kbtn,div.gnav > span.gnota,div.gfirma > p.lbl,div > span.lbl,p.perfilrad > span,p.perfilrad > button,div.th > span.lbl,div.th > span.tag.real,div.terreno > p.tsub,div > div.tt,button.tfila.tend > span.tn,button.tfila.tend > span.tv,div.filters > button.chip,div.filters > span.count,div.ptop > span.pkind,div.ticks > span,div.track > div.tde,section.view > p.note,section.view > button.back,div.dzdesde > button.kbtn.dzcon,div.dzcols > span,div.dzcols > button.chip,i > span,dl > dt,dl > dd,dd > span.tag.real,dd > span.tag.demo,dl > dd.mono,div.h > span.lbl,div.h > span.tag.ia2,div.ai > p,div.rec > div.t,div.rec > div.d,button.legi > span,figure > figcaption,div > div.k,div > div.n,div > p.note,button.dzp > span.dzpn,button.dzp > span.dzpt,div > p.dzsub,span.dzb > span.dzdef,li > span,div.kcard > p.mono.kcap,tr > th,tr > th.r,tr > td,td > span,tr > td.r,details.kd > summary,details.kd > div.kcalc,div.kcard > p.ksub,form.kform > label,div.kbtns > button.kbtn,div.kbtns > button.kbtn.ghost,div.seg > button,div > button.kbtn.ghost,div > span.mono,div.leg2 > span,div.kcard > p.note,div > p.mono.kcap,div > div.gm,div > div.gv,div > div.gr,section.view > p.note.a,tr > td.k,td > a,td > span.tag.alert,div.ai > pre.kcalc,div.ciclofilt > button.chip,button.ciclo.tend > span.cf,span.cm > span,span.sen.tend > span,div.ciclos.corto > button.kbtn.ghost.ciclomas,div.ciclos.corto > p.note,p.note > span.proc,div.dline > p,details.vact > summary.kbtn.ghost,details.vact > p.vm,p.vm > a,details.vact > button.kbtn,dl.dfacts > dt,dl.dfacts > dd,dd > span.mono,details.rfiltd > summary.lbl,div.rgrp > span.lbl,div.rgrp > button.chip,div.clave > span,div > button.gvolver,dd.mono > span.tag.real,dd.mono > span.tag.demo,div > div.r,div > p.t,p.t > span.mono,div > p.mono,div > p,div > span.e,div > p.d,div > div.mt,div.pc > small,label.drop > p,p > span.mono,div > p.qestado,div.qej > button.chip,div.qres > p.note,ol.aspasos > li,li > a,li > code,details.ascard.asact > label.ascap,div.ascard > span.lbl,div.aschips > p.ascap,p.ascap > button.gvolver,div.ascard > p.ascap,label.asfoto > span,details.ascard.asver > summary.lbl,details.ascard.asver > p.ascap,div.asa > p,div.assug > button,form.asform > button.kbtn,b > span,div.mdc > small,div.mdc > p,div.mdc.fuera > small,div.mdc.fuera > p,div.mdclave > small,section.metdatos > p.mdnota,section.view > p.note.colores,p.note.colores > span.proc,p.note.colores > span.tag.ia2,summary > span.tag.demo,details > div.cuerpo,summary > span.tag.real,div.cuerpo > code,summary > span.tag.ia,summary > span.tag.alert,summary > span.tag.ia2,td > span.sen):not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.35!important}
-.app :is(div > p.sub,div.pbody > span.sen.psen,nav.dzpasos > span.dzsep,span.dzb > span.dzn,div.gt > span.gn,section.view > p.sub,span > span.sen.tend,li > div.pc,p.sub > a,p.note.colores > b.sen,summary > span.k,div.metgate > p):not(#z){font-size:var(--t-cue)!important;font-weight:400!important;line-height:1.45!important}
-.app :is(button.gcard > span.gt,span > b,div.ptop > h3.pname.serif,div.kcard > h3.kh,div.khead > h3.kh,section.view > h3.kbig,button.ciclo.tend > span.cn.serif,section.view > h2.h3,section.view > h3.h3,div > div.m.serif,section.view > h3,div > div.nm.serif,details.ascard.asact > summary,section.metdatos > h2,div.mdcol > h3,div.mdesq > div.mdflecha,div.metgate > h2,div.metgate > h3):not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.2!important;letter-spacing:-.015em!important}
-.app :is(div.a.serif > span,div.rec > div.a.serif,div > div.v.serif,span.a.serif > span.ico,div.dline > span.a.serif,div > p.n,label.drop > div.ic,div.mdclave > strong):not(#z){font-size:var(--t-dat)!important;font-weight:600!important;line-height:1.1!important;letter-spacing:-.02em!important}
-.app :is(div.gate > h1,div > h1,div.dzhead > h2.dzh):not(#z){font-size:var(--t-tit)!important;font-weight:600!important;line-height:1.08!important;letter-spacing:-.025em!important}
-</style></head><body>
+<!doctype html><html lang="es" data-theme="light"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>CICLO</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5,500;62.5,600;62.5,700;100,400;100,500;100,600&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;600;700&display=swap">
 <style>
@@ -986,6 +970,33 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .acc summary{font-size:17px!important}
 @media (max-width:760px){.app .mast{height:48px}.app h1{font-size:clamp(34px,10vw,44px)!important}.app .vhead .sub{font-size:18px!important}
   .app .view{padding:40px 16px 88px!important}.navmenu{font:400 14px var(--sf)!important;border-color:var(--rule)!important}}
+/* ---------- capa de cinco estilos (04/11/2026) ----------
+   Devolución de la Entrega 3: demasiados tamaños y estilos. Había 31 tamaños y 49 combinaciones de tamaño y peso (medido
+   con Playwright en las once vistas). Quedan cinco, con un peso por tamaño: Título, Subtítulo y Dato en 600; Cuerpo y
+   Etiqueta en 400. Los mismos del papel (página 4 del Figma), que van un 15 % más grandes para imprimir.
+   Va última y pisa a las cuatro capas de antes. Los selectores salen de medir la app, no de leer el CSS. */
+:root{--t-tit:48px;--t-sub:24px;--t-dat:34px;--t-cue:17px;--t-eti:13px}
+@media (max-width:600px){:root{--t-tit:34px}}
+.app :is(b,strong,i,em,summary span.k):not(.sen):not(#z){font-weight:inherit!important}
+/* el texto de los gráficos también es Etiqueta, medido en pantalla: lo ajusta etiquetasSvg() según la escala de cada SVG */
+/* B.2 · lo que es aclaración de uso se vuelve un «?» que se abre si lo tocan (04/11) */
+.app .qm{display:block;margin:10px auto 0;max-width:62ch;text-align:center}
+.app .qm>summary:not(#z){list-style:none;cursor:pointer;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%!important;box-shadow:inset 0 0 0 1px var(--ink-3);color:var(--ink-2);font-size:var(--t-eti)!important;font-weight:400!important;user-select:none}
+.app .qm>summary::-webkit-details-marker{display:none}
+.app .qm>summary:hover,.app .qm[open]>summary{box-shadow:inset 0 0 0 1px var(--azul);color:var(--azul)}
+.app .qm>summary:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+.app .qmc:not(#z){margin:10px 0 0;padding:14px 18px;background:var(--card);border-radius:var(--r-row)!important;text-align:left}
+.app .qmc :is(p,li,b,a):not(#z){font-size:var(--t-cue)!important;font-weight:400!important;line-height:1.45!important;margin:0 0 8px;color:var(--ink-2)}
+.app .qmc>:last-child{margin-bottom:0}
+.app .qm.izq{margin-left:0;text-align:left}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* lo que no salió en la medición de escritorio: el celular y la barra. El logo CICLO es una marca, no un estilo de texto */
+.app :is(button.legi em,.rminih,.chdesliza):not(#z),.mast :is(a,button,span):not(.mk):not(#z){font-size:var(--t-eti)!important;font-weight:400!important}
+.app :is(div.gate > div.gprog,button.gcard > span.gprev,div.gnav > button.kbtn,div.gnav > span.gnota,div.gfirma > p.lbl,div > span.lbl,p.perfilrad > span,p.perfilrad > button,div.th > span.lbl,div.th > span.tag.real,div.terreno > p.tsub,div > div.tt,button.tfila.tend > span.tn,button.tfila.tend > span.tv,div.filters > button.chip,div.filters > span.count,div.ptop > span.pkind,div.ticks > span,div.track > div.tde,section.view > p.note,section.view > button.back,div.dzdesde > button.kbtn.dzcon,div.dzcols > span,div.dzcols > button.chip,i > span,dl > dt,dl > dd,dd > span.tag.real,dd > span.tag.demo,dl > dd.mono,div.h > span.lbl,div.h > span.tag.ia2,div.ai > p,div.rec > div.t,div.rec > div.d,button.legi > span,figure > figcaption,div > div.k,div > div.n,div > p.note,button.dzp > span.dzpn,button.dzp > span.dzpt,div > p.dzsub,span.dzb > span.dzdef,li > span,div.kcard > p.mono.kcap,tr > th,tr > th.r,tr > td,td > span,tr > td.r,details.kd > summary,details.kd > div.kcalc,div.kcard > p.ksub,form.kform > label,div.kbtns > button.kbtn,div.kbtns > button.kbtn.ghost,div.seg > button,div > button.kbtn.ghost,div > span.mono,div.leg2 > span,div.kcard > p.note,div > p.mono.kcap,div > div.gm,div > div.gv,div > div.gr,section.view > p.note.a,tr > td.k,td > a,td > span.tag.alert,div.ai > pre.kcalc,div.ciclofilt > button.chip,button.ciclo.tend > span.cf,span.cm > span,span.sen.tend > span,div.ciclos.corto > button.kbtn.ghost.ciclomas,div.ciclos.corto > p.note,p.note > span.proc,div.dline > p,details.vact > summary.kbtn.ghost,details.vact > p.vm,p.vm > a,details.vact > button.kbtn,dl.dfacts > dt,dl.dfacts > dd,dd > span.mono,details.rfiltd > summary.lbl,div.rgrp > span.lbl,div.rgrp > button.chip,div.clave > span,div > button.gvolver,dd.mono > span.tag.real,dd.mono > span.tag.demo,div > div.r,div > p.t,p.t > span.mono,div > p.mono,div > p,div > span.e,div > p.d,div > div.mt,div.pc > small,label.drop > p,p > span.mono,div > p.qestado,div.qej > button.chip,div.qres > p.note,ol.aspasos > li,li > a,li > code,details.ascard.asact > label.ascap,div.ascard > span.lbl,div.aschips > p.ascap,p.ascap > button.gvolver,div.ascard > p.ascap,label.asfoto > span,details.ascard.asver > summary.lbl,details.ascard.asver > p.ascap,div.asa > p,div.assug > button,form.asform > button.kbtn,b > span,div.mdc > small,div.mdc > p,div.mdc.fuera > small,div.mdc.fuera > p,div.mdclave > small,section.metdatos > p.mdnota,section.view > p.note.colores,p.note.colores > span.proc,p.note.colores > span.tag.ia2,summary > span.tag.demo,details > div.cuerpo,summary > span.tag.real,div.cuerpo > code,summary > span.tag.ia,summary > span.tag.alert,summary > span.tag.ia2,td > span.sen):not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.35!important}
+.app :is(div > p.sub,div.pbody > span.sen.psen,nav.dzpasos > span.dzsep,span.dzb > span.dzn,div.gt > span.gn,section.view > p.sub,span > span.sen.tend,li > div.pc,p.sub > a,p.note.colores > b.sen,summary > span.k,div.metgate > p):not(#z){font-size:var(--t-cue)!important;font-weight:400!important;line-height:1.45!important}
+.app :is(button.gcard > span.gt,span.cm > span > b,div.ptop > h3.pname.serif,div.kcard > h3.kh,div.khead > h3.kh,section.view > h3.kbig,button.ciclo.tend > span.cn.serif,section.view > h2.h3,section.view > h3.h3,div > div.m.serif,section.view > h3,div > div.nm.serif,details.ascard.asact > summary,section.metdatos > h2,div.mdcol > h3,div.mdesq > div.mdflecha,div.metgate > h2,div.metgate > h3):not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.2!important;letter-spacing:-.015em!important}
+.app :is(div.a.serif > span,div.rec > div.a.serif,div > div.v.serif,span.a.serif > span.ico,div.dline > span.a.serif,div > p.n,label.drop > div.ic,div.mdclave > strong):not(#z){font-size:var(--t-dat)!important;font-weight:600!important;line-height:1.1!important;letter-spacing:-.02em!important}
+.app :is(div.gate > h1,div > h1,div.dzhead > h2.dzh):not(#z){font-size:var(--t-tit)!important;font-weight:600!important;line-height:1.08!important;letter-spacing:-.025em!important}
 </style>
 
 <div class="app">
@@ -1031,9 +1042,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
     <section class="view" id="v-disenar" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">02 · Diseñar</span>
-          <h1>Diseñá con lo que se mueve afuera</h1>
-          <p class="sub">Elegí vos, paso a paso. En cada paso la app te marca lo que conviene según tu perfil y lo que está ganando terreno afuera.</p>
+          <h1 class="sr">Diseñar</h1>
           <p class="dzperfil" id="dzperfil"></p>
         </div>
       </div>
@@ -1045,10 +1054,9 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
     <section class="view" id="v-radar" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">01 · Tendencias</span>
           <h1 id="radtit">Qué se está moviendo</h1>
-          <p class="sub">Lo que está ganando y perdiendo terreno afuera, y en qué etapa está cada atributo. Tocá cualquiera para ver su recorrido y diseñar con él.</p>
           <p class="perfilrad" id="perfilrad"></p>
+          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>El punto de la pista marca en qué etapa está el atributo. <b>● K-means</b>: la etapa sale del modelo, con pasarela y búsqueda medidas. <b>◇ estimada</b>: sale de un catálogo de demostración (sintético) y muestra el método, no una conclusión. Los colores de cada tarjeta son de ese mismo catálogo.</p></div></details>
         </div>
       </div>
       <hr class="rule">
@@ -1058,10 +1066,8 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         <button class="chip" data-f="color" aria-pressed="false">Color y estampa</button>
         <button class="chip" data-f="fit" aria-pressed="false">Corte</button>
         <button class="chip" data-f="material" aria-pressed="false">Material</button>
-        <span class="count" id="cnt"></span>
       </div>
       <div class="grid" id="grid"></div>
-      <p class="note"><b>Cómo leer cada tarjeta.</b> El punto de la pista marca en qué etapa está el atributo, y abajo dice de dónde sale: el K-means (pasarela y búsqueda) o una estimación. Los colores de cada tarjeta son de un catálogo de demostración (sintético): muestran el método, no son una conclusión.</p>
     </section>
 
     <!-- ================= DETALLE ================= -->
@@ -1072,7 +1078,6 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
     <section class="view" id="v-etapas" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">06 · El modelo</span>
           <h1>En qué etapa está cada tendencia</h1>
           <p class="sub">K-means sobre 17 atributos que existen a la vez en la pasarela de Vogue y en Google Trends, como pide la consigna. Nadie le dice al modelo qué es un «pico»: agrupa los atributos que se mueven parecido, y después nosotros leemos qué etapa es cada grupo.</p>
         </div>
@@ -1172,9 +1177,8 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-recorridos" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">03 · El ciclo</span>
           <h1>¿Cuándo estuvo de moda, y cuánto tardó en volver?</h1>
-          <p class="sub">Para cada atributo: su último pico en la búsqueda mundial, si hoy sube o baja, cuántos años pasaron, y —cuando la serie tiene dos picos— cada cuánto vuelve. Tocá uno para ver su recorrido completo.</p>
+          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Para cada atributo: su último pico en la búsqueda mundial, si hoy sube o baja, cuántos años pasaron y, cuando la serie tiene dos picos, cada cuánto vuelve.</p></div></details>
         </div>
       </div>
       <hr class="rule">
@@ -1237,7 +1241,6 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-marcas" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">07 · Marcas</span>
           <h1>Ocho años de quién está caliente</h1>
           <p class="sub">El Lyst Index rankea las marcas más deseadas cada trimestre desde 2018. Transcribimos los 34 trimestres: 55 marcas distintas pasaron por el top 20. Es la serie temporal más larga que tenemos y la única fuente que conecta el alto nivel con la demanda real.</p>
         </div>
@@ -1314,7 +1317,6 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-retornos" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">08 · Retornos</span>
           <h1>Lo que vuelve</h1>
           <p class="sub">La moda es cíclica: un atributo que desapareció rara vez desaparece del todo. Con quince años de búsqueda corregida (2010–2024) alcanza para ver algunos atributos picar, irse y volver, y medir cada cuánto.</p>
         </div>
@@ -1341,9 +1343,8 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-asistente" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">05 · Preguntar</span>
-          <h1>Preguntale a CICLO por tu diseño</h1>
-          <p class="sub">Traé lo que estás armando —o una foto, o un boceto— y preguntá. Cada respuesta trae el dato que la sostiene y un cambio para probar. El modelo de lenguaje lee sólo métricas ya calculadas (<a href="llm/ciclo_datos.md" target="_blank" rel="noopener">ciclo_datos.md</a>), nunca una fila de la base.</p>
+          <h1>Preguntale a CICLO</h1>
+          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Cada respuesta trae el dato que la sostiene y un cambio para probar. El modelo de lenguaje lee sólo métricas ya calculadas (<a href="llm/ciclo_datos.md" target="_blank" rel="noopener">ciclo_datos.md</a>), nunca una fila de la base. Lo que contesta es interpretación.</p></div></details>
         </div>
       </div>
       <hr class="rule">
@@ -1386,9 +1387,8 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-consulta" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">04 · Buscar por imagen</span>
-          <h1>Mandá una prenda</h1>
-          <p class="sub">Subí una foto, un dibujo o una captura. CLIP, un modelo de visión que corre en tu navegador, la compara con 14.000 looks reales de pasarela y con los 17 atributos del modelo, y te dice en qué etapa del ciclo está cada uno. La foto no sale de tu computadora.</p>
+          <h1>Buscar por imagen</h1>
+          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>CLIP, un modelo de visión que corre en tu navegador, compara la imagen con 14.000 looks reales de pasarela y con los 17 atributos del modelo, y te dice en qué etapa del ciclo está cada uno. La foto no sale de tu computadora.</p></div></details>
         </div>
       </div>
       <hr class="rule">
@@ -1397,7 +1397,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
           <label class="drop" id="qdrop">
             <input type="file" accept="image/*" id="qfile">
             <div class="ic">＋</div>
-            <p>Arrastrá una imagen o tocá para elegirla<br><span class="mono" style="font-size:11px;color:var(--ink-3)">jpg · png · webp · desde la cámara o la galería</span></p>
+            <p>Arrastrá una imagen o tocá para elegirla</p>
           </label>
           <p class="qestado" id="qestado" aria-live="polite">La primera consulta baja el modelo CLIP (89 MB) y el índice (8 MB). Después quedan guardados en el navegador.</p>
           <span class="lbl" style="margin-top:16px;display:block">O probá con un look del índice</span>
@@ -1406,7 +1406,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         </div>
         <div>
           <div class="h" style="display:flex;align-items:center;gap:8px"><span class="lbl">Atributos que ve el modelo</span><span class="tag ia2">interpretación · IA-6</span></div>
-          <div class="qres" style="margin-top:14px" id="qres"><p class="note" style="margin:0">Todavía no hay imagen. Subí una, o elegí un ejemplo a la izquierda.</p></div>
+          <div class="qres" style="margin-top:14px" id="qres"></div>
           <div id="qmas" hidden>
             <div class="h" style="display:flex;align-items:center;gap:8px;margin-top:26px"><span class="lbl">Los looks de pasarela más parecidos</span><span class="tag ia2">CLIP · vecinos</span></div>
             <div class="qlooks" id="qlooks"></div>
@@ -1418,7 +1418,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
               <p id="qresumen"></p>
             </div>
           </div>
-          <p class="note" style="margin-top:22px"><b>Cómo se validó.</b> En 150.000 looks de Vogue que no están en el índice, el atributo correcto quedó entre los tres primeros entre el 67 % y el 92 % de las veces, según el atributo (animal print: 20 %). Los que Vogue no etiqueta —cuadros, piel, cargo, Y2K, blazer— no se pudieron validar y se marcan así. Por debajo de 0,35 de probabilidad la app no adivina.</p>
+          <details class="qm izq" style="margin-top:22px"><summary aria-label="Cómo se validó">?</summary><div class="qmc"><p><b>Cómo se validó.</b> En 150.000 looks de Vogue que no están en el índice, el atributo correcto quedó entre los tres primeros entre el 67 % y el 92 % de las veces, según el atributo (animal print: 20 %). Los que Vogue no etiqueta —cuadros, piel, cargo, Y2K, blazer— no se pudieron validar y se marcan así. Por debajo de 0,35 de probabilidad la app no adivina.</p></div></details>
         </div>
       </div>
     </section>
@@ -1427,7 +1427,6 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
     <section class="view" id="v-racional" hidden>
       <div class="vhead">
         <div>
-          <span class="lbl">09 · Método</span>
           <h1>Qué está medido y qué está interpretado</h1>
           <p class="sub">La regla de la casa: el modelo de lenguaje nunca ve una fila de datos. Recibe métricas que ya calculamos y las traduce. Todo lo que ves en la app cae en una de estas dos columnas y está marcado.</p>
         </div>
@@ -1642,7 +1641,7 @@ function miniSerie(id,w=104,h=26){
 /* ---------- fichas del radar ---------- */
 /* la etapa de la ficha: la del K-means si el atributo está en el modelo; si no, la estimada sobre el catálogo sintético, y lo dice */
 function etapaFicha(t){const k=KMAP[t.id]?kEtapaN(KMAP[t.id]):null,i=k?ET.indexOf(k.n):-1;
-  return i>=0?{et:i,de:'K-means · pasarela × búsqueda'}:{et:t.et,de:'estimada · catálogo sintético'};}
+  return i>=0?{et:i,de:'● K-means'}:{et:t.et,de:'◇ estimada'};}
 function pista(et,de){
   const d=document.createElement('div');d.className='track';
   const pct=et/(ET.length-1)*100;
@@ -1687,7 +1686,6 @@ function pintarRadar(){
     const ya=lista.filter(t=>señalTend(t).estado==='salir'),sigue=lista.filter(t=>señalTend(t).estado!=='salir');
     [['Ya pasó',ya],['Todavía vigente',sigue]].forEach(([n,l])=>{if(!l.length)return;g.insertAdjacentHTML('beforeend',`<h2 class="rgrupo">${n}</h2>`);l.forEach(t=>g.appendChild(ficha(t)));});
   }
-  $('#cnt').textContent=`${lista.length} de ${T.length} atributos`;
 }
 
 /* ---------- detalle ---------- */
@@ -1814,12 +1812,12 @@ function señal(at,perfil){
   const extra={d,cuota:at.cuota!=null?at.cuota:null,num,fuente,interpretado:!!at.interpretado,etapa:et&&et.n};
   if(et&&et.et!=null){
     let [a,por]=CONSEJO[perfil.cliente][et.et];if(perfil.decision==='disenar'&&a==='Esperar'){a='Explorar';por=EXPLORAR;}
-    return señalDe(SEN_ACC[a],a,`Etapa ${et.n.toLowerCase()} (K-means)${num?` · ${num}, ${fuente}`:''}. ${por}`,extra);
+    return señalDe(SEN_ACC[a],a,`Etapa ${et.n.toLowerCase()} (K-means)${num?` · ${num}, ${fuente}`:''}. ${por}`,Object.assign(extra,{corto:por}));
   }
   if(d!=null){const e=d>umbral?'entrar':d<-umbral?'salir':'esperar';
     if(at.interpretado)return señalDe(e,SEN_TEND[e],`${num}, ${fuente}. Lo leyó CLIP: describe, no recomienda.`,Object.assign(extra,{cls:'tend t-'+e}));
     const a=e==='entrar'?'Entrar':e==='salir'?'Salir':perfil.decision==='disenar'?'Explorar':'Esperar';
-    return señalDe(e,a,`Sin etapa en el K-means: decide si gana o pierde terreno afuera (${SEN_TEND[e].toLowerCase()}). ${num}, ${fuente}.`,extra);}
+    return señalDe(e,a,`Sin etapa en el K-means: decide si gana o pierde terreno afuera (${SEN_TEND[e].toLowerCase()}). ${num}, ${fuente}.`,Object.assign(extra,{corto:`${SEN_TEND[e]} afuera: ${num} en la búsqueda, 2022→2024.`}));}
   return señalDe('sin-dato',SIN_DATO,'No tenemos serie medida para esto: se puede explorar, pero CICLO no lo recomienda.',extra);
 }
 /* la tendencia, para lo que describe y no decide (El ciclo, «qué gana y qué pierde terreno»): tinta, nunca semáforo */
@@ -1840,9 +1838,7 @@ function abrirDetalle(id){
     <button class="back" id="volver">← Volver a Tendencias</button>
     <div class="vhead">
       <div>
-        <span class="lbl">01 · Tendencias · ${t.k} · ${t.fuente}</span>
         <h1>${t.n}</h1>
-        <p class="sub">${t.med}.</p>
         ${dzEnFicha(t)}
       </div>
     </div>
@@ -1850,39 +1846,26 @@ function abrirDetalle(id){
     <div class="dcols">
       <div>
         <div class="bigsw">${t.sw.map(c=>`<i style="background:${COL[c]}"><span>${c}</span></i>`).join('')}</div>
-        <dl>
-          ${kEtapa(t.id)}
-          <dt>Catálogo</dt><dd>${ET[t.et]} <span class="tag demo">estimada · sintético</span></dd>
-          <dt>Prendas</dt><dd class="mono">${t.prod}</dd>
-          ${t.cols?`<dt>Colores</dt><dd class="mono">${t.cols} de 12</dd>`:''}
-          <dt>Fuente</dt><dd>${t.fuente} <span class="tag real">medido</span></dd>
-          <dt>Perfil</dt><dd>${DECISION[decision].n} · ${CLI}</dd>
-        </dl>
+        ${kEtapa(t.id)?`<dl>${kEtapa(t.id)}</dl>`:''}
         <div class="ai">
-          <div class="h"><span class="lbl" style="color:var(--accent)">Lectura</span><span class="tag ia2">interpretación · escrita por el equipo</span></div>
-          <p>${t.lect}</p>
           <div class="rec">
             <div class="a serif ${sg.cls}"><span aria-hidden="true">${sg.icono}</span> ${sg.estado==='sin-dato'?'Sin recomendación':sg.palabra}</div>
-            <div class="t">Recomendación · ${tuQuien()} · ${CLI}</div>
-            <div class="d">${sg.porque}</div>
+            <div class="d">${sg.corto||sg.porque}</div>
           </div>
+          <details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>${sg.porque}</p>
+            <p>${DECISION[decision].n} · ${CLI}.</p>
+            <p><b>Del catálogo</b> (${t.fuente}, ◇ sintético): ${t.med}. Etapa estimada: ${ET[t.et].toLowerCase()}. ${t.prod} prendas${t.cols?`, ${t.cols} de 12 colores`:''}.</p>
+            <p><b>Lectura del equipo</b> (◇ interpretación): ${t.lect}</p></div></details>
         </div>
       </div>
       <div>
         <span class="lbl" id="ltlbl">Recorrido en el tiempo · 2018–2022</span>
         <figure style="margin-top:12px" id="ltfig"><div id="lt"></div>
-          <figcaption id="ltcap"></figcaption></figure>
+          <details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p id="ltcap"></p></div></details></figure>
         <span class="lbl" style="display:block;margin-top:26px" id="cclbl">Recorrido por las capas del mercado</span>
         <div class="leg" id="dleg" style="margin-top:12px"></div>
         <figure style="margin-top:4px"><div id="casc"></div>
-          <figcaption id="ccap"></figcaption></figure>
-        <div class="attrs">
-          <div><div class="k">Color</div><div class="v serif">${t.tipo==='color'?t.sw.length+' tonos':'—'}</div><div class="n">${t.tipo==='color'?'paleta medida':'no aplica'}</div></div>
-          <div><div class="k">Proporción</div><div class="v serif">${t.tipo==='fit'?t.n:'—'}</div><div class="n">${t.tipo==='fit'?t.prod+' prendas':'no aplica'}</div></div>
-          <div><div class="k">Material</div><div class="v serif">${t.tipo==='material'?t.n:'—'}</div><div class="n">${t.tipo==='material'?t.prod+' prendas':'no aplica'}</div></div>
-          <div><div class="k">Precio</div><div class="v serif">medio</div><div class="n">sin dato por atributo</div></div>
-        </div>
-        <p class="note" id="dnote"></p>
+          <details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p id="ccap"></p><p id="dnote"></p></div></details></figure>
       </div>
     </div>`;
   const lt=lineaTiempo(t.id);
@@ -2330,7 +2313,7 @@ function dzPasCalzado(id){
     ${f(v[v.length-1])} % de los looks en ${Y[Y.length-1]} · ${f(v[0])} % en ${Y[0]} · máximo ${f(mx)} % en ${Y[im]}. Lee ${L.lee}.</span>`;
 }
 function dzPanel(titulo,sub,items,nota,omitidos){
-  return `<div class="dzhead"><h2 class="dzh">${titulo}</h2></div>${sub?`<p class="dzsub">${sub}</p>`:''}
+  return `<div class="dzhead"><h2 class="dzh">${titulo}</h2></div>${sub?`<details class="qm izq dzqm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>${sub}</p></div></details>`:''}
     <div class="dzgrid">${items.map(dzTarjeta).join('')}</div>${omitidos?`<p class="note dznota">${omitidos}</p>`:''}${nota?`<p class="note dznota">${nota}</p>`:''}`;
 }
 const dzOrden=(a,b)=>({entrar:0,esperar:1,salir:2,'sin-dato':3}[a.s.estado]-{entrar:0,esperar:1,salir:2,'sin-dato':3}[b.s.estado]);
@@ -2403,8 +2386,8 @@ function pintarDisenar(){
   if(dz.paso==='prenda'){
     const L=TAX.prendas.filter(dzVisible).filter(p=>dzCompat(p.id,null)).map(p=>{const tv=p.tipos.filter(dzVisible),con=tv.filter(x=>dzSeñal(x).estado!=='sin-dato').length;
       return {id:p.id,n:p.n,d:p.d,vis:dzSil(p.sil,p.n),s:señalDe('sin-dato','',''),attr:'data-pr',on:dz.prenda===p.id,dato:''};});
-    C.innerHTML=`<div class="dzhead"><h2 class="dzh">¿Qué prenda?</h2></div><p class="dzsub">El jean no es una prenda: es un pantalón de denim, y lo elegís en material.</p>
-      <div class="dzgrid">${L.map(x=>`<button class="dzc dzc-prenda${x.on?' on':''}" type="button" data-pr="${x.id}"><span class="dzimg">${x.vis}</span><span class="dzb"><span class="dzn">${x.n}</span><span class="dzdef">${x.d}</span>
+    C.innerHTML=`<div class="dzhead"><h2 class="dzh">¿Qué prenda?</h2></div><details class="qm izq dzqm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>El jean no es una prenda: es un pantalón de denim, y lo elegís en material.</p></div></details>
+      <div class="dzgrid">${L.map(x=>`<button class="dzc dzc-prenda${x.on?' on':''}" type="button" data-pr="${x.id}"><span class="dzimg">${x.vis}</span><span class="dzb"><span class="dzn">${x.n}</span>
         </span></span></button>`).join('')}</div>`;
     enlazar('data-pr','prenda');
   }else if(dz.paso==='tipo'){
@@ -2430,7 +2413,7 @@ function pintarDisenar(){
   }else if(dz.paso==='material'){
     const ok=dzMateriales(),todos=TAX.materiales.flatMap(g=>g.items).length;
     C.innerHTML=`<div class="dzhead"><h2 class="dzh">¿De qué material?</h2></div>
-      <p class="dzsub">Sólo los que se usan en ${dzNombreTipo().toLowerCase()}. Cuando el material es denim, la prenda se llama jean.</p>`+
+      <details class="qm izq dzqm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Sólo los que se usan en ${dzNombreTipo().toLowerCase()}. Cuando el material es denim, la prenda se llama jean.</p></div></details>`+
       TAX.materiales.map(g=>{const its=g.items.filter(i=>ok.includes(i.id)&&dzFijoMatOk(g.grupo));if(!its.length)return '';
         return `<h3 class="dzh3">${g.grupo}</h3><div class="dzgrid">${its.map(i=>{const s=dzSeñal(i);return dzTarjeta({id:i.id,n:i.n,en:i.en,d:i.d,vis:dzTela(i.tex,i.color||'#D9CFC4'),s,dato:s.num?`${s.num} afuera`:'',attr:'data-ma',on:dz.material===i.id});}).join('')}</div>`;}).join('')+
       `<p class="note dznota">Las texturas están dibujadas, no fotografiadas: las fotos de tela que tenemos no tienen licencia. Con serie medida sólo hay cuero y gamuza; el resto se elige por diseño.</p>`+saltear('material');
@@ -2439,7 +2422,7 @@ function pintarDisenar(){
     const {L:cs,de,n}=dzColores(),mx=Math.max(1,...cs.filter(c=>c.medido).map(c=>c.ahora));
     const items=cs.map(c=>({c,s:dzSeñalColor(c)})).sort((a,b)=>dzOrden(a,b)||(b.c.ahora||b.s.ahora||0)-(a.c.ahora||a.s.ahora||0));
     C.innerHTML=`<div class="dzhead"><h2 class="dzh">¿De qué color?</h2></div>
-      <p class="dzsub">${de?`Qué parte de ${de} de la pasarela 2022–23 tuvo cada color, y cuánto cambió desde 2018–19.`:'Para esta prenda no hay lectura de color propia: cada color muestra lo que pasa con él en toda la pasarela.'}</p>
+      <details class="qm izq dzqm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>${de?`Qué parte de ${de} de la pasarela 2022–23 tuvo cada color, y cuánto cambió desde 2018–19.`:'Para esta prenda no hay lectura de color propia: cada color muestra lo que pasa con él en toda la pasarela.'}</p></div></details>
       <div class="dzcol">${items.map(({c,s})=>`<button type="button" class="dzcr ${s.cls}${dz.color===c.id?' on':''}" data-col="${c.id}"><span class="sw" style="background:${c.hex}"></span><span class="cn">${c.n} ${senBadge(s)} ${dzProc(s)}${s.proc==='prestado'?`<span class="dzq" style="display:block">Mostrando: ${s.de}</span>`:''}</span>
         ${c.medido||s.ahora!=null?`<span class="cb"><i style="width:${Math.min(100,Math.round((c.ahora??s.ahora)/mx*100))}%"></i></span><span class="cp">${(c.ahora??s.ahora).toFixed(0)} %</span><span class="cd">${s.num}</span>`:'<span class="cb vacio"></span><span class="cp">—</span><span class="cd">sin dato</span>'}</button>`).join('')}</div>
       ${de?`<p class="note dznota"><span class="tag ia2">interpretación · CLIP</span> El color de cada look lo leyó CLIP sobre ${n.ahora} looks de 2022–23 y ${n.antes} de 2018–19. Es pasarela, no venta.</p>`:''}`+saltear('color');
@@ -2447,7 +2430,7 @@ function pintarDisenar(){
   }else if(dz.paso==='estampa'){
     const ok=dzEstampas(),m=dzMat(dz.material),todas=TAX.estampas.flatMap(f=>f.items).length;
     C.innerHTML=`<div class="dzhead"><h2 class="dzh">¿Con qué estampa?</h2></div>
-      <p class="dzsub">${ok.length<todas?`No se muestran ${todas-ok.length} estampas que no se producen en ${m?m.n.toLowerCase():t.n.toLowerCase()}.`:''} Las muestras van en tu color.</p>`+
+      <details class="qm izq dzqm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>${ok.length<todas?`No se muestran ${todas-ok.length} estampas que no se producen en ${m?m.n.toLowerCase():t.n.toLowerCase()}.`:''} Las muestras van en tu color.</p></div></details>`+
       TAX.estampas.map(f=>{const its=f.items.filter(i=>ok.includes(i.id));if(!its.length)return '';
         return `<h3 class="dzh3">${f.familia}</h3><div class="dzgrid">${its.map(i=>{const s=i.id==='liso'?señalDe('sin-dato','Sin estampa','',{liso:true}):dzSeñal(i);
           return dzTarjeta({id:i.id,n:i.n,d:i.d,vis:dzTela(i.sil,hex||'#D9CFC4'),s,dato:s.num?`${s.num} afuera`:'',attr:'data-es',on:dz.estampa===i.id});}).join('')}</div>`;}).join('')+
@@ -2536,7 +2519,7 @@ function clipPintar(R,mismo){
   R.atr.slice(0,3).forEach(a=>{
     const et=kEtapaN(a.n),v=a.validacion,tg=CLIP_TAG[a.n];
     let mt=et?`Etapa según el K-means: <b>${et.n}</b>`:'Sin etapa en el modelo';
-    mt+=v?` · acierta en el top 3 el ${Math.round(v.top3*100)} % de las veces (AUC ${v.auc.toFixed(2).replace('.',',')})`:' · <b>sin validar</b>: Vogue no lo etiqueta';
+    mt+=v?'':' · sin validar: Vogue no lo etiqueta'; // cuánto acierta cada uno está en el «?» de «Cómo se validó», una sola vez
     if(tg){const c=conEtiqueta(tg),b=baseEtiqueta(tg);mt+=`<br>${c} de los ${K} looks más parecidos tienen la etiqueta «${idx.etiquetas[tg].join(' / ')}» en Vogue (en todo el índice, ${(b*K).toFixed(1).replace('.',',')} de cada ${K})`;}
     const d=document.createElement('div');d.className='qrow2';
     d.innerHTML=`<span class="nm">${a.n}</span><span class="pc">${a.p.toFixed(2).replace('.',',')}</span><div class="meter"><i style="width:${Math.round(a.p*100)}%"></i></div><div class="mt">${mt}</div>`;
@@ -2664,7 +2647,7 @@ function pintarCiclos(){
     <span class="cn serif">${c.o.n.split(' /')[0]}</span><span class="cf">${c.f}</span>
     <span class="cm"><span><b>${c.ultimo}${c.ultimo===2010?'*':''}</b>último pico</span><span><b>${c.anios===0?'ahora':c.anios+' año'+(c.anios>1?'s':'')}</b>desde el pico</span><span><b>${c.ciclo?c.ciclo+' años':'—'}</b>entre picos</span><span>${senBadge(c.sg)}</span></span></button>`).join('')+
     (L.length>CICLO_CORTO?`<button type="button" class="kbtn ghost ciclomas" aria-expanded="${cicloTodos}">${cicloTodos?'Mostrar menos':`Ver los ${L.length} atributos`}</button>`:'')+
-    `<p class="note">Búsqueda mundial frente a las otras búsquedas de moda, 2010–2024 (2025 y 2026 tienen el salto de medición de Google) <span class="proc">● medido</span>. Un pico es un máximo que se despega al menos 15 puntos de lo que lo rodea. Sube o baja: 2022→2024. *2010 es donde empieza la serie corregida: el pico pudo ser antes.</p>`;
+    `<details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Búsqueda mundial frente a las otras búsquedas de moda, 2010–2024 (2025 y 2026 tienen el salto de medición de Google), ● medido. Un pico es un máximo que se despega al menos 15 puntos de lo que lo rodea. Sube o baja: 2022→2024. *2010 es donde empieza la serie corregida: el pico pudo ser antes.</p></div></details>`;
   $$('#ciclos [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;cicloTodos=false;pintarCiclos();});
   $('#ciclos').classList.toggle('corto',!cicloTodos);
   const mas=$('#ciclos .ciclomas');if(mas)mas.onclick=()=>{cicloTodos=!cicloTodos;pintarCiclos();if(!cicloTodos)$('#ciclos').scrollIntoView({behavior:'instant'});};
@@ -2684,8 +2667,8 @@ function llegoAca(o){
 function pintarTerreno(){
   const L=REC.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d),mx=Math.max(...L.map(x=>Math.abs(x.d)));
   const fila=x=>{const sg=tendencia(x.d);return `<button class="tfila ${sg.cls}" data-r="${x.o.id}" type="button" title="${sg.palabra}, búsqueda mundial 2022→2024"><span class="tn">${x.o.n}</span><span class="tb"><i style="width:${Math.round(Math.abs(x.d)/mx*100)}%;background:var(--sen)"></i></span><span class="tv">${x.d>0?'+':''}${Math.round(x.d)}</span></button>`;};
-  $('#terreno').innerHTML=`<div class="th"><span class="lbl">Qué gana y qué pierde terreno afuera</span><span class="tag real">medido</span></div>
-    <p class="tsub">Búsqueda mundial de 2022 a 2024, comparada con las otras búsquedas de moda. Tocá uno para ver su recorrido y diseñar con él.</p>
+  $('#terreno').innerHTML=`<div class="th"><span class="lbl">Qué gana y qué pierde terreno afuera</span><span class="tag real">● medido</span></div>
+    <details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Búsqueda mundial de 2022 a 2024, comparada con las otras búsquedas de moda: cuántos puntos ganó o perdió cada atributo.</p></div></details>
     <div class="tcols"><div><div class="tt">Gana terreno</div>${L.filter(x=>x.d>2).slice(0,5).map(fila).join('')}</div>
     <div><div class="tt">Pierde terreno</div>${L.filter(x=>x.d<-2).reverse().slice(0,5).map(fila).join('')}</div></div>`;
   $$('#terreno .tfila').forEach(b=>b.addEventListener('click',()=>{recSel=b.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();}));
@@ -2697,8 +2680,9 @@ function pintarDecision(o){
   const [acc,arg]=et&&et.et!=null?consejo(cliente,et.et):['—','Este atributo no entra al K-means, así que no tiene etapa ni recomendación. Mirá cómo se mueve afuera en el gráfico.'];
   const s0=et&&et.et!=null?señal({grupo:o.n,rec:o.id}):señalDe('sin-dato','Sin recomendación',arg);
   const ter=d==null?'sin dato':d>5?`gana terreno (+${Math.round(d)})`:d<-5?`pierde terreno (${Math.round(d)})`:`estable (${d>0?'+':''}${Math.round(d)})`;
-  $('#rdecide').innerHTML=`<div class="dacc"><div class="h"><span class="lbl">Para vos · ${P.n} · ${DECISION[decision].n.toLowerCase()}</span><span class="tag ia2">recomendación · interpretación</span></div>
-      <div class="dline"><span class="a serif ${s0.cls}"><span class="ico" aria-hidden="true">${s0.icono}</span> ${s0.palabra}</span><p>${s0.estado==='sin-dato'?arg:s0.porque}</p></div>
+  $('#rdecide').innerHTML=`<div class="dacc">
+      <div class="dline"><span class="a serif ${s0.cls}"><span class="ico" aria-hidden="true">${s0.icono}</span> ${s0.palabra}</span><p>${s0.estado==='sin-dato'?arg:(s0.corto||s0.porque)}</p></div>
+      ${s0.estado==='sin-dato'?'':`<details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>${s0.porque}</p><p>${P.n} · ${DECISION[decision].n.toLowerCase()}. La regla es fija, de CICLO: la etapa del K-means y tu perfil.</p></div></details>`}
       ${vivoDatos(o)?`<div class="vivo" id="rvivo"></div>`:''}</div>
     <dl class="dfacts"><dt>Etapa</dt><dd>${et?et.n:'sin etapa'}${et?' <span class="mono" style="color:var(--ink-3);font-size:10.5px">K-means</span>':''}</dd>
       <dt>Afuera, 2022→2024</dt><dd>${ter}</dd>
@@ -2914,7 +2898,8 @@ function asPintar(){
   $('#asclip').innerHTML=as.clip.map((c,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar"><span>leí</span>${escH(c.n)} <span class="aspp">${c.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('');
   $$('#asclip [data-x]').forEach(b=>b.onclick=()=>{as.clip.splice(+b.dataset.x,1);asPintar();});
   const ch=$('#aschat');ch.innerHTML='';
-  if(!as.hist.length)ch.innerHTML=`<div class="asa"><div class="h"><span class="tag ia2">interpretado · LLM</span></div><p>${D.chips.length?`Estás armando ${escH(D.nombre)}. Preguntame si conviene, qué cambiar o qué se le parece.`:'Armá algo en Diseñar o subí una foto, y preguntame.'} Cada respuesta trae el dato que la sostiene.</p></div>`;
+  // el globo vacío no es del modelo: no lleva la marca de interpretado, y sin diseño no repite la tarjeta «Tu diseño»
+  if(!as.hist.length)ch.innerHTML=D.chips.length?`<div class="asa"><p>Estás armando ${escH(D.nombre)}. Preguntame si conviene, qué cambiar o qué se le parece.</p></div>`:'';
   as.hist.forEach(m=>{
     const d=document.createElement('div');
     if(m.role==='user'){d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}

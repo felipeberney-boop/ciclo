@@ -274,7 +274,7 @@ con Claude Code, y la de Abril se generó con IA de imágenes. *Si hay bocetos a
 | El semáforo | Color por tendencia; salmón para la IA | Tres correcciones: el color es sólo la señal, la tendencia en negro, siempre con la palabra | El color tiene que decir una sola cosa (20/10, 26/10, 27/10) |
 | La portada | Un menú de texto | Afuera: la app abre en las preguntas | No llevaba a ninguna decisión (26/10) |
 | La ramificación | Tres variantes; recomendó «el compromiso» | Esa, con «Si algo ya pasó» en vez de «Si algo sigue vigente» | Más corta, y dice que mira hacia atrás (04/11) |
-| La pirueta | Felipe propuso dos ideas; Claude recomendó «Adiviná vos» y sumar al LLM como jugador | «Adiviná vos», sin el LLM | Para jugar, el LLM tendría que ver la serie, y en CICLO no ve filas de datos (04/11) |
+| La pirueta | Felipe propuso dos ideas; Claude recomendó «Adiviná vos» y sumar al LLM como jugador | «Adiviná vos». El LLM lo sacó Claude al construirla **[a confirmar por Felipe]** | Para jugar, el LLM tendría que ver la serie, y en CICLO no ve filas de datos (04/11) |
 | Las pantallas de «Más» | El modelo a Método, Retornos en El ciclo, Marcas fuera del menú | Pendiente | — |
 
 **Qué modelos usamos.**

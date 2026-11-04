@@ -1016,6 +1016,8 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app :is(button.gcard > span.gt,span.cm > span > b,div.ptop > h3.pname.serif,div.kcard > h3.kh,div.khead > h3.kh,section.view > h3.kbig,button.ciclo.tend > span.cn.serif,section.view > h2.h3,section.view > h3.h3,div > div.m.serif,section.view > h3,div > div.nm.serif,details.ascard.asact > summary,section.metdatos > h2,div.mdcol > h3,div.mdesq > div.mdflecha,div.metgate > h2,div.metgate > h3):not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.2!important;letter-spacing:-.015em!important}
 .app :is(div.a.serif > span,div.rec > div.a.serif,div > div.v.serif,span.a.serif > span.ico,div.dline > span.a.serif,div > p.n,label.drop > div.ic,div.mdclave > strong):not(#z){font-size:var(--t-dat)!important;font-weight:600!important;line-height:1.1!important;letter-spacing:-.02em!important}
 .app :is(div.gate > h1,div > h1,div.dzhead > h2.dzh):not(#z){font-size:var(--t-tit)!important;font-weight:600!important;line-height:1.08!important;letter-spacing:-.025em!important}
+/* las pantallas que salieron de «Más» se abren desde donde se usan (04/11) */
+.app p.irmas:not(#z){font-size:var(--t-cue)!important;font-weight:400!important;margin:18px 0 0}
 </style>
 
 <div class="app">
@@ -1035,9 +1037,6 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
       <span class="navgrupo" id="navgrupo" hidden>
         <a data-v="adivina"><b>Adiviná vos</b><span>Dibujá cómo sigue una curva real y compará con lo que dice el modelo.</span><i>65 series · 2020–2024</i><em>Abrir →</em></a>
-        <a data-v="etapas"><b>El modelo</b><span>Agrupa los atributos por cómo se mueven y lee qué etapa es cada grupo.</span><i>17 atributos · K-means, k = 4</i><em>Abrir →</em></a>
-        <a data-v="marcas"><b>Marcas</b><span>Las marcas más deseadas, trimestre por trimestre, desde 2018.</span><i>34 trimestres · Lyst Index</i><em>Abrir →</em></a>
-        <a data-v="retornos"><b>Retornos</b><span>Qué atributos picaron, se fueron y volvieron, y cada cuánto.</span><i>2010–2024 · Google Trends</i><em>Abrir →</em></a>
         <a data-v="racional"><b>Método</b><span>Qué está medido y qué es interpretación, fuente por fuente.</span><i>27 capas y fuentes</i><em>Abrir →</em></a>
       </span>
       <button type="button" class="navperfil" id="navperfil">Cambiar perfil</button>
@@ -1199,6 +1198,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         <div>
           <h1>¿Cuándo estuvo de moda, y cuánto tardó en volver?</h1>
           <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Para cada atributo: su último pico en la búsqueda mundial, si hoy sube o baja, cuántos años pasaron y, cuando la serie tiene dos picos, cada cuánto vuelve.</p></div></details>
+          <p class="irmas"><a href="#retornos" data-ir="retornos">Qué volvió y cada cuánto →</a></p>
         </div>
       </div>
       <hr class="rule">
@@ -1469,18 +1469,18 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
             <div class="mdc"><b>Pasarela <span>hasta 2023</span></b><small>Vogue Runway · 1,28 M de looks</small><p>Cuánto aparece en los desfiles. CLIP lee cada look.</p></div>
             <div class="mdc"><b>Búsqueda <span>2004–2024</span></b><small>Google Trends · mundo y Argentina</small><p>Cuánto lo busca la gente.</p></div>
             <div class="mdc fuera"><b>Redes <span>2012–2025</span></b><small>Reddit · r/femalefashionadvice</small><p>Confirma lo que sube. No entra al modelo.</p></div>
-            <div class="mdc fuera"><b>Venta y marcas <span>varía</span></b><small>H&amp;M · Amazon · Google Shopping · Lyst</small><p>Valida después y da contexto. No entra al modelo.</p></div>
+            <div class="mdc fuera"><b>Venta y marcas <span>varía</span></b><small>H&amp;M · Amazon · Google Shopping · Lyst</small><p>Valida después y da contexto. No entra al modelo. <a href="#marcas" data-ir="marcas">Ver las marcas →</a></p></div>
           </div>
           <div class="mdflecha" aria-hidden="true">→</div>
           <div class="mdcol"><h3>Se cruzan por</h3>
             <div class="mdclave"><strong>atributo × año</strong><small>«floral» en 2019, en cada fuente</small></div>
-            <div class="mdc"><b>K-means</b><p>17 atributos · 4 rasgos: nivel y momento de pasarela y de búsqueda, hasta 2024 · 4 grupos.</p></div>
+            <div class="mdc"><b>K-means</b><p>17 atributos · 4 rasgos: nivel y momento de pasarela y de búsqueda, hasta 2024 · 4 grupos. <a href="#etapas" data-ir="etapas">Ver el modelo →</a></p></div>
           </div>
           <div class="mdflecha" aria-hidden="true">→</div>
           <div class="mdcol"><h3>Qué sale</h3>
             <div class="mdc"><b>La etapa</b><p>En qué punto del ciclo está: un lugar en la pista, no un color.</p></div>
             <div class="mdc"><b>La señal</b><p>Entrar, Esperar o Salir, según la etapa y tu perfil.</p></div>
-            <div class="mdc"><b>El cono</b><p>Hasta tu ventana, con el error medido a esa distancia: de ±14 a ±26 puntos. No es un pronóstico. <a href="#adivina" data-adv>Probalo vos →</a></p></div>
+            <div class="mdc"><b>El cono</b><p>Hasta tu ventana, con el error medido a esa distancia: de ±14 a ±26 puntos. No es un pronóstico. <a href="#adivina" data-ir="adivina">Probalo vos →</a></p></div>
           </div>
         </div>
         <p class="mdnota">La IA lee, no decide: CLIP lee las imágenes y el chat sólo ve métricas ya calculadas, nunca una fila de datos. Borde gris: la fuente no entra al modelo.</p>
@@ -3396,7 +3396,8 @@ function mostrar(v,keepNav){
   });
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
   $('#navgrupo').hidden=true;$('#navmas').setAttribute('aria-expanded','false');
-  $('#navmas').classList.toggle('on',['etapas','marcas','retornos','racional','adivina'].includes(v));cerrarMenu();
+  $('#navmas').classList.toggle('on',['etapas','marcas','racional','adivina'].includes(v));cerrarMenu();
+  if(v==='retornos')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='recorridos'?'page':'false'));
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='asistente')asAbrir();
@@ -3654,7 +3655,7 @@ function advFinal(){const T=advTotal(),R=adv.res,gv=R.filter(r=>r.vos<r.m-.5).le
     <div class="advbar"><button type="button" class="kbtn" id="advotra">Jugar otra vez</button><button type="button" class="gvolver" id="advtend">Ver en qué etapa está cada atributo →</button></div></div>`;
   $('#advotra').onclick=()=>{adv=null;pintarAdivina();};$('#advtend').onclick=()=>mostrar('radar');
 }
-document.addEventListener('click',e=>{const a=e.target.closest('[data-adv]');if(a){e.preventDefault();mostrar('adivina');}});
+document.addEventListener('click',e=>{const a=e.target.closest('[data-ir]');if(a){e.preventDefault();mostrar(a.dataset.ir);}});
 /* cinco estilos (04/11): un gráfico se dibuja en las unidades de su viewBox y después se escala, así que un rótulo de
    9,5 se veía de 8 o de 16 según el ancho. Esto deja cada texto de SVG en 13 px de pantalla, en 400 */
 function etiquetasSvg(){

@@ -225,6 +225,11 @@ aclara pasa a un «?» que se abre al tocarlo; lo que sobra se fue. La señal se
 La pirueta de la Entrega 4: una curva real hasta 2019, la persona dibuja cómo sigue y después ve lo que pasó, lo que
 decía el cono de CICLO y lo que daba repetir el último valor. En las 65 series, el último valor gana 45 a 18.
 
+## v1.21 · 04/11/2026 · «Más», con dos pantallas
+
+El menú «Más» queda con Adiviná vos y Método. El modelo y Marcas se abren desde Método, y Retornos desde El ciclo. Los
+links de antes siguen andando.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).
@@ -249,8 +254,6 @@ prototipo navegable es la app publicada.
 ## Lo que falta para la Entrega 4 (17/11)
 
 - Corregir las pantallas en papel en clase y pasar las correcciones a la app.
-- Decidir qué pasa con las pantallas de «Más»: El modelo a Método, Retornos dentro de El ciclo, Marcas fuera del menú
-  (propuesta en `decisiones.md`, 04/11).
 - Revisar el racional (`entregas/entrega_4/racional.md`, en borrador) y lo marcado **[a confirmar]**.
 - Probar en vivo los prompts nuevos (`prompt_lectura_recomendacion_v5.md`, `prompt_asistente_v6.md`).
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado

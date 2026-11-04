@@ -1721,3 +1721,25 @@ construcción: muestra el límite del modelo, no una capacidad.
   cono (pasa una de cada tres veces y se muestra igual).
 - *La decisión.* Las dos ideas y la elección son de Felipe; la recomendación de no sumar al LLM es de Claude, por la
   regla del proyecto.
+
+## 2026-11-04 · «Más» se achica: cada pantalla, donde se usa
+
+**Quién decidió.** La propuesta es de Claude (en el borrador del racional y en la lista de pendientes). Felipe la delegó:
+«punto 3 hace lo que te parezca».
+
+**Qué cambió.** El menú «Más» tenía cinco pantallas de igual peso, y tres eran detalle de otra. Ahora tiene dos:
+Adiviná vos y Método. Las otras tres no se borran: se abren desde la pantalla de la que dependen.
+- **El modelo** (el K-means) se abre desde Método, en el esquema de datos («Ver el modelo →», en la tarjeta del K-means).
+- **Marcas** (Lyst) se abre desde Método, en la fuente «Venta y marcas» («Ver las marcas →»). Es contexto, no entra al
+  modelo, y el menú la ponía a la altura de Tendencias.
+- **Retornos** se abre desde El ciclo, debajo del título («Qué volvió y cada cuánto →»), y mientras está abierta el menú
+  marca El ciclo.
+
+**Por qué así y no fundirlas.** Convertir Retornos en un filtro de El ciclo, como decía la propuesta, obligaba a
+reescribir las dos vistas a dos semanas de la entrega. Un link desde donde se usa logra lo mismo para quien navega (el
+menú deja de ofrecer cinco cosas iguales) sin tocar los cálculos. Los links de antes (`#etapas`, `#marcas`,
+`#retornos`) siguen abriendo cada vista.
+
+**Cómo se probó.** Playwright a 1400 y 393 px: «Más» lista dos pantallas, cada link nuevo abre su vista, el menú marca
+la de origen y los links directos andan. Sin errores de consola. Versión anterior en
+`diseno/prototipos/versiones_de_la_app/app_2026-11-04_1f33b4d_antes_de_ordenar_mas.html`.

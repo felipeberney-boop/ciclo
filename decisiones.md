@@ -1743,3 +1743,25 @@ menú deja de ofrecer cinco cosas iguales) sin tocar los cálculos. Los links de
 **Cómo se probó.** Playwright a 1400 y 393 px: «Más» lista dos pantallas, cada link nuevo abre su vista, el menú marca
 la de origen y los links directos andan. Sin errores de consola. Versión anterior en
 `diseno/prototipos/versiones_de_la_app/app_2026-11-04_1f33b4d_antes_de_ordenar_mas.html`.
+
+## 2026-11-04 · El racional: quién decidió qué, con las palabras de Felipe
+
+**De dónde sale la tabla de autoría.** Felipe pidió buscarlo en las conversaciones: «vos tenes nuestro chat de todo en
+claude sabes perfectamente que decidi yo y que vos». Se leyeron los 244 mensajes suyos en Claude Code, del 13/10 al
+04/11, y las respuestas de Claude. Cada fila cita sus palabras textuales, con los errores de tipeo, y se verificaron una
+por una contra los mensajes. Antes del 13/10 (el chat de Claude y la otra copia del repositorio) no hay registro en el
+repo, y el racional lo dice.
+
+**Lo que corrigió la lectura.** El borrador recomendaba sumar dos o tres entrevistas, pero el 27/10 Felipe las había
+descartado («no me gusta esto de las entrevistas es un quilombo») y la prueba con Reddit las reemplazó. Ahora el
+racional dice que no hay entrevistas y por qué. Dos filas del borrador estaban mal atribuidas: el calzado no fue «la IA
+propuso medirlo como la ropa» (Felipe fue y vino, y está citado), y la portada no la sacó una propuesta de la IA (salió
+de su consigna del 26/10).
+
+**Los bocetos previos.** Según Felipe, son las primeras entregas en Figma. Se exportaron cinco láminas de la Entrega 1
+(25/08) y tres pantallas del prototipo de la Entrega 2 (05/10) a `entregas/entrega_4/bocetos_previos/`. El racional
+aclara lo que son: la Entrega 1 son láminas de ideas, no pantallas, y el prototipo de la Entrega 2 ya convivía con la IA
+(el sitio de esa entrega era un artifact de Claude). Los wireframes esquemáticos del 05/10 no quedaron en el Figma.
+
+**Los prompts v5 y v6.** Siguen sin probar en vivo: no hay una clave de Groq a mano y no se pide. Cambian una sola
+línea (quién pregunta) respecto de las versiones probadas, así que el riesgo es bajo, y queda en la lista de lo que falta.

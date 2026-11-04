@@ -254,7 +254,8 @@ prototipo navegable es la app publicada.
 ## Lo que falta para la Entrega 4 (17/11)
 
 - Corregir las pantallas en papel en clase y pasar las correcciones a la app.
-- Revisar el racional (`entregas/entrega_4/racional.md`, en borrador) y lo marcado **[a confirmar]**.
+- Leer el racional (`entregas/entrega_4/racional.md`) antes de entregarlo: la tabla de autoría ya cita las
+  conversaciones, sin nada «a confirmar».
 - Probar en vivo los prompts nuevos (`prompt_lectura_recomendacion_v5.md`, `prompt_asistente_v6.md`).
 - Separar pasarela y venta por género. Vogue y los agregados de H&M no traen esa columna; está declarado
   como límite en la pantalla de Método, no simulado.

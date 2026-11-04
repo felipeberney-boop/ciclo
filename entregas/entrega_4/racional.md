@@ -3,8 +3,9 @@
 **Entrega 4 · 17/11/2026** · *Sistemas generativos e IA para Diseño* (K534/K576), UdeSA · Felipe Berney y Abril Dobler ·
 Docentes: Cristian Reynaga e Iván Fardjoume
 
-> **Borrador del 04/11.** Lo armó Claude a partir de los archivos del repositorio y lo tiene que revisar Felipe. Las
-> marcas **[a confirmar]** son cosas que el repositorio no alcanza a sostener solo.
+> **Versión del 04/11.** La redactó Claude a partir del repositorio y de las conversaciones de trabajo con Felipe en
+> Claude Code (del 13/10 al 04/11). Lo que dice quién decidió qué sale de esas conversaciones y cita las palabras de
+> Felipe tal como las escribió.
 
 App: https://felipeberney-boop.github.io/ciclo/ · Repositorio: https://github.com/felipeberney-boop/ciclo ·
 Figma: https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7
@@ -44,9 +45,11 @@ Una lectura de tendencias que se equivoca no queda en un informe: se convierte e
 6.000 euros según el tamaño de la empresa, según [su página de informes](https://www.tag-walk.com/en/spring-summer-2024-catwalk-report)) y muestran el resultado, no el cálculo. CICLO
 trabaja con datos públicos, dice de dónde sale cada número y dice lo que no puede hacer: no predice.
 
-**[a confirmar] Lo que falta para que este punto sea evidencia del negocio y no sólo del mercado.** No hay en el
-proyecto una conversación con alguien que diseñe para una marca. Dos o tres entrevistas cortas (¿con qué decidiste tu
-última colección? ¿qué mirás? ¿cuánto antes?) cerrarían este punto mejor que cualquier informe.
+**Lo que no hicimos, y por qué.** No hay entrevistas con diseñadores. El 27/10 se armó un jurado ciego (cinco a diez
+personas de diseño ubicando los 17 atributos en su etapa) y se descartó el mismo día: dependía de conseguir gente que no
+controlábamos («no me gusta esto de las entrevistas es un quilombo», Felipe). La validación se hizo con una fuente que el
+modelo no ve, Reddit (punto 2). El costo es que este punto se apoya en cómo trabaja el mercado, con ejemplos públicos, y
+no en conversaciones con quien usaría la app.
 
 ---
 
@@ -184,8 +187,8 @@ decisión de diseño.
 paso a paso, con capturas, en el readme, y en papel, una pantalla por hoja, en
 `entregas/entrega_4/disenos_en_papel/`.
 
-**Por qué la ramificación es así.** La primera versión preguntaba «¿trabajás para una marca o por tu cuenta?». La
-devolución de la Entrega 3 marcó que eso pregunta por el vínculo laboral, no por lo que la persona vino a hacer. Al
+**Por qué la ramificación es así.** La primera versión preguntaba «¿trabajás para una marca o por tu cuenta?», y
+venía de una devolución de la cátedra del 13/10 (`decisiones.md`). La devolución de la Entrega 3 marcó que eso pregunta por el vínculo laboral, no por lo que la persona vino a hacer. Al
 mirar qué cambiaba de verdad en la lectura, el vínculo movía una sola cosa: Esperar pasaba a Explorar porque «no
 comprometés stock». Eso no depende de dónde trabajás, sino de en qué punto de la decisión estás. Se evaluaron tres
 variantes (`decisiones.md`, 04/11):
@@ -231,57 +234,80 @@ que se toca. Nada más tiene color, y por eso la señal se ve.
 
 **Grilla.** El contenido va hasta 1.360 px, con un margen que va de 16 px en el celular a 80 px en la compu, y las
 tarjetas se acomodan solas, de 268 px como mínimo. En el celular todo va en una columna y los gráficos anchos se
-deslizan. **[a confirmar]** No hay una grilla de columnas escrita: es la que resultó del código y hay que decidir si se
-fija.
+deslizan. No es una grilla de columnas fija: es fluida, porque la cantidad de tarjetas cambia con el perfil y con el
+filtro, y una grilla de 12 columnas dejaría huecos. Las hojas en papel usan la misma regla.
 
 ---
 
 ## 7 · El recorte de alcance
 
 Ropa, no calzado ni accesorios (sin señal medible). Leer el presente, no predecir (refutado). Mundo y Argentina sólo en
-la búsqueda (no hay pasarela local). Sin separar por género (las fuentes no lo traen). **[a confirmar]** Si se acepta la
-propuesta del 04/11, también El modelo pasa a Método, Retornos entra en El ciclo y Marcas sale del menú.
+la búsqueda (no hay pasarela local). Sin separar por género (las fuentes no lo traen). Y menos pantallas a la vista: el
+04/11 «Más» pasó de cinco a dos (Adiviná vos y Método); El modelo y Marcas se abren desde Método, y Retornos desde El
+ciclo, donde se usan.
 
 ---
 
 ## 8 · El proceso y el uso de IA
 
-**[a confirmar] Los bocetos previos.** La consigna pide bocetos anteriores a cualquier interacción con la IA. El material
-humano más temprano que tiene el proyecto, con fecha, es la **presentación de la Entrega 1 (25/08/2026)**, en Figma
-Slides (https://www.figma.com/slides/naASEKNbarWxFM4GKZFUuY): la pregunta, la hipótesis, el perfil de usuario, los
-datasets y los referentes (Pinterest, Google Trends, Spotify). No tiene pantallas. Las propuestas de pantalla del
-13/10 (`diseno/prototipos/prototipo_felipe_1/` y `prototipo_abril_1/`) son posteriores a la app, que ya estaba escrita
-con Claude Code, y la de Abril se generó con IA de imágenes. *Si hay bocetos a mano anteriores, van acá con su fecha.*
+**Los bocetos previos.** Lo primero que hizo el grupo está en Figma, con fecha. Las imágenes, exportadas de esos
+archivos, están en `entregas/entrega_4/bocetos_previos/`.
+
+| Fecha | Qué | Dónde |
+|---|---|---|
+| 25/08 | **Entrega 1**: la pregunta, la hipótesis, el usuario, qué medir y dónde entra la IA, y los referentes (Pinterest, Google Trends, Spotify) | [Figma Slides](https://www.figma.com/slides/naASEKNbarWxFM4GKZFUuY) |
+| 05/10 | **Entrega 2**: el prototipo navegable, diez pantallas en escritorio y celular (portada, radar, la ficha, el ciclo, recorridos, marcas, retornos, consulta y método) | [Figma](https://www.figma.com/design/zpHKE7YQLBRXJPcbyrb37I) |
+
+| | |
+|---|---|
+| ![Qué medir, Entrega 1](bocetos_previos/entrega_1_25-08_18_que_medir.png) | ![Dónde entra la IA, Entrega 1](bocetos_previos/entrega_1_25-08_20_donde_entra_la_ia.png) |
+| *25/08 · Qué medir: aparición, evolución, adopción, performance y time lag, en un círculo. Es el antecedente de El ciclo.* | *25/08 · Dónde entra la IA: «interpreta esos patrones y los traduce en una recomendación».* |
+| ![Radar, Entrega 2](bocetos_previos/entrega_2_05-10_radar.png) | ![Perfil de usuario, Entrega 1](bocetos_previos/entrega_1_25-08_06_perfil_de_usuario.png) |
+| *05/10 · El radar del prototipo: tarjetas con la paleta, la serie y la etapa como posición en una pista. Las tres ideas siguen en la app.* | *25/08 · El usuario: alguien que diseña dentro de una marca.* |
+
+Dos aclaraciones, para que no se lea más de lo que es. La Entrega 1 no tiene pantallas: son láminas de ideas. Y el
+prototipo de la Entrega 2 ya convivía con la IA: el sitio de esa entrega era un artifact de Claude
+(`entregas/entrega_2/readme.md`), y según `decisiones.md` (05/10) empezó con wireframes esquemáticos que se reemplazaron
+por pantallas con los datos reales; esos wireframes no quedaron en el Figma.
 
 **Las etapas.**
 
-| Fecha | Qué | Hecho por **[a confirmar]** |
+| Fecha | Qué | Quién |
 |---|---|---|
-| 25/08 | Entrega 1: pregunta, hipótesis, usuario, datasets, referentes | El grupo |
-| 01/09 → 23/09 | La unidad pasa a ser el atributo; los datasets iniciales resultan sintéticos; K-means con k = 4 | El grupo, con Claude en el análisis |
-| 05/10 | Entrega 2: prototipo navegable en Figma y láminas | El grupo; las láminas, con un script |
-| 06/10 → 03/11 | La app, en código, con Claude Code; las devoluciones de la cátedra la cambian tres veces (13/10, 27/10, 03/11) | Decisiones del grupo, código con Claude |
-| 03/11 | Del diseño al código, en un Figma de tres etapas | El grupo, con el MCP de Figma |
-| 04/11 | La entrada por la decisión, el papel, cinco estilos de texto, la curaduría | Decisiones de Felipe sobre propuestas de Claude |
+| 25/08 | Entrega 1: pregunta, hipótesis, usuario, datasets, referentes | El grupo (Abril, Felipe y Zoe, que dejó el grupo el 26/10) |
+| 01/09 → 05/10 | La unidad pasa a ser el atributo, los datasets iniciales resultan sintéticos, K-means con k = 4, el prototipo de la Entrega 2 | El grupo, con Claude en el chat. De esas conversaciones no hay registro en el repositorio: lo que queda es `decisiones.md` |
+| 13/10 → 03/11 | La app en código, con Claude Code. Las devoluciones de la cátedra la cambian tres veces (13/10, 27/10, 03/11) | Felipe decide y pide; Claude propone, prueba y escribe el código. Felipe también trabajó con Claude en otra copia del repositorio y trajo de ahí consignas y cambios (13/10) |
+| 04/11 | La entrada por la decisión, el papel, cinco estilos de texto, la curaduría, la pirueta | Felipe eligió sobre variantes de Claude; lo que delegó está dicho abajo |
 
-**Qué propuso la IA, qué decidimos y por qué.** **[a confirmar fila por fila]**
+**Qué propuso la IA, qué decidió Felipe y por qué.** Las citas de Felipe son textuales, de las conversaciones en Claude
+Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11 y el 04/11) cuentan como suyas: las eligió y las mandó.
 
-| Tema | La IA propuso | Lo que decidimos | Por qué |
+| Tema | La IA propuso o hizo | Lo que decidió Felipe | Por qué |
 |---|---|---|---|
-| Mom y boyfriend | Contarlos como cortes amplios | Sacarlos de los cortes: son tiro alto y pierna tapered | Un corte es una silueta, no un nombre comercial (23/09, 20/10) |
-| El calzado | Medirlo como la ropa | Primero afuera; después dos pruebas; contado como resultado | Lo que no se mide se dice, no se esconde (20/10, 21/10, 25/10, 26/10) |
-| El estilo visual | Revista, revista suave, estudio | Ninguna: «el profe sigue diciendo que es muy IA». La referencia de Iván | Tres variantes no convencieron (27/10) |
-| El semáforo | Color por tendencia; salmón para la IA | Tres correcciones: el color es sólo la señal, la tendencia en negro, siempre con la palabra | El color tiene que decir una sola cosa (20/10, 26/10, 27/10) |
-| La portada | Un menú de texto | Afuera: la app abre en las preguntas | No llevaba a ninguna decisión (26/10) |
-| La ramificación | Tres variantes; recomendó «el compromiso» | Esa, con «Si algo ya pasó» en vez de «Si algo sigue vigente» | Más corta, y dice que mira hacia atrás (04/11) |
-| La pirueta | Felipe propuso dos ideas; Claude recomendó «Adiviná vos» y sumar al LLM como jugador | «Adiviná vos». El LLM lo sacó Claude al construirla **[a confirmar por Felipe]** | Para jugar, el LLM tendría que ver la serie, y en CICLO no ve filas de datos (04/11) |
-| Las pantallas de «Más» | El modelo a Método, Retornos en El ciclo, Marcas fuera del menú | Pendiente | — |
+| Los datos hasta hoy (13/10) | Completar Reddit con dato real hasta octubre de 2026 y proyectar la pasarela marcada, fuera del K-means. No inventar H&M ni Amazon | Lo pidió: «quiero que lo sigas hasta hoy en dia [...] busca la data que falta o predicila segun los datos antiguos». Aceptó que lo proyectado no entrara al modelo | El mejor de 21 métodos casi no le gana a repetir el último año: clasificar con eso sería contestar con lo que no sabemos |
+| Hasta 2030 (13/10) | Las líneas llegan a 2030, pero como cono: no es un pronóstico, y la pantalla lo dice | Lo pidió: «que la linea de las tendencias vayan hasta 2030 asi el disenador puede ver el futuro» | Cuatro métodos no le ganan a repetir el último valor |
+| 2025 (13/10) | Primero sacó 2025 por el salto de Google. Después propuso leer la búsqueda contra las otras búsquedas de moda | Lo frenó: «porque sacaste 2025? no es hasta hoy en dia ?». Después: «si, hacelo así». El 20/10 su consigna cortó todo en 2024, porque 2026 también estaba contaminado | En 2026, 39 de 40 series saltaron a la vez y el ancla, el trench, picó en abril en lugar de octubre |
+| Qué construir (13/10) | Siete ideas de función y seis de interfaz | Eligió: «hacé la consulta por imagen con CLIP y pushealo, despues hace links compartibles» | Buscar por imagen es lo que hace distinta a la app |
+| Diseñar, paso a paso (13/10) | Lo construyó. Avisó que no hay dato real de color de venta, y los colores se miden en la pasarela con CLIP, marcados como interpretación | La idea es suya: «primero elige una prenda [...] despues clicke en baggy pueda elegir el color [...] vos tenes el mando y la app te va remendando» | La app tenía que acompañar una decisión de diseño, no mostrar todo |
+| Las preguntas de entrada (13/10) | Las construyó | La idea es suya: «de que pais sos y para quien queres disenar (tu publico) eso tiene que estar en las preguntas al principio» | «que no sea un mar de caos de informacion» |
+| Los nombres y los dibujos (13/10 y 14/10) | Llevó los nombres a toda la app y puso las siluetas | Lo pidió: «jeans baggy y [...] jeans skinny, cada corte por su nombre posta». Mandó las siluetas y fijó: «o todas ilustraciones o todas imagenes, que no sea una mezcla» | Un nombre que no se dice en un taller no va en la interfaz |
+| Preguntar, el LLM (20/10) | El diseño: los datos se generan desde la app (`ciclo_datos.md`) y van sólo las fichas que nombra la pregunta, por el límite de tokens de Groq | Pidió que pensara las dos cosas: «1 como va a funcionar [...] 2 como va a hacer esa fuente de datos» | El LLM nunca ve una fila de datos |
+| El semáforo (20/10 y 27/10) | Lo implementó con una sola función, `señal()`, que decide todo el color | Las reglas son de sus consignas: Entrar verde, Esperar ámbar, Salir rojo, y la procedencia fuera del canal color. Y después: «gana presencia que aprazca en verde la letra y la flechita», «pone pierde presencia en rojo tambien» | El color volvía mal porque lo decidían tres partes del código por separado |
+| El estilo (27/10) | Tres variantes: revista, revista suave (la que recomendó) y estudio | Ninguna: «no me gustaron, el profe sigue diciendo que es muy IA [...] decidi la de apple». Después, «me gustaron las blancas». Que quede siempre en claro lo interpretó Claude | Tres variantes no convencieron; la referencia vino de la cátedra |
+| El calzado (20/10 → 26/10) | Dos pruebas, con Google Trends y con CLIP en la pasarela, las dos sin señal | Fue y vino, y está dicho: «no va a hber calzado en nuestra app» (20/10), «mandame de calzado tambien ya fue» (20/10), su consigna «no agregues Accesorios ni Calzado» (21/10), y al final «deja calzado pero mostra lo que tengamos» (26/10) | Lo que no se mide se dice, no se esconde |
+| La hipótesis (27/10 y 03/11) | Un jurado ciego, Lyst y el adelanto mes a mes. Se negó a reescribirla para que diera sí: «Si la ajustamos después de ver el resultado [...] pierde valor». Después propuso Reddit | Preguntó: «porque no se comprueba mi hipotsis y como hacemos para que se compruebe». Descartó el jurado («es un quilombo», «borrar el formulario») y eligió Reddit. El 03/11: «que sea mas positiva [...] centrate en lo que si tenemos» | Reddit no entra al modelo y no depende de conseguir gente |
+| Tendencias primero (26/10) | Lo implementó | Lo decidió: «que aparezca primero tendencia [...] disenar es un festure de la app pero lo main thing es que puedas ver que esta en tendencia» | Lo que se mueve hoy es la puerta de entrada |
+| La presentación (27/10 y 03/11) | La armó y la redujo | Lo decidió: la web como pieza principal, «sacar la presentacion emtrega 3 figma slides», y «saca todos los slides que el profe no pida» | Una sola pieza, como la referencia de la cátedra |
+| La ramificación (04/11) | Tres variantes; recomendó «el compromiso» y cambiar «Si algo sigue vigente» por «Si algo ya pasó» | Su consigna planteó la pregunta por la decisión; eligió la variante 2 con el cambio de palabras: «si hace» | Pregunta por el objetivo, no por el vínculo, y no cambia ningún cálculo |
+| Tipografía y curaduría (04/11) | Midió 31 tamaños y propuso cinco estilos; clasificó cada texto en se queda, va al «?» o se borra | Lo pidió en su consigna y quiso ver la lista antes de borrar; después dio control: «tenes full control» | La devolución de Cristian: demasiados estilos y capas que no aportan |
+| La pirueta (04/11) | Recomendó «Adiviná vos» con el LLM como jugador. Al construirla, sacó al LLM | Las dos ideas son suyas; eligió la primera: «si hace». Lo del LLM lo decidió Claude | Para jugar, el LLM tendría que ver la serie, y en CICLO no ve filas de datos |
+| Las pantallas de «Más» (04/11) | El modelo y Marcas desde Método, Retornos desde El ciclo | Lo delegó: «hace lo que te parezca» | El menú ofrecía cinco cosas iguales; tres eran detalle de otra |
 
 **Qué modelos usamos.**
 
 | Para qué | Modelo |
 |---|---|
-| Escribir el código, analizar los datos, redactar | Claude, en Claude Code |
+| Escribir el código, analizar los datos, redactar | Claude: en el chat hasta la Entrega 2, en Claude Code desde el 13/10 |
 | Leer imágenes: etiquetar la pasarela y Buscar por imagen | CLIP ViT-B/32 (en el navegador, sin servidor) |
 | Preguntar y la lectura en vivo | Groq, `openai/gpt-oss-120b` (antes Llama, hasta que Groq lo dio de baja) |
 | Propuestas de pantalla del 13/10 (Abril) | La herramienta integrada de imágenes (prompts en `prototipo_abril_1/prompts.md`) |
@@ -300,4 +326,6 @@ el último valor gana 45 a 18. El LLM no juega: tendría que ver la serie, y en 
 
 **Dónde frenamos a la IA.** No decide la etapa ni la señal. No inventa respuestas en las capturas: Preguntar se muestra
 vacío. No predice: el cono dice «no es un pronóstico». Y no es la autora de las decisiones: propone variantes, y la
-elección, con su porqué, queda registrada.
+elección, con su porqué, queda registrada. Hubo veces en que se la frenó de verdad: cuando sacó 2025 sin avisar, cuando
+sus tres estilos «parecían IA», y cuando su prueba dependía de entrevistas. Y una vez se frenó sola: no reescribió la
+hipótesis para que diera sí.

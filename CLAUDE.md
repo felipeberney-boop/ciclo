@@ -42,7 +42,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   attribute, never another family); the UI always says where a borrowed number comes from.
 - **Diseñar** runs on `TAX` (from `codigo/taxonomia.py`; rerun it after touching drawings or tables). Every state color
   comes from `señal()` / `señalPalabra()` and the `s-<estado>` CSS classes; never assign a state color by hand.
-  The app always opens on the 3-question gate (each card shows only its label; what each answer changes lives in Método, `pintarMetodoGate()`); only a link with `c`, `v` and `pu` skips it. After it, the app lands on Tendencias (`radar`), the
+  The app always opens on the 3-question gate (each card shows only its label; what each answer changes lives in Método, `pintarMetodoGate()`); only a link with `c`, `d` (or the pre-04/11 `v`) and `pu` skips it. Since 04/11 the questions are: what you are about to decide (`decision`: disenar / producir / revisar), público, and brand category; «Qué diseñar» turns Esperar into Explorar and lands on Diseñar, «Si algo ya pasó» makes Tendencias list what to drop first. After it, the app lands on Tendencias (`radar`), the
   main screen; the CICLO mark goes to Tendencias and «Cambiar perfil» reopens the gate (`abrirGate(vista)`). Nav order:
   Tendencias · Diseñar · El ciclo · Buscar por imagen · Preguntar · Más. `tendencia(d)` describes (▲/■/▼ in ink, El ciclo and Tendencias; the one exception since 27/10: «▲ Gana presencia» text is
   green and «▼ Pierde presencia» red, classes `t-entrar`/`t-salir`, bars and «Estable» stay ink) and is otherwise never a state color; `señal()` decides, and without a K-means stage it says Entrar/Esperar/Salir from the trend.

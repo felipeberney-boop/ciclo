@@ -116,7 +116,7 @@ for (const [k, p] of Object.entries(PERFIL))
   linea(`${p.n}`, `perfil: ${k}`, p.d, `lead time: ${p.prod}`, `ventana: la prenda tiene que leerse actual ${p.vent} año${p.vent > 1 ? 's' : ''}`,
     `decide hasta: ${p.hasta}`, `error medido a esa distancia: ±${Math.round(p.banda)} puntos`);
 L.push('\n## Qué conviene según etapa y perfil');
-L.push('Si diseñás por tu cuenta (sin producción ni stock), «Esperar» pasa a ser «Explorar»: podés empezar a diseñarlo ya y decidir la serie cuando la señal se confirme.');
+L.push('Si estás decidiendo qué diseñar (todavía sin producción ni stock), «Esperar» pasa a ser «Explorar»: podés empezar a diseñarlo ya y decidir la serie cuando la señal se confirme.');
 const ETN = ['Emergente', 'En ascenso', 'Pico', 'Saturada', 'En retorno'];
 for (const [k, fila] of Object.entries(CONSEJO))
   for (const [e, [acc, por]] of Object.entries(fila)) linea(`${PERFIL[k].n} · ${ETN[e]}`, `perfil: ${k}`, `acción: ${acc}`, `por qué: ${por}`);

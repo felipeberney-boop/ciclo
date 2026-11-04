@@ -11,7 +11,7 @@ const fs = require('fs');
 
 const BASE = process.argv[2] || 'http://localhost:8000/';
 const OUT = require('path').join(require('os').tmpdir(), 'ciclo_presentacion');
-const PERFIL = '?c=premium&v=marca&pu=mujer';
+const PERFIL = '?c=premium&d=producir&pu=mujer';
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });

@@ -1577,3 +1577,12 @@ Cada hoja dice de dónde viene y adónde va.
 (28) y Dato (40), en Semi Bold, y Cuerpo (20) y Etiqueta (15), en Regular. Un peso por tamaño. Es la propuesta para la
 auditoría tipográfica de la app, que viene después. El contenido es real: los números salen de `REC`, `PERFIL`,
 `CONSEJO` y de las capturas de la app. Preguntar no muestra una respuesta inventada: tiene líneas grises donde va.
+
+**Ya en la app, el mismo día.** Las tres preguntas están en `app/index.html` (`DECISION`, `GATE_CAT`, `decision` en vez de
+`vinculo`). Qué diseñar entra a Diseñar y convierte Esperar en Explorar; Qué producir entra a Tendencias; Si algo ya pasó
+entra a Tendencias con el título «¿Sigue vigente?» y las tarjetas en dos grupos, «Ya pasó» (las que dan Salir) y
+«Todavía vigente». Las tarjetas de Tendencias muestran ahora su señal, que antes sólo estaba en la ficha. Los links y
+los perfiles guardados de antes siguen andando: `v=propia` se lee como Qué diseñar y `v=marca` como Qué producir. Los
+dos prompts que nombraban el vínculo pasan a versiones nuevas (`prompt_lectura_recomendacion_v5.md`,
+`prompt_asistente_v6.md`); sólo cambia la línea de quién pregunta, y no se probaron en vivo porque no había una clave a
+mano. Método explica las tres preguntas con dos tablas: para producir o revisar, y para diseñar.

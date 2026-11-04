@@ -944,6 +944,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .mast .navgrupo a{background:var(--paper)!important}
 /* Tendencias: cada atributo, una tarjeta blanca separada, la prenda arriba */
 .app .grid{gap:16px!important;border:0!important;background:none!important}
+.rgrupo{grid-column:1/-1;margin:24px 0 0;font-size:24px;font-weight:600}.rgrupo:first-child{margin-top:0}.psen{display:block;margin-top:10px}
 .app .plate:not(#z){background:var(--card)!important;border:0!important;border-radius:var(--r-card)!important;overflow:hidden}
 .app .plate:hover{background:var(--card)!important;box-shadow:inset 0 0 0 1px var(--rule)}
 /* la ficha de una tendencia: el título y la bajada centrados, como una página de producto */
@@ -1016,7 +1017,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
       <div class="vhead">
         <div>
           <span class="lbl">01 · Tendencias</span>
-          <h1>Qué se está moviendo</h1>
+          <h1 id="radtit">Qué se está moviendo</h1>
           <p class="sub">Lo que está ganando y perdiendo terreno afuera, y en qué etapa está cada atributo. Tocá cualquiera para ver su recorrido y diseñar con él.</p>
           <p class="perfilrad" id="perfilrad"></p>
         </div>
@@ -1618,14 +1619,22 @@ function ficha(t){
   // para mirar de un vistazo: el nombre y la etapa; las cifras y la serie, en la ficha (27/10)
   body.innerHTML=`<div class="ptop"><h3 class="pname serif">${t.n}</h3><span class="pkind">${t.k}</span></div>`;
   body.appendChild(pista(ef.et,ef.de));
+  // la señal, en la tarjeta: es lo que se decide (papel del 04/11). La misma que da la ficha
+  const sg=señalTend(t);body.insertAdjacentHTML('beforeend',`<span class="sen psen ${sg.cls}">${sg.icono} ${sg.palabra}</span>`);
   b.appendChild(body);
   b.addEventListener('click',()=>abrirDetalle(t.id));
   return b;
 }
+const señalTend=t=>señal({grupo:KMAP[t.id]||null,rec:DMAP[t.id]&&REC.some(o=>o.id===DMAP[t.id])?DMAP[t.id]:null});
 function pintarRadar(){
   const g=$('#grid');g.innerHTML='';
-  const lista=T.filter(t=>filtro==='todos'||t.tipo===filtro);
-  lista.forEach(t=>g.appendChild(ficha(t)));
+  const lista=T.filter(t=>filtro==='todos'||t.tipo===filtro),rev=decision==='revisar';
+  $('#radtit').textContent=rev?'¿Sigue vigente?':'Qué se está moviendo';
+  if(!rev)lista.forEach(t=>g.appendChild(ficha(t)));
+  else{ // Si algo ya pasó mira hacia atrás: primero lo que ya hay que dejar, con los mismos datos
+    const ya=lista.filter(t=>señalTend(t).estado==='salir'),sigue=lista.filter(t=>señalTend(t).estado!=='salir');
+    [['Ya pasó',ya],['Todavía vigente',sigue]].forEach(([n,l])=>{if(!l.length)return;g.insertAdjacentHTML('beforeend',`<h2 class="rgrupo">${n}</h2>`);l.forEach(t=>g.appendChild(ficha(t)));});
+  }
   $('#cnt').textContent=`${lista.length} de ${T.length} atributos`;
 }
 
@@ -1726,9 +1735,11 @@ const CONSEJO={
         3:['Salir','Saturado. Para una marca de autor esto ya es ruido.'],
         4:['Entrar','Un revival bien leído es la mejor jugada de una marca de autor: nostalgia con firma propia.']}
 };
-/* vínculo laboral: no cambia la lectura de la etapa (eso lo fija la categoría), cambia el riesgo y el tratamiento */
-let vinculo='marca';
-const EXPLORAR='Como trabajás por tu cuenta, no comprometés producción ni stock: podés empezar a diseñarlo ahora y decidir la serie cuando la señal se confirme.';
+/* qué está por decidir: no cambia la lectura de la etapa (eso lo fija la categoría), cambia el riesgo y adónde lleva.
+   Qué diseñar todavía no compromete stock: donde la regla dice Esperar, dice Explorar. Si algo ya pasó mira hacia atrás. */
+const DECISION={disenar:{n:'Qué diseñar',dest:'disenar'},producir:{n:'Qué producir',dest:'radar'},revisar:{n:'Si algo ya pasó',dest:'radar'}};
+let decision='producir';
+const EXPLORAR='Como todavía estás decidiendo qué diseñar, no comprometés producción ni stock: podés empezar a diseñarlo ahora y decidir la serie cuando la señal se confirme.';
 /* ---------- la señal: un solo valor decide, y decide todo ----------
    Cuatro estados y nada más. Borde, fondo, texto, ícono, porcentaje y badge de cada tarjeta leen de este objeto;
    en el CSS el color sale sólo de la clase s-<estado> (variable --sen). Ningún otro lugar asigna un color de estado.
@@ -1741,21 +1752,21 @@ function señalDe(estado,palabra,porque,extra){return Object.assign({estado,pala
 /* una palabra de recomendación que ya viene decidida (la regla fija, el LLM): mismo objeto, misma clase */
 function señalPalabra(p,porque){const e=SEN_ACC[p];return e?señalDe(e,p,porque||''):señalDe('sin-dato',SIN_DATO,porque||'');}
 /* at: {grupo: atributo del K-means, rec: id con búsqueda (Recorridos), d: cambio ya calculado, cuota, unidad, fuente, interpretado}
-   perfil: {cliente, vinculo}. Con etapa del K-means decide la regla de CICLO para tu perfil; si sólo hay serie, decide
+   perfil: {cliente, decision}. Con etapa del K-means decide la regla de CICLO para tu perfil; si sólo hay serie, decide
    la tendencia; si no hay serie, sin-dato. */
 function señal(at,perfil){
-  at=at||{};perfil=perfil||{cliente,vinculo};
+  at=at||{};perfil=perfil||{cliente,decision};
   const et=at.grupo?etapaDe(at.grupo):null,d=at.d!=null?at.d:at.rec?terreno(at.rec):null;
   const unidad=at.unidad||'puntos',fuente=at.fuente||(at.rec?'búsqueda mundial 2022→2024, frente a las otras búsquedas de moda':''),umbral=at.umbral!=null?at.umbral:3;
   const num=d!=null?`${d>0?'+':''}${Math.abs(d)<10?d.toFixed(1).replace('.',','):Math.round(d)} ${unidad}`:'';
   const extra={d,cuota:at.cuota!=null?at.cuota:null,num,fuente,interpretado:!!at.interpretado,etapa:et&&et.n};
   if(et&&et.et!=null){
-    let [a,por]=CONSEJO[perfil.cliente][et.et];if(perfil.vinculo==='propia'&&a==='Esperar'){a='Explorar';por=EXPLORAR;}
+    let [a,por]=CONSEJO[perfil.cliente][et.et];if(perfil.decision==='disenar'&&a==='Esperar'){a='Explorar';por=EXPLORAR;}
     return señalDe(SEN_ACC[a],a,`Etapa ${et.n.toLowerCase()} (K-means)${num?` · ${num}, ${fuente}`:''}. ${por}`,extra);
   }
   if(d!=null){const e=d>umbral?'entrar':d<-umbral?'salir':'esperar';
     if(at.interpretado)return señalDe(e,SEN_TEND[e],`${num}, ${fuente}. Lo leyó CLIP: describe, no recomienda.`,Object.assign(extra,{cls:'tend t-'+e}));
-    const a=e==='entrar'?'Entrar':e==='salir'?'Salir':perfil.vinculo==='propia'?'Explorar':'Esperar';
+    const a=e==='entrar'?'Entrar':e==='salir'?'Salir':perfil.decision==='disenar'?'Explorar':'Esperar';
     return señalDe(e,a,`Sin etapa en el K-means: decide si gana o pierde terreno afuera (${SEN_TEND[e].toLowerCase()}). ${num}, ${fuente}.`,extra);}
   return señalDe('sin-dato',SIN_DATO,'No tenemos serie medida para esto: se puede explorar, pero CICLO no lo recomienda.',extra);
 }
@@ -1764,8 +1775,8 @@ function tendencia(d,umbral){umbral=umbral!=null?umbral:3;const e=d==null?'sin-d
   return {estado:e,icono:SEN[e].icono,palabra:e==='sin-dato'?SIN_DATO:SEN_TEND[e],cls:'tend t-'+e,d};}
 const senBadge=s=>`<span class="sen ${s.cls}"><span aria-hidden="true">${s.icono}</span> ${s.palabra}</span>`;
 function consejo(cli,et){const c=CONSEJO[cli][et]; // la regla fija; el color lo pone señal()
-  return vinculo==='propia'&&c[0]==='Esperar'?['Explorar',EXPLORAR]:c;}
-const tuQuien=()=>vinculo==='propia'?'tu cliente':'tu marca';
+  return decision==='disenar'&&c[0]==='Esperar'?['Explorar',EXPLORAR]:c;}
+const tuQuien=()=>'tu marca';
 let detSel=null;
 function abrirDetalle(id){
   const t=T.find(x=>x.id===id);detSel=id;const v=$('#v-detalle');
@@ -1793,7 +1804,7 @@ function abrirDetalle(id){
           <dt>Prendas</dt><dd class="mono">${t.prod}</dd>
           ${t.cols?`<dt>Colores</dt><dd class="mono">${t.cols} de 12</dd>`:''}
           <dt>Fuente</dt><dd>${t.fuente} <span class="tag real">medido</span></dd>
-          <dt>${vinculo==='propia'?'Para':'Cliente'}</dt><dd>${vinculo==='propia'?'Tu cliente · '+CLI:'Tu marca · '+CLI}</dd>
+          <dt>Perfil</dt><dd>${DECISION[decision].n} · ${CLI}</dd>
         </dl>
         <div class="ai">
           <div class="h"><span class="lbl" style="color:var(--accent)">Lectura</span><span class="tag ia2">interpretación · escrita por el equipo</span></div>
@@ -2296,7 +2307,7 @@ function dzVeredicto(E){
   if(falta.length||!con.length)return {s:señalDe('sin-dato','Sin recomendación',`${falta.length?falta.map(e=>e.n.toLowerCase()).join(' y '):'Nada de lo que elegiste'} no ${falta.length>1?'tienen':'tiene'} serie medida. Se puede explorar, pero CICLO no lo recomienda.`),por:''};
   if(!con.some(e=>!e.s.interpretado))return {s:señalDe('sin-dato','Sin recomendación','Lo único que respalda esta combinación es la lectura de CLIP sobre la pasarela, que es interpretación de un modelo. Hace falta al menos una serie medida.'),por:''};
   const peor=['salir','esperar','entrar'].find(k=>con.some(e=>e.s.estado===k));
-  const pal={salir:'Salir',esperar:vinculo==='propia'?'Explorar':'Esperar',entrar:'Entrar'}[peor];
+  const pal={salir:'Salir',esperar:decision==='disenar'?'Explorar':'Esperar',entrar:'Entrar'}[peor];
   const corto=e=>e.s.proc==='prestado'?'prestado de '+e.s.de:e.s.interpretado?'pasarela, CLIP':e.s.cuota!=null?'búsquedas de jeans 2022→2024':e.s.etapa&&!e.s.num?'etapa '+e.s.etapa.toLowerCase()+', K-means':'búsqueda mundial 2022→2024';
   const por=con.map(e=>`${e.n} ${e.s.num||e.s.palabra.toLowerCase()} (${corto(e)})`).join(' · ');
   return {s:señalDe(peor,pal,peor==='entrar'?'Todo lo que tiene dato sube o está en etapa de entrar para tu perfil.':peor==='salir'?'Algo de lo que elegiste dice Salir para tu perfil.':'Lo que tiene dato no alcanza para entrar ya.'),por};
@@ -2402,7 +2413,7 @@ function pintarDisenar(){
     C.innerHTML=`<div class="dzficha">
       <div class="dzfdib"><span class="dzdib" id="dzdib"></span></div>
       <div class="dzftx"><span class="lbl">La ficha</span><h2 class="dzresn serif">${dzNombre()}</h2>
-        <p class="dzresp">Para ${P0.n.toLowerCase()}${vinculo==='propia'?', por tu cuenta':', tu marca'} · tu ventana llega a ${P0.hasta} (±${Math.round(P0.banda)})</p>
+        <p class="dzresp">Para ${P0.n.toLowerCase()}· ${DECISION[decision].n.toLowerCase()} · tu ventana llega a ${P0.hasta} (±${Math.round(P0.banda)})</p>
         <div class="dzver ${V.s.cls}"><span class="dzverp serif">${V.s.icono} ${V.s.palabra}</span><p>${V.s.porque}</p>${V.por?`<p class="dzpor"><b>De dónde sale:</b> ${V.por}.</p>`:''}</div>
         ${E.map(x=>`<div class="dzrl"><span class="dzrk">${x.k}</span><span>${x.n} ${senBadge(x.s)} ${dzProc(x.s)}<br><span class="dzq">${x.s.estado==='sin-dato'?'Sin dato directo ni prestado'+(x.bloquea?': por eso no hay recomendación.':'; no suma ni resta.'):(x.s.proc==='prestado'?`Prestado de ${x.s.de}: ${x.s.presta_porque} `:'')+x.s.porque}</span>${x.link?` <button type="button" class="gvolver" data-rec="${x.link}">ver el dato →</button>`:''}</span></div>`).join('')}
         <div class="dzacc"><button class="gvolver" type="button" id="dzotro">Diseñar otra prenda</button></div></div></div>
@@ -2634,7 +2645,7 @@ function pintarDecision(o){
   const [acc,arg]=et&&et.et!=null?consejo(cliente,et.et):['—','Este atributo no entra al K-means, así que no tiene etapa ni recomendación. Mirá cómo se mueve afuera en el gráfico.'];
   const s0=et&&et.et!=null?señal({grupo:o.n,rec:o.id}):señalDe('sin-dato','Sin recomendación',arg);
   const ter=d==null?'sin dato':d>5?`gana terreno (+${Math.round(d)})`:d<-5?`pierde terreno (${Math.round(d)})`:`estable (${d>0?'+':''}${Math.round(d)})`;
-  $('#rdecide').innerHTML=`<div class="dacc"><div class="h"><span class="lbl">Para vos · ${P.n}${vinculo==='propia'?' · por tu cuenta':' · tu marca'}</span><span class="tag ia2">recomendación · interpretación</span></div>
+  $('#rdecide').innerHTML=`<div class="dacc"><div class="h"><span class="lbl">Para vos · ${P.n} · ${DECISION[decision].n.toLowerCase()}</span><span class="tag ia2">recomendación · interpretación</span></div>
       <div class="dline"><span class="a serif ${s0.cls}"><span class="ico" aria-hidden="true">${s0.icono}</span> ${s0.palabra}</span><p>${s0.estado==='sin-dato'?arg:s0.porque}</p></div>
       ${vivoDatos(o)?`<div class="vivo" id="rvivo"></div>`:''}</div>
     <dl class="dfacts"><dt>Etapa</dt><dd>${et?et.n:'sin etapa'}${et?' <span class="mono" style="color:var(--ink-3);font-size:10.5px">K-means</span>':''}</dd>
@@ -2643,10 +2654,10 @@ function pintarDecision(o){
       <dt>Tu ventana</dt><dd>hasta ${P.hasta} · ±${Math.round(P.banda)}</dd></dl>`;
   pintarVivo(o);
 }
-/* IA-5 en vivo (prompts/prompt_lectura_recomendacion_v4.md): como Preguntar, la página le habla directo a Groq con la
+/* IA-5 en vivo (prompts/prompt_lectura_recomendacion_v5.md): como Preguntar, la página le habla directo a Groq con la
    clave que pegó cada uno. El modelo recibe sólo estas métricas, nunca una fila, y el prompt se arma acá con texto fijo. */
 const VIVO={};
-const LV_MODELO='openai/gpt-oss-120b',LV_PROMPT='v4';
+const LV_MODELO='openai/gpt-oss-120b',LV_PROMPT='v5';
 const LV_CLI={fast:'fast fashion (high street: Zara, H&M, Shein)',medio:'contemporary (bridge: COS, Massimo Dutti, Arket)',
   premium:'high fashion (prêt-à-porter de lujo)',nicho:'diseñador emergente (marca de autor)'};
 const LV_SISTEMA=`Sos analista de tendencias de CICLO. Leés métricas ya calculadas sobre un atributo de moda (un color, una estampa, un corte o un material) y decís qué conviene hacer con él.
@@ -2659,7 +2670,7 @@ const lvPct=v=>v==null?'sin dato':(v>0?'+':'')+Math.round(v*100)+' %',lvDec=v=>v
   lvSig=v=>v==null?'sin dato':(v>0?'+':'')+v.toFixed(2).replace('.',',');
 function lvPrompt(d){
   const P=PERFIL[d.cliente]||PERFIL.premium,c=LV_CLI[d.cliente]||LV_CLI.premium;
-  const quien=d.vinculo==='propia'?`Diseña por su cuenta para un cliente ${c}: no compromete producción ni stock, así que en vez de esperar puede explorar.`:`Trabaja para una marca ${c}.`;
+  const quien=d.decision==='disenar'?`Está decidiendo qué diseñar para una marca ${c}: todavía no compromete producción ni stock, así que en vez de esperar puede explorar.`:d.decision==='revisar'?`Está revisando si algo que ya hizo para una marca ${c} sigue vigente.`:`Está decidiendo qué producir para una marca ${c}.`;
   return `Cliente: ${quien} Plazo de producción: ${P.prod}. Decide para colecciones hasta ${P.hasta}.
 
 Atributo: ${d.atributo}
@@ -2669,7 +2680,7 @@ Búsqueda (Google Trends mundo, hasta 2024): nivel ${lvDec(d.bn)} sobre 1, momen
 Peso en la búsqueda frente a otras de moda, 2022→2024: ${d.terreno==null?'sin dato':(d.terreno>0?'+':'')+Math.round(d.terreno)+' puntos'}
 Validación: Google Shopping 2022→2025 ${lvPct(d.shop)}, reseñas de Amazon 2019→2022 ${lvPct(d.amz)}
 
-Objetivo: una acción (${d.vinculo==='propia'?'Entrar, Explorar o Salir':'Entrar, Esperar o Salir'}) y una sola frase, de menos de 40 palabras, que la justifique con un número de arriba.`;
+Objetivo: una acción (${d.decision==='disenar'?'Entrar, Explorar o Salir':'Entrar, Esperar o Salir'}) y una sola frase, de menos de 40 palabras, que la justifique con un número de arriba.`;
 }
 async function lvPedir(d,clave){
   const res=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+clave},
@@ -2678,18 +2689,18 @@ async function lvPedir(d,clave){
   const data=await res.json().catch(()=>({}));
   if(!res.ok)return {error:asError(res.status,data.error&&data.error.message)};
   let out=null;try{out=JSON.parse(data.choices[0].message.content);}catch(e){}
-  const validas=d.vinculo==='propia'?['Entrar','Explorar','Salir']:['Entrar','Esperar','Salir'];
+  const validas=d.decision==='disenar'?['Entrar','Explorar','Salir']:['Entrar','Esperar','Salir'];
   const accion=typeof out?.accion==='string'?out.accion.trim().replace(/^\w/,ch=>ch.toUpperCase()):'',frase=typeof out?.frase==='string'?out.frase.trim().slice(0,400):'';
   return validas.includes(accion)&&frase?{accion,frase,modelo:LV_MODELO,prompt:LV_PROMPT}:{error:'La respuesta no tuvo la forma pedida. Probá de nuevo.'};
 }
 const escH=t=>String(t).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
 function vivoDatos(o){
   const km=KM.rows.find(r=>r.n.split(' /')[0]===o.n.split(' /')[0]);if(!km)return null;const et=etapaDe(o.n),pg=picoBusq(o,'g');
-  return {atributo:km.n,cliente,vinculo,etapa:et?et.n:null,pn:km.pn,pm:km.pm,bn:km.bn,bm:km.bm,
+  return {atributo:km.n,cliente,decision,etapa:et?et.n:null,pn:km.pn,pm:km.pm,bn:km.bn,bm:km.bm,
     pico_pas:km.pico_pas,pico_bus:pg&&pg.y,bus_abierto:!!(pg&&pg.abierto),shop:km.shop_22_25,amz:km.amz_19_22,terreno:terreno(o.id)};
 }
 function pintarVivo(o){
-  const box=$('#rvivo');if(!box)return;const d=vivoDatos(o),key=[d.atributo,cliente,vinculo].join('|'),r=VIVO[key];
+  const box=$('#rvivo');if(!box)return;const d=vivoDatos(o),key=[d.atributo,cliente,decision].join('|'),r=VIVO[key];
   const tag=`<span class="tag ia2">interpretación · Groq en vivo</span>`;
   if(r&&r.accion) box.innerHTML=`<div class="h">${tag}<span class="mono vm">${escH(r.modelo)} · prompt ${escH(r.prompt)}</span></div>
       <div class="dline"><span class="a serif ${señalPalabra(r.accion).cls}"><span class="ico" aria-hidden="true">${señalPalabra(r.accion).icono}</span> ${escH(r.accion)}</span><p>${escH(r.frase)}</p></div>`;
@@ -2709,7 +2720,7 @@ function pintarVivo(o){
     if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);
   });
 }
-/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v5.md) ----------
+/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v6.md) ----------
    Como en la V2 de la clase: la API key la pega cada uno, queda en este navegador y la página le habla directo a Groq,
    con llm/ciclo_datos.md como DATOS (sólo las partes que nombran la pregunta, el diseño y la imagen: el plan gratis da
    8.000 tokens por minuto). Lo propio de CICLO: sabe qué estás diseñando (la barra de Diseñar), lee una foto con CLIP
@@ -2814,12 +2825,12 @@ function asElegir(doc,texto,prefer){
     senal:Object.fromEntries(todas.map(l=>{const et=asCampo(l,'etapa'),af=asCampo(l,'afuera 2022→2024');
       return [asCampo(l,'id'),asCampo(l,'señal')||[et&&'etapa '+et.toLowerCase()+' (K-means)',af&&'afuera '+af.replace(/\s*puntos$/,'')+' puntos, 2022→2024'].filter(Boolean).join(' · ')];}))};
 }
-const asQuien=()=>`Quien pregunta ${vinculo==='propia'?'diseña por su cuenta (sin producción ni stock)':'trabaja para una marca'}, ${publico==='mujer'?'diseña para mujer':publico==='hombre'?'diseña para hombre':'diseña sin género'}, perfil: ${cliente}.`;
+const asQuien=()=>`Quien pregunta ${decision==='disenar'?'está decidiendo qué diseñar (todavía sin producción ni stock)':decision==='revisar'?'está revisando si algo que ya hizo sigue vigente':'está decidiendo qué producir'}, ${publico==='mujer'?'diseña para mujer':publico==='hombre'?'diseña para hombre':'diseña sin género'}, perfil: ${cliente}.`;
 /* no confiamos a ciegas en el modelo: recortamos, validamos la acción, los ids y cada cambio contra OPCIONES */
 function asNormalizar(r,ids,O){
   const txt=(v,m)=>typeof v==='string'?v.replace(/[​-‍⁠﻿]/g,'').trim().slice(0,m):'',lista=(v,n,m)=>(Array.isArray(v)?v:[]).map(x=>txt(x,m)).filter(Boolean).slice(0,n);
-  const val=vinculo==='propia'?['Entrar','Explorar','Salir']:['Entrar','Esperar','Salir'];
-  let acc=txt(r.accion,12).replace(/^\w/,c=>c.toUpperCase());if(acc==='Esperar'&&vinculo==='propia')acc='Explorar';
+  const val=decision==='disenar'?['Entrar','Explorar','Salir']:['Entrar','Esperar','Salir'];
+  let acc=txt(r.accion,12).replace(/^\w/,c=>c.toUpperCase());if(acc==='Esperar'&&decision==='disenar')acc='Explorar';
   const acciones=(Array.isArray(r.acciones)?r.acciones:[]).filter(a=>a&&O[a.paso]&&O[a.paso].includes(a.valor)&&dz[a.paso]!==a.valor)
     .map(a=>({paso:a.paso,valor:a.valor,texto:txt(a.texto,120)||`Probá ${a.valor}`})).slice(0,2);
   return {respuesta:txt(r.respuesta,700).replace(/^"?fuera_de_datos"?\s*:\s*(true|false)\s*[,.]?\s*/i,''),accion:val.includes(acc)?acc:'',
@@ -2845,7 +2856,7 @@ function asSugerencias(){
 }
 function asPintar(){
   const D=asDiseno();
-  $('#asdis').innerHTML=D.chips.length?D.chips.map(c=>`<button type="button" class="aschip" data-ir="${c.paso}"><span>${c.n}</span>${escH(c.v)}</button>`).join('')+`<p class="ascap">${(PERFIL[cliente]||PERFIL.premium).n} · ${vinculo==='propia'?'por tu cuenta':'para una marca'}</p>`
+  $('#asdis').innerHTML=D.chips.length?D.chips.map(c=>`<button type="button" class="aschip" data-ir="${c.paso}"><span>${c.n}</span>${escH(c.v)}</button>`).join('')+`<p class="ascap">${(PERFIL[cliente]||PERFIL.premium).n} · ${DECISION[decision].n.toLowerCase()}</p>`
     :`<p class="ascap">Todavía no armaste nada. <button type="button" class="gvolver" id="asirdis">Ir a Diseñar →</button></p>`;
   $$('#asdis [data-ir]').forEach(b=>b.onclick=()=>{mostrar('disenar');dzIr(b.dataset.ir);});if($('#asirdis'))$('#asirdis').onclick=()=>mostrar('disenar');
   $('#asclip').innerHTML=as.clip.map((c,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar"><span>leí</span>${escH(c.n)} <span class="aspp">${c.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('');
@@ -3323,30 +3334,24 @@ function mostrar(v,keepNav){
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='asistente')asAbrir();
   if(v==='racional')pintarMetodoGate();
-  if(v==='radar')pintarPerfilRadar();
+  if(v==='radar'){pintarPerfilRadar();pintarRadar();}
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }
-/* ---------- entrada en tres pasos: público → vínculo → categoría ---------- */
-/* cada tarjeta muestra sólo lo que se clickea; qué cambia cada respuesta está en Método (#metgate) */
-const GATE={
-  marca:{preg:'¿Qué tipo de marca?',
-    c:{premium:['High fashion','Prêt-à-porter de lujo · Loewe, Miu Miu, Bottega Veneta.'],
-       medio:['Contemporary','Bridge · COS, Massimo Dutti, Arket.'],
-       fast:['Fast fashion','High street · Zara, H&M, Gap.'],
-       nicho:['De autor','Marca chica, colección propia.']}},
-  propia:{preg:'¿Qué tipo de prendas querés diseñar?',
-    c:{premium:['High fashion','Piezas de autor, pasarela.'],
-       medio:['Contemporary','Básicos con diseño, calidad media.'],
-       fast:['Streetwear','Volumen, rotación rápida.'],
-       nicho:['De autor','Series cortas, identidad propia.']}}};
-let gateDestino='radar',gatePaso=1;
+/* ---------- entrada en tres pasos: decisión → público → categoría ---------- */
+/* pregunta por lo que la persona vino a hacer, no por dónde trabaja (devolución de la Entrega 3, 04/11).
+   Cada tarjeta muestra sólo lo que se clickea; qué cambia cada respuesta está en Método (#metgate) */
+const GATE_CAT={fast:['Fast fashion','High street · Zara, H&M, Gap.'],medio:['Contemporary','Bridge · COS, Massimo Dutti, Arket.'],
+  premium:['High fashion','Prêt-à-porter de lujo · Loewe, Miu Miu, Bottega Veneta.'],nicho:['De autor','Marca chica, colección propia.']};
+/* los perfiles guardados o los links de antes del 04/11 traen el vínculo: por mi cuenta exploraba, para una marca producía */
+const decDe=(d,v)=>DECISION[d]?d:v==='propia'?'disenar':v==='marca'?'producir':null;
+let gateDestino='radar',gateLibre=true,gatePaso=1;
 const ETAPAS_C=['emergente','en ascenso','en pico','saturada','en retorno'];
 function gateResumen(cli,acc){const e=[0,1,2,3,4].filter(i=>consejo(cli,i)[0]===acc).map(i=>ETAPAS_C[i]);return e.length?e.join(', '):'—';}
 /* la entrada es la portada de la app: se ve siempre. Lo que quedó de una visita anterior viene marcado y alcanza con «Continuar» */
-const gateSel={publico:null,vinculo:null,cliente:null};
+const gateSel={decision:null,publico:null,cliente:null};
 try{const g=JSON.parse(localStorage.getItem('ciclo.perfil')||'null');
-  if(g&&GATE[g.vinculo]&&PLAZO[g.cliente]){gateSel.publico=['mujer','hombre','todos'].includes(g.publico)?g.publico:null;gateSel.vinculo=g.vinculo;gateSel.cliente=g.cliente;}}catch(e){}
+  if(g&&decDe(g.decision,g.vinculo)&&PLAZO[g.cliente]){gateSel.decision=decDe(g.decision,g.vinculo);gateSel.publico=['mujer','hombre','todos'].includes(g.publico)?g.publico:null;gateSel.cliente=g.cliente;}}catch(e){}
 function gateTarjeta(datos,attrs,on){return `<button class="gcard${on?' on':''}" type="button" aria-pressed="${!!on}" ${attrs}>${on?'<span class="gprev">tu elección anterior</span>':''}${datos}</button>`;}
 function pintarGate(){
   const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;g.classList.remove('g4');
@@ -3356,27 +3361,26 @@ function pintarGate(){
   const cont=(listo,fn)=>{const c=$('#gcont');c.hidden=!listo;c.onclick=fn;};
   if(gatePaso===1){
     g.style.setProperty('--gcols',3);
+    tit('¿Qué estás por decidir?');
+    g.innerHTML=Object.entries(DECISION).map(([k,d])=>gateTarjeta(`<span class="gt">${d.n}</span>`,`data-dec="${k}"`,gateSel.decision===k)).join('');
+    $$('#ggrid [data-dec]').forEach(b=>b.addEventListener('click',()=>{gateSel.decision=b.dataset.dec;sig();}));
+    cont(!!gateSel.decision,sig);
+  }else if(gatePaso===2){
+    g.style.setProperty('--gcols',3);
     tit('¿Para quién diseñás?');
     g.innerHTML=[['mujer','Mujer'],['hombre','Hombre'],['todos','Sin género']]
       .map(([k,t])=>gateTarjeta(`<span class="gt">${t}</span>`,`data-pub="${k}"`,gateSel.publico===k)).join('');
     $$('#ggrid [data-pub]').forEach(b=>b.addEventListener('click',()=>{gateSel.publico=b.dataset.pub;sig();}));
     cont(!!gateSel.publico,sig);
-  }else if(gatePaso===2){
-    g.style.setProperty('--gcols',2);
-    tit('¿Trabajás para una marca o por tu cuenta?');
-    g.innerHTML=gateTarjeta(`<span class="gt">Para una marca</span>`,'data-vinc="marca"',gateSel.vinculo==='marca')+
-                gateTarjeta(`<span class="gt">Por mi cuenta</span>`,'data-vinc="propia"',gateSel.vinculo==='propia');
-    $$('#ggrid [data-vinc]').forEach(b=>b.addEventListener('click',()=>{gateSel.vinculo=b.dataset.vinc;sig();}));
-    cont(!!gateSel.vinculo,sig);
   }else{
-    const G=GATE[gateSel.vinculo]||GATE.marca;g.style.setProperty('--gcols',4);g.classList.add('g4');
-    tit(G.preg);
-    g.innerHTML=['premium','medio','fast','nicho'].map(k=>gateTarjeta(`<span class="gt">${G.c[k][0]}</span>`,`data-cli="${k}"`,gateSel.cliente===k)).join('');
+    g.style.setProperty('--gcols',4);g.classList.add('g4');
+    tit('¿Para qué tipo de marca?');
+    g.innerHTML=Object.keys(GATE_CAT).map(k=>gateTarjeta(`<span class="gt">${GATE_CAT[k][0]}</span>`,`data-cli="${k}"`,gateSel.cliente===k)).join('');
     $$('#ggrid [data-cli]').forEach(b=>b.addEventListener('click',()=>{gateSel.cliente=b.dataset.cli;gateElegir();}));
     cont(!!gateSel.cliente,gateElegir);
   }
 }
-function guardarPerfil(){try{localStorage.setItem('ciclo.perfil',JSON.stringify({vinculo,cliente,pais,publico}));}catch(e){}}
+function guardarPerfil(){try{localStorage.setItem('ciclo.perfil',JSON.stringify({decision,cliente,pais,publico}));}catch(e){}}
 /* cambiar de cliente recalcula todo: sólo pasa al salir del gate o con un link que trae el perfil */
 function ponerCliente(c){
   cliente=PLAZO[c]?c:'premium';pintarEtapas();pintarRecorridos();
@@ -3384,33 +3388,35 @@ function ponerCliente(c){
   if(vista==='detalle'&&detSel)abrirDetalle(detSel);
 }
 function gateElegir(){
-  publico=gateSel.publico||'todos';vinculo=gateSel.vinculo||'marca';ponerCliente(gateSel.cliente);guardarPerfil();
-  if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);
+  publico=gateSel.publico||'todos';decision=gateSel.decision||'producir';ponerCliente(gateSel.cliente);guardarPerfil();
+  /* al entrar a la app, la decisión elige adónde: Qué diseñar va a Diseñar; desde «Cambiar perfil», se vuelve a donde estaba */
+  const dest=gateLibre?DECISION[decision].dest:gateDestino;
+  if(dest==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(dest);
 }
 /* Tendencias dice con qué perfil se está leyendo, y deja cambiarlo */
 function pintarPerfilRadar(){
   const e=$('#perfilrad');if(!e)return;
   const pub={mujer:'Mujer',hombre:'Hombre',todos:'Sin género'}[publico]||'Sin género';
-  const cat=(GATE[vinculo]||GATE.marca).c[cliente]?.[0]||(PERFIL[cliente]||PERFIL.premium).n;
-  e.innerHTML=`<span>Tu perfil: <b>${pub} · ${vinculo==='propia'?'Por tu cuenta':'Para una marca'} · ${cat}</b></span><button type="button" id="perfilradc">Cambiar</button>`;
+  const cat=GATE_CAT[cliente]?.[0]||(PERFIL[cliente]||PERFIL.premium).n;
+  e.innerHTML=`<span>Tu perfil: <b>${DECISION[decision].n} · ${pub} · ${cat}</b></span><button type="button" id="perfilradc">Cambiar</button>`;
   $('#perfilradc').onclick=()=>abrirGate('radar');
 }
 /* Método · la entrada: lo que el gate ya no explica en cada tarjeta */
 function pintarMetodoGate(){
   const m=$('#metgate');if(!m)return;
-  const fila=v=>{const antes=vinculo;vinculo=v;try{return ['premium','medio','fast','nicho'].map(k=>{const P=PERFIL[k],ex=v==='propia'?gateResumen(k,'Explorar'):'';
-    return `<tr><td class="k">${GATE[v].c[k][0]}</td><td>${GATE[v].c[k][1]}</td><td>${P.prod}</td><td>${P.vent} año${P.vent>1?'s':''}</td><td>${P.hasta}</td><td>±${Math.round(P.banda)} puntos</td>
-      <td><span class="sen s-entrar">Entrar</span> ${gateResumen(k,'Entrar')}${ex&&ex!=='—'?`<br><span class="sen s-esperar">Explorar</span> ${ex}`:''}<br><span class="sen s-salir">Salir</span> ${gateResumen(k,'Salir')}</td></tr>`;}).join('');}finally{vinculo=antes;}};
-  const tabla=v=>`<div class="tw"><table><thead><tr><th>Categoría</th><th>Qué es</th><th>Lead time</th><th>Ventana</th><th>Decide hasta</th><th>Error ahí</th><th>Señal por etapa</th></tr></thead><tbody>${fila(v)}</tbody></table></div>`;
+  const fila=dec=>{const antes=decision;decision=dec;try{return Object.keys(GATE_CAT).map(k=>{const P=PERFIL[k],ex=dec==='disenar'?gateResumen(k,'Explorar'):'',es=dec==='disenar'?'':gateResumen(k,'Esperar');
+    return `<tr><td class="k">${GATE_CAT[k][0]}</td><td>${GATE_CAT[k][1]}</td><td>${P.prod}</td><td>${P.vent} año${P.vent>1?'s':''}</td><td>${P.hasta}</td><td>±${Math.round(P.banda)} puntos</td>
+      <td><span class="sen s-entrar">Entrar</span> ${gateResumen(k,'Entrar')}${ex&&ex!=='—'?`<br><span class="sen s-esperar">Explorar</span> ${ex}`:''}${es&&es!=='—'?`<br><span class="sen s-esperar">Esperar</span> ${es}`:''}<br><span class="sen s-salir">Salir</span> ${gateResumen(k,'Salir')}</td></tr>`;}).join('');}finally{decision=antes;}};
+  const tabla=dec=>`<div class="tw"><table><thead><tr><th>Categoría</th><th>Qué es</th><th>Lead time</th><th>Ventana</th><th>Decide hasta</th><th>Error ahí</th><th>Señal por etapa</th></tr></thead><tbody>${fila(dec)}</tbody></table></div>`;
   m.innerHTML=`<h2>La entrada: qué cambia cada respuesta</h2>
-    <p>CICLO cruza 1,28 millones de looks de pasarela con veintiún años de búsquedas (2004–2024), treinta millones de compras y el índice de Lyst para decir, atributo por atributo, si está emergiendo, en ascenso, en pico, saturado o volviendo. Las tres preguntas de la entrada no cambian esos datos: cambian cómo se leen.</p>
-    <p><b>1 · ¿Para quién diseñás?</b> Con esto elegimos qué prendas y qué referencias mostrarte. Mujer es womenswear y hombre es menswear; sin género son prendas para cualquiera, con referencias de las dos pasarelas.</p>
-    <p><b>2 · ¿Trabajás para una marca o por tu cuenta?</b> La misma tendencia se lee distinto si el riesgo de producción es de una marca o es tuyo. <b>Para una marca</b>: en relación de dependencia, la producción y el stock son de la marca y la lectura tiene que cuidar ese riesgo. <b>Por mi cuenta</b>: freelance, por encargo o con marca propia en desarrollo; podés diseñar antes de comprometer producción, así que donde a una marca le conviene esperar, a vos te conviene explorar.</p>
-    <p><b>3 · La categoría.</b> Fija tu lead time y tu ventana: hasta qué año el gráfico todavía sirve para decidir, con el error que medimos a esa distancia.</p>
-    <h3>Si trabajás para una marca · ¿Qué tipo de marca?</h3>${tabla('marca')}
-    <h3>Si trabajás por tu cuenta · ¿Qué tipo de prendas querés diseñar?</h3>${tabla('propia')}`;
+    <p>Las tres preguntas no cambian los datos: cambian cómo se leen.</p>
+    <p><b>1 · ¿Qué estás por decidir?</b> <b>Qué diseñar</b>: todavía no comprometés producción ni stock, así que donde la regla dice esperar, dice explorar, y la app entra por Diseñar. <b>Qué producir</b>: la lectura cuida el riesgo de la producción y entra por Tendencias. <b>Si algo ya pasó</b>: mira hacia atrás; Tendencias pone primero lo que ya hay que dejar.</p>
+    <p><b>2 · ¿Para quién diseñás?</b> Elige qué prendas y qué referencias se muestran. Mujer es womenswear y hombre es menswear; sin género usa las dos pasarelas.</p>
+    <p><b>3 · ¿Para qué tipo de marca?</b> Fija el lead time, la ventana (cuánto tiene que seguir actual la prenda, que es hasta dónde el gráfico sirve para decidir, con el error medido a esa distancia) y dónde conviene entrar: con un atributo en pico, fast fashion entra y una marca de autor sale.</p>
+    <h3>Para producir o revisar</h3>${tabla('producir')}
+    <h3>Para diseñar</h3>${tabla('disenar')}`;
 }
-function abrirGate(destino){gateDestino=destino&&destino!=='perfil'?destino:'radar';gatePaso=1;pintarGate();mostrar('perfil');}
+function abrirGate(destino){gateLibre=!destino||destino==='perfil';gateDestino=gateLibre?'radar':destino;gatePaso=1;pintarGate();mostrar('perfil');}
 $('#gvolver').addEventListener('click',()=>{gatePaso=Math.max(1,gatePaso-1);pintarGate();$('#ggrid .gcard')?.focus();});
 $('#navperfil').addEventListener('click',()=>abrirGate(vista));
 let publico='todos';
@@ -3420,7 +3426,7 @@ const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas
 let vista='perfil',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
-  let q=`?c=${cliente}&v=${vinculo}&pu=${publico}`;
+  let q=`?c=${cliente}&d=${decision}&pu=${publico}`;
   if(vista==='disenar'){const s=DZ_ELEC.filter(k=>dz[k]).map(k=>k+':'+dz[k]).join(',');
     if(s)q+=`&dz=${s}&paso=${dz.paso}`;if(dz.fijo)q+=`&fijo=${dz.fijo.k}:${dz.fijo.v}:${dz.fijo.pr||''}`;}
   return '#'+vista+(el?'/'+el:'')+q;
@@ -3436,11 +3442,11 @@ function leerLink(){
   const qs=new URLSearchParams(m[3]||''),destino=m[1],el=m[2];
   if(destino==='recorridos'&&el&&REC.some(o=>o.id===el)){recSel=el;pintarRecorridos();}
   if(destino==='detalle'&&el&&T.some(t=>t.id===el))detSel=el;
-  if(!(qs.has('c')&&qs.has('v')&&qs.has('pu'))||destino==='perfil'){abrirGate(destino);return true;}
+  if(!(qs.has('c')&&(qs.has('d')||qs.has('v'))&&qs.has('pu'))||destino==='perfil'){abrirGate(destino==='radar'&&!m[2]&&!m[3]?null:destino);return true;}
   leyendoLink=true;
   try{
-    vinculo=qs.get('v')==='propia'?'propia':'marca';publico=['mujer','hombre'].includes(qs.get('pu'))?qs.get('pu'):'todos';
-    Object.assign(gateSel,{publico,vinculo,cliente:PLAZO[qs.get('c')]?qs.get('c'):'premium'});
+    decision=decDe(qs.get('d'),qs.get('v'))||'producir';publico=['mujer','hombre'].includes(qs.get('pu'))?qs.get('pu'):'todos';
+    Object.assign(gateSel,{decision,publico,cliente:PLAZO[qs.get('c')]?qs.get('c'):'premium'});
     ponerCliente(gateSel.cliente);guardarPerfil();
     if(destino==='disenar')dzDesdeLink(qs);
     if(destino==='detalle'){if(detSel)abrirDetalle(detSel);else mostrar('radar');}else mostrar(destino);
@@ -3504,13 +3510,13 @@ $('#home').addEventListener('click',()=>{if(vista!=='perfil')mostrar('radar');})
    nunca una pantalla equivocada sin explicación (el <script> de abajo cubre un error antes de llegar acá) */
 function arranqueFallido(e){
   console.error('CICLO no arrancó bien:',e);
-  try{abrirGate('radar');}catch(e2){$$('main .view').forEach(x=>x.hidden=x.id!=='v-perfil');}
+  try{abrirGate();}catch(e2){$$('main .view').forEach(x=>x.hidden=x.id!=='v-perfil');}
   const a=document.getElementById('aviso');
   if(a){a.hidden=false;a.textContent='Algo falló al cargar la app. Elegí tu perfil para seguir; si vuelve a pasar, recargá la página.';}
 }
 try{
   extenderREC();pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
-  if(!leerLink())abrirGate('radar'); // la entrada son las tres preguntas, siempre, y después Tendencias; sólo un link con el perfil la saltea
+  if(!leerLink())abrirGate(); // la entrada son las tres preguntas, siempre, y después Tendencias; sólo un link con el perfil la saltea
 }catch(e){arranqueFallido(e);}
 window.CICLO_LISTO=true;
 </script>

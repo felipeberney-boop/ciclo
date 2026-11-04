@@ -205,8 +205,10 @@ nuestra. La app vuelve a publicarse también en Netlify.
 
 Por la devolución de la Entrega 3, la primera pregunta deja de ser «¿trabajás para una marca o por tu cuenta?» y pasa a
 ser «¿Qué estás por decidir?»: Qué diseñar, Qué producir o Si algo ya pasó. La categoría queda en una sola pregunta.
-Todavía no está en la app: primero, las trece pantallas en papel para corregir en clase (Figma, página 4, y
-`entregas/entrega_4/disenos_en_papel/`), con cinco estilos de texto en vez de 24.
+Primero salieron las trece pantallas en papel para corregir en clase (Figma, página 4, y
+`entregas/entrega_4/disenos_en_papel/`), con cinco estilos de texto en vez de 24; el mismo día, la entrada nueva
+quedó en la app, y las tarjetas de Tendencias muestran su señal. La versión anterior quedó en
+`diseno/prototipos/versiones_de_la_app/app_2026-11-04_b330123_antes_de_la_decision.html`.
 
 ## Presentación · Entrega 3
 

@@ -1539,3 +1539,41 @@ código), en `prompts/` y `datasets/pruebas/` (el prompt y una respuesta real) y
 por pregunta). Lo único que estaba sólo en las láminas era el tamaño del documento que lee el modelo, y queda acá:
 `app/llm/ciclo_datos.md` pesa 62 KB (62.382 bytes), pero no viaja entero: por pregunta van lo general y las fichas que
 nombra la conversación, entre 3.600 y 4.600 tokens. El gráfico de commits por día del making of salía de `git log`.
+
+## 2026-11-04 · La entrada pregunta por la decisión, no por el vínculo
+
+**Devolución de la Entrega 3 (Cristian).** «Trabajo para una marca / soy independiente» puede no representar los
+objetivos reales del usuario: hay que pensar si son las mejores palabras para la ramificación.
+
+**Lo que miramos antes de elegir.** En la app, el vínculo cambia una sola cosa: donde la regla dice Esperar, «por mi
+cuenta» dice Explorar, porque no compromete stock (`consejo()`). La categoría cambia dos cosas que el lead time no cubre:
+la ventana (cuánto tiene que seguir actual la prenda: 1, 2, 3 o 5 años) y el posicionamiento (en pico, fast fashion entra
+y la marca de autor sale, aunque tenga un lead time más corto que high fashion). El error medido depende de la ventana, no
+del lead time: todos los lead times caen en menos de un año y el error se mide año a año.
+
+**Tres variantes, y la que elegí.**
+1. *El alcance* · «¿Qué estás por decidir?» → Una colección · Una prenda · Si algo sigue vigente. Descartada: colección
+   o prenda no mueve ningún número; habría que inventar ventanas que chocan con la categoría.
+2. *El compromiso* · «¿Qué estás por decidir?» → Qué diseñar · Qué producir · Si algo ya pasó, y «¿Para qué tipo de
+   marca?» con las cuatro categorías para todos. **Elegida.** Explorar pasa a colgar de «Qué diseñar» (un diseñador en
+   relación de dependencia que busca ideas también explora); «Si algo ya pasó» mira hacia atrás, con los mismos datos
+   ordenados por lo que ya pasó; la categoría queda en una sola pregunta en vez de dos ramas. `CONSEJO`, `PERFIL` y el
+   error no cambian.
+3. *El plazo* · «¿Para cuándo lo necesitás en tienda?» y «¿Cuánto tiene que durar?». Descartada: da la ventana directo,
+   pero pierde el posicionamiento y obliga a reescribir `CONSEJO`.
+
+La propuesta de las tres variantes y la recomendación fueron de Claude; la elección es mía, con un cambio de palabras
+(«Si algo sigue vigente» pasa a «Si algo ya pasó»).
+
+**Primero en papel.** Antes de tocar el código, las pantallas del flujo nuevo, una por hoja A4, para corregir en clase:
+página «4 · En papel · Entrega 4» del Figma de tres etapas y
+`entregas/entrega_4/disenos_en_papel/ciclo_disenos_en_papel_entrega_4.pdf`. Trece hojas: el mapa del recorrido, las
+tres preguntas, Tendencias para «Qué producir», «¿Sigue vigente?» para «Si algo ya pasó», la ficha, un paso de Diseñar
+con Explorar, Tu diseño, El ciclo, Buscar por imagen, Preguntar y una hoja nueva, «Los datos», que responde al «qué
+datos, para qué y cómo conviven»: cuatro fuentes, la clave atributo × año, el K-means y lo que sale (etapa, señal, cono).
+Cada hoja dice de dónde viene y adónde va.
+
+**Ya con cinco estilos de texto.** El Figma tenía 24 estilos; las hojas usan sólo cinco, nuevos: Título (56), Subtítulo
+(28) y Dato (40), en Semi Bold, y Cuerpo (20) y Etiqueta (15), en Regular. Un peso por tamaño. Es la propuesta para la
+auditoría tipográfica de la app, que viene después. El contenido es real: los números salen de `REC`, `PERFIL`,
+`CONSEJO` y de las capturas de la app. Preguntar no muestra una respuesta inventada: tiene líneas grises donde va.

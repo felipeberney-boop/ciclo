@@ -201,6 +201,13 @@ código con el MCP. El documento es `entregas/entrega_3/figma_a_codigo.md`. Se c
 la referencia la pasó Iván (el DESIGN.md de Apple en shadcn.io, guardado en `diseno/referencias/`); la adaptación es
 nuestra. La app vuelve a publicarse también en Netlify.
 
+## v1.17 · 04/11/2026 · La entrada por la decisión, primero en papel
+
+Por la devolución de la Entrega 3, la primera pregunta deja de ser «¿trabajás para una marca o por tu cuenta?» y pasa a
+ser «¿Qué estás por decidir?»: Qué diseñar, Qué producir o Si algo ya pasó. La categoría queda en una sola pregunta.
+Todavía no está en la app: primero, las trece pantallas en papel para corregir en clase (Figma, página 4, y
+`entregas/entrega_4/disenos_en_papel/`), con cinco estilos de texto en vez de 24.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

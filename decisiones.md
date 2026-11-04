@@ -1586,3 +1586,14 @@ los perfiles guardados de antes siguen andando: `v=propia` se lee como Qué dise
 dos prompts que nombraban el vínculo pasan a versiones nuevas (`prompt_lectura_recomendacion_v5.md`,
 `prompt_asistente_v6.md`); sólo cambia la línea de quién pregunta, y no se probaron en vivo porque no había una clave a
 mano. Método explica las tres preguntas con dos tablas: para producir o revisar, y para diseñar.
+
+## 2026-11-04 · Qué datos, para qué y cómo conviven, en un esquema
+
+**Devolución (Cristian, «fundamental»).** Tiene que quedar claro qué datos usamos, para qué y cómo conviven en el modelo.
+Estaba repartido entre Método, la ficha, el readme y este registro.
+
+**Decisión.** Método abre con un esquema de tres columnas, el mismo de la hoja 12 del papel: cuatro fuentes y qué aporta
+cada una; la clave con la que se cruzan (atributo × año) y el K-means; lo que sale (la etapa, la señal y el cono). Las
+fuentes que no entran al modelo (Reddit, la venta y Lyst) van con borde gris en vez de relleno, para que se vea de un
+vistazo qué alimenta al K-means y qué sólo valida. Sin color nuevo: el color sigue siendo sólo la señal. En el celular,
+las columnas se apilan y las flechas apuntan hacia abajo.

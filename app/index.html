@@ -930,6 +930,19 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
   background:#272729!important;color:#f5f5f7;border:0!important;padding:28px 28px 24px!important}
 .app .terreno .tfila{background:#2f2f31!important;border-color:transparent!important;color:#f5f5f7}
 .app .terreno .tb{background:#3a3a3c!important}
+/* Método · los datos de un vistazo (devolución de la Entrega 3: qué datos, para qué y cómo conviven) */
+.app .metdatos{margin:8px 0 56px}.app .metdatos h2{margin:0 0 20px}
+.app .mdesq{display:grid;grid-template-columns:minmax(0,1.25fr) 40px minmax(0,1fr) 40px minmax(0,1.25fr);align-items:center;gap:0}
+.app .mdcol{display:flex;flex-direction:column;gap:12px}.app .mdcol h3{margin:0 0 2px;font-size:17px;font-weight:600}
+.app .mdc:not(#z){background:var(--card);border-radius:var(--r-card)!important;padding:16px 20px}
+.app .mdc.fuera:not(#z){background:transparent;box-shadow:inset 0 0 0 1px var(--ink-3);border:0}
+.app .mdc b{display:flex;justify-content:space-between;gap:12px;font-size:17px;font-weight:600}.app .mdc b span{font-weight:400;font-size:13px;color:var(--ink-3)}
+.app .mdc small{display:block;font-size:13px;color:var(--ink-3);margin:2px 0 6px}.app .mdc p{margin:0;font-size:15px;line-height:1.45}
+.app .mdclave:not(#z){background:var(--card);border-radius:var(--r-card)!important;box-shadow:inset 0 0 0 2px var(--ink);padding:22px 20px;text-align:center}
+.app .mdclave strong{display:block;font-size:28px;font-weight:600;letter-spacing:-.02em}.app .mdclave small{font-size:13px;color:var(--ink-3)}
+.app .mdflecha{text-align:center;font-size:24px;color:var(--ink-3)}
+.app .mdnota{margin:20px 0 0;font-size:15px;color:var(--ink-2);max-width:75ch}
+@media (max-width:900px){.app .mdesq{grid-template-columns:1fr}.app .mdflecha{transform:rotate(90deg);padding:6px 0}}
 /* la entrada: una pregunta por pantalla, centrada, opciones como configurador */
 .app .gate{text-align:center;max-width:920px}
 .app .gate .sub{margin-left:auto!important;margin-right:auto!important;font-size:21px!important;color:var(--ink-2)!important}
@@ -1404,6 +1417,29 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         </div>
       </div>
       <hr class="rule">
+      <section class="metdatos" id="metdatos" aria-labelledby="metdatost">
+        <h2 id="metdatost">Qué datos usamos y cómo se cruzan</h2>
+        <div class="mdesq">
+          <div class="mdcol"><h3>Cuatro fuentes</h3>
+            <div class="mdc"><b>Pasarela <span>hasta 2023</span></b><small>Vogue Runway · 1,28 M de looks</small><p>Cuánto aparece en los desfiles. CLIP lee cada look.</p></div>
+            <div class="mdc"><b>Búsqueda <span>2004–2024</span></b><small>Google Trends · mundo y Argentina</small><p>Cuánto lo busca la gente.</p></div>
+            <div class="mdc fuera"><b>Redes <span>2012–2025</span></b><small>Reddit · r/femalefashionadvice</small><p>Confirma lo que sube. No entra al modelo.</p></div>
+            <div class="mdc fuera"><b>Venta y marcas <span>varía</span></b><small>H&amp;M · Amazon · Google Shopping · Lyst</small><p>Valida después y da contexto. No entra al modelo.</p></div>
+          </div>
+          <div class="mdflecha" aria-hidden="true">→</div>
+          <div class="mdcol"><h3>Se cruzan por</h3>
+            <div class="mdclave"><strong>atributo × año</strong><small>«floral» en 2019, en cada fuente</small></div>
+            <div class="mdc"><b>K-means</b><p>17 atributos · 4 rasgos: nivel y momento de pasarela y de búsqueda, hasta 2024 · 4 grupos.</p></div>
+          </div>
+          <div class="mdflecha" aria-hidden="true">→</div>
+          <div class="mdcol"><h3>Qué sale</h3>
+            <div class="mdc"><b>La etapa</b><p>En qué punto del ciclo está: un lugar en la pista, no un color.</p></div>
+            <div class="mdc"><b>La señal</b><p>Entrar, Esperar o Salir, según la etapa y tu perfil.</p></div>
+            <div class="mdc"><b>El cono</b><p>Hasta tu ventana, con el error medido a esa distancia: de ±14 a ±26 puntos. No es un pronóstico.</p></div>
+          </div>
+        </div>
+        <p class="mdnota">La IA lee, no decide: CLIP lee las imágenes y el chat sólo ve métricas ya calculadas, nunca una fila de datos. Borde gris: la fuente no entra al modelo.</p>
+      </section>
       <p class="note colores"><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va con ▲ o ▼, y sólo la palabra lleva el mismo verde o rojo («Gana presencia», «Pierde presencia»); «Estable» va en negro. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series, y los grupos del K-means tienen tonos que no son de la señal. Hay un solo color más, el azul, y significa «se puede tocar»: botones, links y la opción elegida. El resto es blanco, gris y negro.</p>
       <div class="tw"><table>
         <thead><tr><th>Lo que ves</th><th>Origen</th><th>Cómo se obtiene</th></tr></thead>

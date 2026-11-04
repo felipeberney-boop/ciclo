@@ -210,6 +210,11 @@ Primero salieron las trece pantallas en papel para corregir en clase (Figma, pá
 quedó en la app, y las tarjetas de Tendencias muestran su señal. La versión anterior quedó en
 `diseno/prototipos/versiones_de_la_app/app_2026-11-04_b330123_antes_de_la_decision.html`.
 
+## v1.18 · 04/11/2026 · Los datos de un vistazo y cinco estilos de texto
+
+Método abre con el esquema de qué datos se usan, con qué clave se cruzan y qué sale. La app pasa de 31 tamaños de letra
+a cinco estilos (Título, Subtítulo, Dato, Cuerpo y Etiqueta), con un peso por tamaño, también en los gráficos.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

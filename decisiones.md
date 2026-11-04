@@ -1597,3 +1597,35 @@ cada una; la clave con la que se cruzan (atributo × año) y el K-means; lo que 
 fuentes que no entran al modelo (Reddit, la venta y Lyst) van con borde gris en vez de relleno, para que se vea de un
 vistazo qué alimenta al K-means y qué sólo valida. Sin color nuevo: el color sigue siendo sólo la señal. En el celular,
 las columnas se apilan y las flechas apuntan hacia abajo.
+
+## 2026-11-04 · Cinco estilos de texto
+
+**Devolución (Cristian).** Las pantallas tienen múltiples estilos y tamaños tipográficos, y eso confunde.
+
+**Lo medido.** Con Playwright, el tamaño y el peso calculados de cada texto visible de las once vistas, con los
+desplegables abiertos: **31 tamaños distintos** (de 8,5 a 64 px), 49 combinaciones de tamaño y peso, cuatro pesos (400,
+500, 600 y 700) y 13 combinaciones más en los gráficos. El Figma del sistema tenía 24 estilos de texto.
+
+**Lo que queda.** Cinco estilos, un peso por tamaño:
+
+| Estilo | Tamaño | Peso | Qué va |
+|---|---|---|---|
+| Título | 48 (34 en el celular) | 600 | Uno por pantalla: la pregunta o el nombre de la vista |
+| Subtítulo | 24 | 600 | Nombre de tarjeta, de bloque, de atributo |
+| Dato | 34 | 600 | Números y la palabra de la señal cuando va grande |
+| Cuerpo | 17 | 400 | Lo que se lee para decidir, las opciones, los botones |
+| Etiqueta | 13 | 400 | Rótulos, procedencia, menú, tablas, ejes de los gráficos |
+
+En el papel (página 4 del Figma) van un 15 % más grandes para que se lean impresos: 56, 28, 40, 20 y 15.
+
+**Cómo se hizo.** Una quinta capa de CSS, la última, que pisa a las otras cuatro. Sus selectores no salen de leer el
+CSS sino de medir la app: cada texto se asignó a un estilo por su tamaño y su rol (lo de 44 o más que es h1 o la pregunta
+de Diseñar es Título; los números y la señal grande son Dato; lo de 16,5 o más en Semi Bold es Subtítulo; lo de 15,5 o
+más, Cuerpo; el resto, Etiqueta). El `<b>` dentro de un párrafo hereda el peso del párrafo: un énfasis en negrita era
+una combinación más. Los gráficos son SVG que se escalan con su `viewBox`, así que un rótulo de 9,5 se veía de 8 o de
+16 según el ancho; `etiquetasSvg()` lo deja en 13 px de pantalla, recalculado cuando cambia la vista o el ancho.
+
+**Medido después.** 5 estilos en el texto y 1 en los gráficos, en escritorio y en el celular. La única excepción es el
+logo CICLO (19, Semi Bold), que es una marca y no un estilo de texto.
+
+**Lo que esto no arregla.** El tamaño ya no compite, pero el texto sigue siendo mucho: eso es la curaduría, aparte.

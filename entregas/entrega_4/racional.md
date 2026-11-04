@@ -268,7 +268,9 @@ archivos, están en `entregas/entrega_4/bocetos_previos/`.
 Dos aclaraciones, para que no se lea más de lo que es. La Entrega 1 no tiene pantallas: son láminas de ideas. Y el
 prototipo de la Entrega 2 ya convivía con la IA: el sitio de esa entrega era un artifact de Claude
 (`entregas/entrega_2/readme.md`), y según `decisiones.md` (05/10) empezó con wireframes esquemáticos que se reemplazaron
-por pantallas con los datos reales; esos wireframes no quedaron en el Figma.
+por pantallas con los datos reales; esos wireframes no quedaron en el Figma. Tampoco es un boceto previo
+`diseno/prototipos/prototipo_felipe_1/` (13/10): la imagen la hizo Claude, a pedido de Felipe («haceme una imagen de
+ejemplo de como se veria la web»), sobre una captura de la app que ya estaba en código.
 
 **Las etapas.**
 
@@ -292,6 +294,7 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11 y el 04/11) c
 | Las preguntas de entrada (13/10) | Las construyó | La idea es suya: «de que pais sos y para quien queres disenar (tu publico) eso tiene que estar en las preguntas al principio» | «que no sea un mar de caos de informacion» |
 | Los nombres y los dibujos (13/10 y 14/10) | Llevó los nombres a toda la app y puso las siluetas | Lo pidió: «jeans baggy y [...] jeans skinny, cada corte por su nombre posta». Mandó las siluetas y fijó: «o todas ilustraciones o todas imagenes, que no sea una mezcla» | Un nombre que no se dice en un taller no va en la interfaz |
 | Preguntar, el LLM (20/10) | El diseño: los datos se generan desde la app (`ciclo_datos.md`) y van sólo las fichas que nombra la pregunta, por el límite de tokens de Groq | Pidió que pensara las dos cosas: «1 como va a funcionar [...] 2 como va a hacer esa fuente de datos» | El LLM nunca ve una fila de datos |
+| Mom y boyfriend (14/10 → 20/10) | Listó «mom» como un corte de jean más, al lado de baggy y skinny | Lo corrigió en su consigna: «Sacá «mom jeans» y «boyfriend»». Quedan como alias de búsqueda, invisibles en la interfaz | No son cortes: mom es tiro alto y pierna recta relajada, boyfriend tiro medio y pierna tapered |
 | El semáforo (20/10 y 27/10) | Lo implementó con una sola función, `señal()`, que decide todo el color | Las reglas son de sus consignas: Entrar verde, Esperar ámbar, Salir rojo, y la procedencia fuera del canal color. Y después: «gana presencia que aprazca en verde la letra y la flechita», «pone pierde presencia en rojo tambien» | El color volvía mal porque lo decidían tres partes del código por separado |
 | El estilo (27/10) | Tres variantes: revista, revista suave (la que recomendó) y estudio | Ninguna: «no me gustaron, el profe sigue diciendo que es muy IA [...] decidi la de apple». Después, «me gustaron las blancas». Que quede siempre en claro lo interpretó Claude | Tres variantes no convencieron; la referencia vino de la cátedra |
 | El calzado (20/10 → 26/10) | Dos pruebas, con Google Trends y con CLIP en la pasarela, las dos sin señal | Fue y vino, y está dicho: «no va a hber calzado en nuestra app» (20/10), «mandame de calzado tambien ya fue» (20/10), su consigna «no agregues Accesorios ni Calzado» (21/10), y al final «deja calzado pero mostra lo que tengamos» (26/10) | Lo que no se mide se dice, no se esconde |

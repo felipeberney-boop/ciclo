@@ -80,9 +80,9 @@ directory that don't match the repo layout, so adjust before running (`taxonomia
 - `calcular_geometria_de_graficos.js` reads `./datos_app.json` → writes `geom.json`
 - `generar_laminas_entrega_2.py` → 20 slide SVGs (1920×1080) into `entrega2_svg/`
 - `renderizar_laminas_a_png.js` reads `entrega2_svg/` → PNG (Playwright)
-- `capturar_pantallas_de_la_app.js` (run from the repo root, app served) → the 16 screenshots in
-  `entregas/entrega_3/capturas/` used by the readme. It never shows an LLM answer (no simulated responses)
-- `capturar_recorrido.js` (same way) → the step-by-step walkthrough in `entregas/entrega_3/recorrido/` that the readme shows
+- `capturar_pantallas_de_la_app.js` (run from the repo root, app served) → the 17 screenshots in
+  `entregas/entrega_4/capturas/` used by the readme (the 03/11 set stays in `entregas/entrega_3/capturas/`). It never shows an LLM answer (no simulated responses)
+- `capturar_recorrido.js` (same way) → the step-by-step walkthrough in `entregas/entrega_4/recorrido/` that the readme shows
 
 Requires `npm install playwright` / `pip install pillow`.
 

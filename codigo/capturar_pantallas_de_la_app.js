@@ -1,14 +1,14 @@
 // CICLO · capturas de la app para el readme y la entrega (26/10/2026).
 // Uso, desde la raíz del repo, con la app servida (cd app && python3 -m http.server 8000):
 //   node codigo/capturar_pantallas_de_la_app.js [http://localhost:8000/]
-// Requiere: npm install playwright. Escribe en entregas/entrega_3/capturas/.
+// Requiere: npm install playwright. Escribe en entregas/entrega_4/capturas/ (las del 03/11 quedaron en entrega_3/capturas/).
 // No toca Groq ni baja el modelo CLIP: Buscar por imagen usa un look del índice, y Preguntar se captura sin respuesta
 // (una respuesta simulada en una captura sería presentar como real algo que no lo es).
 const { chromium } = require('playwright');
 const fs = require('fs');
 
 const BASE = process.argv[2] || 'http://localhost:8000/';
-const OUT = 'entregas/entrega_3/capturas';
+const OUT = 'entregas/entrega_4/capturas';
 const PERFIL = '?c=fast&d=producir&pu=mujer';
 
 (async () => {
@@ -52,12 +52,23 @@ const PERFIL = '?c=fast&d=producir&pu=mujer';
   // el método
   p = await abrir({ vista: 'etapas' }); await hasta(p, '.km'); await foto(p, 'captura_11_el_modelo');
   await foto(await abrir({ vista: 'retornos' }), 'captura_12_retornos');
-  p = await abrir({ vista: 'racional' }); await hasta(p, '#v-racional table'); await foto(p, 'captura_13_metodo');
+  p = await abrir({ vista: 'racional' }); await hasta(p, '#metdatos'); await foto(p, 'captura_13_metodo_los_datos');
   // celular, y el panel «Más» con sus tarjetas
   p = await abrir({ ancho: 393, alto: 852, vista: 'disenar' });
   await p.evaluate(() => { dz.prenda = 'calzado'; dzIr('tipo'); }); await p.waitForTimeout(400); await foto(p, 'captura_14_celular_disenar');
   await foto(await abrir({ ancho: 393, alto: 852, vista: 'recorridos' }), 'captura_15_celular_el_ciclo');
   p = await abrir({ vista: 'radar' }); await p.click('#navmas'); await p.waitForTimeout(400); await foto(p, 'captura_16_menu_mas');
+  // la pirueta: Adiviná vos, con un trazo dibujado y revelado
+  p = await abrir({ vista: 'adivina' });
+  const svg = await p.$('#v-adivina svg'); const bx = await svg.boundingBox();
+  // el trazo arranca en el punto de 2019 y sube de a poco, como lo dibujaría alguien que cree que vuelve
+  const pto = await p.$$eval('#v-adivina svg circle', cs => { const r = cs[cs.length - 1].getBoundingClientRect(); return { x: r.x + r.width / 2, y: r.y + r.height / 2 }; });
+  const fin = bx.x + bx.width * 0.985, pasos = 14;
+  await p.mouse.move(pto.x, pto.y); await p.mouse.down();
+  for (let i = 1; i <= pasos; i++) await p.mouse.move(pto.x + (fin - pto.x) * i / pasos, pto.y - bx.height * 0.12 * i / pasos);
+  await p.mouse.up(); await p.waitForTimeout(300);
+  const ver = await p.$('#v-adivina button.kbtn, #v-adivina button[data-adv-ver]'); if (ver) { await ver.click(); await p.waitForTimeout(500); }
+  await foto(p, 'captura_17_adivina_vos');
 
   await b.close();
   console.log('capturas listas en ' + OUT);

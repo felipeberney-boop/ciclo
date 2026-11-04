@@ -236,6 +236,12 @@ El PDF pasa a 14 hojas: la 13 es Adiviná vos, con la serie real de la remera. L
 links a El modelo, a Marcas y a «Probalo vos», y el mapa del recorrido suma la caja 13. Las capturas del readme se
 rehicieron con la app de hoy (`entregas/entrega_4/capturas/`).
 
+## v1.23 · 04/11/2026 · Vuelve el vínculo, y la app sin la firma de la materia
+
+La entrada por el objetivo («¿Qué estás por decidir?») se probó y se descartó: vuelven las tres preguntas de antes
+(para quién, para una marca o por tu cuenta, la categoría), con todo lo que se hizo después. La app deja de nombrar la
+materia, la facultad y los docentes. Se arregló la barra de Diseñar, que el cambio de «Más» había roto.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

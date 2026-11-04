@@ -29,7 +29,7 @@ const OUT = path.join(os.tmpdir(), 'ciclo_demo');
 
   await paso('Las tres preguntas de entrada', async () => {
     const t = [];
-    for (const [sel, v] of [['data-dec', 'producir'], ['data-pub', 'mujer'], ['data-cli', 'premium']]) {
+    for (const [sel, v] of [['data-pub', 'mujer'], ['data-vinc', 'marca'], ['data-cli', 'premium']]) {
       t.push((await p.$$eval('#ggrid .gt', a => a.map(x => x.textContent))).join(' / '));
       if (await p.$$eval('#ggrid .gd, #ggrid dl', a => a.length)) throw new Error('hay texto de más en las tarjetas');
       await p.click(`#ggrid [${sel}="${v}"]`);

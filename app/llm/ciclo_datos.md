@@ -1,6 +1,6 @@
 # CICLO · datos para el asistente
 
-CICLO es una app de la materia Sistemas generativos e IA para Diseño (UdeSA, 2026). Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja sobre todo con ropa; del calzado sólo mide zapatillas y mocasines en la búsqueda, y zapatillas y botas texanas en la pasarela.
+CICLO es una app para quien diseña ropa. Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja sobre todo con ropa; del calzado sólo mide zapatillas y mocasines en la búsqueda, y zapatillas y botas texanas en la pasarela.
 Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: 2026-11-04.
 
 ## Cómo leer los números
@@ -27,7 +27,7 @@ Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Ú
 - Diseñador emergente | perfil: nicho | marca de autor · colección propia | lead time: 3 meses | ventana: la prenda tiene que leerse actual 5 años | decide hasta: 2030 | error medido a esa distancia: ±25 puntos
 
 ## Qué conviene según etapa y perfil
-Si estás decidiendo qué diseñar (todavía sin producción ni stock), «Esperar» pasa a ser «Explorar»: podés empezar a diseñarlo ya y decidir la serie cuando la señal se confirme.
+Si diseñás por tu cuenta (sin producción ni stock), «Esperar» pasa a ser «Explorar»: podés empezar a diseñarlo ya y decidir la serie cuando la señal se confirme.
 - Fast fashion · Emergente | perfil: fast | acción: Entrar | por qué: Es el momento: tenés seis semanas de lead time y el high street todavía no lo tiene.
 - Fast fashion · En ascenso | perfil: fast | acción: Entrar | por qué: Todavía hay margen. Si salís en dos ciclos llegás antes que la competencia directa.
 - Fast fashion · Pico | perfil: fast | acción: Entrar | por qué: Está en pico. Con tu plazo llegás, pero es el último tren.

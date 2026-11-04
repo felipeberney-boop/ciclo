@@ -9,7 +9,7 @@ const fs = require('fs');
 
 const BASE = process.argv[2] || 'http://localhost:8000/';
 const OUT = 'entregas/entrega_4/capturas';
-const PERFIL = '?c=fast&d=producir&pu=mujer';
+const PERFIL = '?c=fast&v=marca&pu=mujer';
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });

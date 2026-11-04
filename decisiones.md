@@ -1786,3 +1786,44 @@ la tipografía y los tonos de la app, para entregarlo o imprimirlo. El Markdown 
 script después de cada cambio, y el script falla si alguna imagen no carga. Al revisarlo se cambió una imagen de los
 bocetos: la lámina «Perfil de usuario» de la Entrega 1 trae una ilustración que parece hecha con IA de imágenes y no
 puede mostrarse como previa a la IA. En su lugar va la lámina de la pregunta (25/08), que ya nombra las cinco etapas.
+
+## 2026-11-04 · La entrada por el objetivo, probada y descartada: vuelve el vínculo
+
+**Qué se probó.** Cristian pidió, en la devolución de la Entrega 3, «piensen si esas son las mejores palabras para armar
+la ramificación». Se probó como alternativa una entrada por el objetivo: «¿Qué estás por decidir?», con Qué diseñar,
+Qué producir y Si algo ya pasó (la variante «el compromiso», entrada de arriba del mismo día). Se construyó entera: la
+app, las hojas en papel y el recorrido del readme.
+
+**Por qué se descartó.** Felipe, al usarla: «no funciona. Es confusa y no se entiende qué elegir». Obliga a la persona a
+traducir su situación a una categoría abstracta antes de haber visto nada de la app, y eso la frena en la primera
+pantalla.
+
+**Por qué se vuelve al vínculo laboral.** Es una pregunta que un diseñador contesta sin pensar. Y lo que de verdad
+cambia la lectura se deduce mejor de ahí que de una pregunta por el objetivo: cuánto cuesta equivocarse sale del vínculo
+(por tu cuenta no comprometés producción ni stock, así que donde a una marca le conviene Esperar, a vos te conviene
+Explorar), y cuánto falta hasta que la prenda se produce sale de la categoría, que se queda. Lo que la devolución
+criticaba no era la pregunta: era el texto de más dentro de los cuadrados, que ya se había sacado el 03/11.
+
+**Cómo quedó.** Vuelven las tres preguntas de antes, tal cual: ¿para quién diseñás?, ¿trabajás para una marca o por tu
+cuenta?, la categoría. Se revirtió el cambio de la entrada (`d77109a`) y se conservó todo lo que vino después: los cinco
+estilos, la curaduría del texto, el esquema de datos, Adiviná vos y la señal en cada tarjeta de Tendencias. Los links
+del 04/11 con `d` siguen andando (`d=disenar` se lee como «por tu cuenta», que era lo que activaba Explorar). La app
+vuelve a usar los prompts probados (`prompt_lectura_recomendacion_v4.md`, `prompt_asistente_v5.md`); los v5 y v6 de la
+lectura y del chat quedan como descartados, sin borrar. Versión anterior en
+`diseno/prototipos/versiones_de_la_app/app_2026-11-04_346ab3c_con_la_entrada_por_la_decision.html`.
+
+## 2026-11-04 · La app no es una entrega: fuera la firma de la materia
+
+CICLO se va a publicar, y quien entre tiene que ver un producto, no un trabajo práctico. Sale de la app todo lo que
+nombraba la materia, la facultad, los docentes o una entrega: el bloque del gate («Sistemas generativos e IA para
+Diseño · K534/K576 · UdeSA · 2026 · …»), el mismo bloque en el pie de Método y de «Más», el «como pide la consigna» de
+El modelo (ahora dice la razón real: los 17 atributos son los que tienen serie en las dos capas a la vez, y la etapa
+sale de cruzarlas), la primera línea del archivo de datos del chat («CICLO es una app de la materia…», que el modelo
+podía repetir) y seis comentarios del código que nombraban la cátedra o una entrega. El pie queda con lo que le sirve a
+quien la usa: qué es CICLO en una línea, la fecha de la última lectura de datos y el link al repositorio, abierto. La
+materia, los docentes y los integrantes siguen en el readme y en el racional. Lo que no cambia es el rigor: fuentes,
+medido contra interpretado, límites y pruebas preregistradas se quedan como están.
+
+**Un error que salió al revisar.** El cambio de «Más» de hoy usaba `data-ir` para los links entre vistas, y ese atributo
+ya lo usaban los chips de la barra de Diseñar y de Preguntar para volver a un paso: tocarlos dejaba la pantalla vacía.
+Los links entre vistas pasan a `data-vista`.

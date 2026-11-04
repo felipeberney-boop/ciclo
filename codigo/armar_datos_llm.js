@@ -90,7 +90,7 @@ const linea = (...c) => L.push('- ' + c.filter(Boolean).join(' | '));
 // ---------- encabezado (va siempre) ----------
 L.push(`# CICLO · datos para el asistente
 
-CICLO es una app de la materia Sistemas generativos e IA para Diseño (UdeSA, 2026). Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja sobre todo con ropa; del calzado sólo mide zapatillas y mocasines en la búsqueda, y zapatillas y botas texanas en la pasarela.
+CICLO es una app para quien diseña ropa. Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja sobre todo con ropa; del calzado sólo mide zapatillas y mocasines en la búsqueda, y zapatillas y botas texanas en la pasarela.
 Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: ${new Date().toISOString().slice(0, 10)}.
 
 ## Cómo leer los números
@@ -116,7 +116,7 @@ for (const [k, p] of Object.entries(PERFIL))
   linea(`${p.n}`, `perfil: ${k}`, p.d, `lead time: ${p.prod}`, `ventana: la prenda tiene que leerse actual ${p.vent} año${p.vent > 1 ? 's' : ''}`,
     `decide hasta: ${p.hasta}`, `error medido a esa distancia: ±${Math.round(p.banda)} puntos`);
 L.push('\n## Qué conviene según etapa y perfil');
-L.push('Si estás decidiendo qué diseñar (todavía sin producción ni stock), «Esperar» pasa a ser «Explorar»: podés empezar a diseñarlo ya y decidir la serie cuando la señal se confirme.');
+L.push('Si diseñás por tu cuenta (sin producción ni stock), «Esperar» pasa a ser «Explorar»: podés empezar a diseñarlo ya y decidir la serie cuando la señal se confirme.');
 const ETN = ['Emergente', 'En ascenso', 'Pico', 'Saturada', 'En retorno'];
 for (const [k, fila] of Object.entries(CONSEJO))
   for (const [e, [acc, por]] of Object.entries(fila)) linea(`${PERFIL[k].n} · ${ETN[e]}`, `perfil: ${k}`, `acción: ${acc}`, `por qué: ${por}`);

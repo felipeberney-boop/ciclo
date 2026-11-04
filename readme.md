@@ -48,34 +48,36 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 ### La entrada: tres preguntas
 
 Cada tarjeta dice sólo lo que hay que clickear. Qué cambia cada respuesta está en la pantalla **Método** de la app.
-Desde el 04/11 la primera pregunta es por lo que la persona vino a hacer, no por dónde trabaja (devolución de la Entrega 3).
+El 04/11 se probó preguntar por el objetivo («¿Qué estás por decidir?») y se descartó el mismo día: obligaba a traducir
+la situación a una categoría abstracta antes de ver nada. Está contado en `decisiones.md` y en el racional.
 
-**1 · ¿Qué estás por decidir?** Qué diseñar, qué producir o si algo ya pasó.
+**1 · ¿Para quién diseñás?** Mujer, hombre o sin género.
 
-![Paso 1: ¿qué estás por decidir?](entregas/entrega_4/recorrido/paso_01_que_estas_por_decidir.png)
+![Paso 1: ¿para quién diseñás?](entregas/entrega_4/recorrido/paso_01_para_quien_disenas.png)
 
-**2 · ¿Para quién diseñás?** Mujer, hombre o sin género.
+**2 · ¿Trabajás para una marca o por tu cuenta?** Por tu cuenta no comprometés stock: donde a una marca le conviene
+esperar, a vos te conviene explorar.
 
-![Paso 2: ¿para quién diseñás?](entregas/entrega_4/recorrido/paso_02_para_quien_disenas.png)
+![Paso 2: ¿para una marca o por tu cuenta?](entregas/entrega_4/recorrido/paso_02_marca_o_por_tu_cuenta.png)
 
-**3 · ¿Para qué tipo de marca?** Fast fashion, contemporary, high fashion o de autor.
+**3 · La categoría.** Para una marca: high fashion, contemporary, fast fashion o de autor.
 
-![Paso 3: ¿para qué tipo de marca?](entregas/entrega_4/recorrido/paso_03_tipo_de_marca.png)
+![Paso 3: la categoría](entregas/entrega_4/recorrido/paso_03_categoria.png)
 
-**4 · Cae donde corresponde a la decisión.** Qué producir entra a Tendencias, con el perfil debajo del título.
+**4 · Cae en Tendencias**, con el perfil debajo del título y «Cambiar» al lado.
 
 ![Paso 4: después de las preguntas, Tendencias](entregas/entrega_4/recorrido/paso_04_cae_en_tendencias_con_el_perfil.png)
 
-Si algo ya pasó, Tendencias pregunta «¿Sigue vigente?» y pone primero lo que ya hay que dejar. Qué diseñar entra a
-Diseñar, y donde la regla dice esperar, dice explorar.
+Por tu cuenta, la tercera pregunta es qué tipo de prendas querés diseñar, y en Tendencias aparece Explorar donde la
+marca vería Esperar.
 
-![Si algo ya pasó: ¿sigue vigente?](entregas/entrega_4/recorrido/paso_10_si_algo_ya_paso.png)
+![Por tu cuenta: la categoría](entregas/entrega_4/recorrido/paso_10_por_tu_cuenta_categoria.png)
 
-![Qué diseñar entra a Diseñar](entregas/entrega_4/recorrido/paso_11_que_disenar_entra_a_disenar.png)
+![Por tu cuenta: Tendencias, con Explorar](entregas/entrega_4/recorrido/paso_11_por_tu_cuenta_tendencias.png)
 
 En el celular, las mismas tres preguntas:
 
-<img src="entregas/entrega_4/recorrido/paso_01_que_estas_por_decidir_celular.png" alt="Paso 1 en el celular" width="260"> <img src="entregas/entrega_4/recorrido/paso_02_para_quien_disenas_celular.png" alt="Paso 2 en el celular" width="260"> <img src="entregas/entrega_4/recorrido/paso_03_tipo_de_marca_celular.png" alt="Paso 3 en el celular" width="260">
+<img src="entregas/entrega_4/recorrido/paso_01_para_quien_disenas_celular.png" alt="Paso 1 en el celular" width="260"> <img src="entregas/entrega_4/recorrido/paso_02_marca_o_por_tu_cuenta_celular.png" alt="Paso 2 en el celular" width="260"> <img src="entregas/entrega_4/recorrido/paso_03_categoria_celular.png" alt="Paso 3 en el celular" width="260">
 
 ### El uso
 
@@ -147,7 +149,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 
 | | |
 |---|---|
-| Entrada | Tres preguntas, siempre: qué estás por decidir, para quién diseñás y para qué tipo de marca. Después, Tendencias o Diseñar, según la decisión. «Cambiar perfil» vuelve acá |
+| Entrada | Tres preguntas, siempre: para quién diseñás, si trabajás para una marca o por tu cuenta, y la categoría. Después, Tendencias. «Cambiar perfil» vuelve acá |
 | Tendencias | La pantalla principal: qué gana y qué pierde terreno afuera, y doce atributos con su paleta y su etapa. La marca CICLO lleva acá |
 | El ciclo | Cuándo picó cada uno de los 65 atributos con serie y cuánto tardó en volver; el recorrido de cada uno por pasarela, búsqueda y Reddit hasta 2030, y los jeans por corte |
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
@@ -232,7 +234,7 @@ Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022
   está ocupado por la ropa, que es el dato que la usuaria vino a ver. La posición es además el canal
   perceptual más preciso (Munzner).
 - **El color dice una sola cosa: si conviene avanzar o frenar.** Verde, ámbar y rojo son la señal —Entrar,
-  Esperar (o Explorar, si estás decidiendo qué diseñar), Salir—, siempre con la palabra y un ícono; lo que no tiene dato
+  Esperar (o Explorar, si diseñás por tu cuenta), Salir—, siempre con la palabra y un ícono; lo que no tiene dato
   es neutro. «▲ Gana presencia» y «▼ Pierde presencia» llevan el mismo verde y rojo, sólo en la palabra y la flecha.
   De dónde sale el dato se dice sin color: ● medido, ◇ interpretado (punteado), ↪ prestado. Los gráficos usan color
   sólo para separar sus series. Hay un único color más: **el azul, que significa «se puede tocar»** (botones de

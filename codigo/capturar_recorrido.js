@@ -1,4 +1,4 @@
-// CICLO · el recorrido paso a paso para el readme (03/11/2026; la entrada nueva, 04/11/2026).
+// CICLO · el recorrido paso a paso para el readme (03/11/2026; al día con la entrada del 04/11/2026).
 // Uso, desde la raíz del repo, con la app servida (cd app && python3 -m http.server 8000):
 //   node codigo/capturar_recorrido.js [http://localhost:8000/]
 // Requiere: npm install playwright. Escribe en entregas/entrega_4/recorrido/ (el de la Entrega 3 queda en entrega_3/).
@@ -27,12 +27,12 @@ const OUT = 'entregas/entrega_4/recorrido';
 
   for (const [ancho, alto, suf] of [[1400, 900, ''], [393, 852, '_celular']]) {
     const p = await abrir(ancho, alto);
-    // la entrada: qué estás por decidir, para quién, qué tipo de marca
-    await foto(p, `paso_01_que_estas_por_decidir${suf}`);
-    await tarjeta(p, 'data-dec', 'producir');
-    await foto(p, `paso_02_para_quien_disenas${suf}`);
+    // la entrada: para quién, para una marca o por tu cuenta, la categoría
+    await foto(p, `paso_01_para_quien_disenas${suf}`);
     await tarjeta(p, 'data-pub', 'mujer');
-    await foto(p, `paso_03_tipo_de_marca${suf}`);
+    await foto(p, `paso_02_marca_o_por_tu_cuenta${suf}`);
+    await tarjeta(p, 'data-vinc', 'marca');
+    await foto(p, `paso_03_categoria${suf}`);
     await tarjeta(p, 'data-cli', 'fast');
     await foto(p, `paso_04_cae_en_tendencias_con_el_perfil${suf}`);
     if (!suf) {
@@ -54,12 +54,13 @@ const OUT = 'entregas/entrega_4/recorrido';
     }
     await p.context().close();
   }
-  // las otras dos decisiones: adónde lleva cada una
-  for (const [dec, nombre] of [['revisar', 'paso_10_si_algo_ya_paso'], ['disenar', 'paso_11_que_disenar_entra_a_disenar']]) {
+  // la otra rama: por tu cuenta, con sus categorías, y donde la marca espera, explorar
+  {
     const p = await abrir(1400, 900);
-    await tarjeta(p, 'data-dec', dec); await tarjeta(p, 'data-pub', 'mujer'); await tarjeta(p, 'data-cli', 'fast');
-    if (dec === 'revisar') await hasta(p, '#grid');
-    await foto(p, nombre);
+    await tarjeta(p, 'data-pub', 'mujer'); await tarjeta(p, 'data-vinc', 'propia');
+    await foto(p, 'paso_10_por_tu_cuenta_categoria');
+    await p.click('#ggrid [data-cli]:nth-child(2)');
+    await hasta(p, '#grid'); await foto(p, 'paso_11_por_tu_cuenta_tendencias');
     await p.context().close();
   }
   await b.close();

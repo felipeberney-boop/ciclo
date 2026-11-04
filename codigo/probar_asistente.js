@@ -8,7 +8,7 @@ const http = require('http'), fs = require('fs'), path = require('path');
 
 const KEY = process.env.GROQ_KEY;
 if (!KEY) { console.error('Falta la clave: GROQ_KEY=gsk_… node codigo/probar_asistente.js'); process.exit(1); }
-const PERFIL = '?c=premium&d=producir&pu=mujer';
+const PERFIL = '?c=premium&v=marca&pu=mujer';
 const PREGUNTAS = [ // [pregunta, diseño armado antes de preguntar (estado de Diseñar en el link) o null]
   ['¿Qué material está de moda ahora?', null],
   ['¿Qué color va con un jean baggy?', 'prenda:pantalones,tipo:largo,corte:baggy,material:denimrigido'],

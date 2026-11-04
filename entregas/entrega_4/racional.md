@@ -131,7 +131,7 @@ las que salen del cálculo:
 - **La señal.** Si el atributo tiene etapa del K-means, decide la regla de CICLO para la categoría (`CONSEJO`): con un
   atributo en pico, fast fashion entra y una marca de autor sale. Si no tiene etapa pero tiene serie, decide si gana o
   pierde terreno (más de 3 puntos). Si no tiene nada, queda sin dato: es neutro, porque «no tengo datos» no es lo
-  mismo que «está cayendo». Si la decisión es «qué diseñar», donde la regla dice Esperar dice Explorar.
+  mismo que «está cayendo». Si diseñás por tu cuenta, donde la regla dice Esperar dice Explorar.
 - **El cono.** Desde el último dato bueno, cada curva sigue la mediana de lo que pasó en la historia a esa distancia,
   con una banda donde cayó el 60 % y el 90 % de los casos. No es un pronóstico: en las pruebas empata con repetir el
   último valor en la pasarela (20,9 contra 20,9) y apenas mejora en la búsqueda (11,4 contra 12,6), y por eso la
@@ -155,8 +155,8 @@ datos crudos no están (pesan demasiado o necesitan cuenta); están los links y 
 ENTRA                                   SE CALCULA                                  SALE
 Pasarela por atributo y año  ─┐         nivel y momento (4 rasgos)                  la etapa
 Búsqueda por atributo y año  ─┼──────►  z-score → K-means k=4 → nombre de etapa ──► la señal, con la categoría
-Tu perfil (decisión,          │         regla CONSEJO × categoría × decisión        el cono, con el error a tu ventana
-  público, categoría)        ─┘         mediana histórica a h años
+Tu perfil (público,           │         regla CONSEJO × categoría × vínculo         el cono, con el error a tu ventana
+  vínculo, categoría)        ─┘         mediana histórica a h años
 Una foto (opcional)          ────────►  CLIP: parecido con 14.000 looks            atributos que ve y looks parecidos
 Una pregunta (opcional)      ────────►  LLM con métricas ya calculadas             una lectura marcada ◇ interpretación
 ```
@@ -187,14 +187,39 @@ decisión de diseño.
 paso a paso, con capturas, en el readme, y en papel, una pantalla por hoja, en
 `entregas/entrega_4/disenos_en_papel/`.
 
-**Por qué la ramificación es así.** La primera versión preguntaba «¿trabajás para una marca o por tu cuenta?», y
-venía de una devolución de la cátedra del 13/10 (`decisiones.md`). La devolución de la Entrega 3 marcó que eso pregunta por el vínculo laboral, no por lo que la persona vino a hacer. Al
-mirar qué cambiaba de verdad en la lectura, el vínculo movía una sola cosa: Esperar pasaba a Explorar porque «no
-comprometés stock». Eso no depende de dónde trabajás, sino de en qué punto de la decisión estás. Se evaluaron tres
-variantes (`decisiones.md`, 04/11):
+**Por qué la ramificación es así.** Tres preguntas: ¿para quién diseñás? (mujer, hombre, sin género), ¿trabajás para
+una marca o por tu cuenta?, y la categoría. La del vínculo viene de una devolución del 13/10 (`decisiones.md`). En la
+Entrega 3 la cátedra preguntó si esas eran las mejores palabras para ramificar, y lo pusimos a prueba.
+
+**La alternativa que probamos y descartamos.** El 04/11 la entrada pasó a preguntar por el objetivo: «¿Qué estás por
+decidir?», con Qué diseñar, Qué producir y Si algo ya pasó. Salió de evaluar tres variantes:
 
 | Variante | La pregunta | Por qué no o por qué sí |
 |---|---|---|
+| El alcance | Una colección · Una prenda · Si algo sigue vigente | Colección o prenda no cambia ningún número: habría que inventar ventanas |
+| El compromiso | Qué diseñar · Qué producir · Si algo ya pasó | La que se construyó: en la app, en papel y en el recorrido del readme |
+| El plazo | ¿Para cuándo en tienda? · ¿Cuánto tiene que durar? | Da la ventana directo, pero pierde el posicionamiento y obliga a reescribir las reglas |
+
+Al usarla, no funcionó. Obliga a la persona a traducir su situación a una categoría abstracta antes de haber visto nada
+de la app, y eso la frena en la primera pantalla: no se entendía qué elegir. El mismo día volvimos al vínculo laboral.
+
+**Por qué el vínculo.** Es una pregunta que un diseñador contesta sin pensar. Y lo que de verdad cambia la lectura se
+deduce mejor de las respuestas que ya tiene la entrada que de una pregunta por el objetivo. Cuánto cuesta equivocarse
+sale del vínculo: quien trabaja por su cuenta no compromete producción ni stock, así que donde a una marca le conviene
+Esperar, a esa persona le conviene Explorar, empezar a diseñar sin comprometer la serie. Cuánto falta hasta que la
+prenda se produce, y cuánto tiene que durar, salen de la categoría. Lo que Cristian criticó no era la pregunta sino el
+texto de más dentro de cada cuadrado, y ese texto ya se había sacado el 03/11.
+
+**La categoría se queda**, y esto no era obvio: se pensó que el lead time la podía reemplazar. No puede. La categoría
+lleva dos cosas que el lead time no tiene: la ventana (de la que depende el error medido, porque los lead times son
+todos menores a un año y el error se mide año a año) y el posicionamiento (en pico, fast fashion entra y una marca de
+autor sale, aunque la de autor tenga un lead time más corto que high fashion). Las categorías cambian según la rama:
+para una marca, high fashion, contemporary, fast fashion y de autor; por tu cuenta, el tipo de prenda que querés
+diseñar.
+
+Después de las tres preguntas la app abre en Tendencias, con el perfil escrito arriba y «Cambiar» al lado.
+
+---|---|---|
 | El alcance | Una colección · Una prenda · Si algo sigue vigente | Colección o prenda no cambia ningún número: habría que inventar ventanas |
 | **El compromiso** | **Qué diseñar · Qué producir · Si algo ya pasó** | **Elegida.** Es el objetivo de la persona, conserva todo lo que la lectura usa y agrega mirar hacia atrás |
 | El plazo | ¿Para cuándo en tienda? · ¿Cuánto tiene que durar? | Da la ventana directo, pero pierde el posicionamiento y obliga a reescribir las reglas |
@@ -279,7 +304,7 @@ ejemplo de como se veria la web»), sobre una captura de la app que ya estaba en
 | 25/08 | Entrega 1: pregunta, hipótesis, usuario, datasets, referentes | El grupo (Abril, Felipe y Zoe, que dejó el grupo el 26/10) |
 | 01/09 → 05/10 | La unidad pasa a ser el atributo, los datasets iniciales resultan sintéticos, K-means con k = 4, el prototipo de la Entrega 2 | El grupo, con Claude en el chat. De esas conversaciones no hay registro en el repositorio: lo que queda es `decisiones.md` |
 | 13/10 → 03/11 | La app en código, con Claude Code. Las devoluciones de la cátedra la cambian tres veces (13/10, 27/10, 03/11) | Felipe decide y pide; Claude propone, prueba y escribe el código. Felipe también trabajó con Claude en otra copia del repositorio y trajo de ahí consignas y cambios (13/10) |
-| 04/11 | La entrada por la decisión, el papel, cinco estilos de texto, la curaduría, la pirueta | Felipe eligió sobre variantes de Claude; lo que delegó está dicho abajo |
+| 04/11 | La entrada por la decisión, probada y descartada; el papel, cinco estilos de texto, la curaduría, la pirueta, la app sin la firma de la materia | Felipe eligió sobre variantes de Claude; lo que delegó está dicho abajo |
 
 **Qué propuso la IA, qué decidió Felipe y por qué.** Las citas de Felipe son textuales, de las conversaciones en Claude
 Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11 y el 04/11) cuentan como suyas: las eligió y las mandó.
@@ -301,7 +326,7 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11 y el 04/11) c
 | La hipótesis (27/10 y 03/11) | Un jurado ciego, Lyst y el adelanto mes a mes. Se negó a reescribirla para que diera sí: «Si la ajustamos después de ver el resultado [...] pierde valor». Después propuso Reddit | Preguntó: «porque no se comprueba mi hipotsis y como hacemos para que se compruebe». Descartó el jurado («es un quilombo», «borrar el formulario») y eligió Reddit. El 03/11: «que sea mas positiva [...] centrate en lo que si tenemos» | Reddit no entra al modelo y no depende de conseguir gente |
 | Tendencias primero (26/10) | Lo implementó | Lo decidió: «que aparezca primero tendencia [...] disenar es un festure de la app pero lo main thing es que puedas ver que esta en tendencia» | Lo que se mueve hoy es la puerta de entrada |
 | La presentación (27/10 y 03/11) | La armó y la redujo | Lo decidió: la web como pieza principal, «sacar la presentacion emtrega 3 figma slides», y «saca todos los slides que el profe no pida» | Una sola pieza, como la referencia de la cátedra |
-| La ramificación (04/11) | Tres variantes; recomendó «el compromiso» y cambiar «Si algo sigue vigente» por «Si algo ya pasó» | Su consigna planteó la pregunta por la decisión; eligió la variante 2 con el cambio de palabras: «si hace» | Pregunta por el objetivo, no por el vínculo, y no cambia ningún cálculo |
+| La ramificación (04/11) | Tres variantes; recomendó «el compromiso» y cambiar «Si algo sigue vigente» por «Si algo ya pasó» | Su consigna planteó la pregunta por la decisión y eligió la variante 2 («si hace»). Al usarla la descartó el mismo día: «no funciona. Es confusa y no se entiende qué elegir. Sacala», y volvió al vínculo | Obligaba a traducir la situación a una categoría abstracta antes de ver la app; el vínculo se contesta sin pensar |
 | Tipografía y curaduría (04/11) | Midió 31 tamaños y propuso cinco estilos; clasificó cada texto en se queda, va al «?» o se borra | Lo pidió en su consigna y quiso ver la lista antes de borrar; después dio control: «tenes full control» | La devolución de Cristian: demasiados estilos y capas que no aportan |
 | La pirueta (04/11) | Recomendó «Adiviná vos» con el LLM como jugador. Al construirla, sacó al LLM | Las dos ideas son suyas; eligió la primera: «si hace». Lo del LLM lo decidió Claude | Para jugar, el LLM tendría que ver la serie, y en CICLO no ve filas de datos |
 | Las pantallas de «Más» (04/11) | El modelo y Marcas desde Método, Retornos desde El ciclo | Lo delegó: «hace lo que te parezca» | El menú ofrecía cinco cosas iguales; tres eran detalle de otra |

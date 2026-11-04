@@ -1015,6 +1015,13 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app :is(button.gcard > span.gt,span.cm > span > b,div.ptop > h3.pname.serif,div.kcard > h3.kh,div.khead > h3.kh,section.view > h3.kbig,button.ciclo.tend > span.cn.serif,section.view > h2.h3,section.view > h3.h3,div > div.m.serif,section.view > h3,div > div.nm.serif,details.ascard.asact > summary,section.metdatos > h2,div.mdcol > h3,div.mdesq > div.mdflecha,div.metgate > h2,div.metgate > h3):not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.2!important;letter-spacing:-.015em!important}
 .app :is(div.a.serif > span,div.rec > div.a.serif,div > div.v.serif,span.a.serif > span.ico,div.dline > span.a.serif,div > p.n,label.drop > div.ic,div.mdclave > strong):not(#z){font-size:var(--t-dat)!important;font-weight:600!important;line-height:1.1!important;letter-spacing:-.02em!important}
 .app :is(div.gate > h1,div > h1,div.dzhead > h2.dzh):not(#z){font-size:var(--t-tit)!important;font-weight:600!important;line-height:1.08!important;letter-spacing:-.025em!important}
+.app p.psinet:not(#z){font-size:var(--t-eti)!important;font-weight:400!important;color:var(--ink-3);margin:10px 0 0}
+/* El modelo: el laboratorio del K-means, plegado al final (04/11) */
+.app details.kmlab{margin-top:48px;border-top:1px solid var(--rule);padding-top:20px}
+.app details.kmlab>summary:not(#z){cursor:pointer;color:var(--azul);font-size:var(--t-cue)!important;font-weight:400!important;list-style:none}
+.app details.kmlab>summary::-webkit-details-marker{display:none}
+.app details.kmlab>summary::after{content:' ↓'}.app details.kmlab[open]>summary::after{content:' ↑'}
+.app details.kmlab[open]>summary{margin-bottom:24px}
 /* las pantallas que salieron de «Más» se abren desde donde se usan (04/11) */
 .app p.irmas:not(#z){font-size:var(--t-cue)!important;font-weight:400!important;margin:18px 0 0}
 </style>
@@ -1073,7 +1080,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         <div>
           <h1 id="radtit">Qué se está moviendo</h1>
           <p class="perfilrad" id="perfilrad"></p>
-          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>El punto de la pista marca en qué etapa está el atributo. <b>● K-means</b>: la etapa sale del modelo, con pasarela y búsqueda medidas. <b>◇ estimada</b>: sale de un catálogo de demostración (sintético) y muestra el método, no una conclusión. Los colores de cada tarjeta son de ese mismo catálogo.</p></div></details>
+          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>El punto de la pista marca en qué etapa está el atributo según el K-means, que cruza pasarela y búsqueda medidas. Si no tiene etapa, la señal sale de cuánto ganó o perdió terreno en la búsqueda entre 2022 y 2024.</p></div></details>
         </div>
       </div>
       <hr class="rule">
@@ -1100,6 +1107,22 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         </div>
       </div>
       <hr class="rule">
+      <h3 class="kbig">Los grupos, leídos como etapas</h3>
+      <div class="kgroups" id="kgroups"></div>
+      <p class="note a"><b>Lo que no aparece: emergente.</b> Ningún atributo del set está empezando. Para ver algo emergente hace falta pasarela más reciente que 2023 y términos que hoy casi no se buscan; con los tags de Vogue no alcanza. Es el hueco más importante del modelo.</p>
+
+      <h3 class="kbig">¿Acertó? Lo que pasó después</h3>
+      <p class="sub">El modelo sólo ve pasarela y búsqueda. Lo validamos con dos capas que no usó: búsquedas de compra en Google Shopping (2021–22 contra 2024–25) y menciones en reseñas de Amazon (2018–19 contra 2021–22). Si los grupos tienen sentido, lo que el modelo llamó «en ascenso» tendría que seguir subiendo en la compra.</p>
+      <div class="ktw" style="margin-top:14px"><table class="ktab" id="kval"></table></div>
+      <p class="note">Los jeans ajustados, en «saturada», caen 39 % en las reseñas de Amazon entre 2019 y 2022 mientras los amplios suben 79 %: el mainstream confirma el reemplazo. Google Shopping también muestra a los amplios subiendo (+95 %), pero en 2025 casi todos los términos de jeans pegan un salto a la vez, así que su lectura de ese año es dudosa. El Y2K, único en ascenso, sube 203 % en búsquedas de compra.</p>
+
+
+      <h3 class="kbig">Contraste externo: lo que dice Lyst</h3>
+      <p class="sub">Lyst publica cada año su informe con crecimientos de búsqueda y de venta en marketplaces. No entró en el modelo: lo usamos después, como un jurado que no vio nuestras cuentas. Cada línea trae su fuente.</p>
+      <div class="ktw" style="margin-top:14px"><table class="ktab" id="lystx"></table></div>
+      <p class="note"><b>Coincide donde importa.</b> El grupo que el modelo llamó «pico» incluye jeans amplios y cargo, y son justo los dos que Lyst reporta creciendo en búsqueda (+55 % los jeans anchos en 2024, +56 % los cargo en 2022). El corset, que el modelo dejó entre los atributos de Y2K en ascenso, es la señal más fuerte de 2021 (+74 %). Donde Lyst ve las señales más fuertes es en calzado (ballerinas, UGG), que CICLO casi no mide: zapatillas y mocasines en la búsqueda, zapatillas y botas texanas en la pasarela (CLIP, interpretado). Las chatitas, las «ballerinas» de Lyst, CLIP no las distingue en una foto entera.</p>
+
+      <details class="kmlab"><summary>Cómo se calcula: los datos, el K-means paso a paso y por qué cuatro grupos</summary>
       <ol class="steps" aria-label="Cómo se arma el modelo">
         <li><b>Variables</b><span>nivel y momento en pasarela y en búsqueda</span></li>
         <li><b>Estandarizar</b><span>z-score, para que ninguna pese más por su escala</span></li>
@@ -1125,7 +1148,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
 
           <div class="kcard">
             <h3 class="kh">Agregá una tendencia</h3>
-            <p class="ksub">Cargá lo que viste en un desfile y en Google Trends. El modelo no se vuelve a entrenar: la tendencia nueva va al grupo con el centro más cercano. Viene un ejemplo inventado para probar.</p>
+            <p class="ksub">Cargá cuánto aparece algo en los desfiles y cuánto se busca, y mirá a qué grupo cae. El modelo no se vuelve a entrenar: lo nuevo va al grupo con el centro más cercano. Los valores de arranque son un ejemplo.</p>
             <form id="kf" class="kform">
               <label for="kfn">Nombre<input id="kfn" value="Jean barrel (ejemplo)"></label>
               <label for="kf1">Pasarela: nivel vs. su pico (%)<input id="kf1" type="number" value="60"></label>
@@ -1162,32 +1185,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
           </div>
         </div>
       </div>
-
-      <h3 class="kbig">Los grupos, leídos como etapas</h3>
-      <div class="kgroups" id="kgroups"></div>
-      <p class="note a"><b>Lo que no aparece: emergente.</b> Ningún atributo del set está empezando. Para ver algo emergente hace falta pasarela más reciente que 2023 y términos que hoy casi no se buscan; con los tags de Vogue no alcanza. Es el hueco más importante del modelo.</p>
-
-      <h3 class="kbig">¿Acertó? Lo que pasó después</h3>
-      <p class="sub">El modelo sólo ve pasarela y búsqueda. Lo validamos con dos capas que no usó: búsquedas de compra en Google Shopping (2021–22 contra 2024–25) y menciones en reseñas de Amazon (2018–19 contra 2021–22). Si los grupos tienen sentido, lo que el modelo llamó «en ascenso» tendría que seguir subiendo en la compra.</p>
-      <div class="ktw" style="margin-top:14px"><table class="ktab" id="kval"></table></div>
-      <p class="note">Los jeans ajustados, en «saturada», caen 39 % en las reseñas de Amazon entre 2019 y 2022 mientras los amplios suben 79 %: el mainstream confirma el reemplazo. Google Shopping también muestra a los amplios subiendo (+95 %), pero en 2025 casi todos los términos de jeans pegan un salto a la vez, así que su lectura de ese año es dudosa. El Y2K, único en ascenso, sube 203 % en búsquedas de compra.</p>
-
-
-      <h3 class="kbig">Contraste externo: lo que dice Lyst</h3>
-      <p class="sub">Lyst publica cada año su informe con crecimientos de búsqueda y de venta en marketplaces. No entró en el modelo: lo usamos después, como un jurado que no vio nuestras cuentas. Cada línea trae su fuente.</p>
-      <div class="ktw" style="margin-top:14px"><table class="ktab" id="lystx"></table></div>
-      <p class="note"><b>Coincide donde importa.</b> El grupo que el modelo llamó «pico» incluye jeans amplios y cargo, y son justo los dos que Lyst reporta creciendo en búsqueda (+55 % los jeans anchos en 2024, +56 % los cargo en 2022). El corset, que el modelo dejó entre los atributos de Y2K en ascenso, es la señal más fuerte de 2021 (+74 %). Donde Lyst ve las señales más fuertes es en calzado (ballerinas, UGG), que CICLO casi no mide: zapatillas y mocasines en la búsqueda, zapatillas y botas texanas en la pasarela (CLIP, interpretado). Las chatitas, las «ballerinas» de Lyst, CLIP no las distingue en una foto entera.</p>
-      <p class="note a"><b>Por qué no lo usamos como dato de entrenamiento.</b> El propio README del archivo lo aclara: las columnas de atributo son anotaciones de período repetidas en las 20 filas de cada marca, no observaciones por producto, y los blancos significan «no relevado», no cero. Sirve para contrastar una lectura; no para entrenar un clasificador.</p>
-
-      <div class="ai" style="margin-top:22px">
-        <div class="h"><span class="lbl" style="color:var(--accent)">Rol de la IA</span><span class="tag ia2">interpretación</span></div>
-        <p>El modelo de lenguaje nunca ve las filas: recibe sólo los centros de cada grupo y su validación, y los traduce a una recomendación para el tipo de cliente elegido arriba. El prompt que usamos:</p>
-        <pre class="kcalc" style="margin:8px 0 0">Contexto: sos analista de tendencias de CICLO. El cliente es una marca {tipo}, con {plazo} de producción.
-Objetivo: decir si conviene entrar, esperar o salir de cada grupo.
-Datos (calculados, no inventes otros): {centros del grupo: nivel y momento en pasarela y búsqueda; cambio en Google Shopping}.
-Estilo: dos frases, sin jerga. Tono: directo. Audiencia: diseñadores.
-Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique con un número de los datos.</pre>
-      </div>
+      </details>
     </section>
 
     <!-- ================= RECORRIDOS ================= -->
@@ -1248,10 +1246,10 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         </div>
         <div>
           <span class="lbl">Lo que no</span>
-          <p style="font-size:14px;color:var(--ink-2);margin:10px 0 0">El kimono va al revés: la búsqueda llegó antes. Y la mitad de los atributos todavía no cerró su ciclo en la búsqueda, así que su retraso es un piso, no un número. Con cuatro ciclos cerrados el número es orientativo: sirve para presentar el método, no para prometer una fecha.</p>
+          <p style="font-size:14px;color:var(--ink-2);margin:10px 0 0">El kimono va al revés: la búsqueda llegó antes. Y la mitad de los atributos todavía no cerró su ciclo en la búsqueda, así que su retraso es un piso, no un número. Con cuatro ciclos cerrados el número es orientativo, no una fecha.</p>
         </div>
       </div>
-      <p class="note a"><b>Cuatro cosas que hay que decir antes de mostrar esto.</b> Las etiquetas de Vogue Runway no las puso un editor: las generó un modelo de visión genérico, que reconoce «Leather Jacket» o «Polka Dot» pero no «rayas» ni «oversize». Antes de 2010 las fotos eran chicas y el modelo detecta menos, por eso ese tramo va punteado. En 2020 y 2021 hubo menos desfiles y más lookbooks. Reddit es un solo subreddit y en 2012–2013 era chico: sus primeros años exageran lo que se nombraba entonces. Y enero–septiembre 2026 de Google Trends quedó afuera: 33 de 35 términos marcan su récord el mismo mes, incluso búsquedas sin relación entre sí — es un salto en la medición de Google, no en la moda.</p>
+      <p class="note a"><b>Los límites de estos datos.</b> Las etiquetas de Vogue Runway no las puso un editor: las generó un modelo de visión genérico, que reconoce «Leather Jacket» o «Polka Dot» pero no «rayas» ni «oversize». Antes de 2010 las fotos eran chicas y el modelo detecta menos, por eso ese tramo va punteado. En 2020 y 2021 hubo menos desfiles y más lookbooks. Reddit es un solo subreddit y en 2012–2013 era chico: sus primeros años exageran lo que se nombraba entonces. Y enero–septiembre 2026 de Google Trends quedó afuera: 33 de 35 términos marcan su récord el mismo mes, incluso búsquedas sin relación entre sí — es un salto en la medición de Google, no en la moda.</p>
       <p class="note"><b>Por qué en Argentina hay menos términos.</b> Descartamos «lunares», «rayas», «gamuza» y «bordo»: en español también son manchas de la piel, líneas, un paño de limpieza y un club de fútbol. En inglés «polka dot dress» no tiene ese problema. Es la razón por la que la capa argentina se arma con términos compuestos.</p>
     </section>
 
@@ -1290,12 +1288,12 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       </div>
 
       <h3 style="font-family:Bodoni Moda,serif;font-weight:400;font-size:25px;margin:34px 0 0">Por qué Lyst cambió la fórmula</h3>
-      <p class="sub" style="margin-top:8px">En el primer trimestre de 2026 Chanel y Dior aparecen de la nada en el puesto 1 y el 3. No explotaron en tres meses: Lyst recalibró su metodología. Conviene entender por qué, porque le pasó lo mismo que a nosotros.</p>
+      <p class="sub" style="margin-top:8px">En el primer trimestre de 2026 Chanel y Dior aparecen de la nada en el puesto 1 y el 3. No explotaron en tres meses: Lyst recalibró su metodología. Entender por qué ayuda a leer cualquier ranking de moda.</p>
       <div class="dcols" style="margin-top:18px">
         <div>
           <span class="lbl">El problema que tenían</span>
           <p style="font-size:15px;margin-top:11px;color:var(--ink-2)">Los criticaron por poner a <b>Saint Laurent primera mientras sus ventas caían</b>. La fórmula vieja se apoyaba sobre todo en búsquedas, y la búsqueda mide curiosidad, no deseo ni compra. Una marca de la que todos hablan mal también se busca mucho.</p>
-          <p class="note" style="margin-top:14px"><b>Es exactamente nuestro problema.</b> Nosotros también arrancamos con Google Trends como columna vertebral. Lyst ya chocó contra ese límite y su solución —sumar redes y venta real— es el argumento más fuerte que tenemos para defender por qué CICLO cruza cinco capas en vez de usar una.</p>
+          <p class="note" style="margin-top:14px"><b>Qué te dice a vos.</b> Un ranking que se apoya sólo en búsquedas mide curiosidad, no deseo ni compra. Por eso CICLO no decide con una sola capa: cruza la pasarela con la búsqueda, y la venta y las redes la validan después</p>
         </div>
         <div>
           <span class="lbl">Las tres dimensiones nuevas</span>
@@ -1326,8 +1324,6 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
         </div>
       </div>
       <p class="note a" style="margin-top:18px"><b>Una conexión tentadora, y por qué no la afirmamos.</b> Chanel sacó 31,5 millones en el Met Gala de mayo 2025 y entró al Lyst Index en el primer puesto en Q1-26. Encaja con la hipótesis — pero es justo el trimestre en que Lyst cambió la fórmula, así que <b>no se puede separar el efecto de la gala del efecto del cambio de metodología</b>. Lo dejamos anotado como hipótesis a probar con más eventos, no como hallazgo.</p>
-      <p class="note"><b>Cómo se construye esta capa.</b> No existe ningún dataset público de alfombras rojas: lo verificamos en Kaggle, HuggingFace, Zenodo y Wikidata. Hay que armarlo a mano desde dos fuentes: los informes de Launchmetrics por evento, que dan marca, famoso y dólares, y las galerías de las Vogue regionales —la filipina y la mexicana no bloquean— que listan cada look con su diseñador. Son unas <b>12 a 15 horas para cinco eventos</b>, repartibles entre los tres.</p>
-
       <p class="note a" style="margin-top:20px"><b>Cómo lo tratamos en el modelo.</b> Q1-26 es un corte en la serie, no un dato. Cualquier cálculo de crecimiento que cruce esa frontera va a leer la mayor explosión de la historia de la moda donde sólo hubo un cambio de fórmula. En la app el corte está marcado y las métricas se calculan <b>dentro</b> de cada tramo, nunca a través.</p>
     </section>
 
@@ -1372,7 +1368,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       <div class="vhead">
         <div>
           <h1>Preguntale a CICLO</h1>
-          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Cada respuesta trae el dato que la sostiene y un cambio para probar. El modelo de lenguaje lee sólo métricas ya calculadas (<a href="llm/ciclo_datos.md" target="_blank" rel="noopener">ciclo_datos.md</a>), nunca una fila de la base. Lo que contesta es interpretación.</p></div></details>
+          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Cada respuesta trae el dato que la sostiene y un cambio para probar. El modelo de lenguaje lee sólo <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">un resumen de métricas ya calculadas</a>, nunca una fila de la base. Lo que contesta es interpretación.</p></div></details>
         </div>
       </div>
       <hr class="rule">
@@ -1433,7 +1429,7 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
           <div id="qprev"></div>
         </div>
         <div>
-          <div class="h" style="display:flex;align-items:center;gap:8px"><span class="lbl">Atributos que ve el modelo</span><span class="tag ia2">interpretación · IA-6</span></div>
+          <div class="h" style="display:flex;align-items:center;gap:8px"><span class="lbl">Atributos que ve el modelo</span><span class="tag ia2">interpretación</span></div>
           <div class="qres" style="margin-top:14px" id="qres"></div>
           <div id="qmas" hidden>
             <div class="h" style="display:flex;align-items:center;gap:8px;margin-top:26px"><span class="lbl">Los looks de pasarela más parecidos</span><span class="tag ia2">CLIP · vecinos</span></div>
@@ -1487,45 +1483,39 @@ Respuesta: una acción (Entrar / Esperar / Salir) y una frase que la justifique 
       <div class="tw"><table>
         <thead><tr><th>Lo que ves</th><th>Origen</th><th>Cómo se obtiene</th></tr></thead>
         <tbody>
-          <tr><td class="k">Paleta de cada atributo</td><td><span class="tag demo">demostración</span></td><td>Frecuencia de cada color en los 660 productos de Zara 2018–22, un archivo sintético (decisiones.md, 08/09): muestra el método, no es una conclusión. La estampa a rayas existe solo en negro y naranja, 18 productos cada uno.</td></tr>
-          <tr><td class="k">Cuántos colores tolera una estampa</td><td><span class="tag demo">demostración</span></td><td>Tabla de contingencia estampa × color, chi² = 782,6 con p ≈ 3·10⁻¹²⁹. Es la estructura más fuerte del archivo, pero el archivo es sintético (Zara 2018–22): demuestra el método, no dice nada de la moda.</td></tr>
           <tr><td class="k">Reparto de proporciones</td><td><span class="tag real">medido</span></td><td>Minería de texto sobre las descripciones reales del catálogo de Zara de febrero 2024: 38 prendas amplias, 16 rectas, 5 ajustadas sobre 228 únicas.</td></tr>
-          <tr><td class="k">Grupo en liquidación</td><td><span class="tag demo">sin verificar</span></td><td>K-means k=4 sobre 1.814 productos de 8 marcas. Un grupo de 375 con 44,4 % de descuento y el 100 % en rebaja, transversal a marcas y precios. No encontramos en el repo de qué archivo sale; queda fuera de las conclusiones hasta verificarlo.</td></tr>
-          <tr><td class="k">Etapa del ciclo</td><td><span class="tag demo">estimada</span></td><td>Las fichas de Tendencias muestran la etapa del K-means cuando el atributo está en el modelo (seis de las doce); las otras seis, la estimada sobre el catálogo sintético de Zara, y la pista dice cuál es cada una. La recomendación nunca sale de la etapa estimada: rayas y gamuza recomiendan por su serie de búsqueda, y las cuatro sin serie no recomiendan.</td></tr>
           <tr><td class="k">Capa de pasarela</td><td><span class="tag real">medido</span></td><td><b>Vogue Runway</b> (HuggingFace, traopia): 1.281.633 imágenes con diseñador, temporada y etiquetas. Usamos las de la sección «Collection», sin novias, 2000–2023, y medimos qué parte de los looks de cada año lleva cada etiqueta. Las etiquetas vienen de un modelo de visión genérico: antes de 2010 detecta menos.</td></tr>
-          <tr><td class="k">Capa de búsqueda</td><td><span class="tag real">medido</span></td><td><b>Google Trends</b>: 65 series mundiales en inglés (16 de septiembre y 49 de los planes de octubre, con «trench coat» de ancla) y 14 términos en español para Argentina; índice mensual promediado por año y corregido por el crecimiento general de las búsquedas de moda. El análisis corta en 2024: 2025 y 2026 traen un salto de medición que afecta a casi todos los términos a la vez. Qué entró y qué no, término por término: <code>datasets/trends_lotes/informe.md</code>.</td></tr>
+          <tr><td class="k">Capa de búsqueda</td><td><span class="tag real">medido</span></td><td><b>Google Trends</b>: 65 series mundiales en inglés (con «trench coat» de ancla común) y 14 términos en español para Argentina; índice mensual promediado por año y corregido por el crecimiento general de las búsquedas de moda. El análisis corta en 2024: 2025 y 2026 traen un salto de medición que afecta a casi todos los términos a la vez. <a href="https://github.com/felipeberney-boop/ciclo/blob/main/datasets/trends_lotes/informe.md" target="_blank" rel="noopener">Qué entró y qué no, término por término →</a></td></tr>
           <tr><td class="k">Hasta 2030 · el cono</td><td><span class="tag ia">no es un pronóstico</span></td><td>Probamos cuatro formas de predecir la búsqueda —suavizado con tendencia amortiguada (error a 5 años 22,1 contra 21,6 de su base), análogos históricos (15,9 contra 15,5), reversión a la media (21,7 contra 21,6) y la etapa del ciclo como regla (62,9 % contra 62,9 %)— y ninguna le gana a repetir el último valor. La línea punteada es dónde quedaría cada curva si se moviera como la mediana de la historia; la banda, cuánto se movió de verdad la búsqueda a cada distancia, medido con 2025 corregido adentro (±8,8 a un año, ±23,1 a cinco). La ventana de cada categoría marca hasta dónde ese error todavía sirve para decidir. <b>No entra al K-means.</b></td></tr>
           <tr><td class="k">2025 y 2026 en la búsqueda</td><td><span class="tag alert">fuera</span></td><td>Desde 2025 Google cambió cómo mide: en 2026, 69 de 70 series suben a la vez (mediana +99 %) y hasta el trench coat, que picó siempre entre septiembre y febrero, pica en abril. Es la medición, no la moda. Todo el análisis corta en 2024 —señales, ciclo, K-means y lo que lee el asistente—; 2025 y 2026 se dibujan apagados, con punto hueco. Google Trends no tiene datos antes de 2004.</td></tr>
           <tr><td class="k">¿La pasarela adelanta?</td><td><span class="tag alert">no, ni por año ni por temporada</span></td><td>La correlación entre pasarela y búsqueda es máxima sin rezago (+0,43) y cae a +0,12 con dos años. La hipótesis de que la pasarela anticipa no se sostiene año a año. Tampoco por temporada (27/10, criterio fijado antes de calcular): en 14 atributos, el cambio de cada desfile contra la misma temporada del año anterior no anticipa la búsqueda de 3 a 18 meses después (medianas entre −0,04 y +0,04; ninguna con p menor a 0,007). Se mueven juntas, a la vez.</td></tr>
           <tr><td class="k">Retraso pasarela → búsqueda</td><td><span class="tag real">medido</span></td><td>Año de pico en cada capa para 12 atributos. En los ciclos cerrados, entre 0 y 2 años; el kimono va al revés. Con pocos ciclos cerrados, es orientativo.</td></tr>
-          <tr><td class="k">¿La etapa coincide con afuera?</td><td><span class="tag real">se sostiene en parte</span></td><td><b>Reddit</b>, que no entra en el modelo: en 14 atributos, los tres que el K-means pone en ascenso o pico (Y2K, cargo, jeans baggy) son los tres que más crecen en r/femalefashionadvice entre 2020–21 y 2023–24 (+258 %, +187 %, +130 %; p = 0,0013 contra barajar las etapas). Lo que no se sostiene: Reddit no distingue «en retorno» de «saturada» (p = 0,88). Criterio fijado antes de calcular (datasets/pruebas/prueba_reddit_preregistro.md, 27/10).</td></tr>
-          <tr><td class="k">Etapa del ciclo (K-means)</td><td><span class="tag real">calculado</span></td><td>K-means con k = 4 sobre 17 atributos que existen en la pasarela de Vogue y en Google Trends; los jeans entran agrupados por corte (amplio, medio, ajustado). Cuatro variables estandarizadas: nivel y momento en cada capa; la búsqueda, hasta 2024. Silhouette 0,32 con k=4 (k=2 da 0,36: la elección de cuatro está explicada en El modelo). Los grupos los nombramos nosotros: en ascenso, pico, saturada, en retorno. Validado contra Google Shopping y Amazon, que el modelo no ve.</td></tr>
+          <tr><td class="k">¿La etapa coincide con afuera?</td><td><span class="tag real">se sostiene en parte</span></td><td><b>Reddit</b>, que no entra en el modelo: en 14 atributos, los tres que el K-means pone en ascenso o pico (Y2K, cargo, jeans baggy) son los tres que más crecen en r/femalefashionadvice entre 2020–21 y 2023–24 (+258 %, +187 %, +130 %; p = 0,0013 contra barajar las etapas). Lo que no se sostiene: Reddit no distingue «en retorno» de «saturada» (p = 0,88). <a href="https://github.com/felipeberney-boop/ciclo/blob/main/datasets/pruebas/prueba_reddit_preregistro.md" target="_blank" rel="noopener">Criterio fijado antes de calcular →</a></td></tr>
+          <tr><td class="k">Etapa del ciclo (K-means)</td><td><span class="tag real">calculado</span></td><td>K-means con k = 4 sobre 17 atributos que existen en la pasarela de Vogue y en Google Trends; los jeans entran agrupados por corte (amplio, medio, ajustado). Cuatro variables estandarizadas: nivel y momento en cada capa; la búsqueda, hasta 2024. Silhouette 0,32 con k=4 (k=2 da 0,36: la elección de cuatro está explicada en El modelo). Los grupos se nombran por el prototipo de etapa más cercano: en ascenso, pico, saturada, en retorno. Validado contra Google Shopping y Amazon, que el modelo no ve.</td></tr>
           <tr><td class="k">Calzado</td><td><span class="tag alert">dos intentos</span></td><td><b>Búsqueda</b> (Google Trends, 21/10): de 8 estilos entran «sneakers» y «loafers»; «sandals» mide el verano (20,1 puntos dentro del año contra 11,6 entre años) y los otros cinco son ruido o vuelven sin señal. <b>Pasarela</b> (CLIP sobre 14.000 looks, 25/10): en los 8 looks más seguros de cada estilo acierta zapatillas (8 de 8) y botas texanas (7 de 8), pero lee la ropa, no el zapato; chatitas, plataformas y guillerminas, 0 de 8. Resultado: señal para zapatillas y mocasines, frecuencia interpretada para zapatillas y texanas, y cinco estilos que ninguna fuente mide. Se muestran igual en Diseñar, con el motivo de cada uno.</td></tr>
           <tr><td class="k">Venta masiva 2018–2020</td><td><span class="tag real">medido</span></td><td><b>H&amp;M</b>: 30,6 millones de compras de ropa adulta, mes por mes, con color, estampa y descripción de cada artículo.</td></tr>
           <tr><td class="k">Venta masiva después de 2020</td><td><span class="tag real">medido · proxy</span></td><td><b>Google Shopping</b> (búsquedas de compra, 2008–2025) y <b>Amazon Reviews 2023</b>: muestra de 1,1 millones de reseñas de ropa, 2012 a abril 2023. No son ventas: son intención de compra y compras reseñadas. No existe un dataset público de ventas de moda posterior a 2020 con atributos.</td></tr>
           <tr><td class="k">Copia ultra barata</td><td><span class="tag real">medido</span></td><td><b>Wish</b>, agosto 2020: 1.341 productos únicos (232 duplicados fuera), precio mediano 8 €. Sólo verano. El «precio de lista» no sirve: el 47 % no tiene descuento y el 25 % dice tener más de 72 %.</td></tr>
-          <tr><td class="k">Taxonomía de atributos</td><td><span class="tag real">definido</span></td><td>Cada término de cada fuente cae en una sola casilla: <b>prenda × corte</b> (amplio, medio, ajustado), <b>estampa</b>, <b>material</b> o <b>estética</b>. Los jeans se agrupan por corte: amplios (baggy, wide leg, barrel y relaxed), medios (straight, bootcut, flare y tapered) y ajustados (skinny y slim); en Diseñar, el jean es pantalón + denim y el corte, el tiro y el fit son ejes aparte. El encaje pasó de estampa a material; el Y2K, de prenda a estética.</td></tr>
+          <tr><td class="k">Taxonomía de atributos</td><td><span class="tag real">definido</span></td><td>Cada término de cada fuente cae en una sola casilla: <b>prenda × corte</b> (amplio, medio, ajustado), <b>estampa</b>, <b>material</b> o <b>estética</b>. Los jeans se agrupan por corte: amplios (baggy, wide leg, barrel y relaxed), medios (straight, bootcut, flare y tapered) y ajustados (skinny y slim); en Diseñar, el jean es pantalón + denim y el corte, el tiro y el fit son ejes aparte.</td></tr>
           <tr><td class="k">Ranking de marcas</td><td><span class="tag real">medido</span></td><td><b>Lyst Index</b>: los <b>34 trimestres</b> desde Q1-18 hasta Q2-26, transcritos de los informes públicos. 55 marcas distintas en 640 puestos. Los de 2018 son top 10 porque el índice recién se amplió a 20 en Q1-19.</td></tr>
           <tr><td class="k">Alfombra roja</td><td><span class="tag real">medido</span></td><td><b>Launchmetrics</b>, Met Gala 2025: impacto mediático por marca y por famoso en dólares, medido en las 48 horas posteriores al evento. 1.300 millones en total, 19 % más que 2024. Es la única fuente que cuantifica el paso de famoso a deseo.</td></tr>
           <tr><td class="k">Corte de Q1-26</td><td><span class="tag alert">a declarar</span></td><td>Lyst recalibró su fórmula en Q1-26 —le criticaron poner a Saint Laurent primera mientras sus ventas caían— y pasó de apoyarse en búsquedas a cruzar deseo (redes), demanda (venta real) y descubrimiento. Chanel y Dior entraron directo al 1º y 3º. Es un corte en la serie: las métricas se calculan dentro de cada tramo, nunca a través.</td></tr>
-          <tr><td class="k">Capa de redes</td><td><span class="tag real">medido</span></td><td><b>Reddit</b> vía Arctic Shift: 4.404 posts de r/femalefashionadvice cuyo título nombra alguno de los 25 términos, 2012–2025, divididos por los 178.519 posts del subreddit en esos años y suavizados con media de 3 años. <b>Completado a octubre de 2026</b> con 14.495 posts nuevos, empalmado con la misma regla (verificada contra 2022–2025). Intentamos sumar r/malefashionadvice y r/streetwear, pero el servidor corta las consultas grandes; quedan para una corrida más lenta.</td></tr>
-          <tr><td class="k">Pinterest y TikTok</td><td><span class="tag alert">pendiente</span></td><td>Pinterest Trends y TikTok Creative Center piden iniciar sesión para mostrar series. Con una cuenta del grupo abierta en el navegador se leen igual que Google Trends.</td></tr>
-          <tr><td class="k">Los tres datasets de Kaggle</td><td><span class="tag real">revisado</span></td><td><b>Fashion Trend Dataset</b> es el mismo archivo que ya usábamos como «Zara 2018–22» (fashion_data_2018_2022.xls, 20 columnas): sintético. <b>Fashion Dataset</b>: 15.702 vestidos etiquetados por estampa — liso 53,4 %, floral 17,7 %, rayas 4,5 %, lunares 4,1 %; confirma al liso como fondo, pero no tiene fecha. <b>Runways since 2011</b>: 6.655 desfiles y 132.118 imágenes sin etiquetas; sirve para medir color por temporada y queda para la próxima etapa.</td></tr>
+          <tr><td class="k">Capa de redes</td><td><span class="tag real">medido</span></td><td><b>Reddit</b> vía Arctic Shift: 4.404 posts de r/femalefashionadvice cuyo título nombra alguno de los 25 términos, 2012–2025, divididos por los 178.519 posts del subreddit en esos años y suavizados con media de 3 años. <b>Completado a octubre de 2026</b> con 14.495 posts nuevos, empalmado con la misma regla (verificada contra 2022–2025).</td></tr>
           <tr><td class="k">Instagram</td><td><span class="tag alert">descartado</span></td><td>No existe serie histórica de hashtags a ningún precio. Instagram sacó la pestaña cronológica en 2022 y limitó a 5 hashtags por post en diciembre de 2025: el volumen de hashtag es una señal que se degrada sola. Es un resultado negativo, no un olvido.</td></tr>
           <tr><td class="k">Lectura y recomendación</td><td><span class="tag ia2">interpretación</span></td><td>Salida del modelo de lenguaje a partir de las métricas de arriba. Es opinión, no dato, y en la interfaz siempre aparece con esta marca.</td></tr>
-          <tr><td class="k">Preguntale a CICLO</td><td><span class="tag ia2">interpretación</span></td><td>Chat con un modelo de lenguaje (Groq, con la API key de cada uno, desde el navegador). Lee <code>llm/ciclo_datos.md</code>: métricas ya calculadas, tu perfil y la regla fija de CICLO, nunca una fila de la base. Si algo no está en ese documento, lo dice.</td></tr>
+          <tr><td class="k">Preguntale a CICLO</td><td><span class="tag ia2">interpretación</span></td><td>Chat con un modelo de lenguaje (Groq, con la API key de cada uno, desde el navegador). Lee <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">un resumen de métricas ya calculadas</a>: tu perfil y la regla fija de CICLO, nunca una fila de la base. Si algo no está en ese documento, lo dice.</td></tr>
         </tbody>
       </table></div>
       <div class="metgate" id="metgate"></div>
-      <p class="note a"><b>Lo que esta versión todavía no puede hacer.</b> Las tres puntas ya están medidas en el tiempo: pasarela hasta 2023, búsqueda hasta 2024 (2025 excluido por el salto de Google), Reddit hasta octubre de 2026 (de ahí a 2030 se muestra la mediana de la historia, que no es un pronóstico), y el catálogo masivo con los 30,6 millones de compras de H&amp;M entre 2018 y 2020 más las reseñas de Amazon hasta 2023. Falta <b>separar pasarela y venta por menswear y womenswear</b>: el corpus las mezcla y hay que volver a agregarlo desde el archivo original. El calzado se mide poco, y está contado arriba, en su fila: cinco de ocho estilos no los mide ni la búsqueda ni la pasarela.</p>
+      <p class="note a"><b>Lo que CICLO todavía no puede hacer.</b> Las capas llegan hasta: pasarela hasta 2023, búsqueda hasta 2024 (2025 excluido por el salto de Google), Reddit hasta octubre de 2026 (de ahí a 2030 se muestra la mediana de la historia, que no es un pronóstico), y el catálogo masivo con los 30,6 millones de compras de H&amp;M entre 2018 y 2020 más las reseñas de Amazon hasta 2023. Falta <b>separar pasarela y venta por menswear y womenswear</b>: el corpus las mezcla y hay que volver a agregarlo desde el archivo original. El calzado se mide poco, y está contado arriba, en su fila: cinco de ocho estilos no los mide ni la búsqueda ni la pasarela.</p>
     </section>
 
     <footer class="colofon">
       <div><b>CICLO</b>En qué etapa de su ciclo está cada atributo de moda, y si conviene entrar, esperar o salir.<br>Última lectura de datos: 21.10.2026<br><a href="https://github.com/felipeberney-boop/ciclo" target="_blank" rel="noopener">Datos y código abiertos →</a><br><button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link de este diseño</button></div>
-      <div><b>Pasarela</b>Vogue Runway · 1,28 M looks<br>Runways since 2011 · 6.655 desfiles</div>
+      <div><b>Pasarela</b>Vogue Runway · 1,28 M looks</div>
       <div><b>Búsqueda y redes</b>Google Trends · 65 series, 2004–2024<br>Google Shopping · 25 términos<br>Reddit · 4.404 posts, 2012–2025</div>
-      <div><b>Mercado masivo</b>H&amp;M · 30,6 M compras<br>Amazon · 1,1 M reseñas<br>Wish · 1.341 productos<br>Zara feb-2024 · 252 prendas</div>
-      <div><b>Marcas y señales</b>Lyst Index · 34 trimestres<br>Lyst editorial · 19 señales<br>Launchmetrics · Met Gala<br><span style="color:var(--ink-3)">Piden cuenta: Pinterest, TikTok</span></div>
+      <div><b>Mercado masivo</b>H&amp;M · 30,6 M compras<br>Amazon · 1,1 M reseñas<br>Zara feb-2024 · 252 prendas</div>
+      <div><b>Marcas y señales</b>Lyst Index · 34 trimestres<br>Lyst editorial · 19 señales<br>Launchmetrics · Met Gala</div>
     </footer>
   </main>
 </div>
@@ -1669,7 +1659,9 @@ function miniSerie(id,w=104,h=26){
 /* ---------- fichas del radar ---------- */
 /* la etapa de la ficha: la del K-means si el atributo está en el modelo; si no, la estimada sobre el catálogo sintético, y lo dice */
 function etapaFicha(t){const k=KMAP[t.id]?kEtapaN(KMAP[t.id]):null,i=k?ET.indexOf(k.n):-1;
-  return i>=0?{et:i,de:'● K-means'}:{et:t.et,de:'◇ estimada'};}
+  return i>=0?{et:i,de:'● K-means'}:{et:null,de:null};} // la etapa estimada sobre el catálogo sintético ya no se muestra (04/11)
+/* Tendencias muestra sólo lo que tiene dato medido: etapa del K-means o serie de búsqueda */
+const tieneDato=t=>!!(KMAP[t.id]||(DMAP[t.id]&&REC.some(o=>o.id===DMAP[t.id])));
 function pista(et,de){
   const d=document.createElement('div');d.className='track';
   const pct=et/(ET.length-1)*100;
@@ -1681,7 +1673,7 @@ function pista(et,de){
 function ficha(t){
   const b=document.createElement('button');
   b.className='plate';b.type='button';
-  const ef=etapaFicha(t);b.setAttribute('aria-label',`${t.n} — ${ET[ef.et]} (${ef.de}), ${t.prod} prendas`);
+  const ef=etapaFicha(t);b.setAttribute('aria-label',ef.de?`${t.n} — ${ET[ef.et]}`:t.n);
   // ningún atributo con nombre queda sin dibujo: estampa o textura en su color; los cortes, un recorte de la pierna
   const RDIB={rayas:'estampas/estampa_rayas',corazones:'estampas/estampa_corazones',floral:'estampas/estampa_floral',lunares:'estampas/estampa_lunares',
     geometrico:'estampas/estampa_geometrico',cuero:'materiales/cuero',punto:'materiales/jersey',gamuza:'estampas/estampa_gamuza',
@@ -1689,15 +1681,10 @@ function ficha(t){
   const dib=document.createElement('div');dib.className='pdib';const k=RDIB[t.id],hex=COL[t.sw[0]];
   dib.innerHTML=k&&k.startsWith('pierna:')?`<span class="ppierna">${silSvg(k.slice(7))}</span>`:dzTela(k||null,hex);
   b.appendChild(dib);
-  const swc=document.createElement('div');swc.className='pswcap';swc.textContent=`colores más vistos con ${t.n.toLowerCase()} · catálogo Zara 2018–22 (sintético)`;
-  const sw=document.createElement('div');sw.className='swatches';
-  t.sw.forEach(c=>{const i=document.createElement('i');i.style.background=COL[c];
-    i.title=c;sw.appendChild(i);});
-  b.appendChild(sw);
   const body=document.createElement('div');body.className='pbody';
   // para mirar de un vistazo: el nombre y la etapa; las cifras y la serie, en la ficha (27/10)
   body.innerHTML=`<div class="ptop"><h3 class="pname serif">${t.n}</h3><span class="pkind">${t.k}</span></div>`;
-  body.appendChild(pista(ef.et,ef.de));
+  if(ef.de)body.appendChild(pista(ef.et,ef.de));else body.insertAdjacentHTML('beforeend','<p class="psinet">Sin etapa en el modelo: la señal sale de la búsqueda</p>');
   // la señal, en la tarjeta: es lo que se decide (papel del 04/11). La misma que da la ficha
   const sg=señalTend(t);body.insertAdjacentHTML('beforeend',`<span class="sen psen ${sg.cls}">${sg.icono} ${sg.palabra}</span>`);
   b.appendChild(body);
@@ -1707,7 +1694,7 @@ function ficha(t){
 const señalTend=t=>señal({grupo:KMAP[t.id]||null,rec:DMAP[t.id]&&REC.some(o=>o.id===DMAP[t.id])?DMAP[t.id]:null});
 function pintarRadar(){
   const g=$('#grid');g.innerHTML='';
-  const lista=T.filter(t=>filtro==='todos'||t.tipo===filtro);
+  const lista=T.filter(t=>tieneDato(t)&&(filtro==='todos'||t.tipo===filtro));
   lista.forEach(t=>g.appendChild(ficha(t)));
 }
 
@@ -1866,7 +1853,6 @@ function abrirDetalle(id){
     <hr class="rule">
     <div class="dcols">
       <div>
-        <div class="bigsw">${t.sw.map(c=>`<i style="background:${COL[c]}"><span>${c}</span></i>`).join('')}</div>
         ${kEtapa(t.id)?`<dl>${kEtapa(t.id)}</dl>`:''}
         <div class="ai">
           <div class="rec">
@@ -1875,42 +1861,16 @@ function abrirDetalle(id){
           </div>
           <details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>${sg.porque}</p>
             <p>${vinculo==='propia'?'Por tu cuenta · tu cliente':'Para una marca · tu marca'}: ${CLI}.</p>
-            <p><b>Del catálogo</b> (${t.fuente}, ◇ sintético): ${t.med}. Etapa estimada: ${ET[t.et].toLowerCase()}. ${t.prod} prendas${t.cols?`, ${t.cols} de 12 colores`:''}.</p>
-            <p><b>Lectura del equipo</b> (◇ interpretación): ${t.lect}</p></div></details>
+</div></details>
         </div>
       </div>
       <div>
-        <span class="lbl" id="ltlbl">Recorrido en el tiempo · 2018–2022</span>
-        <figure style="margin-top:12px" id="ltfig"><div id="lt"></div>
-          <details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p id="ltcap"></p></div></details></figure>
-        <span class="lbl" style="display:block;margin-top:26px" id="cclbl">Recorrido por las capas del mercado</span>
+        <span class="lbl" style="display:block" id="cclbl">Recorrido por las capas del mercado</span>
         <div class="leg" id="dleg" style="margin-top:12px"></div>
         <figure style="margin-top:4px"><div id="casc"></div>
           <details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p id="ccap"></p><p id="dnote"></p></div></details></figure>
       </div>
     </div>`;
-  const lt=lineaTiempo(t.id);
-  if(lt){
-    $('#lt').appendChild(lt);
-    const meses=SERIE.s[t.id].filter(v=>v>0).length;
-    const nombreMes=['enero','febrero','marzo','abril','mayo','junio','julio',
-      'agosto','septiembre','octubre','noviembre','diciembre'];
-    const cuenta={};
-    SERIE.s[t.id].forEach((v,i)=>{if(v>0){const m=+SERIE.meses[i].slice(5)-1;cuenta[m]=(cuenta[m]||0)+1;}});
-    const unicos=Object.keys(cuenta);
-    const cierre = unicos.length===1
-      ? `Aparece <b>solo en ${nombreMes[unicos[0]]}</b>, y lo hace los cinco años. Es un ciclo, no una moda que pasó.`
-      : `Se reparte en ${meses} de los 60 meses: está presente casi todo el año.`;
-    $('#ltcap').innerHTML=`Prendas por mes en el catálogo de Zara, 2018 a 2022. Dato medido, no estimado. `+cierre;
-  } else if(DMAP[t.id]){
-    $('#ltfig').hidden=true;$('#ltlbl').hidden=true;
-  } else {
-    $('#ltfig').hidden=true;
-    $('#ltlbl').innerHTML='Recorrido en el tiempo · <span style="color:var(--ink-3)">sin serie</span>';
-    const d=document.createElement('p');d.className='note';
-    d.innerHTML='<b>Este atributo no tiene eje temporal.</b> Sale del catálogo de Zara de febrero de 2024, que es una sola foto tomada en veinte minutos. Para verlo progresar hacen falta varios cortes del mismo catálogo, o el histórico de pasarela de Vogue Runway.';
-    $('#ltlbl').after(d);
-  }
   const rm=REC.find(r=>r.id===(DMAP[t.id]||''));
   if(rm){
     $('#cclbl').textContent='Pasarela, búsqueda y redes · hasta 2024';
@@ -2269,9 +2229,8 @@ const attrDz=h=>`data-dz='${JSON.stringify(h).replace(/'/g,'&#39;')}'`;
 const botonDz=h=>h?`<button type="button" class="kbtn dzcon" ${attrDz(h)}>Diseñar ${DZ_CON[h.k]} · ${h.n} →</button>`:'';
 function dzEnFicha(t){
   const a=T_A_HOJA[t.id],h=a?hojaDz(a[0],a[1]):null;
-  const cols=[...new Set(t.sw||[])].map(c=>TAX.colores.some(x=>x.id===c)?hojaDz('color',c):PALETA_MAT[c]?hojaDz('material',PALETA_MAT[c]):null).filter(Boolean);
-  return `<div class="dzdesde">${h?botonDz(h):`<p class="dzaviso">${t.n} todavía no está en el vocabulario de Diseñar.</p>`}${cols.length?
-    `<div class="dzcols"><span>Sus colores, para diseñar:</span>${cols.map(x=>`<button type="button" class="chip" ${attrDz(x)}>${x.n}</button>`).join('')}</div>`:''}</div>`;
+  // los colores venían de la paleta del catálogo sintético: ya no se ofrecen (04/11)
+  return `<div class="dzdesde">${h?botonDz(h):`<p class="dzaviso">${t.n} todavía no está en el vocabulario de Diseñar.</p>`}</div>`;
 }
 function dzCompat(pr,ti){ // ¿esta prenda (y tipo) admite el atributo fijo?
   const f=dz.fijo;if(!f||!pr)return true;
@@ -2415,7 +2374,7 @@ function pintarDisenar(){
     const T0=x=>{const s=dzSeñal(x);return {id:x.id,n:x.n,en:x.en,d:x.d,vis:dzSil(x.sil,x.n),s,dato:s.num?`${s.num} afuera`:'',attr:'data-ti',on:dz.tipo===x.id,extra:pr.id==='calzado'?dzPasCalzado(x.id):pr.id==='accesorios'?dzBusqCalzado(x.id):''};};
     const L=pr.tipos.filter(x=>dzVisible(x)&&!x.secundario&&dzCompat(pr.id,x.id)).map(T0).sort(dzOrden),L2=pr.tipos.filter(x=>dzVisible(x)&&x.secundario&&dzCompat(pr.id,x.id)).map(T0);
     const SING={pantalones:'pantalón',faldas:'falda',vestidos:'vestido',remeras:'remera o top',camisas:'camisa',buzos:'buzo',sweaters:'sweater',abrigos:'campera o abrigo',enteritos:'enterito',calzado:'calzado',accesorios:'accesorio'};
-    C.innerHTML=dzPanel(`¿Qué tipo de ${SING[pr.id]||pr.n.toLowerCase()}?`,'',L,'')+(L2.length?`<h3 class="dzh3">También</h3><div class="dzgrid">${L2.map(dzTarjeta).join('')}</div>`:'')+(pr.id==='calzado'?'<section class="czint"><h3 class="dzh3">Lo intentamos dos veces</h3><p class="czlead">El calzado es donde más probamos y menos medimos. Dos de ocho estilos tienen señal; uno más se lee en la pasarela, como interpretación. Los otros cinco no los mide ninguna de las dos fuentes, y por eso no se recomiendan: se pueden diseñar, pero CICLO no dice si conviene.</p><div class="czt"><div class="czf czh"><b>Estilo</b><span>Búsqueda · Google Trends, 21/10</span><span>Pasarela · CLIP, 25/10</span><span>Qué queda</span></div><div class="czf"><b>Zapatillas</b><span><i>Búsqueda</i>entra · «sneakers», 21 años</span><span><i>Pasarela</i>8 de 8 · lee looks deportivos</span><span><i>Queda</i>Señal por búsqueda, y la pasarela como interpretación</span></div><div class="czf"><b>Mocasines</b><span><i>Búsqueda</i>entra · «loafers», 20 años</span><span><i>Pasarela</i>5 de 8 · lee sastrería de hombre</span><span><i>Queda</i>Señal por búsqueda</span></div><div class="czf"><b>Botas texanas</b><span><i>Búsqueda</i>ruido · «cowboy boots»</span><span><i>Pasarela</i>7 de 8 · lee el look western</span><span><i>Queda</i>Sólo pasarela, interpretada: sin señal</span></div><div class="czf"><b>Botinetas</b><span><i>Búsqueda</i>ruido · «ankle boots»</span><span><i>Pasarela</i>5 de 8, confianza muy baja</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Sandalias</b><span><i>Búsqueda</i>estación · «sandals», 20,1 dentro del año contra 11,6 entre años</span><span><i>Pasarela</i>4 de 8 · lee ropa de verano</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Chatitas</b><span><i>Búsqueda</i>sin señal · «ballet flats»</span><span><i>Pasarela</i>0 de 8 · lee tutús y bailarinas</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Plataformas</b><span><i>Búsqueda</i>sin señal · «platform shoes»</span><span><i>Pasarela</i>0 de 8 · el cajón de lo que no encaja</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Guillerminas</b><span><i>Búsqueda</i>sin señal · «mary janes»</span><span><i>Pasarela</i>0 de 8 · ruido</span><span><i>Queda</i>Sin medición</span></div></div><p class="note dznota"><b>Búsqueda.</b> 14 términos de calzado y accesorios contra «trench coat», el mismo filtro que las otras 65 series: entra con 12 años útiles o más; es ruido si el máximo no pasa de 6 o tiene menos de 24 meses con señal; se descarta si se mueve más dentro de cada año que entre años (mide el verano, no la moda). <b>Pasarela.</b> 10 estilos, dos frases y tres plantillas cada uno, contra los 14.000 looks ya embebidos; cada look va al estilo más parecido y miramos a mano los 8 más seguros de cada uno. CLIP mira el look entero y adivina el zapato por la ropa. Medir los otros cinco exige recortar los pies de cada foto, y eso obliga a bajar las imágenes. Detalle en decisiones.md (21/10, 25/10 y 26/10).</p></section>':'<p class="note dznota">La señal sale de la etapa del K-means y tu perfil, o de la búsqueda mundial 2022→2024 frente a las otras búsquedas de moda.</p>');
+    C.innerHTML=dzPanel(`¿Qué tipo de ${SING[pr.id]||pr.n.toLowerCase()}?`,'',L,'')+(L2.length?`<h3 class="dzh3">También</h3><div class="dzgrid">${L2.map(dzTarjeta).join('')}</div>`:'')+(pr.id==='calzado'?'<section class="czint"><h3 class="dzh3">Lo intentamos dos veces</h3><p class="czlead">El calzado es donde más probamos y menos medimos. Dos de ocho estilos tienen señal; uno más se lee en la pasarela, como interpretación. Los otros cinco no los mide ninguna de las dos fuentes, y por eso no se recomiendan: se pueden diseñar, pero CICLO no dice si conviene.</p><div class="czt"><div class="czf czh"><b>Estilo</b><span>Búsqueda · Google Trends, 21/10</span><span>Pasarela · CLIP, 25/10</span><span>Qué queda</span></div><div class="czf"><b>Zapatillas</b><span><i>Búsqueda</i>entra · «sneakers», 21 años</span><span><i>Pasarela</i>8 de 8 · lee looks deportivos</span><span><i>Queda</i>Señal por búsqueda, y la pasarela como interpretación</span></div><div class="czf"><b>Mocasines</b><span><i>Búsqueda</i>entra · «loafers», 20 años</span><span><i>Pasarela</i>5 de 8 · lee sastrería de hombre</span><span><i>Queda</i>Señal por búsqueda</span></div><div class="czf"><b>Botas texanas</b><span><i>Búsqueda</i>ruido · «cowboy boots»</span><span><i>Pasarela</i>7 de 8 · lee el look western</span><span><i>Queda</i>Sólo pasarela, interpretada: sin señal</span></div><div class="czf"><b>Botinetas</b><span><i>Búsqueda</i>ruido · «ankle boots»</span><span><i>Pasarela</i>5 de 8, confianza muy baja</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Sandalias</b><span><i>Búsqueda</i>estación · «sandals», 20,1 dentro del año contra 11,6 entre años</span><span><i>Pasarela</i>4 de 8 · lee ropa de verano</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Chatitas</b><span><i>Búsqueda</i>sin señal · «ballet flats»</span><span><i>Pasarela</i>0 de 8 · lee tutús y bailarinas</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Plataformas</b><span><i>Búsqueda</i>sin señal · «platform shoes»</span><span><i>Pasarela</i>0 de 8 · el cajón de lo que no encaja</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Guillerminas</b><span><i>Búsqueda</i>sin señal · «mary janes»</span><span><i>Pasarela</i>0 de 8 · ruido</span><span><i>Queda</i>Sin medición</span></div></div><p class="note dznota"><b>Búsqueda.</b> 14 términos de calzado y accesorios contra «trench coat», el mismo filtro que las otras 65 series: entra con 12 años útiles o más; es ruido si el máximo no pasa de 6 o tiene menos de 24 meses con señal; se descarta si se mueve más dentro de cada año que entre años (mide el verano, no la moda). <b>Pasarela.</b> 10 estilos, dos frases y tres plantillas cada uno, contra los 14.000 looks ya embebidos; cada look va al estilo más parecido y miramos a mano los 8 más seguros de cada uno. CLIP mira el look entero y adivina el zapato por la ropa. Medir los otros cinco exige recortar los pies de cada foto, y eso obliga a bajar las imágenes. <a href="https://github.com/felipeberney-boop/ciclo/blob/main/decisiones.md" target="_blank" rel="noopener">El detalle de las dos pruebas →</a></p></section>':'<p class="note dznota">La señal sale de la etapa del K-means y tu perfil, o de la búsqueda mundial 2022→2024 frente a las otras búsquedas de moda.</p>');
     enlazar('data-ti','tipo');
   }else if(dz.paso==='corte'){
     const L=TAX.cortes.map(x=>{const s=dzSeñal(x);return {id:x.id,n:x.n,d:x.d,vis:dzSil(x.sil,x.n),s,dato:dzDatoTxt(s),attr:'data-co',on:dz.corte===x.id};}).sort(dzOrden);
@@ -2481,7 +2440,7 @@ function pintarDisenar(){
   }
   dzBarra();
 }
-/* ---------- consulta por imagen: CLIP en el navegador (IA-6) ----------
+/* ---------- consulta por imagen: CLIP en el navegador ----------
    índice: codigo/armar_indice_clip.py · textos: codigo/calcular_textos_clip.mjs · validación: prompts/prompt_consulta_por_imagen_v2.md */
 const CLIP={idx:null,txt:null,mod:null},CLIP_UMBRAL=0.35; // por debajo, la app no adivina (validación: prompts/prompt_consulta_por_imagen_v2.md)
 const CLIP_TF='https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.2';
@@ -3508,7 +3467,7 @@ function leerLink(){
   // los links del 04/11 traían d (la decisión) en vez de v: «qué diseñar» era la capa de Explorar, o sea por tu cuenta
   if(qs.has('d')&&!qs.has('v'))qs.set('v',qs.get('d')==='disenar'?'propia':'marca');
   if(destino==='recorridos'&&el&&REC.some(o=>o.id===el)){recSel=el;pintarRecorridos();}
-  if(destino==='detalle'&&el&&T.some(t=>t.id===el))detSel=el;
+  if(destino==='detalle'&&el&&T.some(t=>t.id===el&&tieneDato(t)))detSel=el;
   if(!(qs.has('c')&&qs.has('v')&&qs.has('pu'))||destino==='perfil'){abrirGate(destino);return true;}
   leyendoLink=true;
   try{

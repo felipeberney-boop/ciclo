@@ -1827,3 +1827,35 @@ medido contra interpretado, límites y pruebas preregistradas se quedan como est
 **Un error que salió al revisar.** El cambio de «Más» de hoy usaba `data-ir` para los links entre vistas, y ese atributo
 ya lo usaban los chips de la barra de Diseñar y de Preguntar para volver a un paso: tocarlos dejaba la pantalla vacía.
 Los links entre vistas pasan a `data-vista`.
+
+## 2026-11-04 · Un producto, no una entrega: lo que sólo tenía sentido en la cursada
+
+Felipe delegó la lista entera («hace todo lo que te parezca hacer en la lista»). El criterio: quien entra tiene que ver un
+producto. El rigor se queda (fuentes, medido contra interpretado, límites, pruebas preregistradas); se va lo que existía
+para mostrar el trabajo.
+
+- **El catálogo sintético sale de la pantalla.** Tendencias armaba la mitad de sus etapas y todas sus paletas sobre el
+  Zara 2018–22, que es sintético («muestra el método, no una conclusión»). Ahora Tendencias muestra sólo atributos con dato
+  medido (8 de 12: los otros 4 no tenían etapa ni serie), la etapa sólo si viene del K-means, y sin paleta. En la ficha
+  salen la paleta, «Del catálogo (sintético)», la «Lectura del equipo» (que leía esa paleta) y el gráfico «Recorrido en el
+  tiempo 2018–2022», que además decía «Dato medido, no estimado» sobre datos sintéticos: estaba mal rotulado. «Sus
+  colores, para diseñar» también salía de esa paleta y se va. En Método salen las dos filas de «demostración» y la de la
+  etapa estimada.
+- **El modelo:** arriba, lo que sirve para decidir (los grupos leídos como etapas, la validación con Shopping, Amazon y
+  Lyst). El laboratorio del K-means (los datos, el paso a paso, el selector de k, el codo, la silhouette, «agregá una
+  tendencia») queda plegado al final, en «Cómo se calcula». Sale el bloque «Rol de la IA · El prompt que usamos», que
+  mostraba un prompt viejo, y la nota sobre el README del archivo de Lyst.
+- **Marcas:** sin «le pasó lo mismo que a nosotros» ni «el argumento más fuerte que tenemos para defender»; ahora dice
+  qué le sirve eso a quien lee un ranking. Sale «Cómo se construye esta capa», que era planificación del equipo («12 a 15
+  horas… repartibles entre los tres»).
+- **Textos:** «Cuatro cosas que hay que decir antes de mostrar esto» pasa a «Los límites de estos datos»; «sirve para
+  presentar el método» a «es orientativo»; sin «IA-6» (la numeración de la Entrega 2); sin nombres de archivo en
+  pantalla (`ciclo_datos.md` pasa a «un resumen de métricas ya calculadas», con su link).
+- **Método:** salen las filas de estado interno (el grupo en liquidación sin fuente, Pinterest y TikTok «con una cuenta
+  del grupo», los datasets de Kaggle «para la próxima etapa») y las frases de historia del proyecto («16 de septiembre y
+  49 de los planes de octubre», «el encaje pasó de estampa a material», «intentamos sumar…»). Las rutas del repositorio
+  pasan a ser links a GitHub.
+- **El pie:** sólo las fuentes que la app usa (fuera Runways since 2011, Wish y «Piden cuenta: Pinterest, TikTok»).
+
+Probado con Playwright a 1400 y 393 px en todas las vistas, sin errores; el laboratorio del K-means funciona plegado.
+Versión anterior en `diseno/prototipos/versiones_de_la_app/app_2026-11-04_3dde1b6_antes_de_sacar_lo_de_cursada.html`.

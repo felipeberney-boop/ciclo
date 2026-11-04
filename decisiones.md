@@ -1712,12 +1712,12 @@ construcción: muestra el límite del modelo, no una capacidad.
 
 **La nota que pide la consigna: qué IA, para qué y dónde frenamos.**
 - *Qué capacidad usamos.* Ninguna generativa adentro del juego, y es a propósito. El modelo que compite es el cono de
-  CICLO: estadística, la mediana de lo que pasó en la historia. La IA estuvo en construirla: Claude propuso las dos
-  ideas y la comparación, verificó con los datos que la promesa era cierta antes de escribir una línea, y escribió el
-  código.
+  CICLO: estadística, la mediana de lo que pasó en la historia. La IA estuvo en construirla: Felipe propuso las dos ideas;
+  Claude recomendó la primera, verificó con los datos que la promesa era cierta antes de escribir una línea, y escribió
+  el código.
 - *Dónde frenamos.* Se pensó en sumar al LLM como cuarto jugador y se descartó: para adivinar tendría que recibir la
   serie año por año, y la regla de CICLO es que el modelo de lenguaje nunca ve una fila de datos. Romperla para un juego
   contradiría lo que el juego enseña. Tampoco se eligieron las rondas a mano: salen al azar, aunque en alguna gane el
   cono (pasa una de cada tres veces y se muestra igual).
-- *La decisión.* La idea 1 y su recorte son de Felipe; la recomendación de no sumar al LLM es de Claude, por la regla del
-  proyecto.
+- *La decisión.* Las dos ideas y la elección son de Felipe; la recomendación de no sumar al LLM es de Claude, por la
+  regla del proyecto.

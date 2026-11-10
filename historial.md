@@ -263,6 +263,12 @@ que llevan a los jeans de los datos a la señal: entran pasarela y búsqueda, se
 agrupa, el grupo toma su etapa y el perfil la vuelve señal. Reemplaza al esquema estático. El modelo y Marcas salen de
 la navegación.
 
+## v1.27 · 10/11/2026 · La entrada, sin nada que sobre
+
+Devolución de Cristian e Iván sobre la versión nueva. Fuera «tu elección anterior», que desnivelaba las tarjetas, y con
+ella el botón «Continuar»: elegir una tarjeta avanza sola. Fuera el subrayado del nombre al pasar el mouse. «Volver» se
+queda.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

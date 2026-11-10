@@ -539,7 +539,6 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 .ai,.asa{background:transparent;border:0;border-left:1px solid var(--ia);padding:4px 0 4px 20px}
 .asa.err{border-left-color:var(--ink)}
 .gcard{background:transparent;border:0;border-top:1px solid var(--ink);padding:22px 4px 18px 0}
-.gcard:hover .gt{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
 .gcard .gt{font-size:34px;line-height:1.02}
 .gcard dl{border-top:1px solid var(--rule)}
 .ggrid{gap:40px;margin-top:56px}
@@ -634,7 +633,6 @@ main a:not([class]){color:inherit}
   padding:9px 14px 8px;margin-left:10px;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;white-space:nowrap}
 .navperfil:hover{color:var(--ink)}
 .gcard.on{border-top:3px solid var(--ink)}
-.gprev{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
 .gnav{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:36px}
 @media (max-width:1000px){.ggrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media (max-width:560px){.ggrid{grid-template-columns:minmax(0,1fr)!important;gap:28px}}
@@ -917,7 +915,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 /* píldoras: el filtro elegido en negro, los botones de acción en azul */
 .app .chip{background:var(--card)!important;border:1px solid var(--rule)!important;color:var(--ink)!important;font-size:14px!important}
 .app .chip[aria-pressed="true"],.app .chip.on{background:var(--ink)!important;color:var(--paper)!important;border-color:var(--ink)!important}
-.app :is(.kbtn,#gcont,.dzarmar){background:var(--azul)!important;color:#fff!important;border:0!important;font-size:15px!important;padding:10px 20px!important}
+.app :is(.kbtn,.dzarmar){background:var(--azul)!important;color:#fff!important;border:0!important;font-size:15px!important;padding:10px 20px!important}
 .app .dzchip{background:var(--card)!important;color:var(--ink)!important;border:1px solid var(--rule)!important;border-radius:999px!important}
 .app .dzchip.on{border:2px solid var(--azul)!important}
 .app .dzbarra{background:color-mix(in srgb,var(--paper) 85%,transparent)!important;border-top:1px solid var(--rule-2)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
@@ -1059,7 +1057,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 @media (prefers-reduced-motion:reduce){.app .lectesc .lsc{transition:none}}
 /* lo que no salió en la medición de escritorio: el celular y la barra. El logo CICLO es una marca, no un estilo de texto */
 .app :is(button.legi em,.rminih,.chdesliza):not(#z),.mast :is(a,button,span):not(.mk):not(#z){font-size:var(--t-eti)!important;font-weight:400!important}
-.app :is(div.gate > div.gprog,button.gcard > span.gprev,div.gnav > button.kbtn,div.gnav > span.gnota,div.gfirma > p.lbl,div > span.lbl,p.perfilrad > span,p.perfilrad > button,div.th > span.lbl,div.th > span.tag.real,div.terreno > p.tsub,div > div.tt,button.tfila.tend > span.tn,button.tfila.tend > span.tv,div.filters > button.chip,div.filters > span.count,div.ptop > span.pkind,div.ticks > span,div.track > div.tde,section.view > p.note,section.view > button.back,div.dzdesde > button.kbtn.dzcon,div.dzcols > span,div.dzcols > button.chip,i > span,dl > dt,dl > dd,dd > span.tag.real,dd > span.tag.demo,dl > dd.mono,div.h > span.lbl,div.h > span.tag.ia2,div.ai > p,div.rec > div.t,div.rec > div.d,button.legi > span,figure > figcaption,div > div.k,div > div.n,div > p.note,button.dzp > span.dzpn,button.dzp > span.dzpt,div > p.dzsub,span.dzb > span.dzdef,li > span,div.kcard > p.mono.kcap,tr > th,tr > th.r,tr > td,td > span,tr > td.r,details.kd > summary,details.kd > div.kcalc,div.kcard > p.ksub,form.kform > label,div.kbtns > button.kbtn,div.kbtns > button.kbtn.ghost,div.seg > button,div > button.kbtn.ghost,div > span.mono,div.leg2 > span,div.kcard > p.note,div > p.mono.kcap,div > div.gm,div > div.gv,div > div.gr,section.view > p.note.a,tr > td.k,td > a,td > span.tag.alert,div.ai > pre.kcalc,div.ciclofilt > button.chip,button.ciclo.tend > span.cf,span.cm > span,span.sen.tend > span,div.ciclos.corto > button.kbtn.ghost.ciclomas,div.ciclos.corto > p.note,p.note > span.proc,div.dline > p,details.vact > summary.kbtn.ghost,details.vact > p.vm,p.vm > a,details.vact > button.kbtn,dl.dfacts > dt,dl.dfacts > dd,dd > span.mono,details.rfiltd > summary.lbl,div.rgrp > span.lbl,div.rgrp > button.chip,div.clave > span,div > button.gvolver,dd.mono > span.tag.real,dd.mono > span.tag.demo,div > div.r,div > p.t,p.t > span.mono,div > p.mono,div > p,div > span.e,div > p.d,div > div.mt,div.pc > small,label.drop > p,p > span.mono,div > p.qestado,div.qej > button.chip,div.qres > p.note,ol.aspasos > li,li > a,li > code,details.ascard.asact > label.ascap,div.ascard > span.lbl,div.aschips > p.ascap,p.ascap > button.gvolver,div.ascard > p.ascap,label.asfoto > span,details.ascard.asver > summary.lbl,details.ascard.asver > p.ascap,div.asa > p,div.assug > button,form.asform > button.kbtn,b > span,div.mdc > small,div.mdc > p,div.mdc.fuera > small,div.mdc.fuera > p,div.mdclave > small,section.metdatos > p.mdnota,section.view > p.note.colores,p.note.colores > span.proc,p.note.colores > span.tag.ia2,summary > span.tag.demo,details > div.cuerpo,summary > span.tag.real,div.cuerpo > code,summary > span.tag.ia,summary > span.tag.alert,summary > span.tag.ia2,td > span.sen):not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.35!important}
+.app :is(div.gate > div.gprog,div.gnav > button.kbtn,div.gnav > span.gnota,div.gfirma > p.lbl,div > span.lbl,p.perfilrad > span,p.perfilrad > button,div.th > span.lbl,div.th > span.tag.real,div.terreno > p.tsub,div > div.tt,button.tfila.tend > span.tn,button.tfila.tend > span.tv,div.filters > button.chip,div.filters > span.count,div.ptop > span.pkind,div.ticks > span,div.track > div.tde,section.view > p.note,section.view > button.back,div.dzdesde > button.kbtn.dzcon,div.dzcols > span,div.dzcols > button.chip,i > span,dl > dt,dl > dd,dd > span.tag.real,dd > span.tag.demo,dl > dd.mono,div.h > span.lbl,div.h > span.tag.ia2,div.ai > p,div.rec > div.t,div.rec > div.d,button.legi > span,figure > figcaption,div > div.k,div > div.n,div > p.note,button.dzp > span.dzpn,button.dzp > span.dzpt,div > p.dzsub,span.dzb > span.dzdef,li > span,div.kcard > p.mono.kcap,tr > th,tr > th.r,tr > td,td > span,tr > td.r,details.kd > summary,details.kd > div.kcalc,div.kcard > p.ksub,form.kform > label,div.kbtns > button.kbtn,div.kbtns > button.kbtn.ghost,div.seg > button,div > button.kbtn.ghost,div > span.mono,div.leg2 > span,div.kcard > p.note,div > p.mono.kcap,div > div.gm,div > div.gv,div > div.gr,section.view > p.note.a,tr > td.k,td > a,td > span.tag.alert,div.ai > pre.kcalc,div.ciclofilt > button.chip,button.ciclo.tend > span.cf,span.cm > span,span.sen.tend > span,div.ciclos.corto > button.kbtn.ghost.ciclomas,div.ciclos.corto > p.note,p.note > span.proc,div.dline > p,details.vact > summary.kbtn.ghost,details.vact > p.vm,p.vm > a,details.vact > button.kbtn,dl.dfacts > dt,dl.dfacts > dd,dd > span.mono,details.rfiltd > summary.lbl,div.rgrp > span.lbl,div.rgrp > button.chip,div.clave > span,div > button.gvolver,dd.mono > span.tag.real,dd.mono > span.tag.demo,div > div.r,div > p.t,p.t > span.mono,div > p.mono,div > p,div > span.e,div > p.d,div > div.mt,div.pc > small,label.drop > p,p > span.mono,div > p.qestado,div.qej > button.chip,div.qres > p.note,ol.aspasos > li,li > a,li > code,details.ascard.asact > label.ascap,div.ascard > span.lbl,div.aschips > p.ascap,p.ascap > button.gvolver,div.ascard > p.ascap,label.asfoto > span,details.ascard.asver > summary.lbl,details.ascard.asver > p.ascap,div.asa > p,div.assug > button,form.asform > button.kbtn,b > span,div.mdc > small,div.mdc > p,div.mdc.fuera > small,div.mdc.fuera > p,div.mdclave > small,section.metdatos > p.mdnota,section.view > p.note.colores,p.note.colores > span.proc,p.note.colores > span.tag.ia2,summary > span.tag.demo,details > div.cuerpo,summary > span.tag.real,div.cuerpo > code,summary > span.tag.ia,summary > span.tag.alert,summary > span.tag.ia2,td > span.sen):not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.35!important}
 .app :is(div > p.sub,div.pbody > span.sen.psen,nav.dzpasos > span.dzsep,span.dzb > span.dzn,div.gt > span.gn,section.view > p.sub,span > span.sen.tend,li > div.pc,p.sub > a,p.note.colores > b.sen,summary > span.k,div.metgate > p):not(#z){font-size:var(--t-cue)!important;font-weight:400!important;line-height:1.45!important}
 .app :is(button.gcard > span.gt,span.cm > span > b,div.ptop > h3.pname.serif,div.kcard > h3.kh,div.khead > h3.kh,section.view > h3.kbig,button.ciclo.tend > span.cn.serif,section.view > h2.h3,section.view > h3.h3,div > div.m.serif,section.view > h3,div > div.nm.serif,details.ascard.asact > summary,section.metdatos > h2,div.mdcol > h3,div.mdesq > div.mdflecha,div.metgate > h2,div.metgate > h3):not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.2!important;letter-spacing:-.015em!important}
 .app :is(div.a.serif > span,div.rec > div.a.serif,div > div.v.serif,span.a.serif > span.ico,div.dline > span.a.serif,div > p.n,label.drop > div.ic,div.mdclave > strong):not(#z){font-size:var(--t-dat)!important;font-weight:600!important;line-height:1.1!important;letter-spacing:-.02em!important}
@@ -1107,7 +1105,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         <div class="gprog" id="gprog"><b>01</b> / 03</div>
         <h1 id="gpreg">¿Para quién trabajás?</h1>
         <div class="ggrid" id="ggrid"></div>
-        <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button><button class="kbtn" id="gcont" type="button" hidden>Continuar →</button></div>
+        <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button></div>
       </div>
     </section>
 
@@ -3507,37 +3505,32 @@ const GATE={
 let gateDestino='radar',gatePaso=1;
 const ETAPAS_C=['emergente','en ascenso','en pico','saturada','en retorno'];
 function gateResumen(cli,acc){const e=[0,1,2,3,4].filter(i=>consejo(cli,i)[0]===acc).map(i=>ETAPAS_C[i]);return e.length?e.join(', '):'—';}
-/* la entrada es la portada de la app: se ve siempre. Lo que quedó de una visita anterior viene marcado y alcanza con «Continuar» */
+/* la entrada es la portada de la app: se ve siempre, y elegir una tarjeta avanza sola (10/11: sin «Continuar» ni «tu elección anterior»).
+   Lo elegido sólo queda marcado si se vuelve un paso atrás dentro de la misma visita */
 const gateSel={publico:null,vinculo:null,cliente:null};
-try{const g=JSON.parse(localStorage.getItem('ciclo.perfil')||'null');
-  if(g&&GATE[g.vinculo]&&PLAZO[g.cliente]){gateSel.publico=['mujer','hombre','todos'].includes(g.publico)?g.publico:null;gateSel.vinculo=g.vinculo;gateSel.cliente=g.cliente;}}catch(e){}
-function gateTarjeta(datos,attrs,on){return `<button class="gcard${on?' on':''}" type="button" aria-pressed="${!!on}" ${attrs}>${on?'<span class="gprev">tu elección anterior</span>':''}${datos}</button>`;}
+function gateTarjeta(datos,attrs,on){return `<button class="gcard${on?' on':''}" type="button" aria-pressed="${!!on}" ${attrs}>${datos}</button>`;}
 function pintarGate(){
   const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;g.classList.remove('g4');
   $('#gprog').innerHTML=`<b>0${gatePaso}</b> / 03`;
   const tit=t=>{$('#gpreg').textContent=t;};
   const sig=()=>{gatePaso++;pintarGate();$('#ggrid .gcard')?.focus();};
-  const cont=(listo,fn)=>{const c=$('#gcont');c.hidden=!listo;c.onclick=fn;};
   if(gatePaso===1){
     g.style.setProperty('--gcols',3);
     tit('¿Para quién diseñás?');
     g.innerHTML=[['mujer','Mujer'],['hombre','Hombre'],['todos','Sin género']]
       .map(([k,t])=>gateTarjeta(`<span class="gt">${t}</span>`,`data-pub="${k}"`,gateSel.publico===k)).join('');
     $$('#ggrid [data-pub]').forEach(b=>b.addEventListener('click',()=>{gateSel.publico=b.dataset.pub;sig();}));
-    cont(!!gateSel.publico,sig);
   }else if(gatePaso===2){
     g.style.setProperty('--gcols',2);
     tit('¿Trabajás para una marca o por tu cuenta?');
     g.innerHTML=gateTarjeta(`<span class="gt">Para una marca</span>`,'data-vinc="marca"',gateSel.vinculo==='marca')+
                 gateTarjeta(`<span class="gt">Por mi cuenta</span>`,'data-vinc="propia"',gateSel.vinculo==='propia');
     $$('#ggrid [data-vinc]').forEach(b=>b.addEventListener('click',()=>{gateSel.vinculo=b.dataset.vinc;sig();}));
-    cont(!!gateSel.vinculo,sig);
   }else{
     const G=GATE[gateSel.vinculo]||GATE.marca;g.style.setProperty('--gcols',4);g.classList.add('g4');
     tit(G.preg);
     g.innerHTML=['premium','medio','fast','nicho'].map(k=>gateTarjeta(`<span class="gt">${G.c[k][0]}</span>`,`data-cli="${k}"`,gateSel.cliente===k)).join('');
     $$('#ggrid [data-cli]').forEach(b=>b.addEventListener('click',()=>{gateSel.cliente=b.dataset.cli;gateElegir();}));
-    cont(!!gateSel.cliente,gateElegir);
   }
 }
 function guardarPerfil(){try{localStorage.setItem('ciclo.perfil',JSON.stringify({vinculo,cliente,pais,publico}));}catch(e){}}

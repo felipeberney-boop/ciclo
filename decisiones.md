@@ -1951,3 +1951,18 @@ las marcas →»: Felipe decidió sacar El modelo y Marcas de la navegación (no
 siguen abriendo desde su link directo (`#etapas`, `#marcas`) hasta que se resuelva qué queda de ellas.
 
 Probado con Playwright a 1400 y 393 px, los siete pasos, sin errores de consola ni scroll horizontal.
+
+## 2026-11-10 · La entrada, sin nada que sobre
+
+**Devolución (Cristian e Iván, sobre la versión del 10/11).** «Tu elección anterior» desnivela las tres opciones: la
+tarjeta marcada baja el nombre y las otras no. El botón «Continuar» relleno de azul pesa demasiado, y no hace falta en
+los tres pasos. El nombre de cada tarjeta se subrayaba al pasar el mouse: ya está dentro de un cuadro, la línea sobra.
+
+**Decisión.** Se va la función entera: la entrada ya no lee el perfil guardado para marcar lo de la visita anterior.
+Entre que el botón vaya sólo al final o que no haya botón, elegí que no haya: tocar una tarjeta ya avanzaba, y
+«Continuar» sólo existía para confirmar la elección anterior. Sin esa función no tiene trabajo. Lo elegido queda marcado
+sólo si se vuelve un paso atrás dentro de la misma visita. «Volver» se queda como está. El perfil se sigue guardando para
+los links que lo traen; lo único que cambia es la entrada.
+
+La elección entre las dos opciones fue de Claude, a pedido de Felipe. Probado con Playwright a 1400 y 393 px: tres
+toques llevan a Tendencias con el perfil elegido, sin errores de consola.

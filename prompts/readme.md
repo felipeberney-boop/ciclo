@@ -14,8 +14,9 @@ número siguiente, no se pisa el anterior.
 | `prompt_asistente_v2.md` | IA-8 · Preguntar como herramienta de diseño: tu diseño, imagen por CLIP, el dato en la burbuja y acciones | reemplazado por v3 |
 | `prompt_asistente_v3.md` | IA-8 · lo mismo, con lo que CICLO mide de calzado y accesorios | reemplazado por v4 |
 | `prompt_asistente_v4.md` | IA-8 · nunca se queda en el «no»: contesta con lo más cercano medido | reemplazado por v5 |
-| `prompt_asistente_v5.md` | IA-8 · ordena la respuesta, trae ejemplos y recibe los rankings ya calculados | en uso (otra vez desde el 04/11) |
+| `prompt_asistente_v5.md` | IA-8 · ordena la respuesta, trae ejemplos y recibe los rankings ya calculados | reemplazado por v7 (10/11) |
 | `prompt_asistente_v6.md` | IA-8 · lo mismo, con «qué está por decidir» en vez del vínculo | descartado el 04/11: la entrada volvió al vínculo |
+| `prompt_asistente_v7.md` | IA-8 · la conclusión en una frase, el dato que la sostiene y el detalle plegado | en uso |
 | `prompt_consulta_por_imagen_v1.md` | IA-6 · atributos a partir de una foto | reemplazado por v2 |
 | `prompt_consulta_por_imagen_v2.md` | IA-6 · CLIP en el navegador: atributos, looks parecidos y años | reemplazado por v3 |
 | `prompt_consulta_por_imagen_v3.md` | IA-6 · lo mismo, con 17 atributos (sin calzado) | en uso |

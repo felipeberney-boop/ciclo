@@ -1008,6 +1008,18 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .advfin :is(p,li):not(#z){font-size:var(--t-cue)!important;font-weight:400!important;line-height:1.45;max-width:62ch}
 .app .advfin h2:not(#z){font-size:var(--t-sub)!important;font-weight:600!important;margin:28px 0 10px}
 @media (max-width:600px){.app .advres{grid-template-columns:1fr}}
+/* Preguntar v7 (10/11): tres pesos. La conclusión en Subtítulo, el dato en Cuerpo, el resto plegado */
+.app .asa .asconc:not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.25!important;margin:2px 0 8px;max-width:40ch;font-family:var(--sf)}
+.app .asa .asacc:not(#z){font-size:inherit!important;font-weight:600!important;white-space:nowrap}
+.app .asa .asacsep:not(#z){font-size:inherit!important;color:var(--ink-3)}
+.app .asa .asresp:not(#z){font-size:var(--t-cue)!important;font-weight:400!important;line-height:1.45!important;color:var(--ink-2);max-width:62ch}
+.app .asa .asacciones:not(#z){margin:12px 0 0;padding:0;border:0}
+.app .asa details.asmas:not(#z){margin:12px 0 0}
+.app .asa details.asmas>summary:not(#z){cursor:pointer;color:var(--azul);font-size:var(--t-eti)!important;font-weight:400!important;list-style:none}
+.app .asa details.asmas>summary::-webkit-details-marker{display:none}
+.app .asa details.asmas>summary::after{content:' ›'}.app .asa details.asmas[open]>summary::after{content:' ‹'}
+.app .asa .asdet:not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.45!important;color:var(--ink-2);margin:8px 0 0;max-width:62ch}
+.app .asa details.asmas .asdatos:not(#z){margin-top:10px}
 /* lo que no salió en la medición de escritorio: el celular y la barra. El logo CICLO es una marca, no un estilo de texto */
 .app :is(button.legi em,.rminih,.chdesliza):not(#z),.mast :is(a,button,span):not(.mk):not(#z){font-size:var(--t-eti)!important;font-weight:400!important}
 .app :is(div.gate > div.gprog,button.gcard > span.gprev,div.gnav > button.kbtn,div.gnav > span.gnota,div.gfirma > p.lbl,div > span.lbl,p.perfilrad > span,p.perfilrad > button,div.th > span.lbl,div.th > span.tag.real,div.terreno > p.tsub,div > div.tt,button.tfila.tend > span.tn,button.tfila.tend > span.tv,div.filters > button.chip,div.filters > span.count,div.ptop > span.pkind,div.ticks > span,div.track > div.tde,section.view > p.note,section.view > button.back,div.dzdesde > button.kbtn.dzcon,div.dzcols > span,div.dzcols > button.chip,i > span,dl > dt,dl > dd,dd > span.tag.real,dd > span.tag.demo,dl > dd.mono,div.h > span.lbl,div.h > span.tag.ia2,div.ai > p,div.rec > div.t,div.rec > div.d,button.legi > span,figure > figcaption,div > div.k,div > div.n,div > p.note,button.dzp > span.dzpn,button.dzp > span.dzpt,div > p.dzsub,span.dzb > span.dzdef,li > span,div.kcard > p.mono.kcap,tr > th,tr > th.r,tr > td,td > span,tr > td.r,details.kd > summary,details.kd > div.kcalc,div.kcard > p.ksub,form.kform > label,div.kbtns > button.kbtn,div.kbtns > button.kbtn.ghost,div.seg > button,div > button.kbtn.ghost,div > span.mono,div.leg2 > span,div.kcard > p.note,div > p.mono.kcap,div > div.gm,div > div.gv,div > div.gr,section.view > p.note.a,tr > td.k,td > a,td > span.tag.alert,div.ai > pre.kcalc,div.ciclofilt > button.chip,button.ciclo.tend > span.cf,span.cm > span,span.sen.tend > span,div.ciclos.corto > button.kbtn.ghost.ciclomas,div.ciclos.corto > p.note,p.note > span.proc,div.dline > p,details.vact > summary.kbtn.ghost,details.vact > p.vm,p.vm > a,details.vact > button.kbtn,dl.dfacts > dt,dl.dfacts > dd,dd > span.mono,details.rfiltd > summary.lbl,div.rgrp > span.lbl,div.rgrp > button.chip,div.clave > span,div > button.gvolver,dd.mono > span.tag.real,dd.mono > span.tag.demo,div > div.r,div > p.t,p.t > span.mono,div > p.mono,div > p,div > span.e,div > p.d,div > div.mt,div.pc > small,label.drop > p,p > span.mono,div > p.qestado,div.qej > button.chip,div.qres > p.note,ol.aspasos > li,li > a,li > code,details.ascard.asact > label.ascap,div.ascard > span.lbl,div.aschips > p.ascap,p.ascap > button.gvolver,div.ascard > p.ascap,label.asfoto > span,details.ascard.asver > summary.lbl,details.ascard.asver > p.ascap,div.asa > p,div.assug > button,form.asform > button.kbtn,b > span,div.mdc > small,div.mdc > p,div.mdc.fuera > small,div.mdc.fuera > p,div.mdclave > small,section.metdatos > p.mdnota,section.view > p.note.colores,p.note.colores > span.proc,p.note.colores > span.tag.ia2,summary > span.tag.demo,details > div.cuerpo,summary > span.tag.real,div.cuerpo > code,summary > span.tag.ia,summary > span.tag.alert,summary > span.tag.ia2,td > span.sen):not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.35!important}
@@ -2736,44 +2748,51 @@ function pintarVivo(o){
     if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);
   });
 }
-/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v5.md) ----------
+/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v7.md) ----------
+   v7 (10/11): la respuesta llega en tres partes con distinto peso: la conclusión en una frase, el dato que la sostiene y,
+   plegado, el detalle con las series. Se puede dejar de leer después de la primera línea.
    Sin servidor: la API key la pega cada uno, queda en este navegador y la página le habla directo a Groq,
    con llm/ciclo_datos.md como DATOS (sólo las partes que nombran la pregunta, el diseño y la imagen: el plan gratis da
    8.000 tokens por minuto). Lo propio de CICLO: sabe qué estás diseñando (la barra de Diseñar), lee una foto con CLIP
    y muestra lo que leyó para que lo corrijas, cada respuesta trae la serie que la sostiene y termina en cambios que se
    aplican con un botón. La respuesta es un JSON que se valida antes de mostrarlo. */
 const AS_API='https://api.groq.com/openai/v1/chat/completions';
-const AS_INSTR=`Sos el asistente de CICLO dentro de una herramienta de diseño: quien pregunta está armando una prenda y tiene una duda concreta.
-Reglas:
+const AS_INSTR=`Sos el asistente de CICLO dentro de una herramienta de diseño: quien pregunta está armando una prenda y tiene una duda concreta. Contestás como un colega apurado: primero la respuesta, después el dato que la sostiene, y nada más salvo que haga falta.
+FORMATO (lo más importante):
+- "conclusion": UNA frase, de 20 palabras como máximo, que contesta la pregunta. Si alguien lee sólo esto, ya sabe qué hacer o qué pasa. Empieza por la respuesta («Gamuza.», «Sí, pero…», «No lo sé: …»), nunca por una aclaración, un corte o un «depende».
+- "respaldo": UNA frase, de 30 palabras como máximo, con el número que sostiene la conclusión, su unidad, su fuente y su período, tal como lo nombra DATOS («+29 puntos en la búsqueda mundial, 2022→2024»). Si la pregunta es general, el que más sube y el que más cae, cada uno con su número.
+- "detalle": de 0 a 2 oraciones, sólo con lo que cambia la decisión: que el dato es prestado de un pariente y por qué, que es interpretación de CLIP, que algo no se mide y qué se mide en su lugar, que 2025 y 2026 no tienen lectura. Si no hay nada de eso, "". No repitas la conclusión ni el respaldo, no expliques cómo funciona CICLO, no agregues contexto de moda.
+- La conclusión no repite la palabra de "accion" (la app ya la muestra al lado): empezá por lo que viene después.
+- El respaldo tiene que sostener la conclusión. Si el número va en sentido contrario (la etapa dice «en retorno» y la búsqueda cae), la conclusión no afirma ninguna de las dos: dice las dos («La etapa dice que vuelve, pero la búsqueda todavía cae»).
+- Si el número es de CLIP, el detalle lo dice siempre: es interpretación de looks de pasarela, no búsqueda ni venta.
+- Nada de introducciones, saludos, «según los datos de CICLO», ni cierres del tipo «espero que te sirva».
+Reglas de los datos:
 - NUNCA digas que tenés un dato que no está en DATOS. Cada número que digas tiene que estar en DATOS, tal cual, con su unidad (si DATOS dice «puntos», decí puntos, no %). No inventes cifras, años, marcas, temporadas ni fuentes, y no redondees hacia lo que suena mejor.
-- Pero NUNCA te quedes en el «no». Si lo que pide no está, decí en una frase qué no tenés y contestá con lo más cercano que sí está en DATOS, en este orden: un hermano de la misma familia, después el padre, después el atributo suelto sin cruzar con la prenda. Decí siempre qué estás mostrando en lugar de qué («de X no tengo serie; muestro Y, su pariente, porque…»). Si DATOS ya trae «prestado de», usá esa misma explicación.
-- Si pregunta por «ahora», 2025, 2026 o más adelante: explicá el corte en una frase, con lo que dice DATOS, y contestá con lo último medido (2022→2024). Si pide futuro, decí que CICLO no pronostica y mostrá hacia dónde venía.
-- Sólo si no hay nada cercano —ni hermano, ni padre, ni atributo suelto— decí que no, poné "fuera_de_datos": true y en "siguiente" ofrecé una pregunta parecida que sí puedas contestar.
-- Cerrá siempre con algo accionable sobre su diseño: un cambio en "acciones" si hay OPCIONES; si no, la última oración de "respuesta" dice qué elegir o probar en Diseñar.
+- Pero NUNCA te quedes en el «no». Si lo que pide no está, la conclusión lo dice en pocas palabras y contesta con lo más cercano que sí está en DATOS, en este orden: un hermano de la misma familia, después el padre, después el atributo suelto sin cruzar con la prenda. El detalle dice qué estás mostrando en lugar de qué; si DATOS trae «prestado de», usá esa explicación.
+- Si pregunta por «ahora», 2025, 2026 o más adelante: contestá con lo último medido (2022→2024); el respaldo nombra ese período y el detalle, en una frase, por qué no hay lectura después. Si pide futuro, la conclusión dice que CICLO no pronostica y hacia dónde venía.
+- Sólo si no hay nada cercano —ni hermano, ni padre, ni atributo suelto— poné "fuera_de_datos": true y en "siguiente" ofrecé una pregunta parecida que sí puedas contestar.
 - Hablá del diseño que está armando (TU DISEÑO) y de lo que CLIP leyó en su imagen, si hay: no le hagas repetir nada.
-- Decí si cada dato es medido, interpretado (CLIP) o prestado de un pariente, como dice DATOS.
-- Recomendá según su perfil. Si una ficha trae «para vos (regla de CICLO)», esa es la acción: usala y explicá su porqué. Sólo te apartás si un dato lo justifica, y lo decís.
-- "respuesta" tiene de 2 a 4 oraciones, en este orden: (1) si falta algo, o si pregunta por «ahora» o por después de 2024, eso primero, en una frase y con su porqué tal como está en DATOS; (2) lo más cercano que sí está, con su número y de dónde sale; (3) si la pregunta es general, qué sube más y qué cae; (4) qué hacer en su diseño. Nunca termines en «no lo tengo». El dato va también en "atributos" y "datos"; el cambio, en "acciones".
+- Recomendá según su perfil. Si una ficha trae «para vos (regla de CICLO)», esa es la acción: usala. Sólo te apartás si un dato lo justifica, y el detalle dice cuál.
 - Cada número con su fuente exacta, como la nombra DATOS: «afuera 2022→2024» y «señal» son búsqueda mundial; «colores (CLIP, pasarela…)» es el porcentaje de looks de pasarela que leyó CLIP (interpretación), nunca búsquedas; «de su pico» es un nivel, no un crecimiento. Para decir qué sube o qué cae, usá «afuera 2022→2024» o «señal».
-- En una pregunta general («¿qué material…?», «¿qué estampa…?») nombrá los dos que más suben y uno que cae, cada uno con su número.
-- En "respuesta" y en "datos" van nombres, nunca ids (nada de «material_gamuza» ni «id: cuero»).
-- Un estilo de calzado no se toma prestado de otro. Si DATOS trae «sin dato: ni serie propia ni de un pariente», decí por qué no se mide (lo dice DATOS) y ofrecé en "siguiente" preguntar por los que sí se miden (marcados «alternativa»), sin presentarlos como dato del que pidió.
-- "fuera_de_datos" va siempre: true sólo si no había nada cercano.
-EJEMPLOS DE CÓMO TIENE QUE SONAR (las letras son de ejemplo: usá los nombres y números de DATOS):
-P: ¿Qué material está de moda ahora? → «De 2025 y 2026 no tengo lectura: [el porqué de DATOS, con sus números]. Con lo medido hasta 2024, el que más sube es A (+X puntos), después B (+Y); C y D caen. Si tu prenda lo admite, probá A.»
-P: ¿Qué va a estar de moda en 2027? → «CICLO no pronostica: lo último medido es 2022→2024. Hasta ahí, lo que más ganaba terreno era A (+X) y B (+Y), y lo que más perdía, C (−Z). Para tu perfil, A está en pico: [la regla de CICLO para esa etapa].»
-P: ¿Las botinetas están de moda? → «De botinetas CICLO no tiene medición: [los dos porqués de DATOS]. Un estilo de calzado no dice nada de otro, así que no lo tomo prestado. En calzado sí se miden A (+X) y B (−Y).» con "siguiente": ["¿Cómo vienen los A?"].
-- "acciones": hasta 2 cambios concretos sobre su diseño, sólo con pasos y valores de OPCIONES, y sólo si DATOS los respalda; "texto" en castellano y corto («Probá tiro alto»). Sin diseño u OPCIONES, [].
+- En "conclusion", "respaldo", "detalle" y "datos" van nombres, nunca ids (nada de «material_gamuza» ni «id: cuero»).
+- Un estilo de calzado no se toma prestado de otro. Si DATOS trae «sin dato: ni serie propia ni de un pariente», la conclusión dice que no se mide, el detalle dice por qué (lo dice DATOS) y "siguiente" ofrece preguntar por los que sí se miden (marcados «alternativa»), sin presentarlos como dato del que pidió.
 - Del calzado y los accesorios CICLO mide poco: zapatillas, mocasines y tote en la búsqueda, y zapatillas y botas texanas en la pasarela (CLIP: interpretación, nunca señal). El resto no tiene dato. CICLO tampoco separa hombre y mujer en los datos, no detecta lo emergente y no pronostica: si te lo piden, decilo.
-- Castellano rioplatense, sin jerga, tono directo. En "respuesta" va sólo el texto para leer.
+EJEMPLOS (las letras son de ejemplo: usá los nombres y números de DATOS):
+P: ¿Qué material está de moda ahora? → conclusion «A, la que más sube.» · respaldo «A +X puntos en la búsqueda mundial 2022→2024; C es la que más cae, −Z.» · detalle «De 2025 y 2026 no hay lectura: [el porqué de DATOS].»
+P: ¿Qué va a estar de moda en 2027? → conclusion «CICLO no pronostica; hasta 2024 lo que más subía era A.» · respaldo «A +X y B +Y puntos en la búsqueda mundial 2022→2024; C cae −Z.» · detalle «»
+P: ¿Las botinetas están de moda? → conclusion «No lo sé: CICLO no mide botinetas.» · respaldo «En calzado sí se miden A (+X puntos) y B (−Y), búsqueda mundial 2022→2024.» · detalle «[los porqués de DATOS]. Un estilo de calzado no dice nada de otro.» · "siguiente": ["¿Cómo vienen los A?"]
+- "acciones": hasta 2 cambios concretos sobre su diseño, sólo con pasos y valores de OPCIONES, y sólo si DATOS los respalda; "texto" corto («Probá tiro alto»). Sin diseño u OPCIONES, [].
+- Castellano rioplatense, sin jerga, tono directo.
 Respondé SOLO con un objeto JSON, sin texto antes ni después:
 {
-  "respuesta": "1 a 3 oraciones",
-  "accion": "Entrar | Esperar | Explorar | Salir, o \\"\\" si la pregunta no pide decidir",
+  "conclusion": "una frase, hasta 20 palabras",
+  "respaldo": "una frase con el número, su fuente y su período",
+  "detalle": "0 a 2 oraciones, o \"\"",
+  "accion": "Entrar | Esperar | Explorar | Salir, o \"\" si la pregunta no pide decidir",
   "atributos": ["id de cada línea de DATOS que usaste"],
   "datos": ["hasta 3: el número que usaste y de dónde sale, con nombres, nunca ids"],
   "fuera_de_datos": false,
-  "acciones": [{"paso": "tiro", "valor": "alto", "texto": "Probá tiro alto: sube en la búsqueda"}],
+  "acciones": [{"paso": "tiro", "valor": "alto", "texto": "Probá tiro alto"}],
   "siguiente": ["hasta 2 preguntas cortas para seguir"]
 }`;
 const as={datos:null,hist:[],ocupado:false,clip:[],looks:null};
@@ -2849,8 +2868,16 @@ function asNormalizar(r,ids,O){
   let acc=txt(r.accion,12).replace(/^\w/,c=>c.toUpperCase());if(acc==='Esperar'&&vinculo==='propia')acc='Explorar';
   const acciones=(Array.isArray(r.acciones)?r.acciones:[]).filter(a=>a&&O[a.paso]&&O[a.paso].includes(a.valor)&&dz[a.paso]!==a.valor)
     .map(a=>({paso:a.paso,valor:a.valor,texto:txt(a.texto,120)||`Probá ${a.valor}`})).slice(0,2);
-  return {respuesta:txt(r.respuesta,700).replace(/^"?fuera_de_datos"?\s*:\s*(true|false)\s*[,.]?\s*/i,''),accion:val.includes(acc)?acc:'',
-    atributos:[...new Set(lista(r.atributos,6,40).filter(id=>ids.includes(id)))],datos:lista(r.datos,3,160),fuera:r.fuera_de_datos===true,acciones,siguiente:lista(r.siguiente,2,120)};
+  const limpio=v=>txt(v,400).replace(/^"?fuera_de_datos"?\s*:\s*(true|false)\s*[,.]?\s*/i,'');
+  // v7: conclusión, respaldo y detalle; si el modelo vuelve al formato viejo, la primera oración es la conclusión
+  let conclusion=limpio(r.conclusion),respaldo=limpio(r.respaldo),detalle=limpio(r.detalle);
+  // lo que el prompt pide y el modelo a veces no cumple: sin ids en el texto y sin repetir la palabra de la señal
+  const sinIds=t=>t.replace(/,?\s*(?:señal\s+)?(?:de\s+|id:\s*)?\b(?:material|estampa|corte|tiro|detalle|tipo|color)_[a-z0-9_]+\b/gi,'').replace(/\(\s*\)/g,'').replace(/\s+([,.;])/g,'$1').replace(/,\s*\./g,'.').trim();
+  [conclusion,respaldo,detalle]=[conclusion,respaldo,detalle].map(sinIds);
+  if(!conclusion&&r.respuesta){const o=limpio(r.respuesta).split(/(?<=[.!?])\s+/);conclusion=o.shift()||'';respaldo=respaldo||o.shift()||'';detalle=detalle||o.join(' ');}
+  if(acc&&conclusion.toLowerCase().startsWith(acc.toLowerCase())){const resto=conclusion.slice(acc.length).replace(/^[\s,.:;·—-]+/,'');if(resto)conclusion=resto[0].toUpperCase()+resto.slice(1);}
+  return {conclusion:conclusion.slice(0,220),respaldo:respaldo.slice(0,280),detalle,respuesta:[conclusion,respaldo].filter(Boolean).join(' '),accion:val.includes(acc)?acc:'',
+    atributos:[...new Set(lista(r.atributos,6,40).filter(id=>ids.includes(id)))],datos:lista(r.datos,3,160).map(sinIds).filter(Boolean),fuera:r.fuera_de_datos===true,acciones,siguiente:lista(r.siguiente,2,120)};
 }
 function asError(st,msg){
   if(st===401)return 'Groq rechazó la API key. Revisá que esté completa y sin espacios.';
@@ -2888,11 +2915,11 @@ function asPintar(){
     const r=m.r,E=m.E,filas=r.atributos.map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span>${E.serie[id]?asSpark(E.serie[id]):'<span class="asnos">sin serie de búsqueda</span>'}<span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
     d.className='asa';
     d.innerHTML=`<div class="h"><span class="tag ia2">interpretado · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">no lo tengo medido</span>':''}</div>
-      ${r.accion?`<div class="acc serif ${señalPalabra(r.accion).cls}">${señalPalabra(r.accion).icono} ${escH(r.accion)}</div>`:''}
-      <p class="asleer">${escH(r.respuesta)}</p>
+      <div class="asconc">${r.accion?`<span class="asacc ${señalPalabra(r.accion).cls}" style="color:${señalPalabra(r.accion).color}">${señalPalabra(r.accion).icono} ${escH(r.accion)}</span><span class="asacsep"> · </span>`:''}${escH(r.conclusion)}</div>
+      ${r.respaldo?`<div class="asresp">${escH(r.respaldo)}</div>`:''}
       ${r.regla?`<p class="ascap">La regla fija de CICLO para tu perfil dice <b class="${señalPalabra(r.regla).cls}">${escH(r.regla)}</b>; el modelo se apartó. Las dos quedan a la vista.</p>`:''}
-      <div class="asdatos"><span class="lbl">El dato</span>${filas||'<p class="ascap">Esto no lo tengo medido: ninguna serie de CICLO lo respalda.</p>'}${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}</div>
-      ${r.acciones.length?`<div class="asacciones"><span class="lbl">Probá</span>${r.acciones.map((a,i)=>`<button type="button" class="kbtn" data-a="${m.i}:${i}">${escH(a.texto)}</button>`).join('')}</div>`:''}`;
+      ${r.acciones.length?`<div class="asacciones">${r.acciones.map((a,i)=>`<button type="button" class="kbtn" data-a="${m.i}:${i}">${escH(a.texto)}</button>`).join('')}</div>`:''}
+      ${r.detalle||filas||r.datos.length?`<details class="asmas"><summary>Detalle y series</summary>${r.detalle?`<div class="asdet">${escH(r.detalle)}</div>`:''}${filas?`<div class="asdatos">${filas}</div>`:''}${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}</details>`:''}`;
     ch.appendChild(d);
   });
   $$('#aschat [data-a]').forEach(b=>b.onclick=()=>{const [mi,ai]=b.dataset.a.split(':').map(Number);asAplicar(as.hist.find(m=>m.i===mi).r.acciones[ai]);});
@@ -2968,7 +2995,7 @@ async function asPreguntar(){
     const raw=(data.choices?.[0]?.message?.content||'').replace(/<think>[\s\S]*?<\/think>/g,''),i=raw.indexOf('{'),f=raw.lastIndexOf('}');
     let j=null;try{j=JSON.parse(raw.slice(i,f+1));}catch(e){}
     const r=j&&asNormalizar(j,E.ids,O);
-    if(!r||!r.respuesta)throw {msg:'El modelo no devolvió una respuesta válida. Probá de nuevo.'};
+    if(!r||!r.conclusion)throw {msg:'El modelo no devolvió una respuesta válida. Probá de nuevo.'};
     const id1=r.atributos.length===1?r.atributos[0]:null;r.regla=r.accion&&id1&&E.reglas[id1]&&E.reglas[id1]!==r.accion?E.reglas[id1]:'';
     as.hist.push({role:'assistant',r,E,modelo,i:asN++});
   }catch(e){as.hist.push({role:'assistant',error:asError(e instanceof TypeError?0:e.st,e.msg)});}

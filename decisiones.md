@@ -1877,3 +1877,36 @@ quién diseñás?, 02 ¿Trabajás para una marca o por tu cuenta?, 03 la categor
 pasa a ser Tendencias por tu cuenta, con Explorar donde la marca espera; la 07 y la 08 (Diseñar) son por tu cuenta, por
 eso dicen Explorar. En el mapa sale la flecha de la categoría a Diseñar. Las tarjetas de Tendencias pierden la paleta
 del catálogo sintético, como en la app. Se exportaron de nuevo las siete hojas que cambiaron.
+
+## 2026-11-10 · Lo que devuelve la IA, filtrado: primero la respuesta (prompt v7)
+
+**Devolución de la Entrega 3, criterio 3 (5/10).** «Hoy parece que no hay filtro sobre lo que devuelve la IA: tienen que
+filtrar y curar ese contenido. Como usuario, tengo que leer muchas cosas que no aportan valor por igual.»
+
+**Lo que pasaba.** El chat (prompt v5) devolvía de 2 a 4 oraciones en un párrafo, y la primera era casi siempre una
+aclaración («De 2025 y 2026 no tengo lectura porque…»). Abajo venían la señal, la serie, la lista de datos y los
+botones, todo con el mismo peso.
+
+**Decisión.** La respuesta se parte en tres campos con límite, y la app los muestra con tres pesos:
+la **conclusión** (una frase, hasta 20 palabras, en Subtítulo, con la señal al lado si la pregunta pide decidir), el
+**respaldo** (una frase con el número, su fuente y su período, en Cuerpo) y, plegado bajo «Detalle y series», el
+**detalle** (0 a 2 oraciones: prestado, CLIP, no medido, el corte de 2024) con las series y los datos citados. Se puede
+dejar de leer después de la primera línea. Las reglas de los datos no cambian. Prompt nuevo en
+`prompts/prompt_asistente_v7.md`; la v5 queda.
+
+**Tres corridas hasta que anduvo.** Seis preguntas reales con `codigo/probar_asistente.js`, cada vez.
+1. Primera: el formato funcionó, pero el modelo coló un id («señal de material_gamuza»), repitió la señal al principio
+   de la conclusión («Esperar · Esperar, la falda…») y a los lunares contestó «Sí, están volviendo» con −3 puntos de
+   búsqueda como respaldo. La etapa del K-means dice «en retorno», pero la búsqueda todavía cae.
+2. Con una regla nueva (si el número va en contra, la conclusión dice las dos cosas) y otra sobre CLIP, retrocedió: a
+   «¿Qué color va con un jean baggy?» contestó «No lo sé», aunque el dato existe (azul medio, 48 % de los looks, CLIP).
+   La regla sobre CLIP lo había hecho dudar de los colores. Los lunares seguían igual.
+3. Con dos ejemplos de ese patrón en vez de más reglas, las seis salen bien: «Azul medio, el que más aparece con jean
+   baggy en pasarela» con el detalle de que es CLIP; «Todavía no: la etapa dice que vuelve, pero la búsqueda sigue
+   cayendo»; las botinetas ofrecen las zapatillas y los mocasines con su número. Con `gpt-oss-120b` y razonamiento bajo,
+   un ejemplo enseña más que una regla.
+
+**Lo que filtra la app.** El prompt no alcanza siempre, así que `asNormalizar()` borra los ids del texto y de los datos
+citados, y saca la palabra de la señal si la conclusión empieza con ella (la señal va aparte, con su color y un «·»).
+La corrida que queda en `datasets/pruebas/asistente_v7_respuestas.md` es la tercera, sin editar; sus datos citados
+todavía muestran un id, porque el filtro de esa lista se agregó después.

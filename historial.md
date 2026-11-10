@@ -249,6 +249,13 @@ sintético). El modelo pone arriba lo que sirve para decidir y pliega el laborat
 los textos que le hablaban a quien evalúa, el estado interno del proyecto y las fuentes que no se usan. La presentación
 de la Entrega 3 sale del sitio publicado. El papel vuelve a la entrada por el vínculo, sin las paletas.
 
+## v1.25 · 10/11/2026 · El chat contesta primero
+
+Por la devolución de la Entrega 3 (criterio 3, 5/10): la respuesta de «Preguntar» llega en tres partes con distinto
+peso. Arriba, la conclusión en una frase; abajo, el dato que la sostiene; plegado, el detalle con las series. Se puede
+dejar de leer en la primera línea. Prompt v7, probado con seis preguntas reales
+(`datasets/pruebas/asistente_v7_respuestas.md`).
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -1966,3 +1966,23 @@ los links que lo traen; lo único que cambia es la entrada.
 
 La elección entre las dos opciones fue de Claude, a pedido de Felipe. Probado con Playwright a 1400 y 393 px: tres
 toques llevan a Tendencias con el perfil elegido, sin errores de consola.
+
+## 2026-11-10 · «Sólo estoy mirando»: la salida de la entrada, por lo que gana
+
+**Devolución (Cristian e Iván).** Hacía falta una salida de la entrada para quien todavía no quiere contestar, pero
+«continuar sin perfil» nombra algo que la persona no conoce: la app nunca le dijo que estaba armando un perfil. Iván
+sugirió ir por el lado de «explorar», como el «explorar sin cuenta» de otras apps. Felipe pidió cinco textos pensados
+desde lo que gana el usuario, no desde lo que se saltea.
+
+**Las cinco.** «Sólo estoy mirando», «Ver todas las tendencias», «Explorar primero», «Mirar sin elegir» y «Entrar
+directo». Felipe delegó la elección («hacé lo que te parezca»).
+
+**Decisión: «Sólo estoy mirando».** Es lo que se le dice al vendedor en un local: cualquiera de moda la reconoce, no
+nombra nada técnico y dice exactamente lo que pasa, que puede mirar todo sin comprometerse. Va debajo de las tarjetas,
+en los tres pasos, como link y no como botón, para que no compita con las respuestas.
+
+**Qué pasa al tocarla.** Las señales necesitan un perfil, así que la app usa uno general: una marca contemporary, sin
+género. No lo esconde: en Tendencias, donde va «Tu perfil», dice «Estás mirando sin elegir: las señales son para una
+marca contemporary», con un link a «Decime para quién diseñás». Al contestar la entrada, vuelve la línea de siempre.
+
+Probado con Playwright a 1400 y 393 px: el link queda centrado, lleva a Tendencias y la línea cambia al elegir.

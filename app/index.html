@@ -949,6 +949,9 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .ggrid.g4 .gt{font-size:26px!important}
 .app .gfirma{text-align:left;margin-top:56px}
 .app .gnav{justify-content:center}
+.app .gmirar:not(#z){display:flex;justify-content:center;width:100%;max-width:none;margin:40px auto 0;text-align:center}
+.app .gmirar button:not(#z){font:inherit;font-size:var(--t-cue)!important;color:var(--azul);background:none;border:0;padding:8px 4px;cursor:pointer}
+.app .gmirar button:hover{text-decoration:underline;text-underline-offset:4px}
 /* pie, panel «Más» y menú */
 .app .colofon{background:var(--paper);border-top:1px solid var(--rule)!important;font-size:12px!important;color:var(--ink-3)}
 .app .mast .navgrupo:not([hidden]){box-shadow:0 20px 40px -24px rgba(0,0,0,.25)!important;border:1px solid var(--rule-2)!important}
@@ -1106,6 +1109,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         <h1 id="gpreg">¿Para quién trabajás?</h1>
         <div class="ggrid" id="ggrid"></div>
         <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button></div>
+        <p class="gmirar"><button type="button" id="gmirar">Sólo estoy mirando →</button></p>
       </div>
     </section>
 
@@ -3540,8 +3544,11 @@ function ponerCliente(c){
   if(vista==='disenar')pintarDisenar();
   if(vista==='detalle'&&detSel)abrirDetalle(detSel);
 }
+/* «Sólo estoy mirando» (10/11/2026): entra a Tendencias sin contestar; las señales usan un perfil general y lo dicen */
+let mirando=false;
+function gateMirar(){mirando=true;publico='todos';vinculo='marca';ponerCliente('medio');if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);}
 function gateElegir(){
-  publico=gateSel.publico||'todos';vinculo=gateSel.vinculo||'marca';ponerCliente(gateSel.cliente);guardarPerfil();
+  mirando=false;publico=gateSel.publico||'todos';vinculo=gateSel.vinculo||'marca';ponerCliente(gateSel.cliente);guardarPerfil();
   if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);
 }
 /* Tendencias dice con qué perfil se está leyendo, y deja cambiarlo */
@@ -3549,6 +3556,7 @@ function pintarPerfilRadar(){
   const e=$('#perfilrad');if(!e)return;
   const pub={mujer:'Mujer',hombre:'Hombre',todos:'Sin género'}[publico]||'Sin género';
   const cat=(GATE[vinculo]||GATE.marca).c[cliente]?.[0]||(PERFIL[cliente]||PERFIL.premium).n;
+  if(mirando){e.innerHTML=`<span>Estás mirando sin elegir: las señales son para una marca contemporary.</span><button type="button" id="perfilradc">Decime para quién diseñás</button>`;$('#perfilradc').onclick=()=>abrirGate('radar');return;}
   e.innerHTML=`<span>Tu perfil: <b>${pub} · ${vinculo==='propia'?'Por tu cuenta':'Para una marca'} · ${cat}</b></span><button type="button" id="perfilradc">Cambiar</button>`;
   $('#perfilradc').onclick=()=>abrirGate('radar');
 }
@@ -3570,6 +3578,7 @@ function pintarMetodoGate(){
 function abrirGate(destino){gateDestino=destino&&destino!=='perfil'?destino:'radar';gatePaso=1;pintarGate();mostrar('perfil');}
 $('#gvolver').addEventListener('click',()=>{gatePaso=Math.max(1,gatePaso-1);pintarGate();$('#ggrid .gcard')?.focus();});
 $('#navperfil').addEventListener('click',()=>abrirGate(vista));
+$('#gmirar').addEventListener('click',gateMirar);
 let publico='todos';
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */

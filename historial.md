@@ -269,6 +269,11 @@ Devolución de Cristian e Iván sobre la versión nueva. Fuera «tu elección an
 ella el botón «Continuar»: elegir una tarjeta avanza sola. Fuera el subrayado del nombre al pasar el mouse. «Volver» se
 queda.
 
+## v1.28 · 10/11/2026 · «Sólo estoy mirando»
+
+La entrada se puede saltear. Debajo de las tarjetas, «Sólo estoy mirando →» lleva a Tendencias con un perfil general
+(una marca contemporary), y Tendencias lo dice en lugar de «Tu perfil», con un link para elegir el propio.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

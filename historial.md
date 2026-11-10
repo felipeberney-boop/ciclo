@@ -350,6 +350,11 @@ lecturas de ciclo de marcas y el catálogo de Zara de febrero de 2024.
 CLIP lee el color dominante de la imagen (los 10 colores de Diseñar, sólo si pasa 0,6) y lo muestra con su presencia
 en la pasarela, como interpretación: el color describe, no recomienda.
 
+## v1.42 · 10/11/2026 · Prompt v9
+
+La respuesta arranca por lo que CICLO sí tiene sobre el tema; lo que falta, al final y en una frase. Puente para marcas
+y cruces marca × prenda.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

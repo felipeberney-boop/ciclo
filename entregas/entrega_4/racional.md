@@ -351,7 +351,7 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y e
 | Figma: el sistema implementado y el papel | El MCP de Figma |
 
 **Cómo gestionamos el system prompt.** Cada prompt vive en `prompts/` con su versión. Nunca se pisa una versión: si
-cambia, se agrega la siguiente con qué cambió y por qué (la lectura usa la v4 y Revisión la v8; las v5 y v6 se descartaron con la entrada por el objetivo). La regla que los
+cambia, se agrega la siguiente con qué cambió y por qué (la lectura usa la v4 y Revisión la v9; las v5 y v6 se descartaron con la entrada por el objetivo). La regla que los
 atraviesa a todos es que el modelo no ve una fila de datos: los datos que recibe se generan con
 `codigo/armar_datos_llm.js` a partir de la app, y van sólo las fichas que nombra la pregunta. Las claves no están en el
 repositorio: cada persona pega la suya y queda en su navegador.

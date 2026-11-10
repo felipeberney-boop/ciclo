@@ -2350,3 +2350,24 @@ porqué nombra de dónde sale: «está saturada según el modelo, aunque la bús
 
 **Lo que todavía no se puede.** Decir «el color picó en 2022»: no hay serie anual de color. La pasarela por color existe
 sólo como dos períodos (2018–19 y 2022–23).
+
+## 2026-11-10 · Prompt v9: empezar por lo que sí tenemos
+
+**El problema (crítica de Cristian, Entrega 3).** «Tengo que leer muchas cosas que no aportan valor.» Si algo no estaba
+medido exacto, la respuesta arrancaba por eso («No lo sé: CICLO no mide botinetas») y ahí se quedaba.
+
+**La regla nueva, que cambia el orden y no la honestidad.** La conclusión y el respaldo cuentan lo que los datos sí
+tienen sobre el tema; lo que falta va al final, como última oración del detalle, corta; nunca se dice tener lo que no
+está. El puente se busca siempre: para un atributo sin serie, hermano, padre o atributo suelto (como antes); para una
+prenda de una marca, la línea de la marca más las fichas de la prenda, y el cruce marca × prenda, que no existe, se dice
+al final. Marcas: nombrar el tramo de cada puesto de Lyst y nunca comparar a través de Q1-26. Ejemplos nuevos para
+botinetas, jeans de una marca y una marca sola. Versionado en `prompts/prompt_asistente_v9.md`; v7 y v8 quedan.
+
+**Dónde va lo que falta.** En la última oración del detalle, que la app muestra plegado. Se eligió así para no tocar la
+pantalla antes de discutir el rediseño; si se quiere a la vista, es un campo aparte («falta») y una línea al pie de
+cada respuesta.
+
+**Sin probar todavía con el modelo.** En esta sesión no había clave de Groq. `codigo/probar_asistente.js` quedó con las
+seis preguntas del pedido (jeans de Balenciaga, Prada, qué sube más, qué material, botinetas y una con imagen) y se
+corrió con una clave falsa para comprobar que recorre las seis, imagen incluida, y que sólo falla Groq. Con la clave:
+`GROQ_KEY=gsk_… IMAGEN=foto.jpg node codigo/probar_asistente.js` → `datasets/pruebas/asistente_v9_respuestas.md`.

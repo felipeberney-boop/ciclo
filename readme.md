@@ -159,7 +159,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
 | Buscar por imagen | Subir una prenda: CLIP en el navegador dice qué atributos ve y qué looks de pasarela se le parecen |
 | Preguntar | Chat con un LLM que contesta con los datos de CICLO, tu perfil, tu diseño y lo que CLIP leyó de tu foto (pegás tu API key de Groq). Primero la conclusión en una frase, después el dato que la sostiene; el detalle, plegado |
-| El brief | La pirueta. Un encargo de una casa real (foto de Vogue Runway), tres toques con las tarjetas de Diseñar y un veredicto: cada elección sube, está en pico, quieta o baja según su búsqueda 2022→2024, y el mismo look se puntúa para lujo, contemporary y fast fashion. Reemplazó a Adiviná vos en «Más» el 10/11 (sigue en `#adivina`) |
+| El brief | La pirueta. Un encargo de una casa real (foto de Vogue Runway), tres toques (forma, material y estampa, cada opción con su foto de pasarela) y un veredicto: cada elección sube, está en pico, quieta o baja según su búsqueda 2022→2024, y el mismo look se puntúa para lujo, contemporary y fast fashion. Reemplazó a Adiviná vos en «Más» el 10/11 (sigue en `#adivina`) |
 | Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |
 | Método | «Cómo se arma una lectura»: de los datos a la señal, en siete pasos; fuentes, recortes y límites declarados. El modelo (K-means paso a paso) y Marcas (Lyst) salieron de la navegación el 10/11 y siguen en `#etapas` y `#marcas` |
 

@@ -1162,6 +1162,14 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .bfhead span:not(#z){font-size:var(--t-eti)!important;color:var(--ink-3)}
 .app .bfpreg:not(#z){font-size:var(--t-sub)!important;font-weight:600!important;margin:0 0 16px}
 .app .bfgrid .dzimg img{width:100%;height:100%;object-fit:contain}
+@media (min-width:900px){.app .dzgrid.bfgrid.bf6:not(#z){grid-template-columns:repeat(6,minmax(0,1fr))}}
+.app .bfgrid .dzimg.bfconf{aspect-ratio:3/4;overflow:hidden;background:#e8e8ed}
+.app .bfgrid .dzimg.bfconf .bfph{object-fit:cover;object-position:50% 22%}
+.app .bfgrid .dzimg.bfconf::after{content:'';position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(transparent,rgba(0,0,0,.45));pointer-events:none}
+.app .bfgrid .dzimg.bfconf .pcred{z-index:1}
+.app .bfgrid .dzimg.bfconf .psil{width:40px;height:60px;top:8px;right:8px;padding:4px}
+.app .bfgrid .dzimg.bfconf .psil img{object-fit:contain}
+.app .bfli img.bfliph{object-fit:cover;padding:0;object-position:50% 22%}
 .app .bfop{animation:bfsube .45s cubic-bezier(.2,.9,.3,1.1) both}
 .app .bfop:nth-child(2){animation-delay:.05s}.app .bfop:nth-child(3){animation-delay:.1s}.app .bfop:nth-child(4){animation-delay:.15s}.app .bfop:nth-child(5){animation-delay:.2s}.app .bfop:nth-child(6){animation-delay:.25s}
 @keyframes bfsube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -4041,6 +4049,10 @@ function bfPuntaje(cat,el){return Math.round(el.reduce((a,x)=>a+BF_PTS[cat][x.m.
 function bfNuevo(){const ord=BF_BRIEFS.map((_,i)=>i).sort(()=>Math.random()-.5);bf={ord,i:0,fase:'brief',el:[]};}
 function bfBrief(){return BF_BRIEFS[bf.ord[bf.i%bf.ord.length]];}
 function bfPasos(){return BF_PASOS[bfBrief().prenda].concat(BF_COMUN);}
+/* cada opción con su foto de Vogue Runway (FOTO_ATR, la misma de Tendencias); la forma conserva la silueta en la esquina.
+   Sin foto, queda el dibujo. */
+function bfImg(id,n,img,forma){const fo=FOTO_ATR[id];if(!fo)return `<span class="dzimg"><img src="${img}" alt=""></span>`;
+  return `<span class="dzimg bfconf"><img class="bfph" loading="lazy"${fotoPos(id)} src="${vogueFoto(fo.f,480)}" alt="${n} en la pasarela: ${fotoCred(fo)}"><span class="pcred">${fotoCred(fo)}</span>${forma?`<span class="psil" aria-hidden="true"><img src="${img}" alt=""></span>`:''}</span>`;}
 const bfNum=d=>(d>0?'+':d<0?'−':'')+Math.abs(Math.round(d));
 function pintarBrief(){const C=$('#mv');if(!C||typeof GREL==='undefined')return;if(!bf)bfNuevo();
   const B=bfBrief(),P=PERFIL[B.cat],temp=`${BF_TEMP[B.cat]} ${P.hasta}`,f=bfFoto(B);
@@ -4054,7 +4066,7 @@ function pintarBrief(){const C=$('#mv');if(!C||typeof GREL==='undefined')return;
   if(typeof bf.fase==='number'){const pasos=bfPasos(),[tit,ops]=pasos[bf.fase];
     C.innerHTML=`<div class="bfhead"><span>${B.casa} · ${temp} · ${B.pn}</span><span>${bf.fase+1} de ${pasos.length}</span></div>
       <h2 class="bfpreg">${tit}</h2>
-      <div class="dzgrid bfgrid">${ops.map(([id,n,img])=>`<button type="button" class="dzc bfop" data-id="${id}"><span class="dzimg"><img src="${img}" alt=""></span><span class="dzb"><span class="dzn">${n}</span></span></button>`).join('')}</div>
+      <div class="dzgrid bfgrid${ops.length>5?' bf6':''}">${ops.map(([id,n,img])=>`<button type="button" class="dzc bfop" data-id="${id}">${bfImg(id,n,img,bf.fase===0)}<span class="dzb"><span class="dzn">${n}</span></span></button>`).join('')}</div>
       <div class="bfbarra">${pasos.map(([t],i)=>`<span class="${i<bf.el.length?'si':''}">${i<bf.el.length?bf.el[i].n:t}</span>`).join('<i>·</i>')}${bf.fase?`<button type="button" class="gvolver" id="bfatras">← Volver</button>`:''}</div>`;
     $$('#mv .bfop').forEach(b=>b.onclick=()=>{const o=ops.find(x=>x[0]===b.dataset.id);bf.el[bf.fase]={id:o[0],n:o[1],img:o[2],paso:tit,m:bfMomento(o[0])};
       b.classList.add('on');setTimeout(()=>{bf.fase=bf.fase+1<pasos.length?bf.fase+1:'veredicto';pintarBrief();},260);});
@@ -4065,7 +4077,7 @@ function bfVeredicto(C,B,temp){const el=bf.el,cnt={};el.forEach(x=>cnt[x.m.k]=(c
   const dom=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]||(a===el[0].m.k?-1:1))[0];
   const pts=x=>BF_PTS[B.cat][x.m.k],ord=el.slice().sort((a,b)=>pts(b)-pts(a)),mejor=ord[0],peor=ord[ord.length-1];
   const cats=['premium','medio','fast'],nom=c=>c===B.cat?B.casa:BF_CASAS[c];
-  const linea=x=>`<li class="bfli"><img src="${x.img}" alt=""><span><b>${x.n}</b> · ${BF_MOM[x.m.k].n.toLowerCase()}: ${bfNum(x.m.d)} puntos en la búsqueda mundial, 2022→2024, ${BF_MOM[x.m.k].d}.</span><em>${pts(x)>=7?'▲ te sumó':pts(x)<=4?'▼ te restó':'■ neutro'}</em></li>`;
+  const linea=x=>`<li class="bfli">${FOTO_ATR[x.id]?`<img class="bfliph"${fotoPos(x.id)} src="${vogueFoto(FOTO_ATR[x.id].f,240)}" alt="${x.n}: ${fotoCred(FOTO_ATR[x.id])}" title="${fotoCred(FOTO_ATR[x.id])}">`:`<img src="${x.img}" alt="">`}<span><b>${x.n}</b> · ${BF_MOM[x.m.k].n.toLowerCase()}: ${bfNum(x.m.d)} puntos en la búsqueda mundial, 2022→2024, ${BF_MOM[x.m.k].d}.</span><em>${pts(x)>=7?'▲ te sumó':pts(x)<=4?'▼ te restó':'■ neutro'}</em></li>`;
   C.innerHTML=`<div class="bfver"><p class="bfde">${B.casa} · ${temp} · ${B.pn}</p>
     <h2 class="bftit bfr" style="--t:0s">${BF_TIT[B.cat][dom]}</h2>
     <ul class="bflist">${el.map((x,i)=>linea(x).replace('class="bfli"',`class="bfli bfr" style="--t:${.9+i*.55}s"`)).join('')}</ul>

@@ -319,6 +319,11 @@ el dibujo. En los cortes, la silueta queda como etiqueta en la esquina de la fot
 picar en 2019. Entre una vuelta y la otra pasaron siete años.» El gráfico marca los dos picos y el tramo entre ellos,
 y nada más. En «Cuándo picó cada uno» el año aparece una sola vez, al lado del punto. El jean skinny tiene foto.
 
+## v1.36 · 10/11/2026 · El brief, con fotos en cada opción
+
+Cada opción del juego (forma, material y estampa) muestra su look de Vogue Runway con el crédito al pie; la forma
+conserva la silueta en la esquina. El veredicto repite la foto al lado de cada elección.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

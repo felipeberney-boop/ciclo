@@ -2220,3 +2220,22 @@ Lang, otoño 2010: jean negro ajustado, botas. Con la misma búsqueda apareciero
 que hacían falta para el juego. Popelina, corderoy y los materiales sin forma (seda, gasa, tul, organza, pedrería)
 siguen sin foto que los muestre.
 
+## 2026-11-10 · El brief: fotos en todas las opciones
+
+**Pedido de Felipe.** Que las fotos lleguen a todas las elecciones del juego, no sólo a la foto del brief.
+Ahora cada opción de los tres pasos (forma, material y estampa) muestra su look de Vogue Runway, el mismo de
+Tendencias (`FOTO_ATR`), con diseñador, temporada y año al pie. En el primer paso, que es la forma, la silueta queda
+en la esquina, igual que en los cortes de Tendencias. El veredicto usa la misma foto, chica, al lado de cada elección.
+Las 27 opciones tienen foto; las cinco que faltaban (skinny, cargo, evasé, capa y satén) se buscaron con el mismo método
+(ver la entrada anterior). Si alguna opción se quedara sin foto, vuelve al dibujo.
+
+**Colores: no hay paso de color en el juego, y no se agrega.** El juego puntúa cada elección con su serie de búsqueda
+(GREL, 2022→2024), y los colores no tienen serie de búsqueda: lo que CICLO sabe de color sale de CLIP en la pasarela
+(Diseñar), que es otra capa y no se puede mezclar en el mismo puntaje. Si se quisiera, el color podría mostrarse en
+Diseñar con un look de Vogue de ese color en lugar del círculo plano (CLIP: «a monochrome red outfit»), pero eso es
+Diseñar, no el juego, y queda propuesto, no hecho.
+
+**Fuente y licencia, anotadas.** La fuente está en `datasets/fuentes_y_descargas.md` (Vogue Runway, «Fotos que muestra
+la app») y en esta entrada y la del 10/11 sobre Tendencias: sin licencia declarada, cargadas desde los servidores de
+Vogue, sin copia en el repo, con crédito al pie.
+

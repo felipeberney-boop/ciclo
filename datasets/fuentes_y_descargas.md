@@ -38,6 +38,13 @@ fecha en que lo bajamos y su licencia.
 - **Después de 2023 no hay dato.** Revisado el 13/10/2026: el archivo se scrapeó de Vogue el 31/03/2023 y
   no se actualizó. No encontramos reemplazo público con looks etiquetados de 2024–2026; el informe anual de
   Tagwalk es pago. 2024–2026 está **proyectado**, no medido: `datasets/completado_2026/`.
+- **Fotos que muestra la app (desde el 10/11/2026).** Además de los embeddings, la app muestra fotos de este
+  corpus: en las tarjetas de Tendencias y El ciclo, en cada opción de «El brief» (formas, materiales y estampas) y
+  en la foto de cada brief. Son 43 looks, uno por atributo (`FOTO_ATR` en `app/index.html`), más los seis de los
+  briefs (`BF_BRIEFS`). Las eligió CLIP (texto → look en el índice de 14.000 looks de `app/clip/`) y se revisaron a
+  ojo. **No se descargan ni se suben al repo:** la app las carga desde `assets.vogue.com`, la URL que trae el
+  dataset. Cada una lleva al pie diseñador, temporada, año y «Vogue Runway». La licencia es la misma de arriba:
+  ninguna. Mostrarlas fue decisión de Felipe, y el porqué está en `decisiones.md` (10/11/2026).
 
 ## Búsqueda y compra
 

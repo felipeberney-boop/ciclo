@@ -289,6 +289,11 @@ cambian los datos de los últimos años; el modelo vuelve a ubicar el atributo e
 etapas y las curvas se estiran. Menos movidas, más estrellas; al final, los cinco briefs arman una colección. Reemplaza a
 «Adiviná vos» en «Más», que sigue abriendo por su link.
 
+## v1.31 · 10/11/2026 · Más curvas en Tendencias
+
+El gráfico animado gustó y se queda. Pasa de tres a cinco atributos por lado, elegidos entre los que más se mueven con
+serie propia y reconocibles para un diseñador. Sale el link al juego que estaba debajo.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -2075,3 +2075,25 @@ Tendencias y otro al final de «Cómo se arma una lectura», en Método. No apar
 La idea y la construcción fueron de Claude, después de que Felipe descartara la primera y pidiera pensarla para
 diseñadores. Probado con Playwright a 1400 y 393 px: los cinco briefs se cumplen con su jugada mínima, sin errores de
 consola ni scroll horizontal.
+
+## 2026-11-10 · Tendencias: cinco y cinco, y nada debajo del gráfico
+
+**Devolución (Felipe).** El gráfico animado por año es lo que buscaba y se queda. Pero muestra pocos atributos: hay que
+sumar al menos jeans, gamuza y falda, y dos o tres más con serie propia que un diseñador reconozca. Y el link que estaba
+debajo («¿Podrías llevar los lunares a Pico? Jugá El brief») no funciona y distrae de la animación.
+
+**Decisión.** Cinco por lado, elegidos a mano entre los que más se mueven en la búsqueda mundial 2022→2024, todos con
+serie propia:
+
+| Ganan | Pierden |
+|---|---|
+| Jeans baggy +50 | Blusa −31 |
+| Gamuza +29 | Vestido cruzado −26 |
+| Falda maxi +21 | Polera −26 |
+| Falda mini +17 | Vestido slip −19 |
+| Trench +12 | Corset −17 |
+
+Quedan afuera las fibras que suben tanto o más que estos (lana +20, popelina +19, merino +17): se buscan como insumo y no
+le dicen nada a un diseñador sobre qué diseñar. Que es una selección está dicho en el «?», con la lista completa en El
+ciclo. Los rótulos se ordenan a la altura donde termina cada curva y no se pisan, también en el celular. El link al juego
+sale; el juego se rehace.

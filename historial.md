@@ -256,6 +256,13 @@ peso. Arriba, la conclusión en una frase; abajo, el dato que la sostiene; plega
 dejar de leer en la primera línea. Prompt v7, probado con seis preguntas reales
 (`datasets/pruebas/asistente_v7_respuestas.md`).
 
+## v1.26 · 10/11/2026 · Cómo se arma una lectura
+
+La pirueta de la Entrega 4, y la respuesta a «qué datos, para qué y cómo conviven». Método abre con siete pasos animados
+que llevan a los jeans de los datos a la señal: entran pasarela y búsqueda, se vuelven cuatro números, el K-means los
+agrupa, el grupo toma su etapa y el perfil la vuelve señal. Reemplaza al esquema estático. El modelo y Marcas salen de
+la navegación.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

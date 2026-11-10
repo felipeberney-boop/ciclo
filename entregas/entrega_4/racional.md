@@ -78,16 +78,16 @@ la corrigieron dos veces. La unidad pasó de «tendencia» a atributo, y el foco
 
 ## 3 · Los datos y su trazabilidad
 
-**Qué datos, para qué y cómo conviven.** La app lo muestra en un esquema arriba de todo en Método, y en la hoja 12 del
-papel:
+**Qué datos, para qué y cómo conviven.** En la app lo cuenta una sola pieza, arriba de todo en Método: «Cómo se arma
+una lectura» (la pirueta, en el ítem 8). Lleva a los jeans de los datos a la señal en siete pasos.
 
 ```
-CUATRO FUENTES                      SE CRUZAN POR                  QUÉ SALE
+ENTRAN AL MODELO                    SE CRUZAN POR                  QUÉ SALE
 Pasarela · Vogue Runway  ──┐                                    ┌─ La etapa (un lugar en la pista)
-Búsqueda · Google Trends ──┼──►  atributo × año  ──► K-means ──┼─ La señal (Entrar / Esperar / Salir)
-Redes · Reddit           ··┤     (17 atributos,                 └─ El cono (hasta la ventana, con su error)
-Venta y marcas           ··┘      4 rasgos, k = 4)
-                         ·· = valida después, no entra al modelo
+Búsqueda · Google Trends ──┴──►  atributo × año  ──► K-means ──┼─ La señal (etapa + tu perfil, por una regla)
+                                 (17 atributos,                 └─ El cono (hasta la ventana, con su error)
+COMPRUEBAN DESPUÉS, NO ENTRAN     4 rasgos, k = 4)
+Reddit · Google Shopping · Amazon · Lyst
 ```
 
 **Las fuentes** (completas, con fechas de descarga y licencias, en `datasets/fuentes_y_descargas.md`):
@@ -244,7 +244,8 @@ Tendencias con la pregunta «¿Sigue vigente?» y lo que ya hay que dejar primer
 | Tendencias | Qué gana y qué pierde terreno, en el único bloque oscuro | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal. Sólo lo que tiene dato medido: el catálogo sintético no se muestra |
 | La ficha | La señal grande, con una línea de por qué | Es la decisión. El gráfico la sostiene; el detalle está en el «?» |
 | Diseñar | La pregunta del paso | Un paso, una decisión; lo elegido queda en una barra abajo |
-| Método | El esquema de los datos | La devolución lo marcó como fundamental |
+| Preguntar | La conclusión, en una frase | La devolución pidió filtrar lo que devuelve la IA: abajo va el dato que la sostiene, y el detalle queda plegado |
+| Método | «Cómo se arma una lectura»: de los datos a la señal, animado | La devolución pidió que se entienda qué datos se usan y cómo conviven, sin tener que leer |
 
 **Cómo se jerarquizó.** Tres grupos para cada bloque de texto: lo que se necesita para decidir se queda; lo que aclara
 cómo usar la app pasa a un «?» que se abre si lo tocan; lo que no aporta se borra (`decisiones.md`, 04/11).
@@ -268,8 +269,9 @@ filtro, y una grilla de 12 columnas dejaría huecos. Las hojas en papel usan la 
 
 Ropa, no calzado ni accesorios (sin señal medible). Leer el presente, no predecir (refutado). Mundo y Argentina sólo en
 la búsqueda (no hay pasarela local). Sin separar por género (las fuentes no lo traen). Y menos pantallas a la vista: el
-04/11 «Más» pasó de cinco a dos (Adiviná vos y Método); El modelo y Marcas se abren desde Método, y Retornos desde El
-ciclo, donde se usan.
+04/11 «Más» pasó de cinco a dos (Adiviná vos y Método) y Retornos se abre desde El ciclo, donde se usa. El 10/11, El
+modelo y Marcas salieron de la navegación: no ayudaban a tomar una decisión, y lo que explicaban lo cuenta ahora la
+pieza de Método.
 
 ---
 
@@ -305,9 +307,10 @@ ejemplo de como se veria la web»), sobre una captura de la app que ya estaba en
 | 01/09 → 05/10 | La unidad pasa a ser el atributo, los datasets iniciales resultan sintéticos, K-means con k = 4, el prototipo de la Entrega 2 | El grupo, con Claude en el chat. De esas conversaciones no hay registro en el repositorio: lo que queda es `decisiones.md` |
 | 13/10 → 03/11 | La app en código, con Claude Code. Las devoluciones de la cátedra la cambian tres veces (13/10, 27/10, 03/11) | Felipe decide y pide; Claude propone, prueba y escribe el código. Felipe también trabajó con Claude en otra copia del repositorio y trajo de ahí consignas y cambios (13/10) |
 | 04/11 | La entrada por la decisión, probada y descartada; el papel, cinco estilos de texto, la curaduría, la pirueta, la app sin la firma de la materia | Felipe eligió sobre variantes de Claude; lo que delegó está dicho abajo |
+| 10/11 | La devolución de la Entrega 3, con notas: el chat contesta primero, «Cómo se arma una lectura» reemplaza al esquema, El modelo y Marcas salen de la navegación | Felipe fijó el criterio («no agregamos nada. Sacamos») y eligió; Claude corrigió la pieza contra el modelo, la construyó y la probó |
 
 **Qué propuso la IA, qué decidió Felipe y por qué.** Las citas de Felipe son textuales, de las conversaciones en Claude
-Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11 y el 04/11) cuentan como suyas: las eligió y las mandó.
+Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y el 10/11) cuentan como suyas: las eligió y las mandó.
 
 | Tema | La IA propuso o hizo | Lo que decidió Felipe | Por qué |
 |---|---|---|---|
@@ -331,6 +334,9 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11 y el 04/11) c
 | La pirueta (04/11) | Recomendó «Adiviná vos» con el LLM como jugador. Al construirla, sacó al LLM | Las dos ideas son suyas; eligió la primera: «si hace». Lo del LLM lo decidió Claude | Para jugar, el LLM tendría que ver la serie, y en CICLO no ve filas de datos |
 | La app como producto (04/11) | La lista de lo que sólo tenía sentido en la cursada: el catálogo sintético en Tendencias, el laboratorio del K-means arriba de todo, textos que le hablaban a quien evalúa, la presentación dentro del sitio | El criterio es suyo: «esto es una app, no una entrega», «nada de números de entrega, criterios de evaluación, nombres de docentes». Pidió ver la lista antes y después la delegó: «hace todo lo que te parezca hacer en la lista» | Quien entra tiene que ver un producto; el rigor (fuentes, límites, pruebas) se queda |
 | Las pantallas de «Más» (04/11) | El modelo y Marcas desde Método, Retornos desde El ciclo | Lo delegó: «hace lo que te parezca» | El menú ofrecía cinco cosas iguales; tres eran detalle de otra |
+| La segunda pirueta (10/11) | Leyó la propuesta contra el modelo: «las cinco capas se combinan en una señal» no era cierto (entran dos; las otras comprueban) y la pasarela de los jeans es prestada. Propuso la versión honesta y que reemplazara al esquema de Método | La idea es suya, y el criterio también: «Para la Entrega 4 no agregamos nada. Sacamos.» Aprobó la corrección: «sí a las dos» | La devolución pedía entender cómo conviven los datos; una pieza que exagera las capas habría contradicho al modelo |
+| El chat filtrado (10/11) | El prompt v7: conclusión, dato y detalle plegado. En la prueba encontró lo que el prompt no alcanzaba y lo filtró en la app | El formato es suyo: «una conclusión primero, en una frase; después el dato que la respalda; y recién al final, si hace falta, el detalle, plegado» | La devolución: «tengo que leer muchas cosas que no aportan valor por igual» |
+| El modelo y Marcas (10/11) | Propuso sacarlas de la navegación: ninguna ayuda a tomar una decisión | Lo aprobó: «sí a las dos» | Cada pantalla tiene que poder decir en una frase qué decisión ayuda a tomar |
 
 **Qué modelos usamos.**
 
@@ -343,15 +349,38 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11 y el 04/11) c
 | Figma: el sistema implementado y el papel | El MCP de Figma |
 
 **Cómo gestionamos el system prompt.** Cada prompt vive en `prompts/` con su versión. Nunca se pisa una versión: si
-cambia, se agrega la siguiente con qué cambió y por qué (la lectura va por la v5, Preguntar por la v6). La regla que los
+cambia, se agrega la siguiente con qué cambió y por qué (la lectura usa la v4 y Preguntar la v7; las v5 y v6 se descartaron con la entrada por el objetivo). La regla que los
 atraviesa a todos es que el modelo no ve una fila de datos: los datos que recibe se generan con
 `codigo/armar_datos_llm.js` a partir de la app, y van sólo las fichas que nombra la pregunta. Las claves no están en el
 repositorio: cada persona pega la suya y queda en su navegador.
 
-**La pirueta: «Adiviná vos».** En «Más» y desde el cono, en Método; en papel, la hoja 13. La persona dibuja cómo sigue una curva real de
-búsqueda desde 2019 y la compara con lo que pasó, con el cono de CICLO y con repetir el último valor. En las 65 series,
-el último valor gana 45 a 18. El LLM no juega: tendría que ver la serie, y en CICLO no ve filas de datos
-(`decisiones.md`, 04/11).
+**La pirueta: «Cómo se arma una lectura».** Arriba de todo en Método. Las dos notas más bajas de la Entrega 3 (datos e
+IA, 5 sobre 10) decían lo mismo: el modelo es demasiado complejo para explicarlo. La pirueta convierte esa debilidad en la
+pieza más clara de la app. Toma un atributo, los jeans, y en siete pasos animados, sin texto que leer, muestra cómo se
+arma una lectura: entra la pasarela, entra la búsqueda, cada curva se vuelve dos números, los tres cortes se comparan
+con los otros 14 atributos en la misma escala, el K-means junta a los que se parecen, cada grupo toma el nombre de su
+etapa y el perfil la vuelve señal. Muestra algo que antes no se veía: la pasarela de los tres jeans es la misma (Vogue
+mide «denim», no el corte), así que toda la diferencia entre el baggy (Pico, Entrar) y el skinny (Saturada) sale de la
+búsqueda. Está hecha con las mismas funciones que la app, así que no puede contradecirla.
+
+*Qué capacidad de IA usamos.* Dos, y se ven trabajando: CLIP (visión y lenguaje), que convierte las fotos de pasarela
+en una serie por atributo, y el K-means (aprendizaje no supervisado), que agrupa sin que nadie etiquete. *Para qué.*
+Para que la etapa salga de los datos y no de nuestra opinión. *Dónde frenamos.* La idea original decía «las cinco capas
+se combinan en una señal», y la corregimos antes de construirla: al modelo entran dos fuentes, y las otras cuatro sólo
+comprueban, así que van aparte y sin animar. El modelo de lenguaje no narra la pieza, porque tendría que ver las series
+y en CICLO nunca ve una fila. Y la pieza termina en la etapa: el paso a la señal es una regla escrita, no IA. La idea
+y la elección son de Felipe; la corrección de las cinco capas, de Claude (`decisiones.md`, 10/11).
+
+**Antes, «Adiviná vos».** Fue la primera pirueta (04/11) y sigue en la app, en «Más» y al final de la pieza: la
+persona dibuja cómo sigue una curva real de búsqueda desde 2019 y la compara con lo que pasó, con el cono de CICLO y con
+repetir el último valor. En las 65 series, el último valor gana 45 a 18. Se reemplazó como pirueta porque muestra el
+límite del modelo pero no responde a lo que pedía la devolución.
+
+**Lo que devuelve la IA, filtrado.** La devolución dijo que no había filtro sobre lo que devuelve el chat. Desde el
+10/11 (prompt v7) la respuesta llega en tres partes con tres pesos: la conclusión en una frase, el dato que la
+sostiene y, plegado, el detalle. El prompt pide el orden y el límite de palabras; lo que el modelo igual se saltea (un id
+en el texto, la señal repetida) lo filtra la app antes de mostrarlo. Probado con seis preguntas reales, sin editar, en
+`datasets/pruebas/asistente_v7_respuestas.md`.
 
 **Dónde frenamos a la IA.** No decide la etapa ni la señal. No inventa respuestas en las capturas: Preguntar se muestra
 vacío. No predice: el cono dice «no es un pronóstico». Y no es la autora de las decisiones: propone variantes, y la

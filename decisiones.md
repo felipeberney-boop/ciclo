@@ -1910,3 +1910,44 @@ dejar de leer después de la primera línea. Las reglas de los datos no cambian.
 citados, y saca la palabra de la señal si la conclusión empieza con ella (la señal va aparte, con su color y un «·»).
 La corrida que queda en `datasets/pruebas/asistente_v7_respuestas.md` es la tercera, sin editar; sus datos citados
 todavía muestran un id, porque el filtro de esa lista se agregó después.
+
+## 2026-11-10 · «Cómo se arma una lectura»: la pirueta y el esquema de los datos, en una pieza
+
+**Devolución.** Criterio 2 (5/10): «Debe quedar claro qué datos usan, para qué y cómo conviven en el modelo». Criterio 5:
+«encontrar formas más simples de que se entienda esa complejidad».
+
+**Por qué esta y no «Adiviná vos».** Felipe propuso dos piruetas. Adiviná vos, ya construida el 04/11, muestra el límite
+del modelo, pero no contesta ninguna de las dos notas bajas. Esta sí, y no agrega una pantalla: reemplaza al esquema
+estático de Método y hace innecesarias las explicaciones de El modelo. La recomendación fue de Claude y la elección
+de Felipe.
+
+**Lo que se corrigió de la idea antes de construirla.** La propuesta decía «las cinco capas se combinan en una sola
+señal» y «sale una etapa y un color». No es así, y la pieza no puede contradecir el modelo:
+- Al K-means entran **dos** fuentes (pasarela y búsqueda), con dos números cada una. Reddit, Shopping, Amazon y Lyst
+  comprueban después y no entran: van aparte, en gris, sin animar.
+- La pasarela de los jeans es **prestada**: Vogue mide «denim», así que baggy, rectos y skinny tienen la misma (en `KM`,
+  `pn` y `pm` idénticos). Toda la diferencia sale de la búsqueda. Lejos de esconderlo, la pieza lo muestra: es lo que
+  mejor explica por qué tres jeans tienen señales distintas.
+- El K-means da la etapa; la señal sale de la etapa más el perfil, por una regla escrita (`CONSEJO`), no por IA.
+
+**Qué es.** Siete pasos, cuatro segundos cada uno, que arrancan solos la primera vez que la pieza entra en pantalla
+(no con movimiento reducido) y se pueden recorrer con los números: entra la pasarela, entra la búsqueda, cada curva se
+vuelve dos números, los tres jeans contra los otros 14 atributos en la misma escala, el K-means junta a los que se
+parecen, cada grupo toma el nombre de su etapa (baggy queda en Pico con el cargo; rectos y skinny, en Saturada) y el
+perfil lo vuelve señal. Todo sale de las mismas funciones que usa la app (`REC`, `KM`, `kZ`, `kFit`, `kName`, `consejo`), así
+que no puede contradecirla. Sin color nuevo: los cortes usan los tonos de gráfico y el único color de señal está en el
+último paso.
+
+**La nota que pide la consigna: qué IA, para qué y dónde frenamos.**
+- *Qué capacidad usamos.* Dos, y las dos se ven trabajando: CLIP (un modelo de visión y lenguaje), que convierte las
+  fotos de pasarela en una serie por atributo, y el K-means (aprendizaje no supervisado), que agrupa sin etiquetas.
+- *Para qué.* Para que la etapa salga de los datos y no de nuestra opinión.
+- *Dónde frenamos.* El modelo de lenguaje no narra la pieza: tendría que ver las series, y la regla es que nunca ve una
+  fila. La pieza termina en la etapa; el paso a la señal es una regla escrita y se dice así. Y no predice: el último
+  paso manda a «Adiviná vos», que muestra por qué.
+
+**Lo que se fue.** El esquema de tres columnas de Método (04/11). Con él se fueron los links «Ver el modelo →» y «Ver
+las marcas →»: Felipe decidió sacar El modelo y Marcas de la navegación (no ayudan a tomar una decisión). Las dos vistas
+siguen abriendo desde su link directo (`#etapas`, `#marcas`) hasta que se resuelva qué queda de ellas.
+
+Probado con Playwright a 1400 y 393 px, los siete pasos, sin errores de consola ni scroll horizontal.

@@ -21,7 +21,8 @@ el dato que lo sostiene. No predice: lee en qué punto está cada atributo hoy.
 | De Figma al código · preguntas probables | [figma_a_codigo.md](entregas/entrega_3/figma_a_codigo.md) · [preguntas_probables.md](entregas/entrega_3/preguntas_probables.md) |
 | Guion de la presentación y la demo | [guion_demo.md](entregas/entrega_3/guion_demo.md) |
 | **Entrega 4 · el racional** | [racional.md](entregas/entrega_4/racional.md) · [PDF](entregas/entrega_4/racional.pdf): el problema, los datos, el modelo, el diseño y quién decidió qué |
-| Entrega 4 · la pirueta | [Adiviná vos](https://felipeberney-boop.github.io/ciclo/#adivina): dibujá cómo sigue una curva real y compará con lo que pasó |
+| Entrega 4 · la consigna | [consigna.md](entregas/entrega_4/consigna.md), copiada de la página de la materia |
+| Entrega 4 · la pirueta | [Cómo se arma una lectura](https://felipeberney-boop.github.io/ciclo/#racional), arriba de todo en Método: los jeans, de los datos a la señal, en siete pasos animados |
 | Entrega 4 · las pantallas en papel, para corregir en clase | [PDF, 14 hojas A4](entregas/entrega_4/disenos_en_papel/ciclo_disenos_en_papel_entrega_4.pdf) · página 4 del Figma |
 
 Materia: *Sistemas generativos e IA para Diseño* (K534/K576) · Universidad de San Andrés · 2º semestre 2026
@@ -101,12 +102,13 @@ En el celular, las mismas tres preguntas:
 
 ![Paso 9: Preguntar](entregas/entrega_4/recorrido/paso_09_preguntar.png)
 
-**Y además.** Adiviná vos, la pirueta; qué datos usamos y cómo se cruzan, arriba de todo en Método; y El ciclo.
+**Y además.** La pirueta, «Cómo se arma una lectura», arriba de todo en Método: qué datos entran, cómo se cruzan y qué sale, en siete pasos animados; Adiviná vos; y El ciclo.
+
+![Cómo se arma una lectura: cuatro de los siete pasos](entregas/entrega_4/capturas/captura_18_como_se_arma_una_lectura.png)
 
 | | |
 |---|---|
-| ![Adiviná vos](entregas/entrega_4/capturas/captura_17_adivina_vos.png) | ![Método: qué datos usamos y cómo se cruzan](entregas/entrega_4/capturas/captura_13_metodo_los_datos.png) |
-| ![El ciclo](entregas/entrega_4/capturas/captura_06_el_ciclo.png) | ![El modelo, desde Método](entregas/entrega_4/capturas/captura_11_el_modelo.png) |
+| ![Adiviná vos](entregas/entrega_4/capturas/captura_17_adivina_vos.png) | ![El ciclo](entregas/entrega_4/capturas/captura_06_el_ciclo.png) |
 
 Las capturas del recorrido se regeneran con `node codigo/capturar_recorrido.js` (app servida en el puerto 8000). Las 17
 vistas de `entregas/entrega_4/capturas/` —Diseñar, el ciclo, el modelo, calzado, Método, el celular, Adiviná vos— con
@@ -148,16 +150,14 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | | |
 |---|---|
 | Entrada | Tres preguntas, siempre: para quién diseñás, si trabajás para una marca o por tu cuenta, y la categoría. Después, Tendencias. «Cambiar perfil» vuelve acá |
-| Tendencias | La pantalla principal: qué gana y qué pierde terreno afuera, y doce atributos con su paleta y su etapa. La marca CICLO lleva acá |
+| Tendencias | La pantalla principal: qué gana y qué pierde terreno afuera, y los atributos con dato medido, con su etapa y su señal. La marca CICLO lleva acá |
 | El ciclo | Cuándo picó cada uno de los 65 atributos con serie y cuánto tardó en volver; el recorrido de cada uno por pasarela, búsqueda y Reddit hasta 2030, y los jeans por corte |
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
 | Buscar por imagen | Subir una prenda: CLIP en el navegador dice qué atributos ve y qué looks de pasarela se le parecen |
-| Preguntar | Chat con un LLM que contesta con los datos de CICLO, tu perfil, tu diseño y lo que CLIP leyó de tu foto (pegás tu API key de Groq) |
+| Preguntar | Chat con un LLM que contesta con los datos de CICLO, tu perfil, tu diseño y lo que CLIP leyó de tu foto (pegás tu API key de Groq). Primero la conclusión en una frase, después el dato que la sostiene; el detalle, plegado |
 | Adiviná vos | Dibujás cómo sigue una curva real de búsqueda y la comparás con el cono de CICLO y con repetir el último valor: el hallazgo de que no se puede predecir, como juego |
-| El modelo | K-means sobre 17 atributos, paso a paso, con validación externa |
-| Marcas | Lyst Index, 34 trimestres |
 | Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |
-| Método | Qué datos se usan y cómo se cruzan, en un esquema; fuentes, recortes y límites declarados |
+| Método | «Cómo se arma una lectura» (la pirueta); fuentes, recortes y límites declarados. El modelo (K-means paso a paso) y Marcas (Lyst) salieron de la navegación el 10/11 y siguen en `#etapas` y `#marcas` |
 
 ## Fuentes de datos
 

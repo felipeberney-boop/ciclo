@@ -1020,6 +1020,43 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .asa details.asmas>summary::after{content:' ›'}.app .asa details.asmas[open]>summary::after{content:' ‹'}
 .app .asa .asdet:not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.45!important;color:var(--ink-2);margin:8px 0 0;max-width:62ch}
 .app .asa details.asmas .asdatos:not(#z){margin-top:10px}
+/* Método · «Cómo se arma una lectura» (10/11): la pieza que reemplaza al esquema estático. Un atributo, los jeans, en
+   siete pasos animados: entran pasarela y búsqueda, se vuelven cuatro números, se comparan con los otros 16, el K-means
+   los agrupa, el grupo toma su etapa y el perfil la vuelve señal. Lo que sólo comprueba va aparte, en gris. */
+.app .lect .lectsub:not(#z){font-size:var(--t-cue)!important;font-weight:400!important;color:var(--ink-2);margin:-8px 0 18px}
+.app .lectcap{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 12px;min-height:34px}
+.app .lectcap span:not(#z){font-size:var(--t-eti)!important;font-weight:400!important;color:var(--ink-3)}
+.app .lectcap b:not(#z){font-size:var(--t-sub)!important;font-weight:600!important;letter-spacing:-.015em}
+.app .lectesc:not(#z){position:relative;background:var(--card);border-radius:var(--r-card)!important;padding:20px 22px;min-height:300px;overflow:hidden;transition:height .3s}
+.app .lectesc .lsc{position:absolute;top:20px;left:22px;right:22px;opacity:0;transition:opacity .5s;pointer-events:none}
+.app .lectesc .lsc.on{opacity:1;pointer-events:auto}
+.app .lectesc svg{width:100%;height:auto;display:block;overflow:visible}
+.app .lectesc .lr:not(#z){font-size:var(--t-eti)!important;font-weight:400!important;color:var(--ink-2);line-height:1.4!important;margin:10px 0 0}
+.app .lectj{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.app .lectj>div:not(#z){border-radius:var(--r-row)!important;box-shadow:inset 0 0 0 1px var(--rule);padding:14px 16px}
+.app .lectj h4:not(#z){font-size:var(--t-cue)!important;font-weight:600!important;margin:0 0 10px}
+.app .lectj dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+.app .lectj dt:not(#z){font-size:var(--t-eti)!important;color:var(--ink-3)}
+.app .lectj dd:not(#z){margin:0;font-size:var(--t-cue)!important;font-weight:400!important;text-align:right;font-variant-numeric:tabular-nums}
+.app .lectj dd.pr:not(#z){color:var(--ink-3)}
+.app .lectg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.app .lectg>div:not(#z){border-radius:var(--r-row)!important;box-shadow:inset 0 0 0 1px var(--rule);padding:14px 16px;transition:box-shadow .4s}
+.app .lectg>div.tiene:not(#z){box-shadow:inset 0 0 0 2px var(--ink)}
+.app .lectg h4:not(#z){font-size:var(--t-eti)!important;font-weight:400!important;color:var(--ink-3);margin:0 0 8px}
+.app .lectg li:not(#z){list-style:none;font-size:var(--t-cue)!important;font-weight:400!important;color:var(--ink-3);line-height:1.5!important}
+.app .lectg ul{margin:0;padding:0}.app .lectg li.j:not(#z){color:var(--ink)}
+.app .lects{display:flex;flex-direction:column;gap:12px;max-width:640px}
+.app .lects>div{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.app .lects span:not(#z){font-size:var(--t-cue)!important;font-weight:400!important}.app .lects span.et:not(#z){color:var(--ink-3)}
+.app .lects b.sen:not(#z){font-size:var(--t-cue)!important;font-weight:600!important;white-space:nowrap}
+.app .lectfuera:not(#z){margin:22px 0 0;padding:14px 16px;border-radius:var(--r-row)!important;box-shadow:inset 0 0 0 1px var(--ink-3);font-size:var(--t-eti)!important;color:var(--ink-2);max-width:640px}
+.app .lectbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:14px 0 0}
+.app .lectpts{display:flex;gap:8px}
+.app .lectpts button:not(#z){border-radius:50%!important;width:28px;height:28px;border-radius:50%!important;border:0;background:transparent;box-shadow:inset 0 0 0 1px var(--ink-3);color:var(--ink-2);font:inherit;font-size:var(--t-eti)!important;cursor:pointer}
+.app .lectpts button[aria-current="step"]{box-shadow:inset 0 0 0 2px var(--azul);color:var(--azul)}
+.app .lectfin:not(#z){margin:14px 0 0;font-size:var(--t-cue)!important}
+@media (max-width:760px){.app .lectesc:not(#z){padding:16px}.app .lectesc .lsc{top:16px;left:16px;right:16px}.app .lectj,.app .lectg{grid-template-columns:minmax(0,1fr)}.app .lectpts{gap:5px}.app .lectg{gap:8px}.app .lectg>div:not(#z){padding:10px 14px}.app .lectg li:not(#z){display:inline-block;margin-right:10px}}
+@media (prefers-reduced-motion:reduce){.app .lectesc .lsc{transition:none}}
 /* lo que no salió en la medición de escritorio: el celular y la barra. El logo CICLO es una marca, no un estilo de texto */
 .app :is(button.legi em,.rminih,.chdesliza):not(#z),.mast :is(a,button,span):not(.mk):not(#z){font-size:var(--t-eti)!important;font-weight:400!important}
 .app :is(div.gate > div.gprog,button.gcard > span.gprev,div.gnav > button.kbtn,div.gnav > span.gnota,div.gfirma > p.lbl,div > span.lbl,p.perfilrad > span,p.perfilrad > button,div.th > span.lbl,div.th > span.tag.real,div.terreno > p.tsub,div > div.tt,button.tfila.tend > span.tn,button.tfila.tend > span.tv,div.filters > button.chip,div.filters > span.count,div.ptop > span.pkind,div.ticks > span,div.track > div.tde,section.view > p.note,section.view > button.back,div.dzdesde > button.kbtn.dzcon,div.dzcols > span,div.dzcols > button.chip,i > span,dl > dt,dl > dd,dd > span.tag.real,dd > span.tag.demo,dl > dd.mono,div.h > span.lbl,div.h > span.tag.ia2,div.ai > p,div.rec > div.t,div.rec > div.d,button.legi > span,figure > figcaption,div > div.k,div > div.n,div > p.note,button.dzp > span.dzpn,button.dzp > span.dzpt,div > p.dzsub,span.dzb > span.dzdef,li > span,div.kcard > p.mono.kcap,tr > th,tr > th.r,tr > td,td > span,tr > td.r,details.kd > summary,details.kd > div.kcalc,div.kcard > p.ksub,form.kform > label,div.kbtns > button.kbtn,div.kbtns > button.kbtn.ghost,div.seg > button,div > button.kbtn.ghost,div > span.mono,div.leg2 > span,div.kcard > p.note,div > p.mono.kcap,div > div.gm,div > div.gv,div > div.gr,section.view > p.note.a,tr > td.k,td > a,td > span.tag.alert,div.ai > pre.kcalc,div.ciclofilt > button.chip,button.ciclo.tend > span.cf,span.cm > span,span.sen.tend > span,div.ciclos.corto > button.kbtn.ghost.ciclomas,div.ciclos.corto > p.note,p.note > span.proc,div.dline > p,details.vact > summary.kbtn.ghost,details.vact > p.vm,p.vm > a,details.vact > button.kbtn,dl.dfacts > dt,dl.dfacts > dd,dd > span.mono,details.rfiltd > summary.lbl,div.rgrp > span.lbl,div.rgrp > button.chip,div.clave > span,div > button.gvolver,dd.mono > span.tag.real,dd.mono > span.tag.demo,div > div.r,div > p.t,p.t > span.mono,div > p.mono,div > p,div > span.e,div > p.d,div > div.mt,div.pc > small,label.drop > p,p > span.mono,div > p.qestado,div.qej > button.chip,div.qres > p.note,ol.aspasos > li,li > a,li > code,details.ascard.asact > label.ascap,div.ascard > span.lbl,div.aschips > p.ascap,p.ascap > button.gvolver,div.ascard > p.ascap,label.asfoto > span,details.ascard.asver > summary.lbl,details.ascard.asver > p.ascap,div.asa > p,div.assug > button,form.asform > button.kbtn,b > span,div.mdc > small,div.mdc > p,div.mdc.fuera > small,div.mdc.fuera > p,div.mdclave > small,section.metdatos > p.mdnota,section.view > p.note.colores,p.note.colores > span.proc,p.note.colores > span.tag.ia2,summary > span.tag.demo,details > div.cuerpo,summary > span.tag.real,div.cuerpo > code,summary > span.tag.ia,summary > span.tag.alert,summary > span.tag.ia2,td > span.sen):not(#z){font-size:var(--t-eti)!important;font-weight:400!important;line-height:1.35!important}
@@ -1468,28 +1505,15 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
         </div>
       </div>
       <hr class="rule">
-      <section class="metdatos" id="metdatos" aria-labelledby="metdatost">
-        <h2 id="metdatost">Qué datos usamos y cómo se cruzan</h2>
-        <div class="mdesq">
-          <div class="mdcol"><h3>Cuatro fuentes</h3>
-            <div class="mdc"><b>Pasarela <span>hasta 2023</span></b><small>Vogue Runway · 1,28 M de looks</small><p>Cuánto aparece en los desfiles. CLIP lee cada look.</p></div>
-            <div class="mdc"><b>Búsqueda <span>2004–2024</span></b><small>Google Trends · mundo y Argentina</small><p>Cuánto lo busca la gente.</p></div>
-            <div class="mdc fuera"><b>Redes <span>2012–2025</span></b><small>Reddit · r/femalefashionadvice</small><p>Confirma lo que sube. No entra al modelo.</p></div>
-            <div class="mdc fuera"><b>Venta y marcas <span>varía</span></b><small>H&amp;M · Amazon · Google Shopping · Lyst</small><p>Valida después y da contexto. No entra al modelo. <a href="#marcas" data-vista="marcas">Ver las marcas →</a></p></div>
-          </div>
-          <div class="mdflecha" aria-hidden="true">→</div>
-          <div class="mdcol"><h3>Se cruzan por</h3>
-            <div class="mdclave"><strong>atributo × año</strong><small>«floral» en 2019, en cada fuente</small></div>
-            <div class="mdc"><b>K-means</b><p>17 atributos · 4 rasgos: nivel y momento de pasarela y de búsqueda, hasta 2024 · 4 grupos. <a href="#etapas" data-vista="etapas">Ver el modelo →</a></p></div>
-          </div>
-          <div class="mdflecha" aria-hidden="true">→</div>
-          <div class="mdcol"><h3>Qué sale</h3>
-            <div class="mdc"><b>La etapa</b><p>En qué punto del ciclo está: un lugar en la pista, no un color.</p></div>
-            <div class="mdc"><b>La señal</b><p>Entrar, Esperar o Salir, según la etapa y tu perfil.</p></div>
-            <div class="mdc"><b>El cono</b><p>Hasta tu ventana, con el error medido a esa distancia: de ±14 a ±26 puntos. No es un pronóstico. <a href="#adivina" data-vista="adivina">Probalo vos →</a></p></div>
-          </div>
+      <section class="metdatos lect" id="metdatos" aria-labelledby="metdatost">
+        <h2 id="metdatost">Cómo se arma una lectura</h2>
+        <p class="lectsub">Los jeans, de los datos a la señal. Dos fuentes entran; el resto comprueba.</p>
+        <div class="lectcap" aria-live="polite"><span id="lectn">1 de 7</span><b id="lectt">Entra la pasarela</b></div>
+        <div class="lectesc" id="lectesc"></div>
+        <div class="lectbar">
+          <button type="button" class="kbtn" id="lectplay">▶ Ver cómo se arma</button>
+          <span class="lectpts" id="lectpts"></span>
         </div>
-        <p class="mdnota">La IA lee, no decide: CLIP lee las imágenes y el chat sólo ve métricas ya calculadas, nunca una fila de datos. Borde gris: la fuente no entra al modelo.</p>
       </section>
       <p class="note colores"><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va con ▲ o ▼, y sólo la palabra lleva el mismo verde o rojo («Gana presencia», «Pierde presencia»); «Estable» va en negro. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series, y los grupos del K-means tienen tonos que no son de la señal. Hay un solo color más, el azul, y significa «se puede tocar»: botones, links y la opción elegida. El resto es blanco, gris y negro.</p>
       <div class="tw"><table>
@@ -2748,6 +2772,87 @@ function pintarVivo(o){
     if(recSel===o.id||REC.find(x=>x.id===recSel)?.n===o.n)pintarVivo(o);
   });
 }
+/* ---------- Método · «Cómo se arma una lectura» (10/11/2026) ----------
+   Un atributo, los jeans, de los datos a la señal, con los mismos números que usa la app (REC, KM, kZ, kEtapaN, consejo).
+   Dos fuentes entran al K-means; la pasarela es la misma para los tres cortes (Vogue mide «denim»), así que toda la
+   diferencia sale de la búsqueda. Lo que sólo comprueba (Reddit, Shopping, Amazon, Lyst) va aparte y no se anima. */
+const LECT_J=[['jamplio','Jeans baggy','baggy','--s2'],['jmedio','Jeans rectos','rectos','--s3'],['jajust','Jeans skinny','skinny','--s4']];
+const LECT_T=['Entra la pasarela','Entra la búsqueda','Cada curva se vuelve dos números','En la misma escala que los otros 16 atributos','El K-means junta a los que se parecen','Cada grupo toma el nombre de su etapa','Tu perfil la vuelve una señal'];
+const lect={paso:0,timer:null,visto:false,anim:null};
+function lectCurvas(ang){
+  const Y0=2010,Y1=2024,W=ang?440:900,H=ang?340:300,L=ang?34:40,R=ang?96:150,T=14,B=30,X=y=>L+(y-Y0)/(Y1-Y0)*(W-L-R),Yv=v=>T+(1-v/100)*(H-T-B);
+  const ser=(arr,hasta)=>{const p=[];for(let y=Y0;y<=hasta;y++){const v=arr[y-2004];if(v!=null)p.push([y,v]);}const mx=Math.max(...p.map(q=>q[1]));return p.map(([y,v])=>[y,v/mx*100]);};
+  const pts=p=>p.map(([y,v])=>X(y).toFixed(1)+','+Yv(v).toFixed(1)).join(' ');
+  const R0=REC.find(o=>o.id==='jamplio'),pas=ser(R0.v,2023);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Pasarela del denim y búsqueda de tres cortes de jean, 2010 a 2024, cada curva sobre su máximo">`;
+  [0,50,100].forEach(v=>s+=`<line x1="${L}" x2="${W-R}" y1="${Yv(v)}" y2="${Yv(v)}" stroke="var(--rule)"/><text x="${L-8}" y="${Yv(v)+4}" text-anchor="end" fill="var(--ink-3)">${v}</text>`);
+  (ang?[2010,2017,2024]:[2010,2015,2020,2024]).forEach(y=>s+=`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)">${y}</text>`);
+  s+=`<g class="lcur" data-p="0"><polyline fill="none" stroke="var(--ink-2)" stroke-width="2.4" stroke-dasharray="7 5" points="${pts(pas)}"/><text x="${X(2023)+8}" y="${Yv(pas[pas.length-1][1])+(ang?22:4)}" fill="var(--ink-2)">↪ pasarela</text></g>`;
+  const fin=[];LECT_J.forEach(([id,,c,col])=>{const g=ser(REC.find(o=>o.id===id).g,2024);fin.push([c,col,Yv(g[g.length-1][1]),g]);});
+  fin.sort((a,b)=>a[2]-b[2]);for(let i=1;i<fin.length;i++)if(fin[i][2]-fin[i-1][2]<(ang?30:18))fin[i][2]=fin[i-1][2]+(ang?30:18); // que los rótulos no se pisen
+  fin.forEach(([c,col,yl,g])=>s+=`<g class="lcur" data-p="1"><polyline fill="none" stroke="var(${col})" stroke-width="2.6" points="${pts(g)}"/><line x1="${X(2024)+6}" x2="${X(2024)+(ang?18:22)}" y1="${yl}" y2="${yl}" stroke="var(${col})" stroke-width="3"/><text x="${X(2024)+(ang?22:28)}" y="${yl+4}" fill="var(--ink)">${c}</text></g>`);
+  return s+`<defs>${[0,1].map(p=>`<clipPath id="lclip${p}"><rect x="0" y="0" width="0" height="${H}"/></clipPath>`).join('')}</defs></svg>`;
+}
+function lectPistas(ang){
+  const F=[['Pasarela · nivel',0],['Pasarela · momento',1],['Búsqueda · nivel',2],['Búsqueda · momento',3]],W=ang?440:900,L=ang?14:170,R=ang?14:30,DY=ang?118:62,X=z=>L+(Math.max(-2.5,Math.min(3.2,z))+2.5)/5.7*(W-L-R);
+  const Z=KM.rows.map(r=>({n:r.n,z:kZ(r)})),J=LECT_J.map(j=>j[1]);
+  let s=`<svg viewBox="0 0 ${W} ${F.length*DY+(ang?20:10)}" role="img" aria-label="Los cuatro números de cada atributo, estandarizados: los tres jeans contra los otros 14">`;
+  F.forEach(([nm,k],i)=>{const y=(ang?66:30)+i*DY;s+=`<text x="0" y="${ang?y-42:y+4}" fill="var(--ink-2)">${nm}</text><line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}" stroke="var(--rule)" stroke-width="2"/>`;
+    Z.filter(a=>!J.includes(a.n)).forEach(a=>s+=`<circle cx="${X(a.z[k])}" cy="${y}" r="5" fill="var(--ink-3)" opacity=".45"><title>${a.n}</title></circle>`);
+    const js=LECT_J.map(([,n,c,col])=>({c,col,x:X(Z.find(a=>a.n===n).z[k])}));
+    const juntos=js.every(j=>Math.abs(j.x-js[0].x)<1);
+    if(juntos)s+=`<circle cx="${js[0].x}" cy="${y}" r="8" fill="var(--ink)"/><text x="${js[0].x}" y="${y-(ang?16:14)}" text-anchor="middle" fill="var(--ink)">los tres</text>`;
+    else{js.sort((a,b)=>a.x-b.x);let ult=-99;js.forEach((j,n)=>{s+=`<circle cx="${j.x}" cy="${y}" r="8" fill="var(${j.col})"/>`;const up=n%2===0;s+=`<text x="${j.x}" y="${up?y-(ang?16:14):y+(ang?32:24)}" text-anchor="${ang&&j.x>W-60?'end':ang&&j.x<60?'start':'middle'}" fill="var(--ink)">${j.c}</text>`;});}
+  });
+  return s+'</svg>';
+}
+function pintarLectura(){
+  const esc=$('#lectesc');if(!esc||typeof KM==='undefined')return;
+  const km=n=>KM.rows.find(r=>r.n===n),pc=v=>Math.round(v*100)+' %';
+  const P=KM.rows.map(kZ),F=kFit(P,4),N=kName(F.C,4),idx=n=>KM.rows.findIndex(r=>r.n===n);
+  const grupos=F.C.map((_,g)=>KM.rows.filter((_,i)=>F.L[i]===g).map(r=>r.n));
+  const conJean=g=>grupos[g].some(n=>LECT_J.some(j=>j[1]===n));
+  const fichas=LECT_J.map(([,n])=>{const r=km(n);return `<div><h4>${n}</h4><dl><dt>Pasarela, nivel</dt><dd class="pr">↪ ${pc(r.pn)}</dd><dt>Pasarela, momento</dt><dd class="pr">↪ ${kPct(r.pm)}</dd><dt>Búsqueda, nivel</dt><dd>${pc(r.bn)}</dd><dt>Búsqueda, momento</dt><dd>${kPct(r.bm)}</dd></dl></div>`;}).join('');
+  const caja=(g,nombre)=>`<div class="${nombre&&conJean(g)?'tiene':''}"><h4>${nombre?N[g].n:'Grupo '+(g+1)}</h4><ul>${grupos[g].map(n=>`<li class="${LECT_J.some(j=>j[1]===n)?'j':''}">${n}</li>`).join('')}</ul></div>`;
+  const orden=[...F.C.keys()].sort((a,b)=>N[a].et-N[b].et);
+  const filas=LECT_J.map(([,n])=>{const et=kEtapaN(n),[a]=consejo(cliente,et.et),sp=señalPalabra(a);return `<div><span>${n}</span><span class="et">${et.n}</span><b class="sen ${sp.cls}">${sp.icono} ${a}</b></div>`;}).join('');
+  const pf=(PERFIL[cliente]||PERFIL.premium).n,ang=(esc.clientWidth||900)<640;lect.ang=ang;
+  esc.innerHTML=
+    `<div class="lsc" data-s="0 1">${lectCurvas(ang)}<p class="lr">Pasarela: Vogue Runway, parte de los looks con denim, hasta 2023. Búsqueda: Google Trends, mundo, hasta 2024. Cada curva, sobre su máximo. Se cruzan por atributo y año.</p></div>`+
+    `<div class="lsc" data-s="2"></div>`+
+    `<div class="lsc" data-s="3">${lectPistas(ang)}<p class="lr">Cada punto gris es otro atributo. La pasarela no separa los cortes: Vogue mide el denim, no el baggy. Toda la diferencia sale de la búsqueda.</p></div>`+
+    `<div class="lsc" data-s="4"><div class="lectg">${orden.map(g=>caja(g,false)).join('')}</div><p class="lr">17 atributos, 4 grupos, por distancia en los cuatro números. Nadie los etiquetó.</p></div>`+
+    `<div class="lsc" data-s="5"><div class="lectg">${orden.map(g=>caja(g,true)).join('')}</div><p class="lr">Cada grupo se compara con cinco perfiles de etapa (emergente, en ascenso, pico, saturada, en retorno) y toma el más parecido. Baggy queda con el cargo; rectos y skinny, con el trench y el blazer.</p></div>`+
+    `<div class="lsc" data-s="6"><div class="lects">${filas}</div><div class="lectfuera">No entran al modelo, comprueban después: Reddit, Google Shopping, Amazon y Lyst.</div><p class="lectfin">Perfil: ${pf}${vinculo==='propia'?', por tu cuenta':', para una marca'}. <a href="#adivina" data-vista="adivina">¿Y hacia dónde sigue? Probalo vos →</a></p></div>`;
+  esc.querySelector('.lsc[data-s="2"]').innerHTML=`<div class="lectj">${fichas}</div><p class="lr">Nivel: dónde está, sobre su máximo (2023–24). Momento: hacia dónde va (2023–24 contra 2020–21). ↪ La pasarela es la misma para los tres.</p>`;
+  $('#lectpts').innerHTML=LECT_T.map((t,i)=>`<button type="button" data-p="${i}" aria-label="Paso ${i+1}: ${t}">${i+1}</button>`).join('');
+  $$('#lectpts button').forEach(b=>b.onclick=()=>{lectParar();lectIr(+b.dataset.p);});
+  $('#lectplay').onclick=()=>{if(lect.timer){lectParar();return;}lectPlay(lect.paso>=LECT_T.length-1?0:lect.paso);};
+  lectIr(lect.paso,true);lectAlto();
+  if(!lect.rs){lect.rs=true;let t=null;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(()=>{const e=$('#lectesc');if(e&&e.offsetParent&&((e.clientWidth<640)!==lect.ang))pintarLectura();else lectAlto();},200);});}
+  if(!lect.visto&&'IntersectionObserver' in window){if(lect.io)lect.io.disconnect();const io=lect.io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)&&!lect.visto){lect.visto=true;io.disconnect();
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches)lectPlay(0);}},{threshold:.5});io.observe(esc);}
+}
+/* la caja mide lo que la escena más alta, para que nada se corte ni salte al cambiar de paso */
+function lectAlto(){const e=$('#lectesc');if(!e)return;requestAnimationFrame(()=>{const h=Math.max(...[...e.querySelectorAll('.lsc')].map(x=>x.offsetHeight));if(h)e.style.height=(h+40)+'px';});}
+function lectIr(p,sinAnim){
+  lect.paso=p;if(!lect.timer)$('#lectplay').textContent=p>=LECT_T.length-1?'↺ Ver de nuevo':'▶ Ver cómo se arma';$('#lectn').textContent=`${p+1} de ${LECT_T.length}`;$('#lectt').textContent=LECT_T[p];
+  $$('#lectesc .lsc').forEach(sc=>{const ss=sc.dataset.s.split(' ').map(Number);sc.classList.toggle('on',ss.includes(p));});
+  $$('#lectpts button').forEach((b,i)=>{if(i===p)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});
+  // las curvas se dibujan de izquierda a derecha: la pasarela en el paso 1, la búsqueda en el 2
+  const sv=$('#lectesc .lsc svg');if(!sv)return;const W=sv.viewBox.baseVal.width;
+  sv.querySelectorAll('.lcur').forEach(g=>{const k=+g.dataset.p;g.setAttribute('clip-path',`url(#lclip${k})`);});
+  const rects=[0,1].map(k=>sv.querySelector(`#lclip${k} rect`));
+  const meta=[p>=0?W:0,p>=1?W:0],red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  cancelAnimationFrame(lect.anim);
+  const desde=rects.map(r=>+r.getAttribute('width')),t0=performance.now(),dur=sinAnim||red?0:1600;
+  const paso=t=>{const u=dur?Math.min(1,(t-t0)/dur):1,e=1-Math.pow(1-u,3);rects.forEach((r,k)=>r.setAttribute('width',(desde[k]+(meta[k]-desde[k])*(meta[k]>desde[k]?e:1)).toFixed(1)));if(u<1)lect.anim=requestAnimationFrame(paso);};
+  if(p===0&&!sinAnim)rects[0].setAttribute('width',0);
+  lect.anim=requestAnimationFrame(paso);
+}
+function lectPlay(desde){lectParar();lectIr(desde);$('#lectplay').textContent='‖ Pausa';
+  lect.timer=setInterval(()=>{if(lect.paso>=LECT_T.length-1){lectParar();return;}lectIr(lect.paso+1);},4200);}
+function lectParar(){clearInterval(lect.timer);lect.timer=null;const b=$('#lectplay');if(b)b.textContent=lect.paso>=LECT_T.length-1?'↺ Ver de nuevo':'▶ Seguir';}
 /* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v7.md) ----------
    v7 (10/11): la respuesta llega en tres partes con distinto peso: la conclusión en una frase, el dato que la sostiene y,
    plegado, el detalle con las series. Se puede dejar de leer después de la primera línea.
@@ -2764,7 +2869,7 @@ FORMATO (lo más importante):
 - "detalle": de 0 a 2 oraciones, sólo con lo que cambia la decisión: que el dato es prestado de un pariente y por qué, que es interpretación de CLIP, que algo no se mide y qué se mide en su lugar, que 2025 y 2026 no tienen lectura. Si no hay nada de eso, "". No repitas la conclusión ni el respaldo, no expliques cómo funciona CICLO, no agregues contexto de moda.
 - La conclusión no repite la palabra de "accion" (la app ya la muestra al lado): empezá por lo que viene después.
 - El respaldo tiene que sostener la conclusión. Si el número va en sentido contrario (la etapa dice «en retorno» y la búsqueda cae), la conclusión no afirma ninguna de las dos: dice las dos («La etapa dice que vuelve, pero la búsqueda todavía cae»).
-- Si el número es de CLIP, el detalle lo dice siempre: es interpretación de looks de pasarela, no búsqueda ni venta.
+- Los colores SÍ están en DATOS: son el porcentaje de looks de pasarela que leyó CLIP para esa prenda o corte. Usalos para contestar; el detalle aclara que es interpretación de CLIP, no búsqueda ni venta.
 - Nada de introducciones, saludos, «según los datos de CICLO», ni cierres del tipo «espero que te sirva».
 Reglas de los datos:
 - NUNCA digas que tenés un dato que no está en DATOS. Cada número que digas tiene que estar en DATOS, tal cual, con su unidad (si DATOS dice «puntos», decí puntos, no %). No inventes cifras, años, marcas, temporadas ni fuentes, y no redondees hacia lo que suena mejor.
@@ -2780,6 +2885,8 @@ Reglas de los datos:
 EJEMPLOS (las letras son de ejemplo: usá los nombres y números de DATOS):
 P: ¿Qué material está de moda ahora? → conclusion «A, la que más sube.» · respaldo «A +X puntos en la búsqueda mundial 2022→2024; C es la que más cae, −Z.» · detalle «De 2025 y 2026 no hay lectura: [el porqué de DATOS].»
 P: ¿Qué va a estar de moda en 2027? → conclusion «CICLO no pronostica; hasta 2024 lo que más subía era A.» · respaldo «A +X y B +Y puntos en la búsqueda mundial 2022→2024; C cae −Z.» · detalle «»
+P: ¿Qué color va con un [corte]? → conclusion «A, el que más aparece con ese corte en pasarela.» · respaldo «A en el X % de los looks (CLIP, pasarela); después B, Y %.» · detalle «Es lo que CLIP leyó en looks de pasarela: interpretación, no búsqueda.»
+P: ¿Las [estampa] están volviendo? (con etapa «En retorno» y búsqueda que cae) → conclusion «Todavía no: la etapa dice que vuelve, pero la búsqueda sigue cayendo.» · respaldo «−X puntos en la búsqueda mundial 2022→2024; etapa En retorno (K-means).» · detalle «»
 P: ¿Las botinetas están de moda? → conclusion «No lo sé: CICLO no mide botinetas.» · respaldo «En calzado sí se miden A (+X puntos) y B (−Y), búsqueda mundial 2022→2024.» · detalle «[los porqués de DATOS]. Un estilo de calzado no dice nada de otro.» · "siguiente": ["¿Cómo vienen los A?"]
 - "acciones": hasta 2 cambios concretos sobre su diseño, sólo con pasos y valores de OPCIONES, y sólo si DATOS los respalda; "texto" corto («Probá tiro alto»). Sin diseño u OPCIONES, [].
 - Castellano rioplatense, sin jerga, tono directo.
@@ -3378,7 +3485,7 @@ function mostrar(v,keepNav){
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='asistente')asAbrir();
-  if(v==='racional')pintarMetodoGate();
+  if(v==='racional'){pintarMetodoGate();pintarLectura();}
   if(v==='adivina')pintarAdivina();
   if(v==='radar'){pintarPerfilRadar();pintarRadar();}
   window.scrollTo({top:0,behavior:'instant'});

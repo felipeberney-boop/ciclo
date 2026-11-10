@@ -2198,3 +2198,25 @@ atributos con foto, y se revisaron que no se repitiera ninguna.
   piernas o los pies.
 
 Probado con Playwright a 1400 y 393 px, sin errores ni scroll horizontal.
+
+## 2026-11-10 · Tendencias: lo que vuelve, el año una sola vez y la foto del skinny
+
+**«Lo que vuelve» no se entendía.** Mostraba tres curvas chicas con «7 años entre picos (2012 y 2019)» y había que
+deducir qué significaba. Pedido de Felipe: decirlo como frase, no como medida. Ahora muestra un atributo por pasada
+(floral, lunares, mocasines y animal print, rotando) con la frase arriba: «Los lunares picaron en 2012. Volvieron a
+picar en 2019. Entre una vuelta y la otra pasaron siete años.» El gráfico acompaña la frase: la curva, los dos picos
+con su año y el tramo entre ellos sombreado una sola vez, con «siete años» debajo. Sin ejes, porque los años ya están en
+los picos. Los picos son los mismos de `cicloDe()` en El ciclo. Se eligieron cuatro con dos picos claros; se dejaron
+afuera los que tienen el primer pico en 2010, porque ahí empieza la serie y ese pico puede ser «2010 o antes».
+
+**El año duplicado en «Cuándo picó cada uno».** Se probaron las dos versiones. Queda el año al lado del punto, sin años
+en el eje: en el celular el eje sólo entra con tres años (2010, 2017, 2024) y no deja leer 2015 o 2021. Las líneas
+verticales quedan, sin número, como ritmo.
+
+**Foto del jean skinny.** Con el mismo método del 10/11 (CLIP texto → look, a ojo entre los mejores), pero buscando con
+cuatro frases y desde 2010, porque el skinny picó antes de 2016 y en los looks recientes casi no aparece. Quedó Helmut
+Lang, otoño 2010: jean negro ajustado, botas. Con la misma búsqueda aparecieron también cargo (Greg Lauren, primavera
+2023), evasé (Ralph Rucci, otoño 2011), capa (Public School, otoño 2014) y satén (Valentin Yudashkin, primavera 2014),
+que hacían falta para el juego. Popelina, corderoy y los materiales sin forma (seda, gasa, tul, organza, pedrería)
+siguen sin foto que los muestre.
+

@@ -313,6 +313,12 @@ Las tarjetas de Tendencias y de El ciclo pasan de ilustraciones a fotos reales d
 y año al pie. Cada foto la eligió CLIP en el corpus y la revisamos a ojo: 38 atributos tienen foto y los demás conservan
 el dibujo. En los cortes, la silueta queda como etiqueta en la esquina de la foto.
 
+## v1.35 · 10/11/2026 · Lo que vuelve, dicho como frase
+
+«Lo que vuelve» muestra un atributo por pasada y lo cuenta con una frase: «Los lunares picaron en 2012. Volvieron a
+picar en 2019. Entre una vuelta y la otra pasaron siete años.» El gráfico marca los dos picos y el tramo entre ellos,
+y nada más. En «Cuándo picó cada uno» el año aparece una sola vez, al lado del punto. El jean skinny tiene foto.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -42,7 +42,10 @@ const PERFIL = '?c=fast&v=marca&pu=mujer';
   p = await abrir({ vista: 'recorridos' }); await hasta(p, '#ciclos', 60); await foto(p, 'captura_06_el_ciclo');
   p = await abrir({ vista: 'recorridos' }); await hasta(p, '.lys'); await foto(p, 'captura_07_recorrido_hasta_2030');
   // Tendencias, Buscar por imagen, Preguntar
-  p = await abrir({ vista: 'radar' }); await hasta(p, '#terreno'); await foto(p, 'captura_08_tendencias');
+  p = await abrir({ vista: 'radar' }); await hasta(p, '#terreno'); await p.waitForTimeout(2800); /* las curvas se dibujan */ await foto(p, 'captura_08_tendencias');
+  // El brief (la pirueta desde el 10/11): el primer brief, con una movida jugada
+  p = await abrir({ vista: 'mover' }); await p.click('#mvempezar'); await p.waitForTimeout(1600);
+  await p.click('.mvcarta[data-k="D"]'); await p.waitForTimeout(2200); await hasta(p, '#mv', 12); await foto(p, 'captura_19_el_brief');
   p = await abrir({ vista: 'consulta' });
   await p.click('#qej .chip:nth-child(2)'); await p.waitForSelector('#qres .qrow2', { timeout: 60000 }); await p.waitForTimeout(2500);
   await hasta(p, '.qgrid, #qres', 120); await foto(p, 'captura_09_buscar_por_imagen');

@@ -1099,6 +1099,125 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .movi.anim .mvcl{opacity:0;animation:movlab .5s ease forwards;animation-delay:calc(var(--d) + 1.6s)}
 @keyframes movdib{to{stroke-dashoffset:0}}@keyframes movpunto{to{transform:scale(1)}}@keyframes movlab{to{opacity:1}}
 @media (max-width:760px){.app .movg{grid-template-columns:minmax(0,1fr)}.app .movi{padding:16px 14px}.app .movh{flex-direction:column-reverse}.app .movb{align-self:flex-end}}
+/* ---------- «El brief» (10/11/2026) ---------- */
+.app .mvline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:14px 0 22px;padding:18px 0 0;border-top:1px solid var(--rule)}
+.app .mvline figure{margin:0;border:0!important;padding:0!important;text-align:center;animation:mvsube .5s cubic-bezier(.2,.9,.3,1.2) both}
+.app .mvline figure:nth-child(2){animation-delay:.12s}.app .mvline figure:nth-child(3){animation-delay:.24s}.app .mvline figure:nth-child(4){animation-delay:.36s}.app .mvline figure:nth-child(5){animation-delay:.48s}
+.app .mvline img{width:100%;max-width:120px;aspect-ratio:3/4;object-fit:contain;background:var(--paper);padding:10px;box-sizing:border-box}
+.app .mvline img:not(#z){border-radius:14px!important}
+.app .mvline .no img{opacity:.3}
+.app .mvline figcaption b:not(#z){display:block;font-size:14px!important;font-weight:600!important;margin-top:8px;line-height:1.2!important}
+.app .mvline figcaption span:not(#z){display:block;font-size:12px!important;color:var(--ink-2);line-height:1.3!important}
+.app .mvmis h2 + .mvhoy b{font-weight:600}
+/* reglas globales con :is() pesan más: acá van con id doble */
+.app #mv .mvtotal:not(#z){font-size:var(--t-dat)!important;font-weight:600!important;line-height:1.1!important}
+.app #mv :is(.mvok h3,.mvmis h2):not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.2!important}
+#mv .mvok li b{font-weight:600}
+.app #mv .mvline :is(figure,figcaption,img):not(#z){border:0!important;box-shadow:none!important}
+@media (max-width:760px){.app .mvline{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .app #mv .mvmis h2:not(#z){font-size:19px!important}.app .mvmis{flex-wrap:wrap}.app .mvmis .mvq{flex-basis:calc(100% - 64px)}
+  .app #mv .mvjug:not(#z){flex-direction:row;width:100%;justify-content:flex-end}
+  .app .mvcarta:nth-child(n){transform:none}.app .mvmano{padding-left:2px;padding-right:2px}}
+.app .mv{max-width:1080px}
+.app .mvmis{display:flex;align-items:center;gap:18px;background:var(--card);border-radius:var(--r-card);padding:16px 20px;margin:0 0 14px}
+.app .mvmis img{width:64px;height:64px;object-fit:contain;flex:none;border-radius:12px;background:var(--paper);padding:6px;box-sizing:border-box}
+.app .mvmis .mvq{flex:1;min-width:0}
+.app .mvmis .mvn:not(#z){font-size:var(--t-eti)!important;color:var(--ink-3);margin:0;line-height:1.3!important}
+.app .mvmis h2:not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.2!important;margin:2px 0 0;letter-spacing:-.01em}
+.app .mvmis .mvhoy:not(#z){font-size:var(--t-eti)!important;color:var(--ink-2);margin:4px 0 0;line-height:1.35!important}
+.app .mvjug{display:flex;gap:6px;flex:none;align-items:center}
+.app .mvjug i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink-2);display:block;transition:background .3s,transform .3s}
+.app .mvjug i.u{background:var(--ink);border-color:var(--ink);transform:scale(.8)}
+.app .mvjug span:not(#z){font-size:var(--t-eti)!important;color:var(--ink-3);margin-right:4px}
+/* la pista: la etapa es una posición, no un color */
+.app .mvpista{position:relative;background:var(--card);border-radius:var(--r-card);padding:22px 28px 18px;margin:0 0 14px}
+.app .mvest{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.app :is(.mvjug i,.mvest b,.mvtok i,.mvpp):not(#z){border-radius:50%!important}
+.app :is(.mvtok span,.mvbtn):not(#z){border-radius:999px!important}
+.app :is(.mvmis,.mvpista,.mvgraf,.mvok,.mvintro):not(#z){border-radius:var(--r-card)!important}
+.app :is(.mvnums>div,.mvmis img,.mvintro .mvmini div):not(#z){border-radius:14px!important}
+.app .mvtok:not(#z){width:max-content}
+.app .mvbtn:not(#z){font:inherit;font-size:15px!important;font-weight:500!important;color:var(--ink)!important;background:transparent!important;border:1px solid var(--ink)!important;padding:10px 20px!important;cursor:pointer;text-decoration:none;display:inline-block;line-height:1.2!important}
+.app .mvbtn:hover{background:var(--ink)!important;color:var(--paper)!important}
+.app .mvnums .mvt:not(#z){display:block;font-size:12px!important;color:var(--ink-3);line-height:1.25!important;font-weight:400!important}
+.app .mvnums .mvv:not(#z){display:block;margin:4px 0 0;font-size:24px!important;font-weight:600!important;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.1!important;color:var(--ink)}
+.app .mvest2 .st:not(#z){font-size:30px!important;line-height:1!important;display:inline-block}
+.app .mvest::before{content:"";position:absolute;left:12.5%;right:12.5%;top:9px;height:2px;background:var(--rule)}
+.app .mvest>div[data-e]{text-align:center;position:relative}
+.app .mvest b{display:block;width:20px;height:20px;margin:0 auto;border-radius:50%;background:var(--card);border:2px solid var(--rule);box-sizing:border-box;position:relative;z-index:1;transition:border-color .3s}
+.app .mvest span:not(#z){display:block;font-size:var(--t-eti)!important;color:var(--ink-3);margin-top:8px;line-height:1.2!important;transition:color .3s}
+.app .mvest .ac b{border-color:var(--ink)}.app .mvest .ac span:not(#z){color:var(--ink);font-weight:600!important}
+.app .mvest .meta b{border:2px dashed var(--ink);width:26px;height:26px;margin-top:-3px;margin-bottom:-3px}
+.app .mvest .meta em{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-style:normal;font-size:11px;letter-spacing:.02em;color:var(--ink-2);white-space:nowrap}
+.app .mvest .meta.logro b{animation:mvpulso 1s ease-out 2}
+@keyframes mvpulso{0%{box-shadow:0 0 0 0 rgba(29,29,31,.45)}100%{box-shadow:0 0 0 22px rgba(29,29,31,0)}}
+.app .mvtok{position:absolute;top:14px;left:0;transform:translate(-50%,0);transition:left .9s cubic-bezier(.34,1.56,.64,1);z-index:2;pointer-events:none}
+.app .mvtok i{display:block;width:14px;height:14px;border-radius:50%;background:var(--ink);margin:0 auto;box-shadow:0 0 0 4px var(--card)}
+.app .mvtok span:not(#z){display:block;margin-top:24px;background:var(--ink);color:var(--paper);font-size:12px!important;padding:3px 9px;border-radius:999px;white-space:nowrap;line-height:1.3!important}
+.app .mvpista .mvcerca:not(#z){font-size:var(--t-eti)!important;color:var(--ink-2);text-align:center;margin:30px 0 0;line-height:1.35!important;min-height:1.35em}
+/* el gráfico y los cuatro números */
+.app .mvcuerpo{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:14px;margin:0 0 18px}
+.app .mvgraf{background:var(--card);border-radius:var(--r-card);padding:16px 18px 10px}
+.app .mvgraf svg{width:100%;height:auto;display:block;overflow:visible}
+.app .mvley{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 8px}
+.app .mvley span:not(#z){font-size:var(--t-eti)!important;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.app .mvley i{display:inline-block;width:20px;border-top:2.4px solid var(--ink-2)}
+.app .mvley i.p{border-top-style:dashed}.app .mvley i.b{border-top-color:var(--s2)}
+.app .mvnums{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.app .mvnums>div{background:var(--card);border-radius:14px;padding:12px 12px 10px;transition:box-shadow .4s}
+.app .mvnums>div.cambio{box-shadow:inset 0 0 0 2px var(--ink)}
+.app .mvnums dt:not(#z){font-size:12px!important;color:var(--ink-3);line-height:1.25!important}
+.app .mvnums dd:not(#z){margin:4px 0 0;font-size:22px!important;font-weight:600!important;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.1!important}
+.app .mvnums .mvreg:not(#z){grid-column:1/-1;font-size:12px!important;color:var(--ink-3);line-height:1.4!important;margin:2px 2px 0}
+/* la mano */
+.app .mvmano{display:flex;justify-content:center;gap:14px;perspective:900px;padding:18px 0 6px}
+.app .mvcarta:not(#z){width:150px;min-height:196px;background:var(--card);border:1px solid var(--rule)!important;border-radius:16px!important;padding:14px 13px 12px;text-align:left;font:inherit;color:var(--ink);cursor:pointer;
+  display:flex;flex-direction:column;gap:6px;transform-origin:50% 120%;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s,border-color .2s;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.app .mvcarta:nth-child(1){transform:rotate(-5deg) translateY(8px)}.app .mvcarta:nth-child(2){transform:rotate(-1.7deg)}
+.app .mvcarta:nth-child(3){transform:rotate(1.7deg)}.app .mvcarta:nth-child(4){transform:rotate(5deg) translateY(8px)}
+.app .mvcarta:hover:not(:disabled),.app .mvcarta:focus-visible{transform:translateY(-14px) rotate(0) scale(1.04);box-shadow:0 14px 30px rgba(0,0,0,.12);border-color:var(--azul)!important}
+.app .mvcarta:disabled{opacity:.45;cursor:default}
+.app .mvcarta svg{width:100%;height:58px;display:block}
+.app .mvcarta b:not(#z){font-size:17px!important;font-weight:600!important;line-height:1.15!important}
+.app .mvcarta span:not(#z){font-size:12.5px!important;color:var(--ink-2);line-height:1.3!important}
+.app .mvcarta small:not(#z){font-size:11.5px!important;color:var(--ink-3);margin-top:auto;line-height:1.3!important}
+.app .mvvuelo{position:fixed;z-index:50;pointer-events:none;margin:0}
+.app .mvacc{display:flex;justify-content:center;gap:18px;margin:6px 0 0}
+/* el logro y el final */
+.app .mvok{background:var(--card);border-radius:var(--r-card);padding:22px 24px;margin:0 0 18px;animation:mvsube .5s cubic-bezier(.2,.9,.3,1.2)}
+.app .mvok.mal{border:1px dashed var(--ink-3)}
+@keyframes mvsube{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+.app .mvest2{display:flex;gap:6px;margin:0 0 8px}
+.app .mvest2 .st{font-style:normal;font-size:30px;line-height:1;color:var(--rule);transform:scale(.4);opacity:0;animation:mvestrella .45s cubic-bezier(.34,1.8,.64,1) forwards}
+.app .mvest2 .st.si{color:var(--ink)}
+.app .mvest2 .st:nth-child(2){animation-delay:.18s}.app .mvest2 .st:nth-child(3){animation-delay:.36s}
+@keyframes mvestrella{to{transform:scale(1);opacity:1}}
+.app .mvok h3:not(#z){font-size:var(--t-sub)!important;font-weight:600!important;margin:0 0 6px;line-height:1.2!important}
+.app .mvok p:not(#z){font-size:var(--t-cue)!important;line-height:1.45!important;margin:0 0 12px;max-width:68ch}
+.app .mvok .mvsol:not(#z){font-size:var(--t-eti)!important;color:var(--ink-2)}
+.app .mvok ol{margin:6px 0 16px;padding-left:20px}.app .mvok li:not(#z){font-size:var(--t-cue)!important;line-height:1.45!important;margin:0 0 8px}
+.app .mvbotones{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.app .mvtotal:not(#z){font-size:var(--t-dat)!important;font-weight:600!important;letter-spacing:-.02em;margin:0 0 4px;line-height:1.1!important}
+.app .mvintro{background:var(--card);border-radius:var(--r-card);padding:26px 26px 22px;margin:0 0 18px}
+.app .mvintro p:not(#z){font-size:var(--t-cue)!important;line-height:1.5!important;margin:0 0 14px;max-width:62ch}
+.app .mvintro .mvmini{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}
+.app .mvintro .mvmini div{border:1px solid var(--rule);border-radius:12px;padding:8px 12px;font-size:13px;color:var(--ink-2)}
+.app .mvintro .mvmini b{color:var(--ink);font-weight:600}
+.app .mvacceso:not(#z){display:inline-flex;align-items:center;gap:10px;margin:18px 0 0;font-size:var(--t-cue)!important;color:var(--azul);background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.app .mvacceso b{font-weight:600}
+@media (max-width:760px){
+  .app .mvcuerpo{grid-template-columns:minmax(0,1fr)}
+  .app .mvnums{grid-template-columns:1fr 1fr 1fr 1fr;gap:6px}.app .mvnums>div{padding:8px 8px 7px}
+  .app .mvnums .mvv:not(#z){font-size:17px!important}.app .mvnums .mvt:not(#z){font-size:11px!important}
+  .app .mvpista{padding:22px 10px 14px}
+  .app .mvmano{gap:6px;padding-top:12px}
+  .app .mvcarta:not(#z){width:auto;flex:1 1 0;min-width:0;min-height:150px;padding:10px 8px;border-radius:12px!important}
+  .app .mvcarta svg{height:38px}.app .mvcarta b:not(#z){font-size:14px!important}
+  .app .mvcarta span:not(#z){display:none}.app .mvcarta small:not(#z){font-size:10.5px!important}
+  .app .mvmis{padding:12px 14px;gap:12px}.app .mvmis img{width:48px;height:48px}
+  .app .mvjug{flex-direction:column;align-items:flex-end;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){.app .mvtok,.app .mvcarta{transition:none}.app .mvok,.app .mvest2 .st,.app .mvest .meta.logro b{animation:none;opacity:1;transform:none}}
 </style>
 
 <div class="app">
@@ -1117,7 +1236,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
       <a data-v="asistente">Preguntar</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
       <span class="navgrupo" id="navgrupo" hidden>
-        <a data-v="adivina"><b>Adiviná vos</b><span>Dibujá cómo sigue una curva real y compará con lo que dice el modelo.</span><i>65 series · 2020–2024</i><em>Abrir →</em></a>
+        <a data-v="mover"><b>El brief</b><span>Cinco clientes te piden un atributo en su punto justo. Mové los datos reales hasta llevarlo ahí.</span><i>5 briefs · 4 movidas</i><em>Jugar →</em></a>
         <a data-v="racional"><b>Método</b><span>Qué está medido y qué es interpretación, fuente por fuente.</span><i>27 capas y fuentes</i><em>Abrir →</em></a>
       </span>
       <button type="button" class="navperfil" id="navperfil">Cambiar perfil</button>
@@ -1524,6 +1643,11 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
     </section>
 
     <!-- ================= RACIONAL ================= -->
+    <section class="view" id="v-mover" hidden>
+      <div class="vhead"><div><h1>El brief</h1><p class="sub">Cinco clientes, cinco atributos reales y el modelo de CICLO mirando.</p></div></div>
+      <div class="mv" id="mv"></div>
+    </section>
+
     <section class="view" id="v-racional" hidden>
       <div class="vhead">
         <div>
@@ -2733,7 +2857,8 @@ function pintarTerreno(){
   const L=REC.filter(o=>GREL[o.id]).map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d);
   $('#terreno').innerHTML=`<div class="movh"><p class="movt">Lo que más gana y más pierde en la búsqueda mundial, de 2022 a 2024, en puntos <span class="tag real">● medido</span></p>
       <div class="movb"><button type="button" class="gvolver" id="movre">↺ Ver de nuevo</button><details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Cada curva es la búsqueda mundial de Google del atributo, comparada con las otras búsquedas de moda (corregida por la deriva de Google; 2025 queda afuera por el cambio de medición). El número es cuántos puntos ganó o perdió entre 2022 y 2024. Tocá una curva para ver su recorrido.</p></div></details></div></div>
-    <div class="movg">${moviPanel(L.slice(0,3),'Gana terreno','+')}${moviPanel(L.slice(-3).reverse(),'Pierde terreno','−')}</div>`;
+    <div class="movg">${moviPanel(L.slice(0,3),'Gana terreno','+')}${moviPanel(L.slice(-3).reverse(),'Pierde terreno','−')}</div>
+    <a class="mvacceso" href="#mover" data-vista="mover">¿Podrías llevar los lunares a Pico? <b>Jugá «El brief» →</b></a>`;
   $$('#terreno .mvc').forEach(g=>{const ir=()=>{recSel=g.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();};g.addEventListener('click',ir);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ir();}});});
   $('#movre').onclick=moviAnimar;
 }
@@ -2873,7 +2998,7 @@ function pintarLectura(){
     `<div class="lsc" data-s="3">${lectPistas(ang)}<p class="lr">Cada punto gris es otro atributo. La pasarela no separa los cortes: Vogue mide el denim, no el baggy. Toda la diferencia sale de la búsqueda.</p></div>`+
     `<div class="lsc" data-s="4"><div class="lectg">${orden.map(g=>caja(g,false)).join('')}</div><p class="lr">17 atributos, 4 grupos, por distancia en los cuatro números. Nadie los etiquetó.</p></div>`+
     `<div class="lsc" data-s="5"><div class="lectg">${orden.map(g=>caja(g,true)).join('')}</div><p class="lr">Cada grupo se compara con cinco perfiles de etapa (emergente, en ascenso, pico, saturada, en retorno) y toma el más parecido. Baggy queda con el cargo; rectos y skinny, con el trench y el blazer.</p></div>`+
-    `<div class="lsc" data-s="6"><div class="lects">${filas}</div><div class="lectfuera">No entran al modelo, comprueban después: Reddit, Google Shopping, Amazon y Lyst.</div><p class="lectfin">Perfil: ${pf}${vinculo==='propia'?', por tu cuenta':', para una marca'}. <a href="#adivina" data-vista="adivina">¿Y hacia dónde sigue? Probalo vos →</a></p></div>`;
+    `<div class="lsc" data-s="6"><div class="lects">${filas}</div><div class="lectfuera">No entran al modelo, comprueban después: Reddit, Google Shopping, Amazon y Lyst.</div><p class="lectfin">Perfil: ${pf}${vinculo==='propia'?', por tu cuenta':', para una marca'}. <a href="#mover" data-vista="mover">¿Y si los datos fueran otros? Jugá «El brief» →</a></p></div>`;
   esc.querySelector('.lsc[data-s="2"]').innerHTML=`<div class="lectj">${fichas}</div><p class="lr">Nivel: dónde está, sobre su máximo (2023–24). Momento: hacia dónde va (2023–24 contra 2020–21). ↪ La pasarela es la misma para los tres.</p>`;
   $('#lectpts').innerHTML=LECT_T.map((t,i)=>`<button type="button" data-p="${i}" aria-label="Paso ${i+1}: ${t}">${i+1}</button>`).join('');
   $$('#lectpts button').forEach(b=>b.onclick=()=>{lectParar();lectIr(+b.dataset.p);});
@@ -3525,18 +3650,19 @@ function pintarLystX(){
 /* ---------- navegación ---------- */
 function mostrar(v,keepNav){
   document.body.classList.toggle('on-gate',v==='perfil');
-  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional','adivina'].forEach(x=>{
+  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional','adivina','mover'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
   $('#navgrupo').hidden=true;$('#navmas').setAttribute('aria-expanded','false');
-  $('#navmas').classList.toggle('on',['etapas','marcas','racional','adivina'].includes(v));cerrarMenu();
+  $('#navmas').classList.toggle('on',['etapas','marcas','racional','adivina','mover'].includes(v));cerrarMenu();
   if(v==='retornos')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='recorridos'?'page':'false'));
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='asistente')asAbrir();
   if(v==='racional'){pintarMetodoGate();pintarLectura();}
   if(v==='adivina')pintarAdivina();
+  if(v==='mover')pintarMover();
   if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
@@ -3630,7 +3756,7 @@ $('#gmirar').addEventListener('click',gateMirar);
 let publico='todos';
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
-const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional','adivina'];
+const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional','adivina','mover'];
 let vista='perfil',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
@@ -3796,6 +3922,166 @@ function advFinal(){const T=advTotal(),R=adv.res,gv=R.filter(r=>r.vos<r.m-.5).le
     <div class="advbar"><button type="button" class="kbtn" id="advotra">Jugar otra vez</button><button type="button" class="gvolver" id="advtend">Ver en qué etapa está cada atributo →</button></div></div>`;
   $('#advotra').onclick=()=>{adv=null;pintarAdivina();};$('#advtend').onclick=()=>mostrar('radar');
 }
+/* ---------- «El brief» (10/11/2026): la pirueta de la Entrega 4 ----------
+   Pensado para diseñadores: cada misión es un brief de un cliente («la quiero en la colección, pero en su punto alto»),
+   las cartas son movidas del oficio y al final los cinco briefs arman una colección.
+   No se adivina lo que dice el modelo: se juega con él. Cada carta cambia los datos reales de los últimos años de un
+   atributo (la pasarela 2022–23 o la búsqueda 2023–24, ×1,5 o ×0,6). Los cuatro números se recalculan con la misma
+   cuenta que usa el modelo (nivel = lo reciente sobre el máximo, con tope 1; momento = lo reciente contra 2020–21, así
+   que escalar lo reciente por f da (1+m)·f−1) y el atributo se ubica en el grupo más cercano, sin reentrenar, igual que
+   una tendencia nueva. Las jugadas mínimas (par) salen de probar todas las combinaciones de hasta cuatro cartas. */
+const MV_CARTAS={
+  D:{n:'Lo sacás en tu desfile',d:'Lo mostrás en pasarela y otras marcas te copian.',e:'Pasarela 2022–23 ×1,5',l:'pn',m:'pm',f:1.5,cap:'p'},
+  V:{n:'Lo usa una it-girl',d:'Sale en street style y todos lo buscan.',e:'Búsqueda 2023–24 ×1,5',l:'bn',m:'bm',f:1.5,cap:'b'},
+  d:{n:'Lo sacás de la colección',d:'Las marcas lo dejan de mostrar.',e:'Pasarela 2022–23 ×0,6',l:'pn',m:'pm',f:0.6,cap:'p'},
+  v:{n:'Va a liquidación',d:'Termina en el outlet y la gente se cansa.',e:'Búsqueda 2023–24 ×0,6',l:'bn',m:'bm',f:0.6,cap:'b'}};
+const MV_ORD=['D','V','d','v'],MV_EST=['En ascenso','Pico','Saturada','En retorno'];
+const MV_MIS=[
+  {km:'Floral',rec:'floral',nom:'el floral',quien:'Buyer de una multimarca',pide:'Necesito floral, pero que se esté vendiendo ya, no que todos lo tengan colgado.',img:'siluetas/estampas/estampa_floral.svg',meta:'Pico',par:'V',
+   lec:'Pico es que lo busque mucha gente. El floral ya estaba en la pasarela: con la búsqueda arriba, deja de estar Saturado y pasa a Pico.'},
+  {km:'Cuero',rec:'cuero',nom:'el cuero',quien:'Directora creativa',pide:'Quiero una falda de cuero en la colección, y que llegue en su mejor momento.',img:'siluetas/faldas/midi.svg',meta:'Pico',par:'VV',
+   lec:'El cuero está En retorno porque la pasarela lo soltó. No hace falta que vuelva al desfile: con la búsqueda dos veces arriba, el modelo ya lo ve en Pico. Un desfile, en cambio, lo manda a Saturada.'},
+  {km:'Jeans baggy',rec:'jamplio',nom:'el jean baggy',quien:'Tu propia marca de autor',pide:'Quiero rescatar el baggy como pieza de archivo: cuando todos ya lo hayan soltado.',img:'siluetas/jeans/corte_baggy.svg',meta:'En retorno',par:'dv',
+   nota:'↪ La pasarela del baggy es la de todo el denim: Vogue no distingue cortes.',
+   lec:'Para quedar En retorno tiene que salir de las dos: la pasarela lo deja y la gente se cansa. Con una sola, no alcanza.'},
+  {km:'Buzo / hoodie',rec:'buzo',nom:'el buzo',quien:'Jefe de producto, fast fashion',pide:'Un buzo con capucha, pero quiero llegar antes del pico, no después.',img:'siluetas/buzos/capucha.svg',meta:'En ascenso',par:'DD',
+   lec:'En ascenso es la pasarela empujando fuerte. Con un desfile no se mueve; con dos seguidos el buzo deja de estar Saturado y pasa a subir.'},
+  {km:'Lunares',rec:'lunares',nom:'los lunares',quien:'Clienta high fashion',pide:'Lunares. Pero en su punto más alto, no como algo que vuelve tímido.',img:'siluetas/estampas/estampa_lunares.svg',meta:'Pico',par:'DVV',
+   lec:'Los lunares necesitan las dos cosas: volver a la pasarela y que la gente los busque, y mucho. Es justo lo que hoy no pasa: por eso el modelo dice En retorno mientras la búsqueda todavía cae.'}];
+let mv=null;
+function mvK(){if(!K4)kEtapaN(KM.rows[0].n);return K4;}
+function mvEtapa(r){const {F,N}=mvK(),z=kZ(r),d=F.C.map(c=>c.reduce((s,v,j)=>s+(v-z[j])**2,0));let bi=0;d.forEach((x,i)=>{if(x<d[bi])bi=i;});
+  const dist={};d.forEach((x,i)=>dist[N[i].n]=x);return {n:N[bi].n,dist};}
+function mvAplicar(r,k){const c=MV_CARTAS[k],o={...r};o[c.l]=Math.min(1,r[c.l]*c.f);o[c.m]=(1+r[c.m])*c.f-1;return o;}
+function mvFactores(jug){let p=1,b=1;jug.forEach(k=>{const c=MV_CARTAS[k];if(c.cap==='p')p*=c.f;else b*=c.f;});return {p,b};}
+function mvNuevo(){mv={i:0,jug:[],est:[],fase:'intro',f:{p:1,b:1}};}
+function mvMis(){return MV_MIS[mv.i];}
+function mvFila(){const M=mvMis();let r={...KM.rows.find(x=>x.n===M.km)};mv.jug.forEach(k=>r=mvAplicar(r,k));return r;}
+const mvMax=()=>mvMis().par.length+2;
+/* el gráfico: pasarela (punteada, hasta 2023) y búsqueda (hasta 2024), cada una sobre su máximo real hasta 2024 */
+const MV_Y0=2010,MV_Y1=2024;
+function mvSeries(){const R=REC.find(o=>o.id===mvMis().rec);
+  const ser=(a,h)=>{const p=[];for(let y=MV_Y0;y<=h;y++){const v=a[y-2004];if(v!=null)p.push([y,v]);}const mx=Math.max(...p.map(q=>q[1]));return p.map(([y,v])=>[y,v/mx*100]);};
+  return {p:ser(R.v,2023),b:ser(R.g,2024)};}
+function mvGeo(){const W=640,H=250,L=34,Rr=16,T=12,B=26;return {W,H,L,Rr,T,B,X:y=>L+(y-MV_Y0)/(MV_Y1-MV_Y0)*(W-L-Rr)};}
+function mvSvg(){const g=mvGeo(),{W,H,L,Rr,X}=g;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Pasarela y búsqueda de ${mvMis().km}, 2010 a 2024, sobre su máximo; las cartas cambian los últimos años">`;
+  s+=`<rect id="mvband" x="${X(2021.5)}" y="${g.T}" width="${X(2024)+8-X(2021.5)}" height="${H-g.T-g.B}" rx="8" fill="var(--paper)"/>`;
+  s+=`<text x="${X(2024)+2}" y="${g.T+16}" text-anchor="end" fill="var(--ink-3)">tus movidas</text>`;
+  s+=`<g id="mvejes"></g>`;
+  [2010,2014,2018,2022,2024].forEach(y=>s+=`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)">${y}</text>`);
+  s+=`<polyline id="mvlp" fill="none" stroke="var(--ink-2)" stroke-width="2.4" stroke-dasharray="7 5" stroke-linejoin="round"/><polyline id="mvlb" fill="none" stroke="var(--s2)" stroke-width="2.8" stroke-linejoin="round"/>`;
+  s+=`<circle id="mvpp" r="4.5" fill="var(--ink-2)"/><circle id="mvpb" r="5" fill="var(--s2)"/>`;
+  return s+`<defs><clipPath id="mvclip"><rect x="0" y="0" width="${W}" height="${H}"/></clipPath></defs></svg>`;}
+function mvDibujar(fp,fb,rev){const g=mvGeo(),S=mv.ser,{H,T,B,X}=g;
+  const p=S.p.map(([y,v])=>[y,y>=2022?v*fp:v]),b=S.b.map(([y,v])=>[y,y>=2023?v*fb:v]);
+  const top=Math.max(100,...p.map(q=>q[1]),...b.map(q=>q[1]))*1.08,Y=v=>T+(1-v/top)*(H-T-B);
+  const cut=(a)=>{if(rev==null||rev>=1)return a;const yr=MV_Y0+(MV_Y1-MV_Y0)*rev;const o=a.filter(q=>q[0]<=yr);return o;};
+  const pts=a=>cut(a).map(([y,v])=>X(y).toFixed(1)+','+Y(v).toFixed(1)).join(' ');
+  $('#mvlp').setAttribute('points',pts(p));$('#mvlb').setAttribute('points',pts(b));
+  const lp=cut(p).slice(-1)[0],lb=cut(b).slice(-1)[0];
+  if(lp){$('#mvpp').setAttribute('cx',X(lp[0]));$('#mvpp').setAttribute('cy',Y(lp[1]));}
+  if(lb){$('#mvpb').setAttribute('cx',X(lb[0]));$('#mvpb').setAttribute('cy',Y(lb[1]));}
+  const ticks=[0,100].concat(top>230?[200]:[]);
+  $('#mvejes').innerHTML=ticks.map(v=>`<line x1="${g.L}" x2="${g.W-g.Rr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--rule)"${v===100?' stroke-dasharray="3 4"':''}/><text x="${g.L-8}" y="${Y(v)+4}" text-anchor="end" fill="var(--ink-3)">${v}</text>`).join('')
+    +`<text x="${g.L+4}" y="${Y(100)-6}" fill="var(--ink-3)">su máximo real</text>`;
+}
+/* los cuatro números, la pista y lo cerca que quedó cada etapa */
+const mvNiv=v=>Math.round(v*100)+' %';
+function mvNums(r,ant){const F=[['pn','Pasarela · nivel',mvNiv],['pm','Pasarela · momento',kPct],['bn','Búsqueda · nivel',mvNiv],['bm','Búsqueda · momento',kPct]];
+  return F.map(([k,t,f])=>`<div data-k="${k}"${ant&&Math.abs(ant[k]-r[k])>1e-9?' class="cambio"':''}><span class="mvt">${t}</span><strong class="mvv">${f(r[k])}</strong></div>`).join('')
+    +`<p class="mvreg">El modelo no se reentrena: ubica estos cuatro números en el grupo más cercano, como a una tendencia nueva.</p>`;}
+function mvPos(e){/* la ficha se corre hacia las etapas más cercanas: promedio de las posiciones pesado por cercanía */
+  const w=MV_EST.map(n=>Math.exp(-e.dist[n]/0.2)),s=w.reduce((a,b)=>a+b,0);
+  return MV_EST.reduce((a,n,i)=>a+w[i]/s*(12.5+25*i),0);}
+function mvPista(e){const M=mvMis();
+  $$('#mvest>div').forEach(d=>{d.classList.toggle('ac',d.dataset.e===e.n);});
+  $('#mvtok').style.left=mvPos(e)+'%';
+  const orden=MV_EST.filter(n=>n!==e.n).sort((a,b)=>e.dist[a]-e.dist[b]);
+  $('#mvcerca').textContent=e.n===M.meta?`El modelo dice: ${e.n}.`:`El modelo dice: ${e.n}. Lo más cerca después: ${orden[0]}.`;}
+/* el ícono de cada carta: una curva chiquita que sube o baja, punteada si es pasarela */
+function mvIcono(k){const c=MV_CARTAS[k],up=c.f>1,col=c.cap==='p'?'var(--ink-2)':'var(--s2)';
+  const a=up?'4,40 30,34 52,36 74,30':'4,14 30,20 52,18 74,22',b=up?'74,30 96,10 116,4':'74,22 96,40 116,50';
+  return `<svg viewBox="0 0 120 56" aria-hidden="true"><rect x="70" y="0" width="50" height="56" rx="6" fill="var(--paper)"/><polyline points="${a} ${b}" fill="none" stroke="${col}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"${c.cap==='p'?' stroke-dasharray="6 5"':''}/></svg>`;}
+function mvMano(dis){return MV_ORD.map(k=>{const c=MV_CARTAS[k];return `<button type="button" class="mvcarta" data-k="${k}"${dis?' disabled':''}>${mvIcono(k)}<b>${c.n}</b><span>${c.d}</span><small>${c.e}</small></button>`;}).join('');}
+function pintarMover(){const C=$('#mv');if(!C||typeof KM==='undefined')return;if(!mv)mvNuevo();
+  if(mv.fase==='intro')return mvIntro(C);
+  if(mv.fase==='fin')return mvFinal(C);
+  const M=mvMis(),r=mvFila(),e=mvEtapa(r),hoy=mvEtapa(KM.rows.find(x=>x.n===M.km)).n,max=mvMax();
+  mv.ser=mvSeries();
+  C.innerHTML=`<div class="mvmis"><img src="${M.img}" alt=""><div class="mvq"><p class="mvn">Brief ${mv.i+1} de ${MV_MIS.length} · ${M.quien}</p><h2>«${M.pide}»</h2><p class="mvhoy">Llevá ${M.nom} a <b>${M.meta}</b>. En los datos reales, hasta 2024, está ${hoy}.${M.nota?' '+M.nota:''}</p></div>
+      <div class="mvjug" aria-label="Jugadas: ${mv.jug.length} de ${max}"><span>Jugadas</span>${Array.from({length:max},(_,i)=>`<i class="${i<mv.jug.length?'u':''}"></i>`).join('')}</div></div>
+    <div class="mvpista"><div class="mvest" id="mvest">${MV_EST.map(n=>`<div data-e="${n}" class="${n===M.meta?'meta':''}">${n===M.meta?'<em>Meta</em>':''}<b></b><span>${n}</span></div>`).join('')}<div class="mvtok" id="mvtok"><i></i><span>${M.km}</span></div></div><p class="mvcerca" id="mvcerca" aria-live="polite"></p></div>
+    <div id="mvres"></div>
+    <div class="mvcuerpo"><div class="mvgraf"><div class="mvley"><span><i class="p"></i>Pasarela (Vogue)</span><span><i class="b"></i>Búsqueda (Google, mundo)</span></div>${mvSvg()}</div><div class="mvnums" id="mvnums">${mvNums(r)}</div></div>
+    <div class="mvmano" id="mvmano" role="group" aria-label="Tus cartas">${mvMano(mv.fase!=='jugar')}</div>
+    <div class="mvacc"><button type="button" class="gvolver" id="mvdes"${mv.jug.length&&mv.fase==='jugar'?'':' disabled'}>Deshacer</button><button type="button" class="gvolver" id="mvrei">Empezar el brief de nuevo</button></div>`;
+  mv.f=mvFactores(mv.jug);
+  const nuevo=!mv.dibujada;mv.dibujada=true;
+  if(nuevo&&!matchMedia('(prefers-reduced-motion:reduce)').matches){const t0=performance.now();const paso=t=>{const k=Math.min(1,(t-t0)/1400);mvDibujar(mv.f.p,mv.f.b,1-Math.pow(1-k,3));if(k<1)requestAnimationFrame(paso);};requestAnimationFrame(paso);}
+  else mvDibujar(mv.f.p,mv.f.b);
+  $('#mvtok').style.transition='none';mvPista(e);$('#mvtok').offsetWidth;$('#mvtok').style.transition='';
+  $$('#mvmano .mvcarta').forEach(b=>b.onclick=()=>mvJugar(b.dataset.k,b));
+  $('#mvdes').onclick=()=>{if(!mv.jug.length)return;const ant=mvFila();mv.jug.pop();mvAnimar(ant,null);};
+  $('#mvrei').onclick=()=>{mv.jug=[];mv.fase='jugar';mv.dibujada=false;pintarMover();};
+  if(mv.fase!=='jugar')mvResultado(false);
+}
+function mvJugar(k,btn){if(mv.fase!=='jugar'||mv.anim)return;const ant=mvFila();mv.jug.push(k);
+  const red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!red&&btn&&btn.animate){/* la carta se da vuelta y vuela al gráfico */
+    const a=btn.getBoundingClientRect(),g=$('.mvgraf').getBoundingClientRect(),cl=btn.cloneNode(true);cl.classList.add('mvvuelo');
+    Object.assign(cl.style,{left:a.left+'px',top:a.top+'px',width:a.width+'px',height:a.height+'px'});$('#mv').appendChild(cl);btn.style.visibility='hidden';
+    const dx=g.left+g.width*.82-a.left-a.width/2,dy=g.top+g.height*.4-a.top-a.height/2;
+    cl.animate([{transform:'translate(0,0) rotateY(0) scale(1)',opacity:1},{transform:`translate(${dx*.55}px,${dy*.6}px) rotateY(180deg) scale(.8)`,opacity:1,offset:.55},{transform:`translate(${dx}px,${dy}px) rotateY(360deg) scale(.15)`,opacity:0}],{duration:650,easing:'cubic-bezier(.5,0,.3,1)'})
+      .onfinish=()=>{cl.remove();btn.style.visibility='';mvAnimar(ant,k);};
+    mv.anim=true;}
+  else mvAnimar(ant,k);
+}
+/* las curvas se estiran hasta los datos nuevos, los números corren y la ficha se mueve por la pista */
+function mvAnimar(ant,k){const r=mvFila(),e=mvEtapa(r),f0=mv.f,f1=mvFactores(mv.jug),max=mvMax(),red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  mv.anim=true;mv.f=f1;
+  $$('.mvjug i').forEach((x,i)=>x.classList.toggle('u',i<mv.jug.length));$('#mvdes').disabled=!mv.jug.length;
+  $('#mvnums').innerHTML=mvNums(r,ant);
+  const nums=$$('#mvnums .mvv'),K=['pn','pm','bn','bm'];
+  const fin=()=>{mv.anim=false;mvDibujar(f1.p,f1.b);nums.forEach((d,i)=>d.textContent=(i%2?kPct:mvNiv)(r[K[i]]));mvPista(e);
+    setTimeout(()=>{if(e.n===mvMis().meta){mv.fase='ok';mvResultado(true);}else if(mv.jug.length>=max){mv.fase='sin';mvResultado(true);}},red?0:900);};
+  if(red)return fin();
+  const t0=performance.now(),D=800,ease=t=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2);};
+  const paso=t=>{const q=Math.min(1,(t-t0)/D),u=ease(q);mvDibujar(f0.p+(f1.p-f0.p)*u,f0.b+(f1.b-f0.b)*u);
+    nums.forEach((d,i)=>{const v=ant[K[i]]+(r[K[i]]-ant[K[i]])*Math.min(1,q*1.2);d.textContent=(i%2?kPct:mvNiv)(v);});
+    if(q<1)requestAnimationFrame(paso);else fin();};
+  requestAnimationFrame(paso);setTimeout(()=>mvPista(e),D*.35);
+}
+function mvResultado(nuevo){const M=mvMis(),R=$('#mvres');$$('#mvmano .mvcarta').forEach(b=>b.disabled=true);$('#mvdes').disabled=true;
+  const sol=M.par.split('').map(k=>MV_CARTAS[k].n).join(' + ');
+  if(mv.fase==='ok'){const n=mv.jug.length,est=n<=M.par.length?3:n===M.par.length+1?2:1;mv.est[mv.i]=est;
+    if(nuevo)$(`#mvest [data-e="${M.meta}"]`).classList.add('logro');
+    R.innerHTML=`<div class="mvok" role="status"><div class="mvest2" aria-label="${est} de 3 estrellas">${[0,1,2].map(i=>`<span class="st${i<est?' si':''}">★</span>`).join('')}</div>
+      <h3>Brief cumplido: ${M.km} en ${M.meta}, en ${n} ${n===1?'jugada':'jugadas'}</h3><p>${M.lec}</p>
+      ${est<3?`<p class="mvsol">Se podía en ${M.par.length}: ${sol}.</p>`:''}
+      <div class="mvbotones"><button type="button" class="mvbtn" id="mvsig">${mv.i+1<MV_MIS.length?'Siguiente brief →':'Ver tu colección →'}</button></div></div>`;
+  }else{R.innerHTML=`<div class="mvok mal" role="status"><h3>Brief sin cumplir: te quedaste sin jugadas</h3><p>${M.km} quedó en ${mvEtapa(mvFila()).n}. Se podía en ${M.par.length}: ${sol}.</p>
+      <div class="mvbotones"><button type="button" class="mvbtn" id="mvotra">Probar de nuevo</button><button type="button" class="gvolver" id="mvsig">Pasar a la siguiente</button></div></div>`;
+    mv.est[mv.i]=mv.est[mv.i]||0;
+    $('#mvotra').onclick=()=>{mv.jug=[];mv.fase='jugar';mv.dibujada=false;pintarMover();};}
+  $('#mvsig').onclick=()=>{mv.i++;mv.jug=[];mv.dibujada=false;mv.fase=mv.i>=MV_MIS.length?'fin':'jugar';pintarMover();window.scrollTo({top:0,behavior:'smooth'});};
+  if(nuevo)setTimeout(()=>R.scrollIntoView({block:'nearest',behavior:'smooth'}),50);
+}
+function mvIntro(C){
+  C.innerHTML=`<div class="mvintro"><p>Te llegan cinco briefs. Cada cliente quiere un atributo real en un momento preciso de su ciclo: en ascenso, en pico, saturado o en retorno. Vos tenés cuatro movidas del oficio para llevarlo ahí.</p>
+    <div class="mvmini">${MV_ORD.map(k=>`<div><b>${MV_CARTAS[k].n}</b> · ${MV_CARTAS[k].e}</div>`).join('')}</div>
+    <p>Cada movida cambia los datos reales de los últimos años: la pasarela de Vogue o la búsqueda de Google. El modelo de CICLO vuelve a mirar y te dice en qué etapa quedó. Menos movidas, más estrellas. Al final, los cinco briefs arman tu colección.</p>
+    <button type="button" class="mvbtn" id="mvempezar">Empezar</button></div>
+    <div class="mvmano" aria-hidden="true">${mvMano(true)}</div>`;
+  $('#mvempezar').onclick=()=>{mv.fase='jugar';pintarMover();};}
+function mvFinal(C){const tot=mv.est.reduce((a,b)=>a+(b||0),0);
+  C.innerHTML=`<div class="mvok"><p class="mvn" style="margin:0 0 4px">Tu colección · ${MV_MIS.length} briefs</p><p class="mvtotal">${tot} de ${MV_MIS.length*3} ★</p>
+    <div class="mvline">${MV_MIS.map((M,i)=>`<figure class="${mv.est[i]?'':'no'}"><img src="${M.img}" alt=""><figcaption><b>${M.km}</b><span>${mv.est[i]?M.meta+' · '+'★'.repeat(mv.est[i]):'sin cumplir'}</span></figcaption></figure>`).join('')}</div>
+    <h3>Lo que aprendiste del modelo</h3>
+    <ol>${MV_MIS.map((M,i)=>`<li><b>${M.km} → ${M.meta}.</b> ${M.lec}</li>`).join('')}</ol>
+    <p class="mvsol">Las movidas son un juego: en los datos de verdad nadie movió nada. Lo que sí es real es la cuenta, la misma que ubica cada atributo en Tendencias.</p>
+    <div class="mvbotones"><button type="button" class="mvbtn" id="mvotra">Jugar otra vez</button><a href="#racional" data-vista="racional" class="gvolver">Ver cómo se arma una lectura</a><a href="#radar" data-vista="radar" class="gvolver">Ir a Tendencias</a></div></div>`;
+  $('#mvotra').onclick=()=>{mvNuevo();mv.fase='jugar';pintarMover();};}
 /* links entre vistas (data-vista); data-ir es otra cosa: el paso de Diseñar al que vuelve un chip */
 document.addEventListener('click',e=>{const a=e.target.closest('a[data-vista]');if(a){e.preventDefault();mostrar(a.dataset.vista);}});
 /* cinco estilos (04/11): un gráfico se dibuja en las unidades de su viewBox y después se escala, así que un rótulo de

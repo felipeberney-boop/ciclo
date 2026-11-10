@@ -2014,3 +2014,64 @@ quedan igual.
 **Decisión.** Una sola regla para los 16 de la app: arriba a la derecha del bloque que explican, nunca a la izquierda ni
 pegados a un número. Al abrirse no empujan el contenido: se abren como una tarjeta flotante, debajo del «?». El texto que
 tiene al lado deja lugar para que no se pisen. Revisados uno por uno con Playwright, a 1400 y 393 px.
+
+## 2026-11-10 · La pirueta, otra vez: «El brief»
+
+**Devolución (Cristian e Iván, sobre «Cómo se arma una lectura»).** Cristian fue directo: está muy floja, no es un
+juego, no tiene hook, no es interactiva. Iván la vio un poco mejor. O aparece una idea mejor, o la misma con una
+ejecución visual espectacular. Lo que más gustó fue la animación de las curvas.
+
+**La primera propuesta, descartada.** «¿Tenés ojo?»: una tarjeta con un atributo, cuatro botones de etapa, la tarjeta se
+da vuelta y revela lo que dice el K-means. Felipe la descartó antes de construirla: «el juego es literal un memo test, no
+innovaste nada». Y pidió pensarlo para el target: qué le divierte a un diseñador de ropa.
+
+**La idea.** No adivinar lo que dice el modelo, sino jugar con él. Un diseñador no recibe atributos sueltos: recibe
+briefs, y la tensión de su oficio es querer algo en el momento justo de su ciclo. Cada ronda es un brief de un cliente
+(«Quiero una falda de cuero en la colección, y que llegue en su mejor momento») y la persona tiene cuatro movidas del
+oficio para llevar el atributo a esa etapa:
+
+| Carta | Qué es en la industria | Qué cambia en los datos |
+|---|---|---|
+| Lo sacás en tu desfile | Lo mostrás y otras marcas te copian | Pasarela 2022–23 ×1,5 |
+| Lo usa una it-girl | Sale en street style y todos lo buscan | Búsqueda 2023–24 ×1,5 |
+| Lo sacás de la colección | Las marcas lo dejan de mostrar | Pasarela 2022–23 ×0,6 |
+| Va a liquidación | Termina en el outlet y la gente se cansa | Búsqueda 2023–24 ×0,6 |
+
+Cada carta vuela al gráfico. La curva real se estira hasta los datos nuevos, los cuatro números corren y la ficha del
+atributo se desliza por la pista de etapas (la etapa sigue siendo posición, no color). Menos movidas, más estrellas. Si
+se pasa del límite, el brief queda sin cumplir y el juego muestra la jugada mínima. Al final, los cinco briefs arman
+«Tu colección»: un line-up con las cinco prendas, la etapa a la que llegó cada una y lo que enseña cada brief.
+
+**Por qué responde a la devolución.** Es un juego: tiene meta, límite de jugadas, puntaje y respuesta correcta. El hook es
+del oficio: hacer que algo llegue a su punto justo. Es interactivo de verdad, porque el modelo responde a cada movida. Y
+mientras se juega se aprende cómo lee el modelo, que era el 5/10 de rigor con los datos. Pico es búsqueda alta; la
+pasarela sola satura; para quedar En retorno tiene que soltarlo la pasarela y cansarse la gente; En ascenso es la
+pasarela empujando fuerte.
+
+**El rigor detrás del juego.** Los cuatro números se recalculan con la cuenta del modelo. Escalar lo reciente por f da
+nivel = mín(1, nivel · f) y momento = (1 + momento) · f − 1, porque el momento compara lo reciente contra 2020–21. El
+atributo se ubica en el grupo más cercano sin reentrenar, igual que una tendencia nueva. Las series de la app no
+reproducen la búsqueda detrendeada del K-means, así que el juego mueve los números del modelo y la curva es su
+ilustración; las dos se estiran por el mismo factor.
+
+Los cinco briefs y su jugada mínima salen de probar todas las combinaciones de hasta cuatro cartas sobre los 13
+atributos que tienen serie en la app:
+
+| Brief | Hoy | Meta | Jugada mínima |
+|---|---|---|---|
+| Floral | Saturada | Pico | it-girl |
+| Cuero | En retorno | Pico | it-girl ×2 |
+| Jeans baggy | Pico | En retorno | sacarlo de la colección + liquidación |
+| Buzo / hoodie | Saturada | En ascenso | desfile ×2 |
+| Lunares | En retorno | Pico | desfile + it-girl ×2 |
+
+Corset, que estaba en la propuesta, no se puede usar: el modelo no lo mide. La pasarela del baggy es la de todo el
+denim, y el brief lo dice. Al final, el juego aclara que las movidas son un juego (nadie movió los datos de verdad) y
+que lo real es la cuenta.
+
+**Dónde vive.** Discreto: en «Más», en el lugar de «Adiviná vos» (que sigue abriendo por su link), y con un acceso desde
+Tendencias y otro al final de «Cómo se arma una lectura», en Método. No aparece solo ni interrumpe Diseñar.
+
+La idea y la construcción fueron de Claude, después de que Felipe descartara la primera y pidiera pensarla para
+diseñadores. Probado con Playwright a 1400 y 393 px: los cinco briefs se cumplen con su jugada mínima, sin errores de
+consola ni scroll horizontal.

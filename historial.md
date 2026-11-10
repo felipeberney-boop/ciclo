@@ -281,6 +281,14 @@ dibujan solos: los tres atributos que más ganan y los tres que más pierden en 
 lenguaje que «Cómo se arma una lectura». Los «?» de toda la app pasan arriba a la derecha de su bloque y se abren como
 tarjeta flotante.
 
+## v1.30 · 10/11/2026 · «El brief»
+
+La pirueta nueva, porque la devolución dijo que la anterior no era un juego. Cinco clientes piden un atributo real en un
+momento preciso de su ciclo («necesito floral, pero que se esté vendiendo ya»). Cuatro cartas, movidas del oficio,
+cambian los datos de los últimos años; el modelo vuelve a ubicar el atributo en vivo, la ficha se corre por la pista de
+etapas y las curvas se estiran. Menos movidas, más estrellas; al final, los cinco briefs arman una colección. Reemplaza a
+«Adiviná vos» en «Más», que sigue abriendo por su link.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

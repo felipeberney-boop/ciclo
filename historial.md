@@ -324,6 +324,11 @@ y nada más. En «Cuándo picó cada uno» el año aparece una sola vez, al lado
 Cada opción del juego (forma, material y estampa) muestra su look de Vogue Runway con el crédito al pie; la forma
 conserva la silueta en la esquina. El veredicto repite la foto al lado de cada elección.
 
+## v1.37 · 10/11/2026 · Uno contra otro, eligiendo vos
+
+En «Uno contra otro» los nombres de las curvas se tocan y cambian el atributo; la rotación se frena hasta «Seguir».
+Bouclé y popelina tienen foto.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

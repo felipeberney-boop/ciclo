@@ -2239,3 +2239,15 @@ Diseñar, no el juego, y queda propuesto, no hecho.
 la app») y en esta entrada y la del 10/11 sobre Tendencias: sin licencia declarada, cargadas desde los servidores de
 Vogue, sin copia en el repo, con crédito al pie.
 
+
+## 2026-11-10 · Uno contra otro: elegís vos
+
+**Pedido de Felipe.** Poder comparar dos atributos elegidos sin salir de Tendencias y sin sumar controles. Se eligió
+la opción que no agrega nada en reposo: en «Uno contra otro», los nombres de las dos curvas son los selectores (en azul,
+que en CICLO quiere decir «se puede tocar», subrayados con el color de su curva). Al tocarlos se abre la lista nativa
+del sistema con los atributos que tienen serie. Elegir frena la rotación, el botón pasa a «Seguir» y el subtítulo dice
+«elegiste vos». Con «Seguir» la rotación sigue; cuando vuelve a «Uno contra otro», retoma los pares de siempre. Se
+descartó una sexta pastilla «Comparar» con dos desplegables: suma justo la complejidad que se venía sacando.
+
+**Dos fotos más.** Bouclé (DKNY, otoño 2011) y popelina (Zanini, primavera 2022), con el mismo método. Quedan sin foto
+corderoy y los materiales sin forma (seda, gasa, tul, organza, pedrería).

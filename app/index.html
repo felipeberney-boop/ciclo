@@ -2683,8 +2683,8 @@ async function clipIndice(est){
   const vis={};const avisar=()=>{const n=Object.values(vis).reduce((a,x)=>a+x[0],0),t=Object.values(vis).reduce((a,x)=>a+x[1],0);
     est(`Bajando el índice de 14.000 looks: ${mb(n)} de ${t?mb(t):'8'} MB (sólo la primera vez)…`);};
   const baja=u=>clipBajar(u,(n,t)=>{vis[u]=[n,t];avisar();});avisar();
-  const [m,b,t]=await Promise.all([baja('clip/looks.json').then(x=>JSON.parse(new TextDecoder().decode(x))),baja('clip/looks.bin'),fetch('clip/atributos.json').then(r=>r.json())]);
-  CLIP.idx=Object.assign(m,{Q:new Int8Array(b)});CLIP.txt=t;
+  const [m,b,t,c]=await Promise.all([baja('clip/looks.json').then(x=>JSON.parse(new TextDecoder().decode(x))),baja('clip/looks.bin'),fetch('clip/atributos.json').then(r=>r.json()),fetch('clip/colores.json').then(r=>r.ok?r.json():null).catch(()=>null)]);
+  CLIP.idx=Object.assign(m,{Q:new Int8Array(b)});CLIP.txt=t;CLIP.col=c;
 }
 async function clipModelo(est){
   if(CLIP.mod)return;est=est||qEstado;
@@ -2706,7 +2706,10 @@ function clipLeer(q){
   const A=CLIP.txt.atributos,z=A.map(a=>{let s=0;for(let d=0;d<dim;d++)s+=a.e[d]*q[d];return 100*s/nq;}),mx=Math.max(...z);
   const ex=z.map(v=>Math.exp(v-mx)),tot=ex.reduce((x,y)=>x+y,0);
   const atr=A.map((a,i)=>({...a,p:ex[i]/tot})).sort((a,b)=>b.p-a.p);
-  return {sim,orden,atr};
+  // el color dominante (10/11): los 10 colores de Diseñar; sólo si pasa clip/colores.json → umbral (0,6)
+  let col=null;if(CLIP.col){const zc=CLIP.col.colores.map(c=>{let s=0;for(let d=0;d<dim;d++)s+=c.e[d]*q[d];return 100*s/nq;}),mc=Math.max(...zc),ec=zc.map(v=>Math.exp(v-mc)),tc=ec.reduce((x,y)=>x+y,0);
+    const k=ec.indexOf(Math.max(...ec));col={...CLIP.col.colores[k],p:ec[k]/tc};}
+  return {sim,orden,atr,col};
 }
 /* ---------- Revisión (10/11/2026): «Buscar por imagen» y «Preguntar» en una sola pantalla ----------
    Soltás una imagen, escribís una pregunta, o las dos. La lectura sale sin clave: lo que leyó CLIP (chips que se corrigen),
@@ -2721,9 +2724,16 @@ const RV_FAM={jeans:['Jeans amplios','Jeans medios','Jeans ajustados','Cargo'],a
 const RV_QUE={jeans:'El corte',abrigo:'El abrigo',estampa:'La estampa',material:'El material',estilo:'El estilo'};
 const rvFam=c=>Object.keys(RV_FAM).find(k=>RV_FAM[k].includes(c))||'estilo';
 const RV_PREG='Revisá este diseño: qué está bien y qué cambiarías.';
-function rvAtr(c,p,manual){const [id,km]=RV_CLIP[c]||[null,c],o=id&&REC.find(r=>r.id===id);return {c,id,km,n:o?o.n:km,p,manual:!!manual};}
+function rvAtr(c,p,manual){if(c.startsWith('color:')){const cid=c.slice(6),x=(CLIP.col&&CLIP.col.colores.find(k=>k.id===cid))||{n:cid};return {c,id:null,km:null,color:cid,n:x.n,p,manual:!!manual};}
+  const [id,km]=RV_CLIP[c]||[null,c],o=id&&REC.find(r=>r.id===id);return {c,id,km,n:o?o.n:km,p,manual:!!manual};}
 /* lo que dice el dato de un atributo: la señal (señal(), nunca a mano), la frase de El ciclo y el número */
-function rvDato(a){const sg=señal({grupo:a.km,rec:a.id&&GREL[a.id]?a.id:null}),o=a.id&&GREL[a.id]&&REC.find(r=>r.id===a.id);
+function rvDato(a){
+  // el color no tiene serie de búsqueda: lo que hay es cuánto aparece en la pasarela según CLIP (Diseñar), interpretado
+  if(a.color){const x=dzColorSuelto(a.color);if(!x)return {sg:señal({}),d:null,num:'',frase:'Sin lectura de pasarela para este color.',serie:false,interp:true};
+    const sg=señal({d:x.cambio,interpretado:true,unidad:'puntos',fuente:'de los looks de pasarela leídos por CLIP, 2018–19 → 2022–23',umbral:1});
+    const r=v=>Math.abs(v)<10?v.toFixed(1).replace('.',','):Math.round(v);
+    return {sg,d:x.cambio,num:`${r(x.ahora)} % de los looks de pasarela en 2022–23, ${x.cambio>0?'+':x.cambio<0?'−':''}${r(Math.abs(x.cambio))} puntos desde 2018–19`,frase:'Color: no tiene serie de búsqueda. Lo que hay es cuánto aparece en la pasarela.',serie:false,interp:true};}
+  const sg=señal({grupo:a.km,rec:a.id&&GREL[a.id]?a.id:null}),o=a.id&&GREL[a.id]&&REC.find(r=>r.id===a.id);
   const c=o&&cicloDe(o),d=a.id&&GREL[a.id]?terreno(a.id):null;
   const pts=d!=null?Math.abs(Math.round(d)):0,num=d!=null?`${d>0&&pts?'+':d<0&&pts?'−':''}${pts} ${pts===1?'punto':'puntos'} en la búsqueda mundial, 2022→2024`:'';
   const frase=c?c.f.split('. ')[0].replace(/\.$/,'')+'.':sg.etapa?`No tiene serie de búsqueda propia; el K-means lo ubica en «${sg.etapa.toLowerCase()}».`:'No tiene serie de búsqueda.';
@@ -2744,26 +2754,29 @@ function rvCurvas(L,W){L=L.filter(x=>GREL[x.g]).slice(0,3);if(!L.length)return '
     s+=`<circle cx="${X(u[0])}" cy="${Y(u[1])}" r="4.5" fill="${col}"/><text x="${X(Y1)+10}" y="${fin.find(f=>f.i===i).y}" fill="var(--ink)" font-size="13">${escH(x.n)}${pk[0]===Y1&&W>=520?' · pico':''}</text>`;});
   return `<div class="rvcurv">${s}</svg><p class="rvcap"><span class="tag real">● medido</span> Búsqueda mundial de Google frente a las otras búsquedas de moda, corregida; 2025 queda afuera.</p></div>`;}
 /* la devolución sin modelo de lenguaje: qué va, qué cambiaría y por qué, con la señal de tu perfil */
-function rvDevolucion(A){const D=A.map(a=>({a,...rvDato(a)}));
+function rvDevolucion(A){const Dc=A.filter(a=>a.color).map(a=>({a,...rvDato(a)}));A=A.filter(a=>!a.color);const D=A.map(a=>({a,...rvDato(a)}));
   const bien=D.filter(x=>x.sg.estado==='entrar'),mal=D.filter(x=>x.sg.estado==='salir'),resto=D.filter(x=>!['entrar','salir'].includes(x.sg.estado));
   const lc=t=>t[0].toLowerCase()+t.slice(1),que=x=>RV_QUE[rvFam(x.a.c)],nm=x=>/^[A-Z0-9]{2,}/.test(x.a.n)?x.a.n:x.a.n.toLowerCase();
+  // el porqué dice de dónde sale la señal: la etapa del K-means o, sin etapa, la búsqueda (no dice «pierde terreno» si sube)
+  const por=x=>x.sg.etapa?`está «${x.sg.etapa.toLowerCase()}» según el modelo${x.d!=null&&((x.sg.estado==='salir'&&x.d>3)||(x.sg.estado==='entrar'&&x.d<-3))?`, aunque la búsqueda ${x.d>0?'sube':'cae'}`:''}`:x.d>0?'viene ganando terreno':'viene perdiendo terreno';
   let conc;
   if(bien.length&&mal.length)conc=`${que(bien[0])} va; ${lc(que(mal[0]))}, lo cambiaría.`;
-  else if(bien.length)conc=bien.length>1?'Va: lo que leí viene ganando terreno.':`${que(bien[0])} va: ${nm(bien[0])} viene ganando terreno.`;
-  else if(mal.length)conc=`${que(mal[0])}, lo cambiaría: ${nm(mal[0])} viene perdiendo terreno.`;
+  else if(bien.length)conc=bien.length>1?'Va: lo que leí tiene señal de entrar para tu perfil.':`${que(bien[0])} va: ${nm(bien[0])} ${por(bien[0])}.`;
+  else if(mal.length)conc=`${que(mal[0])}, lo cambiaría: ${nm(mal[0])} ${por(mal[0])}.`;
+  else if(!D.length)conc='Sólo leí el color: describe la pasarela, no decide.';
   else conc=resto.some(x=>x.sg.estado!=='sin-dato')?'Nada de lo que leí empuja para un lado: es una apuesta tranquila.':'No tengo dato para decir si va: nada de lo que leí tiene serie.';
   const linea=(x,t)=>`<li><b>${t}</b> ${escH(x.a.n)}: ${x.num||x.sg.etapa&&`etapa ${x.sg.etapa.toLowerCase()} (K-means)`||'sin serie de búsqueda'}. <span class="${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span></li>`;
   const alt=x=>{const ya=A.map(a=>a.c),L=RV_FAM[rvFam(x.a.c)].filter(c=>!ya.includes(c)).map(c=>rvAtr(c)).filter(a=>a.id&&GREL[a.id]).map(a=>({a,d:terreno(a.id)})).filter(z=>z.d!=null&&z.d>3).sort((p,q)=>q.d-p.d);
     return L[0]?`<li><b>Probá</b> ${escH(L[0].a.n)} en su lugar: +${Math.round(L[0].d)} puntos en la búsqueda mundial, 2022→2024.</li>`:'';};
   return `<div class="rvdev"><div class="h"><span class="lbl">Devolución</span><span class="tag demo">armada con reglas, no con un modelo de lenguaje</span></div>
-    <div class="rvconc">${escH(conc)}</div><ul class="rvlista">${bien.map(x=>linea(x,'Va bien ·')).join('')}${mal.map(x=>linea(x,'Cambiaría ·')+alt(x)).join('')}${resto.map(x=>linea(x,x.sg.estado==='sin-dato'?'Sin dato ·':'Sin apuro ·')).join('')}</ul>
+    <div class="rvconc">${escH(conc)}</div><ul class="rvlista">${bien.map(x=>linea(x,'Va bien ·')).join('')}${mal.map(x=>linea(x,'Cambiaría ·')+alt(x)).join('')}${resto.map(x=>linea(x,x.sg.estado==='sin-dato'?'Sin dato ·':'Sin apuro ·')).join('')}${Dc.map(x=>`<li><b>Color ·</b> ${escH(x.a.n)}: ${x.num||'sin lectura'}. <span class="${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span> <span class="rvnos">describe, no recomienda</span></li>`).join('')}</ul>
     <p class="rvcap">La señal es la de tu perfil (${(PERFIL[cliente]||PERFIL.premium).n}${vinculo==='propia'?', por tu cuenta':''}). ${$('#askey').value.trim()?'Tocá «Leer» para la devolución escrita.':'Para una devolución escrita, activá Groq abajo.'}</p></div>`;}
 function rvPintarLectura(){const e=$('#rvlect');if(!e)return;if(!as.leido){e.hidden=true;e.innerHTML='';return;}e.hidden=false;
-  const A=as.clip,falta=Object.keys(RV_CLIP).filter(c=>!A.some(a=>a.c===c));
+  const A=as.clip,falta=Object.keys(RV_CLIP).concat(CLIP.col?CLIP.col.colores.map(c=>'color:'+c.id):[]).filter(c=>!A.some(a=>a.c===c));
   const chips=A.map((a,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar ${escH(a.n)}">${escH(a.n)} <span class="aspp">${a.manual?'agregado':a.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('')+
-    `<label class="rvagr"><span>+ agregar</span><select id="rvagr" aria-label="Agregar un atributo que CLIP no leyó"><option value="">+ agregar</option>${falta.map(c=>`<option value="${escH(c)}">${escH(rvAtr(c).n)}</option>`).join('')}</select></label>`;
+    `<label class="rvagr"><span>+ agregar</span><select id="rvagr" aria-label="Agregar un atributo que CLIP no leyó"><option value="">+ agregar</option>${falta.map(c=>`<option value="${escH(c)}">${c.startsWith('color:')?'Color · ':''}${escH(rvAtr(c).n)}</option>`).join('')}</select></label>`;
   const D=A.map(a=>({a,...rvDato(a)}));
-  const filas=D.map(x=>`<div class="rvrow"><span class="rvn">${escH(x.a.n)}</span><span class="rvs ${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span><span class="rvf">${escH(x.frase)}${x.num?` <span class="rvnum">${x.num}.</span>`:''}</span>${x.serie?'<span class="tag real">● medido</span>':'<span class="rvnos">sin serie de búsqueda</span>'}</div>`).join('');
+  const filas=D.map(x=>`<div class="rvrow"><span class="rvn">${escH(x.a.n)}</span><span class="rvs ${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span><span class="rvf">${escH(x.frase)}${x.num?` <span class="rvnum">${x.num}.</span>`:''}</span>${x.serie?'<span class="tag real">● medido</span>':x.interp?'<span class="tag ia2">interpretado · CLIP</span>':'<span class="rvnos">sin serie de búsqueda</span>'}</div>`).join('');
   const W=e.clientWidth||Math.min(880,innerWidth-32);
   const looks=as.looks&&as.looks.length?`<details class="rvmas"><summary>Looks de pasarela parecidos</summary><div class="aslooks">${as.looks.map(f=>`<a href="${f.u}" target="_blank" rel="noopener"><img loading="lazy" alt="${escH(f.d)}" src="${f.s}"><span>${escH(f.d)}</span></a>`).join('')}</div>${as.anios?`<p class="rvcap">${as.anios}</p>`:''}<p class="rvcap"><span class="tag ia2">interpretado · CLIP</span> Referencia de forma, no recomendación.</p></details>`:'';
   e.innerHTML=`<div class="rvsec"><div class="h"><span class="lbl">Qué vio CICLO</span><span class="tag ia2">interpretado · CLIP</span></div>
@@ -2777,6 +2790,7 @@ function rvPintarLectura(){const e=$('#rvlect');if(!e)return;if(!as.leido){e.hid
 /* lo que CLIP lee de un vector (de una foto o de un look del índice): los tres primeros que pasan 0,35, los looks y los años */
 function rvLeerVector(q,mismo){const R=clipLeer(q),idx=CLIP.idx,V=R.orden.filter(i=>i!==mismo);
   as.clip=R.atr.filter((a,i)=>i<3&&a.p>=CLIP_UMBRAL).map(a=>rvAtr(a.n,a.p));as.leido=true;
+  if(R.col&&R.col.p>=CLIP.col.umbral)as.clip.push(rvAtr('color:'+R.col.id,R.col.p));
   const cerca=R.atr[0];as.nada=as.clip.length?'':`Ningún atributo pasa 0,35 de probabilidad (el más cercano es ${rvAtr(cerca.n).n.toLowerCase()}, ${cerca.p.toFixed(2).replace('.',',')}).`;
   as.looks=V.slice(0,6).map(i=>({u:vogueFoto(idx.f[i],1280),s:vogueFoto(idx.f[i],320),d:`${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]}`}));
   const Y0=idx.anios[0],Y1=idx.anios[1],cnt={};for(let y=Y0;y<=Y1;y++)cnt[y]=0;V.slice(0,100).forEach(i=>cnt[idx.y[i]]++);
@@ -3408,7 +3422,7 @@ async function asPreguntar(){
   if(!key){$('#asclave').open=true;$('#askey').focus();as.hist.push({role:'assistant',error:'Para contestar preguntas escritas, activá la devolución escrita: son tres pasos, abajo, y se hace una sola vez.'});asPintar();return;}
   if(!as.datos){await asAbrir();if(!as.datos)return;}
   $('#astexto').value='';as.hist.push({role:'user',content:texto});as.ocupado=true;asPintar();
-  const D=asDiseno(),O=asOpciones(),clipTxt=as.clip.map(c=>c.n+(c.manual?' (lo agregó quien diseña)':'')).join(', ');
+  const D=asDiseno(),O=asOpciones(),clipTxt=as.clip.map(c=>(c.color?'color '+c.n.toLowerCase():c.n)+(c.manual?' (lo agregó quien diseña)':'')).join(', ');
   const recientes=as.hist.filter(m=>m.role==='user').slice(-2).map(m=>m.content).join(' ')+' '+D.chips.map(c=>c.v).join(' ')+' '+clipTxt;
   const E=asElegir(as.datos,recientes,D.ids);
   const opc=Object.keys(O).length?'OPCIONES (paso: valores posibles para "acciones"):\n'+Object.entries(O).map(([k,v])=>`${k}: ${v.join(', ')}`).join('\n'):'OPCIONES: ninguna (no hay diseño armado).';

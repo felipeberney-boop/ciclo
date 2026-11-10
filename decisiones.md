@@ -2323,3 +2323,30 @@ El «último año» de una marca es Q1-25 → Q4-25, nunca Q4-25 → Q1-26. El t
 **El puente marca + prenda.** «Jeans» y «jean» se sumaron a los sinónimos de los tres cortes, así «¿cómo están los
 jeans de Balenciaga?» trae la línea de Balenciaga y las fichas de los jeans (antes, sólo la marca). Medido: unos 3.200
 tokens de datos para esa pregunta, dentro del plan gratis de Groq.
+
+## 2026-11-10 · CLIP lee colores en Revisión
+
+**Pedido de Felipe.** Que Revisión lea el color del diseño, como en el ejemplo «el color ya pasó su pico».
+
+**Cómo.** Los mismos 10 colores de Diseñar (`codigo/diseno_catalogo.json`, `colores_generales`), cada uno con tres frases
+en inglés («a runway photo of a black outfit», …) pasadas por el mismo CLIP de la app. Los vectores están en
+`app/clip/colores.json` (44 KB, se bajan con el índice); `codigo/calcular_colores_clip.mjs` los reproduce. Para una
+imagen, CLIP elige el color más parecido y sólo lo muestra si su probabilidad pasa 0,6.
+
+**Por qué 0,6 y no 0,35 como los atributos.** Vogue no etiqueta colores, así que no hay validación formal. Se revisó a
+ojo una muestra del índice (9 looks al azar por color entre los que pasan el umbral). Con 0,35, más o menos 6 de cada
+9 bien; azul marino y beige fallaban seguido. Con 0,6, 64 de 81 bien (79 %): negro y blanco casi siempre, beige y
+verde los que más fallan, y el marrón nunca pasa (CLIP lo lee como beige). Pasan unos 3.700 de los 14.000 looks: es
+preferible no decir el color a decir uno equivocado.
+
+**Qué dice del color.** Los colores no tienen serie de búsqueda, así que no reciben señal de entrar o salir. Lo que hay
+es cuánto aparece ese color en la pasarela según CLIP (el mismo cálculo de Diseñar: % de looks en 2022–23 y cambio
+desde 2018–19), marcado «interpretado · CLIP». En la devolución va aparte, como «Color», con «describe, no recomienda»,
+y no entra en la conclusión. Se puede agregar o sacar como cualquier chip.
+
+**Un error que apareció y se corrigió.** Probando con un trench, la devolución decía «trench viene perdiendo terreno»
+cuando la búsqueda sube +12: la señal «Salir» venía de la etapa del K-means (saturada), no de la búsqueda. Ahora el
+porqué nombra de dónde sale: «está saturada según el modelo, aunque la búsqueda sube».
+
+**Lo que todavía no se puede.** Decir «el color picó en 2022»: no hay serie anual de color. La pasarela por color existe
+sólo como dos períodos (2018–19 y 2022–23).

@@ -345,6 +345,11 @@ clave, reglas fijas. El menú queda con cinco ítems.
 El modelo recibe el ranking de Lyst por marca (calculado dentro de cada tramo, sin cruzar el corte de Q1-26), las
 lecturas de ciclo de marcas y el catálogo de Zara de febrero de 2024.
 
+## v1.41 · 10/11/2026 · Revisión lee colores
+
+CLIP lee el color dominante de la imagen (los 10 colores de Diseñar, sólo si pasa 0,6) y lo muestra con su presencia
+en la pasarela, como interpretación: el color describe, no recomienda.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

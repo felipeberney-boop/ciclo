@@ -355,6 +355,10 @@ en la pasarela, como interpretación: el color describe, no recomienda.
 La respuesta arranca por lo que CICLO sí tiene sobre el tema; lo que falta, al final y en una frase. Puente para marcas
 y cruces marca × prenda.
 
+## v1.43 · 10/11/2026 · Cada prenda con sus materiales
+
+En El brief, cada prenda ofrece sus propios materiales, con el algodón en todas; los abrigos de Diseñar suman algodón.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

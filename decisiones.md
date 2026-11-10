@@ -2371,3 +2371,26 @@ cada respuesta.
 seis preguntas del pedido (jeans de Balenciaga, Prada, qué sube más, qué material, botinetas y una con imagen) y se
 corrió con una clave falsa para comprobar que recorre las seis, imagen incluida, y que sólo falla Groq. Con la clave:
 `GROQ_KEY=gsk_… IMAGEN=foto.jpg node codigo/probar_asistente.js` → `datasets/pruebas/asistente_v9_respuestas.md`.
+
+## 2026-11-10 · Materiales: algodón en abrigos y materiales por prenda en El brief
+
+**Lo que estaba mal.** El juego ofrecía los mismos seis materiales para las cuatro prendas (cuero, gamuza, lana, lino,
+satén, tweed): no salían de `MATERIAL_POR_PRENDA`, y el algodón no aparecía nunca. En Diseñar, los abrigos no tenían
+algodón.
+
+**Lo que se hizo (la lista que aprobó Felipe).**
+- `MATERIAL_POR_PRENDA`: algodón en abrigos (chore jacket, field jacket). `codigo/taxonomia.py` se volvió a correr;
+  `TAX` cambia sólo ahí.
+- El brief: cada prenda saca sus materiales de esa lista, entre los que tienen serie de búsqueda (si no, no se pueden
+  puntuar), con el algodón en todas.
+  - Pantalón: algodón, corderoy, lana, lino, cuero, gamuza.
+  - Falda: algodón, popelina, lino, tweed, cuero, satén.
+  - Vestido: algodón, popelina, lino, seda, satén, cuero.
+  - Abrigo: algodón, cuero, gamuza, lana, tweed, bouclé.
+- El denim queda afuera del juego: no tiene serie propia de material (sólo los cortes de jean) y no se presta.
+- Fotos nuevas, con el mismo método: algodón (Tomas Maier, pre-fall 2016), corderoy (Band of Outsiders, otoño 2012) y
+  seda (The Row, primavera 2017).
+
+**Un arreglo de paso.** `codigo/taxonomia.py` no corría desde que se sumó el plan 4 de Trends (la prueba mensual por
+temporada): esas filas no son hojas de la taxonomía (`material:cuero`). Ahora el script las saltea y la salida es la de
+antes, más el algodón.

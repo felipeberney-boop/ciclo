@@ -192,7 +192,7 @@ MATERIAL_POR_PRENDA = {
   'camisas/blusa': ['algodon', 'popelina', 'lino', 'seda', 'satenseda', 'gasa', 'crepe', 'poliester'],
   'buzos': ['frenchterry', 'fleece', 'poliester', 'algodon'],
   'sweaters': ['cable', 'merino', 'cashmere', 'lana', 'boucle', 'acrilico', 'rib'],
-  'abrigos': ['gabardina', 'lona', 'corduroy', 'denimrigido', 'denimlavado', 'cuero', 'cuerina', 'gamuza', 'lana', 'pano', 'tweed', 'boucle',
+  'abrigos': ['gabardina', 'algodon', 'lona', 'corduroy', 'denimrigido', 'denimlavado', 'cuero', 'cuerina', 'gamuza', 'lana', 'pano', 'tweed', 'boucle',
               'cashmere', 'nylon', 'poliester', 'fleece', 'satenseda'],
   'abrigos/puffer': ['nylon', 'poliester', 'satenseda'],
   'abrigos/blazer': ['lana', 'pano', 'tweed', 'boucle', 'cashmere', 'lino', 'corduroy', 'gabardina', 'denimrigido', 'cuero', 'satenseda', 'poliester'],
@@ -305,6 +305,7 @@ import csv as _csv
 SERIES = {}
 import glob as _glob
 for _f in sorted(_glob.glob('datasets/plan_exportacion_trends*.csv')):
+    if _f.endswith('_4.csv'): continue  # el plan 4 es la prueba mensual por temporada, no series de hojas
     for r in _csv.DictReader(open(_f)): SERIES.setdefault(r['hoja_taxonomia'], [])
     for r in _csv.DictReader(open(_f)): SERIES[r['hoja_taxonomia']].append(r['termino'])
 _hay = {r['atributo_id'] for r in _csv.DictReader(open('datasets_procesados/series_google_trends/trends_mundo__web_anual.csv'))}

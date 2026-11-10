@@ -329,6 +329,13 @@ conserva la silueta en la esquina. El veredicto repite la foto al lado de cada e
 En «Uno contra otro» los nombres de las curvas se tocan y cambian el atributo; la rotación se frena hasta «Seguir».
 Bouclé y popelina tienen foto.
 
+## v1.38 · 10/11/2026 · Revisión
+
+«Buscar por imagen» y «Preguntar» se juntan en «Revisión»: una sola pantalla para mostrarle a CICLO una imagen, una
+pregunta o las dos. Lo que CLIP lee aparece en chips que se corrigen; cada atributo trae su señal, su frase y su curva,
+y una devolución dice qué va y qué cambiarías, con el dato. Con clave de Groq la escribe el modelo (prompt v8); sin
+clave, reglas fijas. El menú queda con cinco ítems.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

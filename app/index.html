@@ -1216,6 +1216,72 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
   .app .bfli{grid-template-columns:40px minmax(0,1fr)}.app .bfli img{width:40px;height:40px}.app .bfli em{grid-column:2}
 }
 @media (prefers-reduced-motion:reduce){.app .bfr,.app .bfcard,.app .bfop{animation:none;opacity:1}}
+/* ---------- Revisión (10/11): una sola pantalla para imagen, pregunta o las dos ---------- */
+.app .rv{max-width:880px;margin:22px auto 0}
+.app .rvcomp{display:grid;grid-template-columns:200px minmax(0,1fr);gap:0;background:var(--card);overflow:hidden}
+.app .rvcomp:not(#z){border-radius:var(--r-card,18px)!important}
+.app .rvdrop{position:relative;display:flex;align-items:center;justify-content:center;min-height:220px;background:var(--paper);cursor:pointer;border-right:1px solid var(--rule)}
+.app .rvdrop::before{content:'';position:absolute;inset:12px;border:1.5px dashed #c7c7cc;border-radius:12px;pointer-events:none}
+.app .rvdrop:has(.asimg)::before{display:none}
+.app .rvdrop.on{background:#e8f0fb;box-shadow:inset 0 0 0 2px var(--azul)}
+.app .rvdrop input{position:absolute;width:1px;height:1px;opacity:0}
+.app .rvdrop:focus-within{box-shadow:inset 0 0 0 2px var(--azul-foco)}
+.app .rvdropv{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;width:100%;height:100%;position:relative}
+.app .rvdropv>span:not(#z){font-size:14px!important;color:var(--azul);line-height:1.35!important}
+.app .rvdropv .rvplus:not(#z){font-size:30px!important;line-height:1!important}
+.app .rvdropv .asimg:not(#z){position:absolute;inset:0;width:100%;height:100%;max-height:none;margin:0;border:0;object-fit:cover}
+.app .rvdropv .rvpie:not(#z){position:absolute;left:8px;right:8px;bottom:8px;font-size:11px!important;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7);text-align:left;line-height:1.25!important}
+.app .rvtxt{display:flex;flex-direction:column;padding:16px 18px}
+.app .rvtxt textarea:not(#z){flex:1;font:inherit;font-size:17px!important;line-height:1.4!important;border:0!important;background:transparent;resize:none;padding:4px 0;min-height:110px;color:var(--ink);outline:none}
+.app .rvbar{display:flex;align-items:flex-end;gap:14px;justify-content:space-between;border-top:1px solid var(--rule);padding-top:12px}
+.app .rvbar .rvest:not(#z){font-size:13px!important;color:var(--ink-2);margin:0;line-height:1.4!important;flex:1}
+.app .rvbar .kbtn{flex:none}
+.app .rvej{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 0}
+.app .rvej>span:first-child:not(#z){font-size:13px!important;color:var(--ink-3)}
+.app .rvej #rvej{display:flex;flex-wrap:wrap;gap:6px}
+.app .rv .assug{margin:10px 0 0;gap:6px}
+.app .rv .assug button:not(#z){border:1px solid var(--rule)!important;border-radius:999px!important;background:var(--card);padding:7px 13px;margin:0;font-size:13px!important;color:var(--ink)}
+.app #v-revision #asclaves{font-size:15px!important;font-weight:600!important;line-height:1.4!important;letter-spacing:0!important}
+.app .rvdis{margin:18px 0 0}
+.app .rvlect{background:var(--card);padding:24px 26px;margin:22px 0 0}
+.app .rvlect:not(#z){border-radius:var(--r-card,18px)!important}
+.app .rvsec{margin:0 0 22px}
+.app .rvsec .h,.app .rvdev .h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 10px}
+.app .rvlect .rvcap:not(#z),.app .rv .rvcap:not(#z){font-size:12.5px!important;color:var(--ink-3);margin:8px 0 0;line-height:1.45!important}
+.app .rvagr{position:relative;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px dashed var(--azul);color:var(--azul);font-size:13px;cursor:pointer}
+.app .rvagr:not(#z){border-radius:999px!important}
+.app .rvagr select{position:absolute;inset:0;opacity:0;cursor:pointer;font-size:16px;width:100%}
+.app .rvrow{display:grid;grid-template-columns:130px 100px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:10px 0;border-top:1px solid var(--rule)}
+.app .rvrow .rvn:not(#z){font-size:15px!important;font-weight:600!important;color:var(--ink)}
+.app .rvrow .rvs:not(#z){font-size:14px!important;font-weight:600!important;white-space:nowrap}
+.app .rvrow .rvf:not(#z){font-size:14px!important;line-height:1.45!important;color:var(--ink-2)}
+.app .rvrow .rvnum{color:var(--ink)}
+.app .rvrow .rvnos:not(#z){font-size:12px!important;color:var(--ink-3);white-space:nowrap}
+.app .rvcurv{margin:4px 0 22px}
+.app .rvcurv svg{width:100%;height:auto;display:block;overflow:visible}
+.app .asa .rvcurv{margin:14px 0 4px}
+.app .rvdev{border-top:1px solid var(--rule);padding-top:18px;margin:0 0 6px}
+.app .rvdev div.rvconc:not(#z){font-size:var(--t-sub,22px)!important;font-weight:600!important;line-height:1.25!important;margin:0 0 10px;color:var(--ink)}
+.app .rvlista{list-style:none;margin:0;padding:0}
+.app .rvlista li:not(#z){font-size:14px!important;line-height:1.5!important;color:var(--ink-2);padding:3px 0}
+.app .rvlista li b{color:var(--ink);font-weight:600}
+.app .rvmas{margin:18px 0 0;border-top:1px solid var(--rule);padding-top:14px}
+.app .rvmas>summary:not(#z){cursor:pointer;color:var(--azul);font-size:14px!important;list-style:none}
+.app .rvmas>summary::-webkit-details-marker{display:none}
+.app .rvmas>summary::after{content:' ›'}.app .rvmas[open]>summary::after{content:' ‹'}
+.app .aslooks a{display:block;color:var(--ink-2);text-decoration:none;font-size:11px;background:var(--paper)}
+.app .aslooks a:not(#z){border-radius:10px!important;overflow:hidden}
+.app .rv #aschat{margin:22px 0 0;min-height:0}
+.app .rv #aschat .asa{max-width:none}
+.app .rv .asact,.app .rv .asver{margin:22px 0 0}
+@media (max-width:640px){
+  .app .rvcomp{grid-template-columns:minmax(0,1fr)}
+  .app .rvdrop{min-height:150px;border-right:0;border-bottom:1px solid var(--rule)}
+  .app .rvlect{padding:18px 16px}
+  .app .rvrow{grid-template-columns:minmax(0,1fr) auto;gap:4px 10px}
+  .app .rvrow .rvf{grid-column:1 / -1}
+  .app .rvrow>.tag,.app .rvrow .rvnos{grid-column:1 / -1;justify-self:start}
+}
 </style>
 
 <div class="app">
@@ -1230,8 +1296,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
       <a data-v="radar" class="nav-dz">Tendencias</a>
       <a data-v="disenar">Diseñar</a>
       <a data-v="recorridos">El ciclo</a>
-      <a data-v="consulta">Buscar por imagen</a>
-      <a data-v="asistente">Preguntar</a>
+      <a data-v="revision">Revisión</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
       <span class="navgrupo" id="navgrupo" hidden>
         <a data-v="mover"><b>El brief</b><span>Un encargo de una casa real: diseñás en tres toques y CICLO te dice si tuviste ojo.</span><i>6 briefs · 3 casas</i><em>Jugar →</em></a>
@@ -1556,88 +1621,46 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       </div>
     </section>
 
-    <!-- ================= CONSULTA ================= -->
-    <!-- ================= ASISTENTE (LLM, con la clave de cada persona) ================= -->
-    <section class="view" id="v-asistente" hidden>
+    <!-- ================= REVISIÓN (10/11: juntó «Buscar por imagen» y «Preguntar») ================= -->
+    <section class="view" id="v-revision" hidden>
       <div class="vhead">
         <div>
-          <h1>Preguntale a CICLO</h1>
-          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Cada respuesta trae el dato que la sostiene y un cambio para probar. El modelo de lenguaje lee sólo <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">un resumen de métricas ya calculadas</a>, nunca una fila de la base. Lo que contesta es interpretación.</p></div></details>
+          <h1>Revisión</h1>
+          <p class="sub">Mostrale a CICLO un diseño, una pregunta o las dos.</p>
+          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p><b>La imagen.</b> CLIP, un modelo de visión que corre en tu navegador, la compara con los 17 atributos del modelo y con 14.000 looks de pasarela. La foto no sale de tu computadora. Lo que lee es interpretación: por eso se puede corregir.</p><p><b>El dato.</b> Cada atributo trae su señal y su curva de búsqueda mundial (Google, corregida, hasta 2024): eso es medido.</p><p><b>La devolución escrita.</b> La escribe un modelo de lenguaje con tu clave de Groq. Lee sólo <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">un resumen de métricas ya calculadas</a>, nunca una fila de la base. Sin clave, la devolución la arman reglas fijas, y lo dice.</p><p><b>Cómo se validó CLIP.</b> En 150.000 looks de Vogue que no están en el índice, el atributo correcto quedó entre los tres primeros entre el 67 % y el 92 % de las veces, según el atributo (animal print: 20 %). Cuadros, piel, cargo, Y2K y blazer no se pudieron validar porque Vogue no los etiqueta. Por debajo de 0,35 de probabilidad la app no adivina.</p></div></details>
         </div>
       </div>
-      <hr class="rule">
-      <div class="as">
-        <div class="asL">
-          <details class="ascard asact" id="asclave">
-            <summary id="asclaves">Activar el chat · 1 minuto</summary>
-            <ol class="aspasos">
-              <li>Entrá a <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>. Es gratis y podés entrar con tu cuenta de Google.</li>
-              <li>Tocá «Create API Key» y copiá la clave: empieza con <code>gsk_</code>.</li>
-              <li>Pegala acá. Se guarda sólo en este navegador y viaja sólo a Groq.</li>
-            </ol>
-            <input id="askey" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="Tu clave de Groq">
-            <label class="ascap" for="asmodelo" style="display:block;margin-top:12px">Modelo</label>
-            <select id="asmodelo"><option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option><option value="openai/gpt-oss-20b">openai/gpt-oss-20b (más rápido)</option></select>
-          </details>
-          <div class="ascard"><span class="lbl">Tu diseño</span><div id="asdis" class="aschips"></div></div>
-          <div class="ascard">
-            <span class="lbl">Una foto o un boceto</span>
-            <p class="ascap">CLIP la lee en este navegador; la imagen no sale de tu computadora. Si leyó algo que no va, sacalo. La primera vez baja el modelo y el índice (unos 96 MB); después quedan guardados.</p>
-            <label class="asfoto"><input type="file" id="asfile" accept="image/*"><span>Elegir una imagen</span></label>
-            <div id="asprev"></div><div id="asclip" class="aschips"></div><p class="ascap" id="asclipest"></p>
-          </div>
-          <details class="ascard asver"><summary class="lbl">Qué se le mandó al modelo</summary>
-            <p class="ascap" id="astok">Todavía nada.</p>
-            <pre id="asprompt"></pre>
-          </details>
-        </div>
-        <div class="asR">
-          <div id="aschat" class="aschat" aria-live="polite"></div>
-          <div id="assug" class="assug"></div>
-          <form id="asform" class="asform">
-            <textarea id="astexto" rows="2" maxlength="600" placeholder="Preguntá sobre tu diseño" aria-label="Tu pregunta"></textarea>
-            <button type="submit" class="kbtn" id="asenviar">Preguntar</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section class="view" id="v-consulta" hidden>
-      <div class="vhead">
-        <div>
-          <h1>Buscar por imagen</h1>
-          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>CLIP, un modelo de visión que corre en tu navegador, compara la imagen con 14.000 looks reales de pasarela y con los 17 atributos del modelo, y te dice en qué etapa del ciclo está cada uno. La foto no sale de tu computadora.</p></div></details>
-        </div>
-      </div>
-      <hr class="rule">
-      <div class="qgrid">
-        <div>
-          <label class="drop" id="qdrop">
-            <input type="file" accept="image/*" id="qfile">
-            <div class="ic">＋</div>
-            <p>Arrastrá una imagen o tocá para elegirla</p>
+      <div class="rv">
+        <form id="asform" class="rvcomp">
+          <label class="rvdrop" id="rvdrop">
+            <input type="file" id="asfile" accept="image/*">
+            <span class="rvdropv" id="asprev"><span class="rvplus" aria-hidden="true">＋</span><span>Soltá una imagen<br>o tocá para elegirla</span></span>
           </label>
-          <p class="qestado" id="qestado" aria-live="polite">La primera consulta baja el modelo CLIP (89 MB) y el índice (8 MB). Después quedan guardados en el navegador.</p>
-          <span class="lbl" style="margin-top:16px;display:block">O probá con un look del índice</span>
-          <div class="qej" id="qej"></div>
-          <div id="qprev"></div>
-        </div>
-        <div>
-          <div class="h" style="display:flex;align-items:center;gap:8px"><span class="lbl">Atributos que ve el modelo</span><span class="tag ia2">interpretación</span></div>
-          <div class="qres" style="margin-top:14px" id="qres"></div>
-          <div id="qmas" hidden>
-            <div class="h" style="display:flex;align-items:center;gap:8px;margin-top:26px"><span class="lbl">Los looks de pasarela más parecidos</span><span class="tag ia2">CLIP · vecinos</span></div>
-            <div class="qlooks" id="qlooks"></div>
-            <div class="h" style="display:flex;align-items:center;gap:8px;margin-top:26px"><span class="lbl">Cuándo se vio algo así en la pasarela</span><span class="tag ia2">CLIP · vecinos</span></div>
-            <div id="qanios" style="margin-top:10px"></div>
-            <p class="note" id="qanios_n" style="margin-top:6px"></p>
-            <div class="ai" style="margin-top:22px">
-              <div class="h"><span class="lbl">Resumen</span><span class="tag demo">armado con reglas, no con un LLM</span></div>
-              <p id="qresumen"></p>
-            </div>
+          <div class="rvtxt">
+            <textarea id="astexto" rows="3" maxlength="600" placeholder="¿Qué querés saber? (opcional si subiste una imagen)" aria-label="Tu pregunta"></textarea>
+            <div class="rvbar"><p class="rvest" id="asclipest" aria-live="polite"></p><button type="submit" class="kbtn" id="asenviar">Leer</button></div>
           </div>
-          <details class="qm izq" style="margin-top:22px"><summary aria-label="Cómo se validó">?</summary><div class="qmc"><p><b>Cómo se validó.</b> En 150.000 looks de Vogue que no están en el índice, el atributo correcto quedó entre los tres primeros entre el 67 % y el 92 % de las veces, según el atributo (animal print: 20 %). Los que Vogue no etiqueta —cuadros, piel, cargo, Y2K, blazer— no se pudieron validar y se marcan así. Por debajo de 0,35 de probabilidad la app no adivina.</p></div></details>
-        </div>
+        </form>
+        <div class="rvej"><span>O probá con un look de pasarela:</span><span id="rvej"></span></div>
+        <div id="assug" class="assug"></div>
+        <div id="asdisw" class="rvdis" hidden><span class="lbl">Tu diseño en Diseñar</span><div id="asdis" class="aschips"></div></div>
+        <div id="rvlect" class="rvlect" hidden></div>
+        <div id="aschat" class="aschat" aria-live="polite"></div>
+        <details class="ascard asact" id="asclave">
+          <summary id="asclaves">Activar la devolución escrita · 1 minuto</summary>
+          <ol class="aspasos">
+            <li>Entrá a <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>. Es gratis y podés entrar con tu cuenta de Google.</li>
+            <li>Tocá «Create API Key» y copiá la clave: empieza con <code>gsk_</code>.</li>
+            <li>Pegala acá. Se guarda sólo en este navegador y viaja sólo a Groq.</li>
+          </ol>
+          <input id="askey" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="Tu clave de Groq">
+          <label class="ascap" for="asmodelo" style="display:block;margin-top:12px">Modelo</label>
+          <select id="asmodelo"><option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option><option value="openai/gpt-oss-20b">openai/gpt-oss-20b (más rápido)</option></select>
+        </details>
+        <details class="ascard asver"><summary class="lbl">Qué se le mandó al modelo</summary>
+          <p class="ascap" id="astok">Todavía nada.</p>
+          <pre id="asprompt"></pre>
+        </details>
       </div>
     </section>
 
@@ -2634,7 +2657,7 @@ const CLIP={idx:null,txt:null,mod:null},CLIP_UMBRAL=0.35; // por debajo, la app 
 const CLIP_TF='https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.2';
 const CLIP_TAG={'Jeans baggy':'denim','Jeans rectos':'denim','Jeans skinny':'denim','Buzo / hoodie':'buzo','Cuero':'cuero','Lunares':'lunares',
   'Floral':'floral','Animal print':'animal','Encaje':'encaje','Kimono':'kimono','Capa':'capa','Trench':'trench'};
-const qEstado=(t,err)=>{const e=$('#qestado');e.textContent=t;e.classList.toggle('err',!!err);};
+const qEstado=t=>{const e=$('#asclipest');if(e)e.textContent=t;};
 /* una foto real por atributo (10/11/2026): elegida en el corpus de Vogue Runway con CLIP (el look más parecido a una
    frase como «a runway look with polka dots», desde 2016, un diseñador por candidato) y revisada a ojo; donde ninguno
    mostraba el atributo, queda el dibujo. Se muestran desde los servidores de Vogue, con diseñador, temporada y año */
@@ -2684,75 +2707,94 @@ function clipLeer(q){
   const atr=A.map((a,i)=>({...a,p:ex[i]/tot})).sort((a,b)=>b.p-a.p);
   return {sim,orden,atr};
 }
-function clipPintar(R,mismo){
-  const {idx}=CLIP,V=R.orden.filter(i=>i!==mismo),K=50,vec=V.slice(0,K);
-  const conEtiqueta=t=>{const b=idx.atributos.indexOf(t);return vec.filter(i=>(idx.m[i]>>b)&1).length;};
-  const baseEtiqueta=t=>{const b=idx.atributos.indexOf(t);let c=0;for(let i=0;i<idx.n;i++)c+=(idx.m[i]>>b)&1;return c/idx.n;};
-  const q=$('#qres');q.innerHTML='';
-  const top=R.atr[0];
-  if(top.p<CLIP_UMBRAL){const d=document.createElement('p');d.className='note a';d.style.margin='0';
-    d.innerHTML=`<b>No determinado.</b> Ningún atributo pasa 0,35 de probabilidad: la imagen no se parece claramente a ninguno de los 17. Abajo van los tres más cercanos, para orientar, no como respuesta.`;q.appendChild(d);}
-  R.atr.slice(0,3).forEach(a=>{
-    const et=kEtapaN(a.n),v=a.validacion,tg=CLIP_TAG[a.n];
-    let mt=et?`Etapa según el K-means: <b>${et.n}</b>`:'Sin etapa en el modelo';
-    mt+=v?'':' · sin validar: Vogue no lo etiqueta'; // cuánto acierta cada uno está en el «?» de «Cómo se validó», una sola vez
-    if(tg){const c=conEtiqueta(tg),b=baseEtiqueta(tg);mt+=`<br>${c} de los ${K} looks más parecidos tienen la etiqueta «${idx.etiquetas[tg].join(' / ')}» en Vogue (en todo el índice, ${(b*K).toFixed(1).replace('.',',')} de cada ${K})`;}
-    const d=document.createElement('div');d.className='qrow2';
-    d.innerHTML=`<span class="nm">${a.n}</span><span class="pc">${a.p.toFixed(2).replace('.',',')}</span><div class="meter"><i style="width:${Math.round(a.p*100)}%"></i></div><div class="mt">${mt}</div>`;
-    q.appendChild(d);
-  });
-  $('#qlooks').innerHTML=V.slice(0,8).map(i=>`<a href="${vogueFoto(idx.f[i],1280)}" target="_blank" rel="noopener"><img loading="lazy" alt="${idx.disenadores[idx.d[i]]}, ${TEMP[idx.s[i]]||''} ${idx.y[i]}" src="${vogueFoto(idx.f[i],320)}"><div class="c"><b>${idx.disenadores[idx.d[i]]}</b>${TEMP[idx.s[i]]||''} ${idx.y[i]} · ${R.sim[i].toFixed(2).replace('.',',')}</div></a>`).join('');
-  // años de los 100 vecinos: el índice tiene 1.000 looks por año, así que el reparto se puede comparar directo
+/* ---------- Revisión (10/11/2026): «Buscar por imagen» y «Preguntar» en una sola pantalla ----------
+   Soltás una imagen, escribís una pregunta, o las dos. La lectura sale sin clave: lo que leyó CLIP (chips que se corrigen),
+   la señal y la frase de cada atributo, sus curvas y una devolución armada con reglas. Con clave de Groq, el modelo de
+   lenguaje escribe la devolución con las métricas ya calculadas (prompts/prompt_asistente_v8.md), nunca con filas. */
+const RV_CLIP={'Jeans amplios':['jamplio','Jeans baggy'],'Jeans medios':['jmedio','Jeans rectos'],'Jeans ajustados':['jajust','Jeans skinny'],
+  'Buzo / hoodie':['buzo','Buzo / hoodie'],'Floral':['floral','Floral'],'Lunares':['lunares','Lunares'],'Cuero':['cuero','Cuero'],
+  'Animal print':['animal','Animal print'],'Kimono':['kimono','Kimono'],'Capa':['capa','Capa'],'Trench':['trench','Trench'],'Encaje':['encaje','Encaje'],
+  'Cuadros':[null,'Cuadros'],'Piel':[null,'Piel'],'Cargo':['cargo','Cargo'],'Y2K':[null,'Y2K'],'Blazer oversize':[null,'Blazer oversize']};
+const RV_FAM={jeans:['Jeans amplios','Jeans medios','Jeans ajustados','Cargo'],abrigo:['Trench','Capa','Kimono','Blazer oversize','Piel'],
+  estampa:['Floral','Lunares','Animal print','Cuadros'],material:['Cuero','Encaje'],estilo:['Buzo / hoodie','Y2K']};
+const RV_QUE={jeans:'El corte',abrigo:'El abrigo',estampa:'La estampa',material:'El material',estilo:'El estilo'};
+const rvFam=c=>Object.keys(RV_FAM).find(k=>RV_FAM[k].includes(c))||'estilo';
+const RV_PREG='Revisá este diseño: qué está bien y qué cambiarías.';
+function rvAtr(c,p,manual){const [id,km]=RV_CLIP[c]||[null,c],o=id&&REC.find(r=>r.id===id);return {c,id,km,n:o?o.n:km,p,manual:!!manual};}
+/* lo que dice el dato de un atributo: la señal (señal(), nunca a mano), la frase de El ciclo y el número */
+function rvDato(a){const sg=señal({grupo:a.km,rec:a.id&&GREL[a.id]?a.id:null}),o=a.id&&GREL[a.id]&&REC.find(r=>r.id===a.id);
+  const c=o&&cicloDe(o),d=a.id&&GREL[a.id]?terreno(a.id):null;
+  const pts=d!=null?Math.abs(Math.round(d)):0,num=d!=null?`${d>0&&pts?'+':d<0&&pts?'−':''}${pts} ${pts===1?'punto':'puntos'} en la búsqueda mundial, 2022→2024`:'';
+  const frase=c?c.f.split('. ')[0].replace(/\.$/,'')+'.':sg.etapa?`No tiene serie de búsqueda propia; el K-means lo ubica en «${sg.etapa.toLowerCase()}».`:'No tiene serie de búsqueda.';
+  return {sg,d,num,frase,serie:!!c};}
+/* las curvas de los que importan, en la misma escala: el pico de cada uno con su año y el nombre al final */
+function rvCurvas(L,W){L=L.filter(x=>GREL[x.g]).slice(0,3);if(!L.length)return '';W=Math.max(300,Math.round(W||640));
+  const Y0=2010,Y1=2024,R=W<520?100:150,H=W<520?190:220,T=26,B=24,cols=['--s1','--s2','--s3'];
+  let mx=0;L.forEach(x=>{for(let y=Y0;y<=Y1;y++){const v=GREL[x.g][y-2004];if(v!=null&&v>mx)mx=v;}});mx*=1.05;
+  const X=y=>8+(y-Y0)/(Y1-Y0)*(W-8-R),Y=v=>T+(1-v/mx)*(H-T-B);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Búsqueda mundial ${Y0}–${Y1}: ${L.map(x=>x.n).join(', ')}">`;
+  [Y0,2017,Y1].forEach(y=>s+=`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)" font-size="12">${y}</text>`);
+  s+=`<line x1="8" x2="${X(Y1)}" y1="${H-B}" y2="${H-B}" stroke="var(--rule)"/>`;
+  const fin=L.map((x,i)=>({i,y:Y(GREL[x.g][Y1-2004])+4})).sort((a,b)=>a.y-b.y);for(let k=1;k<fin.length;k++)if(fin[k].y-fin[k-1].y<17)fin[k].y=fin[k-1].y+17;
+  L.forEach((x,i)=>{const v=GREL[x.g],p=[];let pk=null;for(let y=Y0;y<=Y1;y++)if(v[y-2004]!=null){p.push([y,v[y-2004]]);if(!pk||v[y-2004]>pk[1])pk=[y,v[y-2004]];}
+    const col=`var(${cols[i]})`,u=p[p.length-1];
+    s+=`<polyline fill="none" stroke="${col}" stroke-width="2.6" stroke-linejoin="round" points="${p.map(([y,q])=>X(y).toFixed(1)+','+Y(q).toFixed(1)).join(' ')}"/>`;
+    if(pk[0]!==Y1)s+=`<circle cx="${X(pk[0])}" cy="${Y(pk[1])}" r="4.5" fill="${col}"/><text x="${X(pk[0])}" y="${Y(pk[1])-9}" text-anchor="middle" fill="var(--ink-2)" font-size="12">pico ${pk[0]}</text>`;
+    s+=`<circle cx="${X(u[0])}" cy="${Y(u[1])}" r="4.5" fill="${col}"/><text x="${X(Y1)+10}" y="${fin.find(f=>f.i===i).y}" fill="var(--ink)" font-size="13">${escH(x.n)}${pk[0]===Y1&&W>=520?' · pico':''}</text>`;});
+  return `<div class="rvcurv">${s}</svg><p class="rvcap"><span class="tag real">● medido</span> Búsqueda mundial de Google frente a las otras búsquedas de moda, corregida; 2025 queda afuera.</p></div>`;}
+/* la devolución sin modelo de lenguaje: qué va, qué cambiaría y por qué, con la señal de tu perfil */
+function rvDevolucion(A){const D=A.map(a=>({a,...rvDato(a)}));
+  const bien=D.filter(x=>x.sg.estado==='entrar'),mal=D.filter(x=>x.sg.estado==='salir'),resto=D.filter(x=>!['entrar','salir'].includes(x.sg.estado));
+  const lc=t=>t[0].toLowerCase()+t.slice(1),que=x=>RV_QUE[rvFam(x.a.c)],nm=x=>/^[A-Z0-9]{2,}/.test(x.a.n)?x.a.n:x.a.n.toLowerCase();
+  let conc;
+  if(bien.length&&mal.length)conc=`${que(bien[0])} va; ${lc(que(mal[0]))}, lo cambiaría.`;
+  else if(bien.length)conc=bien.length>1?'Va: lo que leí viene ganando terreno.':`${que(bien[0])} va: ${nm(bien[0])} viene ganando terreno.`;
+  else if(mal.length)conc=`${que(mal[0])}, lo cambiaría: ${nm(mal[0])} viene perdiendo terreno.`;
+  else conc=resto.some(x=>x.sg.estado!=='sin-dato')?'Nada de lo que leí empuja para un lado: es una apuesta tranquila.':'No tengo dato para decir si va: nada de lo que leí tiene serie.';
+  const linea=(x,t)=>`<li><b>${t}</b> ${escH(x.a.n)}: ${x.num||x.sg.etapa&&`etapa ${x.sg.etapa.toLowerCase()} (K-means)`||'sin serie de búsqueda'}. <span class="${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span></li>`;
+  const alt=x=>{const ya=A.map(a=>a.c),L=RV_FAM[rvFam(x.a.c)].filter(c=>!ya.includes(c)).map(c=>rvAtr(c)).filter(a=>a.id&&GREL[a.id]).map(a=>({a,d:terreno(a.id)})).filter(z=>z.d!=null&&z.d>3).sort((p,q)=>q.d-p.d);
+    return L[0]?`<li><b>Probá</b> ${escH(L[0].a.n)} en su lugar: +${Math.round(L[0].d)} puntos en la búsqueda mundial, 2022→2024.</li>`:'';};
+  return `<div class="rvdev"><div class="h"><span class="lbl">Devolución</span><span class="tag demo">armada con reglas, no con un modelo de lenguaje</span></div>
+    <div class="rvconc">${escH(conc)}</div><ul class="rvlista">${bien.map(x=>linea(x,'Va bien ·')).join('')}${mal.map(x=>linea(x,'Cambiaría ·')+alt(x)).join('')}${resto.map(x=>linea(x,x.sg.estado==='sin-dato'?'Sin dato ·':'Sin apuro ·')).join('')}</ul>
+    <p class="rvcap">La señal es la de tu perfil (${(PERFIL[cliente]||PERFIL.premium).n}${vinculo==='propia'?', por tu cuenta':''}). ${$('#askey').value.trim()?'Tocá «Leer» para la devolución escrita.':'Para una devolución escrita, activá Groq abajo.'}</p></div>`;}
+function rvPintarLectura(){const e=$('#rvlect');if(!e)return;if(!as.leido){e.hidden=true;e.innerHTML='';return;}e.hidden=false;
+  const A=as.clip,falta=Object.keys(RV_CLIP).filter(c=>!A.some(a=>a.c===c));
+  const chips=A.map((a,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar ${escH(a.n)}">${escH(a.n)} <span class="aspp">${a.manual?'agregado':a.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('')+
+    `<label class="rvagr"><span>+ agregar</span><select id="rvagr" aria-label="Agregar un atributo que CLIP no leyó"><option value="">+ agregar</option>${falta.map(c=>`<option value="${escH(c)}">${escH(rvAtr(c).n)}</option>`).join('')}</select></label>`;
+  const D=A.map(a=>({a,...rvDato(a)}));
+  const filas=D.map(x=>`<div class="rvrow"><span class="rvn">${escH(x.a.n)}</span><span class="rvs ${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span><span class="rvf">${escH(x.frase)}${x.num?` <span class="rvnum">${x.num}.</span>`:''}</span>${x.serie?'<span class="tag real">● medido</span>':'<span class="rvnos">sin serie de búsqueda</span>'}</div>`).join('');
+  const W=e.clientWidth||Math.min(880,innerWidth-32);
+  const looks=as.looks&&as.looks.length?`<details class="rvmas"><summary>Looks de pasarela parecidos</summary><div class="aslooks">${as.looks.map(f=>`<a href="${f.u}" target="_blank" rel="noopener"><img loading="lazy" alt="${escH(f.d)}" src="${f.s}"><span>${escH(f.d)}</span></a>`).join('')}</div>${as.anios?`<p class="rvcap">${as.anios}</p>`:''}<p class="rvcap"><span class="tag ia2">interpretado · CLIP</span> Referencia de forma, no recomendación.</p></details>`:'';
+  e.innerHTML=`<div class="rvsec"><div class="h"><span class="lbl">Qué vio CICLO</span><span class="tag ia2">interpretado · CLIP</span></div>
+      ${A.length?'':`<p class="rvcap">${escH(as.nada||'CLIP no reconoció con claridad ningún atributo.')} Si sabés qué es, agregalo.</p>`}
+      <div class="aschips" id="asclip">${chips}</div><p class="rvcap">Si leyó algo que no va, sacalo; si falta algo, agregalo. La lectura se rehace sola.</p></div>
+    ${A.length?`<div class="rvsec"><div class="h"><span class="lbl">Qué dice el dato</span></div>${filas}</div>
+    ${rvCurvas(D.filter(x=>x.serie).map(x=>({n:x.a.n,g:x.a.id})),W)}
+    ${rvDevolucion(A)}`:''}${looks}`;
+  $$('#asclip [data-x]').forEach(b=>b.onclick=()=>{as.clip.splice(+b.dataset.x,1);rvPintarLectura();});
+  const s=$('#rvagr');if(s)s.onchange=()=>{if(s.value){as.clip.push(rvAtr(s.value,null,true));rvPintarLectura();}};}
+/* lo que CLIP lee de un vector (de una foto o de un look del índice): los tres primeros que pasan 0,35, los looks y los años */
+function rvLeerVector(q,mismo){const R=clipLeer(q),idx=CLIP.idx,V=R.orden.filter(i=>i!==mismo);
+  as.clip=R.atr.filter((a,i)=>i<3&&a.p>=CLIP_UMBRAL).map(a=>rvAtr(a.n,a.p));as.leido=true;
+  const cerca=R.atr[0];as.nada=as.clip.length?'':`Ningún atributo pasa 0,35 de probabilidad (el más cercano es ${rvAtr(cerca.n).n.toLowerCase()}, ${cerca.p.toFixed(2).replace('.',',')}).`;
+  as.looks=V.slice(0,6).map(i=>({u:vogueFoto(idx.f[i],1280),s:vogueFoto(idx.f[i],320),d:`${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]}`}));
   const Y0=idx.anios[0],Y1=idx.anios[1],cnt={};for(let y=Y0;y<=Y1;y++)cnt[y]=0;V.slice(0,100).forEach(i=>cnt[idx.y[i]]++);
-  const W=640,H=130,ml=26,mr=8,mt=10,mb=24,nY=Y1-Y0+1,bw=(W-ml-mr)/nY,mxc=Math.max(...Object.values(cnt),100/nY*2);
-  const s=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%',role:'img','aria-label':'Años de los 100 looks más parecidos'});
-  const Yp=v=>mt+(1-v/mxc)*(H-mt-mb);
-  s.appendChild(el('line',{x1:ml,x2:W-mr,y1:Yp(100/nY),y2:Yp(100/nY),stroke:cssv('--ink-3'),'stroke-dasharray':'3 3','stroke-width':1}));
-  const tb=el('text',{x:ml+2,y:Yp(100/nY)-4,'text-anchor':'start','font-size':9.5,fill:cssv('--ink-3'),'font-family':'IBM Plex Mono, monospace'});tb.textContent='si fuera al azar';s.appendChild(tb);
-  for(let y=Y0;y<=Y1;y++){const x=ml+(y-Y0)*bw,h=(H-mb)-Yp(cnt[y]);
-    const r=el('rect',{x:x+2,y:Yp(cnt[y]),width:bw-4,height:Math.max(h,0),fill:cssv('--ia'),rx:1.5});
-    r.addEventListener('mousemove',e=>showTip(e,`${y}\n${cnt[y]} de los 100 looks más parecidos`));r.addEventListener('mouseleave',hideTip);s.appendChild(r);
-    if((y-Y0)%2===0||y===Y1){const t=el('text',{x:x+bw/2,y:H-8,'text-anchor':'middle','font-size':10,fill:cssv('--ink-2'),'font-family':'IBM Plex Mono, monospace'});t.textContent=y;s.appendChild(t);}}
-  s.appendChild(el('line',{x1:ml,x2:W-mr,y1:H-mb,y2:H-mb,stroke:cssv('--rule'),'stroke-width':1}));
-  $('#qanios').innerHTML='';$('#qanios').appendChild(s);
-  const pk=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]);
-  $('#qanios_n').textContent=`De los 100 looks más parecidos. El índice tiene 1.000 looks por año, así que si fuera al azar cada barra llegaría a la línea punteada (${(100/nY).toFixed(1).replace('.',',')}). La pasarela medida termina en 2023.`;
-  const et=kEtapaN(top.n);
-  $('#qresumen').textContent=(top.p<0.35?`La imagen no se parece claramente a ninguno de los 17 atributos; el más cercano es ${top.n.toLowerCase()}.`:`Lo que más se parece es ${top.n.toLowerCase()}${et?`, que el K-means ubica en «${et.n.toLowerCase()}»`:''}.`)+
-    ` Los looks de pasarela más parecidos se concentran en ${pk[0]}${cnt[pk[1]]>=cnt[pk[0]]*0.6?` y ${pk[1]}`:''} (${cnt[pk[0]]} de 100, contra ${(100/nY).toFixed(0)} si fuera al azar).`;
-  $('#qmas').hidden=false;
-}
-async function clipConsultarArchivo(file){
-  if(!file||!file.type.startsWith('image/')){qEstado('Ese archivo no es una imagen.',true);return;}
-  const url=URL.createObjectURL(file);
-  $('#qprev').innerHTML=`<div class="qprev"><img src="${url}" alt="La imagen que subiste"><div class="pie">${file.name.replace(/</g,'&lt;')} · ${(file.size/1e6).toFixed(1).replace('.',',')} MB · no sale del navegador</div></div>`;
-  try{
-    await clipIndice();await clipModelo();
-    qEstado('Leyendo la imagen…');
-    const {T,proc,model}=CLIP.mod,img=await T.RawImage.fromURL(url),{image_embeds}=await model(await proc(img));
-    clipPintar(clipLeer(Float32Array.from(image_embeds.data)),-1);
-    qEstado('Listo. Lo calculó CLIP en este navegador.');
-  }catch(e){console.error(e);qEstado('No se pudo leer la imagen: '+(e.message||e)+'. Probá de nuevo o con otra foto.',true);}
-}
-async function clipConsultarEjemplo(i){
-  try{
-    await clipIndice();const idx=CLIP.idx;
-    $('#qprev').innerHTML=`<div class="qprev"><img src="${vogueFoto(idx.f[i],640)}" alt="${idx.disenadores[idx.d[i]]}"><div class="pie">${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]} · vector del índice, se excluye de los parecidos</div></div>`;
-    clipPintar(clipLeer(clipVectorDelIndice(i)),i);
-    qEstado('Ejemplo del índice: usa el vector guardado, sin bajar el modelo.');
-  }catch(e){console.error(e);qEstado('No se pudo bajar el índice. La consulta necesita abrir la app desde un servidor (no como archivo).',true);}
-}
+  const pk=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]),az=(100/(Y1-Y0+1)).toFixed(0);
+  as.anios=`De los 100 looks más parecidos, la mayoría son de ${pk[0]}${cnt[pk[1]]>=cnt[pk[0]]*0.6?` y ${pk[1]}`:''} (${cnt[pk[0]]} de 100; si fuera al azar, ${az} por año). La pasarela medida termina en 2023.`;
+  $('#asclipest').textContent=as.clip.length?'Leído en este navegador. Abajo, la lectura.':'Leído, pero CLIP no reconoció con claridad ningún atributo.';
+  rvPintarLectura();asPintar();$('#rvlect').scrollIntoView({behavior:'smooth',block:'start'});}
+async function rvEjemplo(i,n){try{await clipIndice(t=>$('#asclipest').textContent=t);const idx=CLIP.idx;
+    $('#asprev').innerHTML=`<img class="asimg" src="${vogueFoto(idx.f[i],640)}" alt="${escH(idx.disenadores[idx.d[i]])}, ${TEMP[idx.s[i]]||''} ${idx.y[i]}"><span class="rvpie">${escH(idx.disenadores[idx.d[i]])} · ${TEMP[idx.s[i]]||''} ${idx.y[i]} · Vogue Runway</span>`;
+    rvLeerVector(clipVectorDelIndice(i),i);$('#asclipest').textContent=`Ejemplo (${n}): un look del índice, leído con su vector guardado, sin bajar el modelo.`;}
+  catch(e){console.error(e);$('#asclipest').textContent='No se pudo bajar el índice. La app tiene que abrirse desde un servidor, no como archivo.';}}
 function pintarConsulta(){
-  if(pintarConsulta.listo)return;pintarConsulta.listo=true;
-  const f=$('#qfile'),dr=$('#qdrop');
-  f.addEventListener('change',()=>clipConsultarArchivo(f.files[0]));
+  if(pintarConsulta.listo)return;pintarConsulta.listo=true;const dr=$('#rvdrop');
   ['dragenter','dragover'].forEach(ev=>dr.addEventListener(ev,e=>{e.preventDefault();dr.classList.add('on');}));
   ['dragleave','drop'].forEach(ev=>dr.addEventListener(ev,e=>{e.preventDefault();dr.classList.remove('on');}));
-  dr.addEventListener('drop',e=>clipConsultarArchivo(e.dataTransfer.files[0]));
-  // ejemplos: un look por atributo etiquetado, fijos para que se puedan citar
+  dr.addEventListener('drop',e=>asFoto(e.dataTransfer.files[0]));
   const EJ=[['Trench',QEJ.trench],['Denim',QEJ.denim],['Cuero',QEJ.cuero],['Capa',QEJ.capa],['Kimono',QEJ.kimono]];
-  $('#qej').innerHTML=EJ.map(([n,i])=>`<button class="chip" data-i="${i}">${n}</button>`).join('');
-  $$('#qej .chip').forEach(b=>b.addEventListener('click',()=>{$$('#qej .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));clipConsultarEjemplo(+b.dataset.i);}));
+  $('#rvej').innerHTML=EJ.map(([n,i])=>`<button type="button" class="chip" data-i="${i}" data-n="${n}">${n}</button>`).join('');
+  $$('#rvej .chip').forEach(b=>b.addEventListener('click',()=>{$$('#rvej .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));rvEjemplo(+b.dataset.i,b.dataset.n);}));
 }
 
 const RDS={"baggy jeans":{"i":[null,null,null,null,null,null,null,null,4.1,4.9,4.4,6.9,4.7,7.6,11.3,20.4,25.4,32.7,33.3,57.2,76.3,100.0],"pk":2025,"n":89},"skinny jeans":{"i":[null,null,null,null,null,null,null,null,100.0,91.4,78.2,64.6,60.2,51.7,50.7,47.5,56.0,54.6,49.6,37.3,30.2,27.1],"pk":2012,"n":572},"cargo pants":{"i":[null,null,null,null,null,null,null,null,35.2,39.3,26.0,15.9,18.0,26.4,33.9,24.7,28.7,41.0,75.3,99.9,100.0,85.3],"pk":2024,"n":54},"wide leg":{"i":[null,null,null,null,null,null,null,null,19.5,18.8,24.6,18.4,22.5,29.9,38.4,43.1,47.5,65.8,87.9,100.0,89.3,78.7],"pk":2023,"n":211},"ballet flats":{"i":[null,null,null,null,null,null,null,null,100.0,85.0,75.1,55.5,43.1,34.9,23.6,39.6,39.5,36.7,42.0,59.9,82.9,83.5],"pk":2012,"n":122},"leather jacket":{"i":[null,null,null,null,null,null,null,null,90.7,100.0,97.7,86.1,73.1,78.2,74.6,74.4,67.6,67.0,62.2,56.3,56.0,51.6],"pk":2013,"n":504},"leopard":{"i":[null,null,null,null,null,null,null,null,100.0,90.0,69.4,43.3,25.3,29.1,40.5,54.7,47.1,42.1,26.1,28.7,31.7,42.4],"pk":2012,"n":56},"burgundy":{"i":[null,null,null,null,null,null,null,null,100.0,86.5,54.8,50.5,30.6,25.4,17.2,23.9,36.3,29.6,31.8,30.2,47.6,58.2],"pk":2012,"n":62},"corset":{"i":[null,null,null,null,null,null,null,null,47.2,38.0,26.0,18.7,24.6,23.4,28.5,34.5,60.2,88.9,86.8,89.6,83.0,100.0],"pk":2025,"n":154},"polka dot":{"i":[null,null,null,null,null,null,null,null,100.0,73.8,45.3,22.6,15.5,10.8,7.9,10.9,13.6,8.6,8.2,4.7,20.4,26.6],"pk":2012,"n":38},"floral":{"i":[null,null,null,null,null,null,null,null,100.0,82.9,67.0,60.1,57.3,62.1,59.5,65.9,61.0,51.2,50.1,52.6,52.7,51.0],"pk":2012,"n":234},"hoodie":{"i":[null,null,null,null,null,null,null,null,41.7,45.5,49.0,56.4,57.5,60.3,65.9,77.7,79.9,85.6,86.3,92.9,98.0,100.0],"pk":2025,"n":387},"oversized":{"i":[null,null,null,null,null,null,null,null,52.8,48.8,36.6,31.1,35.7,47.9,55.2,60.7,68.2,87.4,92.9,100.0,87.1,86.8],"pk":2023,"n":314},"trench":{"i":[null,null,null,null,null,null,null,null,57.3,74.8,86.9,89.8,75.2,55.0,50.9,45.2,56.7,65.6,84.5,94.4,100.0,97.3],"pk":2024,"n":198},"crop top":{"i":[null,null,null,null,null,null,null,null,22.1,30.5,29.4,40.3,35.2,40.6,41.9,49.6,68.4,93.5,100.0,91.2,55.9,46.2],"pk":2022,"n":305},"chunky sneakers":{"i":[null,null,null,null,null,null,null,null,0.0,0.0,0.0,14.6,14.6,14.6,46.2,89.8,100.0,94.3,79.7,99.9,75.7,70.1],"pk":2020,"n":25},"quiet luxury":{"i":[null,null,null,null,null,null,null,null,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,6.2,35.6,58.8,96.1,100.0],"pk":2025,"n":16},"y2k":{"i":[null,null,null,null,null,null,null,null,0.0,0.0,0.0,0.0,0.0,0.0,0.0,5.5,18.4,32.8,61.6,83.3,100.0,98.5],"pk":2024,"n":61},"suede":{"i":[null,null,null,null,null,null,null,null,87.4,82.3,94.2,100.0,98.3,85.9,76.1,72.1,71.7,58.5,56.5,47.9,63.1,70.2],"pk":2015,"n":191},"plaid":{"i":[null,null,null,null,null,null,null,null,79.9,86.8,100.0,73.4,44.1,40.4,62.2,82.9,97.1,79.0,76.2,53.5,60.6,57.8],"pk":2014,"n":110},"balaclava":{"i":[null,null,null,null,null,null,null,null,66.8,44.5,44.5,0.0,0.0,0.0,0.0,0.0,36.4,65.4,100.0,63.6,93.0,87.6],"pk":2022,"n":6},"lace":{"i":[null,null,null,null,null,null,null,null,100.0,90.0,61.1,48.8,34.5,33.2,35.5,40.3,40.7,33.1,33.1,32.0,32.9,28.6],"pk":2012,"n":368},"mom jeans":{"i":[null,null,null,null,null,null,null,null,5.1,4.8,2.8,10.4,13.7,29.5,52.7,84.4,100.0,76.8,47.5,22.6,15.0,11.9],"pk":2020,"n":149},"kimono":{"i":[null,null,null,null,null,null,null,null,65.0,70.7,82.1,63.6,59.6,36.4,72.3,94.7,100.0,60.7,40.3,41.6,63.0,56.4],"pk":2020,"n":53},"stripe":{"i":[null,null,null,null,null,null,null,null,100.0,89.5,78.2,72.3,66.8,73.1,69.0,68.7,50.4,44.6,38.9,30.0,28.5,25.9],"pk":2012,"n":125}};
@@ -3131,7 +3173,7 @@ function lectIr(p,sinAnim){
 function lectPlay(desde){lectParar();lectIr(desde);$('#lectplay').textContent='‖ Pausa';
   lect.timer=setInterval(()=>{if(lect.paso>=LECT_T.length-1){lectParar();return;}lectIr(lect.paso+1);},4200);}
 function lectParar(){clearInterval(lect.timer);lect.timer=null;const b=$('#lectplay');if(b)b.textContent=lect.paso>=LECT_T.length-1?'↺ Ver de nuevo':'▶ Seguir';}
-/* ---------- Preguntar: el chat como herramienta de diseño (prompts/prompt_asistente_v7.md) ----------
+/* ---------- Revisión: la parte escrita (prompts/prompt_asistente_v8.md) ----------
    v7 (10/11): la respuesta llega en tres partes con distinto peso: la conclusión en una frase, el dato que la sostiene y,
    plegado, el detalle con las series. Se puede dejar de leer después de la primera línea.
    Sin servidor: la API key la pega cada uno, queda en este navegador y la página le habla directo a Groq,
@@ -3155,6 +3197,7 @@ Reglas de los datos:
 - Si pregunta por «ahora», 2025, 2026 o más adelante: contestá con lo último medido (2022→2024); el respaldo nombra ese período y el detalle, en una frase, por qué no hay lectura después. Si pide futuro, la conclusión dice que CICLO no pronostica y hacia dónde venía.
 - Sólo si no hay nada cercano —ni hermano, ni padre, ni atributo suelto— poné "fuera_de_datos": true y en "siguiente" ofrecé una pregunta parecida que sí puedas contestar.
 - Hablá del diseño que está armando (TU DISEÑO) y de lo que CLIP leyó en su imagen, si hay: no le hagas repetir nada.
+- REVISIÓN: si hay imagen y pide una revisión («qué está bien y qué cambiarías»), la conclusión dice qué va y qué cambiarías, en ese orden y en una frase («El corte va; el cuero, lo cambiaría.»). El respaldo da un número por cada uno, con su fuente. Si proponés un cambio, que sea algo que DATOS muestra ganando terreno en la misma familia (otro corte, otro material, otra estampa). Lo que quien diseña agregó a mano cuenta como leído.
 - Recomendá según su perfil. Si una ficha trae «para vos (regla de CICLO)», esa es la acción: usala. Sólo te apartás si un dato lo justifica, y el detalle dice cuál.
 - Cada número con su fuente exacta, como la nombra DATOS: «afuera 2022→2024» y «señal» son búsqueda mundial; «colores (CLIP, pasarela…)» es el porcentaje de looks de pasarela que leyó CLIP (interpretación), nunca búsquedas; «de su pico» es un nivel, no un crecimiento. Para decir qué sube o qué cae, usá «afuera 2022→2024» o «señal».
 - En "conclusion", "respaldo", "detalle" y "datos" van nombres, nunca ids (nada de «material_gamuza» ni «id: cuero»).
@@ -3180,7 +3223,7 @@ Respondé SOLO con un objeto JSON, sin texto antes ni después:
   "acciones": [{"paso": "tiro", "valor": "alto", "texto": "Probá tiro alto"}],
   "siguiente": ["hasta 2 preguntas cortas para seguir"]
 }`;
-const as={datos:null,hist:[],ocupado:false,clip:[],looks:null};
+const as={datos:null,hist:[],ocupado:false,clip:[],looks:null,leido:false,anios:'',nada:''};
 const asNorm=t=>t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 const asCampo=(l,k)=>{const m=l.match(new RegExp(`\\| ${k}: ([^|]*)`));return m?m[1].trim():null;};
 function asLeer(k){try{return localStorage.getItem(k)||'';}catch(e){return '';}}
@@ -3284,27 +3327,27 @@ function asSugerencias(){
 }
 function asPintar(){
   const D=asDiseno();
-  $('#asdis').innerHTML=D.chips.length?D.chips.map(c=>`<button type="button" class="aschip" data-ir="${c.paso}"><span>${c.n}</span>${escH(c.v)}</button>`).join('')+`<p class="ascap">${(PERFIL[cliente]||PERFIL.premium).n} · ${vinculo==='propia'?'por tu cuenta':'para una marca'}</p>`
-    :`<p class="ascap">Todavía no armaste nada. <button type="button" class="gvolver" id="asirdis">Ir a Diseñar →</button></p>`;
+  $('#asdisw').hidden=!D.chips.length;
+  $('#asdis').innerHTML=D.chips.length?D.chips.map(c=>`<button type="button" class="aschip" data-ir="${c.paso}"><span>${c.n}</span>${escH(c.v)}</button>`).join('')+`<p class="ascap">${(PERFIL[cliente]||PERFIL.premium).n} · ${vinculo==='propia'?'por tu cuenta':'para una marca'}</p>`:'';
   $$('#asdis [data-ir]').forEach(b=>b.onclick=()=>{mostrar('disenar');dzIr(b.dataset.ir);});if($('#asirdis'))$('#asirdis').onclick=()=>mostrar('disenar');
-  $('#asclip').innerHTML=as.clip.map((c,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar"><span>leí</span>${escH(c.n)} <span class="aspp">${c.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('');
-  $$('#asclip [data-x]').forEach(b=>b.onclick=()=>{as.clip.splice(+b.dataset.x,1);asPintar();});
   const ch=$('#aschat');ch.innerHTML='';
   // el globo vacío no es del modelo: no lleva la marca de interpretado, y sin diseño no repite la tarjeta «Tu diseño»
-  if(!as.hist.length)ch.innerHTML=D.chips.length?`<div class="asa"><p>Estás armando ${escH(D.nombre)}. Preguntame si conviene, qué cambiar o qué se le parece.</p></div>`:'';
+  if(!as.hist.length&&!as.leido)ch.innerHTML=D.chips.length?`<div class="asa asnota"><p>Estás armando ${escH(D.nombre)}. Preguntame si conviene, qué cambiar o qué se le parece, o subí una foto.</p></div>`:'';
   as.hist.forEach(m=>{
     const d=document.createElement('div');
     if(m.role==='user'){d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}
     if(m.error){d.className='asa err';d.innerHTML=`<p>${escH(m.error)}</p>`;ch.appendChild(d);return;}
     if(m.aviso){d.className='asa asnota';d.innerHTML=m.aviso;ch.appendChild(d);return;}
-    const r=m.r,E=m.E,filas=r.atributos.map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span>${E.serie[id]?asSpark(E.serie[id]):'<span class="asnos">sin serie de búsqueda</span>'}<span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
+    const r=m.r,E=m.E,curvas=rvCurvas(r.atributos.filter(id=>E.serie[id]).map(id=>({n:(E.nombre[id]||id).split(' · ').pop(),g:E.serie[id]})),Math.min(($('#aschat').clientWidth||640)-40,840)),
+      filas=r.atributos.filter(id=>!E.serie[id]).map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span><span class="asnos">sin serie de búsqueda</span><span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
     d.className='asa';
     d.innerHTML=`<div class="h"><span class="tag ia2">interpretado · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">no lo tengo medido</span>':''}</div>
       <div class="asconc">${r.accion?`<span class="asacc ${señalPalabra(r.accion).cls}" style="color:${señalPalabra(r.accion).color}">${señalPalabra(r.accion).icono} ${escH(r.accion)}</span><span class="asacsep"> · </span>`:''}${escH(r.conclusion)}</div>
       ${r.respaldo?`<div class="asresp">${escH(r.respaldo)}</div>`:''}
+      ${curvas}
       ${r.regla?`<p class="ascap">La regla fija de CICLO para tu perfil dice <b class="${señalPalabra(r.regla).cls}">${escH(r.regla)}</b>; el modelo se apartó. Las dos quedan a la vista.</p>`:''}
       ${r.acciones.length?`<div class="asacciones">${r.acciones.map((a,i)=>`<button type="button" class="kbtn" data-a="${m.i}:${i}">${escH(a.texto)}</button>`).join('')}</div>`:''}
-      ${r.detalle||filas||r.datos.length?`<details class="asmas"><summary>Detalle y series</summary>${r.detalle?`<div class="asdet">${escH(r.detalle)}</div>`:''}${filas?`<div class="asdatos">${filas}</div>`:''}${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}</details>`:''}`;
+      ${r.detalle||filas||r.datos.length?`<details class="asmas"><summary>Detalle</summary>${r.detalle?`<div class="asdet">${escH(r.detalle)}</div>`:''}${filas?`<div class="asdatos">${filas}</div>`:''}${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}</details>`:''}`;
     ch.appendChild(d);
   });
   $$('#aschat [data-a]').forEach(b=>b.onclick=()=>{const [mi,ai]=b.dataset.a.split(':').map(Number);asAplicar(as.hist.find(m=>m.i===mi).r.acciones[ai]);});
@@ -3312,7 +3355,7 @@ function asPintar(){
   const ult=[...as.hist].reverse().find(m=>m.r),sug=ult&&ult.r.siguiente.length?ult.r.siguiente:asSugerencias();
   $('#assug').innerHTML=sug.map(t=>`<button type="button">${escH(t)}</button>`).join('');
   $$('#assug button').forEach(b=>b.addEventListener('click',()=>{$('#astexto').value=b.textContent;asPreguntar();}));
-  $('#asenviar').disabled=as.ocupado;$('#asenviar').textContent=as.ocupado?'Pensando…':'Preguntar';
+  $('#asenviar').disabled=as.ocupado;$('#asenviar').textContent=as.ocupado?'Leyendo…':'Leer';
   ch.lastElementChild?.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 /* aplicar un cambio sugerido sobre el diseño, sin perder el resto */
@@ -3330,23 +3373,19 @@ function asParecidos(){
     else if(t&&t.clip_corte)fotos=dzFotos(DIS.prendas.flatMap(p=>p.cortes).find(x=>x.id===t.clip_corte),6).map(f=>({u:vogueFoto(f.f,1280),s:vogueFoto(f.f,320),d:`${f.d} · ${TEMP[f.s]||''} ${f.y}`}));}
   as.hist.push({role:'user',content:'Mostrame qué se le parece en pasarela'});
   as.hist.push({role:'assistant',aviso:fotos.length?`<div class="h"><span class="tag ia2">interpretado · CLIP</span></div><p>${as.looks?'Los looks de Vogue más parecidos a tu imagen':'Looks de Vogue que CLIP eligió para tu corte'}. Son referencia de forma, no recomendación.</p><div class="aslooks">${fotos.map(f=>`<button type="button" data-look="${f.u}"><img loading="lazy" alt="${escH(f.d)}" src="${f.s}"><span>${escH(f.d)}</span></button>`).join('')}</div>`
-    :'<p>Para eso necesito una imagen o un corte con referencias de pasarela. Subí una foto a la izquierda, o elegí un jean o un abrigo en Diseñar.</p>'});
+    :'<p>Para eso necesito una imagen o un corte con referencias de pasarela. Subí una foto arriba, o elegí un jean o un abrigo en Diseñar.</p>'});
   asPintar();
 }
 /* la foto: CLIP lee los atributos y los looks parecidos; se muestran como chips que se pueden sacar */
 async function asFoto(file){
-  if(!file||!file.type.startsWith('image/')){$('#asclipest').textContent='Ese archivo no es una imagen.';return;}
-  const url=URL.createObjectURL(file);$('#asprev').innerHTML=`<img class="asimg" src="${url}" alt="La imagen que subiste">`;
   const est=t=>{$('#asclipest').textContent=t;};
+  if(!file||!file.type.startsWith('image/')){est('Ese archivo no es una imagen.');return;}
+  const url=URL.createObjectURL(file);$('#asprev').innerHTML=`<img class="asimg" src="${url}" alt="La imagen que subiste"><span class="rvpie">${escH(file.name)} · no sale de tu computadora</span>`;
+  $$('#rvej .chip').forEach(x=>x.setAttribute('aria-pressed','false'));
   try{
     await clipIndice(est);await clipModelo(est);est('Leyendo la imagen…');
     const {T,proc,model}=CLIP.mod,img=await T.RawImage.fromURL(url),{image_embeds}=await model(await proc(img));
-    const R=clipLeer(Float32Array.from(image_embeds.data)),idx=CLIP.idx;
-    as.clip=R.atr.filter((a,i)=>i<3&&a.p>=CLIP_UMBRAL).map(a=>({n:a.n,p:a.p}));const cerca=R.atr[0];
-    as.looks=R.orden.slice(0,6).map(i=>({u:vogueFoto(idx.f[i],1280),s:vogueFoto(idx.f[i],320),d:`${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]}`}));
-    est(as.clip.length?'Esto es lo que leyó CLIP (interpretación, con más de 0,35 de probabilidad). Sacá lo que no va antes de preguntar.'
-      :`CLIP no reconoció con claridad ningún atributo: ninguno pasa 0,35 (el más cercano es ${/^[A-Z0-9]+$/.test(cerca.n.split(' ')[0])?cerca.n:cerca.n.toLowerCase()}, ${cerca.p.toFixed(2).replace('.',',')}). No se lo pasamos al modelo; preguntá igual, o probá con otra foto.`);
-    asPintar();
+    rvLeerVector(Float32Array.from(image_embeds.data),-1);
   }catch(e){console.error(e);est('No se pudo leer la imagen: '+(e.message||e));}
 }
 async function asAbrir(){
@@ -3356,13 +3395,16 @@ async function asAbrir(){
 }
 let asN=0;
 async function asPreguntar(){
-  const texto=$('#astexto').value.trim(),key=$('#askey').value.trim();
-  if(!texto||as.ocupado)return;
+  let texto=$('#astexto').value.trim();const key=$('#askey').value.trim();
+  if(as.ocupado)return;
+  if(!texto){if(!as.leido){$('#asclipest').textContent='Subí una imagen o escribí una pregunta.';$('#astexto').focus();return;}
+    if(!key){$('#asclave').open=true;$('#asclipest').textContent='La lectura de abajo no necesita clave. Para la devolución escrita, activá Groq (abajo, un minuto).';$('#asclave').scrollIntoView({behavior:'smooth',block:'center'});return;}
+    texto=RV_PREG;}
   if(/parece en pasarela/i.test(texto)){$('#astexto').value='';asParecidos();return;}
-  if(!key){$('#asclave').open=true;$('#askey').focus();as.hist.push({role:'assistant',error:'Primero activá el chat: son tres pasos, en «Activar el chat». Lo hacés una sola vez.'});asPintar();return;}
+  if(!key){$('#asclave').open=true;$('#askey').focus();as.hist.push({role:'assistant',error:'Para contestar preguntas escritas, activá la devolución escrita: son tres pasos, abajo, y se hace una sola vez.'});asPintar();return;}
   if(!as.datos){await asAbrir();if(!as.datos)return;}
   $('#astexto').value='';as.hist.push({role:'user',content:texto});as.ocupado=true;asPintar();
-  const D=asDiseno(),O=asOpciones(),clipTxt=as.clip.map(c=>c.n).join(', ');
+  const D=asDiseno(),O=asOpciones(),clipTxt=as.clip.map(c=>c.n+(c.manual?' (lo agregó quien diseña)':'')).join(', ');
   const recientes=as.hist.filter(m=>m.role==='user').slice(-2).map(m=>m.content).join(' ')+' '+D.chips.map(c=>c.v).join(' ')+' '+clipTxt;
   const E=asElegir(as.datos,recientes,D.ids);
   const opc=Object.keys(O).length?'OPCIONES (paso: valores posibles para "acciones"):\n'+Object.entries(O).map(([k,v])=>`${k}: ${v.join(', ')}`).join('\n'):'OPCIONES: ninguna (no hay diseño armado).';
@@ -3388,7 +3430,7 @@ async function asPreguntar(){
 }
 $('#askey').value=asLeer('groq_key');
 /* con clave, una línea; sin clave, los tres pasos a la vista cuando hacen falta */
-function asEstadoClave(){const k=$('#askey').value.trim();$('#asclaves').textContent=k?'Chat activado ✓ · cambiar clave':'Activar el chat · 1 minuto';$('#asclave').classList.toggle('ok',!!k);}
+function asEstadoClave(){const k=$('#askey').value.trim();$('#asclaves').textContent=k?'Devolución escrita activada ✓ · cambiar clave':'Activar la devolución escrita · 1 minuto';$('#asclave').classList.toggle('ok',!!k);}
 $('#askey').addEventListener('input',()=>{asGuardar('groq_key',$('#askey').value.trim());asEstadoClave();});asEstadoClave();
 $('#asmodelo').value=asLeer('ciclo.as_modelo')||'openai/gpt-oss-120b';
 $('#asmodelo').addEventListener('change',()=>asGuardar('ciclo.as_modelo',$('#asmodelo').value));
@@ -3752,8 +3794,9 @@ function pintarLystX(){
 
 /* ---------- navegación ---------- */
 function mostrar(v,keepNav){
+  if(v==='consulta'||v==='asistente')v='revision'; // los links de antes del 10/11 siguen andando
   document.body.classList.toggle('on-gate',v==='perfil');
-  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional','adivina','mover'].forEach(x=>{
+  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','revision','racional','adivina','mover'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
@@ -3762,7 +3805,7 @@ function mostrar(v,keepNav){
   if(v==='retornos')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='recorridos'?'page':'false'));
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
-  if(v==='asistente')asAbrir();
+  if(v==='revision'){asAbrir();rvPintarLectura();}
   if(v==='racional'){pintarMetodoGate();pintarLectura();}
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
@@ -3859,7 +3902,7 @@ $('#gmirar').addEventListener('click',gateMirar);
 let publico='todos';
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
-const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','consulta','asistente','racional','adivina','mover'];
+const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','revision','consulta','asistente','racional','adivina','mover'];
 let vista='perfil',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;

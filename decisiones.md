@@ -2251,3 +2251,45 @@ descartó una sexta pastilla «Comparar» con dos desplegables: suma justo la co
 
 **Dos fotos más.** Bouclé (DKNY, otoño 2011) y popelina (Zanini, primavera 2022), con el mismo método. Quedan sin foto
 corderoy y los materiales sin forma (seda, gasa, tul, organza, pedrería).
+
+## 2026-11-10 · Revisión: «Buscar por imagen» y «Preguntar» en una sola pantalla
+
+**Pedido de Felipe.** Eran dos secciones que hacían cosas parecidas. Son una sola: el lugar donde le mostrás algo a
+CICLO y te devuelve una lectura. Nombre elegido por Felipe entre cinco propuestas (Revisión, Corrección, Mostrale, La
+prueba, Lectura): **Revisión**, como la revisión de colección con la dirección creativa. Sirve para una marca y para
+alguien por su cuenta, y no da por hecho que haya un error. El menú queda con un ítem menos: Tendencias · Diseñar · El
+ciclo · Revisión · Más.
+
+**Cómo es.**
+- *Vacía:* un solo compositor, con el cuadro para soltar la imagen pegado al campo de la pregunta, y el botón «Leer».
+  Debajo, cinco looks de pasarela para probar sin subir nada, y preguntas de ejemplo. No pide la clave de entrada.
+- *Con imagen:* CLIP la lee en el navegador y aparece «La lectura». Primero, qué vio CICLO: chips que se sacan y se
+  agregan (los 17 atributos que CLIP sabe leer), marcados como interpretado. Corregir rehace la lectura al instante, sin
+  llamar a ningún modelo. Después, qué dice el dato: una fila por atributo con la señal de tu perfil (`señal()`), la
+  frase de El ciclo (`cicloDe()`) y el número, o «sin serie de búsqueda» si no la tiene. Después, las curvas de los
+  que tienen serie, en la misma escala, con el año de cada pico. Por último, una devolución: qué va, qué cambiaría y,
+  si algo pierde terreno, qué probar en su lugar, de la misma familia y ganando terreno. Plegados: los looks parecidos
+  y en qué años se concentran.
+- *Devolución sin clave:* la arman reglas fijas, y lo dice («armada con reglas, no con un modelo de lenguaje»).
+- *Devolución con clave:* «Leer» con imagen y sin pregunta manda «Revisá este diseño: qué está bien y qué cambiarías».
+  El modelo recibe la pregunta, los chips (los agregados a mano, marcados así) y las métricas ya calculadas de esos
+  atributos, nunca una fila. La respuesta mantiene el formato v7: conclusión, respaldo con número, detalle plegado. Las
+  curvas de los atributos que nombra pasan de plegadas a visibles, debajo del respaldo.
+- *Sin imagen:* funciona como Preguntar. Si no hay clave, los tres pasos para activarla.
+
+**Lo que no se perdió.** El modelo nunca ve una fila; medido contra interpretado; «Qué se le mandó al modelo»; el
+formato corto. El prompt nuevo es `prompts/prompt_asistente_v8.md`: el v7 más una regla para la revisión (qué va y qué
+cambiarías, un número por cada uno, y un cambio sólo hacia algo que gana terreno en la misma familia). El v7 no se tocó.
+
+**Lo que se sacó.** El histograma de años de los looks parecidos pasa a una frase dentro de «Looks de pasarela
+parecidos». La explicación de cómo se validó CLIP pasa al «?» de la pantalla. Los links viejos (`#consulta`,
+`#asistente`) abren Revisión.
+
+**El color, afuera.** El ejemplo de Felipe («el color ya pasó su pico en 2022») no se puede hacer hoy: CLIP sólo lee
+los 17 atributos del modelo, que no incluyen colores, y los colores no tienen serie de búsqueda. Felipe no eligió
+entre los dos caminos propuestos (enseñarle colores a CLIP y mostrarlos sólo con dato de pasarela, o dejarlos afuera),
+así que por ahora quedan afuera, sin inventar nada.
+
+Probado con Playwright a 1400 y 393 px: un look del índice, una foto real subida (CLIP bajó el modelo y leyó «Jeans
+baggy, 0,48»), chips sacados y agregados, «Leer» sin clave y, con la respuesta de Groq simulada sólo en la prueba (nunca
+en las capturas), que al modelo le llega lo que leyó CLIP y ninguna fila de datos.

@@ -35,9 +35,9 @@ const servidor = http.createServer((q, r) => {
   for (const [i, [pregunta, diseno]] of PREGUNTAS.entries()) {
     if (i) await new Promise(r => setTimeout(r, 65000)); // el plan gratis de Groq da 8.000 tokens por minuto
     const p = await b.newPage();
-    await p.goto(base + (diseno ? `#disenar${PERFIL}&dz=${diseno}&paso=color` : `#asistente${PERFIL}`), { waitUntil: 'load' });
+    await p.goto(base + (diseno ? `#disenar${PERFIL}&dz=${diseno}&paso=color` : `#revision${PERFIL}`), { waitUntil: 'load' });
     await p.waitForTimeout(1200);
-    if (diseno) { await p.click('#nav a[data-v="asistente"]'); await p.waitForTimeout(800); }
+    if (diseno) { await p.click('#nav a[data-v="revision"]'); await p.waitForTimeout(800); }
     await p.click('#asclaves'); // «Activar el chat»: el campo de la clave está adentro
     await p.fill('#askey', KEY);
     await p.fill('#astexto', pregunta); await p.click('#asenviar');

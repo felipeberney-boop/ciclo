@@ -183,7 +183,7 @@ la señal no las decide la IA: las deciden el K-means y una regla fija.
 que asesora a varias marcas. Desde el 13/10 es quien diseña, porque la app dejó de mostrar todo y pasó a acompañar una
 decisión de diseño.
 
-**El recorrido.** Tres preguntas → Tendencias → la ficha de un atributo → «Diseñar con…» → Preguntar. Está
+**El recorrido.** Tres preguntas → Tendencias → la ficha de un atributo → «Diseñar con…» → Revisión. Está
 paso a paso, con capturas, en el readme, y en papel, una pantalla por hoja, en
 `entregas/entrega_4/disenos_en_papel/`.
 
@@ -244,7 +244,7 @@ Tendencias con la pregunta «¿Sigue vigente?» y lo que ya hay que dejar primer
 | Tendencias | Un gráfico que rota entre cinco lecturas animadas de la búsqueda: qué sube y qué baja, qué está en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro (hasta el 10/11, un bloque oscuro de texto que la devolución marcó como obstructivo) | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal. Sólo lo que tiene dato medido: el catálogo sintético no se muestra |
 | La ficha | La señal grande, con una línea de por qué | Es la decisión. El gráfico la sostiene; el detalle está en el «?» |
 | Diseñar | La pregunta del paso | Un paso, una decisión; lo elegido queda en una barra abajo |
-| Preguntar | La conclusión, en una frase | La devolución pidió filtrar lo que devuelve la IA: abajo va el dato que la sostiene, y el detalle queda plegado |
+| Revisión (antes Buscar por imagen y Preguntar) | La conclusión, en una frase: qué va y qué cambiarías | La devolución pidió filtrar lo que devuelve la IA: abajo va el dato que la sostiene y las curvas; el detalle queda plegado |
 | Método | «Cómo se arma una lectura»: de los datos a la señal, animado | La devolución pidió que se entienda qué datos se usan y cómo conviven, sin tener que leer |
 
 **Cómo se jerarquizó.** Tres grupos para cada bloque de texto: lo que se necesita para decidir se queda; lo que aclara
@@ -351,7 +351,7 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y e
 | Figma: el sistema implementado y el papel | El MCP de Figma |
 
 **Cómo gestionamos el system prompt.** Cada prompt vive en `prompts/` con su versión. Nunca se pisa una versión: si
-cambia, se agrega la siguiente con qué cambió y por qué (la lectura usa la v4 y Preguntar la v7; las v5 y v6 se descartaron con la entrada por el objetivo). La regla que los
+cambia, se agrega la siguiente con qué cambió y por qué (la lectura usa la v4 y Revisión la v8; las v5 y v6 se descartaron con la entrada por el objetivo). La regla que los
 atraviesa a todos es que el modelo no ve una fila de datos: los datos que recibe se generan con
 `codigo/armar_datos_llm.js` a partir de la app, y van sólo las fichas que nombra la pregunta. Las claves no están en el
 repositorio: cada persona pega la suya y queda en su navegador.
@@ -395,8 +395,8 @@ sostiene y, plegado, el detalle. El prompt pide el orden y el límite de palabra
 en el texto, la señal repetida) lo filtra la app antes de mostrarlo. Probado con seis preguntas reales, sin editar, en
 `datasets/pruebas/asistente_v7_respuestas.md`.
 
-**Dónde frenamos a la IA.** No decide la etapa ni la señal. No inventa respuestas en las capturas: Preguntar se muestra
-vacío. No predice: el cono dice «no es un pronóstico». Y no es la autora de las decisiones: propone variantes, y la
+**Dónde frenamos a la IA.** No decide la etapa ni la señal. No inventa respuestas en las capturas: Revisión se muestra
+sin respuesta escrita. No predice: el cono dice «no es un pronóstico». Y no es la autora de las decisiones: propone variantes, y la
 elección, con su porqué, queda registrada. Hubo veces en que se la frenó de verdad: cuando sacó 2025 sin avisar, cuando
 sus tres estilos «parecían IA», y cuando su prueba dependía de entrevistas. Y una vez se frenó sola: no reescribió la
 hipótesis para que diera sí.

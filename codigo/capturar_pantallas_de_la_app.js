@@ -48,12 +48,12 @@ const PERFIL = '?c=fast&v=marca&pu=mujer';
   p = await abrir({ vista: 'mover' }); await p.waitForTimeout(1200); await p.click('#bfok'); await p.waitForTimeout(600);
   for (const i of [0, 1, 0]) { await p.click('.bfop >> nth=' + i); await p.waitForTimeout(600); }
   await p.waitForTimeout(5200); await hasta(p, '#mv', 12); await foto(p, 'captura_20_el_brief_veredicto');
-  p = await abrir({ vista: 'consulta' });
-  await p.click('#qej .chip:nth-child(2)'); await p.waitForSelector('#qres .qrow2', { timeout: 60000 }); await p.waitForTimeout(2500);
-  await hasta(p, '.qgrid, #qres', 120); await foto(p, 'captura_09_buscar_por_imagen');
-  p = await abrir({ vista: 'asistente' });
+  p = await abrir({ vista: 'revision' });
+  await p.click('#rvej .chip:nth-child(2)'); await p.waitForSelector('#rvlect .rvrow', { timeout: 60000 }); await p.waitForTimeout(2500);
+  await hasta(p, '.rvcomp', 20); await foto(p, 'captura_09_revision_con_imagen');
+  p = await abrir({ vista: 'revision' });
   await p.evaluate(() => { dz.prenda = 'pantalones'; dz.tipo = 'largo'; dz.corte = 'baggy'; dz.material = 'denimrigido'; asPintar(); });
-  await hasta(p, '#asdis', 140); await foto(p, 'captura_10_preguntar');
+  await hasta(p, '.rvcomp', 20); await foto(p, 'captura_10_revision_con_tu_diseno');
   // el método
   p = await abrir({ vista: 'etapas' }); await hasta(p, '.km'); await foto(p, 'captura_11_el_modelo');
   await foto(await abrir({ vista: 'retornos' }), 'captura_12_retornos');

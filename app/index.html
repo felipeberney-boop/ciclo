@@ -3275,16 +3275,19 @@ function asElegir(doc,texto,prefer){
   const senales=elegidas.slice(0,16);
   // los colores y la búsqueda de cada corte o prenda que nombra (antes esta sección no llegaba nunca)
   const porPrenda=(S['Diseñar: qué conviene en cada prenda']||[]).filter(l=>l.startsWith('- ')).filter(nombra).slice(0,3);
+  // marcas (10/11): el ranking va siempre (cinco líneas); la línea de cada marca, si la pregunta la nombra
+  const marcas=(S['Marcas']||[]).filter(l=>l.startsWith('- ')).filter(nombra).slice(0,3);
   const del=(sec,pred)=>(S[sec]||[]).filter(l=>!l.startsWith('- ')||pred(l));
   const partes=[S.intro,S['Cómo leer los números'],S['Etapas'],del('Perfiles',l=>asCampo(l,'perfil')===cliente),
     del('Qué conviene según etapa y perfil',l=>asCampo(l,'perfil')===cliente),S['Resumen: todos los atributos'],S['Qué sube y qué cae'],
     fichas.length?['## Fichas de atributos',...fichas]:null,senales.length?['## Señales de Diseñar',...senales]:null,
     porPrenda.length?['## Diseñar: qué conviene en cada prenda',...porPrenda]:null,
+    S['Marcas: el ranking'],marcas.length?['## Marcas',...marcas]:null,
     S['Lo que CICLO no puede responder']].filter(Boolean);
   const todas=[...(S['Resumen: todos los atributos']||[]),...fichas,...senales].filter(l=>l.startsWith('- '));
   const serie={},nombre={};todas.forEach(l=>{const id=asCampo(l,'id');if(!id)return;nombre[id]=l.slice(2).split(' | ')[0];
     const g=asCampo(l,'serie')||(GREL[id]?id:null);if(g&&GREL[g])serie[id]=g;});
-  return {datos:partes.map(p=>p.join('\n').trim()).join('\n\n'),usadas:[...fichas,...senales].map(l=>l.slice(2).split(' | ')[0]),
+  return {datos:partes.map(p=>p.join('\n').trim()).join('\n\n'),usadas:[...fichas,...senales,...marcas].map(l=>l.slice(2).split(' | ')[0]),
     ids:todas.map(l=>asCampo(l,'id')).filter(Boolean),reglas,serie,nombre,
     senal:Object.fromEntries(todas.map(l=>{const et=asCampo(l,'etapa'),af=asCampo(l,'afuera 2022→2024');
       return [asCampo(l,'id'),asCampo(l,'señal')||[et&&'etapa '+et.toLowerCase()+' (K-means)',af&&'afuera '+af.replace(/\s*puntos$/,'')+' puntos, 2022→2024'].filter(Boolean).join(' · ')];}))};

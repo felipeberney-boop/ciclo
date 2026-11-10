@@ -2300,3 +2300,26 @@ en las capturas), que al modelo le llega lo que leyó CLIP y ninguna fila de dat
 sólo mirando. Ahora aparece únicamente en «¿Para quién diseñás?». Quien la quiera vuelve con «Volver», que sigue en
 todas. El resto del gate no se tocó. Probado a 1400 y 393 px: visible en la primera, oculta en la segunda y la tercera,
 visible de nuevo al volver.
+
+## 2026-11-10 · Las marcas llegan al modelo
+
+**El problema.** El modelo contestaba que no sabía de marcas, y sí sabemos: el Lyst Index (`LYST`, el ranking
+trimestral de Q1-18 a Q2-26), las lecturas de ciclo de `HIST` (Off-White, Miu Miu, Loewe, Gucci, COS…) y el catálogo
+real de Zara de febrero de 2024. No se los mandábamos.
+
+**Qué se hizo.** `codigo/armar_datos_llm.js` suma dos secciones a `app/llm/ciclo_datos.md`:
+- *Marcas: el ranking* (va siempre, cinco líneas): qué es el Lyst Index, el corte de Q1-26, el top 5 al cierre de cada
+  tramo y que Zara y H&M nunca entraron (COS y Massimo Dutti, del mismo grupo, sí).
+- *Marcas* (una línea por marca, sólo las que nombra la pregunta): trimestres en el top 20, mejor puesto, cuándo entró
+  y si sigue, cómo se movió en el último año, el tramo nuevo aparte, y la lectura de `HIST` si la hay. Zara trae lo que
+  mide su catálogo de febrero de 2024 (38 prendas amplias contra 5 ajustadas, cuero, punto, gamuza…), nunca las fichas
+  «Zara 2018–22», que son sintéticas.
+
+**El corte de Q1-26.** Cada número se calcula dentro de un tramo: tramo 1, Q1-18 a Q4-25; tramo 2, Q1-26 en adelante.
+El «último año» de una marca es Q1-25 → Q4-25, nunca Q4-25 → Q1-26. El tramo 2 se lista aparte, sin compararlo.
+
+**Sin filas.** Al modelo no le llega la serie trimestral de ninguna marca, sólo esas métricas ya calculadas.
+
+**El puente marca + prenda.** «Jeans» y «jean» se sumaron a los sinónimos de los tres cortes, así «¿cómo están los
+jeans de Balenciaga?» trae la línea de Balenciaga y las fichas de los jeans (antes, sólo la marca). Medido: unos 3.200
+tokens de datos para esa pregunta, dentro del plan gratis de Groq.

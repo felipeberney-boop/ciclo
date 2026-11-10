@@ -42,10 +42,10 @@ const ET_IDX = { Emergente: 0, 'En ascenso': 1, Pico: 2, Saturada: 3, 'En retorn
 
 // sinónimos para encontrar cada ficha desde la pregunta (en minúscula y sin tildes)
 const BUSCA = {
-  jamplio: 'baggy, wide leg, barrel, relaxed, jean ancho, jeans anchos, pantalon ancho, jean amplio',
+  jamplio: 'jeans, jean, denim, baggy, wide leg, barrel, relaxed, jean ancho, jeans anchos, pantalon ancho, jean amplio',
   // mom y boyfriend: alias de búsqueda, no cortes (mom = straight de tiro alto relajado; boyfriend = tapered relajado)
-  jmedio: 'jean recto, jeans rectos, straight, bootcut, flare, oxford, tapered, jean medio, mom, boyfriend',
-  jajust: 'skinny, chupin, slim, jeggings, jean ajustado, jean al cuerpo',
+  jmedio: 'jeans, jean, denim, jean recto, jeans rectos, straight, bootcut, flare, oxford, tapered, jean medio, mom, boyfriend',
+  jajust: 'jeans, jean, denim, skinny, chupin, slim, jeggings, jean ajustado, jean al cuerpo',
   buzo: 'buzo, hoodie, canguro, capucha, athleisure, sudadera, sweatshirt',
   cuero: 'cuero, leather, campera de cuero, cuerina, eco cuero',
   lunares: 'lunares, polka dot, topos, puntos',
@@ -228,6 +228,47 @@ for (const x of hojas) {
     x.prenda && x.prenda.id === 'calzado' ? pasCalzado(h.id) : null);
 }
 
+// ---------- marcas (10/11/2026): Lyst Index y lecturas de ciclo, calculadas dentro de cada tramo ----------
+// Lyst cambió su fórmula en Q1-26: el tramo 1 va de Q1-18 a Q4-25 y el tramo 2 empieza en Q1-26. Nada se compara a
+// través del corte: cada número de abajo sale de un solo tramo. Al modelo le llegan métricas, nunca la fila trimestral.
+{
+  const [LYST, HIST, T] = ['LYST', 'HIST', 'T'].map(grab);
+  const Q = LYST.q, corte = Q.indexOf('Q1-26'), T1 = [0, corte], T2 = [corte, Q.length];
+  const tramo = (v, [a, b]) => v.slice(a, b).map((r, i) => ({ q: Q[a + i], r })).filter(x => x.r != null);
+  const SINT = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const lect = {};
+  for (const h of Object.values(HIST)) for (const [m, arco, txt] of h.d) lect[m] = `${h.t.toLowerCase()}: ${arco}. ${txt}`;
+  const top = i => Object.entries(LYST.r).filter(([, v]) => v[i] != null).sort((a, b) => a[1][i] - b[1][i]).slice(0, 5).map(([m, v]) => `#${v[i]} ${m}`).join(', ');
+  L.push('\n## Marcas: el ranking');
+  L.push('Lyst Index: el ranking trimestral de las 20 marcas más buscadas y compradas en Lyst (medido), de Q1-18 a Q2-26. En Q1-26 Lyst cambió la fórmula: es un corte, no un dato. Tramo 1: Q1-18 a Q4-25; tramo 2: Q1-26 en adelante. Nunca se compara un puesto de un tramo con uno del otro. Puesto #1 es el más alto.');
+  linea('Top 5 al cierre del tramo 1', `${Q[corte - 1]}: ${top(corte - 1)}`);
+  linea('Top 5 en el tramo 2 (fórmula nueva)', `${Q[Q.length - 1]}: ${top(Q.length - 1)}`);
+  linea('Zara y H&M', 'nunca entraron al top 20 de Lyst', 'COS y Massimo Dutti, del grupo de Zara (Inditex), sí: COS desde Q4-24 y Massimo Dutti desde Q4-25');
+  L.push('\n## Marcas');
+  L.push('Una línea por marca. Todos los puestos son del Lyst Index (medido), calculados dentro de un solo tramo. «lectura» es la interpretación de CICLO de ese recorrido.');
+  for (const [m, v] of Object.entries(LYST.r).sort((a, b) => a[0].localeCompare(b[0]))) {
+    const a = tramo(v, T1), b = tramo(v, T2);
+    let t1 = 'tramo 1 (Q1-18–Q4-25): no entró al top 20';
+    if (a.length) {
+      const mejor = a.reduce((x, y) => y.r < x.r ? y : x), ult = a[a.length - 1], pri = a[0];
+      const fin = a.filter(x => Q.indexOf(x.q) >= corte - 4);
+      const mov = fin.length >= 2 ? (fin[0].r - fin[fin.length - 1].r) : null;
+      t1 = `tramo 1 (Q1-18–Q4-25): ${a.length} trimestre${a.length > 1 ? 's' : ''} en el top 20, mejor puesto #${mejor.r} (${mejor.q}), ${pri.q === Q[0] ? 'ya estaba en Q1-18' : 'entró en ' + pri.q} (#${pri.r})` +
+        (ult.q === Q[corte - 1] ? `, al cierre (${ult.q}) #${ult.r}` : `, última vez en ${ult.q} (#${ult.r}) y después no aparece`) +
+        (mov != null && mov !== 0 ? `; en el último año del tramo ${mov > 0 ? 'subió' : 'bajó'} ${Math.abs(mov)} puesto${Math.abs(mov) > 1 ? 's' : ''} (${fin[0].q} #${fin[0].r} → ${fin[fin.length - 1].q} #${fin[fin.length - 1].r})` : '');
+    }
+    const t2 = b.length ? `tramo 2 (fórmula nueva): ${b.map(x => `${x.q} #${x.r}`).join(', ')}` : 'tramo 2 (fórmula nueva): no está en el top 20';
+    const enT = T.filter(t => t.fuente === 'Zara feb-2024' && t.lect && t.lect.includes(m)).map(t => `${t.n.toLowerCase()}: ${t.lect}`);
+    linea(m, 'tipo: marca', `busca: ${SINT(m)}`, t1, t2, lect[m] ? `lectura: ${lect[m]}` : null, enT.length ? `lectura de CICLO (interpretación) en ${enT.join(' ')}` : null);
+  }
+  // Zara: no está en Lyst, pero su catálogo de febrero de 2024 sí es dato medido (las fichas «Zara 2018–22» son sintéticas y no van)
+  const zara = T.filter(t => t.fuente === 'Zara feb-2024').map(t => `${t.n.toLowerCase()} (${t.k.toLowerCase()}): ${t.med}`);
+  linea('Zara', 'tipo: marca', 'busca: zara, inditex', 'Lyst: nunca entró al top 20; sí entraron COS y Massimo Dutti, del mismo grupo',
+    `catálogo de Zara, febrero 2024 (medido, 252 prendas): ${zara.join('; ')}`, 'no hay serie de Zara en el tiempo: es una foto de un mes');
+  linea('H&M', 'tipo: marca', 'busca: h&m, hm, h and m', 'Lyst: nunca entró al top 20',
+    'ventas: CICLO usa 30,6 millones de compras de H&M (2018–2020, Kaggle) para validar, pero no tiene una lectura por marca');
+}
+
 // ---------- límites (va siempre) ----------
 L.push(`
 ## Lo que CICLO no puede responder
@@ -238,7 +279,7 @@ L.push(`
 - La búsqueda llega hasta 2024. De 2025 y 2026 no hay lectura: Google cambió cómo mide y en 2026 69 de 70 series saltan a la vez (mediana +99 %), incluido el ancla, el trench coat, que siempre picó en otoño del norte y en 2026 pica en abril. Lo último medido es 2022→2024.
 - Lyst cambió su fórmula en Q1-26: no se compara a través de ese corte.
 - Zara 2018–22 y el mix de marcas son datos sintéticos: sirven para mostrar el método, no para concluir.
-- No tiene precios, ventas por marca ni datos de Pinterest, TikTok o Instagram.`);
+- No tiene precios ni ventas por marca, ni datos de Pinterest, TikTok o Instagram. De marcas tiene el ranking de Lyst (ver Marcas) y el catálogo de Zara de febrero de 2024.`);
 
 fs.mkdirSync('app/llm', { recursive: true });
 const md = L.join('\n') + '\n';

@@ -1986,3 +1986,31 @@ género. No lo esconde: en Tendencias, donde va «Tu perfil», dice «Estás mir
 marca contemporary», con un link a «Decime para quién diseñás». Al contestar la entrada, vuelve la línea de siempre.
 
 Probado con Playwright a 1400 y 393 px: el link queda centrado, lleva a Tendencias y la línea cambia al elegir.
+
+## 2026-11-10 · Tendencias: fuera el bloque negro, entran las curvas
+
+**Devolución (Cristian).** El bloque oscuro de «qué gana y qué pierde terreno» obstruía la vista: era lo primero de la
+pantalla principal y era un bloque de texto sobre fondo negro. Lo que más gustó de la versión nueva fue la animación de
+«Cómo se arma una lectura», sobre todo el paso 1, donde las curvas se dibujan.
+
+**Decisión.** El bloque sale y su lugar lo toman dos gráficos, «▲ Gana terreno» y «▼ Pierde terreno», con los tres
+atributos que más ganan y los tres que más pierden. Son las mismas cuentas que tenía el bloque (`terreno()`: búsqueda
+mundial corregida, 2022→2024, en puntos), pero contadas con la curva real de cada uno desde 2016, para que se vea si
+el cambio es un salto, una caída larga o una vuelta. Al entrar, las curvas se dibujan de a una, como en el paso 1; al
+final aparece el punto y el rótulo con los puntos ganados o perdidos. «↺ Ver de nuevo» repite la animación. Tocar una
+curva abre su recorrido en El ciclo, como hacían las filas del bloque.
+
+**Color.** Las curvas usan los colores de los gráficos (`--s1`, `--s2`, `--s4`). El único verde y rojo es el número,
+que ya era la excepción fijada el 27/10 para «gana / pierde presencia». Sin fondo oscuro: el bloque era la única
+excepción a «siempre claro», y se fue con él.
+
+**Lo que no se tocó.** «Diseñar con esta estampa / corte / material» y «Pedir lectura en vivo» en la ficha: gustaron y
+quedan igual.
+
+## 2026-11-10 · Los «?», siempre en el mismo lugar
+
+**Devolución.** Los «?» aparecían a veces centrados debajo del título, a veces a la izquierda y pegados al dato.
+
+**Decisión.** Una sola regla para los 16 de la app: arriba a la derecha del bloque que explican, nunca a la izquierda ni
+pegados a un número. Al abrirse no empujan el contenido: se abren como una tarjeta flotante, debajo del «?». El texto que
+tiene al lado deja lugar para que no se pisen. Revisados uno por uno con Playwright, a 1400 y 393 px.

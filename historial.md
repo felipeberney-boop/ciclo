@@ -274,6 +274,13 @@ queda.
 La entrada se puede saltear. Debajo de las tarjetas, «Sólo estoy mirando →» lleva a Tendencias con un perfil general
 (una marca contemporary), y Tendencias lo dice en lugar de «Tu perfil», con un link para elegir el propio.
 
+## v1.29 · 10/11/2026 · Tendencias abre con curvas
+
+Fuera el bloque oscuro de «qué gana y qué pierde terreno». En su lugar, lo primero de Tendencias son dos gráficos que se
+dibujan solos: los tres atributos que más ganan y los tres que más pierden en la búsqueda mundial, 2016–2024, con el mismo
+lenguaje que «Cómo se arma una lectura». Los «?» de toda la app pasan arriba a la derecha de su bloque y se abren como
+tarjeta flotante.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -1074,6 +1074,31 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app details.kmlab[open]>summary{margin-bottom:24px}
 /* las pantallas que salieron de «Más» se abren desde donde se usan (04/11) */
 .app p.irmas:not(#z){font-size:var(--t-cue)!important;font-weight:400!important;margin:18px 0 0}
+/* los «?» (2.3, 10/11/2026): siempre arriba a la derecha de su bloque, nunca a la izquierda ni pegados al dato;
+   se abren como una tarjeta flotante que no empuja el contenido */
+.app :has(> details.qm){position:relative}
+.app :not(.movb) > details.qm:not(#z){position:absolute;top:0;right:0;margin:0;max-width:none;text-align:left;z-index:6}
+.app details.qm > .qmc:not(#z){position:absolute;right:0;top:34px;width:min(420px,calc(100vw - 32px));margin:0;box-shadow:0 10px 30px rgba(0,0,0,.14);z-index:7}
+.app :has(> details.qm) > :is(h1,h2,h3,p,.d,.dline,.th,.dzh):first-child{padding-right:40px}
+/* Tendencias: lo que se mueve, en curvas (10/11/2026) */
+.app .movi{background:var(--card);padding:20px 22px 18px;margin:22px 0 18px}
+.app .movi:not(#z){border-radius:var(--r-card)!important}
+.app .movh{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:0 0 6px}
+.app .movt:not(#z){font-size:var(--t-cue)!important;line-height:1.4!important;margin:0;color:var(--ink)}
+.app .movb{display:flex;align-items:center;gap:14px;flex:none}
+.app .movb .qm{margin:0;position:relative}
+.app .movb .qmc{position:absolute;right:0;top:34px;width:min(420px,80vw);z-index:6;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.app .movg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.app .movp .tt:not(#z){font-size:var(--t-eti)!important;color:var(--ink-2);margin:8px 0 4px;font-weight:600!important}
+.app .movp svg{width:100%;height:auto;display:block;overflow:visible}
+.app .mvc{cursor:pointer;outline:none}
+.app .mvc:hover polyline,.app .mvc:focus-visible polyline{stroke-width:4.5}
+.app .mvc:focus-visible .mvcl text{text-decoration:underline}
+.app .movi.anim .mvc polyline{stroke-dasharray:1;stroke-dashoffset:1;animation:movdib 1.7s cubic-bezier(.45,0,.2,1) forwards;animation-delay:var(--d)}
+.app .movi.anim .mvcp{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:movpunto .45s cubic-bezier(.34,1.8,.64,1) forwards;animation-delay:calc(var(--d) + 1.55s)}
+.app .movi.anim .mvcl{opacity:0;animation:movlab .5s ease forwards;animation-delay:calc(var(--d) + 1.6s)}
+@keyframes movdib{to{stroke-dashoffset:0}}@keyframes movpunto{to{transform:scale(1)}}@keyframes movlab{to{opacity:1}}
+@media (max-width:760px){.app .movg{grid-template-columns:minmax(0,1fr)}.app .movi{padding:16px 14px}.app .movh{flex-direction:column-reverse}.app .movb{align-self:flex-end}}
 </style>
 
 <div class="app">
@@ -1135,7 +1160,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         </div>
       </div>
       <hr class="rule">
-      <div class="terreno" id="terreno"></div>
+      <div class="movi" id="terreno"></div>
       <div class="filters" id="filt" role="group" aria-label="Filtrar por tipo de atributo">
         <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
         <button class="chip" data-f="color" aria-pressed="false">Color y estampa</button>
@@ -2682,15 +2707,38 @@ function llegoAca(o){
   if(my===2025)return `afuera ${afuera.abierto?'sigue subiendo':'tocó techo en '+afuera.y} · acá todavía sube: estás a tiempo`;
   return `afuera tocó techo en ${afuera.y} · acá en ${my}${my>afuera.y?` (${my-afuera.y} año${my-afuera.y>1?'s':''} después)`:my===afuera.y?' (el mismo año)':''}`;
 }
-function pintarTerreno(){
-  const L=REC.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d),mx=Math.max(...L.map(x=>Math.abs(x.d)));
-  const fila=x=>{const sg=tendencia(x.d);return `<button class="tfila ${sg.cls}" data-r="${x.o.id}" type="button" title="${sg.palabra}, búsqueda mundial 2022→2024"><span class="tn">${x.o.n}</span><span class="tb"><i style="width:${Math.round(Math.abs(x.d)/mx*100)}%;background:var(--sen)"></i></span><span class="tv">${x.d>0?'+':''}${Math.round(x.d)}</span></button>`;};
-  $('#terreno').innerHTML=`<div class="th"><span class="lbl">Qué gana y qué pierde terreno afuera</span><span class="tag real">● medido</span></div>
-    <details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Búsqueda mundial de 2022 a 2024, comparada con las otras búsquedas de moda: cuántos puntos ganó o perdió cada atributo.</p></div></details>
-    <div class="tcols"><div><div class="tt">Gana terreno</div>${L.filter(x=>x.d>2).slice(0,5).map(fila).join('')}</div>
-    <div><div class="tt">Pierde terreno</div>${L.filter(x=>x.d<-2).reverse().slice(0,5).map(fila).join('')}</div></div>`;
-  $$('#terreno .tfila').forEach(b=>b.addEventListener('click',()=>{recSel=b.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();}));
+/* Tendencias abre con lo que se mueve, contado con curvas (10/11/2026): reemplaza al bloque oscuro de «qué gana y qué
+   pierde terreno». Las mismas cuentas (terreno(), búsqueda mundial corregida, 2022→2024), los tres que más ganan y los
+   tres que más pierden, con su curva real desde 2016. Se dibujan como el paso 1 de «Cómo se arma una lectura». */
+const MOVI_Y0=2016,MOVI_Y1=2024,MOVI_COL=['--s1','--s2','--s4'];
+function moviPanel(L,titulo,signo){
+  const W=520,H=250,Lm=14,R=200,T=16,B=26,X=y=>Lm+(y-MOVI_Y0)/(MOVI_Y1-MOVI_Y0)*(W-Lm-R);
+  const ser=L.map(x=>{const v=GREL[x.o.id],p=[];for(let y=MOVI_Y0;y<=MOVI_Y1;y++){const q=v[y-2004];if(q!=null)p.push([y,q]);}return p;});
+  const todos=ser.flat().map(q=>q[1]),mn=Math.min(0,...todos),mx=Math.max(...todos)*1.05,Y=v=>T+(1-(v-mn)/(mx-mn))*(H-T-B);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${titulo}: búsqueda mundial ${MOVI_Y0} a ${MOVI_Y1} de ${L.map(x=>x.o.n).join(', ')}">`;
+  s+=`<rect x="${X(2022)}" y="${T}" width="${X(2024)-X(2022)}" height="${H-T-B}" fill="var(--paper)" rx="6"/><text x="${X(2023)}" y="${T+14}" text-anchor="middle" fill="var(--ink-3)">2022→2024</text>`;
+  [MOVI_Y0,2019,2022,MOVI_Y1].forEach(y=>s+=`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)">${y}</text>`);
+  s+=`<line x1="${Lm}" x2="${X(MOVI_Y1)}" y1="${H-B}" y2="${H-B}" stroke="var(--rule)"/>`;
+  const fin=ser.map((p,i)=>({i,y:Y(p[p.length-1][1])})).sort((a,b)=>a.y-b.y);
+  for(let k=1;k<fin.length;k++)if(fin[k].y-fin[k-1].y<30)fin[k].y=fin[k-1].y+30;
+  ser.forEach((p,i)=>{const x=L[i],col=`var(${MOVI_COL[i]})`,u=p[p.length-1],ly=fin.find(f=>f.i===i).y;
+    s+=`<g class="mvc" data-r="${x.o.id}" style="--d:${i*0.28}s" tabindex="0" role="button" aria-label="${x.o.n}, ${signo}${Math.round(Math.abs(x.d))} puntos: ver su recorrido">
+      <polyline pathLength="1" fill="none" stroke="${col}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="${p.map(([y,v])=>X(y).toFixed(1)+','+Y(v).toFixed(1)).join(' ')}"/>
+      <circle class="mvcp" cx="${X(u[0])}" cy="${Y(u[1])}" r="5" fill="${col}"/>
+      <g class="mvcl"><line x1="${X(u[0])+8}" x2="${X(u[0])+20}" y1="${ly}" y2="${ly}" stroke="${col}" stroke-width="3"/>
+      <text x="${X(u[0])+26}" y="${ly+5}" fill="var(--ink)">${x.o.n} <tspan fill="${signo==='+'?'var(--act-entrar)':'var(--act-salir)'}">${signo}${Math.round(Math.abs(x.d))}</tspan></text></g></g>`;});
+  return `<div class="movp"><div class="tt">${signo==='+'?'▲':'▼'} ${titulo}</div>${s}</svg></div>`;
 }
+function pintarTerreno(){
+  const L=REC.filter(o=>GREL[o.id]).map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d);
+  $('#terreno').innerHTML=`<div class="movh"><p class="movt">Lo que más gana y más pierde en la búsqueda mundial, de 2022 a 2024, en puntos <span class="tag real">● medido</span></p>
+      <div class="movb"><button type="button" class="gvolver" id="movre">↺ Ver de nuevo</button><details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Cada curva es la búsqueda mundial de Google del atributo, comparada con las otras búsquedas de moda (corregida por la deriva de Google; 2025 queda afuera por el cambio de medición). El número es cuántos puntos ganó o perdió entre 2022 y 2024. Tocá una curva para ver su recorrido.</p></div></details></div></div>
+    <div class="movg">${moviPanel(L.slice(0,3),'Gana terreno','+')}${moviPanel(L.slice(-3).reverse(),'Pierde terreno','−')}</div>`;
+  $$('#terreno .mvc').forEach(g=>{const ir=()=>{recSel=g.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();};g.addEventListener('click',ir);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ir();}});});
+  $('#movre').onclick=moviAnimar;
+}
+function moviAnimar(){const t=$('#terreno');if(!t)return;t.classList.remove('anim');void t.offsetWidth;
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches)t.classList.add('anim');}
 /* la decisión, arriba de todo: qué hacer con este atributo según quién sos */
 function etapaDe(n){const km=KM.rows.find(r=>r.n.split(' /')[0]===n.split(' /')[0]);return km?kEtapaN(km.n):null;}
 function pintarDecision(o){
@@ -3489,7 +3537,7 @@ function mostrar(v,keepNav){
   if(v==='asistente')asAbrir();
   if(v==='racional'){pintarMetodoGate();pintarLectura();}
   if(v==='adivina')pintarAdivina();
-  if(v==='radar'){pintarPerfilRadar();pintarRadar();}
+  if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }

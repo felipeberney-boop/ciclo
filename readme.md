@@ -150,7 +150,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | | |
 |---|---|
 | Entrada | Tres preguntas, siempre: para quién diseñás, si trabajás para una marca o por tu cuenta, y la categoría. Después, Tendencias. «Cambiar perfil» vuelve acá |
-| Tendencias | La pantalla principal: qué gana y qué pierde terreno afuera, y los atributos con dato medido, con su etapa y su señal. La marca CICLO lleva acá |
+| Tendencias | La pantalla principal. Abre con dos gráficos animados: los tres atributos que más ganan y los tres que más pierden en la búsqueda mundial, 2022→2024. Debajo, los atributos con dato medido, con su etapa y su señal. La marca CICLO lleva acá |
 | El ciclo | Cuándo picó cada uno de los 65 atributos con serie y cuánto tardó en volver; el recorrido de cada uno por pasarela, búsqueda y Reddit hasta 2030, y los jeans por corte |
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
 | Buscar por imagen | Subir una prenda: CLIP en el navegador dice qué atributos ve y qué looks de pasarela se le parecen |

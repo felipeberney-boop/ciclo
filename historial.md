@@ -294,6 +294,13 @@ etapas y las curvas se estiran. Menos movidas, más estrellas; al final, los cin
 El gráfico animado gustó y se queda. Pasa de tres a cinco atributos por lado, elegidos entre los que más se mueven con
 serie propia y reconocibles para un diseñador. Sale el link al juego que estaba debajo.
 
+## v1.32 · 10/11/2026 · «El brief», de nuevo: diseñar y enterarse si tuviste ojo
+
+El juego de las cartas no funcionó: pedía leer curvas para jugar. El nuevo empieza con un encargo de una casa real
+(«Loewe · Otoño 2028 · Un abrigo», con un look de su desfile en Vogue), se diseña en tres toques con las tarjetas de
+Diseñar (forma, material, estampa) y el veredicto llega de a partes: un titular en lenguaje de moda, qué te sumó y qué te
+restó, y al final el mismo look puntuado para tres casas.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

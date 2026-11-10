@@ -336,7 +336,7 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y e
 | Las pantallas de «Más» (04/11) | El modelo y Marcas desde Método, Retornos desde El ciclo | Lo delegó: «hace lo que te parezca» | El menú ofrecía cinco cosas iguales; tres eran detalle de otra |
 | La segunda pirueta (10/11) | Leyó la propuesta contra el modelo: «las cinco capas se combinan en una señal» no era cierto (entran dos; las otras comprueban) y la pasarela de los jeans es prestada. Propuso la versión honesta y que reemplazara al esquema de Método | La idea es suya, y el criterio también: «Para la Entrega 4 no agregamos nada. Sacamos.» Aprobó la corrección: «sí a las dos» | La devolución pedía entender cómo conviven los datos; una pieza que exagera las capas habría contradicho al modelo |
 | El chat filtrado (10/11) | El prompt v7: conclusión, dato y detalle plegado. En la prueba encontró lo que el prompt no alcanzaba y lo filtró en la app | El formato es suyo: «una conclusión primero, en una frase; después el dato que la respalda; y recién al final, si hace falta, el detalle, plegado» | La devolución: «tengo que leer muchas cosas que no aportan valor por igual» |
-| La tercera pirueta (10/11) | Propuso «¿Tenés ojo?»; descartada, pensó «El brief» para diseñadores, lo construyó y verificó las jugadas mínimas | Descartó la primera («es literal un memo test») y pidió «que el juego sea divertido para diseñadores» | La devolución: la pirueta anterior no era un juego |
+| La tercera pirueta (10/11) | Propuso «¿Tenés ojo?» y después un juego de cartas que movían los datos; construyó la versión final, eligió las opciones para que haya de los cuatro momentos y calculó el puntaje desde las series | Descartó las dos primeras («es literal un memo test»; las cartas «son confusas»), escribió el juego final y fijó la lógica: «sube por el lujo y se pone malo por el fast». Pidió Chanel y las fotos de Vogue | La devolución: la pirueta anterior no era un juego |
 | El modelo y Marcas (10/11) | Propuso sacarlas de la navegación: ninguna ayuda a tomar una decisión | Lo aprobó: «sí a las dos» | Cada pantalla tiene que poder decir en una frase qué decisión ayuda a tomar |
 
 **Qué modelos usamos.**
@@ -355,18 +355,16 @@ atraviesa a todos es que el modelo no ve una fila de datos: los datos que recibe
 `codigo/armar_datos_llm.js` a partir de la app, y van sólo las fichas que nombra la pregunta. Las claves no están en el
 repositorio: cada persona pega la suya y queda en su navegador.
 
-**La pirueta: «El brief».** La devolución de la versión del 10/11 fue directa: «Cómo se arma una lectura» no era un
-juego, no tenía hook ni era interactiva. «El brief» lo es. Cada ronda es el pedido de un cliente, con la tensión del oficio
-de diseñar: querer algo en el momento justo de su ciclo («necesito floral, pero que se esté vendiendo ya»). La persona
-tiene cuatro movidas: sacarlo en su desfile, que lo use una it-girl, sacarlo de la colección o mandarlo a liquidación.
-Cada una cambia los datos reales de los últimos años (la pasarela o la búsqueda, ×1,5 o ×0,6). El modelo vuelve a
-ubicar el atributo en vivo: la curva se estira, los cuatro números corren y la ficha se desliza por la pista de etapas.
-Menos movidas, más estrellas; al final, los cinco briefs arman una colección. Mientras juega, aprende cómo lee el modelo:
-Pico es búsqueda alta, la pasarela sola satura, En retorno es que la suelten las dos. Los números se recalculan con la
-cuenta del modelo y el atributo se asigna al grupo más cercano sin reentrenar. Las cinco jugadas mínimas se verificaron
-probando todas las combinaciones. La primera propuesta, «¿Tenés ojo?», adivinar la etapa de una tarjeta, la descartó
-Felipe antes de construirla («es literal un memo test») y pidió pensarla para diseñadores. La idea y la construcción
-son de Claude (`decisiones.md`, 10/11).
+**La pirueta: «El brief».** Te llega un encargo de una casa real, como en el trabajo («Loewe · Otoño 2028 · Un
+abrigo», con un look de su desfile en Vogue Runway). Diseñás en tres toques con las tarjetas de Diseñar (forma, material,
+estampa) y CICLO devuelve el veredicto de a partes: un titular en lenguaje de moda («Te adelantaste: el fast todavía no
+lo copió»), qué elección te sumó y cuál te restó, y al final el mismo look puntuado para tres casas. El puntaje sale de
+las series: cada opción sube, está en pico, quieta o baja según su búsqueda mundial 2022→2024, y cada casa lo pesa con la
+lógica de la moda: el lujo lo pone de moda mientras sube y el fast fashion lo copia en el pico. Se aprende jugando lo más
+difícil de explicar del proyecto: el mismo dato no significa lo mismo para todos. Hubo dos versiones antes. «¿Tenés
+ojo?», adivinar la etapa de una tarjeta, Felipe la descartó antes de construirla («es literal un memo test»). La de
+cartas que movían los datos se construyó y no funcionó: pedía leer curvas para jugar. La idea final y la lógica de las
+casas son de Felipe; el cálculo, las opciones y la construcción, de Claude (`decisiones.md`, 10/11).
 
 **«Cómo se arma una lectura».** Fue la pirueta entre el 10/11 y la devolución, y queda arriba de todo en Método. Las dos notas más bajas de la Entrega 3 (datos e
 IA, 5 sobre 10) decían lo mismo: el modelo es demasiado complejo para explicarlo. La pirueta convierte esa debilidad en la

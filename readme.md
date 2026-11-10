@@ -22,7 +22,7 @@ el dato que lo sostiene. No predice: lee en qué punto está cada atributo hoy.
 | Guion de la presentación y la demo | [guion_demo.md](entregas/entrega_3/guion_demo.md) |
 | **Entrega 4 · el racional** | [racional.md](entregas/entrega_4/racional.md) · [PDF](entregas/entrega_4/racional.pdf): el problema, los datos, el modelo, el diseño y quién decidió qué |
 | Entrega 4 · la consigna | [consigna.md](entregas/entrega_4/consigna.md), copiada de la página de la materia |
-| Entrega 4 · la pirueta | [El brief](https://felipeberney-boop.github.io/ciclo/#mover), en «Más»: cinco clientes piden un atributo en su punto justo y la persona mueve los datos reales, con cuatro cartas, hasta que el modelo lo ubique ahí |
+| Entrega 4 · la pirueta | [El brief](https://felipeberney-boop.github.io/ciclo/#mover), en «Más»: te llega un encargo de una casa real («Loewe · Otoño 2028 · Un abrigo»), diseñás en tres toques y CICLO puntúa el mismo look para lujo, contemporary y fast fashion |
 | Entrega 4 · las pantallas en papel, para corregir en clase | [PDF, 14 hojas A4](entregas/entrega_4/disenos_en_papel/ciclo_disenos_en_papel_entrega_4.pdf) · página 4 del Figma |
 
 Materia: *Sistemas generativos e IA para Diseño* (K534/K576) · Universidad de San Andrés · 2º semestre 2026
@@ -102,9 +102,11 @@ En el celular, las mismas tres preguntas:
 
 ![Paso 9: Preguntar](entregas/entrega_4/recorrido/paso_09_preguntar.png)
 
-**Y además.** La pirueta, «El brief»: cada ronda es el pedido de un cliente («necesito floral, pero que se esté vendiendo ya»), y cuatro movidas del oficio cambian los datos reales hasta que el modelo ubica el atributo en la etapa pedida. También «Cómo se arma una lectura», arriba de todo en Método, y El ciclo.
+**Y además.** La pirueta, «El brief»: un encargo de una casa real con un look de su desfile, tres toques de diseño (forma, material, estampa) y un veredicto en lenguaje de moda; al final, el mismo look puntuado para tres casas, porque lo que sube es del lujo y lo que está en su pico es del fast fashion. También «Cómo se arma una lectura», arriba de todo en Método, y El ciclo.
 
-![El brief: el primer brief, con una movida jugada](entregas/entrega_4/capturas/captura_19_el_brief.png)
+| | |
+|---|---|
+| ![El brief: el encargo](entregas/entrega_4/capturas/captura_19_el_brief.png) | ![El brief: el veredicto](entregas/entrega_4/capturas/captura_20_el_brief_veredicto.png) |
 
 ![Cómo se arma una lectura: cuatro de los siete pasos](entregas/entrega_4/capturas/captura_18_como_se_arma_una_lectura.png)
 
@@ -157,7 +159,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
 | Buscar por imagen | Subir una prenda: CLIP en el navegador dice qué atributos ve y qué looks de pasarela se le parecen |
 | Preguntar | Chat con un LLM que contesta con los datos de CICLO, tu perfil, tu diseño y lo que CLIP leyó de tu foto (pegás tu API key de Groq). Primero la conclusión en una frase, después el dato que la sostiene; el detalle, plegado |
-| El brief | La pirueta. Cinco briefs de clientes; cuatro cartas que cambian la pasarela o la búsqueda de los últimos años; el modelo reubica el atributo en vivo. Al final, los cinco arman una colección. Reemplazó a Adiviná vos en «Más» el 10/11 (sigue en `#adivina`) |
+| El brief | La pirueta. Un encargo de una casa real (foto de Vogue Runway), tres toques con las tarjetas de Diseñar y un veredicto: cada elección sube, está en pico, quieta o baja según su búsqueda 2022→2024, y el mismo look se puntúa para lujo, contemporary y fast fashion. Reemplazó a Adiviná vos en «Más» el 10/11 (sigue en `#adivina`) |
 | Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |
 | Método | «Cómo se arma una lectura»: de los datos a la señal, en siete pasos; fuentes, recortes y límites declarados. El modelo (K-means paso a paso) y Marcas (Lyst) salieron de la navegación el 10/11 y siguen en `#etapas` y `#marcas` |
 

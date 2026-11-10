@@ -2097,3 +2097,50 @@ Quedan afuera las fibras que suben tanto o más que estos (lana +20, popelina +1
 le dicen nada a un diseñador sobre qué diseñar. Que es una selección está dicho en el «?», con la lista completa en El
 ciclo. Los rótulos se ordenan a la altura donde termina cada curva y no se pisan, también en el celular. El link al juego
 sale; el juego se rehace.
+
+## 2026-11-10 · «El brief», rehecho desde cero: diseñar, y enterarse si tuviste ojo
+
+**Por qué falló el de las cartas (Felipe).** Las cartas con gráficos confundían: pedían leer curvas para jugar, y eso no
+es jugar, es estudiar. Lo que un diseñador hace y le divierte es diseñar, y después enterarse si tuvo buen ojo.
+
+**El juego.**
+1. *El brief.* Una tarjeta con la casa, la temporada y la prenda («Loewe · Otoño 2028 · Un abrigo») y un look real de
+   Vogue Runway. Zara, H&M y COS no desfilan: su foto es la referencia de lujo que van a bajar a la calle (Chanel, Bottega
+   Veneta, The Row). La temporada es el horizonte al que decide cada categoría en la app (`PERFIL.hasta`: fast fashion
+   2026, contemporary 2027, lujo 2028).
+2. *Diseñás.* Tres toques con las tarjetas de Diseñar (forma, material, estampa) y la barra de lo elegido abajo. Sin
+   señales a la vista, para que el juego no se resuelva solo.
+3. *El veredicto, con ritmo.* Primero un titular en lenguaje de moda («Te adelantaste: el fast todavía no lo copió»).
+   Después, de a una, las tres elecciones con su momento y su número. Después, qué te subió el puntaje y qué te lo
+   bajó. Al final, el golpe: el mismo look puntuado para tres casas, y la del brief, en negro.
+
+**El puntaje.** Cada opción tiene su serie de búsqueda mundial (Google Trends, corregida, la misma de Tendencias) y de ahí
+sale su momento:
+- **Baja** si perdió más de 3 puntos entre 2022 y 2024.
+- **Quieto** si se movió entre −3 y +3.
+- **Pico** si ganó y está en su techo (el nivel 2023–24 llega al 80 % de su máximo).
+- **Sube** si ganó y todavía no llegó.
+
+Las tres elecciones pesan lo mismo. Lo que cambia por casa es la lógica de la moda, que fijó Felipe: «sube por el lujo y
+se pone malo por el fast: las marcas de lujo lo ponen de moda y sube, y después lo copian los de fast y baja».
+
+| | Sube | Pico | Quieto | Baja |
+|---|---|---|---|---|
+| Lujo (Chanel, Loewe, Prada) | 10 | 4 | 5 | 1 |
+| Contemporary (COS) | 7 | 10 | 5 | 2 |
+| Fast fashion (Zara, H&M) | 3 | 10 | 5 | 2 |
+
+Es una regla del juego y se dice así en el «?»: no es un pronóstico ni la regla de las fichas (`CONSEJO`), que sigue
+igual. El momento sale de las series y la regla, de cómo se mueve la moda. Las opciones se eligieron para que en cada
+paso haya de los cuatro momentos: el baggy está en pico, el recto y el skinny bajan, la gamuza y la lana suben, el cuero
+está quieto, las rayas y el floral están en pico, el tie-dye baja.
+
+**Fotos de Vogue.** Por decisión de Felipe, las fotos de los briefs son de Vogue Runway, el mismo corpus que usa CLIP, con
+la casa, la temporada y la fuente al pie. Se muestran desde los servidores de Vogue, como ya hacían «Ver referencias de
+pasarela» y Buscar por imagen: no se descargan ni se suben al repositorio. Sigue sin licencia declarada: está dicho en la
+verificación del 13/10.
+
+**Dónde vive.** En «Más» y al final de «Cómo se arma una lectura», en Método («¿Tenés ojo para Chanel?»). No aparece solo.
+El juego de las cartas sale entero.
+
+Probado con Playwright a 1400 y 393 px: el brief, los tres pasos y el veredicto, sin errores ni scroll horizontal.

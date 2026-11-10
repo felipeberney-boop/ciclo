@@ -44,8 +44,8 @@ const OUT = 'entregas/entrega_4/recorrido';
       await foto(p, 'paso_07_boton_disenar_con');
       await p.click('#v-detalle [data-dz]');
       await foto(p, 'paso_08_disenar_con_el_atributo_fijo');
-      await p.click('#nav a[data-v="revision"]');
-      await foto(p, 'paso_09_revision');
+      await p.click('#nav a[data-v="tiza"]');
+      await foto(p, 'paso_09_tiza');
     } else {
       await p.evaluate(() => { mostrar('radar'); });
       await p.click('#grid > .plate');

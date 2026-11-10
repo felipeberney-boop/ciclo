@@ -37,9 +37,9 @@ const servidor = http.createServer((q, r) => {
     if (!pregunta && !imagen) { console.log('· sin IMAGEN: se saltea la pregunta con imagen'); continue; }
     if (i) await new Promise(r => setTimeout(r, 65000)); // el plan gratis de Groq da 8.000 tokens por minuto
     const p = await b.newPage();
-    await p.goto(base + (diseno ? `#disenar${PERFIL}&dz=${diseno}&paso=color` : `#revision${PERFIL}`), { waitUntil: 'load' });
+    await p.goto(base + (diseno ? `#disenar${PERFIL}&dz=${diseno}&paso=color` : `#tiza${PERFIL}`), { waitUntil: 'load' });
     await p.waitForTimeout(1200);
-    if (diseno) { await p.click('#nav a[data-v="revision"]'); await p.waitForTimeout(800); }
+    if (diseno) { await p.click('#nav a[data-v="tiza"]'); await p.waitForTimeout(800); }
     await p.click('#asclaves'); // «Activar el chat»: el campo de la clave está adentro
     await p.fill('#askey', KEY);
     let leido = '';

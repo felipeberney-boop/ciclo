@@ -1283,6 +1283,85 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
   .app .rvrow .rvf{grid-column:1 / -1}
   .app .rvrow>.tag,.app .rvrow .rvnos{grid-column:1 / -1;justify-self:start}
 }
+/* ---------- Tiza (10/11): layout A+B, la mesa a la izquierda y la conversación a la derecha; en el celular, la mesa arriba ---------- */
+#v-tiza{max-width:none!important;padding:0!important}
+.app .tz{display:grid;grid-template-columns:minmax(0,62fr) minmax(340px,38fr);gap:0;height:calc(100vh - var(--tzh,52px));min-height:560px}
+.app .tzmesa{overflow:auto;padding:28px 32px 40px;background:var(--paper)}
+.app .tzconv{display:flex;flex-direction:column;min-height:0;background:var(--card);border-left:1px solid var(--rule)}
+.app .tzch{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:18px 20px 10px;border-bottom:1px solid var(--rule)}
+.app .tzch h1:not(#z){font-size:28px!important;line-height:1.1!important;margin:0!important;text-align:left!important;letter-spacing:-.01em}
+.app .tzch .sub:not(#z){font-size:13px!important;color:var(--ink-2);margin:4px 0 0!important;text-align:left!important;max-width:none}
+.app .tzconv .rvdis{padding:10px 20px 0;margin:0}
+.app .tzconv #aschat{flex:1;overflow:auto;padding:14px 20px;margin:0;min-height:120px;gap:10px}
+.app .tzconv #aschat .asa{max-width:none}
+.app .tzconv #assug{padding:0 20px 4px;margin:4px 0 8px;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.app .tzconv #assug button{flex:none;white-space:nowrap}
+.app .tzch{position:relative}.app .tzch .qm{position:static}
+.app .tzmesab{display:none}
+.app .tzconv #assug button:not(#z){border:1px solid var(--rule)!important;border-radius:999px!important;background:var(--card);padding:6px 12px;margin:0;font-size:13px!important;color:var(--ink)}
+.app .tzcomp{margin:0 14px 10px;border:1px solid var(--rule);background:var(--card);padding:10px 12px 8px}
+.app .tzcomp:not(#z){border-radius:16px!important}
+.app .tzcomp:focus-within{border-color:var(--azul)}
+.app .tzcomp textarea:not(#z){width:100%;box-sizing:border-box;font:inherit;font-size:15px!important;line-height:1.4!important;border:0!important;background:transparent;resize:none;padding:2px 0;outline:none;color:var(--ink)}
+.app .tzbar{display:flex;align-items:center;gap:10px;margin-top:6px}
+.app .tzbar .rvest:not(#z){flex:1;font-size:12px!important;color:var(--ink-3);margin:0;line-height:1.35!important}
+.app .tzimg{position:relative;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid var(--rule);color:var(--azul);font-size:13px;cursor:pointer;white-space:nowrap}
+.app .tzimg:not(#z){border-radius:999px!important}
+.app .tzimg input{position:absolute;width:1px;height:1px;opacity:0}
+.app .tzimg:focus-within{outline:2px solid var(--azul-foco);outline-offset:2px}
+.app .tzpie{display:flex;flex-wrap:wrap;gap:4px 16px;padding:0 20px 12px}
+.app .tzpie details{margin:0;border:0;padding:0;background:none}
+.app .tzpie details[open]{flex-basis:100%}
+.app #v-tiza #asclaves{font-size:13px!important;font-weight:500!important;line-height:1.4!important;letter-spacing:0!important}
+.app .tzpie .asver summary:not(#z){font-size:13px!important;color:var(--ink-3);cursor:pointer}
+.app .tzver{display:inline-block;margin:10px 0 0;padding:0;border:0;background:none;color:var(--azul);font:inherit;font-size:13px;cursor:pointer}
+.app .tzver::after{content:' →'}
+.app .tzlect .tzlq:not(#z){font-size:13px!important;color:var(--ink-2);margin:0 0 8px}
+.app .tzlect .rvdev{border:0;padding:0;margin:0}
+.app .tzlect .rvdev div.rvconc:not(#z){font-size:19px!important}
+/* la mesa */
+.app .tzmh{margin:0 0 18px}
+.app .tzmh h2:not(#z){font-size:26px!important;line-height:1.15!important;font-weight:600!important;margin:0 0 4px!important;text-align:left!important}
+.app .tzmh p:not(#z){font-size:14px!important;color:var(--ink-2);margin:0 0 8px!important}
+.app .tzfotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 20px}
+.app .tzfotos figure{position:relative;margin:0;background:#e8e8ed;overflow:hidden;aspect-ratio:3/4}
+.app .tzfotos figure:not(#z){border-radius:16px!important}
+.app .tzfotos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.app .tzfotos figure::after{content:'';position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(transparent,rgba(0,0,0,.55));pointer-events:none}
+.app .tzfotos figcaption{position:absolute;left:12px;right:12px;bottom:28px;z-index:1;color:#fff;font-size:16px;line-height:1.25}
+.app .tzfotos figcaption b{font-weight:600}.app .tzfotos figcaption span{opacity:.9;font-size:14px}
+.app .tzfotos .pcred{z-index:1}
+.app .tzdis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin:0 0 22px;align-items:start}
+.app .tzimgv{position:relative;background:#e8e8ed;overflow:hidden;aspect-ratio:3/4}
+.app .tzimgv:not(#z){border-radius:18px!important}
+.app .tzimgv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.app .tzimgv .rvpie:not(#z){position:absolute;left:10px;right:10px;bottom:10px;font-size:11px!important;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7);line-height:1.25!important}
+.app .tzlee .lbl,.app .tzmesa .rvsec>.lbl{display:inline-block;margin:0 0 8px}
+.app .tzmesa .rvsec{margin:0 0 22px}
+.app .tzmesa .aslooks{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+.app .tzmesa .aslooks.tzgrande{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+.app .tzzara{list-style:none;margin:6px 0 0;padding:0}
+.app .tzzara li:not(#z){font-size:14px!important;line-height:1.5!important;color:var(--ink-2);padding:6px 0;border-top:1px solid var(--rule)}
+.app .tzzara li b{color:var(--ink);margin-right:6px}
+.app .tzmesa .rvej{margin:18px 0 0}
+/* el velo mientras se arrastra una imagen */
+.app .tzvelo{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:rgba(0,102,204,.12);border:3px dashed var(--azul);pointer-events:none}
+.app .tzvelo[hidden]{display:none}
+.app .tzvelo span{background:var(--card);color:var(--azul);font-size:18px;padding:14px 22px;border-radius:999px}
+/* B: en el celular la mesa arriba (un carrusel corto) y la conversación abajo, con el campo fijo al pie */
+@media (max-width:760px){
+  .app .tz{display:flex;flex-direction:column;height:auto;min-height:0}
+  .app .tzmesa{position:sticky;top:var(--tzh,48px);z-index:40;max-height:42vh;padding:16px 16px 18px;border-bottom:1px solid var(--rule);box-shadow:0 6px 16px rgba(0,0,0,.06);transition:max-height .3s}
+  .app .tzmesa.chica{max-height:0;padding-top:0;padding-bottom:0;overflow:hidden}
+  .app .tzmesab:not(#z){display:inline-block;margin:8px 0 0;padding:0;border:0;background:none;color:var(--azul);font:inherit;font-size:13px!important;cursor:pointer}
+  .app .tzmh h2:not(#z){font-size:21px!important}
+  .app .tzfotos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin-right:-16px;padding-right:16px}
+  .app .tzfotos figure{flex:0 0 62%;scroll-snap-align:start}
+  .app .tzdis{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:12px}
+  .app .tzconv{border-left:0}
+  .app .tzconv #aschat{overflow:visible;flex:none}
+  .app .tzcomp{position:sticky;bottom:0;z-index:5;margin:0 10px 10px;box-shadow:0 -6px 18px rgba(0,0,0,.06)}
+}
 </style>
 
 <div class="app">
@@ -1297,7 +1376,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
       <a data-v="radar" class="nav-dz">Tendencias</a>
       <a data-v="disenar">Diseñar</a>
       <a data-v="recorridos">El ciclo</a>
-      <a data-v="revision">Revisión</a>
+      <a data-v="tiza">Tiza</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
       <span class="navgrupo" id="navgrupo" hidden>
         <a data-v="mover"><b>El brief</b><span>Un encargo de una casa real: diseñás en tres toques y CICLO te dice si tuviste ojo.</span><i>6 briefs · 3 casas</i><em>Jugar →</em></a>
@@ -1622,47 +1701,47 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       </div>
     </section>
 
-    <!-- ================= REVISIÓN (10/11: juntó «Buscar por imagen» y «Preguntar») ================= -->
-    <section class="view" id="v-revision" hidden>
-      <div class="vhead">
-        <div>
-          <h1>Revisión</h1>
-          <p class="sub">Mostrale a CICLO un diseño, una pregunta o las dos.</p>
-          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p><b>La imagen.</b> CLIP, un modelo de visión que corre en tu navegador, la compara con los 17 atributos del modelo y con 14.000 looks de pasarela. La foto no sale de tu computadora. Lo que lee es interpretación: por eso se puede corregir.</p><p><b>El dato.</b> Cada atributo trae su señal y su curva de búsqueda mundial (Google, corregida, hasta 2024): eso es medido.</p><p><b>La devolución escrita.</b> La escribe un modelo de lenguaje con tu clave de Groq. Lee sólo <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">un resumen de métricas ya calculadas</a>, nunca una fila de la base. Sin clave, la devolución la arman reglas fijas, y lo dice.</p><p><b>Cómo se validó CLIP.</b> En 150.000 looks de Vogue que no están en el índice, el atributo correcto quedó entre los tres primeros entre el 67 % y el 92 % de las veces, según el atributo (animal print: 20 %). Cuadros, piel, cargo, Y2K y blazer no se pudieron validar porque Vogue no los etiqueta. Por debajo de 0,35 de probabilidad la app no adivina.</p></div></details>
-        </div>
-      </div>
-      <div class="rv">
-        <form id="asform" class="rvcomp">
-          <label class="rvdrop" id="rvdrop">
-            <input type="file" id="asfile" accept="image/*">
-            <span class="rvdropv" id="asprev"><span class="rvplus" aria-hidden="true">＋</span><span>Soltá una imagen<br>o tocá para elegirla</span></span>
-          </label>
-          <div class="rvtxt">
-            <textarea id="astexto" rows="3" maxlength="600" placeholder="¿Qué querés saber? (opcional si subiste una imagen)" aria-label="Tu pregunta"></textarea>
-            <div class="rvbar"><p class="rvest" id="asclipest" aria-live="polite"></p><button type="submit" class="kbtn" id="asenviar">Leer</button></div>
+    <!-- ================= TIZA (10/11: antes «Revisión»; antes de eso «Buscar por imagen» y «Preguntar») =================
+         Layout A+B: a la izquierda la mesa (lo que mirás), a la derecha la conversación. En el celular, la mesa arriba. -->
+    <section class="view" id="v-tiza" hidden>
+      <div class="tz">
+        <div class="tzmesa" id="tzmesa" aria-live="polite"></div>
+        <aside class="tzconv">
+          <div class="tzch">
+            <div><h1>Tiza</h1><p class="sub">Mostrale a CICLO un diseño, una pregunta o las dos.</p><button type="button" class="tzmesab" id="tzmesab">Achicar la mesa ▴</button></div>
+            <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p><b>La mesa</b>, a la izquierda (arriba en el celular), muestra lo que estás mirando: tu diseño, sus curvas, las referencias. <b>La conversación</b>, a la derecha.</p><p><b>La imagen.</b> CLIP, un modelo de visión que corre en tu navegador, la compara con los 17 atributos del modelo, 10 colores y 14.000 looks de pasarela. La foto no sale de tu computadora. Lo que lee es interpretación: por eso se corrige.</p><p><b>El dato.</b> Cada atributo trae su señal y su curva de búsqueda mundial (Google, corregida, hasta 2024): eso es medido. El color no tiene búsqueda: se muestra cuánto aparece en la pasarela.</p><p><b>La respuesta escrita.</b> La escribe un modelo de lenguaje con tu clave de Groq. Lee sólo <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">un resumen de métricas ya calculadas</a>, nunca una fila de la base. Sin clave, la devolución la arman reglas fijas, y lo dice.</p><p><b>Cómo se validó CLIP.</b> En 150.000 looks de Vogue que no están en el índice, el atributo correcto quedó entre los tres primeros entre el 67 % y el 92 % de las veces (animal print: 20 %). Cuadros, piel, cargo, Y2K y blazer no se pudieron validar. Por debajo de 0,35 la app no adivina. El color, revisado a ojo: 79 % con 0,6.</p></div></details>
           </div>
-        </form>
-        <div class="rvej"><span>O probá con un look de pasarela:</span><span id="rvej"></span></div>
-        <div id="assug" class="assug"></div>
-        <div id="asdisw" class="rvdis" hidden><span class="lbl">Tu diseño en Diseñar</span><div id="asdis" class="aschips"></div></div>
-        <div id="rvlect" class="rvlect" hidden></div>
-        <div id="aschat" class="aschat" aria-live="polite"></div>
-        <details class="ascard asact" id="asclave">
-          <summary id="asclaves">Activar la devolución escrita · 1 minuto</summary>
-          <ol class="aspasos">
-            <li>Entrá a <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>. Es gratis y podés entrar con tu cuenta de Google.</li>
-            <li>Tocá «Create API Key» y copiá la clave: empieza con <code>gsk_</code>.</li>
-            <li>Pegala acá. Se guarda sólo en este navegador y viaja sólo a Groq.</li>
-          </ol>
-          <input id="askey" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="Tu clave de Groq">
-          <label class="ascap" for="asmodelo" style="display:block;margin-top:12px">Modelo</label>
-          <select id="asmodelo"><option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option><option value="openai/gpt-oss-20b">openai/gpt-oss-20b (más rápido)</option></select>
-        </details>
-        <details class="ascard asver"><summary class="lbl">Qué se le mandó al modelo</summary>
-          <p class="ascap" id="astok">Todavía nada.</p>
-          <pre id="asprompt"></pre>
-        </details>
+          <div id="asdisw" class="rvdis" hidden><span class="lbl">Tu diseño en Diseñar</span><div id="asdis" class="aschips"></div></div>
+          <div id="aschat" class="aschat"></div>
+          <div id="assug" class="assug"></div>
+          <form id="asform" class="tzcomp">
+            <textarea id="astexto" rows="2" maxlength="600" placeholder="Preguntá algo, o subí una imagen" aria-label="Tu pregunta"></textarea>
+            <div class="tzbar">
+              <label class="tzimg" title="Subir una imagen"><input type="file" id="asfile" accept="image/*"><span>＋ Imagen</span></label>
+              <p class="rvest" id="asclipest" aria-live="polite"></p>
+              <button type="submit" class="kbtn" id="asenviar">Leer</button>
+            </div>
+          </form>
+          <div class="tzpie">
+            <details class="asact" id="asclave">
+              <summary id="asclaves">Activar la respuesta escrita · 1 minuto</summary>
+              <ol class="aspasos">
+                <li>Entrá a <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>. Es gratis y podés entrar con tu cuenta de Google.</li>
+                <li>Tocá «Create API Key» y copiá la clave: empieza con <code>gsk_</code>.</li>
+                <li>Pegala acá. Se guarda sólo en este navegador y viaja sólo a Groq.</li>
+              </ol>
+              <input id="askey" type="password" autocomplete="off" spellcheck="false" placeholder="gsk_…" aria-label="Tu clave de Groq">
+              <label class="ascap" for="asmodelo" style="display:block;margin-top:12px">Modelo</label>
+              <select id="asmodelo"><option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option><option value="openai/gpt-oss-20b">openai/gpt-oss-20b (más rápido)</option></select>
+            </details>
+            <details class="asver"><summary class="lbl">Qué se le mandó al modelo</summary>
+              <p class="ascap" id="astok">Todavía nada.</p>
+              <pre id="asprompt"></pre>
+            </details>
+          </div>
+        </aside>
       </div>
+      <div class="tzvelo" id="tzvelo" hidden><span>Soltá la imagen para que CICLO la lea</span></div>
     </section>
 
     <!-- ================= RACIONAL ================= -->
@@ -2760,7 +2839,7 @@ function rvDevolucion(A){const Dc=A.filter(a=>a.color).map(a=>({a,...rvDato(a)})
   // el porqué dice de dónde sale la señal: la etapa del K-means o, sin etapa, la búsqueda (no dice «pierde terreno» si sube)
   const por=x=>x.sg.etapa?`está «${x.sg.etapa.toLowerCase()}» según el modelo${x.d!=null&&((x.sg.estado==='salir'&&x.d>3)||(x.sg.estado==='entrar'&&x.d<-3))?`, aunque la búsqueda ${x.d>0?'sube':'cae'}`:''}`:x.d>0?'viene ganando terreno':'viene perdiendo terreno';
   let conc;
-  if(bien.length&&mal.length)conc=`${que(bien[0])} va; ${lc(que(mal[0]))}, lo cambiaría.`;
+  if(bien.length&&mal.length)conc=que(bien[0])===que(mal[0])?`${bien[0].a.n} va; ${nm(mal[0])}, lo cambiaría.`:`${que(bien[0])} va; ${lc(que(mal[0]))}, lo cambiaría.`;
   else if(bien.length)conc=bien.length>1?'Va: lo que leí tiene señal de entrar para tu perfil.':`${que(bien[0])} va: ${nm(bien[0])} ${por(bien[0])}.`;
   else if(mal.length)conc=`${que(mal[0])}, lo cambiaría: ${nm(mal[0])} ${por(mal[0])}.`;
   else if(!D.length)conc='Sólo leí el color: describe la pasarela, no decide.';
@@ -2770,23 +2849,110 @@ function rvDevolucion(A){const Dc=A.filter(a=>a.color).map(a=>({a,...rvDato(a)})
     return L[0]?`<li><b>Probá</b> ${escH(L[0].a.n)} en su lugar: +${Math.round(L[0].d)} puntos en la búsqueda mundial, 2022→2024.</li>`:'';};
   return `<div class="rvdev"><div class="h"><span class="lbl">Devolución</span><span class="tag demo">armada con reglas, no con un modelo de lenguaje</span></div>
     <div class="rvconc">${escH(conc)}</div><ul class="rvlista">${bien.map(x=>linea(x,'Va bien ·')).join('')}${mal.map(x=>linea(x,'Cambiaría ·')+alt(x)).join('')}${resto.map(x=>linea(x,x.sg.estado==='sin-dato'?'Sin dato ·':'Sin apuro ·')).join('')}${Dc.map(x=>`<li><b>Color ·</b> ${escH(x.a.n)}: ${x.num||'sin lectura'}. <span class="${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span> <span class="rvnos">describe, no recomienda</span></li>`).join('')}</ul>
-    <p class="rvcap">La señal es la de tu perfil (${(PERFIL[cliente]||PERFIL.premium).n}${vinculo==='propia'?', por tu cuenta':''}). ${$('#askey').value.trim()?'Tocá «Leer» para la devolución escrita.':'Para una devolución escrita, activá Groq abajo.'}</p></div>`;}
-function rvPintarLectura(){const e=$('#rvlect');if(!e)return;if(!as.leido){e.hidden=true;e.innerHTML='';return;}e.hidden=false;
-  const A=as.clip,falta=Object.keys(RV_CLIP).concat(CLIP.col?CLIP.col.colores.map(c=>'color:'+c.id):[]).filter(c=>!A.some(a=>a.c===c));
-  const chips=A.map((a,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar ${escH(a.n)}">${escH(a.n)} <span class="aspp">${a.manual?'agregado':a.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('')+
-    `<label class="rvagr"><span>+ agregar</span><select id="rvagr" aria-label="Agregar un atributo que CLIP no leyó"><option value="">+ agregar</option>${falta.map(c=>`<option value="${escH(c)}">${c.startsWith('color:')?'Color · ':''}${escH(rvAtr(c).n)}</option>`).join('')}</select></label>`;
-  const D=A.map(a=>({a,...rvDato(a)}));
-  const filas=D.map(x=>`<div class="rvrow"><span class="rvn">${escH(x.a.n)}</span><span class="rvs ${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span><span class="rvf">${escH(x.frase)}${x.num?` <span class="rvnum">${x.num}.</span>`:''}</span>${x.serie?'<span class="tag real">● medido</span>':x.interp?'<span class="tag ia2">interpretado · CLIP</span>':'<span class="rvnos">sin serie de búsqueda</span>'}</div>`).join('');
-  const W=e.clientWidth||Math.min(880,innerWidth-32);
-  const looks=as.looks&&as.looks.length?`<details class="rvmas"><summary>Looks de pasarela parecidos</summary><div class="aslooks">${as.looks.map(f=>`<a href="${f.u}" target="_blank" rel="noopener"><img loading="lazy" alt="${escH(f.d)}" src="${f.s}"><span>${escH(f.d)}</span></a>`).join('')}</div>${as.anios?`<p class="rvcap">${as.anios}</p>`:''}<p class="rvcap"><span class="tag ia2">interpretado · CLIP</span> Referencia de forma, no recomendación.</p></details>`:'';
-  e.innerHTML=`<div class="rvsec"><div class="h"><span class="lbl">Qué vio CICLO</span><span class="tag ia2">interpretado · CLIP</span></div>
-      ${A.length?'':`<p class="rvcap">${escH(as.nada||'CLIP no reconoció con claridad ningún atributo.')} Si sabés qué es, agregalo.</p>`}
-      <div class="aschips" id="asclip">${chips}</div><p class="rvcap">Si leyó algo que no va, sacalo; si falta algo, agregalo. La lectura se rehace sola.</p></div>
-    ${A.length?`<div class="rvsec"><div class="h"><span class="lbl">Qué dice el dato</span></div>${filas}</div>
-    ${rvCurvas(D.filter(x=>x.serie).map(x=>({n:x.a.n,g:x.a.id})),W)}
-    ${rvDevolucion(A)}`:''}${looks}`;
+    <p class="rvcap">La señal es la de tu perfil (${(PERFIL[cliente]||PERFIL.premium).n}${vinculo==='propia'?', por tu cuenta':''}). ${$('#askey').value.trim()?'Tocá «Leer» para que te la escriba.':'Para que te la escriba, activá la respuesta escrita (abajo).'}</p></div>`;}
+/* ---------- Tiza (10/11/2026): la mesa y la conversación ----------
+   Layout A+B: la mesa (lo que mirás: tu diseño, las curvas, las fotos, el recorrido de una marca) y aparte la conversación.
+   as.mesa dice qué muestra la mesa: inicio (lo que más sube) · imagen (tu diseño y lo que leyó CLIP) · resp (lo que nombra
+   una pregunta o una respuesta: atributos y marcas) · looks (los looks parecidos). Cada mensaje guarda su mesa y la
+   devuelve con «Ver en la mesa». */
+const TZ_SUG=['¿Qué está subiendo más ahora?','¿Cómo está Zara?','¿Cómo está Prada?','¿Qué material le va a un jean baggy?','Mostrame qué se parece a esto'];
+function tzNom(g){const o=REC.find(r=>r.id===g);if(o)return o.n;
+  const L=[...TAX.materiales.flatMap(x=>x.items),...TAX.estampas.flatMap(f=>f.items),...TAX.detalles,...TAX.cortes,
+    ...TAX.prendas.flatMap(p=>p.tipos.map(t=>Object.assign({},t,{n:`${p.n} ${t.n.toLowerCase()}`})))];
+  const h=L.find(x=>x.serie===g||x.rec===g)||L.find(x=>x.id===g);return h?h.n:g;}
+const tzSube=()=>Object.keys(GREL).filter(g=>terreno(g)!=null).sort((a,b)=>terreno(b)-terreno(a));
+const tzPts=d=>`${d>0?'+':d<0?'−':''}${Math.abs(Math.round(d))} ${Math.abs(Math.round(d))===1?'punto':'puntos'}`;
+/* el recorrido de una marca en el Lyst Index: dos tramos separados por el corte de Q1-26, nunca unidos */
+function tzLyst(m,W){const v=LYST.r[m];if(!v)return '';W=Math.max(300,Math.round(W));
+  const Q=LYST.q,n=Q.length,ic=Q.indexOf('Q1-26'),H=W<520?200:230,L=30,R=16,T=30,B=26,X=i=>L+i/(n-1)*(W-L-R),Y=r=>T+(r-1)/19*(H-T-B);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${escH(m)} en el Lyst Index, por trimestre">`;
+  [1,10,20].forEach(r=>s+=`<text x="${L-8}" y="${Y(r)+4}" text-anchor="end" fill="var(--ink-3)" font-size="11">#${r}</text><line x1="${L}" x2="${W-R}" y1="${Y(r)}" y2="${Y(r)}" stroke="var(--rule-2)"/>`);
+  Q.forEach((q,i)=>{if(q.startsWith('Q1')&&(W>=520||['Q1-18','Q1-22','Q1-26'].includes(q)))s+=`<text x="${X(i)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)" font-size="11">20${q.slice(-2)}</text>`;});
+  const xc=(X(ic-1)+X(ic))/2;s+=`<line x1="${xc}" x2="${xc}" y1="${T-6}" y2="${H-B}" stroke="var(--ink)" stroke-dasharray="3 4"/><text x="${xc-6}" y="${H-B-6}" text-anchor="end" fill="var(--ink-2)" font-size="11">Lyst cambia la fórmula →</text>`;
+  const tramo=(a,b)=>{let seg=[],out='';for(let i=a;i<b;i++){if(v[i]!=null)seg.push([X(i),Y(v[i])]);else{if(seg.length)out+=dib(seg);seg=[];}}if(seg.length)out+=dib(seg);return out;},
+    dib=p=>p.length>1?`<polyline fill="none" stroke="var(--s1)" stroke-width="2.6" stroke-linejoin="round" points="${p.map(q=>q.map(z=>z.toFixed(1)).join(',')).join(' ')}"/>`:`<circle cx="${p[0][0]}" cy="${p[0][1]}" r="3.5" fill="var(--s1)"/>`;
+  s+=tramo(0,ic)+tramo(ic,n);
+  const a=[...Array(ic).keys()].filter(i=>v[i]!=null);if(a.length){const b=a.reduce((x,y)=>v[y]<v[x]?y:x);s+=`<circle cx="${X(b)}" cy="${Y(v[b])}" r="5" fill="var(--s1)"/><text x="${X(b)}" y="${Y(v[b])-10}" text-anchor="middle" fill="var(--ink)" font-size="12">#${v[b]} · ${Q[b]}</text>`;}
+  return `<div class="rvcurv">${s}</svg><p class="rvcap"><span class="tag real">● medido</span> Puesto en el Lyst Index (#1 arriba), por trimestre. El corte de Q1-26 separa dos fórmulas: no se comparan.</p></div>`;}
+/* qué mostrar para una pregunta: las marcas y los atributos que nombra (los mismos que se le mandan al modelo) */
+function tzMesaDe(E,texto,ids){const q=' '+asNorm(texto)+' ',marca=Object.keys(LYST.r).concat(['Zara','H&M']).find(m=>q.includes(' '+asNorm(m)));
+  let g=ids&&ids.length?ids:Object.entries(E.nombre).filter(([id,n])=>E.usadas.includes(n)).map(([id])=>E.serie[id]);
+  g=[...new Set(g.filter(x=>x&&GREL[x]))].slice(0,3);
+  if(!marca&&!g.length)return {t:'inicio'};
+  return {t:'resp',marca,g,titulo:[marca,...g.map(tzNom)].filter(Boolean).join(' · ')};}
+function tzFotos(gs){const F=gs.filter(g=>FOTO_ATR[g]).slice(0,3);if(!F.length)return '';
+  return `<div class="tzfotos">${F.map(g=>{const f=FOTO_ATR[g],d=terreno(g);return `<figure><img loading="lazy"${fotoPos(g)} src="${vogueFoto(f.f,640)}" alt="${escH(tzNom(g))} en la pasarela: ${escH(fotoCred(f))}"><span class="pcred">${escH(fotoCred(f))}</span><figcaption><b>${escH(tzNom(g))}</b>${d!=null?` <span>${tzPts(d)}</span>`:''}</figcaption></figure>`;}).join('')}</div>`;}
+function tzPintarMesa(){const e=$('#tzmesa');if(!e)return;const M=as.mesa||{t:'inicio'},W=Math.min(Math.max(300,(e.clientWidth||900)-48),900);let h='';
+  const cab=(t,sub,tag)=>`<div class="tzmh"><h2>${escH(t)}</h2>${sub?`<p>${sub}</p>`:''}${tag||''}</div>`;
+  if(M.t==='inicio'){const L=tzSube().slice(0,3);
+    h=cab('Lo que más sube ahora','Búsqueda mundial, puntos ganados de 2022 a 2024 frente a las otras búsquedas de moda.','<span class="tag real">● medido</span>')+
+      tzFotos(L)+rvCurvas(L.map(g=>({n:tzNom(g),g})),W)+
+      `<div class="rvej"><span>O mostrale a CICLO un look de pasarela:</span><span id="rvej">${[['Trench',QEJ.trench],['Denim',QEJ.denim],['Cuero',QEJ.cuero],['Capa',QEJ.capa],['Kimono',QEJ.kimono]].map(([n,i])=>`<button type="button" class="chip" data-i="${i}" data-n="${n}">${n}</button>`).join('')}</span></div>`;}
+  else if(M.t==='imagen'){const A=as.clip,falta=Object.keys(RV_CLIP).concat(CLIP.col?CLIP.col.colores.map(c=>'color:'+c.id):[]).filter(c=>!A.some(a=>a.c===c)),D=A.map(a=>({a,...rvDato(a)}));
+    const chips=A.map((a,i)=>`<button type="button" class="aschip leido" data-x="${i}" title="Sacar ${escH(a.n)}">${escH(a.n)} <span class="aspp">${a.manual?'agregado':a.p.toFixed(2).replace('.',',')}</span> ×</button>`).join('')+
+      `<label class="rvagr"><span>+ agregar</span><select id="rvagr" aria-label="Agregar un atributo o un color que CLIP no leyó"><option value="">+ agregar</option>${falta.map(c=>`<option value="${escH(c)}">${c.startsWith('color:')?'Color · ':''}${escH(rvAtr(c).n)}</option>`).join('')}</select></label>`;
+    const filas=D.map(x=>`<div class="rvrow"><span class="rvn">${escH(x.a.n)}</span><span class="rvs ${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span><span class="rvf">${escH(x.frase)}${x.num?` <span class="rvnum">${x.num}.</span>`:''}</span>${x.serie?'<span class="tag real">● medido</span>':x.interp?'<span class="tag ia2">interpretado · CLIP</span>':'<span class="rvnos">sin serie de búsqueda</span>'}</div>`).join('');
+    h=cab('Tu diseño','',`<span class="tag ia2">interpretado · CLIP</span>`)+
+      `<div class="tzdis"><div class="tzimgv">${as.img?`<img src="${as.img.src}" alt="${escH(as.img.alt)}"><span class="rvpie">${escH(as.img.pie)}</span>`:''}</div>
+        <div class="tzlee"><span class="lbl">Qué vio CICLO</span>${A.length?'':`<p class="rvcap">${escH(as.nada||'CLIP no reconoció con claridad ningún atributo.')} Si sabés qué es, agregalo.</p>`}<div class="aschips" id="asclip">${chips}</div>
+          <p class="rvcap">Si leyó algo que no va, sacalo; si falta algo, agregalo.</p></div></div>
+      ${A.length?`<div class="rvsec"><span class="lbl">Qué dice el dato</span>${filas}</div>`:''}
+      ${rvCurvas(D.filter(x=>x.serie).map(x=>({n:x.a.n,g:x.a.id})),W)}
+      ${as.looks&&as.looks.length?`<div class="rvsec"><span class="lbl">Looks de pasarela parecidos</span> <span class="tag ia2">interpretado · CLIP</span><div class="aslooks">${as.looks.map(f=>`<a href="${f.u}" target="_blank" rel="noopener"><img loading="lazy" alt="${escH(f.d)}" src="${f.s}"><span>${escH(f.d)}</span></a>`).join('')}</div>${as.anios?`<p class="rvcap">${as.anios}</p>`:''}</div>`:''}`;}
+  else if(M.t==='looks'){h=cab('Lo que se le parece en la pasarela','Referencia de forma, no recomendación.','<span class="tag ia2">interpretado · CLIP</span>')+
+      `<div class="aslooks tzgrande">${(M.fotos||[]).map(f=>`<a href="${f.u}" target="_blank" rel="noopener"><img loading="lazy" alt="${escH(f.d)}" src="${f.s}"><span>${escH(f.d)}</span></a>`).join('')}</div>`;}
+  else{let marca='';
+    if(M.marca==='Zara'){const z=T.filter(t=>t.fuente==='Zara feb-2024');marca=`<div class="rvsec"><span class="lbl">Zara · catálogo de febrero de 2024</span> <span class="tag real">● medido</span><ul class="tzzara">${z.map(t=>`<li><b>${escH(t.n)}</b> ${escH(t.med)}</li>`).join('')}</ul><p class="rvcap">Zara no está en el Lyst Index; COS y Massimo Dutti, del mismo grupo, sí. Es una foto de un mes, no una serie.</p></div>`;}
+    else if(M.marca==='H&M')marca=`<div class="rvsec"><span class="lbl">H&amp;M</span><p class="rvcap">No está en el Lyst Index y CICLO no tiene una lectura por marca: sus ventas se usan para validar el modelo.</p></div>`;
+    else if(M.marca)marca=`<div class="rvsec"><span class="lbl">${escH(M.marca)} en el Lyst Index</span>${tzLyst(M.marca,W)}</div>`;
+    h=cab(M.titulo||'Lo que nombra la pregunta','')+marca+tzFotos(M.g||[])+rvCurvas((M.g||[]).map(g=>({n:tzNom(g),g})),W);}
+  e.innerHTML=h;
   $$('#asclip [data-x]').forEach(b=>b.onclick=()=>{as.clip.splice(+b.dataset.x,1);rvPintarLectura();});
-  const s=$('#rvagr');if(s)s.onchange=()=>{if(s.value){as.clip.push(rvAtr(s.value,null,true));rvPintarLectura();}};}
+  const s=$('#rvagr');if(s)s.onchange=()=>{if(s.value){as.clip.push(rvAtr(s.value,null,true));rvPintarLectura();}};
+  $$('#rvej .chip').forEach(b=>b.addEventListener('click',()=>rvEjemplo(+b.dataset.i,b.dataset.n)));}
+function tzVerMesa(M){as.mesa=M;tzPintarMesa();$('#tzmesa').scrollTop=0;$('#tzmesa').classList.remove('chica');tzBotonMesa();}
+function tzBotonMesa(){const b=$('#tzmesab');if(b)b.textContent=$('#tzmesa').classList.contains('chica')?'Ver la mesa ▾':'Achicar la mesa ▴';}
+/* la lectura de una imagen: la mesa muestra el diseño; la conversación, la devolución (la última sigue a los chips) */
+function rvPintarLectura(){const u=[...as.hist].reverse().find(m=>m.lectura);if(u)u.clip=as.clip.slice();if(as.mesa&&as.mesa.t==='imagen')tzPintarMesa();asPintar();}
+function asPintar(){
+  const D=asDiseno();
+  $('#asdisw').hidden=!D.chips.length;
+  $('#asdis').innerHTML=D.chips.length?D.chips.map(c=>`<button type="button" class="aschip" data-ir="${c.paso}"><span>${c.n}</span>${escH(c.v)}</button>`).join('')+`<p class="ascap">${(PERFIL[cliente]||PERFIL.premium).n} · ${vinculo==='propia'?'por tu cuenta':'para una marca'}</p>`:'';
+  $$('#asdis [data-ir]').forEach(b=>b.onclick=()=>{mostrar('disenar');dzIr(b.dataset.ir);});
+  const ch=$('#aschat');ch.innerHTML='';const ver=i=>`<button type="button" class="tzver" data-m="${i}">Ver en la mesa</button>`;
+  if(!as.hist.length)ch.innerHTML=`<div class="asa asnota"><p>${D.chips.length?`Estás armando ${escH(D.nombre)}. `:''}Preguntame algo, o subí una imagen de tu diseño: arrastrala a cualquier parte o tocá «＋ Imagen».</p></div>`;
+  as.hist.forEach((m,k)=>{
+    const d=document.createElement('div');
+    if(m.role==='user'){d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}
+    if(m.error){d.className='asa err';d.innerHTML=`<p>${escH(m.error)}</p>`;ch.appendChild(d);return;}
+    if(m.aviso){d.className='asa asnota';d.innerHTML=m.aviso+(m.mesa?ver(k):'');ch.appendChild(d);return;}
+    if(m.lectura){d.className='asa tzlect';d.innerHTML=`<p class="tzlq">${escH(m.pie)} · CLIP leyó: ${m.clip.length?m.clip.map(a=>escH(a.n)).join(', '):'nada con claridad'}</p>${m.clip.length?rvDevolucion(m.clip):''}${ver(k)}`;ch.appendChild(d);return;}
+    const r=m.r,E=m.E,filas=r.atributos.filter(id=>!E.serie[id]).map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span><span class="asnos">sin serie de búsqueda</span><span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
+    d.className='asa';
+    d.innerHTML=`<div class="h"><span class="tag ia2">interpretado · ${escH(m.modelo)}</span></div>
+      <div class="asconc">${r.accion?`<span class="asacc ${señalPalabra(r.accion).cls}" style="color:${señalPalabra(r.accion).color}">${señalPalabra(r.accion).icono} ${escH(r.accion)}</span><span class="asacsep"> · </span>`:''}${escH(r.conclusion)}</div>
+      ${r.respaldo?`<div class="asresp">${escH(r.respaldo)}</div>`:''}
+      ${r.regla?`<p class="ascap">La regla fija de CICLO para tu perfil dice <b class="${señalPalabra(r.regla).cls}">${escH(r.regla)}</b>; el modelo se apartó. Las dos quedan a la vista.</p>`:''}
+      ${r.acciones.length?`<div class="asacciones">${r.acciones.map((a,i)=>`<button type="button" class="kbtn" data-a="${m.i}:${i}">${escH(a.texto)}</button>`).join('')}</div>`:''}
+      ${r.detalle||filas||r.datos.length?`<details class="asmas"><summary>Detalle</summary>${r.detalle?`<div class="asdet">${escH(r.detalle)}</div>`:''}${filas?`<div class="asdatos">${filas}</div>`:''}${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}</details>`:''}
+      ${m.mesa?ver(k):''}`;
+    ch.appendChild(d);
+  });
+  $$('#aschat [data-a]').forEach(b=>b.onclick=()=>{const [mi,ai]=b.dataset.a.split(':').map(Number);asAplicar(as.hist.find(m=>m.i===mi).r.acciones[ai]);});
+  $$('#aschat [data-m]').forEach(b=>b.onclick=()=>tzVerMesa(as.hist[+b.dataset.m].mesa));
+  const ult=[...as.hist].reverse().find(m=>m.r),sug=ult&&ult.r.siguiente.length?ult.r.siguiente:asSugerencias();
+  $('#assug').innerHTML=sug.map(t=>`<button type="button">${escH(t)}</button>`).join('');
+  $$('#assug button').forEach(b=>b.addEventListener('click',()=>{$('#astexto').value=b.textContent;asPreguntar();}));
+  $('#asenviar').disabled=as.ocupado;$('#asenviar').textContent=as.ocupado?'Leyendo…':'Leer';
+  ch.scrollTop=ch.scrollHeight;
+  if(as.hist.length&&vista==='tiza'&&matchMedia('(max-width:760px)').matches)ch.lastElementChild?.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+/* arrastrar una imagen a cualquier parte de Tiza: un velo mientras se arrastra, y la imagen va a la mesa */
+function tzArrastre(){if(tzArrastre.listo)return;tzArrastre.listo=true;let n=0;const v=$('#tzvelo'),es=e=>e.dataTransfer&&[...e.dataTransfer.types].includes('Files')&&vista==='tiza';
+  addEventListener('dragenter',e=>{if(!es(e))return;e.preventDefault();n++;v.hidden=false;});
+  addEventListener('dragover',e=>{if(es(e))e.preventDefault();});
+  addEventListener('dragleave',e=>{if(!es(e))return;n=Math.max(0,n-1);if(!n)v.hidden=true;});
+  addEventListener('drop',e=>{if(!es(e))return;e.preventDefault();n=0;v.hidden=true;asFoto(e.dataTransfer.files[0]);});}
 /* lo que CLIP lee de un vector (de una foto o de un look del índice): los tres primeros que pasan 0,35, los looks y los años */
 function rvLeerVector(q,mismo){const R=clipLeer(q),idx=CLIP.idx,V=R.orden.filter(i=>i!==mismo);
   as.clip=R.atr.filter((a,i)=>i<3&&a.p>=CLIP_UMBRAL).map(a=>rvAtr(a.n,a.p));as.leido=true;
@@ -2796,21 +2962,13 @@ function rvLeerVector(q,mismo){const R=clipLeer(q),idx=CLIP.idx,V=R.orden.filter
   const Y0=idx.anios[0],Y1=idx.anios[1],cnt={};for(let y=Y0;y<=Y1;y++)cnt[y]=0;V.slice(0,100).forEach(i=>cnt[idx.y[i]]++);
   const pk=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]),az=(100/(Y1-Y0+1)).toFixed(0);
   as.anios=`De los 100 looks más parecidos, la mayoría son de ${pk[0]}${cnt[pk[1]]>=cnt[pk[0]]*0.6?` y ${pk[1]}`:''} (${cnt[pk[0]]} de 100; si fuera al azar, ${az} por año). La pasarela medida termina en 2023.`;
-  $('#asclipest').textContent=as.clip.length?'Leído en este navegador. Abajo, la lectura.':'Leído, pero CLIP no reconoció con claridad ningún atributo.';
-  rvPintarLectura();asPintar();$('#rvlect').scrollIntoView({behavior:'smooth',block:'start'});}
+  $('#asclipest').textContent=as.clip.length?'Leída en este navegador: la lectura está en la mesa.':'Leída, pero CLIP no reconoció con claridad ningún atributo.';
+  as.mesa={t:'imagen'};as.hist.push({role:'assistant',lectura:true,pie:as.img?as.img.pie:'Tu imagen',clip:as.clip.slice(),mesa:{t:'imagen'}});tzVerMesa(as.mesa);asPintar();}
 async function rvEjemplo(i,n){try{await clipIndice(t=>$('#asclipest').textContent=t);const idx=CLIP.idx;
-    $('#asprev').innerHTML=`<img class="asimg" src="${vogueFoto(idx.f[i],640)}" alt="${escH(idx.disenadores[idx.d[i]])}, ${TEMP[idx.s[i]]||''} ${idx.y[i]}"><span class="rvpie">${escH(idx.disenadores[idx.d[i]])} · ${TEMP[idx.s[i]]||''} ${idx.y[i]} · Vogue Runway</span>`;
+    as.img={src:vogueFoto(idx.f[i],1280),alt:`${idx.disenadores[idx.d[i]]}, ${TEMP[idx.s[i]]||''} ${idx.y[i]}`,pie:`Ejemplo: ${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]} · Vogue Runway`};
     rvLeerVector(clipVectorDelIndice(i),i);$('#asclipest').textContent=`Ejemplo (${n}): un look del índice, leído con su vector guardado, sin bajar el modelo.`;}
   catch(e){console.error(e);$('#asclipest').textContent='No se pudo bajar el índice. La app tiene que abrirse desde un servidor, no como archivo.';}}
-function pintarConsulta(){
-  if(pintarConsulta.listo)return;pintarConsulta.listo=true;const dr=$('#rvdrop');
-  ['dragenter','dragover'].forEach(ev=>dr.addEventListener(ev,e=>{e.preventDefault();dr.classList.add('on');}));
-  ['dragleave','drop'].forEach(ev=>dr.addEventListener(ev,e=>{e.preventDefault();dr.classList.remove('on');}));
-  dr.addEventListener('drop',e=>asFoto(e.dataTransfer.files[0]));
-  const EJ=[['Trench',QEJ.trench],['Denim',QEJ.denim],['Cuero',QEJ.cuero],['Capa',QEJ.capa],['Kimono',QEJ.kimono]];
-  $('#rvej').innerHTML=EJ.map(([n,i])=>`<button type="button" class="chip" data-i="${i}" data-n="${n}">${n}</button>`).join('');
-  $$('#rvej .chip').forEach(b=>b.addEventListener('click',()=>{$$('#rvej .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));rvEjemplo(+b.dataset.i,b.dataset.n);}));
-}
+function pintarConsulta(){tzArrastre();$('#tzmesab').onclick=()=>{$('#tzmesa').classList.toggle('chica');tzBotonMesa();};}
 
 const RDS={"baggy jeans":{"i":[null,null,null,null,null,null,null,null,4.1,4.9,4.4,6.9,4.7,7.6,11.3,20.4,25.4,32.7,33.3,57.2,76.3,100.0],"pk":2025,"n":89},"skinny jeans":{"i":[null,null,null,null,null,null,null,null,100.0,91.4,78.2,64.6,60.2,51.7,50.7,47.5,56.0,54.6,49.6,37.3,30.2,27.1],"pk":2012,"n":572},"cargo pants":{"i":[null,null,null,null,null,null,null,null,35.2,39.3,26.0,15.9,18.0,26.4,33.9,24.7,28.7,41.0,75.3,99.9,100.0,85.3],"pk":2024,"n":54},"wide leg":{"i":[null,null,null,null,null,null,null,null,19.5,18.8,24.6,18.4,22.5,29.9,38.4,43.1,47.5,65.8,87.9,100.0,89.3,78.7],"pk":2023,"n":211},"ballet flats":{"i":[null,null,null,null,null,null,null,null,100.0,85.0,75.1,55.5,43.1,34.9,23.6,39.6,39.5,36.7,42.0,59.9,82.9,83.5],"pk":2012,"n":122},"leather jacket":{"i":[null,null,null,null,null,null,null,null,90.7,100.0,97.7,86.1,73.1,78.2,74.6,74.4,67.6,67.0,62.2,56.3,56.0,51.6],"pk":2013,"n":504},"leopard":{"i":[null,null,null,null,null,null,null,null,100.0,90.0,69.4,43.3,25.3,29.1,40.5,54.7,47.1,42.1,26.1,28.7,31.7,42.4],"pk":2012,"n":56},"burgundy":{"i":[null,null,null,null,null,null,null,null,100.0,86.5,54.8,50.5,30.6,25.4,17.2,23.9,36.3,29.6,31.8,30.2,47.6,58.2],"pk":2012,"n":62},"corset":{"i":[null,null,null,null,null,null,null,null,47.2,38.0,26.0,18.7,24.6,23.4,28.5,34.5,60.2,88.9,86.8,89.6,83.0,100.0],"pk":2025,"n":154},"polka dot":{"i":[null,null,null,null,null,null,null,null,100.0,73.8,45.3,22.6,15.5,10.8,7.9,10.9,13.6,8.6,8.2,4.7,20.4,26.6],"pk":2012,"n":38},"floral":{"i":[null,null,null,null,null,null,null,null,100.0,82.9,67.0,60.1,57.3,62.1,59.5,65.9,61.0,51.2,50.1,52.6,52.7,51.0],"pk":2012,"n":234},"hoodie":{"i":[null,null,null,null,null,null,null,null,41.7,45.5,49.0,56.4,57.5,60.3,65.9,77.7,79.9,85.6,86.3,92.9,98.0,100.0],"pk":2025,"n":387},"oversized":{"i":[null,null,null,null,null,null,null,null,52.8,48.8,36.6,31.1,35.7,47.9,55.2,60.7,68.2,87.4,92.9,100.0,87.1,86.8],"pk":2023,"n":314},"trench":{"i":[null,null,null,null,null,null,null,null,57.3,74.8,86.9,89.8,75.2,55.0,50.9,45.2,56.7,65.6,84.5,94.4,100.0,97.3],"pk":2024,"n":198},"crop top":{"i":[null,null,null,null,null,null,null,null,22.1,30.5,29.4,40.3,35.2,40.6,41.9,49.6,68.4,93.5,100.0,91.2,55.9,46.2],"pk":2022,"n":305},"chunky sneakers":{"i":[null,null,null,null,null,null,null,null,0.0,0.0,0.0,14.6,14.6,14.6,46.2,89.8,100.0,94.3,79.7,99.9,75.7,70.1],"pk":2020,"n":25},"quiet luxury":{"i":[null,null,null,null,null,null,null,null,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,6.2,35.6,58.8,96.1,100.0],"pk":2025,"n":16},"y2k":{"i":[null,null,null,null,null,null,null,null,0.0,0.0,0.0,0.0,0.0,0.0,0.0,5.5,18.4,32.8,61.6,83.3,100.0,98.5],"pk":2024,"n":61},"suede":{"i":[null,null,null,null,null,null,null,null,87.4,82.3,94.2,100.0,98.3,85.9,76.1,72.1,71.7,58.5,56.5,47.9,63.1,70.2],"pk":2015,"n":191},"plaid":{"i":[null,null,null,null,null,null,null,null,79.9,86.8,100.0,73.4,44.1,40.4,62.2,82.9,97.1,79.0,76.2,53.5,60.6,57.8],"pk":2014,"n":110},"balaclava":{"i":[null,null,null,null,null,null,null,null,66.8,44.5,44.5,0.0,0.0,0.0,0.0,0.0,36.4,65.4,100.0,63.6,93.0,87.6],"pk":2022,"n":6},"lace":{"i":[null,null,null,null,null,null,null,null,100.0,90.0,61.1,48.8,34.5,33.2,35.5,40.3,40.7,33.1,33.1,32.0,32.9,28.6],"pk":2012,"n":368},"mom jeans":{"i":[null,null,null,null,null,null,null,null,5.1,4.8,2.8,10.4,13.7,29.5,52.7,84.4,100.0,76.8,47.5,22.6,15.0,11.9],"pk":2020,"n":149},"kimono":{"i":[null,null,null,null,null,null,null,null,65.0,70.7,82.1,63.6,59.6,36.4,72.3,94.7,100.0,60.7,40.3,41.6,63.0,56.4],"pk":2020,"n":53},"stripe":{"i":[null,null,null,null,null,null,null,null,100.0,89.5,78.2,72.3,66.8,73.1,69.0,68.7,50.4,44.6,38.9,30.0,28.5,25.9],"pk":2012,"n":125}};
 const RD_TOT=4404;
@@ -3242,7 +3400,8 @@ Respondé SOLO con un objeto JSON, sin texto antes ni después:
   "acciones": [{"paso": "tiro", "valor": "alto", "texto": "Probá tiro alto"}],
   "siguiente": ["hasta 2 preguntas cortas para seguir"]
 }`;
-const as={datos:null,hist:[],ocupado:false,clip:[],looks:null,leido:false,anios:'',nada:''};
+const as={datos:null,hist:[],ocupado:false,clip:[],looks:null,leido:false,anios:'',nada:'',mesa:null,img:null};
+let tzRz=null;addEventListener('resize',()=>{clearTimeout(tzRz);tzRz=setTimeout(()=>{if(vista==='tiza')tzPintarMesa();},250);});
 const asNorm=t=>t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 const asCampo=(l,k)=>{const m=l.match(new RegExp(`\\| ${k}: ([^|]*)`));return m?m[1].trim():null;};
 function asLeer(k){try{return localStorage.getItem(k)||'';}catch(e){return '';}}
@@ -3342,44 +3501,7 @@ function asSpark(g){
   const W=150,H=34,mx=Math.max(...v.map(p=>p.x)),X=i=>2+i/(v.length-1)*(W-4),Y=x=>H-3-(x/mx)*(H-6);
   return `<span class="aspk"><svg class="asspark" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="1.4" points="${v.map((p,i)=>X(i).toFixed(1)+','+Y(p.x).toFixed(1)).join(' ')}"/><circle cx="${X(v.length-1)}" cy="${Y(v[v.length-1].x)}" r="2.2" fill="currentColor"/><title>Búsqueda mundial ${v[0].y}–${v[v.length-1].y}</title></svg><span class="asanios">${v[0].y}–${v[v.length-1].y}</span></span>`;
 }
-function asSugerencias(){
-  const c=TAX.cortes.find(x=>x.id===dz.corte),t=dzTipo(),nm=c?c.n.toLowerCase():t?dzNombreTipo().toLowerCase():null;
-  if(!nm)return ['¿Qué estampa me conviene trabajar ahora?','¿Qué material está subiendo?','¿Qué va a estar de moda en 2027?','Mostrame qué se le parece en pasarela'];
-  return [`¿${nm[0].toUpperCase()+nm.slice(1)} está subiendo o bajando?`,`¿Qué material le va a ${c?'un '+nm:'mi '+nm} este año?`,'Mostrame qué se le parece en pasarela','¿Qué cambiarías para que dure más de una temporada?'];
-}
-function asPintar(){
-  const D=asDiseno();
-  $('#asdisw').hidden=!D.chips.length;
-  $('#asdis').innerHTML=D.chips.length?D.chips.map(c=>`<button type="button" class="aschip" data-ir="${c.paso}"><span>${c.n}</span>${escH(c.v)}</button>`).join('')+`<p class="ascap">${(PERFIL[cliente]||PERFIL.premium).n} · ${vinculo==='propia'?'por tu cuenta':'para una marca'}</p>`:'';
-  $$('#asdis [data-ir]').forEach(b=>b.onclick=()=>{mostrar('disenar');dzIr(b.dataset.ir);});if($('#asirdis'))$('#asirdis').onclick=()=>mostrar('disenar');
-  const ch=$('#aschat');ch.innerHTML='';
-  // el globo vacío no es del modelo: no lleva la marca de interpretado, y sin diseño no repite la tarjeta «Tu diseño»
-  if(!as.hist.length&&!as.leido)ch.innerHTML=D.chips.length?`<div class="asa asnota"><p>Estás armando ${escH(D.nombre)}. Preguntame si conviene, qué cambiar o qué se le parece, o subí una foto.</p></div>`:'';
-  as.hist.forEach(m=>{
-    const d=document.createElement('div');
-    if(m.role==='user'){d.className='asq';d.textContent=m.content;ch.appendChild(d);return;}
-    if(m.error){d.className='asa err';d.innerHTML=`<p>${escH(m.error)}</p>`;ch.appendChild(d);return;}
-    if(m.aviso){d.className='asa asnota';d.innerHTML=m.aviso;ch.appendChild(d);return;}
-    const r=m.r,E=m.E,curvas=rvCurvas(r.atributos.filter(id=>E.serie[id]).map(id=>({n:(E.nombre[id]||id).split(' · ').pop(),g:E.serie[id]})),Math.min(($('#aschat').clientWidth||640)-40,840)),
-      filas=r.atributos.filter(id=>!E.serie[id]).map(id=>`<div class="asdato"><span class="n">${escH(E.nombre[id]||id)}</span><span class="asnos">sin serie de búsqueda</span><span class="v">${escH(E.senal[id]||'')}</span></div>`).join('');
-    d.className='asa';
-    d.innerHTML=`<div class="h"><span class="tag ia2">interpretado · ${escH(m.modelo)}</span>${r.fuera?'<span class="tag alert">no lo tengo medido</span>':''}</div>
-      <div class="asconc">${r.accion?`<span class="asacc ${señalPalabra(r.accion).cls}" style="color:${señalPalabra(r.accion).color}">${señalPalabra(r.accion).icono} ${escH(r.accion)}</span><span class="asacsep"> · </span>`:''}${escH(r.conclusion)}</div>
-      ${r.respaldo?`<div class="asresp">${escH(r.respaldo)}</div>`:''}
-      ${curvas}
-      ${r.regla?`<p class="ascap">La regla fija de CICLO para tu perfil dice <b class="${señalPalabra(r.regla).cls}">${escH(r.regla)}</b>; el modelo se apartó. Las dos quedan a la vista.</p>`:''}
-      ${r.acciones.length?`<div class="asacciones">${r.acciones.map((a,i)=>`<button type="button" class="kbtn" data-a="${m.i}:${i}">${escH(a.texto)}</button>`).join('')}</div>`:''}
-      ${r.detalle||filas||r.datos.length?`<details class="asmas"><summary>Detalle</summary>${r.detalle?`<div class="asdet">${escH(r.detalle)}</div>`:''}${filas?`<div class="asdatos">${filas}</div>`:''}${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}</details>`:''}`;
-    ch.appendChild(d);
-  });
-  $$('#aschat [data-a]').forEach(b=>b.onclick=()=>{const [mi,ai]=b.dataset.a.split(':').map(Number);asAplicar(as.hist.find(m=>m.i===mi).r.acciones[ai]);});
-  $$('#aschat [data-look]').forEach(b=>b.onclick=()=>window.open(b.dataset.look,'_blank','noopener'));
-  const ult=[...as.hist].reverse().find(m=>m.r),sug=ult&&ult.r.siguiente.length?ult.r.siguiente:asSugerencias();
-  $('#assug').innerHTML=sug.map(t=>`<button type="button">${escH(t)}</button>`).join('');
-  $$('#assug button').forEach(b=>b.addEventListener('click',()=>{$('#astexto').value=b.textContent;asPreguntar();}));
-  $('#asenviar').disabled=as.ocupado;$('#asenviar').textContent=as.ocupado?'Leyendo…':'Leer';
-  ch.lastElementChild?.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
+function asSugerencias(){return TZ_SUG;}
 /* aplicar un cambio sugerido sobre el diseño, sin perder el resto */
 function asAplicar(a){
   if(!a)return;const antes=dzValor(a.paso)||'nada';dz[a.paso]=a.valor;
@@ -3388,22 +3510,17 @@ function asAplicar(a){
   asPintar();const v=$('#asverficha');if(v)v.onclick=()=>{mostrar('disenar');dzIr('fin');};
 }
 /* «Mostrame qué se le parece en pasarela»: no es una pregunta para el modelo, es CLIP */
-function asParecidos(){
-  let fotos=[];
-  if(as.looks)fotos=as.looks;else{const c=TAX.cortes.find(x=>x.id===dz.corte),t=dzTipo();
-    if(c&&c.clip_jeans)fotos=dzFotos(DIS.prendas.find(p=>p.id==='jeans').cortes.find(x=>x.id===c.clip_jeans),6).map(f=>({u:vogueFoto(f.f,1280),s:vogueFoto(f.f,320),d:`${f.d} · ${TEMP[f.s]||''} ${f.y}`}));
-    else if(t&&t.clip_corte)fotos=dzFotos(DIS.prendas.flatMap(p=>p.cortes).find(x=>x.id===t.clip_corte),6).map(f=>({u:vogueFoto(f.f,1280),s:vogueFoto(f.f,320),d:`${f.d} · ${TEMP[f.s]||''} ${f.y}`}));}
-  as.hist.push({role:'user',content:'Mostrame qué se le parece en pasarela'});
-  as.hist.push({role:'assistant',aviso:fotos.length?`<div class="h"><span class="tag ia2">interpretado · CLIP</span></div><p>${as.looks?'Los looks de Vogue más parecidos a tu imagen':'Looks de Vogue que CLIP eligió para tu corte'}. Son referencia de forma, no recomendación.</p><div class="aslooks">${fotos.map(f=>`<button type="button" data-look="${f.u}"><img loading="lazy" alt="${escH(f.d)}" src="${f.s}"><span>${escH(f.d)}</span></button>`).join('')}</div>`
-    :'<p>Para eso necesito una imagen o un corte con referencias de pasarela. Subí una foto arriba, o elegí un jean o un abrigo en Diseñar.</p>'});
+function asParecidos(texto){
+  as.hist.push({role:'user',content:texto||'Mostrame qué se parece a esto'});
+  if(as.looks&&as.looks.length){const M={t:'looks',fotos:as.looks};as.hist.push({role:'assistant',aviso:'<p>Los looks de pasarela más parecidos a tu imagen están en la mesa. Son referencia de forma, no recomendación.</p>',mesa:M});tzVerMesa(M);}
+  else{as.hist.push({role:'assistant',aviso:'<p>Para eso necesito una imagen: arrastrala a cualquier parte o tocá «＋ Imagen».</p>'});}
   asPintar();
 }
 /* la foto: CLIP lee los atributos y los looks parecidos; se muestran como chips que se pueden sacar */
 async function asFoto(file){
   const est=t=>{$('#asclipest').textContent=t;};
   if(!file||!file.type.startsWith('image/')){est('Ese archivo no es una imagen.');return;}
-  const url=URL.createObjectURL(file);$('#asprev').innerHTML=`<img class="asimg" src="${url}" alt="La imagen que subiste"><span class="rvpie">${escH(file.name)} · no sale de tu computadora</span>`;
-  $$('#rvej .chip').forEach(x=>x.setAttribute('aria-pressed','false'));
+  const url=URL.createObjectURL(file);as.img={src:url,alt:'La imagen que subiste',pie:`${file.name} · no sale de tu computadora`};
   try{
     await clipIndice(est);await clipModelo(est);est('Leyendo la imagen…');
     const {T,proc,model}=CLIP.mod,img=await T.RawImage.fromURL(url),{image_embeds}=await model(await proc(img));
@@ -3420,15 +3537,19 @@ async function asPreguntar(){
   let texto=$('#astexto').value.trim();const key=$('#askey').value.trim();
   if(as.ocupado)return;
   if(!texto){if(!as.leido){$('#asclipest').textContent='Subí una imagen o escribí una pregunta.';$('#astexto').focus();return;}
-    if(!key){$('#asclave').open=true;$('#asclipest').textContent='La lectura de abajo no necesita clave. Para la devolución escrita, activá Groq (abajo, un minuto).';$('#asclave').scrollIntoView({behavior:'smooth',block:'center'});return;}
+    if(!key){$('#asclipest').textContent='La lectura de la mesa no necesita clave. Para que te la escriba, activá la respuesta escrita (abajo).';return;}
     texto=RV_PREG;}
-  if(/parece en pasarela/i.test(texto)){$('#astexto').value='';asParecidos();return;}
-  if(!key){$('#asclave').open=true;$('#askey').focus();as.hist.push({role:'assistant',error:'Para contestar preguntas escritas, activá la devolución escrita: son tres pasos, abajo, y se hace una sola vez.'});asPintar();return;}
+  if(/se (le )?parece/i.test(texto)){$('#astexto').value='';asParecidos(texto);return;}
+  if(!key){if(!as.datos){await asAbrir();if(!as.datos)return;}
+    $('#astexto').value='';as.hist.push({role:'user',content:texto});const M0=tzMesaDe(asElegir(as.datos,texto,[]),texto);
+    as.hist.push({role:'assistant',aviso:`<p>${M0.t==='inicio'?'Lo que más sube está en la mesa.':'Lo que CICLO tiene sobre esto está en la mesa.'} Para que te lo escriba, activá la respuesta escrita: abajo, un minuto, una sola vez.</p>`,mesa:M0});
+    tzVerMesa(M0);asPintar();return;}
   if(!as.datos){await asAbrir();if(!as.datos)return;}
   $('#astexto').value='';as.hist.push({role:'user',content:texto});as.ocupado=true;asPintar();
   const D=asDiseno(),O=asOpciones(),clipTxt=as.clip.map(c=>(c.color?'color '+c.n.toLowerCase():c.n)+(c.manual?' (lo agregó quien diseña)':'')).join(', ');
   const recientes=as.hist.filter(m=>m.role==='user').slice(-2).map(m=>m.content).join(' ')+' '+D.chips.map(c=>c.v).join(' ')+' '+clipTxt;
-  const E=asElegir(as.datos,recientes,D.ids);
+  const E=asElegir(as.datos,recientes,D.ids),Eq=asElegir(as.datos,texto,[]),M0=texto===RV_PREG?{t:'imagen'}:tzMesaDe(Eq,texto);
+  if(M0.t!=='inicio'||!as.leido)tzVerMesa(M0);
   const opc=Object.keys(O).length?'OPCIONES (paso: valores posibles para "acciones"):\n'+Object.entries(O).map(([k,v])=>`${k}: ${v.join(', ')}`).join('\n'):'OPCIONES: ninguna (no hay diseño armado).';
   const system=`${AS_INSTR}\n\n${asQuien()}\nTU DISEÑO: ${D.chips.length?D.txt:'todavía no armó nada'}.\n${clipTxt?`EN SU IMAGEN, CLIP LEYÓ (interpretado, más de 0,35 de probabilidad; el diseñador lo vio y no lo sacó): ${clipTxt}.\n`:''}${opc}\n\n=== DATOS ===\n${E.datos}\n=== FIN DE DATOS ===`;
   const mensajes=as.hist.filter(m=>m.role==='user'||m.r).slice(-8).map(m=>({role:m.role,content:m.role==='user'?m.content:m.r.respuesta}));
@@ -3446,13 +3567,14 @@ async function asPreguntar(){
     const r=j&&asNormalizar(j,E.ids,O);
     if(!r||!r.conclusion)throw {msg:'El modelo no devolvió una respuesta válida. Probá de nuevo.'};
     const id1=r.atributos.length===1?r.atributos[0]:null;r.regla=r.accion&&id1&&E.reglas[id1]&&E.reglas[id1]!==r.accion?E.reglas[id1]:'';
-    as.hist.push({role:'assistant',r,E,modelo,i:asN++});
+    let Mr=texto===RV_PREG?{t:'imagen'}:tzMesaDe(Eq,texto,r.atributos.map(id=>E.serie[id]).filter(Boolean));if(Mr.t==='inicio')Mr=M0;
+    as.hist.push({role:'assistant',r,E,modelo,i:asN++,mesa:Mr});tzVerMesa(Mr);
   }catch(e){as.hist.push({role:'assistant',error:asError(e instanceof TypeError?0:e.st,e.msg)});}
   as.ocupado=false;asPintar();$('#astexto').focus();
 }
 $('#askey').value=asLeer('groq_key');
 /* con clave, una línea; sin clave, los tres pasos a la vista cuando hacen falta */
-function asEstadoClave(){const k=$('#askey').value.trim();$('#asclaves').textContent=k?'Devolución escrita activada ✓ · cambiar clave':'Activar la devolución escrita · 1 minuto';$('#asclave').classList.toggle('ok',!!k);}
+function asEstadoClave(){const k=$('#askey').value.trim();$('#asclaves').textContent=k?'Respuesta escrita activada ✓ · cambiar clave':'Activar la respuesta escrita · 1 minuto';$('#asclave').classList.toggle('ok',!!k);}
 $('#askey').addEventListener('input',()=>{asGuardar('groq_key',$('#askey').value.trim());asEstadoClave();});asEstadoClave();
 $('#asmodelo').value=asLeer('ciclo.as_modelo')||'openai/gpt-oss-120b';
 $('#asmodelo').addEventListener('change',()=>asGuardar('ciclo.as_modelo',$('#asmodelo').value));
@@ -3816,9 +3938,9 @@ function pintarLystX(){
 
 /* ---------- navegación ---------- */
 function mostrar(v,keepNav){
-  if(v==='consulta'||v==='asistente')v='revision'; // los links de antes del 10/11 siguen andando
+  if(v==='consulta'||v==='asistente'||v==='revision')v='tiza'; // los links de antes siguen andando
   document.body.classList.toggle('on-gate',v==='perfil');
-  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','revision','racional','adivina','mover'].forEach(x=>{
+  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','tiza','racional','adivina','mover'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
@@ -3827,7 +3949,7 @@ function mostrar(v,keepNav){
   if(v==='retornos')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='recorridos'?'page':'false'));
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
-  if(v==='revision'){asAbrir();rvPintarLectura();}
+  if(v==='tiza'){asAbrir();tzArrastre();tzPintarMesa();}
   if(v==='racional'){pintarMetodoGate();pintarLectura();}
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
@@ -3925,7 +4047,7 @@ $('#gmirar').addEventListener('click',gateMirar);
 let publico='todos';
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
-const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','revision','consulta','asistente','racional','adivina','mover'];
+const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','tiza','revision','consulta','asistente','racional','adivina','mover'];
 let vista='perfil',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;

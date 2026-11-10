@@ -98,9 +98,9 @@ En el celular, las mismas tres preguntas:
 
 <img src="entregas/entrega_4/recorrido/paso_08_disenar_con_el_atributo_fijo_celular.png" alt="Paso 8 en el celular" width="260">
 
-**9 · Revisión.** Le mostrás a CICLO una imagen de tu diseño, una pregunta o las dos. CLIP lee la imagen en chips que podés corregir; cada atributo trae su señal y su curva, y una devolución dice qué va y qué cambiarías, con el número que lo sostiene. La devolución escrita usa tu clave de Groq; sin clave, la arman reglas fijas.
+**9 · Tiza.** Le mostrás a CICLO una imagen de tu diseño, una pregunta o las dos. La pantalla tiene dos partes: la mesa, grande, con lo que estás mirando (tu diseño con lo que leyó CLIP, las curvas, las fotos de pasarela, el recorrido de una marca en Lyst), y al costado la conversación. En el celular, la mesa queda arriba y la conversación abajo. La imagen se arrastra a cualquier parte. Sin clave de Groq, la mesa igual muestra lo que CICLO tiene y una devolución armada con reglas; con clave, el modelo la escribe (prompt v9: arranca por lo que hay, lo que falta al final).
 
-![Paso 9: Revisión](entregas/entrega_4/recorrido/paso_09_revision.png)
+![Paso 9: Tiza](entregas/entrega_4/recorrido/paso_09_tiza.png)
 
 **Y además.** La pirueta, «El brief»: un encargo de una casa real con un look de su desfile, tres toques de diseño (forma, material, estampa) y un veredicto en lenguaje de moda; al final, el mismo look puntuado para tres casas, porque lo que sube es del lujo y lo que está en su pico es del fast fashion. También «Cómo se arma una lectura», arriba de todo en Método, y El ciclo.
 
@@ -157,7 +157,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | Tendencias | La pantalla principal. Abre con un gráfico animado que rota entre cinco lecturas de la búsqueda mundial: qué sube y qué baja, qué está en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro. Debajo, los atributos con dato medido, con su etapa y su señal. La marca CICLO lleva acá |
 | El ciclo | Cuándo picó cada uno de los 65 atributos con serie y cuánto tardó en volver; el recorrido de cada uno por pasarela, búsqueda y Reddit hasta 2030, y los jeans por corte |
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
-| Revisión | Desde el 10/11 junta «Buscar por imagen» y «Preguntar». Soltás una imagen, escribís una pregunta o las dos. CLIP lee la imagen en el navegador (chips que se sacan o se agregan); cada atributo trae su señal, su frase y su curva de búsqueda; abajo, una devolución: qué va y qué cambiarías, con el dato. Con tu API key de Groq la escribe un LLM (prompt v9: arranca por lo que hay, lo que falta al final; conclusión, respaldo, detalle plegado); sin clave, reglas fijas, y lo dice. Los looks parecidos y «qué se le mandó al modelo», plegados |
+| Tiza | Desde el 10/11 junta «Buscar por imagen» y «Preguntar» (se llamó «Revisión» unas horas). A la izquierda la mesa: lo que estás mirando (tu diseño y lo que leyó CLIP en chips que se corrigen, con color; las curvas; las fotos; el recorrido de una marca en Lyst, con el corte de Q1-26). A la derecha la conversación, con cinco preguntas sugeridas desde el arranque. Cada respuesta tiene «Ver en la mesa». Con tu API key de Groq la escribe un LLM (prompt v9); sin clave, reglas fijas, y lo dice. En el celular, la mesa arriba |
 | El brief | La pirueta. Un encargo de una casa real (foto de Vogue Runway), tres toques (forma, material y estampa, cada opción con su foto de pasarela) y un veredicto: cada elección sube, está en pico, quieta o baja según su búsqueda 2022→2024, y el mismo look se puntúa para lujo, contemporary y fast fashion. Reemplazó a Adiviná vos en «Más» el 10/11 (sigue en `#adivina`) |
 | Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |
 | Método | «Cómo se arma una lectura»: de los datos a la señal, en siete pasos; fuentes, recortes y límites declarados. El modelo (K-means paso a paso) y Marcas (Lyst) salieron de la navegación el 10/11 y siguen en `#etapas` y `#marcas` |
@@ -202,7 +202,7 @@ calculadas —nivel, momento, crecimiento, distancia al pico— y el tipo de cli
 aparece en la interfaz marcado como interpretación. Los prompts están versionados en `prompts/`.
 
 **Claves de API:** no hay ninguna en el repositorio. IA-5 (Recorridos → «Pedir lectura en vivo») e IA-8
-(«Revisión», antes «Preguntar») funcionan como la V2 de la clase: cada uno pega su API key de Groq en la página, queda guardada
+(«Tiza», antes «Preguntar») funcionan como la V2 de la clase: cada uno pega su API key de Groq en la página, queda guardada
 sólo en su navegador y es la misma para los dos. El `.gitignore` bloquea `.env` y similares.
 
 ## El modelo

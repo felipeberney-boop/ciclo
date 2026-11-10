@@ -2394,3 +2394,43 @@ algodón.
 **Un arreglo de paso.** `codigo/taxonomia.py` no corría desde que se sumó el plan 4 de Trends (la prueba mensual por
 temporada): esas filas no son hojas de la taxonomía (`material:cuero`). Ahora el script las saltea y la salida es la de
 antes, más el algodón.
+
+## 2026-11-10 · Tiza: la mesa y la conversación (layout A+B)
+
+**El nombre.** «Revisión» no convenció. Entre ocho propuestas pensadas desde el oficio (Tiza, La prueba, Mesa,
+Enchinchada, Corrección, Lectura, Otra mirada, Mostrale), Felipe eligió **Tiza**: la tiza del sastre con la que se marcan
+las correcciones sobre la tela. Dice «corregir» sin decir «error», y no es un personaje ni un dibujo. Los links viejos
+(`#consulta`, `#asistente`, `#revision`) abren Tiza.
+
+**El problema de formato.** El lugar donde se veía la imagen era el mismo donde se soltaba, y todo iba en una sola
+columna: lo que estabas mirando se iba para arriba con cada respuesta.
+
+**Las referencias que se miraron.** A: pantalla partida (Claude Artifacts, ChatGPT Canvas, Daydream en moda: chat a un
+lado, resultados al otro). B: imagen arriba y un panel que sube (Google Lens multisearch). C: asistente encima de la
+página (Zalando, Amazon Rufus). D: hilo con tarjetas (la Revisión de antes, Perplexity). Se eligió A en escritorio y B en
+el celular, con la misma estructura.
+
+**Cómo quedó.**
+- *Escritorio:* a la izquierda, ~62 %, la mesa. A la derecha, la conversación, con el campo fijo abajo, «＋ Imagen» y el
+  enlace para activar la respuesta escrita. La imagen se puede soltar en cualquier parte: aparece un velo «Soltá la
+  imagen para que CICLO la lea» y la imagen va a la mesa, nunca encima de lo que estás mirando.
+- *Celular:* la mesa fija arriba (hasta 42 % de la pantalla, se puede achicar), la conversación corre debajo y el campo
+  queda fijo al pie. Se hizo con CSS (sticky), no con un panel arrastrable: es más simple y anda igual.
+- *Qué muestra la mesa:* vacía, lo que más sube (tres fotos de pasarela y sus curvas) y cinco looks de ejemplo. Con una
+  imagen, tu diseño grande, lo que leyó CLIP (chips que se corrigen, con color), qué dice el dato, las curvas y los looks
+  parecidos. Con una pregunta, lo que nombra: una marca muestra su recorrido en Lyst, con los dos tramos separados por el
+  corte de Q1-26 (nunca unidos); Zara, su catálogo de febrero de 2024; un atributo, su foto y su curva.
+- *La conversación:* la respuesta corta (conclusión, dato, detalle plegado), y cada mensaje con «Ver en la mesa», que
+  vuelve a mostrar lo suyo. La lectura de una imagen trae la devolución armada con reglas y sigue a los chips.
+- *Sin clave:* la mesa igual muestra lo que CICLO tiene sobre la pregunta, y la conversación lo dice: «Lo que CICLO tiene
+  sobre esto está en la mesa. Para que te lo escriba, activá la respuesta escrita». Antes, sin clave, sólo había un error.
+- *Preguntas sugeridas,* desde el arranque y en una fila: ¿Qué está subiendo más ahora?, ¿Cómo está Zara?, ¿Cómo está
+  Prada?, ¿Qué material le va a un jean baggy?, Mostrame qué se parece a esto (con imagen, los looks parecidos van a la
+  mesa; sin imagen, pide una).
+
+**Lo que no se perdió.** El modelo nunca ve una fila; medido e interpretado marcados en cada pieza de la mesa; «Qué se le
+mandó al modelo»; el formato corto.
+
+Probado con Playwright a 1400 y 393 px: vacía, Prada, Zara, jeans de Balenciaga, una foto subida, «qué se parece» y, con
+la respuesta de Groq simulada sólo en la prueba, que la mesa sigue a lo que nombra la respuesta (gamuza y lana). Sin
+errores ni scroll horizontal.

@@ -359,6 +359,12 @@ y cruces marca × prenda.
 
 En El brief, cada prenda ofrece sus propios materiales, con el algodón en todas; los abrigos de Diseñar suman algodón.
 
+## v1.44 · 10/11/2026 · Tiza
+
+La parte de IA se llama Tiza y se parte en dos: la mesa, grande, con lo que estás mirando (tu diseño, las curvas, las
+fotos, el recorrido de una marca), y la conversación al costado. En el celular, la mesa arriba. Las imágenes se sueltan en
+cualquier parte; sin clave, la mesa igual responde con datos.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

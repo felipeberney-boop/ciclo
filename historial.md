@@ -307,6 +307,12 @@ El gráfico animado deja de mostrar una sola cosa: rota, como la secuencia de M�
 en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro. Todas animadas y todas con la misma serie. Al final
 de Tendencias, un acceso discreto a «El brief».
 
+## v1.34 · 10/11/2026 · Fotos de pasarela
+
+Las tarjetas de Tendencias y de El ciclo pasan de ilustraciones a fotos reales de Vogue Runway, con diseñador, temporada
+y año al pie. Cada foto la eligió CLIP en el corpus y la revisamos a ojo: 38 atributos tienen foto y los demás conservan
+el dibujo. En los cortes, la silueta queda como etiqueta en la esquina de la foto.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

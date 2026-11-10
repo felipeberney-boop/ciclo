@@ -2170,3 +2170,31 @@ rotar. En el celular, cada lectura se arma al ancho de la pantalla. Con movimien
 para Chanel? Jugá «El brief» →».
 
 Probado con Playwright a 1400 y 393 px: las cinco lecturas, sin errores ni scroll horizontal.
+
+## 2026-11-10 · Fotos de Vogue en Tendencias y El ciclo
+
+**Pedido (Cristian e Iván, y la decisión de Felipe).** Las estampas, materiales y prendas de Tendencias y de El ciclo
+tienen que mostrarse con fotos reales, no con ilustraciones. Los cortes conservan la silueta, que gustó, combinada con la
+foto. La fuente la decidió Felipe: Vogue Runway, el mismo corpus que ya usa CLIP.
+
+**Lo que cambia respecto de la licencia.** El 13/10 se dibujaron las siluetas porque las fotos de Vogue no tienen licencia
+declarada, y eso no cambió. Lo que cambió es la decisión: se muestran igual, como ya se mostraban en «Ver referencias de
+pasarela» y en Buscar por imagen. Se cargan desde los servidores de Vogue, no se descargan ni se suben al repositorio, y
+cada una lleva diseñador, temporada, año y «Vogue Runway» al pie. El riesgo queda dicho, no escondido.
+
+**Cómo se eligió cada foto.** Con el mismo CLIP de la app: el codificador de texto (Xenova/clip-vit-base-patch32, el
+mismo modelo, en el navegador) convierte una frase por atributo, como «a runway look with polka dots», en un vector.
+Ese vector se compara con los 14.000 looks del índice, desde 2016, tomando un look por diseñador. De los seis más
+parecidos se eligió uno a ojo. Donde ninguno mostraba el atributo, no hay foto y queda el dibujo: popelina, evasé, capa,
+corderoy, jean skinny y casi todos los materiales sin forma (seda, gasa, tul, organza, satén, pedrería). Hay 38
+atributos con foto, y se revisaron que no se repitiera ninguna.
+
+**Cómo se ven.**
+- *Tendencias:* la foto ocupa el cuadro de la tarjeta. En los cortes (amplio, medio), la silueta va en una pastilla
+  blanca arriba a la derecha, la opción 1 de las tres que se propusieron. El ajustado no tiene foto que lo muestre, así
+  que conserva su silueta sola.
+- *El ciclo:* la foto va arriba de cada tarjeta que tiene una.
+- *Recorte:* cada foto mira donde está el atributo. Para jeans, mocasines, shorts y faldas, el recorte baja hasta las
+  piernas o los pies.
+
+Probado con Playwright a 1400 y 393 px, sin errores ni scroll horizontal.

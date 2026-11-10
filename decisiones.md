@@ -2293,3 +2293,10 @@ así que por ahora quedan afuera, sin inventar nada.
 Probado con Playwright a 1400 y 393 px: un look del índice, una foto real subida (CLIP bajó el modelo y leyó «Jeans
 baggy, 0,48»), chips sacados y agregados, «Leer» sin clave y, con la respuesta de Groq simulada sólo en la prueba (nunca
 en las capturas), que al modelo le llega lo que leyó CLIP y ninguna fila de datos.
+
+## 2026-11-10 · El gate: «Sólo estoy mirando», sólo en la primera pregunta
+
+**Pedido de Felipe.** En la segunda y la tercera pregunta la salida sobra: si ya elegiste para quién diseñás, no estás
+sólo mirando. Ahora aparece únicamente en «¿Para quién diseñás?». Quien la quiera vuelve con «Volver», que sigue en
+todas. El resto del gate no se tocó. Probado a 1400 y 393 px: visible en la primera, oculta en la segunda y la tercera,
+visible de nuevo al volver.

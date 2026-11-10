@@ -336,6 +336,10 @@ pregunta o las dos. Lo que CLIP lee aparece en chips que se corrigen; cada atrib
 y una devolución dice qué va y qué cambiarías, con el dato. Con clave de Groq la escribe el modelo (prompt v8); sin
 clave, reglas fijas. El menú queda con cinco ítems.
 
+## v1.39 · 10/11/2026 · El gate, más corto
+
+«Sólo estoy mirando» queda sólo en la primera pregunta.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -952,6 +952,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .gmirar:not(#z){display:flex;justify-content:center;width:100%;max-width:none;margin:40px auto 0;text-align:center}
 .app .gmirar button:not(#z){font:inherit;font-size:var(--t-cue)!important;color:var(--azul);background:none;border:0;padding:8px 4px;cursor:pointer}
 .app .gmirar button:hover{text-decoration:underline;text-underline-offset:4px}
+.app .gmirar[hidden]:not(#z){display:none}
 /* pie, panel «Más» y menú */
 .app .colofon{background:var(--paper);border-top:1px solid var(--rule)!important;font-size:12px!important;color:var(--ink-3)}
 .app .mast .navgrupo:not([hidden]){box-shadow:0 20px 40px -24px rgba(0,0,0,.25)!important;border:1px solid var(--rule-2)!important}
@@ -3835,6 +3836,7 @@ const gateSel={publico:null,vinculo:null,cliente:null};
 function gateTarjeta(datos,attrs,on){return `<button class="gcard${on?' on':''}" type="button" aria-pressed="${!!on}" ${attrs}>${datos}</button>`;}
 function pintarGate(){
   const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;g.classList.remove('g4');
+  $('#gmirar').parentElement.hidden=gatePaso!==1; // «Sólo estoy mirando», sólo en la primera pregunta (10/11)
   $('#gprog').innerHTML=`<b>0${gatePaso}</b> / 03`;
   const tit=t=>{$('#gpreg').textContent=t;};
   const sig=()=>{gatePaso++;pintarGate();$('#ggrid .gcard')?.focus();};

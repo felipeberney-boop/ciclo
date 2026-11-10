@@ -2144,3 +2144,29 @@ verificación del 13/10.
 El juego de las cartas sale entero.
 
 Probado con Playwright a 1400 y 393 px: el brief, los tres pasos y el veredicto, sin errores ni scroll horizontal.
+
+## 2026-11-10 · Tendencias: cinco lecturas que rotan
+
+**Pedido (Felipe).** El gráfico mostraba una sola cosa y se quedaba ahí. Tiene que ir cambiando de vista, como la
+secuencia de Método, para que al mirarlo un rato se vean cosas distintas.
+
+**Las cinco, en este orden.** Cada una dura nueve segundos y entra animada. La pausa es automática al pasar el mouse;
+también hay botón. Abajo están los nombres de las cinco, para saltar a cualquiera, y el de la que está activa se llena
+como una barra de progreso.
+
+| # | Lectura | Qué muestra | De dónde sale |
+|---|---|---|---|
+| 1 | Qué sube y qué baja | Cinco que ganan y cinco que pierden, con su curva desde 2016 | `terreno()`, 2022→2024 |
+| 2 | Qué está en su máximo | Barras del nivel 2023–24 sobre su máximo histórico: tote 98 %, floral 96 %, mocasines 94 % | La serie, desde 2004 |
+| 3 | Cuándo picó cada uno | Catorce atributos en el año de su máximo, del skinny (2010) al baggy y el floral (2024); el punto viaja hasta su año | El año del máximo |
+| 4 | Lo que vuelve | Floral, mocasines y lunares, con sus dos picos y los años entre uno y otro (7, 8 y 7) | `cicloDe()`, la regla de El ciclo |
+| 5 | Uno contra otro | Dos curvas en la misma escala y el año en que se cruzan: skinny y baggy (2021), blusa y corset (2022), zapatillas y mocasines (2023) | El cruce de las dos series |
+
+Todas usan la misma serie (búsqueda mundial corregida, hasta 2024), así que ninguna contradice a otra ni al resto de la
+app. Tocar un atributo abre su recorrido. El alto del bloque es el de la lectura más alta, para que la página no salte al
+rotar. En el celular, cada lectura se arma al ancho de la pantalla. Con movimiento reducido no rota sola.
+
+**El acceso al juego.** Tendencias vuelve a tener uno, pero al final de la página y no debajo del gráfico: «¿Tenés ojo
+para Chanel? Jugá «El brief» →».
+
+Probado con Playwright a 1400 y 393 px: las cinco lecturas, sin errores ni scroll horizontal.

@@ -301,6 +301,12 @@ El juego de las cartas no funcionó: pedía leer curvas para jugar. El nuevo emp
 Diseñar (forma, material, estampa) y el veredicto llega de a partes: un titular en lenguaje de moda, qué te sumó y qué te
 restó, y al final el mismo look puntuado para tres casas.
 
+## v1.33 · 10/11/2026 · Tendencias rota entre cinco lecturas
+
+El gráfico animado deja de mostrar una sola cosa: rota, como la secuencia de Método, entre qué sube y qué baja, qué está
+en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro. Todas animadas y todas con la misma serie. Al final
+de Tendencias, un acceso discreto a «El brief».
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

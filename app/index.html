@@ -1094,11 +1094,40 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .mvc{cursor:pointer;outline:none}
 .app .mvc:hover polyline,.app .mvc:focus-visible polyline{stroke-width:4.5}
 .app .mvc:focus-visible .mvcl text{text-decoration:underline}
-.app .movi.anim .mvc polyline{stroke-dasharray:1;stroke-dashoffset:1;animation:movdib 1.7s cubic-bezier(.45,0,.2,1) forwards;animation-delay:var(--d)}
-.app .movi.anim .mvcp{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:movpunto .45s cubic-bezier(.34,1.8,.64,1) forwards;animation-delay:calc(var(--d) + 1.55s)}
-.app .movi.anim .mvcl{opacity:0;animation:movlab .5s ease forwards;animation-delay:calc(var(--d) + 1.6s)}
 @keyframes movdib{to{stroke-dashoffset:0}}@keyframes movpunto{to{transform:scale(1)}}@keyframes movlab{to{opacity:1}}
 @media (max-width:760px){.app .movg{grid-template-columns:minmax(0,1fr)}.app .movi{padding:16px 14px}.app .movh{flex-direction:column-reverse}.app .movb{align-self:flex-end}}
+/* Tendencias: cinco lecturas que rotan (10/11/2026) */
+.app .tvtit:not(#z){font-size:var(--t-sub)!important;font-weight:600!important;line-height:1.2!important;margin:0}
+.app .tvsub:not(#z){font-size:var(--t-eti)!important;color:var(--ink-2);margin:4px 0 0;line-height:1.4!important}
+.app .tvesc{position:relative;margin:14px 0 0;transition:height .3s}
+.app .tvsc{position:absolute;inset:0 0 auto 0;opacity:0;transition:opacity .5s;pointer-events:none}
+.app .tvsc.on{opacity:1;pointer-events:auto}
+.app .tvsc svg{width:100%;height:auto;display:block;overflow:visible}
+.app .tvrow{cursor:pointer;outline:none}.app .tvrow:hover text:first-child,.app .tvrow:focus-visible text:first-child{text-decoration:underline}
+.app .tvvuelve{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.app .tvvuelve figure{margin:0}
+@media (max-width:640px){.app .tvvuelve{grid-template-columns:minmax(0,1fr);gap:6px}}
+.app .tvpts{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}
+.app .tvpts button:not(#z){font:inherit;font-size:13px!important;color:var(--ink-2);background:transparent;border:1px solid var(--rule)!important;border-radius:999px!important;padding:6px 12px;cursor:pointer;position:relative;overflow:hidden}
+.app .tvpts button.on:not(#z){color:var(--ink);border-color:var(--ink)!important}
+.app .tvpts button span{position:relative;z-index:1}
+.app .tvpts button.on::before{content:"";position:absolute;inset:0;background:var(--paper);transform-origin:left;animation:tvbarra 9s linear forwards}
+@keyframes tvbarra{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+/* animaciones de cada lectura */
+.app .tvsc.anim .mvc polyline,.app .tvsc.anim .tvcur{stroke-dasharray:1;stroke-dashoffset:1;animation:movdib 1.7s cubic-bezier(.45,0,.2,1) forwards;animation-delay:var(--d,0s)}
+.app .tvsc.anim .mvcp{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:movpunto .45s cubic-bezier(.34,1.8,.64,1) forwards;animation-delay:calc(var(--d) + 1.55s)}
+.app .tvsc.anim .mvcl{opacity:0;animation:movlab .5s ease forwards;animation-delay:calc(var(--d) + 1.6s)}
+.app .tvsc.anim .tvbar{transform-box:fill-box;transform-origin:left;transform:scaleX(0);animation:tvcrece 1.1s cubic-bezier(.2,.9,.25,1) forwards;animation-delay:var(--d)}
+@keyframes tvcrece{to{transform:scaleX(1)}}
+.app .tvsc.anim [data-v="1"] .tvlab,.app .tvsc.anim .tvrow .tvlab{opacity:0;animation:movlab .4s ease forwards;animation-delay:calc(var(--d) + .9s)}
+.app .tvsc.anim .tvrow .tvdot{transform:translateX(var(--dx,0));animation:tvviaja 1s cubic-bezier(.3,.8,.3,1) forwards;animation-delay:var(--d)}
+@keyframes tvviaja{to{transform:none}}
+.app .tvsc.anim .tvrow line{stroke-dasharray:2000;stroke-dashoffset:2000;animation:tvlinea 1s cubic-bezier(.3,.8,.3,1) forwards;animation-delay:var(--d)}
+@keyframes tvlinea{to{stroke-dashoffset:0}}
+.app .tvsc.anim .tvvuelve .tvdot,.app .tvsc.anim[data-v="4"] .tvdot{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:movpunto .45s cubic-bezier(.34,1.8,.64,1) forwards;animation-delay:calc(var(--d,0s) + 1.6s)}
+.app .tvsc.anim .tvvuelve .tvlab,.app .tvsc.anim[data-v="4"] .tvlab{opacity:0;animation:movlab .5s ease forwards;animation-delay:calc(var(--d,0s) + 2s)}
+.app .tvsc.anim[data-v="4"] .tvcruce{animation-delay:2.3s}
+@media (prefers-reduced-motion:reduce){.app .tvpts button.on::before{animation:none;transform:none}}
 /* ---------- «El brief» (10/11/2026, segunda versión) ---------- */
 .app #mv{max-width:1080px;margin:0 auto}
 .app .mvbtn:not(#z){font:inherit;font-size:15px!important;font-weight:500!important;color:var(--ink)!important;background:transparent!important;border:1px solid var(--ink)!important;border-radius:999px!important;padding:10px 22px!important;cursor:pointer;line-height:1.2!important}
@@ -1152,6 +1181,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app #mv .bfqm{position:absolute;top:18px;right:18px}
 .app .mvacceso:not(#z){display:inline-flex;align-items:center;gap:10px;margin:18px 0 0;font-size:var(--t-cue)!important;color:var(--azul);text-decoration:none}
 .app .mvacceso b{font-weight:600}
+.app .bfacceso{text-align:center;margin:36px 0 0}
 @media (max-width:760px){
   .app .bfcard{grid-template-columns:minmax(0,1fr)}.app .bffoto{aspect-ratio:4/5}
   .app .bftxt{padding:24px 22px}.app #mv .bftxt h2:not(#z){font-size:40px!important}
@@ -1230,6 +1260,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         <button class="chip" data-f="material" aria-pressed="false">Material</button>
       </div>
       <div class="grid" id="grid"></div>
+      <p class="bfacceso"><a class="mvacceso" href="#mover" data-vista="mover">¿Tenés ojo para Chanel? <b>Jugá «El brief» →</b></a></p>
     </section>
 
     <!-- ================= DETALLE ================= -->
@@ -2800,17 +2831,93 @@ function moviPanel(L,titulo,signo){
       <text x="${X(u[0])+26}" y="${ly+5}" fill="var(--ink)">${x.o.n} <tspan fill="${signo==='+'?'var(--act-entrar)':'var(--act-salir)'}">${signo}${Math.round(Math.abs(x.d))}</tspan></text></g></g>`;});
   return `<div class="movp"><div class="tt">${signo==='+'?'▲':'▼'} ${titulo}</div>${s}</svg></div>`;
 }
+/* Tendencias rota entre cinco lecturas (10/11/2026), como la secuencia de Método. Todas salen de la misma serie
+   (GREL: búsqueda mundial de Google, corregida, hasta 2024) y de las mismas cuentas que el resto de la app:
+   terreno() para lo que sube y baja, el nivel 2023–24 sobre el máximo, el año del máximo y los picos de cicloDe(). */
+const TV_MAX=['accesorios_tote','floral','calzado_mocasines','cargo','corset','jamplio'];
+const TV_PICOS=['jajust','lunares','vestidos_tubo','camisas_blusa','gamuza','rayas','vestidos_cruzado','buzos_polera','tiedye','vestidos_slip','corset','cargo','floral','jamplio'];
+const TV_VUELVE=['floral','calzado_mocasines','lunares'];
+const TV_DUELOS=[['jajust','jamplio'],['camisas_blusa','corset'],['calzado_zapatillas','calzado_mocasines']];
+const TV_V=[['Qué sube y qué baja','cuántos puntos ganó o perdió en la búsqueda mundial, de 2022 a 2024'],
+  ['Qué está en su máximo','la búsqueda de 2023–24 sobre su punto más alto desde 2004'],
+  ['Cuándo picó cada uno','el año de su máximo en la búsqueda mundial'],
+  ['Lo que vuelve','dos picos en la misma serie, y cuánto tardó en volver'],
+  ['Uno contra otro','dos curvas en la misma escala, y el año en que se cruzan']];
+const TV_SEG=9000;
+const tv={i:0,timer:null,duelo:0,w:0};
+const tvRec=id=>REC.find(o=>o.id===id);
+function tvMaxAnio(id){const v=GREL[id];let mx=-1,my=null;for(let y=2004;y<=2024;y++){const q=v[y-2004];if(q!=null&&q>mx){mx=q;my=y;}}return {mx,my};}
+function tvNivel(id){const v=GREL[id];return (v[2023-2004]+v[2024-2004])/2/tvMaxAnio(id).mx;}
+function tvMaximo(W){const L=TV_MAX.filter(id=>GREL[id]&&tvRec(id)).map(id=>({id,n:tvRec(id).n,l:tvNivel(id)})).sort((a,b)=>b.l-a.l);
+  const lab=W<520?96:150,R=52,T=24,DY=34,X=f=>lab+f*(W-lab-R),H=T+L.length*DY+6;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Qué está en su máximo: ${L.map(x=>x.n+' '+Math.round(x.l*100)+' %').join(', ')}">`;
+  s+=`<line x1="${X(1)}" x2="${X(1)}" y1="${T-12}" y2="${H}" stroke="var(--ink-3)" stroke-dasharray="3 4"/><text x="${X(1)}" y="${T-16}" text-anchor="end" fill="var(--ink-3)">su máximo</text>`;
+  L.forEach((x,i)=>{const y=T+i*DY;s+=`<g class="tvrow" data-r="${x.id}" style="--d:${i*.12}s"><text x="0" y="${y+17}" fill="var(--ink)">${x.n}</text><rect x="${lab}" y="${y+4}" width="${X(1)-lab}" height="18" rx="9" fill="var(--paper)"/><rect class="tvbar" x="${lab}" y="${y+4}" width="${(X(x.l)-lab).toFixed(1)}" height="18" rx="9" fill="var(--s1)"/><text class="tvlab" x="${X(1)+8}" y="${y+17}" fill="var(--ink)">${Math.round(x.l*100)} %</text></g>`;});
+  return s+'</svg>';}
+function tvPicos(W){const L=TV_PICOS.filter(id=>GREL[id]&&tvRec(id)).map(id=>({id,n:tvRec(id).n,y:tvMaxAnio(id).my})).sort((a,b)=>a.y-b.y||a.n.localeCompare(b.n));
+  const lab=W<520?104:150,R=40,T=8,DY=22,Y0=2010,Y1=2024,X=y=>lab+(y-Y0)/(Y1-Y0)*(W-lab-R),H=T+L.length*DY+28;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Año del máximo de búsqueda: ${L.map(x=>x.n+' '+x.y).join(', ')}">`;
+  (W<520?[2010,2017,2024]:[2010,2012,2014,2016,2018,2020,2022,2024]).forEach(y=>s+=`<line x1="${X(y)}" x2="${X(y)}" y1="${T}" y2="${H-24}" stroke="var(--rule-2)"/><text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)">${y}</text>`);
+  L.forEach((x,i)=>{const y=T+i*DY+11;s+=`<g class="tvrow" data-r="${x.id}" style="--d:${.2+(x.y-Y0)*.12}s;--dx:${(X(Y0)-X(x.y)).toFixed(1)}px"><text x="0" y="${y+4}" fill="var(--ink)">${x.n}</text><line x1="${lab}" x2="${X(x.y)}" y1="${y}" y2="${y}" stroke="var(--rule)" stroke-width="2"/><circle class="tvdot" cx="${X(x.y)}" cy="${y}" r="6" fill="var(--s2)"/><text class="tvlab" x="${X(x.y)+(x.y>=2022?-10:10)}" y="${y+4}" text-anchor="${x.y>=2022?'end':'start'}" fill="var(--ink-2)">${x.y}</text></g>`;});
+  return s+'</svg>';}
+function tvVuelve(W){const L=TV_VUELVE.map(id=>{const o=tvRec(id),c=o&&cicloDe(o);return c&&c.picos&&c.picos.length>1?{id,n:o.n,p:c.picos.slice(-2)}:null;}).filter(Boolean);
+  const una=W<640,w=una?W:(W-28)/L.length,h=una?118:170,Y0=2010,Y1=2024;
+  let s=`<div class="tvvuelve">`;
+  L.forEach((x,i)=>{const v=GREL[x.id],p=[];for(let y=Y0;y<=Y1;y++){const q=v[y-2004];if(q!=null)p.push([y,q]);}const mx=Math.max(...p.map(q=>q[1]));
+    const X=y=>8+(y-Y0)/(Y1-Y0)*(w-16),Y=q=>30+(1-q/mx)*(h-58),pk=x.p.map(y=>[y,v[y-2004]]),gap=x.p[1]-x.p[0];
+    s+=`<figure style="--d:${i*.35}s"><svg viewBox="0 0 ${w.toFixed(0)} ${h}" role="img" aria-label="${x.n}: picos en ${x.p.join(' y ')}, ${gap} años entre uno y otro">
+      <text x="8" y="14" fill="var(--ink)">${x.n}</text>
+      <polyline class="tvcur" pathLength="1" fill="none" stroke="var(--s1)" stroke-width="2.6" stroke-linejoin="round" points="${p.map(([y,q])=>X(y).toFixed(1)+','+Y(q).toFixed(1)).join(' ')}"/>
+      ${pk.map(([y,q])=>`<circle class="tvdot" cx="${X(y)}" cy="${Y(q)}" r="5.5" fill="var(--ink)"/>`).join('')}
+      <g class="tvlab"><path d="M${X(x.p[0])} ${h-22} v-6 H${X(x.p[1])} v6" fill="none" stroke="var(--ink-2)"/><text x="${(X(x.p[0])+X(x.p[1]))/2}" y="${h-6}" text-anchor="middle" fill="var(--ink)">${gap} años entre picos (${x.p[0]} y ${x.p[1]})</text></g>
+      </svg></figure>`;});
+  return s+'</div>';}
+function tvDuelo(W){const [a,b]=TV_DUELOS[tv.duelo%TV_DUELOS.length],A=GREL[a],B=GREL[b],Y0=2010,Y1=2024;
+  let cy=null;for(let y=Y0+1;y<=Y1;y++){const s0=Math.sign(A[y-1-2004]-B[y-1-2004]),s1=Math.sign(A[y-2004]-B[y-2004]);if(s0&&s1&&s0!==s1)cy=y;}
+  const vals=[];for(let y=Y0;y<=Y1;y++)vals.push(A[y-2004],B[y-2004]);const mx=Math.max(...vals.filter(v=>v!=null))*1.08;
+  const R=W<520?96:150,H=250,T=14,Bm=26,X=y=>10+(y-Y0)/(Y1-Y0)*(W-10-R),Y=q=>T+(1-q/mx)*(H-T-Bm);
+  const cur=(v,col,id)=>{const p=[];for(let y=Y0;y<=Y1;y++)if(v[y-2004]!=null)p.push([y,v[y-2004]]);const u=p[p.length-1];
+    return {u,s:`<polyline class="tvcur" pathLength="1" fill="none" stroke="var(${col})" stroke-width="3" stroke-linejoin="round" points="${p.map(([y,q])=>X(y).toFixed(1)+','+Y(q).toFixed(1)).join(' ')}"/><circle class="tvdot" cx="${X(u[0])}" cy="${Y(u[1])}" r="5" fill="var(${col})"/>`};};
+  const ca=cur(A,'--s2',a),cb=cur(B,'--s1',b);let la=Y(ca.u[1])+4,lb=Y(cb.u[1])+4;if(Math.abs(la-lb)<18){if(la<lb)lb=la+18;else la=lb+18;}
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${tvRec(a).n} contra ${tvRec(b).n}${cy?`: se cruzan en ${cy}`:''}">`;
+  (W<520?[Y0,2017,Y1]:[Y0,2014,2018,2022,Y1]).forEach(y=>s+=`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)">${y}</text>`);
+  s+=`<line x1="10" x2="${X(Y1)}" y1="${H-Bm}" y2="${H-Bm}" stroke="var(--rule)"/>`;
+  if(cy)s+=`<g class="tvlab tvcruce"><line x1="${X(cy)}" x2="${X(cy)}" y1="${T}" y2="${H-Bm}" stroke="var(--ink)" stroke-dasharray="4 4"/><text x="${X(cy)-8}" y="${T+12}" text-anchor="end" fill="var(--ink)">se cruzan en ${cy}</text></g>`;
+  s+=ca.s+cb.s+`<g class="tvlab"><text x="${X(Y1)+12}" y="${la}" fill="var(--ink)">${tvRec(a).n}</text><text x="${X(Y1)+12}" y="${lb}" fill="var(--ink)">${tvRec(b).n}</text></g>`;
+  return s+'</svg>';}
 function pintarTerreno(){
+  const t=$('#terreno');if(!t)return;
   const sel=ids=>ids.map(id=>REC.find(o=>o.id===id)).filter(o=>o&&GREL[o.id]).map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null);
   const G=sel(MOVI_SEL.gana).sort((a,b)=>b.d-a.d),P=sel(MOVI_SEL.pierde).sort((a,b)=>a.d-b.d);
-  $('#terreno').innerHTML=`<div class="movh"><p class="movt">Lo que más gana y más pierde en la búsqueda mundial, de 2022 a 2024, en puntos <span class="tag real">● medido</span></p>
-      <div class="movb"><button type="button" class="gvolver" id="movre">↺ Ver de nuevo</button><details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Cada curva es la búsqueda mundial de Google del atributo, comparada con las otras búsquedas de moda (corregida por la deriva de Google; 2025 queda afuera por el cambio de medición). El número es cuántos puntos ganó o perdió entre 2022 y 2024. Son cinco que ganan y cinco que pierden, elegidos entre los que más se mueven; la lista completa está en El ciclo. Tocá una curva para ver su recorrido.</p></div></details></div></div>
-    <div class="movg">${moviPanel(G,'Gana terreno','+')}${moviPanel(P,'Pierde terreno','−')}</div>`;
-  $$('#terreno .mvc').forEach(g=>{const ir=()=>{recSel=g.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();};g.addEventListener('click',ir);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ir();}});});
-  $('#movre').onclick=moviAnimar;
+  if(!$('#tvesc')){
+    t.innerHTML=`<div class="movh"><div><p class="tvtit" id="tvtit"></p><p class="tvsub"><span id="tvsub"></span> <span class="tag real">● medido</span></p></div>
+      <div class="movb"><button type="button" class="gvolver" id="tvplay">Pausar</button><details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Las cinco lecturas usan la misma serie: la búsqueda mundial de Google de cada atributo, comparada con las otras búsquedas de moda (corregida por la deriva de Google; 2025 queda afuera por el cambio de medición). Los atributos son una selección de los que tienen serie propia y más se mueven; la lista completa está en El ciclo. Tocá un atributo para ver su recorrido.</p></div></details></div></div>
+      <div class="tvesc" id="tvesc"></div>
+      <div class="tvpts" id="tvpts" role="group" aria-label="Lecturas">${TV_V.map(([n],i)=>`<button type="button" data-i="${i}" aria-label="${n}"><span>${n}</span></button>`).join('')}</div>`;
+    $$('#tvpts button').forEach(b=>b.onclick=()=>{tvIr(+b.dataset.i);tvPlay(true);});
+    $('#tvplay').onclick=()=>{if(tv.timer){tvParar();$('#tvplay').textContent='Seguir';}else tvPlay(true);};
+    const e=$('#tvesc');e.addEventListener('mouseenter',()=>{if(tv.timer){clearInterval(tv.timer);tv.timer='pausa';}});
+    e.addEventListener('mouseleave',()=>{if(tv.timer==='pausa'){tv.timer=null;tvPlay();}});
+    let rt=null;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{const w=$('#tvesc')&&$('#tvesc').clientWidth;if(w&&Math.abs(w-tv.w)>30)tvPintar(G,P);},200);});
+  }
+  tvPintar(G,P);
 }
-function moviAnimar(){const t=$('#terreno');if(!t)return;t.classList.remove('anim');void t.offsetWidth;
-  if(!matchMedia('(prefers-reduced-motion:reduce)').matches)t.classList.add('anim');}
+function tvPintar(G,P){const e=$('#tvesc');if(!e)return;tv.G=G;tv.P=P;const W=Math.max(300,Math.round(e.clientWidth||1000));tv.w=W;
+  const vistas=[`<div class="movg">${moviPanel(G,'Gana terreno','+')}${moviPanel(P,'Pierde terreno','−')}</div>`,tvMaximo(W),tvPicos(W),tvVuelve(W),tvDuelo(W)];
+  e.innerHTML=vistas.map((v,i)=>`<div class="tvsc" data-v="${i}">${v}</div>`).join('');
+  $$('#tvesc .mvc,#tvesc .tvrow').forEach(g=>{const ir=()=>{recSel=g.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();};g.setAttribute('tabindex','0');g.setAttribute('role','button');g.addEventListener('click',ir);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ir();}});});
+  tvIr(tv.i,true);}
+function tvAlto(){const e=$('#tvesc');if(!e||!e.offsetParent)return;const h=Math.max(...$$('#tvesc .tvsc').map(x=>x.offsetHeight));if(h)e.style.height=h+'px';}
+function tvIr(i,sinAnim){tv.i=(i+TV_V.length)%TV_V.length;
+  if(tv.i===4&&!sinAnim){tv.duelo++;const e=$('#tvesc .tvsc[data-v="4"]');if(e)e.innerHTML=tvDuelo(tv.w);}
+  $('#tvtit').textContent=TV_V[tv.i][0];$('#tvsub').textContent=TV_V[tv.i][1];
+  $$('#tvpts button').forEach((b,k)=>{b.classList.toggle('on',k===tv.i);b.setAttribute('aria-pressed',k===tv.i);});
+  const red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  $$('#tvesc .tvsc').forEach(x=>{const on=+x.dataset.v===tv.i;x.classList.toggle('on',on);x.classList.remove('anim');if(on&&!red){void x.offsetWidth;x.classList.add('anim');}});tvAlto();}
+function tvPlay(reiniciar){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;tvParar();if($('#tvplay'))$('#tvplay').textContent='Pausar';
+  tv.timer=setInterval(()=>{if(!$('#tvesc')||!$('#tvesc').offsetParent)return tvParar();tvIr(tv.i+1);},TV_SEG);}
+function tvParar(){if(tv.timer&&tv.timer!=='pausa')clearInterval(tv.timer);tv.timer=null;}
+function moviAnimar(){const e=$('#tvesc');if(!e)return;requestAnimationFrame(()=>{if(tv.G&&Math.abs(e.clientWidth-tv.w)>30)tvPintar(tv.G,tv.P);tvIr(0);tvPlay(true);});}
 /* la decisión, arriba de todo: qué hacer con este atributo según quién sos */
 function etapaDe(n){const km=KM.rows.find(r=>r.n.split(' /')[0]===n.split(' /')[0]);return km?kEtapaN(km.n):null;}
 function pintarDecision(o){
@@ -3610,7 +3717,7 @@ function mostrar(v,keepNav){
   if(v==='racional'){pintarMetodoGate();pintarLectura();}
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
-  if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}
+  if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}else tvParar();
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }

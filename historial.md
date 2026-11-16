@@ -389,6 +389,8 @@ andando.
 La presentación de la Entrega 4 pasa de doce láminas a seis: los datos, el system prompt, el prototipo original, «Muy
 IA», cómo quedó y los links. Cada una cuenta un giro con el antes y el después enfrentados; las citas son las
 correcciones de oficio de Felipe (el jean es un material, el jersey es tela de remera, «CICLO se va a publicar»).
+El mismo día suma una séptima, a pedido de Felipe: la pirueta, «El brief», con su giro (de «Cómo se arma una lectura» y
+el juego de cartas al encargo y el veredicto).
 
 ## Presentación · Entrega 3
 

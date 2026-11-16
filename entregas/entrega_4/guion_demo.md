@@ -9,7 +9,7 @@
 |---|---|---|
 | 0:45 | Qué es CICLO y para quién; QR | 1 |
 | 6:15 | **Demo en vivo** (pasos 1 a 6) | 1 y 3 |
-| 2:30 | Making of: los datos (0:30), el system prompt (0:30), el prototipo, «Muy IA» y cómo quedó (1:15) | 2, 3, 4 |
+| 2:30 | Making of: los datos (0:20), el system prompt (0:30), el prototipo, «Muy IA» y cómo quedó (1:10), la pirueta (0:30) | 2, 3, 4 y la pirueta |
 | 0:30 | Links: app, repositorio, racional | 5 |
 
 ## Antes de entrar
@@ -60,7 +60,7 @@ separadas por un minuto y no hay espera.
 ## Making of · 2:30
 
 Abrir la pestaña de la presentación (← → avanza; N muestra las notas).
-Seis láminas. Salvo la primera y la última, cada una es un giro: el antes a la izquierda, qué pasó en el medio, el
+Siete láminas. Salvo la primera y la última, cada una es un giro: el antes a la izquierda, qué pasó en el medio, el
 después a la derecha.
 - **Los datos** (0:30): lámina 01. «Dos fuentes entran, cuatro comprueban; se cruzan por atributo y año.»
 - **El system prompt** (0:30): lámina 02. «La misma pregunta, antes y después de la devolución de Cristian: ahora
@@ -70,7 +70,10 @@ después a la derecha.
 - **«Muy IA»** (0:25): lámina 04. «Iván dijo que se veía muy IA; elegí Apple como referencia; la misma pantalla, antes y
   después.»
 - **Cómo quedó** (0:20): lámina 05. «Una app, no una entrega.»
-- **Links**: lámina 06, con el QR.
+- **El brief, la pirueta** (0:30): lámina 06, con ↓ para el segundo par. «La pirueta que vio la cátedra se miraba; ésta se
+  juega. Las cartas pedían leer curvas; ahora diseñás y te enterás si tuviste ojo.» Si ya se jugó en la demo, sólo el
+  giro.
+- **Links**: lámina 07, con el QR.
 
 ## La pregunta al modelo
 

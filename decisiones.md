@@ -2548,3 +2548,11 @@ sube.»), con el prompt v9 completo debajo.
 
 **Una precisión.** En «Muy IA», la referencia de Apple no la eligió Iván: mostró una página para descargar la estética
 de cualquier marca y Felipe eligió Apple («Decidí la de Apple porque me encanta»). La lámina lo dice así.
+
+**La pirueta, adentro (16/11, noche).** Felipe: el making of tiene que incluir El brief, la pirueta del trabajo. Va como
+séptima lámina, antes de los links, con el mismo giro. Antes: «Cómo se arma una lectura» (10/11 a la mañana, la que la
+cátedra vio floja) y el juego de cartas que movían los datos (commit `37e964a`), renderizados de esas versiones. Qué
+pasó: la devolución de Cristian (no es un juego, no tiene hook), y tres citas de Felipe: «el juego es literal un memo
+test, no innovaste nada», «las cartas con gráficos son confusas (…) lo que SÍ hace un diseñador y le divierte: diseñar,
+y después enterarse si tuvo buen ojo», y la regla del puntaje, «sube por el lujo y se pone malo por el fast». Después:
+el encargo y el veredicto de hoy.

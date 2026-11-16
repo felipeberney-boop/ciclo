@@ -3,7 +3,7 @@
 //   node codigo/capturar_recorrido.js [http://localhost:8000/]
 // Requiere: npm install playwright. Escribe en entregas/entrega_4/recorrido/ (el de la Entrega 3 queda en entrega_3/).
 // Todo con clicks de verdad, en una sola pestaña y sin perfil guardado, como alguien que entra por primera vez.
-// Preguntar se captura sin respuesta: una respuesta simulada sería presentar como real algo que no lo es.
+// Lectura se captura sin respuesta escrita: una respuesta simulada sería presentar como real algo que no lo es.
 const { chromium } = require('playwright');
 const fs = require('fs');
 
@@ -12,7 +12,7 @@ const OUT = 'entregas/entrega_4/recorrido';
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
-  const b = await chromium.launch();
+  const b = await chromium.launch(process.env.CHROME ? { executablePath: process.env.CHROME } : {});
   const abrir = async (ancho, alto) => {
     const movil = ancho < 500;
     const ctx = await b.newContext({ viewport: { width: ancho, height: alto }, colorScheme: 'light', deviceScaleFactor: movil ? 2 : 1, isMobile: movil, hasTouch: movil });
@@ -44,8 +44,8 @@ const OUT = 'entregas/entrega_4/recorrido';
       await foto(p, 'paso_07_boton_disenar_con');
       await p.click('#v-detalle [data-dz]');
       await foto(p, 'paso_08_disenar_con_el_atributo_fijo');
-      await p.click('#nav a[data-v="tiza"]');
-      await foto(p, 'paso_09_tiza');
+      await p.click('#nav a[data-v="lectura"]');
+      await foto(p, 'paso_09_lectura');
     } else {
       await p.evaluate(() => { mostrar('radar'); });
       await p.click('#grid > .plate');

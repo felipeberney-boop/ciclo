@@ -35,7 +35,7 @@ const css = `
 
 (async () => {
   const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><base href="${pathToFileURL(DIR + '/').href}"><style>${css}</style></head><body>${marked.parse(md)}</body></html>`;
-  const b = await chromium.launch();
+  const b = await chromium.launch(process.env.CHROME ? { executablePath: process.env.CHROME } : {});
   const p = await b.newPage();
   // desde about:blank Chromium no carga archivos locales: el HTML va a un archivo temporal y se abre desde ahí
   const tmp = path.join(require('os').tmpdir(), 'ciclo_racional.html');

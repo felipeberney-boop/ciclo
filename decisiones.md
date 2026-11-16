@@ -2454,3 +2454,45 @@ salió, dónde pivoteamos), en tres secciones y los links:
 - *Links*: app, repositorio, racional y el QR.
 Sin portada, sin cierre y sin la firma de la materia. Probado con Playwright a 1400 y 393 px: sin errores ni scroll
 horizontal; en el celular las piezas anchas se apilaban encima del título y se corrigió.
+
+## 2026-11-16 · Lectura: la sección de IA, un solo hilo
+
+**El problema (Felipe).** El layout A+B de Tiza no funcionaba: la mesa de un lado y la conversación del otro se sentían un
+tablero con un chat pegado al costado, no un asistente. Y «subí una imagen» como instrucción suelta terminaba de romperlo.
+
+**El nombre.** Tiza se va; la sección se llama **Lectura**, por el botón «Pedir lectura» que a la cátedra le gustó y
+que dice exactamente lo que devuelve. Sin personaje ni nombre propio. Para que no choque, la pieza de Método pasa de
+«Cómo se arma una lectura» a «Cómo se arma una señal», que es lo que explica. Los links `#tiza`, `#consulta`,
+`#asistente` y `#revision` abren Lectura.
+
+**El guion antes del código.** `entregas/entrega_4/guion_seccion_lectura.md`, con bocetos de cada estado. Felipe lo
+aprobó con los cuatro puntos propuestos: el cambio de nombre en Método; sacar «Mostrame qué se parece a esto» de las
+sugerencias de entrada y poner tres looks de ejemplo; una sola curva grande (la del atributo que más se mueve) y las otras
+plegadas; corregir un chip rehace la misma burbuja en vez de sumar un mensaje.
+
+**Cómo quedó.**
+- *Un hilo a lo ancho* (760 px), igual en el celular. No hay mesa ni panel fijo; lo único fijo es el campo, al pie.
+- *Vacía:* una línea de qué hace, cuatro sugerencias como tarjetas (una quinta, «Leé mi diseño: …», si hay algo armado
+  en Diseñar) y tres looks de pasarela para probar sin tener una foto. La imagen aparece recién en el ＋ y en la letra
+  chica del pie.
+- *Una imagen,* soltada en cualquier vista menos la entrada, se vuelve tu mensaje, grande. La respuesta es una burbuja con
+  lo que leyó CLIP (chips con su señal, que se sacan y se suman), la curva que importa, los looks parecidos y la
+  devolución: con clave, la escribe el modelo; sin clave, reglas fijas, y lo dice. Mientras lee, la burbuja dice qué
+  está haciendo (bajando el modelo, leyendo).
+- *Una pregunta* trae su pieza de datos adentro, entre la conclusión y el detalle: el recorrido de una marca en Lyst con
+  el corte de Q1-26, el catálogo de Zara, o la foto y la curva de lo que nombra. Sin clave, la pieza igual, con «Para que
+  además te lo escriba… activá la respuesta escrita».
+- *«Qué se le mandó al modelo»* va en cada respuesta, no en un panel aparte.
+
+**El límite de Groq, medido.** Cada llamada usa unos 6.000 tokens (el prompt v9 solo, ~2.400) y el plan gratis deja
+8.000 por minuto: la devolución de una imagen y una pregunta seguidas daban 429. Tres cambios: si Groq pide esperar, la
+burbuja muestra la cuenta regresiva y reintenta sola (hasta dos veces); la reserva de salida baja de 1.000 a 700
+tokens (la respuesta es un JSON corto); el ranking de marcas viaja sólo cuando la pregunta habla de marcas. El prompt v9
+no se tocó. En la demo, la pregunta va antes que la imagen.
+
+**Los cinco estilos de texto se mantienen.** Todo Lectura usa los tokens (48/24/34/17/13). Una regla medida de esa capa
+le ganaba en especificidad; las reglas de Lectura van con `#v-lectura`.
+
+**Probado.** `codigo/probar_demo.js` (reescrito para la Entrega 4) hace la demo entera: 8 de 8 pasos con Groq de verdad y
+una foto subida, y 8 de 8 sin clave; a 1400 y 393 px, sin errores ni scroll horizontal. Las respuestas reales quedaron en
+`datasets/pruebas/asistente_v9_respuestas.md`.

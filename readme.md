@@ -9,7 +9,11 @@ el dato que lo sostiene. No predice: lee en qué punto está cada atributo hoy.
 
 **App:** https://felipeberney-boop.github.io/ciclo/
 
+**Racional:** [racional.md](entregas/entrega_4/racional.md) · [PDF](entregas/entrega_4/racional.pdf)
+
 **Repositorio:** https://github.com/felipeberney-boop/ciclo
+
+**Making of** (apoyo de la presentación): https://felipeberney-boop.github.io/ciclo/presentacion/
 
 **Figma:** https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7
 
@@ -19,7 +23,7 @@ el dato que lo sostiene. No predice: lee en qué punto está cada atributo hoy.
 |---|---|
 | **También en Netlify** | https://ciclo-udesa.netlify.app |
 | De Figma al código · preguntas probables | [figma_a_codigo.md](entregas/entrega_3/figma_a_codigo.md) · [preguntas_probables.md](entregas/entrega_3/preguntas_probables.md) |
-| Guion de la presentación y la demo | [guion_demo.md](entregas/entrega_3/guion_demo.md) |
+| Guion de la demo de la Entrega 4 | [guion_demo.md](entregas/entrega_4/guion_demo.md) · el de la Entrega 3, [acá](entregas/entrega_3/guion_demo.md) |
 | **Entrega 4 · el racional** | [racional.md](entregas/entrega_4/racional.md) · [PDF](entregas/entrega_4/racional.pdf): el problema, los datos, el modelo, el diseño y quién decidió qué |
 | Entrega 4 · la consigna | [consigna.md](entregas/entrega_4/consigna.md), copiada de la página de la materia |
 | Entrega 4 · la pirueta | [El brief](https://felipeberney-boop.github.io/ciclo/#mover), en «Más»: te llega un encargo de una casa real («Loewe · Otoño 2028 · Un abrigo»), diseñás en tres toques y CICLO puntúa el mismo look para lujo, contemporary y fast fashion |
@@ -98,9 +102,9 @@ En el celular, las mismas tres preguntas:
 
 <img src="entregas/entrega_4/recorrido/paso_08_disenar_con_el_atributo_fijo_celular.png" alt="Paso 8 en el celular" width="260">
 
-**9 · Tiza.** Le mostrás a CICLO una imagen de tu diseño, una pregunta o las dos. La pantalla tiene dos partes: la mesa, grande, con lo que estás mirando (tu diseño con lo que leyó CLIP, las curvas, las fotos de pasarela, el recorrido de una marca en Lyst), y al costado la conversación. En el celular, la mesa queda arriba y la conversación abajo. La imagen se arrastra a cualquier parte. Sin clave de Groq, la mesa igual muestra lo que CICLO tiene y una devolución armada con reglas; con clave, el modelo la escribe (prompt v9: arranca por lo que hay, lo que falta al final).
+**9 · Lectura.** Le preguntás a CICLO por un atributo, una marca o un diseño tuyo, en un solo hilo. Una imagen, soltada en cualquier parte de la app, se vuelve tu mensaje; la respuesta trae adentro lo que leyó CLIP (chips que se corrigen, con su señal), la curva que importa, los looks de pasarela parecidos y la devolución. Una pregunta por una marca trae su recorrido en Lyst adentro de la respuesta. Sin clave de Groq, lo medido aparece igual y la devolución de una imagen la arman reglas; con clave, la escribe el modelo (prompt v9: arranca por lo que hay, lo que falta al final).
 
-![Paso 9: Tiza](entregas/entrega_4/recorrido/paso_09_tiza.png)
+![Paso 9: Lectura](entregas/entrega_4/recorrido/paso_09_lectura.png)
 
 **Y además.** La pirueta, «El brief»: un encargo de una casa real con un look de su desfile, tres toques de diseño (forma, material, estampa) y un veredicto en lenguaje de moda; al final, el mismo look puntuado para tres casas, porque lo que sube es del lujo y lo que está en su pico es del fast fashion. También «Cómo se arma una lectura», arriba de todo en Método, y El ciclo.
 
@@ -108,7 +112,7 @@ En el celular, las mismas tres preguntas:
 |---|---|
 | ![El brief: el encargo](entregas/entrega_4/capturas/captura_19_el_brief.png) | ![El brief: el veredicto](entregas/entrega_4/capturas/captura_20_el_brief_veredicto.png) |
 
-![Cómo se arma una lectura: cuatro de los siete pasos](entregas/entrega_4/capturas/captura_18_como_se_arma_una_lectura.png)
+![Cómo se arma una señal: cuatro de los siete pasos](entregas/entrega_4/capturas/captura_18_como_se_arma_una_lectura.png)
 
 | | |
 |---|---|
@@ -157,10 +161,10 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | Tendencias | La pantalla principal. Abre con un gráfico animado que rota entre cinco lecturas de la búsqueda mundial: qué sube y qué baja, qué está en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro. Debajo, los atributos con dato medido, con su etapa y su señal. La marca CICLO lleva acá |
 | El ciclo | Cuándo picó cada uno de los 65 atributos con serie y cuánto tardó en volver; el recorrido de cada uno por pasarela, búsqueda y Reddit hasta 2030, y los jeans por corte |
 | Diseñar | Paso a paso: prenda › tipo › corte › tiro › material › color › estampa › detalle, con la señal y la procedencia de cada opción, una barra con lo elegido y la ficha final |
-| Tiza | Desde el 10/11 junta «Buscar por imagen» y «Preguntar» (se llamó «Revisión» unas horas). A la izquierda la mesa: lo que estás mirando (tu diseño y lo que leyó CLIP en chips que se corrigen, con color; las curvas; las fotos; el recorrido de una marca en Lyst, con el corte de Q1-26). A la derecha la conversación, con cinco preguntas sugeridas desde el arranque. Cada respuesta tiene «Ver en la mesa». Con tu API key de Groq la escribe un LLM (prompt v9); sin clave, reglas fijas, y lo dice. En el celular, la mesa arriba |
+| Lectura | Desde el 16/11 (antes «Buscar por imagen» y «Preguntar», juntas el 10/11 como «Tiza»). Un solo hilo: la imagen que soltás es tu mensaje y la respuesta trae adentro los chips de CLIP (se corrigen y la misma respuesta se rehace), la curva que importa, los looks parecidos y la devolución; una pregunta por una marca trae su recorrido en Lyst con el corte de Q1-26. Cuatro preguntas sugeridas y tres looks de ejemplo al entrar. Con tu API key de Groq la escribe un LLM (prompt v9); sin clave, lo medido igual y reglas fijas, y lo dice. Si Groq pide esperar, la respuesta cuenta los segundos y reintenta sola |
 | El brief | La pirueta. Un encargo de una casa real (foto de Vogue Runway), tres toques (forma, material y estampa, cada opción con su foto de pasarela) y un veredicto: cada elección sube, está en pico, quieta o baja según su búsqueda 2022→2024, y el mismo look se puntúa para lujo, contemporary y fast fashion. Reemplazó a Adiviná vos en «Más» el 10/11 (sigue en `#adivina`) |
 | Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |
-| Método | «Cómo se arma una lectura»: de los datos a la señal, en siete pasos; fuentes, recortes y límites declarados. El modelo (K-means paso a paso) y Marcas (Lyst) salieron de la navegación el 10/11 y siguen en `#etapas` y `#marcas` |
+| Método | «Cómo se arma una señal»: de los datos a la señal, en siete pasos; fuentes, recortes y límites declarados. El modelo (K-means paso a paso) y Marcas (Lyst) salieron de la navegación el 10/11 y siguen en `#etapas` y `#marcas` |
 
 ## Fuentes de datos
 
@@ -202,7 +206,7 @@ calculadas —nivel, momento, crecimiento, distancia al pico— y el tipo de cli
 aparece en la interfaz marcado como interpretación. Los prompts están versionados en `prompts/`.
 
 **Claves de API:** no hay ninguna en el repositorio. IA-5 (Recorridos → «Pedir lectura en vivo») e IA-8
-(«Tiza», antes «Preguntar») funcionan como la V2 de la clase: cada uno pega su API key de Groq en la página, queda guardada
+(«Lectura», antes «Preguntar» y «Tiza») funcionan como la V2 de la clase: cada uno pega su API key de Groq en la página, queda guardada
 sólo en su navegador y es la misma para los dos. El `.gitignore` bloquea `.env` y similares.
 
 ## El modelo

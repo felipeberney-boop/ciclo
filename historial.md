@@ -371,6 +371,13 @@ cualquier parte; sin clave, la mesa igual responde con datos.
 código y los links), sobre el making of del 03/11 y con el lienzo de la app de hoy. Guion de la demo en
 `entregas/entrega_4/guion_demo.md`.
 
+## v1.46 · 16/11/2026 · Lectura
+
+La sección de IA se rehace como un solo hilo y se llama Lectura. La imagen que soltás es tu mensaje; la respuesta trae
+adentro lo que leyó CLIP (chips que se corrigen), la curva que importa, los looks parecidos y la devolución. Una
+pregunta por una marca trae su recorrido en Lyst adentro. Si Groq pide esperar, la respuesta cuenta los segundos y
+reintenta sola. En Método, «Cómo se arma una lectura» pasa a «Cómo se arma una señal».
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

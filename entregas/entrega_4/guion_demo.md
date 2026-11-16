@@ -1,7 +1,7 @@
 # Entrega 4 · guion de la demo (17/11/2026)
 
-**Borrador del 16/11.** El paso 5 (Lectura) depende de la sección nueva: se cierra cuando esté construida y probada con
-`codigo/probar_demo.js`. La pregunta al modelo todavía **no está probada con el prompt v9** (ver abajo).
+**16/11, probado.** `codigo/probar_demo.js` hizo los ocho pasos con Groq de verdad y una foto subida: 8 de 8, sin errores
+(también sin clave, y a 393 px).
 
 10 minutos. El centro es la app funcionando; el making of (`app/presentacion/`) se abre sólo para los criterios 2, 3 y 4.
 
@@ -16,8 +16,12 @@
 
 - Dos pestañas: la app en **ventana privada** (arranca en las tres preguntas) y `…/ciclo/presentacion/#datos`.
 - En la app, Lectura → «Activar la respuesta escrita» y pegar la clave de Groq. Volver con «Cambiar perfil».
-- Una foto de un look en el escritorio, para soltarla (la de prueba: `entregas/entrega_4/demo/look.jpg`, por elegir).
-- Correr `GROQ_KEY=gsk_… node codigo/probar_demo.js`: hace los pasos de abajo y dice si alguno falla.
+- Una foto de un look tuyo en el escritorio, para soltarla. Si no hay, el plan es el look de ejemplo «Denim».
+- **Abrir Lectura y soltar una foto una vez antes de clase**, con internet: baja el modelo de imágenes (una sola vez) y
+  queda en caché. En clase lee en 2 a 4 segundos.
+- Correr `GROQ_KEY=gsk_… IMAGEN=tu_foto.jpg node codigo/probar_demo.js`: hace los pasos de abajo y dice si alguno falla.
+- **Después de correrlo, esperar un minuto** antes de empezar: el plan gratis de Groq deja 8.000 tokens por minuto y
+  cada llamada usa unos 6.000.
 
 ## 0 · Qué es CICLO · 0:45
 
@@ -40,12 +44,14 @@
 **4 · Diseñar** (0:45). «Diseñar con este corte» → elegir un material con señal verde.
 > «Del dato a la decisión: cada opción trae su señal, y lo que elijo se acumula abajo.»
 
-**5 · Lectura** (1:45). Ir a Lectura.
-- Soltar la foto en la pantalla. > «CLIP la lee en mi navegador, la foto no sale de la compu. Lo que leyó son
-  chips: si se equivoca, lo corrijo.» Tocar × en un chip mal leído.
-- Tocar la sugerencia **«¿Qué material le va a un jean baggy?»** (no hay que tipear).
+**5 · Lectura** (1:45). Ir a Lectura. Primero la pregunta, después la imagen: así las dos llamadas a Groq quedan
+separadas por un minuto y no hay espera.
+- Tocar la sugerencia **«¿Qué material le va a un jean baggy?»** (no hay que tipear; ya sabe que estoy diseñando un baggy).
   > «El modelo no ve ninguna fila de datos: recibe métricas ya calculadas. Primero la respuesta, después el número que
-  > la sostiene.» Abrir **«Qué se le mandó al modelo»**: > «Esto es todo lo que recibió.»
+  > la sostiene, y adentro la curva de lo que nombra.» Abrir **«Qué se le mandó al modelo»**: > «Esto es todo lo que
+  > recibió. Lo que dice se puede auditar contra esto.»
+- Soltar la foto en la pantalla. > «CLIP la lee en mi navegador, la foto no sale de la compu. Lo que leyó son chips:
+  si se equivoca, lo corrijo.» Tocar × en un chip mal leído: > «Y la misma respuesta se rehace.»
 
 **6 · El brief, la pirueta** (1:15). Más → El brief. Elegir silueta, material y estampa; ver el veredicto.
 > «Un brief de una casa real. Cada elección se juzga con su serie de búsqueda: si estás entrando o llegás tarde. Los
@@ -64,16 +70,17 @@ Abrir la pestaña de la presentación (← → avanza; N muestra las notas).
 
 **«¿Qué material le va a un jean baggy?»** Es una de las sugerencias fijas, así que se toca, no se tipea.
 
-**Estado: falta probarla con v9.** En esta sesión no hay clave de Groq. La última respuesta real guardada es de v5
-(`datasets/pruebas/asistente_v5_respuestas.md`, «¿Qué color va con un jean baggy?»). Para dejarla probada hoy:
-`GROQ_KEY=gsk_… node codigo/probar_demo.js`. Guardar la respuesta en `datasets/pruebas/asistente_v9_respuestas.md`. El
+**Probada el 16/11 con v9** (`datasets/pruebas/asistente_v9_respuestas.md`): «Gamuza, el material que más sube, le va a
+un jean baggy.» · «Gamuza +29 puntos fuera 2022→2024». Adentro de la respuesta, la foto y la curva de la gamuza. El
 modelo no es determinista: la redacción cambia, los números tienen que ser los de DATOS.
 
 ## Plan B
 
-- **Groq no responde o la clave falla:** la burbuja se arma igual con todo lo medido, y dice «Groq no respondió». Abrir
-  «Qué se le mandó al modelo» (se arma sin conexión) y leer la respuesta guardada, diciendo que es de la prueba.
-- **Límite de Groq** (8.000 tokens por minuto en el plan gratis): esperar un minuto o pasar a `gpt-oss-20b`.
+- **Groq no responde o la clave falla:** la burbuja se arma igual con todo lo medido y dice por qué no hay texto
+  («No hubo conexión con api.groq.com…» o «Groq rechazó la API key…»). Con una imagen, la devolución la arman reglas, y lo
+  dice. Leer la respuesta guardada en `asistente_v9_respuestas.md`, diciendo que es de la prueba de ayer.
+- **Límite de Groq** (8.000 tokens por minuto en el plan gratis): la burbuja dice «Groq pide esperar… Reintento en N s»
+  y reintenta sola. Mientras, explicar los chips o la curva. Si hace falta, pasar a `gpt-oss-20b` (tiene su propio límite).
 - **Sin internet en la sala:** `cd app && python3 -m http.server 8000` y abrir `localhost:8000`. Anda todo menos la
   respuesta escrita, las fotos de Vogue (se ven los dibujos) y la tipografía de Google. CLIP necesita el modelo
   descargado: abrir Lectura una vez con internet antes de clase, así queda en caché.

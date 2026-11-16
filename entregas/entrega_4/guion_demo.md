@@ -9,7 +9,7 @@
 |---|---|---|
 | 0:45 | Qué es CICLO y para quién; QR | 1 |
 | 6:15 | **Demo en vivo** (pasos 1 a 6) | 1 y 3 |
-| 2:30 | Making of: los datos (1:15), la IA (0:45), del diseño al código (0:30) | 2, 3, 4 |
+| 2:30 | Making of: los datos (0:30), el system prompt (0:30), el prototipo, «Muy IA» y cómo quedó (1:15) | 2, 3, 4 |
 | 0:30 | Links: app, repositorio, racional | 5 |
 
 ## Antes de entrar
@@ -60,11 +60,17 @@ separadas por un minuto y no hay espera.
 ## Making of · 2:30
 
 Abrir la pestaña de la presentación (← → avanza; N muestra las notas).
-- **Los datos** (1:15): láminas 01 y 02. «Dos fuentes entran, cuatro comprueban; se cruzan por atributo y año.» La 05:
-  «lo que el modelo pone arriba es lo que más crece en Reddit, que no vio».
-- **La IA** (0:45): lámina 06 y la 07 con el prompt en pantalla. «Nunca ve una fila.»
-- **Del diseño al código** (0:30): 09 → 10 → 11. «El prototipo, la devolución de Iván con la referencia de Apple, y hoy.»
-- **Links** (0:30): lámina 12.
+Seis láminas. Salvo la primera y la última, cada una es un giro: el antes a la izquierda, qué pasó en el medio, el
+después a la derecha.
+- **Los datos** (0:30): lámina 01. «Dos fuentes entran, cuatro comprueban; se cruzan por atributo y año.»
+- **El system prompt** (0:30): lámina 02. «La misma pregunta, antes y después de la devolución de Cristian: ahora
+  contesta primero.»
+- **El prototipo original** (0:30): lámina 03, con ↓ para pasar los tres pares. «Lo que corregí con el oficio: el jean es
+  un material, el jersey es tela de remera.»
+- **«Muy IA»** (0:25): lámina 04. «Iván dijo que se veía muy IA; elegí Apple como referencia; la misma pantalla, antes y
+  después.»
+- **Cómo quedó** (0:20): lámina 05. «Una app, no una entrega.»
+- **Links**: lámina 06, con el QR.
 
 ## La pregunta al modelo
 
@@ -89,5 +95,5 @@ modelo no es determinista: la redacción cambia, los números tienen que ser los
 ## Dónde cortar si vas justo
 
 1. El paso 4 (Diseñar): ir de la ficha directo a Preguntar.
-2. En el making of, la lámina 05 (Reddit).
+2. En el making of, los pares 2 y 3 de la lámina 03 (quedarse con el primero).
 3. **Nunca cortar el 5 ni el 6**: son la IA en tiempo real y la pirueta, que pide la consigna.

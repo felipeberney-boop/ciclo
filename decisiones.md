@@ -2521,3 +2521,30 @@ Es como se llamaba al principio, dice que es una conversación, lleva la marca y
 el racional y las capturas. El id interno sigue siendo `lectura` (`#v-lectura`, `data-v="lectura"`) para no romper los
 links compartidos; `#preguntar` también la abre. La etiqueta «Lectura · interpretación» de Retornos es otra cosa (la
 lectura escrita de un atributo) y no se toca.
+
+## 2026-11-16 · El making of, rehecho como giros
+
+**Problema (Felipe).** La presentación estaba contada como un informe, no como un making of. Sobraban seis láminas (la
+clave atributo × año, «Queríamos ver el futuro», medido e interpretado, «Coincide con afuera», «Nunca ve una fila» y
+«Contestar primero»), y las citas elegidas no probaban autoría: la principal era un pedido flojo (las tendencias hasta
+2030) que después se matizó.
+
+**Decisión.** Seis láminas: los datos (igual), el system prompt, el prototipo original, «Muy IA», cómo quedó y los
+links. Cada una, salvo la primera y la última, es un giro: qué había → qué pasó → cómo quedó, con el antes y el después
+enfrentados y el «qué pasó» en el medio, en el formato «yo pedí / Claude hizo».
+
+**Las citas.** Se buscaron en las conversaciones guardadas las veces en que Felipe corrigió al modelo con conocimiento
+del oficio. Van tres, textuales: el jean es un material y mom y boyfriend no son cortes (20/10), el jersey es tela de
+remera y «si un diseñador no puede decir el nombre en voz alta en un taller y que le entiendan, no va en la interfaz»
+(20/10), y «CICLO se va a publicar» (04/11). Quedaron afuera: el color de la señal (es fuerte, pero su giro no entra en
+estas cinco láminas), «premium» → high fashion (es de septiembre y no hay cita textual: lo registra este archivo) y el
+encaje (la cita textual dice «un tejido real pero no un material base», no lo de la silueta).
+
+**Los antes y los después.** Salen de la app: las versiones guardadas en `diseno/prototipos/versiones_de_la_app/`
+(Diseñar del 20/10 con «Jeans» como prenda y mom como corte; un pantalón que abría con «Jersey de algodón»; la entrada del
+04/11 con la firma de la materia) y la app de hoy, con el mismo encuadre. Para el prompt, dos respuestas reales a la
+misma pregunta y el mismo perfil: la v5 del 27/10 (arranca por lo que falta) y la v7 del 10/11 («Gamuza, la que más
+sube.»), con el prompt v9 completo debajo.
+
+**Una precisión.** En «Muy IA», la referencia de Apple no la eligió Iván: mostró una página para descargar la estética
+de cualquier marca y Felipe eligió Apple («Decidí la de Apple porque me encanta»). La lámina lo dice así.

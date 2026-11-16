@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<meta name="description" content="CICLO · Making of. Los datos, la IA y del diseño al código: qué pedimos, qué salió y dónde pivoteamos.">
+<meta name="description" content="CICLO · Making of. Los datos, el system prompt, el prototipo, «Muy IA» y cómo quedó: qué había, qué pasó y cómo quedó.">
 <meta name="robots" content="noindex">
 <title>CICLO · Making of</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -217,10 +217,48 @@ body{letter-spacing:-.022em}
 #nav{background:color-mix(in srgb,#fff 82%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 #notas{border:0;background:var(--card);box-shadow:none}
 .pista .linea{background:var(--rule)}.pista li::before{border-color:var(--ink-3)}
+
+/* ── 16/11, noche: el giro. Antes · qué pasó · después, enfrentados ── */
+.giro{grid-column:1/-1;grid-row:2;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.58fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:14px clamp(18px,2.4vw,40px)}
+.giro .lado,.giro .medio{min-height:0;display:flex;flex-direction:column;gap:12px}
+.giro .et{margin:0;font-size:15px;color:var(--ink-3)}.giro .et b{color:var(--ink);font-weight:600;margin-right:6px}
+.giro .despues .et b{color:var(--azul)}
+.giro .escena{position:relative;flex:1;min-height:0}
+.giro figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .3s ease;pointer-events:none}
+.giro figure.on{opacity:1}.slide.on .giro figure.on{pointer-events:auto}
+.giro .escena img{width:100%;height:100%;object-fit:contain;object-position:center top;border-radius:14px;cursor:zoom-in;filter:drop-shadow(3px 5px 24px rgba(0,0,0,.18))}
+.giro .antes .escena img{filter:grayscale(.15) drop-shadow(3px 5px 24px rgba(0,0,0,.12))}
+.giro .html{height:100%;overflow-y:auto;scrollbar-width:thin}
+.giro .html .prompt{max-height:none;font-size:11.5px;margin-top:4px}
+.giro .medio{overflow-y:auto;scrollbar-width:none;padding-top:0}
+.giro .medio::-webkit-scrollbar{display:none}
+.giro .medio .fila{grid-template-columns:76px 1fr;column-gap:12px}
+.giro .resp{gap:10px}.giro .resp .par{grid-template-columns:1fr}.giro .resp .q{font-size:15px}
+.giro .resp .par p{font-size:15px}.giro .antes .resp .par{opacity:1;color:var(--ink-2)}
+.giro .medio .fila q{font-size:clamp(15px,1.15vw,17.5px);line-height:1.4}
+.giro .medio .fila.grande q{font-size:clamp(17px,1.4vw,21px);line-height:1.32}
+.giro .medio .fila p{font-size:14px;line-height:1.45}
+.giro .ref{position:static;opacity:1;pointer-events:auto;margin:4px 0 0;display:grid;gap:6px}
+.giro .ref img{width:100%;max-height:160px;object-fit:cover;object-position:top;border-radius:12px;cursor:zoom-in}
+.giro .ref figcaption{font-size:13px;color:var(--ink-3)}
+.gbarra{grid-column:1/-1;display:grid;grid-template-columns:1fr auto auto auto;align-items:center;gap:12px;min-height:32px}
+.gbarra .pie{font-size:15px;color:var(--ink-2)}
+.gbarra .cuenta{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.gbarra .flecha{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--rule);font-size:13px}
+.gbarra .flecha:hover{border-color:var(--azul);color:var(--azul)}
+@media (max-width:900px){
+  .giro{display:flex;flex-direction:column;gap:18px}
+  .giro>*{flex:none;min-height:auto!important}
+  .giro .escena{flex:none;height:min(62vw,360px)}
+  .giro .html{height:auto;max-height:70vh}
+  .giro .escena:has(.html){height:auto}
+  .giro .medio{order:-1;overflow:visible}
+  .slide.con-giro{overflow-y:auto}
+}
 @media print{
   body{overflow:visible}#deck{position:static}#nav,#ayuda,#notas{display:none!important}
   .slide{position:relative;inset:auto;opacity:1;transform:none;height:100vh;page-break-after:always;break-after:page}
-  .der figure{opacity:0}.der figure:first-child{opacity:1}
+  .der figure,.giro figure{opacity:0}.der figure:first-child,.giro figure:first-child{opacity:1}
 }
 
 /* ── 16/11: el lienzo de la app de hoy (gris perla, tarjetas blancas) y las piezas nuevas ── */
@@ -288,84 +326,66 @@ body{letter-spacing:-.022em}
 
 <script>
 /* ════════════════════════════════════════════════════════════════════════════════════════════
-   CICLO · Making of, versión corta (16/11/2026). Una página de apoyo para la demo: tres
-   secciones, una por criterio (los datos, la IA, del diseño al código), y los links.
-   Base: diseno/prototipos/versiones_de_la_presentacion/presentacion_2026-11-03_abd5939_making_of.html
+   CICLO · Making of, versión corta (16/11/2026; rehecha la misma noche). Apoyo para una demo de 10
+   minutos: los datos, el system prompt, el prototipo, «Muy IA», cómo quedó y los links.
+   Cada lámina, salvo la de los datos y los links, es un giro: qué había → qué pasó → cómo quedó, con
+   el antes y el después enfrentados (giro:{pares:[{a,fa,d,fd,p}], paso:[filas]}).
+   Base: diseno/prototipos/versiones_de_la_presentacion/presentacion_2026-11-16_7fa00bc_making_of_corto.html
 
    Citas: textuales, de las conversaciones en Claude Code y de las devoluciones, con la ortografía
-   corregida y las palabras intactas; «(…)» marca un corte. Lo que no tiene cita textual va como
-   texto (t:), nunca entre comillas.
+   corregida y las palabras y el tono intactos; «(…)» marca un corte. Lo que no tiene cita textual va
+   como texto (t:), nunca entre comillas.
    Fila: {q:'Felipe', k:'pedido', f:'13/10', c:'cita'}  ·  {q:'Claude', k:'resultado', t:'texto'}
    Tipos: pedido · devolucion · eleccion · propuesta · resultado · registro
    ════════════════════════════════════════════════════════════════════════════════════════════ */
 const LAMINAS=[
-/* ── Los datos (criterio 2) ───────────────────────────────────────────────── */
+/* ── Los datos ────────────────────────────────────────────────────────────── */
 {id:'datos',sec:'Los datos',titulo:'Dos fuentes entran, cuatro comprueban',bajada:'Qué datos, para qué y cómo conviven',ancha:true,
  dib:'cruce',
  notas:'La pasarela dice qué propone la industria; la búsqueda, qué quiere la gente. Se cruzan por atributo y año, y el K-means junta los que se mueven parecido. Reddit, Google Shopping, Amazon y Lyst no entran al modelo: sirven para ver si lo que dice coincide con afuera. Fuentes, fechas de descarga y licencias: datasets/fuentes_y_descargas.md.'},
-{id:'clave',sec:'Los datos',titulo:'La clave: atributo × año',bajada:'Un nombre de taller, un término por fuente',
- cuerpo:'Cada atributo tiene su nombre («jeans baggy») y, en cada fuente, el término con que se lo encuentra. Ahí se cruzan.',
- dibIzq:'clave',
- img:[{s:'lectura_busqueda',p:'En la app (Método): los jeans, pasarela y búsqueda sobre su máximo'},{s:'lectura_senal',p:'En la app (Método): la etapa más el perfil dan la señal'}],
- notas:'Los cuatro rasgos van estandarizados para que ninguno pese más por su escala. k = 4 arranca de centroides guardados: el resultado es siempre el mismo. Una tendencia nueva se asigna al grupo más cercano y nunca reentrena el modelo. La pasarela no separa cortes de jean (Vogue mide el denim): la diferencia entre baggy y skinny sale de la búsqueda.'},
-{id:'pivot-datos',sec:'Los datos',titulo:'Queríamos ver el futuro',bajada:'Dónde pivoteamos',fecha:'13 oct',
- filas:[
-  {q:'Felipe',k:'pedido',f:'13/10',c:'Hacé que la línea de las tendencias vayan hasta 2030, así el diseñador puede ver el futuro.'},
-  {q:'Claude',k:'resultado',t:'Cuatro formas de predecir la búsqueda. Ninguna le gana a repetir el último valor.'},
-  {q:'Felipe',k:'devolucion',f:'13/10',c:'¿Pero por qué sacaste 2025? ¿No es hasta hoy en día?',g:true},
-  {q:'Claude',k:'resultado',t:'En 2025 Google cambió cómo mide: 15 de 16 series suben a la vez. La búsqueda se corta en 2024 y se lee contra las otras búsquedas de moda.'}],
- dib:'metodos',
- notas:'CICLO pasó de predictor a instrumento que lee el presente. El cono que llega a la ventana de cada prenda no es un pronóstico y la pantalla lo dice: empata con repetir el último valor en la pasarela (20,9 contra 20,9). Error a cinco años: suavizado 22,1 contra 21,6; análogos 15,9 contra 15,5; reversión a la media 21,7 contra 21,6.'},
-{id:'procedencia',sec:'Los datos',titulo:'Medido o interpretado',bajada:'Calculado contra inferido, en la interfaz',
- cuerpo:'Cada número dice de dónde sale. Con trazo y palabra, nunca con color: el color es sólo la señal.',
- filas:[
-  {q:'Felipe',k:'pedido',f:'20/10',c:'Arreglá la causa, no los síntomas.'},
-  {q:'Claude',k:'resultado',t:'Una sola función, señal(), decide todo el color. Lo demás se marca con un signo.'}],
- dib:'procedencia',
- notas:'Medido: lo que sale de un cálculo sobre los datos (la etapa del K-means, la búsqueda, la pasarela). Interpretado: lo que dice un modelo (lo que CLIP lee en una foto, lo que escribe el LLM). Prestado: una hoja de la taxonomía sin serie propia toma la de un hermano o la del padre, nunca la de otra familia, y la app dice de cuál.'},
-{id:'reddit',sec:'Los datos',titulo:'Coincide con afuera',bajada:'Una fuente que el modelo no vio',fecha:'27 oct',
- filas:[
-  {q:'Felipe',k:'pedido',f:'27/10',c:'¿Por qué no se comprueba mi hipótesis, y cómo hacemos para que se compruebe?'},
-  {q:'Claude',k:'resultado',t:'Reddit, que no entra al modelo. El criterio, escrito y commiteado antes de calcular.'},
-  {q:'Registro',k:'registro',f:'27/10',fu:'decisiones.md',c:'Los tres que el modelo pone arriba son los tres que más crecen en Reddit.',g:true}],
- dib:'reddit',
- notas:'p = 0,0013 barajando las etapas 10.000 veces; que los tres de arriba caigan en los tres primeros lugares de 14 pasa 1 vez en 364. Lo que no se sostiene: retorno y saturada no se distinguen (p = 0,88). Límites: 14 atributos, uno solo en ascenso, y Reddit y Google reflejan en parte lo mismo. Lyst coincide en casos (jeans anchos +55 % en 2024), no es validación estadística.'},
 
-/* ── La IA (criterio 3) ───────────────────────────────────────────────────── */
-{id:'ia',sec:'La IA',titulo:'Nunca ve una fila',bajada:'Qué recibe y qué devuelve',ancha:true,
- dib:'ida',
- notas:'La pregunta se cruza con app/llm/ciclo_datos.md, que se genera desde la app (codigo/armar_datos_llm.js): van sólo las fichas que nombra la pregunta, por el límite de tokens de Groq. La clave es de quien usa la app: se guarda en su navegador y viaja sólo a Groq. La etapa y la señal no las decide la IA: las deciden el K-means y una regla fija.'},
-{id:'prompt',sec:'La IA',titulo:'El system prompt',bajada:'Versión 9 · prompts/prompt_asistente_v9.md',ancha:true,
- dib:'prompt',
- notas:'Resaltado, lo que más pesa: el formato corto, nunca decir que hay un dato que no está, empezar por lo que sí hay, y las marcas sin cruzar el corte de Lyst en Q1-26. Las nueve versiones están en prompts/, ninguna se sobreescribe.'},
-{id:'pivot-ia',sec:'La IA',titulo:'Contestar primero',bajada:'Dónde pivoteamos',fecha:'3 – 10 nov',
- filas:[
-  {q:'Cristian',k:'devolucion',f:'03/11',c:'Tengo que leer muchas cosas que no aportan valor.',g:true},
-  {q:'Claude',k:'resultado',t:'Con la v8, si algo no estaba medido exacto, la respuesta arrancaba por eso y dejaba las manos vacías.'},
-  {q:'Felipe',k:'eleccion',f:'10/11',t:'v9: primero lo que CICLO sí tiene; lo que falta, al final y en una frase.'}],
- dib:'respuesta',
- notas:'Es un cambio de orden, no de honestidad: el modelo sigue sin poder decir que tiene lo que no está. Con una marca y una prenda (los jeans de Balenciaga), v9 trae la línea de la marca en Lyst y el jean que sube, y el cruce que falta va al final.'},
+/* ── El system prompt: había → pasó → quedó ───────────────────────────────── */
+{id:'prompt',sec:'La IA',titulo:'El system prompt',bajada:'Primero la respuesta',
+ giro:{
+  antes:{f:'27 oct · prompt v5',html:'v5'},
+  paso:[
+   {q:'Cristian',k:'devolucion',f:'03/11',c:'Como usuario, tengo que leer muchas cosas que no aportan valor por igual.',g:true},
+   {q:'Claude',k:'resultado',t:'Reescribe el prompt: una conclusión de 20 palabras, un número que la sostiene y, al final, lo que falta.'}],
+  despues:{f:'10 nov · prompt v7, hoy v9',html:'v9'}},
+ notas:'La misma pregunta, el mismo perfil (high fashion, para una marca, mujer), respuestas reales sin editar: datasets/pruebas/asistente_v5_respuestas.md (27/10) y asistente_v7_respuestas.md (10/11). La v9 conserva ese formato y agrega: empezar por lo que sí hay, el puente a un pariente cuando no hay serie, y las marcas sin cruzar el corte de Lyst en Q1-26. Las nueve versiones están en prompts/, ninguna se sobreescribe.'},
 
-/* ── Del diseño al código (criterio 4) ────────────────────────────────────── */
-{id:'prototipo',sec:'Del diseño al código',titulo:'El prototipo',bajada:'Etapa 1 · Figma',fecha:'5 oct',
- cuerpo:'Diez pantallas navegables, en escritorio y celular. La etapa ya era un punto en una pista.',
- filas:[
-  {q:'Registro',k:'registro',t:'La app se escribió en código, no leyendo el Figma. El mismo día, código y Figma ya eran distintos: el código era una revista.'}],
- img:[{s:'figma_original_radar',p:'El radar del prototipo, Figma, 05/10'},{s:'revista_27-10',p:'La app en código, 27/10: la revista'}],
- notas:'Lo que pasó del prototipo a la app: las diez vistas con sus nombres, el selector de cliente, la etapa como posición en una pista y la paleta de cada prenda. Archivo: figma.com/design/zpHKE7YQLBRXJPcbyrb37I.'},
-{id:'apple',sec:'Del diseño al código',titulo:'«Muy IA»',bajada:'Etapa 2 · La devolución',fecha:'27 oct',
- filas:[
-  {q:'Felipe',k:'devolucion',f:'27/10',c:'No me gustaron. El profe sigue diciendo que es muy IA.'},
-  {q:'Iván',k:'devolucion',f:'27/10',t:'Pasó la referencia: el sistema de diseño de Apple (DESIGN.md, en shadcn.io).'},
-  {q:'Felipe',k:'pedido',f:'27/10',c:'Como si Apple vendiese ropa y un software de hacer ropa encontrando tendencias, que es lo que es CICLO.',g:true}],
- img:[{s:'referencia_apple',p:'La referencia de la cátedra'},{s:'revista_27-10',p:'Antes: la revista'}],
- notas:'Tres variantes (revista, revista suave y estudio) no convencieron. La referencia es de la cátedra; lo nuestro es la adaptación: qué se tomó y qué no. Se tomó la tipografía del sistema, el gris perla, las tarjetas blancas de 18 px, las píldoras y un solo azul. No se tomó la marca ni el bloque oscuro (salió el 10/11, obstruía).'},
-{id:'hoy',sec:'Del diseño al código',titulo:'Cómo quedó',bajada:'Etapa 3 · Hoy',
- cuerpo:'El sistema, no la marca: la interfaz se corre y la ropa habla. Cinco estilos de texto y un azul que sólo significa «se toca».',
- filas:[
-  {q:'Claude',k:'resultado',t:'Fuera de Figma, en el código: el celular, los estados sin dato, la espera de CLIP y el error de Groq.'}],
- img:[{s:'tendencias_hoy',p:'Tendencias, 1400 px'},{s:'celular_disenar',p:'Diseñar, 393 px'}],
- notas:'Había 31 tamaños de letra; quedan cinco. El color es de las prendas y de la señal; nada más tiene color. Lo que no está en ningún Figma y se decidió en código: cómo se ve algo sin dato (gris, «sin dato» no es «está cayendo»), qué pasa sin clave de Groq, la carga del modelo de imágenes, y el celular, donde todo va en una columna.'},
+/* ── El prototipo original ────────────────────────────────────────────────── */
+{id:'prototipo',sec:'Del diseño al código',titulo:'El prototipo original',bajada:'Lo que sabe el taller',
+ giro:{
+  pares:[
+   {a:'figma_original_radar',fa:'5 oct · Figma',d:'tarjetas_hoy',fd:'Hoy',p:'La etapa ya era un punto en una pista. Eso pasó entero del Figma a la app.'},
+   {a:'cortes_20-10',fa:'20 oct · en código',d:'cortes_hoy',fd:'Hoy',p:'«Jeans» era una prenda y «mom» un corte más. Hoy: pantalón, los diez cortes de la industria, y el denim como material.'},
+   {a:'materiales_20-10',fa:'20 oct · en código',d:'materiales_hoy',fd:'Hoy',p:'Un pantalón abría con «Jersey de algodón». Hoy cada prenda muestra sólo sus materiales, con el nombre de taller.'}],
+  paso:[
+   {q:'Claude',k:'propuesta',t:'Pasa el prototipo a código y arma la taxonomía con nombres de manual.'},
+   {q:'Felipe',k:'devolucion',f:'20/10',c:'La raíz del problema es que jean no es una prenda: es un material. (…) Sacá «mom jeans» y «boyfriend». Mapealos a lo que son por corte + tiro + fit.'},
+   {q:'Felipe',k:'devolucion',f:'20/10',c:'El jersey es tela de remera, no de pantalón. (…) Si un diseñador no puede decir el nombre en voz alta en un taller y que le entiendan, no va en la interfaz.',g:true}]},
+ notas:'El Figma (5/10, figma.com/design/zpHKE7YQLBRXJPcbyrb37I) dejó las vistas, la etapa como posición en una pista y la paleta de cada prenda; la app se escribió en código, no leyendo el Figma. Las dos correcciones son del 20/10: jean pasa a material (short de jean = short + denim), mom y boyfriend dejan de ser cortes y quedan como alias de búsqueda, y MATERIAL_POR_PRENDA filtra qué material se ofrece en cada prenda (el jersey, sólo en remeras y vestidos). Los «antes» son las versiones guardadas en diseno/prototipos/versiones_de_la_app/.'},
+
+/* ── «Muy IA» ─────────────────────────────────────────────────────────────── */
+{id:'apple',sec:'Del diseño al código',titulo:'«Muy IA»',bajada:'La devolución y la referencia',
+ giro:{
+  pares:[{a:'revista_27-10',fa:'27 oct · la revista',d:'tendencias_hoy',fd:'Hoy',p:'La misma pantalla, Tendencias, antes y después de la referencia.'}],
+  paso:[
+   {q:'Iván',k:'devolucion',f:'27/10',t:'Se ve «muy IA». Muestra una página donde se descarga la estética de cualquier marca.'},
+   {q:'Felipe',k:'eleccion',f:'27/10',c:'Decidí la de Apple porque me encanta. (…) Como si Apple vendiese ropa y un software de hacer ropa encontrando tendencias, que es lo que es CICLO.',g:true},
+   {q:'Claude',k:'resultado',t:'Toma el sistema, no la marca: la letra del sistema, el gris perla, tarjetas blancas y un solo azul, que significa «se toca».'}],
+  ref:{s:'referencia_apple',p:'La referencia: el DESIGN.md de Apple, en shadcn.io'}},
+ notas:'Antes hubo tres variantes (revista, revista suave y estudio) que no convencieron. Se tomó la tipografía del sistema, el gris perla, las tarjetas blancas de 18 px, las píldoras y un solo azul. No se tomó la marca ni el bloque oscuro (salió el 10/11, obstruía). Había 31 tamaños de letra; quedan cinco.'},
+
+/* ── Cómo quedó ───────────────────────────────────────────────────────────── */
+{id:'hoy',sec:'Del diseño al código',titulo:'Cómo quedó',bajada:'Una app, no una entrega',
+ giro:{
+  pares:[{a:'entrada_04-11',fa:'4 nov · la entrada',d:'entrada_hoy',fd:'Hoy',p:'Abajo de la primera pregunta estaban la materia, la facultad y los docentes. Hoy, una salida para el que sólo quiere mirar.'}],
+  paso:[
+   {q:'Felipe',k:'pedido',f:'04/11',c:'CICLO se va a publicar. Alguien que entre tiene que ver un producto, no el trabajo final de una materia.',g:true},
+   {q:'Claude',k:'resultado',t:'Busca en toda la app lo que sólo tiene sentido en una cursada y lo saca: la firma, los docentes, «como pide la consigna». Va al readme y al racional.'}]},
+ notas:'El criterio no tocó el rigor: las fuentes, medido contra interpretado, los límites declarados y las pruebas con criterio preregistrado se quedan. Lo que no está en ningún Figma y se decidió en código: cómo se ve algo sin dato, qué pasa sin clave de Groq, la carga del modelo de imágenes y el celular.'},
 
 /* ── Links ────────────────────────────────────────────────────────────────── */
 {id:'links',sec:'Links',titulo:'Links',ancha:true,
@@ -397,6 +417,32 @@ function imagenes(imgs){
     <button class="flecha" data-mover="-1" aria-label="Imagen anterior">←</button><button class="flecha" data-mover="1" aria-label="Imagen siguiente">→</button></div></div>`;
 }
 
+/* el antes y el después del prompt: respuestas reales a la misma pregunta, sin editar */
+const PIEZA={
+  v5:()=>`<div class="resp"><p class="q">¿Qué material está de moda ahora?</p>
+    <div class="par"><p>«De 2025 y 2026 no tengo lectura porque Google cambió su métrica y casi todo sube de golpe. Con lo medido hasta 2024, los materiales que más suben son Gamuza (+29 puntos), Lana (+20 puntos) y Popelina (+19 puntos). Si tu prenda lo permite, probá Gamuza, que está en fuerte auge.»</p></div>
+    <p class="fuente">Arranca por lo que falta. datasets/pruebas/asistente_v5_respuestas.md</p></div>`,
+  v9:()=>{const fuerte=/^(FORMATO|- "conclusion"|- "respaldo"|- EMPEZÁ)/;
+    return `<div class="resp"><p class="q">¿Qué material está de moda ahora?</p>
+    <div class="par si"><p><b>«Gamuza, la que más sube.»</b><br><span>«+29 puntos en la búsqueda mundial 2022→2024, señal»</span></p></div>
+    <p class="fuente">datasets/pruebas/asistente_v7_respuestas.md · el prompt de hoy, v9, completo:</p>
+    <pre class="prompt" tabindex="0">${PROMPT.split('\n').map(l=>fuerte.test(l)?`<mark>${esc(l)}</mark>`:esc(l)).join('\n')}</pre></div>`;},
+};
+function lado(cual,g){
+  const pares=g.pares||[{[cual==='a'?'html':'html']:null}];
+  const etiqueta=i=>cual==='a'?(g.pares?g.pares[i].fa:g.antes.f):(g.pares?g.pares[i].fd:g.despues.f);
+  const cuerpo=g.pares
+    ?g.pares.map((p,i)=>`<figure class="${i?'':'on'}" data-et="${esc(etiqueta(i))}"><img src="capturas/${p[cual]}.webp" alt="${esc(etiqueta(i)+': '+p.p)}" loading="${i?'lazy':'eager'}"></figure>`).join('')
+    :`<div class="html">${PIEZA[cual==='a'?g.antes.html:g.despues.html]()}</div>`;
+  return `<div class="lado ${cual==='a'?'antes':'despues'}"><p class="et"><b>${cual==='a'?'Antes':'Después'}</b> <span>${etiqueta(0)}</span></p><div class="escena">${cuerpo}</div></div>`;
+}
+function giro(l){
+  const g=l.giro,n=(g.pares||[]).length;
+  const medio=`<div class="medio"><p class="et"><b>Qué pasó</b></p>${g.paso.map(fila).join('')}${g.ref?`<figure class="ref"><img src="capturas/${g.ref.s}.webp" alt="${esc(g.ref.p)}"><figcaption>${g.ref.p}</figcaption></figure>`:''}</div>`;
+  const barra=n?`<div class="gbarra"><span class="pie">${g.pares[0].p}</span>${n>1?`<span class="cuenta">1 / ${n}</span><button class="flecha" data-mover="-1" aria-label="Par anterior">←</button><button class="flecha" data-mover="1" aria-label="Par siguiente">→</button>`:''}</div>`:'';
+  return `<div class="giro">${lado('a',g)}${medio}${lado('d',g)}${barra}</div>`;
+}
+
 /* visuales dibujados: una idea cada uno */
 const DIB={
   cruce:()=>`<div class="cruce">
@@ -412,40 +458,6 @@ const DIB={
       <div class="fu"><b>La señal</b><span>Etapa + tu perfil, por una regla fija</span><em><i class="s-e">▲ Entrar</i> <i class="s-w">■ Esperar</i> <i class="s-s">▼ Salir</i></em></div></div>
     <div class="valida"><span class="rot">Comprueban después, no entran</span>
       <span>Reddit · 4.404 posts</span><span>Google Shopping</span><span>Amazon · 1,1 M reseñas</span><span>Lyst · 55 marcas</span></div></div>`,
-  clave:()=>`<div class="ficha"><div class="fh"><b>Jeans baggy</b><span>atributo</span></div>
-    <dl><dt>Vogue</dt><dd>looks con denim</dd><dt>Google</dt><dd>baggy, wide leg, barrel, relaxed…</dd><dt>Reddit</dt><dd>baggy jeans, wide leg</dd></dl>
-    <div class="fh"><b>Pasarela</b><span>61 % de su pico · momento −7 %</span></div>
-    <div class="fh"><b>Búsqueda</b><span>84 % de su pico · momento +161 %</span></div>
-    <div class="fh fin"><b>Pico</b><span class="s-e">▲ Entrar</span><small>fast fashion, para una marca</small></div></div>`,
-  metodos:()=>`<ul class="metodos"><li>Suavizado con tendencia<span>pierde</span></li><li>Análogos históricos<span>pierde</span></li>
-    <li>Reversión a la media<span>pierde</span></li><li>La etapa como regla<span>empata</span></li><li class="base">Repetir el último valor<span>la base</span></li></ul>`,
-  procedencia:()=>`<div class="proc3">
-    <div><b>● medido</b><p>Un cálculo sobre los datos: la etapa, la búsqueda, la pasarela.</p><svg viewBox="0 0 200 24"><path d="M0 20 C60 18 90 4 200 4" fill="none" stroke="var(--ink)" stroke-width="2"/></svg></div>
-    <div><b>◇ interpretado</b><p>Lo que dice un modelo: lo que CLIP ve en tu foto, lo que escribe el LLM.</p><svg viewBox="0 0 200 24"><path d="M0 20 C60 18 90 4 200 4" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="6 5"/></svg></div>
-    <div><b>↪ prestado</b><p>Sin serie propia: la de un hermano o la del padre, y dice de cuál.</p><svg viewBox="0 0 200 24"><path d="M0 20 C60 18 90 4 200 4" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-dasharray="2 4"/></svg></div></div>`,
-  reddit:()=>graficoReddit(),
-  ida:()=>`<div class="ida">
-    <div class="caja"><span class="rot">Recibe</span><b>Tu pregunta, tu perfil y las fichas que nombra</b>
-      <code>- Jeans baggy | etapa: Pico | pasarela: 61 % de su pico, momento -7 % | búsqueda: 84 % de su pico, momento +161 % | afuera 2022→2024: +50 puntos | …</code>
-      <small>Métricas ya calculadas, de app/llm/ciclo_datos.md</small></div>
-    <i class="fl">→</i>
-    <div class="caja"><span class="rot">Modelo</span><b>gpt-oss-120b, en Groq</b><p>Desde el navegador, con la clave de quien la usa. Temperatura 0,3.</p></div>
-    <i class="fl">→</i>
-    <div class="caja"><span class="rot">Devuelve</span><b>Una respuesta corta, en JSON</b>
-      <ul><li><b>conclusión</b> · 20 palabras</li><li><b>respaldo</b> · el número, su fuente y su período</li><li><b>detalle</b> · plegado; lo que falta, al final</li></ul>
-      <small>En la app, siempre con «◇ interpretación» y «Qué se le mandó al modelo»</small></div>
-    <p class="regla">La etapa y la señal no las decide la IA: las deciden el K-means y una regla fija. El modelo las pone en palabras.</p></div>`,
-  prompt:()=>{
-    const fuerte=/^(FORMATO|- "conclusion"|- "respaldo"|- NUNCA|- EMPEZÁ|- MARCAS|- Buscá siempre)/;
-    return `<pre class="prompt" tabindex="0">${PROMPT.split('\n').map(l=>fuerte.test(l)?`<mark>${esc(l)}</mark>`:esc(l)).join('\n')}</pre>
-    <p class="fuente">Completo, sin editar. Lo resaltado es lo que más pesa. Se desplaza.</p>`;},
-  respuesta:()=>`<div class="resp">
-    <p class="q">¿Las botinetas están de moda?</p>
-    <div class="par"><span class="v">v8</span><p>«No lo sé: CICLO no mide botinetas.»</p></div>
-    <div class="par si"><span class="v">v9</span><p><b>«En calzado, lo que se mide y sube es A.»</b><br>
-      <span>«A +X puntos y B −Y en la búsqueda mundial 2022→2024.»</span><br>
-      <small>«Un estilo de calzado no dice nada de otro: las botinetas no tienen serie propia.»</small></p></div>
-    <p class="fuente">Textual de prompts/prompt_asistente_v9.md: cómo arrancaba la v8 y el ejemplo que la v9 le da al modelo (las letras las completa con DATOS).</p></div>`,
   links:()=>`<div class="links">
     <a href="../"><span>La app</span><b>felipeberney-boop.github.io/ciclo</b></a>
     <a href="https://github.com/felipeberney-boop/ciclo"><span>El repositorio</span><b>github.com/felipeberney-boop/ciclo</b></a>
@@ -453,19 +465,6 @@ const DIB={
     <img src="capturas/qr.webp" alt="Código QR a la app" class="qr"></div>`,
 };
 
-/* crecimiento en Reddit (2023–24 contra 2020–21), de codigo/prueba_reddit.py; arriba = ascenso o pico según el modelo */
-const REDDIT=[['Y2K',258,1],['Cargo',187,1],['Jeans baggy',130,1],['Trench',59],['Buzo / hoodie',15],['Lunares',13],['Floral',-6],
-  ['Encaje',-12],['Cuero',-17],['Animal print',-32],['Kimono',-35],['Cuadros',-35],['Jeans skinny',-39],['Jeans rectos',-79]];
-function graficoReddit(){
-  const max=258,cero=24; /* % del ancho donde cae el cero */
-  const fila=([n,v,arriba])=>{const w=Math.abs(v)/max*(100-cero),x=v>=0?cero:cero-w;
-    return `<div style="display:grid;grid-template-columns:118px 1fr 52px;gap:10px;align-items:center;font:400 13.5px var(--sans);color:${arriba?'var(--ink)':'var(--ink-3)'}">
-      <span style="${arriba?'font-weight:600':''}">${n}</span><span style="position:relative;height:12px"><span style="position:absolute;left:${cero}%;top:-3px;bottom:-3px;width:1px;background:var(--rule)"></span>
-      <span style="position:absolute;left:${x}%;width:${w}%;top:0;bottom:0;border-radius:3px;background:${arriba?'var(--ink)':'var(--rule)'}"></span></span>
-      <span style="font:500 12px var(--mono);text-align:right">${v>0?'+':''}${v} %</span></div>`;};
-  return `<div style="display:grid;gap:7px">${REDDIT.map(fila).join('')}</div>
-    <p class="fuente">En negro, lo que el modelo pone en ascenso o pico. Crecimiento en r/femalefashionadvice, 2023–24 contra 2020–21.</p>`;
-}
 /* ════════════════════════════════════════════════════════════════════════════════════════════
    Armado y navegación
    ════════════════════════════════════════════════════════════════════════════════════════════ */
@@ -478,6 +477,7 @@ deck.innerHTML=LAMINAS.map((l,i)=>{
       :`<div class="izq"><h1>CICLO</h1><p class="bajada">Making of</p><div class="firma"><span>Felipe Berney · Abril Dobler</span><span>Sistemas generativos e IA para Diseño · UdeSA</span><span>Octubre 2026</span></div></div>`;
     return `<section class="slide portada" id="${l.id}" data-sec="${l.sec}" aria-label="${n}">${izq}${imagenes(l.img)}</section>`;
   }
+  if(l.giro)return `<section class="slide ancha con-giro" id="${l.id}" data-sec="${l.sec}" aria-label="${n}">${encabezado(l,n)}${giro(l)}</section>`;
   const izq=`<div class="izq">${l.cuerpo?`<p class="cuerpo">${l.cuerpo}</p>`:''}${(l.filas||[]).map(fila).join('')}${l.dibIzq?`<div class="dib">${DIB[l.dibIzq]()}</div>`:''}${l.ancha&&l.dib?`<div class="dib">${DIB[l.dib]()}</div>`:''}</div>`;
   const der=l.ancha?'':l.img?imagenes(l.img):l.dib?`<div class="der dibujo"><div class="dib">${DIB[l.dib]()}</div></div>`:'';
   return `<section class="slide${l.ancha?' ancha':''}" id="${l.id}" data-sec="${l.sec}" aria-label="${n}">${encabezado(l,n)}${izq}${der}</section>`;
@@ -500,6 +500,14 @@ function ir(n,sinHistoria){
   nav.querySelector('.sec.on')?.scrollIntoView({inline:'nearest',block:'nearest'});
 }
 function moverImg(s,d){
+  const g=s.querySelector('.giro');
+  if(g){
+    const lados=[...g.querySelectorAll('.lado .escena')].map(e=>[...e.querySelectorAll('figure')]);
+    const total=lados[0].length;if(total<2)return false;
+    const i=lados[0].findIndex(f=>f.classList.contains('on')),j=(i+d+total)%total;
+    lados.forEach((fs,k)=>{fs[i].classList.remove('on');fs[j].classList.add('on');g.querySelectorAll('.lado .et span')[k].textContent=fs[j].dataset.et;});
+    g.querySelector('.pie').textContent=LAMINAS[slides.indexOf(s)].giro.pares[j].p;g.querySelector('.cuenta').textContent=`${j+1} / ${total}`;return true;
+  }
   const fs=[...s.querySelectorAll('.der figure')];if(fs.length<2)return false;
   const i=fs.findIndex(f=>f.classList.contains('on')),j=(i+d+fs.length)%fs.length;
   fs[i].classList.remove('on');fs[j].classList.add('on');
@@ -509,7 +517,7 @@ document.addEventListener('click',e=>{
   const b=e.target.closest('[data-ir-i]');if(b)return ir(+b.dataset.irI);
   const t=e.target.closest('[data-ir]');if(t)return ir(slides.findIndex(s=>s.id===t.dataset.ir));
   const m=e.target.closest('[data-mover]');if(m)return moverImg(m.closest('.slide'),+m.dataset.mover);
-  const im=e.target.closest('.der img');if(im){const z=document.getElementById('zoom');z.querySelector('img').src=im.src;z.hidden=false;return;}
+  const im=e.target.closest('.der img,.giro img');if(im){const z=document.getElementById('zoom');z.querySelector('img').src=im.src;z.hidden=false;return;}
   if(e.target.closest('#zoom'))document.getElementById('zoom').hidden=true;
 });
 document.addEventListener('keydown',e=>{

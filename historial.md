@@ -384,6 +384,12 @@ reintenta sola. En Método, «Cómo se arma una lectura» pasa a «Cómo se arma
 título y **Preguntar** en el menú, en la app, el readme y el racional. `#preguntar` la abre; los links viejos siguen
 andando.
 
+## v1.48 · 16/11/2026 · El making of, como giros
+
+La presentación de la Entrega 4 pasa de doce láminas a seis: los datos, el system prompt, el prototipo original, «Muy
+IA», cómo quedó y los links. Cada una cuenta un giro con el antes y el después enfrentados; las citas son las
+correcciones de oficio de Felipe (el jean es un material, el jersey es tela de remera, «CICLO se va a publicar»).
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

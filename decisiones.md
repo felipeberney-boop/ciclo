@@ -2496,3 +2496,10 @@ le ganaba en especificidad; las reglas de Lectura van con `#v-lectura`.
 **Probado.** `codigo/probar_demo.js` (reescrito para la Entrega 4) hace la demo entera: 8 de 8 pasos con Groq de verdad y
 una foto subida, y 8 de 8 sin clave; a 1400 y 393 px, sin errores ni scroll horizontal. Las respuestas reales quedaron en
 `datasets/pruebas/asistente_v9_respuestas.md`.
+
+**Verificación sobre el sitio publicado (16/11, tarde).** En incógnito a 1400 y 393 px la app abre en la entrada, sin
+errores ni scroll horizontal; la presentación carga sus 12 láminas. La demo entera con Groq y una foto subida, sobre
+GitHub Pages: 8 de 8. Sin clave, a 393 px: 8 de 8 (el paso del brief fallaba por la prueba, no por la app: en el
+celular El brief ya está a la vista en el menú). Con una clave inválida, la burbuja dice «Groq rechazó la API key.
+Revisá que esté completa y sin espacios. Lo medido sigue valiendo.». De paso: un respaldo traía «…(señal), id.»; la
+limpieza de ids del texto del modelo ahora también saca ese resto.

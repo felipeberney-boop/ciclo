@@ -3567,7 +3567,7 @@ function asNormalizar(r,ids,O){
   // v7: conclusión, respaldo y detalle; si el modelo vuelve al formato viejo, la primera oración es la conclusión
   let conclusion=limpio(r.conclusion),respaldo=limpio(r.respaldo),detalle=limpio(r.detalle);
   // lo que el prompt pide y el modelo a veces no cumple: sin ids en el texto y sin repetir la palabra de la señal
-  const sinIds=t=>t.replace(/,?\s*(?:señal\s+)?(?:de\s+|id:\s*)?\b(?:material|estampa|corte|tiro|detalle|tipo|color)_[a-z0-9_]+\b/gi,'').replace(/\(\s*\)/g,'').replace(/\s+([,.;])/g,'$1').replace(/,\s*\./g,'.').trim();
+  const sinIds=t=>t.replace(/,?\s*(?:señal\s+)?(?:de\s+|id:\s*)?\b(?:material|estampa|corte|tiro|detalle|tipo|color)_[a-z0-9_]+\b/gi,'').replace(/\(\s*\)/g,'').replace(/,\s*\bids?\b\s*(?=[.;]|$)/gi,'').replace(/\s+([,.;])/g,'$1').replace(/,\s*\./g,'.').trim();
   [conclusion,respaldo,detalle]=[conclusion,respaldo,detalle].map(sinIds);
   if(!conclusion&&r.respuesta){const o=limpio(r.respuesta).split(/(?<=[.!?])\s+/);conclusion=o.shift()||'';respaldo=respaldo||o.shift()||'';detalle=detalle||o.join(' ');}
   if(acc&&conclusion.toLowerCase().startsWith(acc.toLowerCase())){const resto=conclusion.slice(acc.length).replace(/^[\s,.:;·—-]+/,'');if(resto)conclusion=resto[0].toUpperCase()+resto.slice(1);}

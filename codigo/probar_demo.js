@@ -63,7 +63,8 @@ const OUT = path.join(os.tmpdir(), 'ciclo_demo');
   });
   await paso('El brief, la pirueta: tres elecciones y el veredicto', async () => {
     if (ANCHO < 760 && await p.isVisible('#navmenu')) await p.click('#navmenu');
-    await p.click('#navmas'); await p.click('#nav a[data-v="mover"]');
+    if (await p.isVisible('#navmas')) await p.click('#navmas'); // en el celular, El brief ya está a la vista en el menú
+    await p.click('#nav a[data-v="mover"]');
     await p.click('#bfok');
     for (let i = 0; i < 3; i++) { await p.click('.bfop >> nth=0'); await p.waitForTimeout(400); }
     await p.waitForSelector('.bfver', { timeout: 8000 }); await p.waitForTimeout(4500);

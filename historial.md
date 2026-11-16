@@ -365,6 +365,12 @@ La parte de IA se llama Tiza y se parte en dos: la mesa, grande, con lo que est�
 fotos, el recorrido de una marca), y la conversación al costado. En el celular, la mesa arriba. Las imágenes se sueltan en
 cualquier parte; sin clave, la mesa igual responde con datos.
 
+## v1.45 · 16/11/2026 · El making of, corto
+
+`app/presentacion/` vuelve: doce láminas de apoyo para la demo de la Entrega 4 (los datos, la IA, del diseño al
+código y los links), sobre el making of del 03/11 y con el lienzo de la app de hoy. Guion de la demo en
+`entregas/entrega_4/guion_demo.md`.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

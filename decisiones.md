@@ -2434,3 +2434,23 @@ mandó al modelo»; el formato corto.
 Probado con Playwright a 1400 y 393 px: vacía, Prada, Zara, jeans de Balenciaga, una foto subida, «qué se parece» y, con
 la respuesta de Groq simulada sólo en la prueba, que la mesa sigue a lo que nombra la respuesta (gamuza y lana). Sin
 errores ni scroll horizontal.
+
+## 2026-11-16 · El making of vuelve, corto, para la Entrega 4
+
+**El pedido.** La consigna de la Entrega 4 no pide láminas: pide app operativa, IA en tiempo real, el racional, la
+pirueta y la demo en vivo; el criterio 5 pide cubrir en los 10 minutos los criterios 2, 3 y 4 y dar el repositorio. Se
+descartaron las cinco láminas que se habían pensado primero. La devolución de la Entrega 3 (mostrar primero el flujo de
+la app y simplificar) pone a la demo en el centro.
+
+**Lo que se hizo.** `app/presentacion/` vuelve a existir, publicado con la app, sobre el motor del making of del 03/11
+(`presentacion_2026-11-03_abd5939_making_of.html`): una página que se recorre con ← →, con un link por lámina y notas con
+la N. Con el lienzo de la app de hoy (#f5f5f7, tarjetas blancas). Doce láminas, en formato making of (qué pedimos, qué
+salió, dónde pivoteamos), en tres secciones y los links:
+- *Los datos* (5): el esquema de qué entra y qué comprueba, la clave atributo × año con la ficha real de Jeans baggy, el
+  pivot de predecir a leer el presente, medido / interpretado / prestado, y la prueba con Reddit.
+- *La IA* (3): qué recibe y qué devuelve (una línea real de `ciclo_datos.md`), el system prompt v9 entero, y el pivot
+  de v8 a v9 tras la crítica de Cristian. El ejemplo de respuesta es texto textual del prompt, no una respuesta inventada.
+- *Del diseño al código* (3): el prototipo de Figma, «muy IA» con la referencia de Iván, y cómo quedó.
+- *Links*: app, repositorio, racional y el QR.
+Sin portada, sin cierre y sin la firma de la materia. Probado con Playwright a 1400 y 393 px: sin errores ni scroll
+horizontal; en el celular las piezas anchas se apilaban encima del título y se corrigió.

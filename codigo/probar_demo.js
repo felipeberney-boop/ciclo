@@ -1,6 +1,6 @@
 // CICLO · la demo de la Entrega 4, paso por paso, como se hace en clase (16/11/2026; la de la Entrega 3 está en git).
 // Uso, desde la raíz del repo, con la app servida (cd app && python3 -m http.server 8000):
-//   node codigo/probar_demo.js [http://localhost:8000/]            → sin clave: Lectura tiene que decir clara la falta de clave
+//   node codigo/probar_demo.js [http://localhost:8000/]            → sin clave: Preguntale a CICLO tiene que decir clara la falta de clave
 //   GROQ_KEY=gsk_… node codigo/probar_demo.js [url]                → además hace la pregunta de verdad y la lectura escrita
 //   IMAGEN=ruta/a/una/foto.jpg …                                   → suelta esa foto (si no, usa el look de ejemplo «Denim»)
 //   ANCHO=393 …                                                    → la misma demo en el celular
@@ -43,7 +43,7 @@ const OUT = path.join(os.tmpdir(), 'ciclo_demo');
     await p.click('#v-detalle [data-dz]'); await p.waitForSelector('#dzfijo:not([hidden])');
     return (await p.textContent('#dzfijo')).replace(/\s+/g, ' ').trim().slice(0, 80);
   });
-  await paso('Lectura: soltar una imagen; CLIP la lee adentro del hilo', async () => {
+  await paso('Preguntar: soltar una imagen; CLIP la lee adentro del hilo', async () => {
     await ir('lectura'); await p.waitForSelector('#v-lectura:not([hidden]) .ltvacio');
     if (KEY) await p.evaluate(k => { $('#askey').value = k; asGuardar('groq_key', k); asEstadoClave(); }, KEY);
     if (IMAGEN) await p.setInputFiles('#asfile', IMAGEN); else await p.click('.ltejb >> text=Denim');
@@ -53,7 +53,7 @@ const OUT = path.join(os.tmpdir(), 'ciclo_demo');
     if (m.fallo) throw new Error(m.fallo);
     return `leyó: ${m.clip.join(', ') || 'nada'} · ${m.looks} looks · ` + (m.r ? 'devolución: ' + m.r : m.error ? 'Groq: ' + m.error : 'devolución con reglas');
   });
-  await paso('Lectura: la pregunta, con la pieza de datos adentro', async () => {
+  await paso('Preguntar: la pregunta, con la pieza de datos adentro', async () => {
     await p.click(`#assug [data-q="${PREGUNTA}"]`).catch(async () => { await p.fill('#astexto', PREGUNTA); await p.click('#asenviar'); });
     await p.waitForFunction(() => !as.ocupado && as.hist[as.hist.length - 1].tipo === 'resp', null, { timeout: 90000 });
     const r = await p.evaluate(() => { const u = as.hist[as.hist.length - 1]; return { r: u.r && [u.r.conclusion, u.r.respaldo].join(' / '), error: u.error, sin: !!u.sinClave || !$('#askey').value, tok: u.tok, pieza: u.P && (u.P.titulo || u.P.t) }; });

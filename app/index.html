@@ -1283,7 +1283,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
   .app .rvrow .rvf{grid-column:1 / -1}
   .app .rvrow>.tag,.app .rvrow .rvnos{grid-column:1 / -1;justify-self:start}
 }
-/* ---------- Lectura (16/11): un solo hilo a lo ancho, el campo fijo al pie; en el celular, lo mismo en una columna ---------- */
+/* ---------- Preguntale a CICLO (16/11, «Lectura» hasta el 16/11): un solo hilo a lo ancho, el campo fijo al pie; en el celular, lo mismo en una columna ---------- */
 #v-lectura{max-width:none!important;padding:0!important}
 .app .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .app #v-lectura .lt{max-width:760px;margin:0 auto;padding:28px 24px 0;min-height:calc(100vh - var(--tzh,52px));display:flex;flex-direction:column;box-sizing:border-box}
@@ -1422,7 +1422,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
       <a data-v="radar" class="nav-dz">Tendencias</a>
       <a data-v="disenar">Diseñar</a>
       <a data-v="recorridos">El ciclo</a>
-      <a data-v="lectura">Lectura</a>
+      <a data-v="lectura">Preguntar</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
       <span class="navgrupo" id="navgrupo" hidden>
         <a data-v="mover"><b>El brief</b><span>Un encargo de una casa real: diseñás en tres toques y CICLO te dice si tuviste ojo.</span><i>6 briefs · 3 casas</i><em>Jugar →</em></a>
@@ -1747,12 +1747,12 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       </div>
     </section>
 
-    <!-- ================= LECTURA (16/11/2026; antes Tiza, «Buscar por imagen» y «Preguntar») =================
+    <!-- ================= PREGUNTALE A CICLO (en el menú «Preguntar»; 16/11/2026 como «Lectura», antes Tiza, «Buscar por imagen» y «Preguntar») =================
          Un solo hilo, a lo ancho: tu imagen o tu pregunta, y la respuesta con todo adentro. El campo, fijo al pie. -->
     <section class="view" id="v-lectura" hidden>
       <div class="lt">
         <header class="lthead">
-          <h1>Lectura</h1>
+          <h1>Preguntale a CICLO</h1>
           <button type="button" class="ltnueva" id="ltnueva" hidden>Nueva conversación</button>
           <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p><b>Qué hace.</b> Contesta con lo que CICLO midió: la etapa, la búsqueda, la pasarela y el Lyst Index de cada marca. Cada pieza dice si es <b>● medido</b> o <b>◇ interpretado</b>.</p><p><b>La imagen.</b> CLIP, un modelo de visión que corre en tu navegador, la compara con los 17 atributos del modelo, 10 colores y 14.000 looks de pasarela. La foto no sale de tu computadora. Lo que lee es interpretación: por eso se corrige.</p><p><b>La respuesta escrita.</b> La escribe un modelo de lenguaje con tu clave de Groq. Lee sólo <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">un resumen de métricas ya calculadas</a>, nunca una fila de la base. Sin clave, lo medido igual aparece, y la devolución de una imagen la arman reglas fijas, y lo dice.</p><p><b>Cómo se validó CLIP.</b> En 150.000 looks de Vogue que no están en el índice, el atributo correcto quedó entre los tres primeros entre el 67 % y el 92 % de las veces (animal print: 20 %). Cuadros, piel, cargo, Y2K y blazer no se pudieron validar. Por debajo de 0,35 la app no adivina. El color, revisado a ojo: 79 % con 0,6.</p></div></details>
         </header>
@@ -2892,7 +2892,7 @@ function rvDevolucion(A){const Dc=A.filter(a=>a.color).map(a=>({a,...rvDato(a)})
   return `<div class="rvdev"><div class="h"><span class="lbl">Devolución</span><span class="tag demo">armada con reglas, no con un modelo de lenguaje</span></div>
     <div class="rvconc">${escH(conc)}</div><ul class="rvlista">${bien.map(x=>linea(x,'Va bien ·')).join('')}${mal.map(x=>linea(x,'Cambiaría ·')+alt(x)).join('')}${resto.map(x=>linea(x,x.sg.estado==='sin-dato'?'Sin dato ·':'Sin apuro ·')).join('')}${Dc.map(x=>`<li><b>Color ·</b> ${escH(x.a.n)}: ${x.num||'sin lectura'}. <span class="${x.sg.cls}" style="color:${x.sg.color}">${x.sg.icono} ${x.sg.palabra}</span> <span class="rvnos">describe, no recomienda</span></li>`).join('')}</ul>
     <p class="rvcap">La señal es la de tu perfil (${(PERFIL[cliente]||PERFIL.premium).n}${vinculo==='propia'?', por tu cuenta':''}). </p></div>`;}
-/* ---------- Lectura (16/11/2026): un solo hilo ----------
+/* ---------- Preguntale a CICLO (16/11/2026, primero llamada «Lectura»): un solo hilo ----------
    Reemplaza a Tiza (la mesa y la conversación, 10/11). Todo pasa adentro de la conversación: la imagen que soltás es tu
    mensaje, grande; la respuesta es una burbuja con lo que leyó CLIP (chips que se corrigen), la curva que importa, los
    looks parecidos y la devolución. Una pregunta trae adentro su pieza de datos (el recorrido en Lyst, la curva y la foto
@@ -2987,7 +2987,7 @@ const ltYo=m=>`<div class="ltyo${m.img?' conimg':''}">${m.img&&m.img.src?`<figur
 /* vacía: una línea de qué hace, las sugerencias y tres looks para probar sin tener una imagen */
 function ltVacio(){const D=asDiseno(),idx=CLIP.idx;
   const sug=[...TZ_SUG,...(D.chips.length?[`Leé mi diseño: ${D.chips.map(c=>c.v.toLowerCase()).join(' · ')}`]:[])];
-  return `<div class="ltvacio"><p class="ltintro">Preguntale a CICLO por un atributo, una marca o un diseño tuyo. Te contesta con los datos que tiene.</p>
+  return `<div class="ltvacio"><p class="ltintro">Por un atributo, una marca o un diseño tuyo. CICLO te contesta con los datos que tiene.</p>
     <div class="ltsug">${sug.map(t=>`<button type="button" class="ltsugb" data-q="${escH(t)}">${escH(t)}</button>`).join('')}</div>
     <div class="ltej"><span>O probá con un look de pasarela</span><div>${LT_EJ.map(([n,k])=>`<button type="button" class="ltejb" data-i="${QEJ[k]}" data-n="${n}">${idx?`<img alt="" src="${vogueFoto(idx.f[QEJ[k]],320)}">`:''}<span>${n}</span></button>`).join('')}</div></div></div>`;}
 /* el hilo entero; si nuevo, baja hasta el último mensaje (sin mover lo de arriba) */
@@ -3025,7 +3025,7 @@ function ltCorregir(i,c){const k=as.hist.reduce((u,m,j)=>m.tipo==='lectura'&&!m.
   else{const a=rvAtr(c,null,true);m.clip.push(a);m.cambios.push('con '+a.n.toLowerCase());}
   as.clip=m.clip.slice();m.r=null;m.error='';m.pend=ltClave()&&m.clip.length>0;asPintar();
   clearTimeout(ltRz);if(m.pend)ltRz=setTimeout(()=>ltEscribir(m),900);}
-/* arrastrar una imagen a cualquier parte de la app (menos la entrada): un velo, y la imagen se vuelve tu mensaje en Lectura */
+/* arrastrar una imagen a cualquier parte de la app (menos la entrada): un velo, y la imagen se vuelve tu mensaje en Preguntale a CICLO */
 function tzArrastre(){if(tzArrastre.listo)return;tzArrastre.listo=true;let n=0;const v=$('#tzvelo'),es=e=>e.dataTransfer&&[...e.dataTransfer.types].includes('Files')&&vista!=='perfil';
   addEventListener('dragenter',e=>{if(!es(e))return;e.preventDefault();n++;v.hidden=false;});
   addEventListener('dragover',e=>{if(es(e))e.preventDefault();});
@@ -4047,7 +4047,7 @@ function pintarLystX(){
 
 /* ---------- navegación ---------- */
 function mostrar(v,keepNav){
-  if(['tiza','consulta','asistente','revision'].includes(v))v='lectura'; // los links de antes siguen andando
+  if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando
   document.body.classList.toggle('on-gate',v==='perfil');
   ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','racional','adivina','mover'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
@@ -4156,7 +4156,7 @@ $('#gmirar').addEventListener('click',gateMirar);
 let publico='todos';
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
-const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','tiza','revision','consulta','asistente','racional','adivina','mover'];
+const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','preguntar','tiza','revision','consulta','asistente','racional','adivina','mover'];
 let vista='perfil',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;

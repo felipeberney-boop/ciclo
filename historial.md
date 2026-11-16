@@ -378,6 +378,12 @@ adentro lo que leyó CLIP (chips que se corrigen), la curva que importa, los loo
 pregunta por una marca trae su recorrido en Lyst adentro. Si Groq pide esperar, la respuesta cuenta los segundos y
 reintenta sola. En Método, «Cómo se arma una lectura» pasa a «Cómo se arma una señal».
 
+## v1.47 · 16/11/2026 · Preguntale a CICLO
+
+«Lectura» no decía que es un chat con el que se conversa. La sección pasa a llamarse **Preguntale a CICLO** en el
+título y **Preguntar** en el menú, en la app, el readme y el racional. `#preguntar` la abre; los links viejos siguen
+andando.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

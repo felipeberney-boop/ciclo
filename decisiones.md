@@ -2508,3 +2508,16 @@ limpieza de ids del texto del modelo ahora también saca ese resto.
 está pausado ni bloqueado). Lo que sí anda: un deploy de borrador (`npx netlify-cli deploy --dir app`) y publicarlo con
 `npx netlify-cli api restoreSiteDeploy --data '{"site_id":"…","deploy_id":"<id del borrador>"}'`. Así se publicó;
 https://ciclo-udesa.netlify.app sirve el mismo `app/index.html` que GitHub Pages (más el aviso que agrega Netlify).
+
+## 2026-11-16 · Preguntale a CICLO: el nombre de la sección de IA
+
+**Problema.** «Lectura» no se entendía como un chat: no decía que con eso se conversa.
+
+**Decisión (Felipe).** **Preguntale a CICLO** en el título de la pantalla y **Preguntar** en el menú y la navegación.
+Es como se llamaba al principio, dice que es una conversación, lleva la marca y no envejece como «IA». Se descartaron
+«Lectura» (no dice conversación) y cualquier nombre con «IA».
+
+**Cómo quedó.** Cambia lo que se ve: el menú, el título, la línea de arranque (que ya no repite el título), el readme,
+el racional y las capturas. El id interno sigue siendo `lectura` (`#v-lectura`, `data-v="lectura"`) para no romper los
+links compartidos; `#preguntar` también la abre. La etiqueta «Lectura · interpretación» de Retornos es otra cosa (la
+lectura escrita de un atributo) y no se toca.

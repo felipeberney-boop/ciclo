@@ -15,9 +15,9 @@
 ## Antes de entrar
 
 - Dos pestañas: la app en **ventana privada** (arranca en las tres preguntas) y `…/ciclo/presentacion/#datos`.
-- En la app, Lectura → «Activar la respuesta escrita» y pegar la clave de Groq. Volver con «Cambiar perfil».
+- En la app, Preguntar → «Activar la respuesta escrita» y pegar la clave de Groq. Volver con «Cambiar perfil».
 - Una foto de un look tuyo en el escritorio, para soltarla. Si no hay, el plan es el look de ejemplo «Denim».
-- **Abrir Lectura y soltar una foto una vez antes de clase**, con internet: baja el modelo de imágenes (una sola vez) y
+- **Abrir Preguntar y soltar una foto una vez antes de clase**, con internet: baja el modelo de imágenes (una sola vez) y
   queda en caché. En clase lee en 2 a 4 segundos.
 - Correr `GROQ_KEY=gsk_… IMAGEN=tu_foto.jpg node codigo/probar_demo.js`: hace los pasos de abajo y dice si alguno falla.
 - **Después de correrlo, esperar un minuto** antes de empezar: el plan gratis de Groq deja 8.000 tokens por minuto y
@@ -44,7 +44,7 @@
 **4 · Diseñar** (0:45). «Diseñar con este corte» → elegir un material con señal verde.
 > «Del dato a la decisión: cada opción trae su señal, y lo que elijo se acumula abajo.»
 
-**5 · Lectura** (1:45). Ir a Lectura. Primero la pregunta, después la imagen: así las dos llamadas a Groq quedan
+**5 · Preguntale a CICLO** (1:45). Ir a Preguntar. Primero la pregunta, después la imagen: así las dos llamadas a Groq quedan
 separadas por un minuto y no hay espera.
 - Tocar la sugerencia **«¿Qué material le va a un jean baggy?»** (no hay que tipear; ya sabe que estoy diseñando un baggy).
   > «El modelo no ve ninguna fila de datos: recibe métricas ya calculadas. Primero la respuesta, después el número que
@@ -83,11 +83,11 @@ modelo no es determinista: la redacción cambia, los números tienen que ser los
   y reintenta sola. Mientras, explicar los chips o la curva. Si hace falta, pasar a `gpt-oss-20b` (tiene su propio límite).
 - **Sin internet en la sala:** `cd app && python3 -m http.server 8000` y abrir `localhost:8000`. Anda todo menos la
   respuesta escrita, las fotos de Vogue (se ven los dibujos) y la tipografía de Google. CLIP necesita el modelo
-  descargado: abrir Lectura una vez con internet antes de clase, así queda en caché.
+  descargado: abrir Preguntar una vez con internet antes de clase, así queda en caché.
 - **No carga nada:** el recorrido en capturas del readme.
 
 ## Dónde cortar si vas justo
 
-1. El paso 4 (Diseñar): ir de la ficha directo a Lectura.
+1. El paso 4 (Diseñar): ir de la ficha directo a Preguntar.
 2. En el making of, la lámina 05 (Reddit).
 3. **Nunca cortar el 5 ni el 6**: son la IA en tiempo real y la pirueta, que pide la consigna.

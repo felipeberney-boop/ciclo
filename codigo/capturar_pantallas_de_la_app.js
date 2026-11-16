@@ -2,7 +2,7 @@
 // Uso, desde la raíz del repo, con la app servida (cd app && python3 -m http.server 8000):
 //   node codigo/capturar_pantallas_de_la_app.js [http://localhost:8000/]
 // Requiere: npm install playwright. Escribe en entregas/entrega_4/capturas/ (las del 03/11 quedaron en entrega_3/capturas/).
-// No toca Groq ni baja el modelo CLIP: Lectura usa un look del índice y se captura sin respuesta escrita
+// No toca Groq ni baja el modelo CLIP: Preguntale a CICLO usa un look del índice y se captura sin respuesta escrita
 // (una respuesta simulada en una captura sería presentar como real algo que no lo es).
 const { chromium } = require('playwright');
 const fs = require('fs');
@@ -48,16 +48,16 @@ const PERFIL = '?c=fast&v=marca&pu=mujer';
   p = await abrir({ vista: 'mover' }); await p.waitForTimeout(1200); await p.click('#bfok'); await p.waitForTimeout(600);
   for (const i of [0, 1, 0]) { await p.click('.bfop >> nth=' + i); await p.waitForTimeout(600); }
   await p.waitForTimeout(5200); await hasta(p, '#mv', 12); await foto(p, 'captura_20_el_brief_veredicto');
-  // Lectura (16/11): un look de ejemplo leído adentro del hilo, sin clave (la devolución la arman reglas, y lo dice)
+  // Preguntale a CICLO (16/11): un look de ejemplo leído adentro del hilo, sin clave (la devolución la arman reglas, y lo dice)
   p = await abrir({ vista: 'lectura' });
   await p.waitForSelector('.ltejb img', { timeout: 60000 }); await p.click('.ltejb >> text=Denim');
   await p.waitForSelector('#v-lectura .ltchip', { timeout: 60000 }); await p.waitForTimeout(2500);
   await p.evaluate(() => { const e = document.querySelector('#v-lectura .ltyo'); window.scrollTo(0, e.getBoundingClientRect().top + window.scrollY - 70); }); await p.waitForTimeout(500);
-  await foto(p, 'captura_09_lectura_con_imagen');
+  await foto(p, 'captura_09_preguntar_con_imagen');
   p = await abrir({ vista: 'lectura' });
   await p.evaluate(() => { dz.prenda = 'pantalones'; dz.tipo = 'largo'; dz.corte = 'baggy'; dz.material = 'denimrigido'; asPintar(); });
   await p.waitForTimeout(1500);
-  await foto(p, 'captura_10_lectura_con_tu_diseno');
+  await foto(p, 'captura_10_preguntar_con_tu_diseno');
   // el método
   p = await abrir({ vista: 'etapas' }); await hasta(p, '.km'); await foto(p, 'captura_11_el_modelo');
   await foto(await abrir({ vista: 'retornos' }), 'captura_12_retornos');

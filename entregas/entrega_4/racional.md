@@ -183,7 +183,7 @@ la señal no las decide la IA: las deciden el K-means y una regla fija.
 que asesora a varias marcas. Desde el 13/10 es quien diseña, porque la app dejó de mostrar todo y pasó a acompañar una
 decisión de diseño.
 
-**El recorrido.** Tres preguntas → Tendencias → la ficha de un atributo → «Diseñar con…» → Lectura. Está
+**El recorrido.** Tres preguntas → Tendencias → la ficha de un atributo → «Diseñar con…» → Preguntale a CICLO. Está
 paso a paso, con capturas, en el readme, y en papel, una pantalla por hoja, en
 `entregas/entrega_4/disenos_en_papel/`.
 
@@ -244,7 +244,7 @@ Tendencias con la pregunta «¿Sigue vigente?» y lo que ya hay que dejar primer
 | Tendencias | Un gráfico que rota entre cinco lecturas animadas de la búsqueda: qué sube y qué baja, qué está en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro (hasta el 10/11, un bloque oscuro de texto que la devolución marcó como obstructivo) | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal. Sólo lo que tiene dato medido: el catálogo sintético no se muestra |
 | La ficha | La señal grande, con una línea de por qué | Es la decisión. El gráfico la sostiene; el detalle está en el «?» |
 | Diseñar | La pregunta del paso | Un paso, una decisión; lo elegido queda en una barra abajo |
-| Lectura (antes Buscar por imagen, Preguntar y Tiza) | Un solo hilo: tu imagen o tu pregunta, y la respuesta con todo adentro (lo que leyó CLIP, la curva que importa, los looks parecidos, la conclusión en una frase) | La devolución pidió filtrar lo que devuelve la IA: primero la conclusión, después el dato que la sostiene y su curva; el detalle queda plegado. Una sola columna, para que se sienta un asistente y no un tablero con un chat al costado |
+| Preguntale a CICLO, «Preguntar» en el menú (antes Buscar por imagen, Preguntar, Tiza y Lectura) | Un solo hilo: tu imagen o tu pregunta, y la respuesta con todo adentro (lo que leyó CLIP, la curva que importa, los looks parecidos, la conclusión en una frase) | La devolución pidió filtrar lo que devuelve la IA: primero la conclusión, después el dato que la sostiene y su curva; el detalle queda plegado. Una sola columna, para que se sienta un asistente y no un tablero con un chat al costado |
 | Método | «Cómo se arma una señal»: de los datos a la señal, animado | La devolución pidió que se entienda qué datos se usan y cómo conviven, sin tener que leer |
 
 **Cómo se jerarquizó.** Tres grupos para cada bloque de texto: lo que se necesita para decidir se queda; lo que aclara
@@ -309,6 +309,7 @@ ejemplo de como se veria la web»), sobre una captura de la app que ya estaba en
 | 04/11 | La entrada por la decisión, probada y descartada; el papel, cinco estilos de texto, la curaduría, la pirueta, la app sin la firma de la materia | Felipe eligió sobre variantes de Claude; lo que delegó está dicho abajo |
 | 10/11 | La devolución de la Entrega 3, con notas: el chat contesta primero, «Cómo se arma una lectura» (hoy «una señal») reemplaza al esquema, El modelo y Marcas salen de la navegación | Felipe fijó el criterio («no agregamos nada. Sacamos») y eligió; Claude corrigió la pieza contra el modelo, la construyó y la probó |
 | 16/11 | La sección de IA, otra vez: Tiza (la mesa y el chat al costado) se sentía un tablero con un chat pegado. Pasa a ser **Lectura**, un solo hilo donde la imagen es tu mensaje y la respuesta trae adentro los chips de CLIP, la curva, los looks y la devolución | Felipe pidió el cambio, eligió el nombre (por el botón «Pedir lectura», el que a la cátedra le gustó) y aprobó el guion de la pantalla antes de que se escribiera código; Claude propuso el guion y lo construyó |
+| 16/11 | El nombre, otra vez: «Lectura» no decía que es un chat con el que se conversa. Pasa a **Preguntale a CICLO** en el título y **Preguntar** en el menú | Felipe eligió el nombre: es el original, dice que es una conversación, lleva la marca y no envejece como «IA» |
 
 **Qué propuso la IA, qué decidió Felipe y por qué.** Las citas de Felipe son textuales, de las conversaciones en Claude
 Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y el 10/11) cuentan como suyas: las eligió y las mandó.
@@ -352,7 +353,7 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y e
 | Figma: el sistema implementado y el papel | El MCP de Figma |
 
 **Cómo gestionamos el system prompt.** Cada prompt vive en `prompts/` con su versión. Nunca se pisa una versión: si
-cambia, se agrega la siguiente con qué cambió y por qué (la lectura en vivo usa la v4 y la sección Lectura la v9; las v5 y v6 se descartaron con la entrada por el objetivo). La regla que los
+cambia, se agrega la siguiente con qué cambió y por qué (la lectura en vivo usa la v4 y Preguntale a CICLO la v9; las v5 y v6 se descartaron con la entrada por el objetivo). La regla que los
 atraviesa a todos es que el modelo no ve una fila de datos: los datos que recibe se generan con
 `codigo/armar_datos_llm.js` a partir de la app, y van sólo las fichas que nombra la pregunta. Las claves no están en el
 repositorio: cada persona pega la suya y queda en su navegador.
@@ -368,7 +369,7 @@ ojo?», adivinar la etapa de una tarjeta, Felipe la descartó antes de construir
 cartas que movían los datos se construyó y no funcionó: pedía leer curvas para jugar. La idea final y la lógica de las
 casas son de Felipe; el cálculo, las opciones y la construcción, de Claude (`decisiones.md`, 10/11).
 
-**«Cómo se arma una señal»** (hasta el 16/11, «Cómo se arma una lectura»: el nombre pasó a la sección de IA). Fue la pirueta entre el 10/11 y la devolución, y queda arriba de todo en Método. Las dos notas más bajas de la Entrega 3 (datos e
+**«Cómo se arma una señal»** (hasta el 16/11, «Cómo se arma una lectura»: el nombre pasó a la sección de IA, que el mismo día se renombró). Fue la pirueta entre el 10/11 y la devolución, y queda arriba de todo en Método. Las dos notas más bajas de la Entrega 3 (datos e
 IA, 5 sobre 10) decían lo mismo: el modelo es demasiado complejo para explicarlo. La pirueta convierte esa debilidad en la
 pieza más clara de la app. Toma un atributo, los jeans, y en siete pasos animados, sin texto que leer, muestra cómo se
 arma una lectura: entra la pasarela, entra la búsqueda, cada curva se vuelve dos números, los tres cortes se comparan
@@ -396,7 +397,7 @@ sostiene y, plegado, el detalle. El prompt pide el orden y el límite de palabra
 en el texto, la señal repetida) lo filtra la app antes de mostrarlo. Probado con seis preguntas reales, sin editar, en
 `datasets/pruebas/asistente_v7_respuestas.md`.
 
-**Dónde frenamos a la IA.** No decide la etapa ni la señal. No inventa respuestas en las capturas: Lectura se muestra
+**Dónde frenamos a la IA.** No decide la etapa ni la señal. No inventa respuestas en las capturas: Preguntale a CICLO se muestra
 sin respuesta escrita. No predice: el cono dice «no es un pronóstico». Y no es la autora de las decisiones: propone variantes, y la
 elección, con su porqué, queda registrada. Hubo veces en que se la frenó de verdad: cuando sacó 2025 sin avisar, cuando
 sus tres estilos «parecían IA», y cuando su prueba dependía de entrevistas. Y una vez se frenó sola: no reescribió la

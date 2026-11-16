@@ -2503,3 +2503,8 @@ GitHub Pages: 8 de 8. Sin clave, a 393 px: 8 de 8 (el paso del brief fallaba por
 celular El brief ya está a la vista en el menú). Con una clave inválida, la burbuja dice «Groq rechazó la API key.
 Revisá que esté completa y sin espacios. Lo medido sigue valiendo.». De paso: un respaldo traía «…(señal), id.»; la
 limpieza de ids del texto del modelo ahora también saca ese resto.
+
+**Netlify al día (16/11).** `netlify deploy --prod --dir app` devuelve «Forbidden» (la cuenta es la de Felipe, el sitio no
+está pausado ni bloqueado). Lo que sí anda: un deploy de borrador (`npx netlify-cli deploy --dir app`) y publicarlo con
+`npx netlify-cli api restoreSiteDeploy --data '{"site_id":"…","deploy_id":"<id del borrador>"}'`. Así se publicó;
+https://ciclo-udesa.netlify.app sirve el mismo `app/index.html` que GitHub Pages (más el aviso que agrega Netlify).

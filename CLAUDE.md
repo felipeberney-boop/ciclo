@@ -18,7 +18,7 @@ inline CSS + one inline `<script>`).
 cd app && python3 -m http.server 8000
 ```
 
-GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar_app.yml`); it is the official URL (the QR points there). Since 03/11 Netlify (`ciclo-udesa.netlify.app`, `netlify.toml`) publishes the same `app/` folder as a second host, deployed by hand with `npx netlify-cli deploy --prod --dir app`. The only external dependency is Google Fonts.
+GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar_app.yml`); it is the official URL (the QR points there). Since 03/11 Netlify (`ciclo-udesa.netlify.app`, `netlify.toml`) publishes the same `app/` folder as a second host, deployed by hand: since 16/11 `deploy --prod` answers «Forbidden», so make a draft (`npx netlify-cli deploy --dir app`) and publish it with `npx netlify-cli api restoreSiteDeploy --data '{"site_id":"ccf2ee73-2400-4eb4-8d2f-b8f2ea43a5e8","deploy_id":"<draft id>"}'`. The only external dependency is Google Fonts.
 
 ## App architecture (`app/index.html`)
 

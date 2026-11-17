@@ -404,6 +404,11 @@ Método arranca igual («Cómo se arma una señal») y sigue con el racional res
 hipótesis con sus límites, lo que usamos, el modelo, lo que probamos y descartamos (ahí va Instagram) y las decisiones
 de diseño, con un link visible al racional completo.
 
+## v1.51 · 17/11/2026 · El modelo y sus tokens, a la vista
+
+Cada respuesta escrita de Preguntale a CICLO dice al pie qué modelo contestó, por qué API y cuántos tokens usó esa
+consulta, con los números que devuelve Groq.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

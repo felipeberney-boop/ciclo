@@ -2604,3 +2604,17 @@ Al final sigue «La entrada: qué cambia cada respuesta». Cada grupo es su prop
 documento largo sigue siendo `entregas/entrega_4/racional.md`, que no se tocó (es lo entregado).
 
 Probado con Playwright a 1400 y 393 px, sin errores ni scroll horizontal.
+
+## 2026-11-17 · Qué modelo contesta y cuántos tokens usó
+
+**Pedido (Felipe).** Que se vea, discreto pero accesible, qué modelo está contestando, por qué API y cuántos tokens
+usó la consulta: es información que quien usa la app tiene derecho a ver, y es lo que evalúa la integración de IA.
+
+**Cómo quedó.** Al pie de cada respuesta escrita, en letra chica y gris, al lado de «◇ interpretación»:
+«openai/gpt-oss-120b · API de Groq · 6.086 tokens (5.874 entran, 212 salen)». Los números son los que devuelve Groq
+en `usage` para esa llamada (si hubo que reintentar por el límite por minuto, cuenta la que contestó), no una
+estimación; en el celular queda sólo el total y el detalle va en el `title`. «Qué se le mandó al modelo» sigue debajo,
+plegado. La estimación vieja («Unos 4.855 tokens de instrucciones y datos») queda adentro de ese plegado.
+
+**Probado.** Con Playwright a 1400 y 393 px, interceptando la llamada a Groq con una respuesta armada sólo para la
+prueba (no se guardó como captura). Falta verlo con una clave real.

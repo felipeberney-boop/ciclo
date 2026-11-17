@@ -1435,6 +1435,11 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 #v-racional .metsec .acc{margin-top:12px}
 #v-racional .metsec .note.colores{margin-top:18px}
 @media (max-width:640px){#v-racional .met2c{grid-template-columns:1fr;gap:18px}#v-racional .metsec{margin-top:40px}}
+
+/* 17/11 · el modelo, la API y los tokens de cada respuesta, discretos */
+#v-lectura .ltuso:not(#z){font-size:12px!important;color:var(--ink-3);line-height:1.4!important;font-variant-numeric:tabular-nums}
+#v-lectura .ltusod{color:var(--ink-3)}
+@media (max-width:640px){#v-lectura .ltusod{display:none}}
 </style>
 
 <div class="app">
@@ -3033,7 +3038,10 @@ function ltEscrita(m,pieza){const r=m.r,E=m.E,sp=r.accion&&señalPalabra(r.accio
     ${pieza||''}
     ${r.acciones.length?`<div class="asacciones">${r.acciones.map((a,i)=>`<button type="button" class="kbtn" data-a="${m.i}:${i}">${escH(a.texto)}</button>`).join('')}</div>`:''}
     ${r.detalle||filas||r.datos.length?`<details class="asmas"><summary>Detalle</summary>${r.detalle?`<div class="asdet">${escH(r.detalle)}</div>`:''}${filas?`<div class="asdatos">${filas}</div>`:''}${r.datos.length?`<ul>${r.datos.map(x=>`<li>${escH(x)}</li>`).join('')}</ul>`:''}</details>`:''}`;}
-const ltPie=m=>`<div class="ltpie"><span class="tag ia2">interpretación · ${escH(m.modelo)}</span>${m.sys?`<details class="ltver"><summary>Qué se le mandó al modelo</summary><p class="ascap">${escH(m.tok)}</p><pre>${escH(m.sys)}</pre></details>`:''}</div>`;
+/* 17/11: qué modelo contestó, por qué API y cuántos tokens usó esta consulta (lo que devuelve Groq en usage) */
+const ltNum=n=>Number(n).toLocaleString('es-AR');
+const ltUso=m=>`<span class="ltuso">${escH(m.modelo)} · API de Groq${m.uso?` · <span title="${ltNum(m.uso.e)} de entrada (instrucciones, datos y tu pregunta) y ${ltNum(m.uso.s)} de salida">${ltNum(m.uso.t)} tokens <span class="ltusod">(${ltNum(m.uso.e)} entran, ${ltNum(m.uso.s)} salen)</span></span>`:''}</span>`;
+const ltPie=m=>`<div class="ltpie"><span class="tag ia2">interpretación</span>${ltUso(m)}${m.sys?`<details class="ltver"><summary>Qué se le mandó al modelo</summary><p class="ascap">${escH(m.tok)}</p><pre>${escH(m.sys)}</pre></details>`:''}</div>`;
 const ltErr=m=>`<p class="lterr">${escH(m.error)} Lo medido sigue valiendo.</p>`;
 const ltPend=t=>`<p class="ltpend"><span class="ltpunto"></span><span>${escH(t)}</span></p>`;
 const ltEspera=m=>t=>{m.espera=t;const e=$(`#lt-m${as.hist.indexOf(m)} .ltpend`);if(e)e.lastChild.textContent=t;};
@@ -3723,7 +3731,8 @@ async function asLlamar(texto,clip,previas,espera){
   const r=j&&asNormalizar(j,E.ids,O);
   if(!r||!r.conclusion)throw {msg:'El modelo no devolvió una respuesta válida. Probá de nuevo.'};
   const id1=r.atributos.length===1?r.atributos[0]:null;r.regla=r.accion&&id1&&E.reglas[id1]&&E.reglas[id1]!==r.accion?E.reglas[id1]:'';
-  return {r,E,modelo,sys:system,tok:`Unos ${Math.round(system.length/3.5)} tokens de instrucciones y datos. Leyó: ${E.usadas.length?E.usadas.join(' · '):'sólo el resumen'}.`,i:asN++};
+  const u=data.usage||{},uso=u.total_tokens?{e:u.prompt_tokens||0,s:u.completion_tokens||0,t:u.total_tokens}:null;
+  return {r,E,modelo,uso,sys:system,tok:`Unos ${Math.round(system.length/3.5)} tokens de instrucciones y datos. Leyó: ${E.usadas.length?E.usadas.join(' · '):'sólo el resumen'}.`,i:asN++};
 }
 const ltPrevias=hasta=>as.hist.slice(0,hasta).filter(m=>m.role==='assistant'&&m.r);
 /* la devolución escrita de una lectura de imagen (con clave) */

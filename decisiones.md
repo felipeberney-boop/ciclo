@@ -2556,3 +2556,26 @@ pasó: la devolución de Cristian (no es un juego, no tiene hook), y tres citas 
 test, no innovaste nada», «las cartas con gráficos son confusas (…) lo que SÍ hace un diseñador y le divierte: diseñar,
 y después enterarse si tuvo buen ojo», y la regla del puntaje, «sube por el lujo y se pone malo por el fast». Después:
 el encargo y el veredicto de hoy.
+
+## 2026-11-17 · El recorrido de una marca en Lyst, rehecho
+
+**Devolución (Felipe, en la demo de la Entrega 4).** «¿Cómo está Prada?» sacaba un gráfico ilegible: una línea cortada
+sin explicación, el puesto de hoy perdido en la punta derecha y el corte de Q1-26 como una línea punteada más, con la
+curva pasando a los dos lados. La prueba que se fijó: Prada, Zara, Miu Miu y Off-White; si alguno no se entiende en
+tres segundos, sigue mal.
+
+**Cómo quedó (`lyCabeza()`, `tzLyst()`, `lyFrase()`).**
+- *Primero el número.* Arriba, en grande, el puesto de hoy (Q2-26); al lado, más chicos, el de antes del corte (Q4-25)
+  y el mejor puesto con la fórmula anterior. Etiquetas chicas en mayúsculas, como pide la dirección nueva.
+- *Una frase armada con reglas*, no con el modelo: «Prada está #6 con la fórmula nueva. Con la anterior cerró 2025 #5.
+  Su mejor puesto con la fórmula anterior fue #1, tres trimestres (el primero, Q4-22).»
+- *El corte es un hueco, no una línea.* Dos paneles: «Fórmula anterior · 2018–2025» y «Nueva». Ninguna línea los une.
+- *Los trimestres fuera del ranking* van como puntos en una franja «fuera», debajo del #20. Antes la línea se cortaba
+  sin decir por qué; ahora se ve que Off-White se cae del top 20 en Q4-22 y que Miu Miu entra en Q4-21.
+- *2018 era top 10*: la franja gris lo dice en el gráfico.
+- *Zara no está en Lyst.* Su pieza deja de ser una lista: el catálogo de febrero de 2024 en el mismo lenguaje (228
+  prendas, amplio contra ajustado 38 a 5, barras de corte y de material) y la frase lo dice primero.
+
+**Probado.** Las cuatro marcas a 1400 y 393 px, capturas en `diseno/propuestas/marcas_lyst_2026-11-17/`. En el
+celular la etiqueta del cierre de 2025 se pisaba con la línea y salió (ya está en la cabecera). El ancho completo llega
+con la decisión de diseño de Preguntar (abajo, «Impronta»): el gráfico ya se dibuja a cualquier ancho.

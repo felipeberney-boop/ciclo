@@ -392,6 +392,12 @@ correcciones de oficio de Felipe (el jean es un material, el jersey es tela de r
 El mismo día suma una séptima, a pedido de Felipe: la pirueta, «El brief», con su giro (de «Cómo se arma una lectura» y
 el juego de cartas al encargo y el veredicto).
 
+## v1.49 · 17/11/2026 · Las marcas, de un vistazo
+
+Después de la Entrega 4. El recorrido de una marca en Preguntale a CICLO se rehace: el puesto de hoy en grande, una
+frase, y el corte de Q1-26 como dos paneles que ninguna línea cruza; los trimestres fuera del top 20, en una franja
+aparte. Zara, que no está en Lyst, muestra su catálogo con el mismo lenguaje.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -2579,3 +2579,28 @@ tres segundos, sigue mal.
 **Probado.** Las cuatro marcas a 1400 y 393 px, capturas en `diseno/propuestas/marcas_lyst_2026-11-17/`. En el
 celular la etiqueta del cierre de 2025 se pisaba con la línea y salió (ya está en la cabecera). El ancho completo llega
 con la decisión de diseño de Preguntar (abajo, «Impronta»): el gráfico ya se dibuja a cualquier ancho.
+
+## 2026-11-17 · Método contiene el racional
+
+**Devolución (Cristian, en la Entrega 4).** Preguntó «¿y el racional?» y se entró a Método. El gráfico de arriba («Cómo
+se arma una señal») gustó y se queda. Lo de abajo no se seguía: veintiuna filas en un solo acordeón, con títulos raros
+(«Reparto de proporciones», «Corte de Q1-26») y lo que usamos mezclado con lo que probamos y no entró. La fila de
+Instagram («no existe serie histórica de hashtags») estaba entre las fuentes y por eso parecía que sobraba.
+
+**Cómo quedó.** Debajo del gráfico, un link visible, «Leer el racional completo →» (el `.md` en GitHub, y el PDF), y el
+resumen en seis partes numeradas, en el orden del racional:
+1. *El problema*: quién decide, con qué decide hoy, y por qué la unidad es el atributo.
+2. *La hipótesis*: la frase, lo que está probado (Reddit, p = 0,0013) y lo que no podemos afirmar, con los límites de
+   las fuentes (antes, una nota suelta al pie: «Lo que CICLO todavía no puede hacer»).
+3. *Lo que usamos*: «Entran al modelo» (pasarela y búsqueda) y «Comprueban, no entran» (Reddit, venta, Lyst con su
+   corte de Q1-26 adentro de su fila, Launchmetrics, Wish, el catálogo de Zara con su nombre).
+4. *El modelo*: taxonomía, K-means, la validación, el retraso, el cono y las dos piezas de IA.
+5. *Lo que probamos y descartamos*: predecir la búsqueda (las cuatro pruebas, antes escondidas en la fila del cono),
+   la pasarela que adelanta, 2025–2026, el calzado, **Instagram**, TikTok y Pinterest, la búsqueda contra la venta
+   (VISUELLE), los datasets sintéticos y el jurado de diseñadores. Instagram no se borró: es un resultado negativo
+   documentado, y ahora está donde se lee como tal.
+6. *Las decisiones de diseño*: la etapa como posición, los cinco estilos de texto y cómo leer los colores.
+Al final sigue «La entrada: qué cambia cada respuesta». Cada grupo es su propio acordeón. Resumido, no copiado: el
+documento largo sigue siendo `entregas/entrega_4/racional.md`, que no se tocó (es lo entregado).
+
+Probado con Playwright a 1400 y 393 px, sin errores ni scroll horizontal.

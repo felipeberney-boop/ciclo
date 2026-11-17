@@ -398,6 +398,12 @@ Después de la Entrega 4. El recorrido de una marca en Preguntale a CICLO se reh
 frase, y el corte de Q1-26 como dos paneles que ninguna línea cruza; los trimestres fuera del top 20, en una franja
 aparte. Zara, que no está en Lyst, muestra su catálogo con el mismo lenguaje.
 
+## v1.50 · 17/11/2026 · Método contiene el racional
+
+Método arranca igual («Cómo se arma una señal») y sigue con el racional resumido en seis partes: el problema, la
+hipótesis con sus límites, lo que usamos, el modelo, lo que probamos y descartamos (ahí va Instagram) y las decisiones
+de diseño, con un link visible al racional completo.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

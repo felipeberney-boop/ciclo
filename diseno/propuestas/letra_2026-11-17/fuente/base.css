@@ -1,0 +1,11 @@
+/* la letra de la moda: títulos, números que deciden, logotipo y créditos. El texto corrido y los botones no cambian */
+.app h1§,.app .vhead h1§,.app .gate h1§,.app .lthead h1§,.app .metsec h2§,.app .metgate>h2§,.app .metdatos>h2§,.app #rtitulo§{font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
+.app .mk§,.app .mast .mk span§{font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:.04em!important;font-variation-settings:var(--moda-var)!important;font-size:22px!important;display:inline-flex!important;align-items:center;gap:9px;text-transform:none!important}
+.app .mk svg{width:20px;height:20px;flex:none}
+.app .gcard .gt§,.app .gcard>span:first-child§,.app .gcard b§{font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
+.app .gprog§,.app .gprog b§{font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important;font-size:15px!important;letter-spacing:.04em!important}
+.app .pname§,.app .ciclo .cn§,.app .ltsec .lth+.lycab .lyk§{font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
+.app .ciclo .cm b§,.app .lyn b§,.app .tvfrase§{font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj);font-variant-numeric:lining-nums}
+.app .ciclo .cm b§,.app .lyn b§{font-weight:var(--moda-w)!important}
+.app .pcred§,.app .tzfotos .pcred§{font-family:var(--moda)!important;font-style:italic!important;font-variation-settings:var(--moda-var)!important;font-size:12.5px!important;letter-spacing:.01em!important}
+.colofon b§{font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important}

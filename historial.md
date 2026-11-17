@@ -458,6 +458,14 @@ más» igual en todas). Lo que se probó y no entró sale de la app y pasa al ra
 De vuelta a los cinco estilos de texto (título, subtítulo y dato en Bodoni; cuerpo y etiqueta en la letra del sistema)
 y sin cursiva, que se leía mal.
 
+## v1.61 · 17/11/2026 · La entrada, una portada de fotos
+
+El gráfico de la entrada sale (era el mismo gráfico en los tres pasos y otra vez en Tendencias). En su lugar, fotos de
+pasarela de Vogue Runway a pantalla completa, corriendo solas, con la pregunta encima en Bodoni liviana, como una
+portada de i-D. Las fotos responden a lo que se contesta: variadas, después del público elegido, después de casas con
+escala o independientes, y en el último paso las de la escala que se señala. En el celular, las fotos arriba y la
+pregunta abajo.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

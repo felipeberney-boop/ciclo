@@ -2834,3 +2834,37 @@ gráficos. Medido de nuevo: cinco estilos y cero negrita con cursiva.
 cortadas); ahora se dibuja al ancho de la pantalla, y las dos de Reddit dicen «Mujeres» y «Hombres». En el celular, además, las
 etiquetas «… desde 2012» no se escriben (la leyenda de arriba ya dice qué es cada capa y la línea vertical marca dónde
 empieza): se pisaban con «tu ventana».
+
+## 2026-11-17 · La entrada: fotos de pasarela en vez de un gráfico
+
+**Devolución (Felipe).** El gráfico de la entrada no va, y no por cómo está hecho sino por cómo está elegido: es el mismo
+gráfico en los tres pasos y después otra vez en Tendencias, cuatro pantallas seguidas con lo mismo. La referencia es i-D
+y Vogue Runway: fotografía enorme ocupando todo, imágenes en movimiento, letra fina encima y casi nada de interfaz.
+
+**Qué se miró.** i-D: una foto a sangre y un título fino al lado, sin nada más. Vogue Runway: los looks en fila, de borde
+a borde, con el nombre de la casa en letra liviana. Se mostraron dos propuestas renderizadas a 1400 y 393 px en una copia
+(A, una fila de looks arriba y la pregunta abajo; B, las fotos en toda la pantalla y la pregunta encima). Felipe eligió
+la B. Capturas de las dos en `diseno/propuestas/entrada_banda_2026-11-17/`.
+
+**Cómo quedó.** Una banda de fotos de pasarela que corre sola, a sangre y sin esquinas, en toda la pantalla; la pregunta
+encima, en blanco, en Bodoni 400 con el corte óptico de display (filetes finos), y las opciones en pills de borde fino.
+Cada foto lleva «Casa · Temporada año» y abajo dice «Fotos: Vogue Runway». En el celular, las fotos arriba (64 % de la
+pantalla) y la pregunta abajo, sobre blanco. Con «reducir movimiento» la banda queda quieta.
+
+**Las fotos responden a lo que se contesta, y lo dicen.** Paso 1, pasarelas variadas 2021–2023. Elegido el público,
+looks de mujer, de hombre o casas que desfilan sin género. Elegido el vínculo, casas con escala (lujo, contemporary y
+fast fashion mezcladas) o diseño independiente, del público elegido. En el paso 3, pasar el mouse (o el teclado) por una
+escala cambia la banda a esas casas y las nombra. Una línea al pie dice qué se está mostrando.
+
+**De dónde salen.** Del corpus de Vogue Runway que ya usamos (14.000 looks con casa, temporada y año), enlazadas como
+siempre, sin bajar nada nuevo y sin video. Por casa, la foto más reciente, a partir de listas de casas por escala.
+El corpus no dice si un look es de mujer o de hombre: se armó una dirección CLIP desde los looks cuyo archivo dice
+«menswear» contra los que dicen «ready-to-wear», y se usan sólo los extremos. Se revisaron a ojo las 179 fotos que
+puede mostrar la banda y salieron siete (borrosas, láminas de lookbook, una de mujer que caía en hombre).
+Script: `codigo/armar_fotos_entrada.js` → `datasets_procesados/entrada_fotos.json` → `const GATE_FOTOS`.
+
+**Límites, dichos.** Las fotos llegan hasta 2023, el techo del corpus. Fast fashion casi no desfila: sólo H&M Studio,
+Topshop Unique y Gap, con desfiles de 2010 a 2021; Zara no está.
+
+Probado con Playwright a 1400 y 393 px (en el celular, tocando, no con mouse), sin errores; la demo entera 8 de 8.
+Capturas en `diseno/entrada_fotos_2026-11-17/`.

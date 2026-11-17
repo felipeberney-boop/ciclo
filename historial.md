@@ -483,7 +483,7 @@ fuente, su período y sus observaciones. La leyenda deja de ser una fila de caja
 El brief pasa de 6 encargos a 15 casas: siete de lujo, cinco contemporary y tres de fast fashion, de las marcas del
 índice de Lyst, cada una con su foto de pasarela (o una de referencia, dicha como tal, si la casa no desfila).
 
-## v1.65 · 17/11/2026 · Reddit para 38 atributos más
+## v1.65 · 17/11/2026 · Reddit para 36 atributos más
 
 Se bajaron todos los títulos de r/femalefashionadvice (2012–2025) y se contaron 52 términos nuevos en los dos subreddits.
 Los atributos de El ciclo con tres capas o más pasan de 16 a 31; los que sólo tienen búsqueda, de 49 a 15.

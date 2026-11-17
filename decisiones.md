@@ -2978,3 +2978,5 @@ instalar torch y open_clip, ~1–2 GB); y rehacer las series de pasarela. Es un 
 (que hoy usa la pasarela hasta 2023), el cono y lo que dice el racional. 2026 no existe en ningún dataset y Vogue Runway
 ahora es sólo para suscriptores. Con el mismo trabajo (CLIP instalado) se podría sumar la pasarela a atributos que hoy no
 la tienen, sin cambiar de corpus.
+
+**Corrección.** El commit 89da066 dice «38 atributos más»: son 36 (34 que sólo tenían búsqueda, más jeans rectos y capa, que suman Reddit hombres).

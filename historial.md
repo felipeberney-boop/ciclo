@@ -453,6 +453,11 @@ Acerca de se rehace: qué es CICLO en una frase, cómo se arma una señal, los d
 hipótesis y sus límites, las decisiones de diseño y el link al racional; un solo patrón (párrafo o dibujo, y un «Ver
 más» igual en todas). Lo que se probó y no entró sale de la app y pasa al racional.
 
+## v1.60 · 17/11/2026 · Cinco estilos
+
+De vuelta a los cinco estilos de texto (título, subtítulo y dato en Bodoni; cuerpo y etiqueta en la letra del sistema)
+y sin cursiva, que se leía mal.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

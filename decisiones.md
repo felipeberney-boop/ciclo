@@ -2813,3 +2813,23 @@ importante y estaba llena de cosas que no usamos. Si Cristian entraba y empezaba
 
 Probado con Playwright a 1400 y 393 px, sin errores ni scroll horizontal; la demo entera 8 de 8 a los dos anchos.
 Capturas en `diseno/acerca_de_2026-11-17/`.
+
+## 2026-11-17 · Los cinco estilos, de vuelta, y sin cursiva
+
+**Devolución (Felipe).** La tipografía gusta, pero hay combinaciones que no se leen, sobre todo negrita con cursiva; y
+hay que volver a los cinco estilos acordados.
+
+**Qué se encontró (medido en el navegador, pantalla por pantalla, a 1400 y 393 px).** No había ninguna regla con negrita
+y cursiva juntas, pero sí cursiva falsa: la Bodoni Moda se carga sin su itálica, así que en los créditos de foto y en
+«sin imagen» de Diseñar el navegador la inclinaba a la fuerza y se veía gruesa y borrosa. Y fuera de los gráficos había
+unas 25 combinaciones de letra, tamaño y peso.
+
+**Cómo quedó.** Una capa final, «los cinco estilos»: Título 48, Subtítulo 24 y Dato 34 en Bodoni Moda 500; Cuerpo 17 y
+Etiqueta 13 en la letra del sistema, regular. Ninguna cursiva en la app. La señal grande de la ficha («▲ Entrar») y el
+puesto de Lyst pasan a Dato; la entrada y El brief bajan a 48; los créditos, las etiquetas, el pie y la tarjeta de la
+fuente pasan a Etiqueta. Quedan afuera de la regla sólo el logotipo, los íconos de los botones y el texto adentro de los
+gráficos. Medido de nuevo: cinco estilos y cero negrita con cursiva.
+
+**De paso.** En la ficha, en el celular, el gráfico se dibujaba a 640 px y se achicaba (las etiquetas salían diminutas y
+cortadas); ahora se dibuja al ancho de la pantalla, y las dos de Reddit dicen «Mujeres» y «Hombres». Queda un detalle:
+abajo, «Reddit desde 2012» y «tu ventana» todavía se tocan.

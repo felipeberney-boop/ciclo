@@ -478,6 +478,11 @@ El gráfico de capas aparece sólo con tres capas o más; con una o dos, cada ca
 dónde está hoy). La procedencia se explora sobre la curva: al pasar el mouse o tocar una capa, se destaca y dice su
 fuente, su período y sus observaciones. La leyenda deja de ser una fila de cajas.
 
+## v1.64 · 17/11/2026 · El brief, quince casas
+
+El brief pasa de 6 encargos a 15 casas: siete de lujo, cinco contemporary y tres de fast fashion, de las marcas del
+índice de Lyst, cada una con su foto de pasarela (o una de referencia, dicha como tal, si la casa no desfila).
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

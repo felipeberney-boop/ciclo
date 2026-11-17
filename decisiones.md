@@ -2918,3 +2918,26 @@ son la muestra de CLIP. La serie de cada atributo sale de las etiquetas de Vogue
 `FUENTES`.
 
 Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/capas_2026-11-17/` (`_toca`: con la capa destacada).
+
+## 2026-11-17 · El brief: de 6 encargos a 15 casas
+
+**Devolución (Felipe).** Decía «6 briefs, 3 casas» con Prada, COS y Zara: poco, se agota en dos partidas. Ampliar con
+las marcas del índice de Lyst, repartidas entre lujo, contemporary y fast fashion, diez o doce casas como mínimo, cada
+una con su foto de pasarela.
+
+**Lo que había.** Seis encargos de seis casas (Chanel, Loewe y Prada en lujo; COS; Zara y H&M), y el menú decía «6
+briefs · 3 casas».
+
+**Cómo quedó.** Quince casas, una por encargo:
+- Lujo (7): Chanel, Loewe, Prada, y suman Miu Miu (falda), Bottega Veneta (vestido), Saint Laurent (abrigo) y The Row
+  (pantalón).
+- Contemporary (5): COS, y suman Acne Studios (abrigo), Totême (pantalón), Coach (vestido) y Massimo Dutti (falda).
+- Fast fashion (3): Zara, H&M y Mango.
+Todas las casas nuevas salvo Mango están en el índice de Lyst. El índice no tiene ninguna fast fashion, así que Mango
+entra de afuera para que la escala no quede con dos. Cada casa que desfila lleva una foto suya del corpus de Vogue Runway,
+elegida a ojo para que muestre la prenda del encargo (hojas de contacto de 10 a 20 looks por casa). Las que no desfilan
+(Massimo Dutti y Mango, como ya Zara, H&M y COS) llevan una foto de referencia de una casa de lujo y lo dicen: «baja a la
+calle lo que mostró Prada». La foto de Bottega Veneta se cambió porque era la misma que ya usaba H&M como referencia. El
+menú dice «15 casas, del lujo al fast fashion». Totême sólo tiene un look en el corpus, de 2017.
+
+Demo 8 de 8. Capturas en `diseno/brief_casas_2026-11-17/`.

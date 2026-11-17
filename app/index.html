@@ -1636,7 +1636,7 @@ svg.rfoco .rcapa.on path{stroke-width:3px}
       <a data-v="lectura">Preguntar</a>
       <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
       <span class="navgrupo" id="navgrupo" hidden>
-        <a data-v="mover"><b>El brief</b><span>Un encargo de una casa real: diseñás en tres toques y CICLO te dice si tuviste ojo.</span><i>6 briefs · 3 casas</i><em>Jugar →</em></a>
+        <a data-v="mover"><b>El brief</b><span>Un encargo de una casa real: diseñás en tres toques y CICLO te dice si tuviste ojo.</span><i>15 casas, del lujo al fast fashion</i><em>Jugar →</em></a>
         <a data-v="racional"><b>Acerca de</b><span>Qué es CICLO, de dónde salen los datos y cómo se hizo.</span><i>El racional, resumido</i><em>Abrir →</em></a>
       </span>
       <button type="button" class="navperfil" id="navperfil">Cambiar perfil</button>
@@ -4743,7 +4743,18 @@ const BF_BRIEFS=[
   {casa:'Loewe',cat:'premium',prenda:'abrigo',pn:'Un abrigo',foto:{"f": "61572fce2b37d58ffb9ac4fb/00008-Loewe-Spring-22-RTW-Paris-credit-Gorunway.jpg", "d": "Loewe", "s": "S", "y": 2022},ref:false},
   {casa:'H&M',cat:'fast',prenda:'vestido',pn:'Un vestido',foto:{"f": "63fb194ed5427967d3f6b687/00028-bottega-veneta-fall-2023-ready-to-wear-credit-gorunway.jpg", "d": "Bottega Veneta", "s": "F", "y": 2023},ref:true},
   {casa:'COS',cat:'medio',prenda:'pantalon',pn:'Un pantalón',foto:{"f": "6164af6ce4fac6747d926447/00048-The-Row-Spring-22-RTW.jpg", "d": "The Row", "s": "S", "y": 2022},ref:true},
-  {casa:'Prada',cat:'premium',prenda:'abrigo',pn:'Un abrigo',foto:{"f": "63c42331a426ef92a40afaae/00045-prada-fall-2023-menswear-credit-gorunway.jpg", "d": "Prada", "s": "F", "y": 2023},ref:false}];
+  {casa:'Prada',cat:'premium',prenda:'abrigo',pn:'Un abrigo',foto:{"f": "63c42331a426ef92a40afaae/00045-prada-fall-2023-menswear-credit-gorunway.jpg", "d": "Prada", "s": "F", "y": 2023},ref:false},
+  /* 17/11 · de 6 a 15 casas, de las marcas del índice de Lyst en lujo y contemporary; Zara, H&M y Mango no están en Lyst
+     (el índice no tiene fast fashion). Las que no desfilan llevan una foto de referencia, dicha como tal */
+  {casa:'Miu Miu',cat:'premium',prenda:'falda',pn:'Una falda',foto:{"f": "633c44c7bc831d520158c58c/00001-miu-miu-spring-2023-ready-to-wear-credit-gorunway.jpg", "d": "Miu Miu", "s": "S", "y": 2023},ref:false},
+  {casa:'Bottega Veneta',cat:'premium',prenda:'vestido',pn:'Un vestido',foto:{"f": "635fca486beee9eac88d197a/00039-bottega-veneta-resort-2023-credit-brand.jpg", "d": "Bottega Veneta", "s": "R", "y": 2023},ref:false},
+  {casa:'Saint Laurent',cat:'premium',prenda:'abrigo',pn:'Un abrigo',foto:{"f": "63335c0aa30a6f73b05c2522/00049-saint-laurent-spring-2023-ready-to-wear-credit-gorunway.jpg", "d": "Saint Laurent", "s": "S", "y": 2023},ref:false},
+  {casa:'The Row',cat:'premium',prenda:'pantalon',pn:'Un pantalón',foto:{"f": "5d76ee502dbb1000097c9210/00007-THE-ROW-SS20-Ready-To-Wear.jpg", "d": "The Row", "s": "S", "y": 2020},ref:false},
+  {casa:'Acne Studios',cat:'medio',prenda:'abrigo',pn:'Un abrigo',foto:{"f": "603eca6db5e8d9535a5b8f6d/00017-Acne-Studios-RTW-Fall-21.jpg", "d": "Acne Studios", "s": "F", "y": 2021},ref:false},
+  {casa:'Totême',cat:'medio',prenda:'pantalon',pn:'Un pantalón',foto:{"f": "59a80f48c7835c42225027a8/13-toteme-ss-2018.jpg", "d": "Totême", "s": "S", "y": 2017},ref:false},
+  {casa:'Coach',cat:'medio',prenda:'vestido',pn:'Un vestido',foto:{"f": "620aaf82bbc90c806268d476/IS1_0142.jpg", "d": "Coach", "s": "F", "y": 2022},ref:false},
+  {casa:'Massimo Dutti',cat:'medio',prenda:'falda',pn:'Una falda',foto:{"f": "6217aa59660b400c46fc69b0/00014-prada-fall-2022-ready-to-wear-milan-credit-alessandro-lucioni-gorunway.jpg", "d": "Prada", "s": "F", "y": 2022},ref:true},
+  {casa:'Mango',cat:'fast',prenda:'vestido',pn:'Un vestido',foto:{"f": "6155e8174ef4d24f36947703/00031-Chloe-Spring-22-RTW-Paris-credit-gorunway.jpg", "d": "Chloé", "s": "S", "y": 2022},ref:true}];
 function bfFoto(B){return B.foto&&B.foto.f?B.foto:null;}
 const BF_TEMP={premium:'Otoño',medio:'Otoño',fast:'Primavera'};
 let bf=null;

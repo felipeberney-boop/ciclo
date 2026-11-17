@@ -1,12 +1,14 @@
-"""Baja id, fecha y título de todos los posts de r/femalefashionadvice entre dos fechas, vía Arctic Shift.
-Uso: python3 bajar_titulos_reddit.py salida.jsonl 2026  (un año por proceso; se pueden correr en paralelo).
+"""Baja id, fecha y título de todos los posts de un subreddit (r/femalefashionadvice si no se dice otro) en un año, vía Arctic Shift.
+Uso: python3 bajar_titulos_reddit.py salida.jsonl 2026 [subreddit]  (un año por proceso; se pueden correr en paralelo).
+El 17/11/2026 se usó igual para r/malefashionadvice, la serie de hombres.
 Pagina semana por semana. Escribe JSONL reanudable. Los títulos crudos no se suben al repositorio."""
 import json, os, sys, time, urllib.request, datetime as dt
 
 OUT = sys.argv[1]
 START = int(dt.datetime(int(sys.argv[2]), 1, 1, tzinfo=dt.timezone.utc).timestamp())
 END = min(int(dt.datetime(int(sys.argv[2]) + 1, 1, 1, tzinfo=dt.timezone.utc).timestamp()), int(dt.datetime(2026, 10, 13, tzinfo=dt.timezone.utc).timestamp()))
-API = 'https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=femalefashionadvice&limit=100&fields=created_utc,title,id'
+SUB = sys.argv[3] if len(sys.argv) > 3 else 'femalefashionadvice'
+API = f'https://arctic-shift.photon-reddit.com/api/posts/search?subreddit={SUB}&limit=100&fields=created_utc,title,id'
 
 seen, hechas = set(), set()
 if os.path.exists(OUT):

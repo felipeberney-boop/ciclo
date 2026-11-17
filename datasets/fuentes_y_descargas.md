@@ -70,6 +70,11 @@ fecha en que lo bajamos y su licencia.
 - **Completado a 2026:** consultado el 13/10/2026, del 01/01/2026 al 12/10/2026, 14.495 posts. Para
   empalmarlo se bajaron también 2022–2025. Sólo se suben los conteos por término y año, no los títulos.
   Está en `datasets/completado_2026/reddit_2026.csv`.
+- **r/malefashionadvice, sumado el 17/11/2026:** consultado el 17/11/2026 con `codigo/bajar_titulos_reddit.py`
+  (un proceso por año, semana por semana; esta vez el servidor no cortó). 581.184 posts de 2012–2025 y 15.810 de
+  2026 hasta el 08/10 (igual al conteo oficial de Arctic Shift). Conteos por término y año en
+  `datasets_procesados/reddit_hombres_conteos.csv`; la serie, en `datasets_procesados/reddit_hombres.json` y en la
+  constante `RDH` de la app. Sin «lace» (ahí son cordones) y sólo términos con 100 posts o más. Los títulos no se suben.
 
 ## Marcas y cultura
 

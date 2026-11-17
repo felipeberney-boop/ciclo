@@ -431,6 +431,11 @@ hizo.
 La identidad, por la tipografía: Bodoni Moda, la letra de las revistas de moda, en los títulos, los números que deciden,
 el logotipo (con un aro de cinco puntos, las cinco etapas) y los créditos de las fotos. Botones, colores y gráficos, igual.
 
+## v1.56 · 17/11/2026 · Reddit de hombres
+
+La capa de redes deja de ser sólo de mujeres: r/malefashionadvice (581.184 posts, 2012–2025) entra como serie aparte,
+con la misma regla, en El ciclo y en la ficha. Acerca de dice qué mide esa capa y qué queda afuera.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

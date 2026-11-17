@@ -2715,3 +2715,27 @@ botón de inicio, no se arma con JS.
 Ya se cargaba Bodoni Moda desde Google Fonts (de la capa editorial del 20/10) y no se usaba: no suma ninguna dependencia.
 Probado con Playwright a 1400 y 393 px en la entrada, Tendencias, la ficha, Diseñar, El ciclo, Preguntar, El brief y
 Acerca de, sin errores ni scroll horizontal; la demo entera 8 de 8 a los dos anchos.
+
+## 2026-11-17 · Reddit de hombres: r/malefashionadvice, como serie aparte
+
+**Devolución (Cristian, Entrega 4).** «¿Y la info de hombres?». Toda la capa de redes medía r/femalefashionadvice y en
+ningún lado decía que es conversación de moda femenina.
+
+**Qué se hizo.** Se bajó r/malefashionadvice entero por Arctic Shift con el mismo script (`bajar_titulos_reddit.py`,
+que ahora recibe el subreddit): 581.184 posts de 2012–2025 y 15.810 de 2026 hasta el 08/10. El total de 2026 coincide
+exacto con el conteo oficial de Arctic Shift. Se contó con `contar_terminos_reddit.py` y se armó con la misma regla
+que la serie de mujeres (`armar_reddit_hombres.py`: proporción del año, media centrada de 3 años, 100 = su máximo).
+- *Entra con volumen.* Hay más posts que en el de mujeres (1.353 contra 205 en una semana de 2014). Entran 12 términos
+  con 100 posts o más; corset, crop top, kimono, leopard, polka dot y otros casi no aparecen ahí.
+- *«lace» queda afuera:* en el foro de hombres nombra los cordones («laces», «shoelaces»), no el encaje (7.931
+  coincidencias). **Un aviso:** la serie de mujeres cuenta con la misma regla de substring, así que su «lace» puede
+  incluir «necklace»; no se pudo revisar porque los títulos crudos no están guardados.
+- *Lo que se ve:* en El ciclo y en la ficha, una curva más, «Reddit hombres», al lado de «Reddit mujeres» (que antes
+  se llamaba sólo «Reddit»), y su año de pico en «Cuándo tocó techo cada capa». Los jeans skinny pican en 2012 entre
+  mujeres y en 2017 entre hombres; los baggy y el buzo, en 2025 en los dos.
+- *En Acerca de:* la fila de redes dice las dos comunidades, qué mide la capa (dos foros de consejos en inglés, mayoría
+  de Estados Unidos) y qué queda afuera; la hipótesis aclara que la validación se hizo sólo con la de mujeres. El pie
+  de la app nombra los dos subreddits.
+
+**Lo que no se hizo.** La serie de hombres no entra al K-means ni a la validación; repetir la prueba preregistrada con
+ella es el siguiente paso posible. Probado con Playwright a 1400 y 393 px (jeans skinny y buzo), sin errores.

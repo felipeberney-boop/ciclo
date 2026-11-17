@@ -426,6 +426,11 @@ revierte el mismo día. La app vuelve al lenguaje de la v1.51.
 La sección «Método» se llama «Acerca de», como en cualquier sitio: qué es CICLO, de dónde salen los datos y cómo se
 hizo.
 
+## v1.55 · 17/11/2026 · La letra de la moda
+
+La identidad, por la tipografía: Bodoni Moda, la letra de las revistas de moda, en los títulos, los números que deciden,
+el logotipo (con un aro de cinco puntos, las cinco etapas) y los créditos de las fotos. Botones, colores y gráficos, igual.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

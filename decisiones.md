@@ -2695,3 +2695,23 @@ método, es qué es CICLO, de dónde salen los datos y cómo se hizo.
 hizo · El racional, resumido». El título de la página pasa de «Qué está medido y qué está interpretado» a «Acerca de
 CICLO»; esa regla sigue en el párrafo de abajo. El id interno sigue siendo `racional` (`#racional`), para no romper
 links. El readme lo nombra así; el racional entregado no se tocó.
+
+## 2026-11-17 · La letra de la moda: Bodoni Moda
+
+**La decisión (Felipe delegó: «elegí vos la que más vibe de moda da»).** Bodoni Moda, entre las tres renderizadas
+(`diseno/propuestas/letra_2026-11-17/`). Es la Didone de Vogue y Harper's Bazaar: la única de las tres que se lee como
+moda sin explicarla. Cormorant era más suave y menos de revista; Archivo expandida, más moderna pero menos de ropa. Sin
+el fondo papel: los botones redondeados y los colores quedan como le gustan a Felipe; el papel queda renderizado por si
+se quiere sumar.
+
+**Dónde va.** Títulos de cada pantalla, la pregunta de cada paso de Diseñar, las opciones de la entrada, los nombres de
+las tarjetas, los números que deciden (los años de El ciclo, los puestos de Lyst, la frase de «Lo que vuelve»), el
+logotipo y el crédito de las fotos, en cursiva. **Dónde no:** el texto corrido, los botones, las etiquetas y los números
+chicos de los gráficos, que en una Didone de alto contraste se pierden.
+
+**El logotipo.** «CICLO» en Bodoni y un aro de cinco puntos, las cinco etapas, con el último lleno. Va en el HTML del
+botón de inicio, no se arma con JS.
+
+Ya se cargaba Bodoni Moda desde Google Fonts (de la capa editorial del 20/10) y no se usaba: no suma ninguna dependencia.
+Probado con Playwright a 1400 y 393 px en la entrada, Tendencias, la ficha, Diseñar, El ciclo, Preguntar, El brief y
+Acerca de, sin errores ni scroll horizontal; la demo entera 8 de 8 a los dos anchos.

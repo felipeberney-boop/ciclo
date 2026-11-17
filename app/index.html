@@ -1440,13 +1440,28 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 #v-lectura .ltuso:not(#z){font-size:12px!important;color:var(--ink-3);line-height:1.4!important;font-variant-numeric:tabular-nums}
 #v-lectura .ltusod{color:var(--ink-3)}
 @media (max-width:640px){#v-lectura .ltusod{display:none}}
+:root{--moda:"Bodoni Moda",Didot,"Bodoni 72",serif;--moda-w:500;--moda-ls:-.01em;--moda-var:normal;--moda-adj:0.5}
+/* ================= la letra de la moda (17/11) · última =================
+   La identidad por la tipografía: Bodoni Moda, la Didone de las revistas de moda, en títulos, números que deciden,
+   logotipo y créditos de foto. El texto corrido, los botones (redondeados), los gráficos y los colores no cambian.
+   la letra de la moda: títulos, números que deciden, logotipo y créditos. El texto corrido y los botones no cambian */
+.app h1:not(#q):not(#qq),.app .vhead h1:not(#q):not(#qq),.app .gate h1:not(#q):not(#qq),.app .lthead h1:not(#q):not(#qq),.app .metsec h2:not(#q):not(#qq),.app .metgate>h2:not(#q):not(#qq),.app .metdatos>h2:not(#q):not(#qq),.app #rtitulo:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
+.app .mk:not(#q):not(#qq),.app .mast .mk span:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:.04em!important;font-variation-settings:var(--moda-var)!important;font-size:22px!important;display:inline-flex!important;align-items:center;gap:9px;text-transform:none!important}
+.app .mk svg{width:20px;height:20px;flex:none}
+.app .gcard .gt:not(#q):not(#qq),.app .gcard>span:first-child:not(#q):not(#qq),.app .gcard b:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
+.app .gprog:not(#q):not(#qq),.app .gprog b:not(#q):not(#qq){font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important;font-size:15px!important;letter-spacing:.04em!important}
+.app .dzhead .dzh:not(#q):not(#qq),.app .pname:not(#q):not(#qq),.app .ciclo .cn:not(#q):not(#qq),.app .ltsec .lth+.lycab .lyk:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
+.app .ciclo .cm b:not(#q):not(#qq),.app .lyn b:not(#q):not(#qq),.app .tvfrase:not(#q):not(#qq){font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj);font-variant-numeric:lining-nums}
+.app .ciclo .cm b:not(#q):not(#qq),.app .lyn b:not(#q):not(#qq){font-weight:var(--moda-w)!important}
+.app .pcred:not(#q):not(#qq),.app .tzfotos .pcred:not(#q):not(#qq){font-family:var(--moda)!important;font-style:italic!important;font-variation-settings:var(--moda-var)!important;font-size:12.5px!important;letter-spacing:.01em!important}
+.colofon b:not(#q):not(#qq){font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important}
 </style>
 
 <div class="app">
   <header class="mast">
     <div class="row1">
       <span class="side">N.º 01 — Primavera 2026</span>
-      <button class="mk" id="home" title="Tendencias">CICLO</button>
+      <button class="mk" id="home" title="Tendencias" aria-label="CICLO"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10.00" cy="2.50" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17.13" cy="7.68" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="14.41" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="5.59" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="2.87" cy="7.68" r="2.3" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg><span>CICLO</span></button>
       <span class="side r">Última lectura 21.10.2026</span>
     </div>
     <button type="button" class="navmenu" id="navmenu" aria-expanded="false" aria-controls="nav">☰ Menú</button>

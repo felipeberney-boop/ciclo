@@ -1,0 +1,37 @@
+/* lo común a las tres: la gramática de 032c sobre Preguntar. Bordes duros, etiquetas chicas, el gráfico a sangre */
+.app #v-lectura§{background:var(--card)!important}
+.app #v-lectura .lt§{max-width:none!important;padding:0!important}
+.app #v-lectura .lthead§{margin:0!important;padding:14px 24px!important;border-bottom:1px solid var(--ink)}
+.app #v-lectura .lthead h1§{font-size:11px!important;letter-spacing:.12em!important;text-transform:uppercase!important;font-weight:600!important;line-height:1.2!important}
+.app #v-lectura .lthead .qm summary§{border-radius:0!important}
+.app #v-lectura .ltchat§{padding:0!important;gap:0!important}
+.app #v-lectura .ltabajo§{background:var(--card)!important;border-top:1px solid var(--ink);padding:0!important}
+.app #v-lectura .ltsigue§{padding:10px 24px 0!important;margin:0!important}
+.app #v-lectura .ltsigue button§{border-radius:0!important;border-color:var(--ink)!important}
+.app #v-lectura .ltcomp§{border:0!important;border-radius:0!important;box-shadow:none!important;padding:10px 24px!important;background:var(--card)!important;align-items:center!important}
+.app #v-lectura .ltcomp textarea§{font-size:19px!important}
+.app #v-lectura .ltmas1§,.app #v-lectura .ltmandar§{border-radius:0!important;width:42px!important;height:42px!important}
+.app #v-lectura .ltpieform§{padding:0 24px 12px!important}
+.pk{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);line-height:1.3}
+.pk b{color:var(--ink);font-weight:600}
+/* la respuesta: sin tarjeta; el texto en una columna, el gráfico de borde a borde */
+.app #v-lectura .ltcic§{background:none!important;border-radius:0!important;padding:26px 0 40px!important;gap:22px!important}
+.app #v-lectura .ltcic>:not(.ltsec)§,.app #v-lectura .ltcic .ltsec>:not(.rvcurv)§{width:100%;max-width:808px;margin-inline:auto!important;padding-inline:24px!important;box-sizing:border-box}
+.app #v-lectura .ltcic .rvcurv§{padding:0 24px!important;margin:8px 0!important}
+.app #v-lectura .ltcic .ltsec+.ltsec§{border-top:0!important}
+.app #v-lectura .lth .lbl§{font-size:10.5px!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:var(--ink-3)!important}
+.app #v-lectura .tag§{border-radius:0!important}
+.app #v-lectura .ltyo§{align-self:stretch!important;max-width:none!important;align-items:stretch!important;padding:34px 24px 0;width:100%;box-sizing:border-box}
+.app #v-lectura .ltyo p§{background:none!important;color:var(--ink)!important;border-radius:0!important;padding:0!important;font-size:22px!important;letter-spacing:-.01em;max-width:760px;margin:0 auto!important;width:100%}
+.app #v-lectura .ltyo::before{content:'Tu pregunta';font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);max-width:760px;margin:0 auto 6px;width:100%}
+.app #v-lectura .ltlooks a§,.app #v-lectura .tzfotos figure§,.app #v-lectura .ltejb img§,.app #v-lectura .ltactb§{border-radius:0!important}
+@media (max-width:640px){
+.app #v-lectura .lthead§,.app #v-lectura .ltcomp§{padding-inline:16px!important}
+.app #v-lectura .ltsigue§,.app #v-lectura .ltpieform§{padding-inline:16px!important}
+.app #v-lectura .ltcic>:not(.ltsec)§,.app #v-lectura .ltcic .ltsec>:not(.rvcurv)§{padding-inline:16px!important}
+.app #v-lectura .ltcic .rvcurv§{padding:0 16px!important}
+.app #v-lectura .ltyo§{padding:28px 16px 0}
+.app #v-lectura .ltcomp textarea§{font-size:17px!important}
+}
+.app #v-lectura .lthead .qm§{position:static!important;margin:0 0 0 auto!important;inset:auto!important}
+.app #v-lectura .lthead .qm>summary§{position:static!important;border-radius:0!important}

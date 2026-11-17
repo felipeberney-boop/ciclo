@@ -1,0 +1,28 @@
+/* A · Portada: el gráfico que rota en Tendencias, a sangre, es lo primero */
+.pa-g .movi§{background:none!important;border-radius:0!important;padding:18px 24px 6px!important;margin:0!important}
+.pa-g .movh§{flex-direction:row!important;margin:0 0 4px!important}
+.pa-g .tvtit§{font-size:10.5px!important;letter-spacing:.1em!important;text-transform:uppercase!important;font-weight:600!important;color:var(--ink)}
+.pa-g .tvsub§{font-size:10.5px!important;letter-spacing:.06em!important;text-transform:uppercase!important;color:var(--ink-3)}
+.pa-g .tvpts§{gap:0!important;border-top:1px solid var(--rule);margin:18px 0 0!important}
+.pa-g .tvpts button§{border:0!important;border-radius:0!important;font-size:10.5px!important;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px 10px 0!important;color:var(--ink-3)}
+.pa-g .tvpts button.on§{color:var(--ink)!important}
+.pa-g .tvpts button.on::before{background:none!important}
+.pa-g .tvpts button.on::after{content:'';position:absolute;left:0;right:18px;top:-1px;height:2px;background:var(--ink)}
+.pa-g .gvolver§,.pa-g .qm summary§{border-radius:0!important}
+.pa-p{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink)}
+.pa-p .pk{grid-column:1/-1;padding:14px 24px 4px}
+.app #v-lectura .pa-p .ltsugb§{border:0!important;border-top:1px solid var(--rule)!important;border-radius:0!important;background:none!important;padding:16px 24px!important;font-size:19px!important;display:flex;gap:16px;align-items:baseline}
+.app #v-lectura .pa-p .ltsugb:nth-child(even)§{border-right:1px solid var(--rule)!important}
+.pa-p .ltsugb i{font-style:normal;font-size:10.5px;letter-spacing:.1em;color:var(--ink-3);flex:none}
+.pa-p .ltsugb::after{content:'→';margin-left:auto;color:var(--azul)}
+.pa-l{display:flex;gap:0;align-items:stretch;border-top:1px solid var(--rule)}
+.pa-l .pk{padding:14px 24px;flex:1;align-self:center}
+.app #v-lectura .pa-l .ltejb§{border-left:1px solid var(--rule)!important;padding:0!important;position:relative;width:120px;color:var(--ink)!important}
+.app #v-lectura .pa-l .ltejb img§{width:120px!important;height:150px!important;border-radius:0!important;display:block}
+.app #v-lectura .pa-l .ltejb span§{position:absolute;left:8px;bottom:6px;color:#fff;font-size:10.5px!important;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:640px){.pa-g .movi§{padding:14px 16px 4px!important}.pa-p{grid-template-columns:1fr}.pa-p .pk{padding-inline:16px}
+.app #v-lectura .pa-p .ltsugb§{padding:14px 16px!important;font-size:17px!important;border-right:0!important}
+.pa-l{flex-wrap:wrap}.pa-l .pk{flex-basis:100%;padding:14px 16px 10px}.app #v-lectura .pa-l .ltejb§{flex:1 1 30%;min-width:0;width:auto;border-left:0!important}.app #v-lectura .pa-l .ltejb img§{width:100%!important;height:140px!important}}
+
+.app #v-lectura .lthead .qm§{margin-right:0!important}
+.app #v-lectura .pa-l .ltejb span§{text-shadow:0 1px 3px rgba(0,0,0,.6)}

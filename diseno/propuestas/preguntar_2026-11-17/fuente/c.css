@@ -1,0 +1,21 @@
+/* C · Hoja de contacto: todos los atributos con serie, cada uno con su curva, en una grilla de borde a borde */
+.pc-k{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 24px;border-bottom:1px solid var(--rule)}
+.pc{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.pc-c{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 14px 10px;cursor:pointer;display:flex;flex-direction:column;gap:6px;min-width:0}
+.pc-c:nth-child(6n){border-right:0}
+.pc-c:hover{background:var(--paper)}
+.pc-h{display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.pc-h .pk{color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-d{font-size:15px;font-weight:600;letter-spacing:-.01em;flex:none}
+.pc-c svg{width:100%;height:auto;display:block;overflow:visible}
+.pc-c.anim polyline{stroke-dasharray:1;stroke-dashoffset:1;animation:movdib 1.4s cubic-bezier(.45,0,.2,1) forwards;animation-delay:var(--d)}
+.pc-c.anim circle{opacity:0;animation:movlab .3s ease forwards;animation-delay:calc(var(--d) + 1.3s)}
+.pc-y{display:flex;justify-content:space-between}
+@media (max-width:1000px){.pc{grid-template-columns:repeat(4,minmax(0,1fr))}.pc-c:nth-child(6n){border-right:1px solid var(--rule)}.pc-c:nth-child(4n){border-right:0}}
+@media (max-width:640px){.pc{grid-template-columns:repeat(2,minmax(0,1fr))}.pc-c:nth-child(4n),.pc-c:nth-child(6n){border-right:1px solid var(--rule)}.pc-c:nth-child(2n){border-right:0}.pc-k{padding:10px 16px}.pc-c{padding:10px 12px 8px}}
+
+.app #v-lectura .pc-c.ltsugb§{border:0!important;border-right:1px solid var(--rule)!important;border-bottom:1px solid var(--rule)!important;border-radius:0!important;background:none!important;padding:12px 14px 10px!important;font-size:inherit!important}
+.app #v-lectura .pc-c.ltsugb:hover§{background:var(--paper)!important}
+@media (min-width:1001px){.app #v-lectura .pc-c.ltsugb:nth-child(6n)§{border-right:0!important}}
+@media (max-width:1000px) and (min-width:641px){.app #v-lectura .pc-c.ltsugb:nth-child(4n)§{border-right:0!important}}
+@media (max-width:640px){.app #v-lectura .pc-c.ltsugb:nth-child(2n)§{border-right:0!important}.app #v-lectura .pc-c.ltsugb§{padding:10px 12px 8px!important}}

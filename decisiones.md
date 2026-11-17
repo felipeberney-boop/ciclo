@@ -2618,3 +2618,24 @@ plegado. La estimación vieja («Unos 4.855 tokens de instrucciones y datos») q
 
 **Probado.** Con Playwright a 1400 y 393 px, interceptando la llamada a Groq con una respuesta armada sólo para la
 prueba (no se guardó como captura). Falta verlo con una clave real.
+
+## 2026-11-17 · Impronta: tres propuestas para Preguntar
+
+**Devolución (Entrega 4).** El diseño es superficial: todo blanco, poca cosa, sin una identidad propia. La estructura
+queda; hay que darle carácter.
+
+**El diagnóstico (Felipe).** De las referencias que pasaron, 032c es la correcta por una razón precisa: su identidad
+viene de la escala y el recorte (imagen a sangre, bordes duros, una imagen enorme contra una etiqueta diminuta), no de un
+color. Business of Fashion queda afuera (es un diario denso: nos haría más densos, la crítica de la Entrega 3). Dazed,
+The Face e i-D quedan afuera por una razón técnica: firman con color fuerte y el nuestro está ocupado (verde, ámbar y
+rojo son la señal; el azul es «se puede tocar»). Nuestro blanco no se lee vacío por minimalista: se lee vacío porque
+no hay nada que lo llene. Lo que lo llena son nuestros gráficos, lo único que nadie puede copiar.
+
+**Lo que se hizo, antes de construir.** Tres propuestas renderizadas de Preguntale a CICLO a 1400 y 393 px
+(`diseno/propuestas/preguntar_2026-11-17/`): A · Portada (el gráfico de Tendencias, a sangre, primero), B · Índice
+(cada pregunta sugerida es una banda con su gráfico) y C · Hoja de contacto (todos los atributos con su curva, en una
+grilla). Las tres comparten los bordes duros, las etiquetas chicas en mayúsculas y la respuesta sin tarjeta, con el
+gráfico de borde a borde. Ninguna otra pantalla se tocó hasta que Felipe elija.
+
+**Una regla que cambia.** El 27/10 se fijó «sin etiquetas en mayúsculas con espaciado» (la capa Apple). La dirección
+nueva las pide; si se elige una de las tres, esa regla se reemplaza.

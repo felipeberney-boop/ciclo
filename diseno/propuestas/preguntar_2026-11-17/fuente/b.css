@@ -1,0 +1,18 @@
+/* B · Índice: cada pregunta es una banda con su propio gráfico, la respuesta antes de preguntar */
+.pb-b{display:grid;grid-template-columns:minmax(260px,32%) minmax(0,1fr);border-top:1px solid var(--ink);cursor:pointer;text-align:left}
+.pb-b:first-child{border-top:0}
+.pb-t{padding:22px 24px;display:flex;flex-direction:column;gap:10px;border-right:1px solid var(--rule)}
+.pb-q{font-size:24px;line-height:1.2;letter-spacing:-.015em;color:var(--ink)}
+.pb-t .pk:last-child{margin-top:auto}
+.pb-t .pb-ir{color:var(--azul);font-size:13px}
+.pb-g{padding:22px 24px 14px;min-width:0}
+.pb-g svg{width:100%;height:auto;display:block;overflow:visible}
+.pb-g .lycab,.pb-g .lyfrase{display:none}
+.pb-b:hover .pb-q{color:var(--azul)}
+.pb-g.anim polyline{stroke-dasharray:1;stroke-dashoffset:1;animation:movdib 1.6s cubic-bezier(.45,0,.2,1) forwards}
+.pb-g.anim rect[fill="var(--s1)"]{transform-box:fill-box;transform-origin:left;transform:scaleX(0);animation:tvcrece 1.1s cubic-bezier(.2,.9,.25,1) forwards}
+.pb-g .mvc polyline{animation-delay:var(--d,0s)!important}
+@media (max-width:640px){.pb-b{grid-template-columns:1fr}.pb-t{border-right:0;padding:18px 16px 4px}.pb-q{font-size:20px}.pb-g{padding:10px 16px 16px}.pb-t .pk:last-child{display:none}}
+
+.app #v-lectura .pb-b.ltsugb§{border:0!important;border-top:1px solid var(--ink)!important;border-radius:0!important;background:none!important;padding:0!important;font-size:inherit!important}
+.app #v-lectura .pb-b.ltsugb:first-child§{border-top:0!important}

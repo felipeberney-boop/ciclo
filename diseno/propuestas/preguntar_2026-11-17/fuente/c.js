@@ -1,0 +1,8 @@
+window.ltVacio=function(){const L=REC.filter(o=>GREL[o.id]&&terreno(o.id)!=null).map(o=>({o,d:terreno(o.id)})).sort((a,b)=>b.d-a.d);
+  const W=200,H=78,Y0=2010,Y1=2024;
+  const cel=({o,d},i)=>{const v=GREL[o.id],p=[];for(let y=Y0;y<=Y1;y++){const q=v[y-2004];if(q!=null)p.push([y,q]);}const mx=Math.max(...p.map(q=>q[1]))*1.08||1;
+    const X=y=>2+(y-Y0)/(Y1-Y0)*(W-8),Yv=q=>4+(1-q/mx)*(H-8),u=p[p.length-1],cl=d>5?'t-entrar':d<-5?'t-salir':'';
+    return `<div class="pc-c ltsugb" role="button" tabindex="0" style="--d:${(i%18)*.07}s" data-q="¿Cómo está ${escH(o.n.toLowerCase())}?"><div class="pc-h"><span class="pk">${escH(o.n)}</span><span class="pc-d ${cl}">${d>5?'▲':d<-5?'▼':'■'} ${d>0?'+':d<0?'−':''}${Math.abs(Math.round(d))}</span></div>
+      <svg viewBox="0 0 ${W} ${H}" aria-label="${escH(o.n)}: búsqueda mundial ${Y0}–${Y1}"><rect x="${X(2022)}" y="0" width="${X(2024)-X(2022)}" height="${H}" fill="var(--paper)"/><polyline pathLength="1" fill="none" stroke="var(--s1)" stroke-width="2" stroke-linejoin="round" points="${p.map(([y,q])=>X(y).toFixed(1)+','+Yv(q).toFixed(1)).join(' ')}"/><circle cx="${X(u[0])}" cy="${Yv(u[1])}" r="3" fill="var(--s1)"/></svg></div>`;};
+  return `<div class="pc-k"><span class="pk"><b>Qué se mueve</b> · búsqueda mundial 2010–2024, corregida · ordenado por cuánto ganó de 2022 a 2024 (la franja gris) · ● medido</span><span class="pk">Tocá uno y preguntale · o soltá una imagen</span></div><div class="pc">${L.map(cel).join('')}</div>`;};
+window.propPost=function(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('anim');io.unobserve(e.target);}}),{threshold:.2});$$('.pc-c').forEach(g=>io.observe(g));};

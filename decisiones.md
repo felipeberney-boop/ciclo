@@ -2739,3 +2739,26 @@ que la serie de mujeres (`armar_reddit_hombres.py`: proporción del año, media 
 
 **Lo que no se hizo.** La serie de hombres no entra al K-means ni a la validación; repetir la prueba preregistrada con
 ella es el siguiente paso posible. Probado con Playwright a 1400 y 393 px (jeans skinny y buzo), sin errores.
+
+## 2026-11-17 · De dónde sale cada número, al pasar por él
+
+**Pedido (Felipe, tras la Entrega 4).** Que cada número pueda decir de dónde sale sin ensuciar la pantalla: al pasar
+el mouse en la compu, o al tocarlo en el celular, la fuente, el período y la cantidad de observaciones. Nada fijo y en
+todos los números medidos, no en algunos.
+
+**Cómo está hecho.** Cada número medido lleva `data-src="clave|observaciones"`; un solo manejador para toda la app
+muestra el `#tip` que ya existía, con tres renglones: la fuente, el período y la regla, y las observaciones. Las claves
+están en `FUENTES`: búsqueda mundial (`g`), ganó o perdió 2022→2024 (`t`), Vogue Runway (`v`), Lyst (`l`), Reddit de
+mujeres (`r`) y de hombres (`h`), el catálogo de Zara (`z`), el K-means (`k`), la búsqueda de Argentina (`a`) y el
+cono (`c`). Cuando el número tiene sus propias observaciones, van en lugar de las generales («Prada: 32 de 34
+trimestres en el ranking», ««skinny jeans»: 1165 posts que lo nombran»). En la compu sólo cambia el cursor y aparece
+un subrayado punteado al pasar; en el celular, el primer toque muestra la fuente y no dispara lo de abajo (abrir un
+recorrido, por ejemplo), y el segundo sí.
+
+**Dónde.** Tendencias (las cinco lecturas), la decisión de El recorrido (afuera, búsqueda local, tu ventana), las
+tarjetas de El ciclo, «Cuándo tocó techo cada capa», las etiquetas del final de las curvas (dicen que son el cono, no
+un dato), Retornos, las opciones de Diseñar, y en Preguntar las curvas, las fotos con sus puntos, Lyst y Zara. Lo
+interpretado (lo que lee CLIP, lo que escribe el modelo) no lleva fuente medida: ya tiene su marca ◇.
+
+Probado con Playwright a 1400 px con mouse y a 393 px con toque, en nueve lugares; la demo entera 8 de 8 a los dos
+anchos.

@@ -436,6 +436,11 @@ el logotipo (con un aro de cinco puntos, las cinco etapas) y los créditos de la
 La capa de redes deja de ser sólo de mujeres: r/malefashionadvice (581.184 posts, 2012–2025) entra como serie aparte,
 con la misma regla, en El ciclo y en la ficha. Acerca de dice qué mide esa capa y qué queda afuera.
 
+## v1.57 · 17/11/2026 · La fuente de cada número
+
+Al pasar el mouse por un número medido (o al tocarlo en el celular) aparecen su fuente, su período y cuántas
+observaciones tiene. Nada fijo en la pantalla.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

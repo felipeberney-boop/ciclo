@@ -2868,3 +2868,25 @@ Topshop Unique y Gap, con desfiles de 2010 a 2021; Zara no está.
 
 Probado con Playwright a 1400 y 393 px (en el celular, tocando, no con mouse), sin errores; la demo entera 8 de 8.
 Capturas en `diseno/entrada_fotos_2026-11-17/`.
+
+## 2026-11-17 · La letra: fina y derecha
+
+**Devolución (Felipe).** Lo que gusta de Vogue Runway, Saint Laurent y Celine es una letra derecha, fina y liviana; la
+nuestra tira a gorda. Los display en peso liviano, grandes y con tracking ajustado, nunca en negrita; negrita y cursiva
+nunca juntas; cinco estilos.
+
+**Medido antes (en el navegador, once pantallas, a 1400 y 393 px).** Ninguna negrita con cursiva (la cursiva ya había
+salido). Pero Título, Subtítulo y Dato iban en Bodoni 500; la entrada nueva usaba un sexto tamaño (90 px); el pie de
+las fotos, 12 px; y quedaban dos pesos gruesos sueltos: la flecha de enviar en Preguntar (600) y los íconos ▲▼ de la
+señal (500).
+
+**Cómo quedó.** Una capa última, «fina y derecha»: Título 64 px (40 en el celular) en Bodoni 400 con el corte óptico de
+display (`opsz` 96: filetes finos) y tracking −0,022 em; Subtítulo 24 y Dato 34 en Bodoni 400; Cuerpo 17 y Etiqueta 13
+en la letra del sistema, 400. La entrada usa el mismo Título y el pie de las fotos pasa a Etiqueta. Ningún peso arriba
+de 400 fuera del logotipo, que no se toca. Medido de nuevo: cinco estilos (más el logotipo y los íconos), cero negritas,
+cero cursivas.
+
+**De paso.** En el celular, la entrada nueva quedaba visible debajo de las demás pantallas: su `display:flex!important`
+le ganaba al atributo `hidden`. Corregido.
+
+Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/letra_fina_2026-11-17/`.

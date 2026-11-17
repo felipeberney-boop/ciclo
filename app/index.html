@@ -1465,7 +1465,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 
 /* 17/11 · la entrada, una portada de fotos de pasarela (referencia: i-D y Vogue Runway). Las fotos ocupan toda la pantalla, a sangre
    y sin esquinas, corren solas y cambian con cada respuesta; la pregunta va encima, en Bodoni liviana. En el celular, la banda arriba y la pregunta abajo */
-.app #v-perfil.view:not(#q):not(#qq):not(#qqq){padding:0!important;max-width:none!important;width:100vw;margin-left:calc(50% - 50vw);box-sizing:border-box;display:block;position:relative;height:calc(100vh - 52px);min-height:560px;overflow:hidden;background:#111}
+.app #v-perfil.view:not([hidden]):not(#q):not(#qq):not(#qqq){padding:0!important;max-width:none!important;width:100vw;margin-left:calc(50% - 50vw);box-sizing:border-box;display:block;position:relative;height:calc(100vh - 52px);min-height:560px;overflow:hidden;background:#111}
 .gbanda{position:absolute;inset:0;overflow:hidden;background:#111}
 .gbanda::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.5) 30%,rgba(0,0,0,0) 60%),linear-gradient(to right,rgba(0,0,0,.35),rgba(0,0,0,0) 50%);pointer-events:none}
 .gbt{display:flex;gap:2px;width:max-content;height:100%;animation:gbcorre var(--dur,90s) linear infinite;will-change:transform}
@@ -1477,7 +1477,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .gbf{margin:0;position:relative;height:100%;aspect-ratio:3/4;flex:none;overflow:hidden;background:#222}
 .gbf img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
 .gbf::after{content:'';position:absolute;left:0;right:0;top:0;height:18%;background:linear-gradient(to bottom,rgba(0,0,0,.38),rgba(0,0,0,0));pointer-events:none}
-.app .gbf figcaption:not(#q):not(#qq){position:absolute;left:12px;right:12px;top:16px;z-index:1;border:0!important;padding:0!important;margin:0!important;font:400 12px/1.3 var(--sf)!important;letter-spacing:.01em!important;color:#fff!important;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.app .gbf figcaption:not(#q):not(#qq){position:absolute;left:12px;right:12px;top:16px;z-index:1;border:0!important;padding:0!important;margin:0!important;font:400 13px/1.3 var(--sf)!important;letter-spacing:.01em!important;color:#fff!important;text-shadow:0 1px 8px rgba(0,0,0,.45)}
 .app #v-perfil .gate:not(#q):not(#qq):not(#qqq){position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 clamp(24px,5vw,72px) 44px!important;max-width:none!important;margin:0!important;text-align:left!important;color:#fff}
 .app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq):not(#qqqq){font-family:var(--moda)!important;font-weight:400!important;font-variation-settings:'opsz' 96!important;letter-spacing:-.022em!important;line-height:1.02!important;color:#fff!important;font-size:clamp(52px,6.4vw,104px)!important;margin:10px 0 26px!important;max-width:14ch;text-align:left!important}
 .app #v-perfil .gprog:not(#q):not(#qq):not(#qqq){font:400 13px/1 var(--sf)!important;letter-spacing:.04em!important;color:rgba(255,255,255,.85)!important;text-align:left!important}
@@ -1493,7 +1493,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .gbcap{position:absolute;right:clamp(24px,5vw,72px);bottom:48px;z-index:2;margin:0;max-width:300px;text-align:right;font:400 13px/1.4 var(--sf);color:rgba(255,255,255,.8)}
 .gbcap b{font-weight:400;color:#fff}
 @media (max-width:760px){
-.app #v-perfil.view:not(#q):not(#qq):not(#qqq){height:auto;min-height:0;overflow:visible;display:flex!important;flex-direction:column;background:#fff}
+.app #v-perfil.view:not(#q):not(#qq):not(#qqq){height:auto;min-height:0;overflow:visible;display:flex;flex-direction:column;background:#fff}
 .gbanda{position:relative;inset:auto;height:64vh;order:0}
 .gbanda::after{display:none}
 .gbf{aspect-ratio:auto;width:100vw}
@@ -1574,21 +1574,35 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 @media (max-width:760px){.app .dgclave b:not(#z):not(#q){font-size:28px!important}}
 
 /* ================= los cinco estilos (17/11) · última =================
-   Título 48 · Subtítulo 24 · Dato 34 en Bodoni Moda 500; Cuerpo 17 y Etiqueta 13 en la letra del sistema, regular.
+   Título 64 · Subtítulo 24 · Dato 34 en Bodoni Moda 400 (desde la capa «fina y derecha», abajo); Cuerpo 17 y Etiqueta 13 en la letra del sistema, regular.
    Nunca negrita y cursiva juntas: no hay cursiva (la Bodoni se carga sin su itálica y el navegador la inclinaba a la
    fuerza). Fuera de la regla: el logotipo, los íconos de los botones y el texto adentro de los gráficos. */
-.app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq),.app #v-mover h2:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:500!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-tit)!important;line-height:1.08!important}
-.app #v-lectura .lyn.on b:not(#q):not(#qq):not(#qqq),.app .rec .a:not(#q):not(#qq):not(#qqq),.app .dline .a:not(#q):not(#qq):not(#qqq),.app .dgclave b:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:500!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-dat)!important;line-height:1.05!important}
-.app #v-lectura .lyn b:not(#q):not(#qq):not(#qqq),.app .h3:not(#q):not(#qq):not(#qqq),.app .nm:not(#q):not(#qq):not(#qqq),.app #v-mover .bfl p:not(#q):not(#qq):not(#qqq),.app .tvfrase:not(#q):not(#qq):not(#qqq),.app .lectcap b:not(#q):not(#qq):not(#qqq),.app .metgate h3:not(#q):not(#qq):not(#qqq),.app .dzsinimg:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:500!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-sub)!important;line-height:1.2!important}
+.app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq),.app #v-mover h2:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-tit)!important;line-height:1.08!important}
+.app #v-lectura .lyn.on b:not(#q):not(#qq):not(#qqq),.app .rec .a:not(#q):not(#qq):not(#qqq),.app .dline .a:not(#q):not(#qq):not(#qqq),.app .dgclave b:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-dat)!important;line-height:1.05!important}
+.app #v-lectura .lyn b:not(#q):not(#qq):not(#qqq),.app .h3:not(#q):not(#qq):not(#qqq),.app .nm:not(#q):not(#qq):not(#qqq),.app #v-mover .bfl p:not(#q):not(#qq):not(#qqq),.app .tvfrase:not(#q):not(#qq):not(#qqq),.app .lectcap b:not(#q):not(#qq):not(#qqq),.app .metgate h3:not(#q):not(#qq):not(#qqq),.app .dzsinimg:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-sub)!important;line-height:1.2!important}
 .app #v-lectura .lyn.on b:not(#q):not(#qq):not(#qqq){font-size:var(--t-dat)!important}
 .app #v-racional .lectesc h4:not(#q):not(#qq):not(#qqq),.app #v-lectura p.lyfrase:not(#q):not(#qq):not(#qqq),.app #v-mover .mvbtn:not(#q):not(#qq):not(#qqq),.app .vermas .sen:not(#q):not(#qq):not(#qqq){font-family:var(--sf)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;text-transform:none!important;font-size:var(--t-cue)!important}
 .app .gprog:not(#q):not(#qq):not(#qqq),.app .gprog b:not(#q):not(#qq):not(#qqq),.app #lectplay:not(#q):not(#qq):not(#qqq),.app .tvsel span:not(#q):not(#qq):not(#qqq),.app .copiar:not(#q):not(#qq):not(#qqq),.app #asclaves:not(#q):not(#qq):not(#qqq),.app .tag:not(#q):not(#qq):not(#qqq),.app .colofon:not(#q):not(#qq):not(#qqq),.app .colofon *:not(#q):not(#qq):not(#qqq),.app .proc:not(#q):not(#qq):not(#qqq),.app .pcred:not(#q):not(#qq):not(#qqq),.app .tzfotos .pcred:not(#q):not(#qq):not(#qqq),.app #v-lectura .lyn .lyk:not(#q):not(#qq):not(#qqq),.app #v-lectura .lyn .lyp:not(#q):not(#qq):not(#qqq),#tip.src:not(#q):not(#qq):not(#qqq),#tip.src *:not(#q):not(#qq):not(#qqq){font-family:var(--sf)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;text-transform:none!important;font-size:var(--t-eti)!important}
 .app .colofon b:not(#q):not(#qq):not(#qqq),#tip.src b:not(#q):not(#qq):not(#qqq){font-weight:400!important;color:inherit}
 .app .colofon b:not(#q):not(#qq):not(#qqq){color:var(--ink)!important}
-.app .rec .a *:not(#q):not(#qq):not(#qqq),.app .dline .a *:not(#q):not(#qq):not(#qqq){font-weight:500!important;font-size:var(--t-dat)!important}
-.app #v-mover .bfl:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:500!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-sub)!important;line-height:1.2!important}
+.app .rec .a *:not(#q):not(#qq):not(#qqq),.app .dline .a *:not(#q):not(#qq):not(#qqq){font-weight:400!important;font-size:var(--t-dat)!important}
+.app #v-mover .bfl:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-sub)!important;line-height:1.2!important}
 .app #v-racional .sen:not(#q):not(#qq):not(#qqq){font-family:var(--sf)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;text-transform:none!important;font-size:inherit!important}
 .app .tvsel i:not(#q):not(#qq):not(#qqq),.app .bfcred:not(#q):not(#qq):not(#qqq){font-family:var(--sf)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;text-transform:none!important;font-size:var(--t-eti)!important}
+
+/* ================= fina y derecha (17/11) · última =================
+   Referencia: Vogue Runway, Saint Laurent, Celine. Letra derecha, fina y liviana: la Bodoni va en 400 (nunca en negrita)
+   y el Título, grande, con el corte óptico de display (filetes finos) y el tracking cerrado. Sigue habiendo cinco estilos:
+   Título 64 (40 en el celular) · Subtítulo 24 · Dato 34 en Bodoni 400; Cuerpo 17 y Etiqueta 13 en la letra del sistema, 400.
+   La entrada usa el mismo Título. Ningún peso por encima de 400 fuera del logotipo; ninguna cursiva. */
+:root{--t-tit:64px}
+@media (max-width:600px){:root{--t-tit:40px}}
+.app h1:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .dzhead .dzh:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-mover h2:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-racional .metsec h2:not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important;font-variation-settings:'opsz' 96!important;letter-spacing:-.022em!important;line-height:1.04!important;font-size:var(--t-tit)!important}
+.app #v-racional .metsec h2:not(#q):not(#qq):not(#qqq):not(#qqqq){font-size:var(--t-sub)!important;font-variation-settings:normal!important;letter-spacing:-.01em!important;line-height:1.2!important}
+.app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq):not(#qqqq){font-size:var(--t-tit)!important}
+.app :is(.pname,.nm,.h3,.tvfrase,.dzh,.gt,.cn,.lyn b,.rec .a,.dline .a,.dgclave b,.bfl,.metgate h3,.lectcap b):not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
+.app :is(.rec .a,.dline .a) *:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .ico:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .ltmandar:not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
+.app :is(b,strong,th,summary,button,a,label,h2,h3,h4,h5,dt):not(.mk):not(.mk *):not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
 </style>
 
 <div class="app">

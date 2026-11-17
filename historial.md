@@ -466,6 +466,12 @@ portada de i-D. Las fotos responden a lo que se contesta: variadas, después del
 escala o independientes, y en el último paso las de la escala que se señala. En el celular, las fotos arriba y la
 pregunta abajo.
 
+## v1.62 · 17/11/2026 · Fina y derecha
+
+La letra se aliviana, como en Vogue Runway, Saint Laurent o Celine: la Bodoni pasa a 400 en todos lados, el título va
+más grande (64 px, 40 en el celular) con el corte de display y el tracking cerrado, y nada queda en negrita. Siguen
+siendo cinco estilos; la entrada usa el mismo título.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

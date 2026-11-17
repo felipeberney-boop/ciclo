@@ -2980,3 +2980,21 @@ ahora es sólo para suscriptores. Con el mismo trabajo (CLIP instalado) se podr�
 la tienen, sin cambiar de corpus.
 
 **Corrección.** El commit 89da066 dice «38 atributos más»: son 36 (34 que sólo tenían búsqueda, más jeans rectos y capa, que suman Reddit hombres).
+
+## 2026-11-17 · Acerca de: cada sección se abre
+
+**Devolución (Felipe).** La reorganización quedó mejor y el diagrama de qué entra al modelo está muy bien; falta
+profundidad: que la hipótesis, los datos, el modelo y las decisiones de diseño sean clickeables y desplieguen su texto
+completo, con el mismo patrón en todas, sin mezclar secciones abiertas con cerradas.
+
+**Lo que había.** Seis secciones con tres patrones: la primera abierta (el recorrido de siete pasos), cuatro con un
+adelanto y un «Ver más» abajo, y la última sólo un link.
+
+**Cómo quedó.** Un solo patrón en las seis. El título es un botón (número, título en Subtítulo y una pill «Abrir» que
+pasa a «Cerrar» y se llena de azul); abajo, siempre a la vista, el adelanto: un párrafo o el diagrama (los datos y el
+modelo); al abrir, el texto completo, que es lo que antes estaba en «Ver más». Todas arrancan cerradas, también «Cómo se
+arma una señal», que dibuja su recorrido al abrirse. «El racional completo» suma qué tiene el documento y los dos links.
+Con teclado, cada título se abre con Enter.
+
+Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/acerca_abrir_2026-11-17/` (cerrada, la hipótesis abierta y la señal
+abierta).

@@ -488,6 +488,11 @@ El brief pasa de 6 encargos a 15 casas: siete de lujo, cinco contemporary y tres
 Se bajaron todos los títulos de r/femalefashionadvice (2012–2025) y se contaron 52 términos nuevos en los dos subreddits.
 Los atributos de El ciclo con tres capas o más pasan de 16 a 31; los que sólo tienen búsqueda, de 49 a 15.
 
+## v1.66 · 17/11/2026 · Acerca de, sección por sección
+
+Cada sección de Acerca de se abre tocando su título y despliega su texto completo; todas igual y todas cerradas al
+llegar, con el adelanto (párrafo o diagrama) siempre a la vista.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

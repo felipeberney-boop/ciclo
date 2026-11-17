@@ -96,10 +96,24 @@ Reddit · Google Shopping · Amazon · Lyst
 |---|---|---|---|---|---|
 | Vogue Runway (`traopia/vogue-runway`) | Condé Nast; el dataset lo armó un tercero en HuggingFace | No se actualiza: se scrapeó el 31/03/2023 | 1.281.633 imágenes; usamos 902.566 looks de colección, 2000–2023 | Sin licencia declarada; uso académico, sin redistribuir | Después de 2023 no hay dato; las etiquetas las puso un modelo de visión genérico |
 | Google Trends | Google | Continua; exportado el 22/09 y el 20–21/10 | 65 series, mundo y 14 términos de Argentina, 2004–2024 | Términos de servicio de Google | Índice relativo, no volumen; salto de medición desde 2025, por eso se corta en 2024 |
-| Reddit (Arctic Shift) | Usuarios de r/femalefashionadvice | Continua; consultado el 22/09 y el 13/10 | 4.404 posts que nombran los términos, 2012–2025 | Datos públicos, con atribución | Un solo subreddit, en inglés, sobre todo de mujeres |
+| Reddit (Arctic Shift) | Usuarios de r/femalefashionadvice y, desde el 17/11, de r/malefashionadvice (dos series separadas) | Continua; consultado el 22/09 y el 13/10 | 4.404 posts que nombran los términos, 2012–2025 | Datos públicos, con atribución | Dos foros de consejos en inglés, mayoría de Estados Unidos; la validación (p = 0,0013) se hizo sólo con el de mujeres |
 | H&M, Amazon, Google Shopping | H&M (Kaggle), Amazon (McAuley Lab), Google | Fijos | 30,6 M de compras 2018–2020; 1,1 M de reseñas 2012–2023 | Kaggle académico; Amazon sin licencia declarada | Validan después; no entran al modelo |
 | Lyst Index | Lyst | Trimestral | 34 trimestres, Q1-18 a Q2-26, 55 marcas | Editorial, citado | Cambió la fórmula en Q1-26: se calcula dentro de cada tramo |
 | Zara 2018–22 y Mix de marcas | Kaggle | Fijos | 660 y 2.176 productos | Kaggle | **Sintéticos**: sólo muestran el método |
+
+**Fuentes evaluadas y descartadas.** Se probaron y no entraron. No aparecen en la app (desde el 17/11, Acerca de
+muestra sólo lo que se usa); quedan acá, con el motivo, porque un resultado negativo bien documentado también es
+método.
+
+| Fuente | Qué se probó | Por qué no entró |
+|---|---|---|
+| Instagram | Volumen de hashtags por atributo | No existe serie histórica de hashtags a ningún precio. Instagram sacó el feed cronológico en 2022 y limitó a 5 hashtags por post en diciembre de 2025: es una señal que se degrada sola |
+| TikTok (Research API) | Acceso académico a la serie de videos | La API de investigación no acepta instituciones argentinas |
+| Pinterest Trends | La serie de búsquedas de Pinterest | Sólo para clientes Enterprise; no hay forma pública de bajarla |
+| Zara 2018–22 y Mix de marcas 2025 (Kaggle) | K-means y árboles de decisión (08/09) | Son sintéticos: correlación máxima 0,099 y 0,018; el árbol acertaba 50,8 % contra 50,2 % de base. Quedan como demostración de método |
+| VISUELLE (5.577 productos con venta real) | Si la búsqueda predice la venta | La explica en un 0,1 %. Se usó para la prueba y no entra |
+| Wish (agosto de 2020) | La copia ultra barata | Una sola temporada, y el «precio de lista» no sirve (el 47 % no tiene descuento y el 25 % dice más de 72 %). No responde ninguna pregunta de la app |
+| Un jurado de diseñadores | Cinco a diez personas ubicando los 17 atributos, a ciegas (27/10) | Dependía de gente que no controlábamos; la validación se hizo con Reddit, que el modelo no ve |
 
 **La clave.** Todo se cruza por **atributo × año**. Cada atributo tiene un nombre de taller («jeans amplios») y, por
 cada fuente, el término con el que se lo busca (la etiqueta de Vogue, el término de Google, la palabra en Reddit). Están
@@ -245,7 +259,7 @@ Tendencias con la pregunta «¿Sigue vigente?» y lo que ya hay que dejar primer
 | La ficha | La señal grande, con una línea de por qué | Es la decisión. El gráfico la sostiene; el detalle está en el «?» |
 | Diseñar | La pregunta del paso | Un paso, una decisión; lo elegido queda en una barra abajo |
 | Preguntale a CICLO, «Preguntar» en el menú (antes Buscar por imagen, Preguntar, Tiza y Lectura) | Un solo hilo: tu imagen o tu pregunta, y la respuesta con todo adentro (lo que leyó CLIP, la curva que importa, los looks parecidos, la conclusión en una frase) | La devolución pidió filtrar lo que devuelve la IA: primero la conclusión, después el dato que la sostiene y su curva; el detalle queda plegado. Una sola columna, para que se sienta un asistente y no un tablero con un chat al costado |
-| Método | «Cómo se arma una señal»: de los datos a la señal, animado | La devolución pidió que se entienda qué datos se usan y cómo conviven, sin tener que leer |
+| Acerca de (hasta el 17/11, «Método») | «Cómo se arma una señal», animado; después los datos y el modelo como diagramas | La devolución pidió que se entienda qué datos se usan y cómo conviven, sin tener que leer |
 
 **Cómo se jerarquizó.** Tres grupos para cada bloque de texto: lo que se necesita para decidir se queda; lo que aclara
 cómo usar la app pasa a un «?» que se abre si lo tocan; lo que no aporta se borra (`decisiones.md`, 04/11).

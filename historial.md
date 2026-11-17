@@ -447,6 +447,12 @@ La entrada deja de ser tres cajitas en una pantalla vacía: la pregunta de un la
 filete, un gráfico nuestro que cambia en cada paso (qué gana terreno, cuándo picó cada uno, lo que vuelve). En el
 celular, el gráfico arriba.
 
+## v1.59 · 17/11/2026 · Acerca de, en orden
+
+Acerca de se rehace: qué es CICLO en una frase, cómo se arma una señal, los datos y el modelo como diagramas, la
+hipótesis y sus límites, las decisiones de diseño y el link al racional; un solo patrón (párrafo o dibujo, y un «Ver
+más» igual en todas). Lo que se probó y no entró sale de la app y pasa al racional.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

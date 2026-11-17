@@ -2785,3 +2785,31 @@ arriba y la pregunta abajo. «Si al terminar sigue siendo mayoritariamente blanc
 
 Probado con Playwright a 1400 y 393 px, los tres pasos, sin errores ni scroll horizontal. Capturas en
 `diseno/entrada_2026-11-17/`.
+
+## 2026-11-17 · Acerca de, reorganizada entera
+
+**Devolución (Felipe).** Era un choclo: mezclaba texto corrido y acordeones sin criterio, no empezaba por lo más
+importante y estaba llena de cosas que no usamos. Si Cristian entraba y empezaba a leer, la impresión era de desorden.
+
+**Qué cambió.**
+- *Fuera lo descartado.* Instagram, TikTok, Pinterest, los datasets sintéticos, VISUELLE, Wish y el jurado ya no
+  aparecen en la app. No se borraron: pasan al racional, en «Los datos y su trazabilidad», como **fuentes evaluadas y
+  descartadas**, con qué se probó y por qué no entró (PDF regenerado). La ayuda del gráfico de demostración de la ficha
+  tampoco las nombra.
+- *El orden, de más a menos importante:* qué es CICLO en una frase (debajo del título), 1 · Cómo se arma una señal (el
+  gráfico animado, igual), 2 · Los datos, 3 · El modelo, 4 · La hipótesis y sus límites, 5 · Las decisiones de diseño,
+  6 · El racional completo (el link, al .md y al PDF).
+- *Un solo patrón.* Cada sección es un título numerado, un párrafo corto o un dibujo, y, si tiene más, un «Ver más»
+  idéntico en todas (la misma píldora, el mismo despliegue en párrafos). No quedan acordeones de filas ni tablas sueltas;
+  las tablas de la entrada («qué cambia cada respuesta») quedaron adentro del «Ver más» del modelo.
+- *Dibujos, no tablas.* **Los datos**: las dos fuentes que entran al modelo (Vogue Runway, Google Trends) con flecha llena
+  hacia la clave, **atributo × año** (en Bodoni, con el ejemplo de los jeans amplios), y las que comprueban (Reddit,
+  Google Shopping y Amazon, H&M) con flecha y borde punteados; abajo, «con otra clave», Lyst (marca × trimestre) y el
+  catálogo de Zara (un solo mes). **El modelo**: tres columnas, entra → se calcula → sale, una fila por camino
+  (pasarela y búsqueda → K-means → la etapa; tu perfil → la regla → la señal; la historia → el cono), y aparte,
+  punteado, lo interpretado (una foto → CLIP; una pregunta → el modelo de lenguaje). En el celular, cada fila se apila
+  con flechas hacia abajo y cada caja dice si entra, se calcula o sale.
+- Cajas y «Ver más» redondeados, como el resto de la app.
+
+Probado con Playwright a 1400 y 393 px, sin errores ni scroll horizontal; la demo entera 8 de 8 a los dos anchos.
+Capturas en `diseno/acerca_de_2026-11-17/`.

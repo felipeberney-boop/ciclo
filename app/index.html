@@ -1603,6 +1603,22 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app :is(.pname,.nm,.h3,.tvfrase,.dzh,.gt,.cn,.lyn b,.rec .a,.dline .a,.dgclave b,.bfl,.metgate h3,.lectcap b):not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
 .app :is(.rec .a,.dline .a) *:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .ico:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .ltmandar:not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
 .app :is(b,strong,th,summary,button,a,label,h2,h3,h4,h5,dt):not(.mk):not(.mk *):not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
+
+/* 17/11 · capas: la procedencia se explora sobre la curva; con menos de tres capas, una franja por capa */
+.rcapa{transition:opacity .15s ease}
+svg.rfoco .rcapa:not(.on){opacity:.12}
+svg.rfoco .rcapa.on path{stroke-width:3px}
+.app .legi:not(#q):not(#qq){border:0!important;background:none!important;box-shadow:none!important;padding:4px 14px 4px 0!important;min-height:0!important;border-radius:0!important}
+.app .legi em:not(#q):not(#qq){display:none!important}
+.app .legi[aria-pressed="true"] span:not(#q):not(#qq){text-decoration:underline;text-underline-offset:4px}
+.cfranjas{display:flex;flex-direction:column;gap:22px;margin:4px 0}
+.cfranja{margin:0}
+.app .cfranja figcaption:not(#q):not(#qq){display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 6px!important;padding:0!important;border:0!important;font:400 var(--t-cue)/1.3 var(--sf)!important;color:var(--ink)!important}
+.cfn{font-family:var(--moda);font-size:var(--t-sub);font-weight:400}
+.cfd{font-size:var(--t-eti);color:var(--ink-2)}
+.cfranja svg{display:block;overflow:visible}
+.cfranja svg text{font-family:var(--sf)}
+.cfsrc{margin:6px 0 0;font-size:var(--t-eti);color:var(--ink-2)}
 </style>
 
 <div class="app">
@@ -2113,6 +2129,12 @@ const showTip=(ev,t)=>{tip.textContent=t;tip.style.opacity=1;const r=tip.getBoun
   if(x+r.width>innerWidth-8)x=ev.clientX-r.width-13;
   if(y+r.height>innerHeight-8)y=innerHeight-r.height-8;
   tip.style.left=x+'px';tip.style.top=Math.max(4,y)+'px';};
+/* 17/11 · ubica la tarjeta ya escrita junto al puntero; con el dedo, centrada y debajo, para que no la tape */
+const tipEn=ev=>{tip.style.opacity=1;const r=tip.getBoundingClientRect(),dedo=ev.pointerType&&ev.pointerType!=='mouse';
+  let x=dedo?ev.clientX-r.width/2:ev.clientX+13,y=dedo?ev.clientY+26:ev.clientY-8;
+  if(x+r.width>innerWidth-8)x=dedo?innerWidth-r.width-8:ev.clientX-r.width-13;x=Math.max(8,x);
+  if(y+r.height>innerHeight-8)y=dedo?ev.clientY-r.height-26:innerHeight-r.height-8;
+  tip.style.left=x+'px';tip.style.top=Math.max(4,y)+'px';};
 const hideTip=()=>{tip.style.opacity=0;tip.classList.remove('src');};
 /* 17/11 · de dónde sale cada número medido: al pasar el mouse (o al tocarlo en el celular) aparecen la fuente, el
    período y las observaciones. Nada fijo en pantalla. Cada número lleva data-src="clave|observaciones propias". */
@@ -2442,9 +2464,13 @@ function abrirDetalle(id){
   const rm=REC.find(r=>r.id===(DMAP[t.id]||''));
   if(rm){
     $('#cclbl').textContent='Pasarela, búsqueda y redes · hasta 2024';
-    $('#dleg').innerHTML=recLeyenda(rm);
-    $('#casc').appendChild(recChart(rm,innerWidth<600?Math.max(320,innerWidth-40):640)); // en el celular, al ancho real: si no, las etiquetas se achican y se cortan
-    $('#ccap').textContent='Datos medidos. Cada curva, índice 0–100 de su propio máximo; los puntos marcan el pico de cada capa.';
+    const ancho=innerWidth<600?Math.max(320,innerWidth-40):640;
+    if(recCapas(rm)<3){$('#dleg').hidden=true;$('#casc').appendChild(capaFranjas(rm,ancho));$('#cclbl').textContent=recCapas(rm)===1?'La búsqueda · hasta 2024':'Lo medido · capa por capa';
+      $('#ccap').textContent='Datos medidos. Con menos de tres capas, cada una va en su franja: índice 0–100 de su propio máximo; el punto marca su pico.';}
+    else{$('#dleg').innerHTML=recLeyenda(rm);
+    $('#casc').appendChild(recChart(rm,ancho)); // en el celular, al ancho real: si no, las etiquetas se achican y se cortan
+    legDestaca($('#dleg'),$('#casc'));
+    $('#ccap').textContent='Datos medidos. Cada curva, índice 0–100 de su propio máximo; los puntos marcan el pico de cada capa. Pasá el mouse (o tocá) una curva para ver de dónde sale.';}
     $('#dnote').innerHTML='<b>Qué dice la búsqueda.</b> '+rm.lect;
   } else {
     $('#dleg').hidden=true;
@@ -3995,8 +4021,9 @@ function recSeries(o){
   S.push({k:'g',n:'Búsqueda',d:'Google Trends mundo · «'+o.gk+'» · peso frente a las otras búsquedas de moda · 2010–2024, 2025 apagado',vals:GREL[o.id],ult:ANIO_G,dudoso:2025,from:2010});
   const rv=o.r||(typeof RDS!=='undefined'&&o.rk&&RDS[o.rk]?RDS[o.rk].i:null);
   const rh=typeof RDH!=='undefined'&&o.rk&&RDH[o.rk]?RDH[o.rk]:null;
-  if(rh) S.push({k:'h',d:'r/malefashionadvice · «'+termVis(o.rk)+'» · media de 3 años · '+rh.n+' posts, 2012–2025',vals:rh.i,ult:2025,from:2012});
-  if(rv) S.push({k:'r',d:'r/femalefashionadvice · «'+termVis(o.rk)+'» · media de 3 años · 2026 hasta octubre',vals:rv,ult:2025,from:2012,r26});
+  if(rh) S.push({k:'h',d:'r/malefashionadvice · «'+termVis(o.rk)+'» · media de 3 años · '+rh.n+' posts, 2012–2025',vals:rh.i,ult:2025,from:2012,obs:rh.n.toLocaleString('es-AR')+' posts que lo nombran, de 581.184'});
+  const rn=typeof RDS!=='undefined'&&o.rk&&RDS[o.rk]&&RDS[o.rk].n;
+  if(rv) S.push({k:'r',d:'r/femalefashionadvice · «'+termVis(o.rk)+'» · media de 3 años · 2026 hasta octubre',vals:rv,ult:2025,from:2012,r26,obs:rn?rn.toLocaleString('es-AR')+' posts que lo nombran, de 178.519':null});
   // la continuación: el movimiento mediano de la historia (cono medido), desde el último dato bueno de cada capa
   const cl=v=>Math.max(0,Math.min(100,v));
   S.forEach(se=>{Object.assign(se,CAPA[se.k],se.n?{n:se.n}:{});const b=se.vals[se.ult-2004];
@@ -4004,6 +4031,26 @@ function recSeries(o){
   return S;
 }
 const HOY=2026+9.4/12;
+/* 17/11 · el gráfico de capas sólo con tres capas o más. Con una o dos, cada capa en su franja: su área medida, su pico y
+   dónde está hoy, con la fuente al pie. Así una sola capa no queda sola en un dibujo pensado para tres */
+const recCapas=o=>recSeries(o).length;
+function capaFranjas(o,W=640){
+  const S=recSeries(o),d=document.createElement('div');d.className='cfranjas';
+  S.forEach(se=>{const desde=Math.max(se.from||2004,2010),A=[];for(let y=desde;y<=se.ult;y++){const v=se.vals[y-2004];if(v!=null)A.push([y,v]);}
+    if(A.length<2)return;const h=96,w=Math.max(260,W),ml=4,mr=4,mt=8,mb=20,x0=A[0][0],x1=A[A.length-1][0];
+    const X=y=>ml+(y-x0)/(x1-x0)*(w-ml-mr),Y=v=>mt+(1-v/100)*(h-mt-mb);
+    const pk=A.reduce((a,b)=>b[1]>a[1]?b:a),ul=A[A.length-1],col=cssv(se.c);
+    const ln=A.map((q,i)=>(i?'L':'M')+X(q[0]).toFixed(1)+','+Y(q[1]).toFixed(1)).join(' ');
+    const F=FUENTES[se.k]||['','',''];
+    const f=document.createElement('figure');f.className='cfranja';f.dataset.k=se.k;
+    f.innerHTML=`<figcaption><span class="cfn" style="color:${col}">${se.n}</span><span class="cfd"><span${src(se.k,se.obs||F[2])}>pico ${pk[0]}</span> · <span${src(se.k,se.obs||F[2])}>${ul[0]}: ${Math.round(ul[1])} de 100</span></span></figcaption>
+      <svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="${se.n} de ${o.n}, ${x0}–${x1}, pico en ${pk[0]}">
+      <path d="${ln} L${X(x1)},${Y(0)} L${X(x0)},${Y(0)}Z" fill="${col}" opacity=".12"/><path d="${ln}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="${X(pk[0])}" cy="${Y(pk[1])}" r="3.4" fill="${col}"/>
+      <text x="${ml}" y="${h-4}" font-size="11" fill="${cssv('--ink-3')}">${x0}</text><text x="${w-mr}" y="${h-4}" font-size="11" text-anchor="end" fill="${cssv('--ink-3')}">${x1}</text></svg>
+      <p class="cfsrc">${F[0]} · ${se.d.split(' · ').slice(1).join(' · ')}</p>`;
+    d.appendChild(f);});
+  return d;}
 function recChart(o,W=640,H=300,solo=null){
   const S=recSeries(o).filter(se=>!solo||se.k===solo);
   const etiq=!solo,ml=34,mr=etiq?132:40,mt=30,mb=34,X1=2030;
@@ -4032,9 +4079,10 @@ function recChart(o,W=640,H=300,solo=null){
     const t=el('text',{x:X(y),y:H-mb+17,'text-anchor':'middle','font-size':10.5,fill:cssv(y===2030?'--ink':'--ink-2'),...font});t.textContent=y;s.appendChild(t);});
   s.appendChild(el('line',{x1:ml,x2:W-mr,y1:Y(0),y2:Y(0),stroke:cssv('--rule'),'stroke-width':1}));
   const foco=solo||recFoco, op=k=>!foco||foco===k?1:.15;
+  let T=s; // dónde se dibuja: el svg, o el grupo de la capa (17/11: la capa se destaca al pasar por su curva)
   const linea=(d,col,w,dash,opac)=>{ // halo del color del fondo y después la línea
-    s.appendChild(el('path',{d,fill:'none',stroke:cssv('--card'),'stroke-width':w+2,'stroke-linejoin':'round','stroke-linecap':'round',opacity:opac}));
-    s.appendChild(el('path',{d,fill:'none',stroke:col,'stroke-width':w,'stroke-dasharray':dash,'stroke-linejoin':'round','stroke-linecap':'round',opacity:opac}));};
+    T.appendChild(el('path',{d,fill:'none',stroke:cssv('--card'),'stroke-width':w+2,'stroke-linejoin':'round','stroke-linecap':'round',opacity:opac}));
+    T.appendChild(el('path',{d,fill:'none',stroke:col,'stroke-width':w,'stroke-dasharray':dash,'stroke-linejoin':'round','stroke-linecap':'round',opacity:opac}));};
   const path=(vals,lo,hi)=>{let d='',ab=false;RX.forEach((y,i)=>{const v=vals[i];if(v==null||y<lo||y>hi){ab=false;return;}d+=(ab?'L':'M')+X(y)+','+Y(v)+' ';ab=true;});return d.trim();};
   // bandas: sólo para la capa aislada (o en el gráfico chico de cada capa)
   S.forEach(se=>{if(!se.banda||(foco&&foco!==se.k)||se.hab.length<2)return;const col=cssv(se.c),P=se.hab; // el error se midió sólo sobre la búsqueda
@@ -4044,31 +4092,41 @@ function recChart(o,W=640,H=300,solo=null){
   const orden=S.slice().sort((a,b)=>(a.k===foco)-(b.k===foco));
   const fin=[];
   orden.forEach(se=>{
+    T=el('g',{class:'rcapa','data-k':se.k});s.appendChild(T);
     const col=cssv(se.c),o_=op(se.k),w=foco===se.k&&!solo?2.6:se.w;
     linea(path(se.vals,Math.max(se.from||2004,X0),se.ult),col,w,se.dm,o_);
     if(se.dudoso&&se.vals[se.dudoso-2004]!=null){ // 2025: dato dudoso por el salto de Google → tenue y punto hueco
       const y0=Y(se.vals[se.ult-2004]),y1=Y(se.vals[se.dudoso-2004]);
-      s.appendChild(el('path',{d:`M${X(se.ult)},${y0} L${X(se.dudoso)},${y1}`,fill:'none',stroke:col,'stroke-width':1.4,'stroke-dasharray':se.dm,opacity:o_*.35}));
-      s.appendChild(el('circle',{cx:X(se.dudoso),cy:y1,r:3.2,fill:cssv('--card'),stroke:col,'stroke-width':1.4,opacity:o_*.6}));}
+      T.appendChild(el('path',{d:`M${X(se.ult)},${y0} L${X(se.dudoso)},${y1}`,fill:'none',stroke:col,'stroke-width':1.4,'stroke-dasharray':se.dm,opacity:o_*.35}));
+      T.appendChild(el('circle',{cx:X(se.dudoso),cy:y1,r:3.2,fill:cssv('--card'),stroke:col,'stroke-width':1.4,opacity:o_*.6}));}
     if(se.hab.length>1){ // dentro de la ventana, llena de color; más allá, apagada
       const dentro=se.hab.filter(q=>q[0]<=P.hasta),fuera=se.hab.filter(q=>q[0]>=P.hasta);
       if(dentro.length>1)linea('M'+dentro.map(q=>X(q[0])+','+Y(q[1])).join(' L'),col,Math.min(w,2),se.dp,o_);
       if(fuera.length>1)linea('M'+fuera.map(q=>X(q[0])+','+Y(q[1])).join(' L'),col,Math.min(w,2),se.dp,o_*.4);}
     if(se.r26&&se.r26[0]!=null){ // Reddit 2026: año incompleto → punto hueco; tenue si hay poco dato
-      s.appendChild(el('circle',{cx:X(2026),cy:Y(se.r26[0]),r:3.4,fill:cssv('--card'),stroke:col,'stroke-width':1.6,opacity:o_*(se.r26[1]<10?.45:1)}));}
-    const u=se.hab[se.hab.length-1];if(u)fin.push({k:se.k,col,o:o_,y:Y(u[1]),x:X(u[0]),val:Math.round(u[1])+(u[0]<2030?' ('+u[0]+')':''),txt:(W<500&&(se.k==='r'||se.k==='h')?(se.k==='r'?'Mujeres':'Hombres'):(se.corto||se.n))+' '+Math.round(u[1])+(u[0]<2030?' ('+u[0]+')':'')});
+      T.appendChild(el('circle',{cx:X(2026),cy:Y(se.r26[0]),r:3.4,fill:cssv('--card'),stroke:col,'stroke-width':1.6,opacity:o_*(se.r26[1]<10?.45:1)}));}
+    T=s;const u=se.hab[se.hab.length-1];if(u)fin.push({k:se.k,col,o:o_,y:Y(u[1]),x:X(u[0]),val:Math.round(u[1])+(u[0]<2030?' ('+u[0]+')':''),txt:(W<500&&(se.k==='r'||se.k==='h')?(se.k==='r'?'Mujeres':'Hombres'):(se.corto||se.n))+' '+Math.round(u[1])+(u[0]<2030?' ('+u[0]+')':'')});
   });
   if(etiq){ // etiquetas al borde derecho, separadas al menos 14 px sin mover las líneas
     fin.sort((a,b)=>a.y-b.y);for(let i=1;i<fin.length;i++)if(fin[i].y-fin[i-1].y<14)fin[i].y=fin[i-1].y+14;
     const lim=H-mb;for(let i=fin.length-1;i>=0;i--){if(fin[i].y>lim)fin[i].y=lim;if(i>0&&fin[i].y-fin[i-1].y<14)fin[i-1].y=fin[i].y-14;}
-    fin.forEach(f=>{const t=el('text',{x:W-mr+8,y:f.y+3.5,'font-size':11,fill:f.col,opacity:Math.max(f.o,.35),'font-weight':600,...font,'data-src':'c|'+CAPA[f.k].n+': dónde quedaría si se moviera como la mediana de la historia; no es un pronóstico'});t.textContent=f.txt;s.appendChild(t);});
+    fin.forEach(f=>{const t=el('text',{class:'rcapa','data-k':f.k,x:W-mr+8,y:f.y+3.5,'font-size':11,fill:f.col,opacity:Math.max(f.o,.35),'font-weight':400,...font,'data-src':'c|'+CAPA[f.k].n+': dónde quedaría si se moviera como la mediana de la historia; no es un pronóstico'});t.textContent=f.txt;s.appendChild(t);});
   }else if(fin[0]){const f=fin[0],t=el('text',{x:W-mr+5,y:f.y+3.5,'font-size':11,fill:f.col,'font-weight':600,...font,'data-src':'c|'+CAPA[f.k].n+': dónde quedaría si se moviera como la mediana de la historia; no es un pronóstico'});t.textContent=f.val.split(' ')[0];s.appendChild(t);}
   // tooltip
   const cross=el('line',{y1:mt,y2:H-mb,stroke:cssv('--ink-3'),'stroke-width':1,opacity:0});s.appendChild(cross);
   const hit=el('rect',{x:ml,y:mt,width:W-ml-mr,height:H-mt-mb,fill:'transparent'});
-  hit.addEventListener('mousemove',e=>{
-    const r=s.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W;
+  const mover=e=>{
+    const r=s.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W,py=(e.clientY-r.top)/r.height*H;
     const y=Math.max(X0,Math.min(X1,Math.round(X0+(px-ml)/(W-ml-mr)*(X1-X0))));
+    // 17/11 · la procedencia sobre el dato: la curva más cercana al puntero (a menos de 22 px) se destaca y dice su fuente
+    const enY=se=>{const v=y<=se.ult?se.vals[y-2004]:(se.hab.find(q=>q[0]===y)||[])[1];return v==null?null:v;};
+    let cerca=null,dm=22*H/r.height;S.forEach(se=>{const v=enY(se);if(v==null)return;const d=Math.abs(Y(v)-py);if(d<dm){dm=d;cerca=se;}});
+    s.classList.toggle('rfoco',!!cerca);$$('.rcapa',s).forEach(g=>g.classList.toggle('on',!!cerca&&g.dataset.k===cerca.k));
+    if(cerca){const F=FUENTES[cerca.k]||['','',''],v=enY(cerca),e2=x=>String(x).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+      cross.setAttribute('x1',X(y));cross.setAttribute('x2',X(y));cross.setAttribute('opacity',.6);
+      tip.innerHTML=`<b>${e2(cerca.n)} · ${e2(F[0])}</b><span>${e2(cerca.d.split(' · ').slice(1).join(' · '))}</span><span>${e2(F[1])}</span><span>${e2(cerca.obs||F[2])}</span><span>${y}: ${Math.round(v)} ${y<=cerca.ult&&!(cerca.dudoso===y)?'medido':cerca.dudoso===y?'dudoso (salto de Google)':'mediana de la historia, no un pronóstico'}</span>`;
+      tip.classList.add('src');tipEn(e);return;}
+    tip.classList.remove('src');
     cross.setAttribute('x1',X(y));cross.setAttribute('x2',X(y));cross.setAttribute('opacity',.6);
     const val=se=>{
       if(y>se.ult){const q=se.hab.find(q=>q[0]===y);
@@ -4077,11 +4135,18 @@ function recChart(o,W=640,H=300,solo=null){
         return q?`mediana ${Math.round(q[1])}${se.banda?` (6 de 10 casos: ${Math.round(q[3])}–${Math.round(q[4])}) · error ±${Math.round(CONO_EAM[q[6]])}`:''}${dd}${m}`:'—';}
       const v=se.vals[y-2004];return v==null?'—':Math.round(v)+' medido';};
     showTip(e,y+'\n'+S.map(se=>(se.corto||se.n).padEnd(16)+val(se)).join('\n'));
-  });
-  hit.addEventListener('mouseleave',()=>{cross.setAttribute('opacity',0);hideTip();});
+  };
+  hit.addEventListener('pointermove',e=>{if(e.pointerType==='mouse')mover(e);});
+  hit.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'){mover(e);e.stopPropagation();}});
+  const salir=()=>{cross.setAttribute('opacity',0);s.classList.remove('rfoco');$$('.rcapa',s).forEach(g=>g.classList.remove('on'));tip.classList.remove('src');hideTip();};
+  hit.addEventListener('mouseleave',salir);
+  document.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'&&!s.contains(e.target)&&s.isConnected)salir();});
   s.appendChild(hit);
   return s;
 }
+/* la leyenda ya no es una fila de cajas con la fuente: es la línea y el nombre; pasar por ella destaca la capa en el gráfico */
+function legDestaca(leg,caja){if(!leg)return;$$('.legi',leg).forEach(b=>{const on=v=>{const sv=$('svg',caja);if(!sv)return;sv.classList.toggle('rfoco',v);$$('.rcapa',sv).forEach(g=>g.classList.toggle('on',v&&g.dataset.k===b.dataset.k));};
+  b.addEventListener('mouseenter',()=>on(true));b.addEventListener('mouseleave',()=>on(false));});}
 function recLeyenda(o){
   return recSeries(o).map(se=>`<button type="button" class="legi" data-k="${se.k}" aria-pressed="${recFoco===se.k}" title="Aislar esta capa"><svg width="34" height="8" aria-hidden="true"><line x1="1" x2="17" y1="4" y2="4" stroke="${cssv(se.c)}" stroke-width="2.4" ${se.dm!=='none'?`stroke-dasharray="${se.dm}"`:''}/><line x1="19" x2="33" y1="4" y2="4" stroke="${cssv(se.c)}" stroke-width="2" stroke-dasharray="${se.dp}"/></svg><span style="white-space:nowrap">${se.n}</span><em>${se.d}</em></button>`).join('');
 }
@@ -4101,12 +4166,15 @@ function pintarRecorridos(){
   $('#rleg').innerHTML=recLeyenda(o);
   $$('#rleg .legi').forEach(b=>b.addEventListener('click',()=>{recFoco=recFoco===b.dataset.k?null:b.dataset.k;pintarRecorridos();$(`#rleg .legi[data-k="${b.dataset.k}"]`)?.focus();}));
   const rc=$('#rchart');rc.innerHTML='';
-  if(matchMedia('(max-width:600px)').matches){ // teléfono: un gráfico chico por capa, apilados
+  const pocas=recCapas(o)<3;$('#rleg').hidden=pocas;
+  if(pocas){rc.appendChild(capaFranjas(o,rc.clientWidth||640));
+    $('#rcap').textContent=recCapas(o)===1?`Para ${o.n.toLowerCase()} hay una sola capa medida, así que va en su franja: el área es su índice 0–100 de su propio máximo y el punto, su pico. El gráfico de capas aparece cuando hay tres o más.`:`Para ${o.n.toLowerCase()} hay dos capas medidas, así que cada una va en su franja, sin compararlas: el área es su índice 0–100 de su propio máximo y el punto, su pico. El gráfico de capas aparece cuando hay tres o más.`;}
+  else if(matchMedia('(max-width:600px)').matches){ // teléfono: un gráfico chico por capa, apilados
     recSeries(o).forEach(se=>{const h=document.createElement('div');h.className='rmini';
       h.innerHTML=`<div class="rminih" style="color:${cssv(se.c)}">${se.n}</div>`;h.appendChild(recChart(o,360,150,se.k));rc.appendChild(h);});
   }else rc.appendChild(recChart(o));
-  rc.insertAdjacentHTML('beforeend',CLAVE);
-  $('#rcap').textContent=`Cada curva es un índice 0–100 de su propio máximo. La línea llena es medida: pasarela hasta 2023, búsqueda hasta 2024 y Reddit hasta 2025. El punto hueco de 2025 en la búsqueda está apagado a propósito: ese año y 2026 traen el salto de medición de Google. La búsqueda es el peso de este atributo frente a las otras búsquedas de moda: así se descuenta que Google crezca o cambie su medición, y queda lo que gana o pierde terreno. La línea punteada no predice nada. Muestra dónde terminaría cada atributo si de acá a 2030 se moviera como se movió la mitad de los casos de nuestra historia. Sirve para ver la escala del movimiento posible, no para saber qué va a pasar. La banda es cuánto se movió de verdad la búsqueda a cada distancia. Tu ventana como ${(PERFIL[cliente]||PERFIL.premium).n.toLowerCase()} llega a ${(PERFIL[cliente]||PERFIL.premium).hasta}, con un error medido de ±${Math.round((PERFIL[cliente]||PERFIL.premium).banda)} puntos; más allá la línea sigue, apagada. Tocá una capa en la leyenda para aislarla.`;
+  if(!pocas){rc.insertAdjacentHTML('beforeend',CLAVE);legDestaca($('#rleg'),rc);}
+  if(!pocas)$('#rcap').textContent=`Cada curva es un índice 0–100 de su propio máximo. La línea llena es medida: pasarela hasta 2023, búsqueda hasta 2024 y Reddit hasta 2025. El punto hueco de 2025 en la búsqueda está apagado a propósito: ese año y 2026 traen el salto de medición de Google. La búsqueda es el peso de este atributo frente a las otras búsquedas de moda: así se descuenta que Google crezca o cambie su medición, y queda lo que gana o pierde terreno. La línea punteada no predice nada. Muestra dónde terminaría cada atributo si de acá a 2030 se moviera como se movió la mitad de los casos de nuestra historia. Sirve para ver la escala del movimiento posible, no para saber qué va a pasar. La banda es cuánto se movió de verdad la búsqueda a cada distancia. Tu ventana como ${(PERFIL[cliente]||PERFIL.premium).n.toLowerCase()} llega a ${(PERFIL[cliente]||PERFIL.premium).hasta}, con un error medido de ±${Math.round((PERFIL[cliente]||PERFIL.premium).banda)} puntos; más allá la línea sigue, apagada. Tocá una capa en la leyenda para aislarla.`;
   const fila=(k,v,t,f)=>`<dt>${k}</dt><dd class="mono"${f||''}>${v}${t?` <span class="tag ${t==='abierto'?'demo':'real'}">${t}</span>`:''}</dd>`;
   let h='';
   h+=fila('Pasarela',o.pv||'sin etiqueta',o.pv?'medido':'',o.pv?src('v',`«${o.vk}»: el año de su máximo`):'');
@@ -4126,7 +4194,7 @@ function pintarRecorridos(){
   } else p.innerHTML='';
   $('#rlect').textContent=o.lect;
   pintarCiclos();$('#rtitulo').textContent='El recorrido de '+o.n.split(' /')[0].toLowerCase();
-  const rd=$('#rdesde');rd.textContent=recDesde2004?'ver desde que hay dos capas':'ver desde 2004';rd.onclick=()=>{recDesde2004=!recDesde2004;pintarRecorridos();};
+  const rd=$('#rdesde');rd.hidden=recCapas(o)<3;rd.textContent=recDesde2004?'ver desde que hay dos capas':'ver desde 2004';rd.onclick=()=>{recDesde2004=!recDesde2004;pintarRecorridos();};
   $('#lag').innerHTML='';$('#lag').appendChild(lagChart());
   let rz=$('#rdz');if(!rz){rz=document.createElement('div');rz.id='rdz';rz.className='dzdesde';$('#rtitulo').after(rz);}
   rz.innerHTML=botonDz(hojaDeRec(recSel));

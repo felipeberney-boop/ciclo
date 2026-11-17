@@ -2890,3 +2890,31 @@ cero cursivas.
 le ganaba al atributo `hidden`. Corregido.
 
 Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/letra_fina_2026-11-17/`.
+
+## 2026-11-17 · Las capas: tres o más, y la fuente sobre la curva
+
+**Devolución (Felipe).** En El ciclo hay atributos con sólo Google Trends, y el gráfico queda con una línea sola en un
+dibujo pensado para tres: parece que los datos son flojos. Regla: el gráfico de capas sólo con tres capas o más. Y la
+procedencia está bien en contenido pero es aburrida en forma (cuadraditos, estático): que se explore sobre el dato.
+
+**Lo que había (contado en el navegador con `recSeries`).** De los 65 atributos de El ciclo, 49 tienen una sola capa
+(búsqueda), 3 tienen dos (jeans rectos y capa: pasarela y búsqueda; corset: búsqueda y Reddit mujeres), 6 tienen tres y
+7 tienen cuatro.
+
+**Cómo quedó.**
+- Con tres capas o más, el gráfico de siempre. Con una o dos, `capaFranjas()`: una franja por capa, cada una con su área
+  0–100, el punto de su pico, «pico AAAA · AAAA: N de 100» y la fuente al pie. Sin la escala posible ni la ventana, que
+  comparan capas. En El ciclo y en la ficha; el texto lo dice («el gráfico de capas aparece cuando hay tres o más»).
+- La procedencia sobre la curva: cada capa se dibuja en su grupo; al pasar el mouse cerca de una curva (a menos de 22 px)
+  esa capa se destaca, las demás se apagan, y la tarjeta dice la fuente, el término, el período, las observaciones y el
+  valor de ese año (medido, dudoso o mediana de la historia). En el celular, tocando; la tarjeta sale debajo del dedo y
+  se va al tocar afuera. Lejos de las curvas, la tarjeta de siempre con todas las capas de ese año.
+- La leyenda deja de ser una fila de cajas con la fuente escrita: queda la línea y el nombre; pasar por ella destaca la
+  capa y tocarla la aísla, como antes.
+- Reddit trae sus propias observaciones (posts que nombran el término, sobre el total del subreddit).
+
+**Un error que se corrigió antes de publicar.** La primera versión decía que la pasarela salía de «14.000 looks»: esos
+son la muestra de CLIP. La serie de cada atributo sale de las etiquetas de Vogue sobre 902.566 looks, como ya decía
+`FUENTES`.
+
+Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/capas_2026-11-17/` (`_toca`: con la capa destacada).

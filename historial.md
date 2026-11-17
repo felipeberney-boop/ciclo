@@ -472,6 +472,12 @@ La letra se aliviana, como en Vogue Runway, Saint Laurent o Celine: la Bodoni pa
 más grande (64 px, 40 en el celular) con el corte de display y el tracking cerrado, y nada queda en negrita. Siguen
 siendo cinco estilos; la entrada usa el mismo título.
 
+## v1.63 · 17/11/2026 · Las capas, sobre el dato
+
+El gráfico de capas aparece sólo con tres capas o más; con una o dos, cada capa va en su franja (su área, su pico y
+dónde está hoy). La procedencia se explora sobre la curva: al pasar el mouse o tocar una capa, se destaca y dice su
+fuente, su período y sus observaciones. La leyenda deja de ser una fila de cajas.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

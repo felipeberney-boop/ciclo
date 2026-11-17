@@ -1463,6 +1463,34 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 #tip.src span:last-child{color:#fff;font-variant-numeric:tabular-nums}
 [data-src]{cursor:help}
 :not(text):not(tspan)[data-src]:hover{text-decoration:underline dotted;text-underline-offset:3px;text-decoration-thickness:1px}
+
+/* 17/11 · la entrada, partida en dos con un filete: la pregunta con aire, y un gráfico nuestro a sangre que cambia por paso */
+.app #v-perfil.view:not(#q):not(#qq){padding:0!important;max-width:none!important;width:100vw;margin-left:calc(50% - 50vw);box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:calc(100vh - 52px)}
+.app #v-perfil .gate:not(#q):not(#qq){align-self:center;margin:0!important;max-width:none!important;padding:56px clamp(24px,6vw,96px)!important;text-align:left!important}
+.app #v-perfil .gate h1:not(#q):not(#qq){text-align:left!important;font-size:clamp(40px,4.4vw,72px)!important;margin:12px 0 0!important}
+.app #v-perfil .gprog:not(#q):not(#qq),.app #v-perfil .gmirar:not(#q):not(#qq),.app #v-perfil .gnav:not(#q):not(#qq){text-align:left!important;justify-content:flex-start!important}
+.app #v-perfil .ggrid:not(#q):not(#qq){margin:44px 0 0!important;max-width:520px;gap:12px!important;grid-template-columns:minmax(0,1fr)!important}
+.app #v-perfil .ggrid.g4:not(#q):not(#qq){grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:none}
+.gategraf{margin:0;border-left:1px solid var(--ink);background:var(--card);display:flex;flex-direction:column;min-width:0}
+.gategc{flex:1;position:relative;min-height:0;padding:0}
+.gategc{padding:28px 28px 16px!important}
+.gategc .tvsc{inset:28px 28px 16px}
+.gategc .tvsc svg{width:100%;height:100%!important;display:block;overflow:visible}
+.gategc .movp{height:100%}
+.gatecap{display:flex;flex-direction:column;gap:2px;padding:14px 24px 18px;border-top:1px solid var(--rule)}
+.gatecap b{font-size:var(--t-cue);font-weight:600;color:var(--ink)}
+.gatecap>span{font-size:var(--t-eti);color:var(--ink-2)}
+@media (max-width:760px){
+.app #v-perfil.view:not(#q):not(#qq){grid-template-columns:minmax(0,1fr);min-height:0}
+.gategraf{order:-1;border-left:0;border-bottom:1px solid var(--ink);height:380px}
+.app #v-perfil .gate:not(#q):not(#qq){padding:32px 16px 48px!important}
+.app #v-perfil .gate h1:not(#q):not(#qq){font-size:clamp(34px,9vw,44px)!important}
+.app #v-perfil .ggrid:not(#q):not(#qq){margin-top:28px!important}
+.gatecap{padding:10px 16px 12px}
+.gategc{padding:14px 16px 10px!important}
+.gategc .tvsc{inset:14px 16px 10px}
+.app #v-perfil .ggrid.g4:not(#q):not(#qq){grid-template-columns:minmax(0,1fr)!important}
+}
 </style>
 
 <div class="app">
@@ -1499,6 +1527,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
         <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button></div>
         <p class="gmirar"><button type="button" id="gmirar">Sólo estoy mirando →</button></p>
       </div>
+      <figure class="gategraf" id="gategraf"><div class="gategc" id="gategc"></div><figcaption class="gatecap" id="gatecap"></figcaption></figure>
     </section>
 
     <!-- ================= RADAR ================= -->
@@ -3288,8 +3317,8 @@ const MOVI_Y0=2016,MOVI_Y1=2024,MOVI_COL=['--s1','--s2','--s4','--s3','--s5'];
 /* cinco que ganan y cinco que pierden, elegidos (10/11) entre los de mayor cambio con serie propia y reconocibles para un
    diseñador; quedan afuera las fibras (lana, merino, popelina), que suben pero no dicen nada de un diseño */
 const MOVI_SEL={gana:['jamplio','gamuza','faldas_maxi','faldas_mini','trench'],pierde:['camisas_blusa','vestidos_cruzado','buzos_polera','vestidos_slip','corset']};
-function moviPanel(L,titulo,signo){
-  const W=520,H=250,Lm=14,R=200,T=16,B=26,X=y=>Lm+(y-MOVI_Y0)/(MOVI_Y1-MOVI_Y0)*(W-Lm-R);
+function moviPanel(L,titulo,signo,Wx,Hx){
+  const W=Wx||520,H=Hx||250,Lm=14,R=200,T=16,B=26,X=y=>Lm+(y-MOVI_Y0)/(MOVI_Y1-MOVI_Y0)*(W-Lm-R);
   const ser=L.map(x=>{const v=GREL[x.o.id],p=[];for(let y=MOVI_Y0;y<=MOVI_Y1;y++){const q=v[y-2004];if(q!=null)p.push([y,q]);}return p;});
   const todos=ser.flat().map(q=>q[1]),mn=Math.min(0,...todos),mx=Math.max(...todos)*1.05,Y=v=>T+(1-(v-mn)/(mx-mn))*(H-T-B);
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${titulo}: búsqueda mundial ${MOVI_Y0} a ${MOVI_Y1} de ${L.map(x=>x.o.n).join(', ')}">`;
@@ -3330,8 +3359,8 @@ function tvMaximo(W){const L=TV_MAX.filter(id=>GREL[id]&&tvRec(id)).map(id=>({id
   s+=`<line x1="${X(1)}" x2="${X(1)}" y1="${T-12}" y2="${H}" stroke="var(--ink-3)" stroke-dasharray="3 4"/><text x="${X(1)}" y="${T-16}" text-anchor="end" fill="var(--ink-3)">su máximo</text>`;
   L.forEach((x,i)=>{const y=T+i*DY;s+=`<g class="tvrow" data-r="${x.id}" style="--d:${i*.12}s"><text x="0" y="${y+17}" fill="var(--ink)">${x.n}</text><rect x="${lab}" y="${y+4}" width="${X(1)-lab}" height="18" rx="9" fill="var(--paper)"/><rect class="tvbar" x="${lab}" y="${y+4}" width="${(X(x.l)-lab).toFixed(1)}" height="18" rx="9" fill="var(--s1)"/><text class="tvlab"${src('g','2023–24 sobre su máximo desde 2004 · 252 meses')} x="${X(1)+8}" y="${y+17}" fill="var(--ink)">${Math.round(x.l*100)} %</text></g>`;});
   return s+'</svg>';}
-function tvPicos(W){const L=TV_PICOS.filter(id=>GREL[id]&&tvRec(id)).map(id=>({id,n:tvRec(id).n,y:tvMaxAnio(id).my})).sort((a,b)=>a.y-b.y||a.n.localeCompare(b.n));
-  const lab=W<520?104:150,R=40,T=8,DY=22,Y0=2010,Y1=2024,X=y=>lab+(y-Y0)/(Y1-Y0)*(W-lab-R),H=T+L.length*DY+12;
+function tvPicos(W,Hx){const L=TV_PICOS.filter(id=>GREL[id]&&tvRec(id)).map(id=>({id,n:tvRec(id).n,y:tvMaxAnio(id).my})).sort((a,b)=>a.y-b.y||a.n.localeCompare(b.n));
+  const lab=W<520?104:150,R=40,T=8,DY=Hx?Math.max(18,(Hx-20)/Math.max(1,TV_PICOS.filter(id=>GREL[id]&&tvRec(id)).length)):22,Y0=2010,Y1=2024,X=y=>lab+(y-Y0)/(Y1-Y0)*(W-lab-R),H=T+L.length*DY+12;
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Año del máximo de búsqueda: ${L.map(x=>x.n+' '+x.y).join(', ')}">`;
   /* el año va una sola vez, al lado del punto (10/11: se probó también en el eje; en el celular el eje sólo marca tres años) */
   (W<520?[2010,2017,2024]:[2010,2012,2014,2016,2018,2020,2022,2024]).forEach(y=>s+=`<line x1="${X(y)}" x2="${X(y)}" y1="${T}" y2="${H-8}" stroke="var(--rule-2)"/>`);
@@ -3339,10 +3368,10 @@ function tvPicos(W){const L=TV_PICOS.filter(id=>GREL[id]&&tvRec(id)).map(id=>({i
   return s+'</svg>';}
 /* «Lo que vuelve» (10/11, segunda versión): una serie por pasada, dicha como frase. El gráfico sólo marca los dos picos
    y el tramo entre ellos, una vez; sin ejes, porque los años ya están en los picos. */
-function tvVuelve(W){const L=TV_VUELVE.map(([id,suj,pl])=>{const o=tvRec(id)||{id,n:id},c=GREL[id]&&cicloDe(o);return c&&c.picos&&c.picos.length>1?{id,suj,pl,p:c.picos.slice(-2)}:null;}).filter(Boolean);
+function tvVuelve(W,Hx){const L=TV_VUELVE.map(([id,suj,pl])=>{const o=tvRec(id)||{id,n:id},c=GREL[id]&&cicloDe(o);return c&&c.picos&&c.picos.length>1?{id,suj,pl,p:c.picos.slice(-2)}:null;}).filter(Boolean);
   if(!L.length)return '';const x=L[tv.vuelve%L.length],v=GREL[x.id],gap=x.p[1]-x.p[0],[a,b]=x.p;
   const Y0=Math.min(2010,a-2),Y1=2024,p=[];for(let y=Y0;y<=Y1;y++){const q=v[y-2004];if(q!=null)p.push([y,q]);}const mx=Math.max(...p.map(q=>q[1]));
-  const H=W<520?190:230,T=30,Bm=34,X=y=>12+(y-Y0)/(Y1-Y0)*(W-24),Y=q=>T+(1-q/mx)*(H-T-Bm);
+  const H=Hx||(W<520?190:230),T=30,Bm=34,X=y=>12+(y-Y0)/(Y1-Y0)*(W-24),Y=q=>T+(1-q/mx)*(H-T-Bm);
   const frase=`${x.suj} ${x.pl?'picaron':'picó'} en ${a}. ${x.pl?'Volvieron':'Volvió'} a picar en ${b}. Entre una vuelta y la otra pasaron ${numTxt(gap)} años.`;
   const lab=(y,q)=>{const xx=X(y),an=xx<40?'start':xx>W-40?'end':'middle';return `<circle class="tvdot" cx="${xx}" cy="${Y(q)}" r="6" fill="var(--ink)"/><text class="tvlab"${src('g','un pico es un máximo que se despega 15 puntos de lo que lo rodea')} x="${xx}" y="${Y(q)-13}" text-anchor="${an}" fill="var(--ink)" font-weight="600">${y}</text>`;};
   let s=`<div class="tvvuelve"><div class="tvfrase">${frase}</div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${frase}">
@@ -4231,7 +4260,23 @@ function gateResumen(cli,acc){const e=[0,1,2,3,4].filter(i=>consejo(cli,i)[0]===
    Lo elegido sólo queda marcado si se vuelve un paso atrás dentro de la misma visita */
 const gateSel={publico:null,vinculo:null,cliente:null};
 function gateTarjeta(datos,attrs,on){return `<button class="gcard${on?' on':''}" type="button" aria-pressed="${!!on}" ${attrs}>${datos}</button>`;}
-function pintarGate(){
+/* 17/11 · la entrada, partida en dos: la pregunta y, a sangre, un gráfico nuestro que cambia en cada paso */
+const GATE_GRAF=[
+  ['Lo que más gana terreno','Búsqueda mundial frente a 35 búsquedas de moda, 2016–2024'],
+  ['Cuándo picó cada uno','El año de su máximo en la búsqueda mundial, 2010–2024'],
+  ['Lo que vuelve','La misma búsqueda, dos veces en lo más alto']];
+function gateGraf(){const f=$('#gategc');if(!f||!f.offsetParent)return;const cs=getComputedStyle(f),W=Math.round(f.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)),H=Math.round(f.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom));if(W<50||H<50)return;
+  const k=Math.min(3,Math.max(1,gatePaso))-1;let svg,cap='';
+  if(k===0){const G=MOVI_SEL.gana.map(id=>REC.find(o=>o.id===id)).filter(o=>o&&GREL[o.id]).map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null).sort((a,b)=>b.d-a.d);
+    svg=moviPanel(G,'Gana terreno','+',W,H).replace(/<div class="tt">[^<]*<\/div>/,'');}
+  else if(k===1)svg=tvPicos(W,H);
+  else{svg=tvVuelve(W,H);const fr=(svg.match(/<div class="tvfrase">([^<]*)<\/div>/)||[])[1];svg=svg.replace(/<div class="tvfrase">[^<]*<\/div>/,'');if(fr)cap=fr;}
+  svg=svg.replace(/ tabindex="0" role="button"/g,'');
+  f.innerHTML=`<div class="tvsc on" data-v="g${k}">${svg}</div>`;
+  $('#gatecap').innerHTML=`<b>${GATE_GRAF[k][0]}</b><span>${cap?cap+' ':''}${GATE_GRAF[k][1]} · <span class="tag real">● medido</span></span>`;
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){const e=f.firstChild;void e.offsetWidth;e.classList.add('anim');}}
+addEventListener('resize',()=>{clearTimeout(gateGraf.t);gateGraf.t=setTimeout(gateGraf,200);});
+function pintarGate(){requestAnimationFrame(gateGraf);
   const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;g.classList.remove('g4');
   $('#gmirar').parentElement.hidden=gatePaso!==1; // «Sólo estoy mirando», sólo en la primera pregunta (10/11)
   $('#gprog').innerHTML=`<b>0${gatePaso}</b> / 03`;

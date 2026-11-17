@@ -2762,3 +2762,26 @@ interpretado (lo que lee CLIP, lo que escribe el modelo) no lleva fuente medida:
 
 Probado con Playwright a 1400 px con mouse y a 393 px con toque, en nueve lugares; la demo entera 8 de 8 a los dos
 anchos.
+
+## 2026-11-17 · La entrada, partida en dos
+
+**Devolución (Felipe, por tercera vez).** Las tres preguntas eran tres cajitas blancas en el medio de una pantalla
+blanca: superficial y sin relleno. Esta vez con una estructura concreta: la pantalla partida en dos con borde duro, la
+pregunta en una mitad y un gráfico nuestro a sangre en la otra, que cambie en cada paso; en el celular, el gráfico
+arriba y la pregunta abajo. «Si al terminar sigue siendo mayoritariamente blanco vacío, está mal.»
+
+**Cómo quedó.**
+- *Dos columnas iguales a todo el ancho* (`#v-perfil` en grilla), separadas por un filete negro de 1 px. A la
+  izquierda, sobre el gris de la app, el paso («01 / 03»), la pregunta en Bodoni y las opciones en una columna (en el
+  tercer paso, dos por fila); a la derecha, el gráfico sobre blanco, pegado al borde de arriba, al de la derecha y al de
+  abajo, sin tarjeta, sin esquinas y sin sombra.
+- *Un gráfico por paso*, de los de Tendencias y con su animación: 1 · «Lo que más gana terreno» (las curvas se
+  dibujan), 2 · «Cuándo picó cada uno» (los puntos viajan hasta su año), 3 · «Lo que vuelve» (el floral y sus dos picos,
+  dicho en una frase). Al pie de cada uno, qué es y de dónde sale, con «● medido». No se tocan: `gateGraf()` los pide al
+  alto de la columna (`moviPanel`, `tvPicos` y `tvVuelve` aceptan ahora un alto opcional; en Tendencias siguen igual).
+- *En el celular* se apila: el gráfico arriba a todo el ancho (380 px de alto), un filete, y la pregunta abajo, con las
+  opciones en una columna.
+- Los botones siguen redondeados (no se volvió a los cuadrados del 17/11 a la mañana) y el logo no se tocó.
+
+Probado con Playwright a 1400 y 393 px, los tres pasos, sin errores ni scroll horizontal. Capturas en
+`diseno/entrada_2026-11-17/`.

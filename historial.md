@@ -441,6 +441,12 @@ con la misma regla, en El ciclo y en la ficha. Acerca de dice qué mide esa capa
 Al pasar el mouse por un número medido (o al tocarlo en el celular) aparecen su fuente, su período y cuántas
 observaciones tiene. Nada fijo en la pantalla.
 
+## v1.58 · 17/11/2026 · La entrada, partida en dos
+
+La entrada deja de ser tres cajitas en una pantalla vacía: la pregunta de un lado y, del otro, a sangre y separado por un
+filete, un gráfico nuestro que cambia en cada paso (qué gana terreno, cuándo picó cada uno, lo que vuelve). En el
+celular, el gráfico arriba.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -50,7 +50,7 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 
 ### La entrada: tres preguntas
 
-Cada tarjeta dice sólo lo que hay que clickear. Qué cambia cada respuesta está en la pantalla **Método** de la app.
+Cada tarjeta dice sólo lo que hay que clickear. Qué cambia cada respuesta está en la pantalla **Acerca de** de la app (hasta el 17/11, «Método»).
 El 04/11 se probó preguntar por el objetivo («¿Qué estás por decidir?») y se descartó el mismo día: obligaba a traducir
 la situación a una categoría abstracta antes de ver nada. Está contado en `decisiones.md` y en el racional.
 
@@ -164,7 +164,7 @@ Sin conexión funciona igual, con las tipografías del sistema.
 | Preguntale a CICLO | «Preguntar» en el menú. Desde el 16/11 (antes «Buscar por imagen» y «Preguntar», juntas el 10/11 como «Tiza», y el 16/11 «Lectura», que no decía que era una conversación). Un solo hilo: la imagen que soltás es tu mensaje y la respuesta trae adentro los chips de CLIP (se corrigen y la misma respuesta se rehace), la curva que importa, los looks parecidos y la devolución; una pregunta por una marca trae su recorrido en Lyst con el corte de Q1-26. Cuatro preguntas sugeridas y tres looks de ejemplo al entrar. Con tu API key de Groq la escribe un LLM (prompt v9); sin clave, lo medido igual y reglas fijas, y lo dice. Si Groq pide esperar, la respuesta cuenta los segundos y reintenta sola |
 | El brief | La pirueta. Un encargo de una casa real (foto de Vogue Runway), tres toques (forma, material y estampa, cada opción con su foto de pasarela) y un veredicto: cada elección sube, está en pico, quieta o baja según su búsqueda 2022→2024, y el mismo look se puntúa para lujo, contemporary y fast fashion. Reemplazó a Adiviná vos en «Más» el 10/11 (sigue en `#adivina`) |
 | Retornos | Qué vuelve y cada cuánto, con la misma serie y la misma regla de El ciclo |
-| Método | «Cómo se arma una señal»: de los datos a la señal, en siete pasos; fuentes, recortes y límites declarados. El modelo (K-means paso a paso) y Marcas (Lyst) salieron de la navegación el 10/11 y siguen en `#etapas` y `#marcas` |
+| Acerca de (antes Método) | «Cómo se arma una señal»: de los datos a la señal, en siete pasos; fuentes, recortes y límites declarados. El modelo (K-means paso a paso) y Marcas (Lyst) salieron de la navegación el 10/11 y siguen en `#etapas` y `#marcas` |
 
 ## Fuentes de datos
 
@@ -300,7 +300,7 @@ exacto, filas, SKU y fecha). El detalle está en `datasets/fuentes_y_descargas.m
 
 ## Qué falta
 
-Separar pasarela y venta por género (declarado como límite en Método). Leer el calzado recortando los pies de
+Separar pasarela y venta por género (declarado como límite en Acerca de). Leer el calzado recortando los pies de
 cada foto, que es lo único que permitiría medir chatitas, plataformas o guillerminas en la pasarela.
 
 ## Estructura del repositorio

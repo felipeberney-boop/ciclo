@@ -2684,3 +2684,14 @@ la app antes de publicar.
 **Qué se hizo.** Se revirtió el commit `cf7b852` entero: la entrada, Preguntar y El ciclo vuelven a como estaban. Quedan
 el recorrido de Lyst rehecho (dentro de la burbuja), Método con el racional y el modelo y los tokens al pie. La próxima
 propuesta de identidad se muestra renderizada antes de tocar la app.
+
+## 2026-11-17 · «Método» pasa a llamarse «Acerca de»
+
+**Pedido (Felipe).** Que la sección no diga «Método» sino «Acerca de», como la página de cualquier sitio que cuenta
+qué es y cómo está hecho. Desde hoy contiene el racional resumido, así que el nombre nuevo le queda mejor: no es sólo el
+método, es qué es CICLO, de dónde salen los datos y cómo se hizo.
+
+**Cómo quedó.** En «Más» (y en el menú del celular): «Acerca de · Qué es CICLO, de dónde salen los datos y cómo se
+hizo · El racional, resumido». El título de la página pasa de «Qué está medido y qué está interpretado» a «Acerca de
+CICLO»; esa regla sigue en el párrafo de abajo. El id interno sigue siendo `racional` (`#racional`), para no romper
+links. El readme lo nombra así; el racional entregado no se tocó.

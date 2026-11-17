@@ -421,6 +421,11 @@ tarjeta, con el gráfico de borde a borde. Se eligió entre tres propuestas rend
 La «Impronta» de la v1.52 no gustó (el mismo gráfico repetido en la entrada y en Preguntar no es identidad) y se
 revierte el mismo día. La app vuelve al lenguaje de la v1.51.
 
+## v1.54 · 17/11/2026 · Acerca de
+
+La sección «Método» se llama «Acerca de», como en cualquier sitio: qué es CICLO, de dónde salen los datos y cómo se
+hizo.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

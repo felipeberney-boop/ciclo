@@ -2831,5 +2831,6 @@ fuente pasan a Etiqueta. Quedan afuera de la regla sólo el logotipo, los ícono
 gráficos. Medido de nuevo: cinco estilos y cero negrita con cursiva.
 
 **De paso.** En la ficha, en el celular, el gráfico se dibujaba a 640 px y se achicaba (las etiquetas salían diminutas y
-cortadas); ahora se dibuja al ancho de la pantalla, y las dos de Reddit dicen «Mujeres» y «Hombres». Queda un detalle:
-abajo, «Reddit desde 2012» y «tu ventana» todavía se tocan.
+cortadas); ahora se dibuja al ancho de la pantalla, y las dos de Reddit dicen «Mujeres» y «Hombres». En el celular, además, las
+etiquetas «… desde 2012» no se escriben (la leyenda de arriba ya dice qué es cada capa y la línea vertical marca dónde
+empieza): se pisaban con «tu ventana».

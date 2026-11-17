@@ -3983,7 +3983,7 @@ function recChart(o,W=640,H=300,solo=null){
   s.appendChild(el('rect',{x:X(HOY),y:mt,width:X(X1)-X(HOY),height:H-mt-mb,fill:cssv('--ink-3'),opacity:.07}));
   const tf=el('text',{x:X(X1),y:mt-9,'text-anchor':'end','font-size':9.5,fill:cssv('--ink-2'),...font});tf.textContent=W<500?'punteada: no predice →':'punteada: no predice, muestra la escala posible →';
   // dónde entra cada capa: la línea empieza ahí porque la fuente empieza ahí
-  if(etiq)ini.filter(q=>q.y>X0).filter((q,i,A)=>!(q.k==='h'&&A.some(z=>z.k==='r'&&z.y===q.y))).forEach(q=>{s.appendChild(el('line',{x1:X(q.y),x2:X(q.y),y1:mt,y2:H-mb,stroke:cssv('--ink-3'),'stroke-dasharray':'2 3'}));const t=el('text',{x:X(q.y)+4,y:H-mb-6,'font-size':9.5,fill:cssv('--ink-2'),...font});t.textContent=(q.k==='r'&&ini.some(z=>z.k==='h'&&z.y===q.y)?'Reddit':CAPA[q.k].n)+' desde '+q.y;s.appendChild(t);});s.appendChild(tf);
+  if(etiq)ini.filter(q=>q.y>X0).filter((q,i,A)=>!(q.k==='h'&&A.some(z=>z.k==='r'&&z.y===q.y))).forEach(q=>{s.appendChild(el('line',{x1:X(q.y),x2:X(q.y),y1:mt,y2:H-mb,stroke:cssv('--ink-3'),'stroke-dasharray':'2 3'}));if(W<500)return;const t=el('text',{x:X(q.y)+4,y:H-mb-6,'font-size':9.5,fill:cssv('--ink-2'),...font});t.textContent=(q.k==='r'&&ini.some(z=>z.k==='h'&&z.y===q.y)?'Reddit':CAPA[q.k].n)+' desde '+q.y;s.appendChild(t);});s.appendChild(tf);
   // tu ventana: hasta dónde el error medido todavía sirve para la decisión de esta categoría
   const P=PERFIL[cliente]||PERFIL.premium,xt=X(P.hasta);
   s.appendChild(el('line',{x1:xt,x2:xt,y1:mt+4,y2:H-mb,stroke:cssv('--ink'),'stroke-width':1,'stroke-dasharray':'2 2',opacity:.6}));

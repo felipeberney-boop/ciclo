@@ -1,5 +1,7 @@
 # Preguntale a CICLO · tres propuestas con la dirección de 032c (17/11/2026)
 
+**Quedó la A**, aplicada también a El ciclo y a la entrada (ver `decisiones.md`, 17/11, «Impronta: queda la A»).
+
 La devolución de la Entrega 4: el diseño es blanco y con poca cosa, sin identidad propia. La dirección: la gramática de
 maquetado de 032c (escala y recorte: el gráfico a sangre, bordes duros, etiquetas chicas en mayúsculas contra una
 imagen enorme) y, como imagen, **nuestros gráficos**, no fotos. El sistema de color no se toca.

@@ -2639,3 +2639,33 @@ gráfico de borde a borde. Ninguna otra pantalla se tocó hasta que Felipe elija
 
 **Una regla que cambia.** El 27/10 se fijó «sin etiquetas en mayúsculas con espaciado» (la capa Apple). La dirección
 nueva las pide; si se elige una de las tres, esa regla se reemplaza.
+
+## 2026-11-17 · Impronta: queda la A, «Portada», para toda la app
+
+**La decisión (Felipe delegó: «decidí vos cuál queda mejor para todo»).** Queda **A · Portada**. Es la única de las tres
+que cumple al pie de la letra la regla de la devolución: los gráficos de Tendencias «se agrandan y se reubican, pero no
+se rediseñan». La C (hoja de contacto) era la más 032c, pero inventaba un formato nuevo, las curvas chicas; la B
+mezclaba gráficos de tres familias y en el celular era la más larga.
+
+**Su contra, resuelta.** La A repetía el arranque de Tendencias. Se resuelve con que cada pantalla abra el mismo gráfico
+en la lectura que le corresponde: Tendencias y Preguntar en «Qué sube y qué baja», **El ciclo en «Lo que vuelve»** (de
+eso trata la pantalla) y la entrada en la primera, sin controles, debajo de las preguntas.
+
+**Cómo está hecho.** Es un solo nodo (`#terreno`) que `tvMontar(v)` muda a la pantalla que se ve (`TV_HOST`: Tendencias,
+Preguntar, El ciclo, la entrada); no hay dos copias del gráfico ni dos relojes. Fuera de Tendencias lleva `.tvsangre`: sin
+tarjeta, a todo el ancho, el título como etiqueta chica en mayúsculas y las cinco lecturas como pestañas de texto. En
+Preguntar, tocar una curva pregunta por ella («¿Cómo está jeans baggy?») en vez de abrir El ciclo; en la entrada no se
+toca. Al empezar una conversación el gráfico se va, y vuelve con «Nueva conversación».
+
+**La capa 032c** (la última del CSS). En Preguntar, la entrada y El ciclo: fondo blanco, cero esquinas redondeadas,
+cero sombras, el título de la pantalla como etiqueta chica arriba con un filete negro, las preguntas sugeridas como un
+índice numerado con filetes, la barra de escribir a todo el ancho y la respuesta sin tarjeta: el texto en una columna de
+760 px y el gráfico de borde a borde (el recorrido de una marca en Lyst incluido, que era el punto 3.2). La regla del
+27/10 «sin etiquetas en mayúsculas» queda reemplazada en esas pantallas. El color no se tocó: la señal, el azul de lo
+que se toca y los tonos de los gráficos son los mismos.
+
+**Lo que falta.** Tendencias, Diseñar, la ficha y Método todavía tienen el lenguaje del 27/10; se pasan cuando Felipe vea
+estas tres en la app. Las capturas del readme (`codigo/capturar_pantallas_de_la_app.js`) no se regeneraron.
+
+Probado con Playwright a 1400 y 393 px: las tres pantallas sin errores ni scroll horizontal; tocar una curva pregunta; la
+demo entera (`codigo/probar_demo.js`) 8 de 8 a los dos anchos, sin clave.

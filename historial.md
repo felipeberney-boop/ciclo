@@ -409,6 +409,13 @@ de diseño, con un link visible al racional completo.
 Cada respuesta escrita de Preguntale a CICLO dice al pie qué modelo contestó, por qué API y cuántos tokens usó esa
 consulta, con los números que devuelve Groq.
 
+## v1.52 · 17/11/2026 · Impronta: los gráficos son la imagen
+
+Con la gramática de 032c (escala y recorte, no color), el gráfico que rota en Tendencias pasa a ser la imagen de la app:
+a sangre, primero en Preguntale a CICLO (donde tocar una curva pregunta por ella), en El ciclo (abre en «Lo que vuelve»)
+y en la entrada. Esas tres pantallas pasan a blanco, bordes duros y etiquetas chicas en mayúsculas; la respuesta va sin
+tarjeta, con el gráfico de borde a borde. Se eligió entre tres propuestas renderizadas (`diseno/propuestas/`).
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

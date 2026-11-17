@@ -2669,3 +2669,18 @@ estas tres en la app. Las capturas del readme (`codigo/capturar_pantallas_de_la_
 
 Probado con Playwright a 1400 y 393 px: las tres pantallas sin errores ni scroll horizontal; tocar una curva pregunta; la
 demo entera (`codigo/probar_demo.js`) 8 de 8 a los dos anchos, sin clave.
+
+## 2026-11-17 · La A, aplicada y descartada el mismo día
+
+**Devolución (Felipe, al verla en la app).** «No me gustó para nada: los gráficos repetidos en las primeras preguntas y
+la parte de Preguntar también malísima, antes era mejor. ¿Y la identidad propia dónde está?»
+
+**Qué falló.** Llenar el blanco con el mismo gráfico en cada pantalla no es identidad: es repetición. En la entrada, el
+gráfico de Tendencias debajo de las preguntas no decía nada que sirviera para contestarlas; en Preguntar, el índice con
+filetes y la barra a todo el ancho le sacaron la calidez de conversación que tenía el hilo. Se tomó de 032c lo más fácil
+de copiar (mayúsculas chicas, bordes duros) y no lo que lo hace propio. Y la elección se hizo sin que Felipe la viera en
+la app antes de publicar.
+
+**Qué se hizo.** Se revirtió el commit `cf7b852` entero: la entrada, Preguntar y El ciclo vuelven a como estaban. Quedan
+el recorrido de Lyst rehecho (dentro de la burbuja), Método con el racional y el modelo y los tokens al pie. La próxima
+propuesta de identidad se muestra renderizada antes de tocar la app.

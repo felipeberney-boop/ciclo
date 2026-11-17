@@ -416,6 +416,11 @@ a sangre, primero en Preguntale a CICLO (donde tocar una curva pregunta por ella
 y en la entrada. Esas tres pantallas pasan a blanco, bordes duros y etiquetas chicas en mayúsculas; la respuesta va sin
 tarjeta, con el gráfico de borde a borde. Se eligió entre tres propuestas renderizadas (`diseno/propuestas/`).
 
+## v1.53 · 17/11/2026 · Vuelta atrás
+
+La «Impronta» de la v1.52 no gustó (el mismo gráfico repetido en la entrada y en Preguntar no es identidad) y se
+revierte el mismo día. La app vuelve al lenguaje de la v1.51.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

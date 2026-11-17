@@ -1440,112 +1440,6 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 #v-lectura .ltuso:not(#z){font-size:12px!important;color:var(--ink-3);line-height:1.4!important;font-variant-numeric:tabular-nums}
 #v-lectura .ltusod{color:var(--ink-3)}
 @media (max-width:640px){#v-lectura .ltusod{display:none}}
-
-/* ================= capa 032c (17/11) · última =================
-   La devolución de la Entrega 4: blanco y sin identidad. Se toma de 032c la gramática (escala y recorte), no el color:
-   nuestros gráficos a sangre, bordes duros, etiquetas chicas en mayúsculas contra una imagen enorme. Por ahora en
-   Preguntar, la entrada y El ciclo; el sistema de color no se toca. Reemplaza, en esas pantallas, la regla del 27/10
-   «sin etiquetas en mayúsculas». */
-body:not(#q):not(#qq){overflow-x:clip}
-.ltk,.tvsangre .tvtit:not(#q):not(#qq),.tvsangre .tvsub:not(#q):not(#qq){font-size:10.5px!important;letter-spacing:.1em!important;text-transform:uppercase!important;line-height:1.3!important;color:var(--ink-3)}
-/* el gráfico que rota, a sangre: sin tarjeta, sin margen lateral */
-.tvhost{width:100vw;margin-left:calc(50% - 50vw);box-sizing:border-box}
-.tvhost .movi.tvsangre:not(#q):not(#qq){background:none!important;border-radius:0!important;padding:18px 24px 6px!important;margin:0!important;box-shadow:none!important}
-.tvsangre .movh:not(#q):not(#qq){flex-direction:row!important;margin:0 0 4px!important}
-.tvsangre .tvtit:not(#q):not(#qq){font-weight:600!important;color:var(--ink)!important}
-.tvsangre .tvpts:not(#q):not(#qq){gap:0!important;border-top:1px solid var(--rule);margin:18px 0 0!important}
-.tvsangre .tvpts button:not(#q):not(#qq){border:0!important;border-radius:0!important;font-size:10.5px!important;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px 10px 0!important;color:var(--ink-3)}
-.tvsangre .tvpts button.on:not(#q):not(#qq){color:var(--ink)!important}
-.tvsangre .tvpts button.on::before{background:none!important}
-.tvsangre .tvpts button.on::after{content:'';position:absolute;left:0;right:18px;top:-1px;height:2px;background:var(--ink)}
-.tvsangre .gvolver:not(#q):not(#qq),.tvsangre .qm summary:not(#q):not(#qq),.tvsangre .tag:not(#q):not(#qq){border-radius:0!important}
-@media (max-width:640px){.tvhost .movi.tvsangre:not(#q):not(#qq){padding:14px 16px 4px!important}.tvsangre .tvpts button:not(#q):not(#qq){padding:10px 14px 10px 0!important}}
-
-/* Preguntar: fondo blanco, la etiqueta en vez del título, el gráfico, el índice de preguntas, la barra de escribir */
-.app #v-lectura:not(#q):not(#qq){background:var(--card)!important}
-.app #v-lectura .lt:not(#q):not(#qq){max-width:none!important;padding:0!important}
-.app #v-lectura .lthead:not(#q):not(#qq){margin:0!important;padding:14px 24px!important;border-bottom:1px solid var(--ink)}
-.app #v-lectura .lthead h1:not(#q):not(#qq){font-size:11px!important;letter-spacing:.12em!important;text-transform:uppercase!important;font-weight:600!important;line-height:1.2!important}
-.app #v-lectura .lthead .qm:not(#q):not(#qq){position:static!important;margin:0 0 0 auto!important;inset:auto!important}
-.app #v-lectura .lthead .qm>summary:not(#q):not(#qq),.app #v-lectura .ltnueva:not(#q):not(#qq){border-radius:0!important}
-.app #v-lectura .ltchat:not(#q):not(#qq){padding:0!important;gap:0!important}
-.app #v-lectura .ltabajo:not(#q):not(#qq){background:var(--card)!important;border-top:1px solid var(--ink);padding:0!important}
-.app #v-lectura .ltsigue:not(#q):not(#qq){padding:10px 24px 0!important;margin:0!important}
-.app #v-lectura .ltsigue button:not(#q):not(#qq){border-radius:0!important;border-color:var(--ink)!important}
-.app #v-lectura .ltcomp:not(#q):not(#qq){border:0!important;border-radius:0!important;box-shadow:none!important;padding:10px 24px!important;background:var(--card)!important;align-items:center!important}
-.app #v-lectura .ltcomp textarea:not(#q):not(#qq){font-size:19px!important}
-.app #v-lectura .ltmas1:not(#q):not(#qq),.app #v-lectura .ltmandar:not(#q):not(#qq){border-radius:0!important;width:42px!important;height:42px!important}
-.app #v-lectura .ltpieform:not(#q):not(#qq){padding:0 24px 12px!important}
-.app #v-lectura .ltdis:not(#q):not(#qq){padding:8px 24px 0!important;margin:0!important}
-@media (max-width:640px){.app #v-lectura .ltdis:not(#q):not(#qq){padding:8px 16px 0!important}}
-.app #v-lectura .ltpieform details[open]:not(#q):not(#qq){border-radius:0!important}
-.app #v-lectura .ltix:not(#q):not(#qq){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink)}
-.app #v-lectura .ltix .ltk:not(#q):not(#qq){grid-column:1/-1;padding:14px 24px 4px}
-.app #v-lectura .ltix .ltsugb:not(#q):not(#qq){border:0!important;border-top:1px solid var(--rule)!important;border-radius:0!important;background:none!important;padding:16px 24px!important;font-size:19px!important;display:flex;gap:16px;align-items:baseline;grid-column:auto!important}
-.app #v-lectura .ltix .ltsugb:nth-child(even):not(#q):not(#qq){border-right:1px solid var(--rule)!important}
-.app #v-lectura .ltix .ltsugb:hover:not(#q):not(#qq){color:var(--azul)}
-.ltix .ltsugb i{font-style:normal;font-size:10.5px;letter-spacing:.1em;color:var(--ink-3);flex:none}
-.ltix .ltsugb::after{content:'→';margin-left:auto;color:var(--azul)}
-.app #v-lectura .ltlk:not(#q):not(#qq){display:flex;align-items:stretch;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.app #v-lectura .ltlk .ltk:not(#q):not(#qq){padding:14px 24px;flex:1;align-self:center}
-.app #v-lectura .ltlk .ltejb:not(#q):not(#qq){border:0!important;border-left:1px solid var(--rule)!important;padding:0!important;position:relative;width:120px;color:var(--ink)!important;border-radius:0!important}
-.app #v-lectura .ltlk .ltejb img:not(#q):not(#qq){width:120px!important;height:150px!important;border-radius:0!important;display:block}
-.app #v-lectura .ltlk .ltejb span:not(#q):not(#qq){position:absolute;left:8px;bottom:6px;color:#fff;font-size:10.5px!important;letter-spacing:.1em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.6);border:0!important;padding:0!important}
-/* la respuesta: sin tarjeta; el texto en su columna, el gráfico de borde a borde */
-.app #v-lectura .ltcic:not(#q):not(#qq){background:none!important;border-radius:0!important;padding:26px 0 40px!important;gap:22px!important}
-.app #v-lectura .ltcic>:not(.ltsec):not(#q):not(#qq),.app #v-lectura .ltcic .ltsec>:not(.rvcurv):not(#q):not(#qq),.app #v-lectura .ltcic .rvcurv.lyzara:not(#q):not(#qq){width:100%;max-width:808px;margin-inline:auto!important;padding-inline:24px!important;box-sizing:border-box}
-.app #v-lectura .ltcic .rvcurv:not(#q):not(#qq){padding:0 24px!important;margin:8px 0!important}
-.app #v-lectura .ltcic .ltsec+.ltsec:not(#q):not(#qq){border-top:0!important}
-.app #v-lectura .lth .lbl:not(#q):not(#qq){font-size:10.5px!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:var(--ink-3)!important}
-.app #v-lectura .tag:not(#q):not(#qq),.app #v-lectura .ltchip:not(#q):not(#qq),.app #v-lectura .ltagr:not(#q):not(#qq),.app #v-lectura .ltx:not(#q):not(#qq),.app #v-lectura .kbtn:not(#q):not(#qq){border-radius:0!important}
-.app #v-lectura .ltyo:not(#q):not(#qq){align-self:stretch!important;max-width:none!important;align-items:stretch!important;padding:34px 24px 0;width:100%;box-sizing:border-box}
-.app #v-lectura .ltyo p:not(#q):not(#qq){background:none!important;color:var(--ink)!important;border-radius:0!important;padding:0!important;font-size:22px!important;letter-spacing:-.01em;max-width:760px;margin:0 auto!important;width:100%}
-.app #v-lectura .ltyo figure:not(#q):not(#qq){margin:0 auto!important;max-width:760px;width:100%}
-.app #v-lectura .ltyo figure img:not(#q):not(#qq){width:min(340px,70vw);border-radius:0!important}
-.app #v-lectura .ltyo figcaption:not(#q):not(#qq){text-align:left!important;margin-left:0!important}
-.app #v-lectura .ltyo::before{content:'Tu pregunta';font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);max-width:760px;margin:0 auto 6px;width:100%}
-.app #v-lectura .ltyo.conimg::before{content:'Tu imagen'}
-.app #v-lectura .ltlooks a:not(#q):not(#qq),.app #v-lectura .tzfotos figure:not(#q):not(#qq),.app #v-lectura .ltactb:not(#q):not(#qq),.app #v-lectura .ltver pre:not(#q):not(#qq){border-radius:0!important}
-@media (max-width:640px){
-.app #v-lectura .lthead:not(#q):not(#qq),.app #v-lectura .ltcomp:not(#q):not(#qq),.app #v-lectura .ltsigue:not(#q):not(#qq),.app #v-lectura .ltpieform:not(#q):not(#qq){padding-inline:16px!important}
-.app #v-lectura .ltcic>:not(.ltsec):not(#q):not(#qq),.app #v-lectura .ltcic .ltsec>:not(.rvcurv):not(#q):not(#qq),.app #v-lectura .ltcic .rvcurv.lyzara:not(#q):not(#qq){padding-inline:16px!important}
-.app #v-lectura .ltcic .rvcurv:not(#q):not(#qq){padding:0 16px!important}
-.app #v-lectura .ltyo:not(#q):not(#qq){padding:28px 16px 0}
-.app #v-lectura .ltcomp textarea:not(#q):not(#qq){font-size:17px!important}
-.app #v-lectura .ltix:not(#q):not(#qq){grid-template-columns:1fr}
-.app #v-lectura .ltix .ltk:not(#q):not(#qq){padding-inline:16px}
-.app #v-lectura .ltix .ltsugb:not(#q):not(#qq){padding:14px 16px!important;font-size:17px!important;border-right:0!important}
-.app #v-lectura .ltlk:not(#q):not(#qq){flex-wrap:wrap}
-.app #v-lectura .ltlk .ltk:not(#q):not(#qq){flex-basis:100%;padding:14px 16px 10px}
-.app #v-lectura .ltlk .ltejb:not(#q):not(#qq){flex:1 1 30%;min-width:0;width:auto;border-left:0!important}
-.app #v-lectura .ltlk .ltejb:not(:first-of-type):not(#q):not(#qq){border-left:1px solid var(--rule)!important}
-.app #v-lectura .ltlk .ltejb img:not(#q):not(#qq){width:100%!important;height:140px!important}
-}
-/* la entrada y El ciclo, con el mismo lenguaje: fondo blanco, bordes duros, el gráfico a sangre */
-body[data-v="perfil"] .app:not(#q):not(#qq),body[data-v="lectura"] .app:not(#q):not(#qq),body[data-v="recorridos"] .app:not(#q):not(#qq){background:var(--card)!important}
-.app #v-recorridos.view:not(#q):not(#qq){padding-top:0!important}
-.app #v-recorridos .vhead:not(#q):not(#qq){width:100vw;margin:0 0 0 calc(50% - 50vw)!important;padding:14px 24px!important;box-sizing:border-box;border-bottom:1px solid var(--ink)}
-.app #v-recorridos .vhead>div:not(#q):not(#qq){display:flex!important;align-items:center;gap:20px;text-align:left!important;max-width:none!important;margin:0!important}
-.app #v-recorridos .vhead>div>*:not(#q):not(#qq){grid-column:auto!important}
-.app #v-recorridos .vhead .irmas:not(#q):not(#qq){order:2}
-.app #v-recorridos .vhead .qm:not(#q):not(#qq){order:3}
-@media (max-width:640px){.app #v-recorridos .vhead:not(#q):not(#qq){padding:12px 16px!important}.app #v-recorridos .vhead>div:not(#q):not(#qq){flex-wrap:wrap;gap:8px 14px}.app #v-recorridos .vhead h1:not(#q):not(#qq){flex:1 1 100%!important}}
-.app #v-perfil.view:not(#q):not(#qq){padding-bottom:0!important}
-#gatetv{margin-top:36px;border-top:1px solid var(--ink);pointer-events:none}
-#gatetv .movb,#gatetv .tvpts{display:none!important}
-#gatetv .tvsc .mvcl{opacity:1}
-.app #v-perfil .gcard:not(#q):not(#qq){border-radius:0!important;border:1px solid var(--ink)!important;box-shadow:none!important}
-.app #v-perfil .gcard:hover:not(#q):not(#qq){background:var(--ink)!important;color:var(--card)!important}
-.app #v-perfil .gvolver:not(#q):not(#qq){border-radius:0!important}
-.app #v-recorridos .vhead>div:not(#q):not(#qq){display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:none!important;margin:0!important;position:relative}
-.app #v-recorridos .vhead h1:not(#q):not(#qq){font-size:11px!important;letter-spacing:.12em!important;text-transform:uppercase!important;font-weight:600!important;line-height:1.3!important;margin:0!important;text-align:left!important;flex:1}
-.app #v-recorridos .vhead .irmas:not(#q):not(#qq){margin:0!important;font-size:13px!important}
-.app #v-recorridos .vhead .qm:not(#q):not(#qq){position:static!important;margin:0!important;inset:auto!important}
-.app #v-recorridos .vhead .qm>summary:not(#q):not(#qq){border-radius:0!important}
-.app #v-recorridos #rctv:not(#q):not(#qq){border-bottom:1px solid var(--ink);margin-bottom:28px}
-.app #v-recorridos .ciclo:not(#q):not(#qq){border-radius:0!important;box-shadow:none!important;border:1px solid var(--rule)!important}
-.app #v-recorridos .ciclo.on:not(#q):not(#qq){border-color:var(--ink)!important;box-shadow:inset 0 0 0 1px var(--ink)!important}
-.app #v-recorridos .ciclo img:not(#q):not(#qq),.app #v-recorridos .ciclo figure:not(#q):not(#qq),.app #v-recorridos .ciclo .cfoto:not(#q):not(#qq),.app #v-recorridos .chip:not(#q):not(#qq),.app #v-recorridos .kbtn:not(#q):not(#qq),.app #v-recorridos .lys:not(#q):not(#qq),.app #v-recorridos .decide:not(#q):not(#qq){border-radius:0!important}
 </style>
 
 <div class="app">
@@ -1582,7 +1476,6 @@ body[data-v="perfil"] .app:not(#q):not(#qq),body[data-v="lectura"] .app:not(#q):
         <div class="gnav"><button class="gvolver" id="gvolver" type="button" hidden>← Volver</button></div>
         <p class="gmirar"><button type="button" id="gmirar">Sólo estoy mirando →</button></p>
       </div>
-      <div class="tvhost" id="gatetv" aria-hidden="true"></div>
     </section>
 
     <!-- ================= RADAR ================= -->
@@ -1607,7 +1500,7 @@ body[data-v="perfil"] .app:not(#q):not(#qq),body[data-v="lectura"] .app:not(#q):
         </div>
       </div>
       <hr class="rule">
-      <div id="tv-radar"><div class="movi" id="terreno"></div></div>
+      <div class="movi" id="terreno"></div>
       <div class="filters" id="filt" role="group" aria-label="Filtrar por tipo de atributo">
         <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
         <button class="chip" data-f="color" aria-pressed="false">Color y estampa</button>
@@ -1721,7 +1614,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
           <p class="irmas"><a href="#retornos" data-vista="retornos">Qué volvió y cada cuánto →</a></p>
         </div>
       </div>
-      <div class="tvhost" id="rctv"></div>
+      <hr class="rule">
       <div class="ciclos" id="ciclos"></div>
       <h2 class="h3" id="rtitulo">El recorrido</h2>
       <div class="decide" id="rdecide" aria-live="polite"></div>
@@ -1895,7 +1788,6 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
           <button type="button" class="ltnueva" id="ltnueva" hidden>Nueva conversación</button>
           <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p><b>Qué hace.</b> Contesta con lo que CICLO midió: la etapa, la búsqueda, la pasarela y el Lyst Index de cada marca. Cada pieza dice si es <b>● medido</b> o <b>◇ interpretado</b>.</p><p><b>La imagen.</b> CLIP, un modelo de visión que corre en tu navegador, la compara con los 17 atributos del modelo, 10 colores y 14.000 looks de pasarela. La foto no sale de tu computadora. Lo que lee es interpretación: por eso se corrige.</p><p><b>La respuesta escrita.</b> La escribe un modelo de lenguaje con tu clave de Groq. Lee sólo <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">un resumen de métricas ya calculadas</a>, nunca una fila de la base. Sin clave, lo medido igual aparece, y la devolución de una imagen la arman reglas fijas, y lo dice.</p><p><b>Cómo se validó CLIP.</b> En 150.000 looks de Vogue que no están en el índice, el atributo correcto quedó entre los tres primeros entre el 67 % y el 92 % de las veces (animal print: 20 %). Cuadros, piel, cargo, Y2K y blazer no se pudieron validar. Por debajo de 0,35 la app no adivina. El color, revisado a ojo: 79 % con 0,6.</p></div></details>
         </header>
-        <div class="tvhost" id="lttv"></div>
         <div id="aschat" class="ltchat" aria-live="polite"></div>
         <div class="ltabajo">
           <div id="assug" class="ltsigue"></div>
@@ -2999,7 +2891,7 @@ function rvDato(a){
   return {sg,d,num,frase,serie:!!c};}
 /* las curvas de los que importan, en la misma escala: el pico de cada uno con su año y el nombre al final */
 function rvCurvas(L,W){L=L.filter(x=>GREL[x.g]).slice(0,3);if(!L.length)return '';W=Math.max(300,Math.round(W||640));
-  const Y0=2010,Y1=2024,R=W<520?100:150,H=W<520?190:W>900?300:220,T=26,B=24,cols=['--s1','--s2','--s3'];
+  const Y0=2010,Y1=2024,R=W<520?100:150,H=W<520?190:220,T=26,B=24,cols=['--s1','--s2','--s3'];
   let mx=0;L.forEach(x=>{for(let y=Y0;y<=Y1;y++){const v=GREL[x.g][y-2004];if(v!=null&&v>mx)mx=v;}});mx*=1.05;
   const X=y=>8+(y-Y0)/(Y1-Y0)*(W-8-R),Y=v=>T+(1-v/mx)*(H-T-B);
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Búsqueda mundial ${Y0}–${Y1}: ${L.map(x=>x.n).join(', ')}">`;
@@ -3061,7 +2953,7 @@ function lyFrase(m,d){const {Q,best,bq,hoy,ultA,ult,pri,ic}=d,qs=i=>Q[i];
   return `${m} está #${hoy} con la fórmula nueva. Con la anterior cerró 2025 ${ultA!=null?`#${ultA}`:'fuera del top 20'}.${ent} ${mej}`;}
 function tzLyst(m,W){const d=lyLeer(m);if(!d)return '';W=Math.max(300,Math.round(W));
   const {v,Q,ic,best,hoy,ultA}=d,n=Q.length,chico=W<520;
-  const H=chico?250:W>900?360:296,L=chico?34:40,R=chico?22:30,T=44,FU=26,B=24,gap=chico?22:34,wB=Math.max(chico?44:64,(W-L-R-gap)*2/n);
+  const H=chico?250:296,L=chico?34:40,R=chico?22:30,T=44,FU=26,B=24,gap=chico?22:34,wB=Math.max(chico?44:64,(W-L-R-gap)*2/n);
   const wA=W-L-R-gap-wB,xA=i=>L+(i+.5)/ic*wA,xB=i=>L+wA+gap+(i-ic+.5)/(n-ic)*wB;
   const X=i=>i<ic?xA(i):xB(i),y20=H-B-FU,Y=r=>T+(r-1)/19*(y20-T),yF=y20+FU/2+4;
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${escH(lyFrase(m,d))}">`;
@@ -3103,7 +2995,7 @@ function zaraPieza(W){const z=T.filter(t=>t.fuente==='Zara feb-2024'),num=t=>+((
   const cel=(k,num,pie,on)=>`<div class="lyn${on?' on':''}"><span class="lyk">${k}</span><b>${num}</b><span class="lyp">${pie}</span></div>`;
   return `<div class="lycab">${cel('Catálogo','228','prendas, febrero de 2024',true)}${a&&j?cel('Amplio contra ajustado',`${a} a ${j}`,'prendas'):''}</div>
     <p class="lyfrase">Zara no está en el Lyst Index, así que no tiene recorrido: lo que CICLO tiene es una foto de su catálogo de febrero de 2024.${a&&j?` Lo amplio le gana a lo ajustado ${a} a ${j}.`:''}</p>
-    <div class="rvcurv lyrec lyzara"><svg viewBox="0 0 ${W} ${y}" role="img" aria-label="Zara, catálogo de febrero de 2024: ${G.map(([k,L])=>L.map(x=>x.n+' '+x.v).join(', ')).join('; ')}">${s}</svg></div>`;}
+    <div class="rvcurv lyrec"><svg viewBox="0 0 ${W} ${y}" role="img" aria-label="Zara, catálogo de febrero de 2024: ${G.map(([k,L])=>L.map(x=>x.n+' '+x.v).join(', ')).join('; ')}">${s}</svg></div>`;}
 /* qué pieza de datos va con una pregunta: las marcas y los atributos que nombra (los mismos que se le mandan al modelo) */
 function tzMesaDe(E,texto,ids){const q=' '+asNorm(texto)+' ',marca=Object.keys(LYST.r).concat(['Zara','H&M']).find(m=>q.includes(' '+asNorm(m)));
   let g=ids&&ids.length?ids:Object.entries(E.nombre).filter(([id,n])=>E.usadas.includes(n)).map(([id])=>E.serie[id]);
@@ -3112,8 +3004,7 @@ function tzMesaDe(E,texto,ids){const q=' '+asNorm(texto)+' ',marca=Object.keys(L
   return {t:'resp',marca,g,titulo:[marca,...g.map(tzNom)].filter(Boolean).join(' · ')};}
 function tzFotos(gs){const F=gs.filter(g=>FOTO_ATR[g]).slice(0,3);if(!F.length)return '';
   return `<div class="tzfotos">${F.map(g=>{const f=FOTO_ATR[g],d=terreno(g);return `<figure><img loading="lazy"${fotoPos(g)} src="${vogueFoto(f.f,640)}" alt="${escH(tzNom(g))} en la pasarela: ${escH(fotoCred(f))}"><span class="pcred">${escH(fotoCred(f))}</span><figcaption><b>${escH(tzNom(g))}</b>${d!=null?` <span>${tzPts(d)}</span>`:''}</figcaption></figure>`;}).join('')}</div>`;}
-/* 17/11: el gráfico de una respuesta va de borde a borde (el texto queda en su columna) */
-const ltAncho=()=>Math.max(300,(($('#aschat')||{}).clientWidth||700)-(matchMedia('(max-width:640px)').matches?32:48));
+const ltAncho=()=>Math.min(680,Math.max(300,(($('#aschat')||{}).clientWidth||700)-(matchMedia('(max-width:640px)').matches?32:56)));
 const ltSec=(t,tag,c)=>`<div class="ltsec"><div class="lth"><span class="lbl">${t}</span>${tag||''}</div>${c}</div>`;
 const LT_MED='<span class="tag real">● medido</span>',LT_CLIP='<span class="tag ia2">interpretado · CLIP</span>';
 const ltClave=()=>!!$('#askey').value.trim();
@@ -3122,7 +3013,7 @@ const ltActivar=t=>`<p class="ltact">${t||'Para que además te lo escriba un mod
 function ltPieza(P){if(!P)return '';const W=ltAncho();
   if(P.t==='inicio'){const L=tzSube().slice(0,3);return ltSec('Lo que más sube',LT_MED,tzFotos(L)+rvCurvas(L.map(g=>({n:tzNom(g),g})),W)+'<p class="rvcap">Puntos ganados en la búsqueda mundial de 2022 a 2024, frente a las otras búsquedas de moda.</p>');}
   let h='';
-  if(P.marca==='Zara')h+=ltSec('Zara · catálogo de febrero de 2024',LT_MED,zaraPieza(Math.min(W,760))+'<p class="rvcap">Prendas del catálogo de Zara de febrero de 2024, leídas en sus descripciones. Zara no está en el Lyst Index; COS y Massimo Dutti, del mismo grupo, sí. Es una foto de un mes, no una serie.</p>');
+  if(P.marca==='Zara')h+=ltSec('Zara · catálogo de febrero de 2024',LT_MED,zaraPieza(W)+'<p class="rvcap">Prendas del catálogo de Zara de febrero de 2024, leídas en sus descripciones. Zara no está en el Lyst Index; COS y Massimo Dutti, del mismo grupo, sí. Es una foto de un mes, no una serie.</p>');
   else if(P.marca==='H&M')h+=ltSec('H&amp;M','','<p class="rvcap">No está en el Lyst Index y CICLO no tiene una lectura por marca: sus ventas se usan para validar el modelo.</p>');
   else if(P.marca)h+=ltSec(`${escH(P.marca)} en el Lyst Index`,LT_MED,lyCabeza(P.marca)+tzLyst(P.marca,W)+'<p class="rvcap">Puesto por trimestre, el #1 arriba. Lyst cambió la fórmula en Q1-26: los dos tramos no se comparan entre sí. Los puntos de abajo son los trimestres en que la marca no estuvo en el top 20.</p>');
   if(P.g&&P.g.length)h+=ltSec(P.g.map(tzNom).map(escH).join(' · '),'',tzFotos(P.g)+rvCurvas(P.g.map(g=>({n:tzNom(g),g})),W));
@@ -3177,15 +3068,15 @@ const ltYo=m=>`<div class="ltyo${m.img?' conimg':''}">${m.img&&m.img.src?`<figur
 /* vacía: una línea de qué hace, las sugerencias y tres looks para probar sin tener una imagen */
 function ltVacio(){const D=asDiseno(),idx=CLIP.idx;
   const sug=[...TZ_SUG,...(D.chips.length?[`Leé mi diseño: ${D.chips.map(c=>c.v.toLowerCase()).join(' · ')}`]:[])];
-  return `<div class="ltvacio"><div class="ltix"><span class="ltk">Preguntale por un atributo, una marca o un diseño tuyo · tocá una curva y preguntale por ella</span>${sug.map((t,i)=>`<button type="button" class="ltsugb" data-q="${escH(t)}"><i>${String(i+1).padStart(2,'0')}</i>${escH(t)}</button>`).join('')}</div>
-    <div class="ltlk"><span class="ltk">O soltá una imagen en cualquier parte · probá con un look de pasarela</span>${LT_EJ.map(([n,k])=>`<button type="button" class="ltejb" data-i="${QEJ[k]}" data-n="${n}">${idx?`<img alt="" src="${vogueFoto(idx.f[QEJ[k]],320)}">`:''}<span>${n}</span></button>`).join('')}</div></div>`;}
+  return `<div class="ltvacio"><p class="ltintro">Por un atributo, una marca o un diseño tuyo. CICLO te contesta con los datos que tiene.</p>
+    <div class="ltsug">${sug.map(t=>`<button type="button" class="ltsugb" data-q="${escH(t)}">${escH(t)}</button>`).join('')}</div>
+    <div class="ltej"><span>O probá con un look de pasarela</span><div>${LT_EJ.map(([n,k])=>`<button type="button" class="ltejb" data-i="${QEJ[k]}" data-n="${n}">${idx?`<img alt="" src="${vogueFoto(idx.f[QEJ[k]],320)}">`:''}<span>${n}</span></button>`).join('')}</div></div></div>`;}
 /* el hilo entero; si nuevo, baja hasta el último mensaje (sin mover lo de arriba) */
 function asPintar(nuevo){
   const ch=$('#aschat');if(!ch)return;const D=asDiseno();
   const ultLect=as.hist.reduce((u,m,k)=>m.tipo==='lectura'&&!m.leyendo&&!m.fallo?k:u,-1);
   ch.innerHTML=as.hist.length?as.hist.map((m,k)=>m.role==='user'?ltYo(m):ltBurbuja(m,k,ultLect)).join(''):ltVacio();
   $('#ltnueva').hidden=!as.hist.length;
-  {const lv=$('#lttv'),vac=!as.hist.length;if(lv&&lv.hidden===vac){lv.hidden=!vac;if(vac&&vista==='lectura')tvMontar('lectura');}}
   $('#asdisw').hidden=!D.chips.length||!as.hist.length;
   $('#asdis').innerHTML=D.chips.length?`Con tu diseño: <button type="button" class="ltdisb">${escH(D.chips.map(c=>c.v.toLowerCase()).join(' · '))}</button>`:'';
   const ult=[...as.hist].reverse().find(m=>m.r),hechas=as.hist.filter(m=>m.role==='user').map(m=>m.content),
@@ -3423,14 +3314,6 @@ function tvDuelo(W){const [a,b]=tv.par||TV_DUELOS[tv.duelo%TV_DUELOS.length],A=G
   s+=ca.s+cb.s;
   const O=tvOpciones(),sel=(k,id,y,col)=>`<label class="tvsel tvlab" style="left:${((X(Y1)+12)/W*100).toFixed(2)}%;top:${((y-14)/H*100).toFixed(2)}%;max-width:${R-14}px;--c:var(${col})"><span>${tvRec(id).n} <i aria-hidden="true">⌄</i></span><select data-k="${k}" aria-label="Cambiar ${tvRec(id).n} por otro atributo">${O.map(([v,n])=>`<option value="${v}"${v===id?' selected':''}>${n}</option>`).join('')}</select></label>`;
   return `<div class="tvduelo">${s}</svg>${sel(0,a,la,'--s2')}${sel(1,b,lb,'--s1')}</div>`;}
-/* 17/11 · el gráfico que rota es la imagen de la app (la dirección de 032c: nuestros gráficos a sangre). Es un solo nodo
-   que se muda a la pantalla que se ve; cada una arranca en su lectura: Tendencias y Preguntar en «Qué sube y qué baja»,
-   El ciclo en «Lo que vuelve», la entrada en la primera, sin controles. En Preguntar, tocar una curva pregunta por ella. */
-const TV_HOST={radar:['tv-radar',0],lectura:['lttv',0],recorridos:['rctv',3],perfil:['gatetv',0]};
-function tvMontar(v){const h=TV_HOST[v],t=$('#terreno'),host=h&&$('#'+h[0]);if(!host||!t)return false;
-  if(t.parentNode!==host)host.appendChild(t);tv.host=v;t.classList.toggle('tvsangre',v!=='radar');
-  if(!host.offsetParent){tvParar();return true;}
-  pintarTerreno();requestAnimationFrame(()=>{const e=$('#tvesc');if(e&&tv.G&&Math.abs(e.clientWidth-tv.w)>30)tvPintar(tv.G,tv.P);tvIr(h[1]);tvPlay(true);});return true;}
 function pintarTerreno(){
   const t=$('#terreno');if(!t)return;
   const sel=ids=>ids.map(id=>REC.find(o=>o.id===id)).filter(o=>o&&GREL[o.id]).map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null);
@@ -3451,7 +3334,7 @@ function pintarTerreno(){
 function tvPintar(G,P){const e=$('#tvesc');if(!e)return;tv.G=G;tv.P=P;const W=Math.max(300,Math.round(e.clientWidth||1000));tv.w=W;
   const vistas=[`<div class="movg">${moviPanel(G,'Gana terreno','+')}${moviPanel(P,'Pierde terreno','−')}</div>`,tvMaximo(W),tvPicos(W),tvVuelve(W),tvDuelo(W)];
   e.innerHTML=vistas.map((v,i)=>`<div class="tvsc" data-v="${i}">${v}</div>`).join('');
-  $$('#tvesc .mvc,#tvesc .tvrow').forEach(g=>{const ir=()=>{if(tv.host==='perfil')return;if(tv.host==='lectura'){const o=tvRec(g.dataset.r);return ltMandar(`¿Cómo está ${(o?o.n:g.dataset.r).toLowerCase()}?`);}recSel=g.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();};g.setAttribute('tabindex','0');g.setAttribute('role','button');g.addEventListener('click',ir);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ir();}});});
+  $$('#tvesc .mvc,#tvesc .tvrow').forEach(g=>{const ir=()=>{recSel=g.dataset.r;pintarRecorridos();mostrar('recorridos');$('#rtitulo').scrollIntoView();};g.setAttribute('tabindex','0');g.setAttribute('role','button');g.addEventListener('click',ir);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ir();}});});
   tvIr(tv.i,true);}
 function tvAlto(){const e=$('#tvesc');if(!e||!e.offsetParent)return;const h=Math.max(...$$('#tvesc .tvsc').map(x=>x.offsetHeight));if(h)e.style.height=h+'px';}
 function tvIr(i,sinAnim){tv.i=(i+TV_V.length)%TV_V.length;
@@ -4247,7 +4130,7 @@ function pintarLystX(){
 /* ---------- navegación ---------- */
 function mostrar(v,keepNav){
   if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando
-  document.body.classList.toggle('on-gate',v==='perfil');document.body.dataset.v=v;
+  document.body.classList.toggle('on-gate',v==='perfil');
   ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','racional','adivina','mover'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
@@ -4261,8 +4144,7 @@ function mostrar(v,keepNav){
   if(v==='racional'){pintarMetodoGate();pintarLectura();}
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
-  if(v==='radar'){pintarPerfilRadar();pintarRadar();}
-  if(!tvMontar(v))tvParar();
+  if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}else tvParar();
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }

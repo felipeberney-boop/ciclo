@@ -75,6 +75,13 @@ fecha en que lo bajamos y su licencia.
   2026 hasta el 08/10 (igual al conteo oficial de Arctic Shift). Conteos por término y año en
   `datasets_procesados/reddit_hombres_conteos.csv`; la serie, en `datasets_procesados/reddit_hombres.json` y en la
   constante `RDH` de la app. Sin «lace» (ahí son cordones) y sólo términos con 100 posts o más. Los títulos no se suben.
+- **r/femalefashionadvice completo y términos nuevos, 17/11/2026:** para sumar Reddit a los atributos que sólo tenían
+  búsqueda se bajaron todos los títulos de r/femalefashionadvice 2012–2025 con `codigo/bajar_titulos_reddit.py` (un
+  proceso por año): 177.668 posts (0,5 % menos que los 178.519 de septiembre: posts borrados en el archivo). Con
+  `codigo/armar_reddit_terminos_nuevos.py` se contaron 52 términos (palabra entera, con plural) en los dos subreddits;
+  entran los que tienen 100 posts o más: 25 en mujeres y 28 en hombres. Conteos en
+  `datasets_procesados/reddit_terminos_nuevos_conteos.csv`, series en `datasets_procesados/reddit_terminos_nuevos.json`
+  y en `RDS`/`RDH` de la app. Los títulos no se suben.
 
 ## Marcas y cultura
 

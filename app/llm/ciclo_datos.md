@@ -1,7 +1,7 @@
 # CICLO · datos para el asistente
 
 CICLO es una app para quien diseña ropa. Ubica **atributos** de moda —un color, una estampa, un corte o un material, nunca «una tendencia» entera ni una prenda— en una de cinco etapas de su ciclo de vida, cruzando lo que propone la pasarela con lo que la gente busca. Trabaja sobre todo con ropa; del calzado sólo mide zapatillas y mocasines en la búsqueda, y zapatillas y botas texanas en la pasarela.
-Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: 2026-11-10.
+Este documento se genera solo a partir de la app (codigo/armar_datos_llm.js). Última versión: 2026-11-17.
 
 ## Cómo leer los números
 - Pasarela | fuente: Vogue Runway, 1,28 millones de looks, 2010–2023 | medido | nivel: dónde está 2022–23 contra su propio máximo (100 % = en su pico) | momento: 2021–23 contra 2018–20

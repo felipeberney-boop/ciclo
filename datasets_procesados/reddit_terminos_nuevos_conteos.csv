@@ -1,0 +1,1457 @@
+atributo,termino,expresion,subreddit,anio,posts,posts_totales_anio
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2012,2,8298
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2013,5,10950
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2014,5,10467
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2015,5,9983
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2016,1,9330
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2017,0,9223
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2018,3,13176
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2019,9,14760
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2020,7,12511
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2021,16,13392
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2022,13,16830
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2023,13,14097
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2024,17,17947
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,femalefashionadvice,2025,12,16704
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2012,15,62239
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2013,14,67424
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2014,15,71436
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2015,6,65278
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2016,19,62375
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2017,8,48470
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2018,7,40396
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2019,4,33631
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2020,7,23768
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2021,4,20400
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2022,10,23814
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2023,11,21439
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2024,18,24826
+jmedio,straight leg jeans,\bstraight[- ]?leg\b|\bstraight jeans\b,malefashionadvice,2025,14,15688
+capa,cape,\bcapes?\b,femalefashionadvice,2012,4,8298
+capa,cape,\bcapes?\b,femalefashionadvice,2013,8,10950
+capa,cape,\bcapes?\b,femalefashionadvice,2014,6,10467
+capa,cape,\bcapes?\b,femalefashionadvice,2015,4,9983
+capa,cape,\bcapes?\b,femalefashionadvice,2016,3,9330
+capa,cape,\bcapes?\b,femalefashionadvice,2017,3,9223
+capa,cape,\bcapes?\b,femalefashionadvice,2018,5,13176
+capa,cape,\bcapes?\b,femalefashionadvice,2019,4,14760
+capa,cape,\bcapes?\b,femalefashionadvice,2020,6,12511
+capa,cape,\bcapes?\b,femalefashionadvice,2021,8,13392
+capa,cape,\bcapes?\b,femalefashionadvice,2022,2,16830
+capa,cape,\bcapes?\b,femalefashionadvice,2023,4,14097
+capa,cape,\bcapes?\b,femalefashionadvice,2024,4,17947
+capa,cape,\bcapes?\b,femalefashionadvice,2025,9,16704
+capa,cape,\bcapes?\b,malefashionadvice,2012,7,62239
+capa,cape,\bcapes?\b,malefashionadvice,2013,3,67424
+capa,cape,\bcapes?\b,malefashionadvice,2014,18,71436
+capa,cape,\bcapes?\b,malefashionadvice,2015,31,65278
+capa,cape,\bcapes?\b,malefashionadvice,2016,14,62375
+capa,cape,\bcapes?\b,malefashionadvice,2017,14,48470
+capa,cape,\bcapes?\b,malefashionadvice,2018,21,40396
+capa,cape,\bcapes?\b,malefashionadvice,2019,17,33631
+capa,cape,\bcapes?\b,malefashionadvice,2020,16,23768
+capa,cape,\bcapes?\b,malefashionadvice,2021,4,20400
+capa,cape,\bcapes?\b,malefashionadvice,2022,5,23814
+capa,cape,\bcapes?\b,malefashionadvice,2023,6,21439
+capa,cape,\bcapes?\b,malefashionadvice,2024,2,24826
+capa,cape,\bcapes?\b,malefashionadvice,2025,1,15688
+corset,corset,\bcorsets?\b,femalefashionadvice,2012,7,8298
+corset,corset,\bcorsets?\b,femalefashionadvice,2013,9,10950
+corset,corset,\bcorsets?\b,femalefashionadvice,2014,3,10467
+corset,corset,\bcorsets?\b,femalefashionadvice,2015,2,9983
+corset,corset,\bcorsets?\b,femalefashionadvice,2016,3,9330
+corset,corset,\bcorsets?\b,femalefashionadvice,2017,5,9223
+corset,corset,\bcorsets?\b,femalefashionadvice,2018,3,13176
+corset,corset,\bcorsets?\b,femalefashionadvice,2019,9,14760
+corset,corset,\bcorsets?\b,femalefashionadvice,2020,10,12511
+corset,corset,\bcorsets?\b,femalefashionadvice,2021,18,13392
+corset,corset,\bcorsets?\b,femalefashionadvice,2022,32,16830
+corset,corset,\bcorsets?\b,femalefashionadvice,2023,11,14097
+corset,corset,\bcorsets?\b,femalefashionadvice,2024,26,17947
+corset,corset,\bcorsets?\b,femalefashionadvice,2025,28,16704
+corset,corset,\bcorsets?\b,malefashionadvice,2012,0,62239
+corset,corset,\bcorsets?\b,malefashionadvice,2013,0,67424
+corset,corset,\bcorsets?\b,malefashionadvice,2014,0,71436
+corset,corset,\bcorsets?\b,malefashionadvice,2015,2,65278
+corset,corset,\bcorsets?\b,malefashionadvice,2016,0,62375
+corset,corset,\bcorsets?\b,malefashionadvice,2017,0,48470
+corset,corset,\bcorsets?\b,malefashionadvice,2018,2,40396
+corset,corset,\bcorsets?\b,malefashionadvice,2019,1,33631
+corset,corset,\bcorsets?\b,malefashionadvice,2020,1,23768
+corset,corset,\bcorsets?\b,malefashionadvice,2021,0,20400
+corset,corset,\bcorsets?\b,malefashionadvice,2022,2,23814
+corset,corset,\bcorsets?\b,malefashionadvice,2023,2,21439
+corset,corset,\bcorsets?\b,malefashionadvice,2024,1,24826
+corset,corset,\bcorsets?\b,malefashionadvice,2025,1,15688
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2012,97,8298
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2013,117,10950
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2014,83,10467
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2015,64,9983
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2016,57,9330
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2017,47,9223
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2018,69,13176
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2019,94,14760
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2020,99,12511
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2021,97,13392
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2022,168,16830
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2023,105,14097
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2024,147,17947
+pantalones_short,shorts,\bshorts\b,femalefashionadvice,2025,111,16704
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2012,690,62239
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2013,961,67424
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2014,1101,71436
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2015,980,65278
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2016,872,62375
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2017,610,48470
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2018,461,40396
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2019,395,33631
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2020,339,23768
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2021,270,20400
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2022,290,23814
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2023,235,21439
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2024,350,24826
+pantalones_short,shorts,\bshorts\b,malefashionadvice,2025,213,15688
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2012,5,8298
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2013,7,10950
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2014,6,10467
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2015,3,9983
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2016,4,9330
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2017,3,9223
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2018,2,13176
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2019,7,14760
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2020,8,12511
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2021,9,13392
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2022,14,16830
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2023,13,14097
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2024,29,17947
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,femalefashionadvice,2025,26,16704
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2012,0,62239
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2013,0,67424
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2014,0,71436
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2015,1,65278
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2016,0,62375
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2017,0,48470
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2018,0,40396
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2019,0,33631
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2020,0,23768
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2021,0,20400
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2022,0,23814
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2023,0,21439
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2024,0,24826
+faldas_mini,mini skirt,\bmini[- ]?skirts?\b,malefashionadvice,2025,0,15688
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2012,15,8298
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2013,24,10950
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2014,21,10467
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2015,11,9983
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2016,13,9330
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2017,3,9223
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2018,7,13176
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2019,5,14760
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2020,3,12511
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2021,1,13392
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2022,4,16830
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2023,11,14097
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2024,13,17947
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,femalefashionadvice,2025,6,16704
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2012,0,62239
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2013,0,67424
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2014,0,71436
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2015,0,65278
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2016,0,62375
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2017,0,48470
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2018,1,40396
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2019,0,33631
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2020,0,23768
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2021,0,20400
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2022,0,23814
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2023,0,21439
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2024,1,24826
+faldas_maxi,maxi skirt,\bmaxi[- ]?skirts?\b,malefashionadvice,2025,0,15688
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2012,0,8298
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2013,1,10950
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2014,0,10467
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2015,3,9983
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2016,3,9330
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2017,1,9223
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2018,0,13176
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2019,3,14760
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2020,2,12511
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2021,4,13392
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2022,11,16830
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2023,9,14097
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2024,7,17947
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,femalefashionadvice,2025,6,16704
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2012,1,62239
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2013,1,67424
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2014,0,71436
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2015,0,65278
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2016,0,62375
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2017,0,48470
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2018,0,40396
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2019,0,33631
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2020,0,23768
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2021,0,20400
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2022,0,23814
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2023,0,21439
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2024,0,24826
+vestidos_slip,slip dress,\bslip[- ]?dress(es)?\b,malefashionadvice,2025,0,15688
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2012,2,8298
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2013,5,10950
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2014,2,10467
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2015,3,9983
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2016,3,9330
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2017,0,9223
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2018,3,13176
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2019,0,14760
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2020,0,12511
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2021,1,13392
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2022,4,16830
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2023,3,14097
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2024,2,17947
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,femalefashionadvice,2025,1,16704
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2012,0,62239
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2013,0,67424
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2014,0,71436
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2015,0,65278
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2016,0,62375
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2017,0,48470
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2018,1,40396
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2019,1,33631
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2020,1,23768
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2021,0,20400
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2022,0,23814
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2023,0,21439
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2024,0,24826
+vestidos_camisero,shirt dress,(?<!t-)(?<!t )\bshirt[- ]?dress(es)?\b,malefashionadvice,2025,0,15688
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2012,2,8298
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2013,1,10950
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2014,2,10467
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2015,7,9983
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2016,2,9330
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2017,3,9223
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2018,3,13176
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2019,6,14760
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2020,3,12511
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2021,2,13392
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2022,9,16830
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2023,3,14097
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2024,2,17947
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,femalefashionadvice,2025,2,16704
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2012,0,62239
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2013,0,67424
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2014,0,71436
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2015,0,65278
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2016,0,62375
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2017,0,48470
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2018,0,40396
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2019,0,33631
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2020,0,23768
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2021,0,20400
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2022,0,23814
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2023,0,21439
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2024,0,24826
+vestidos_cruzado,wrap dress,\bwrap[- ]?dress(es)?\b,malefashionadvice,2025,0,15688
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2012,11,8298
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2013,10,10950
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2014,13,10467
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2015,8,9983
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2016,6,9330
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2017,9,9223
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2018,17,13176
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2019,7,14760
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2020,11,12511
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2021,12,13392
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2022,18,16830
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2023,7,14097
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2024,12,17947
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,femalefashionadvice,2025,18,16704
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2012,0,62239
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2013,0,67424
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2014,0,71436
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2015,0,65278
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2016,0,62375
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2017,0,48470
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2018,0,40396
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2019,0,33631
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2020,0,23768
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2021,0,20400
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2022,0,23814
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2023,3,21439
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2024,0,24826
+vestidos_tubo,bodycon,\bbodycon\b|\bsheath dress(es)?\b,malefashionadvice,2025,0,15688
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2012,7,8298
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2013,6,10950
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2014,8,10467
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2015,4,9983
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2016,2,9330
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2017,2,9223
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2018,4,13176
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2019,2,14760
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2020,3,12511
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2021,6,13392
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2022,7,16830
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2023,5,14097
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2024,6,17947
+vestidos_evase,a-line,\ba[- ]line\b,femalefashionadvice,2025,8,16704
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2012,4,62239
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2013,8,67424
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2014,5,71436
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2015,2,65278
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2016,1,62375
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2017,0,48470
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2018,2,40396
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2019,1,33631
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2020,2,23768
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2021,2,20400
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2022,2,23814
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2023,1,21439
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2024,1,24826
+vestidos_evase,a-line,\ba[- ]line\b,malefashionadvice,2025,1,15688
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2012,57,8298
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2013,65,10950
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2014,78,10467
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2015,89,9983
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2016,55,9330
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2017,86,9223
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2018,135,13176
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2019,165,14760
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2020,120,12511
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2021,118,13392
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2022,151,16830
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2023,130,14097
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2024,144,17947
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,femalefashionadvice,2025,104,16704
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2012,652,62239
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2013,951,67424
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2014,1190,71436
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2015,1249,65278
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2016,1404,62375
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2017,1302,48470
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2018,1170,40396
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2019,964,33631
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2020,783,23768
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2021,665,20400
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2022,777,23814
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2023,645,21439
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2024,908,24826
+remeras_remera,t-shirt,\bt[- ]?shirts?\b|\btees?\b,malefashionadvice,2025,645,15688
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2012,9,8298
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2013,22,10950
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2014,16,10467
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2015,15,9983
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2016,18,9330
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2017,13,9223
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2018,30,13176
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2019,22,14760
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2020,12,12511
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2021,29,13392
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2022,47,16830
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2023,27,14097
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2024,42,17947
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,femalefashionadvice,2025,29,16704
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2012,38,62239
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2013,69,67424
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2014,71,71436
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2015,71,65278
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2016,59,62375
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2017,38,48470
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2018,34,40396
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2019,32,33631
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2020,22,23768
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2021,29,20400
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2022,35,23814
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2023,34,21439
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2024,56,24826
+remeras_musculosa,tank top,\btank[- ]?tops?\b|\btanks\b,malefashionadvice,2025,39,15688
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2012,37,8298
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2013,33,10950
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2014,33,10467
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2015,30,9983
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2016,12,9330
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2017,24,9223
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2018,48,13176
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2019,47,14760
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2020,23,12511
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2021,29,13392
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2022,56,16830
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2023,22,14097
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2024,33,17947
+camisas_blusa,blouse,\bblouses?\b,femalefashionadvice,2025,42,16704
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2012,1,62239
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2013,1,67424
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2014,3,71436
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2015,2,65278
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2016,3,62375
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2017,3,48470
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2018,7,40396
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2019,6,33631
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2020,5,23768
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2021,2,20400
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2022,1,23814
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2023,1,21439
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2024,1,24826
+camisas_blusa,blouse,\bblouses?\b,malefashionadvice,2025,0,15688
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2012,1,8298
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2013,2,10950
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2014,3,10467
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2015,9,9983
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2016,2,9330
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2017,5,9223
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2018,13,13176
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2019,29,14760
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2020,10,12511
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2021,18,13392
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2022,13,16830
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2023,17,14097
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2024,11,17947
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,femalefashionadvice,2025,12,16704
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2012,19,62239
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2013,16,67424
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2014,13,71436
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2015,41,65278
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2016,62,62375
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2017,60,48470
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2018,40,40396
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2019,54,33631
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2020,35,23768
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2021,21,20400
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2022,31,23814
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2023,39,21439
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2024,33,24826
+buzos_polera,turtleneck,\bturtle[- ]?necks?\b,malefashionadvice,2025,24,15688
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2012,49,8298
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2013,60,10950
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2014,53,10467
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2015,34,9983
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2016,30,9330
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2017,17,9223
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2018,20,13176
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2019,35,14760
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2020,28,12511
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2021,29,13392
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2022,41,16830
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2023,30,14097
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2024,35,17947
+buzos_cardigan,cardigan,\bcardigans?\b,femalefashionadvice,2025,49,16704
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2012,407,62239
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2013,383,67424
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2014,397,71436
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2015,301,65278
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2016,244,62375
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2017,147,48470
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2018,112,40396
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2019,72,33631
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2020,58,23768
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2021,38,20400
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2022,56,23814
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2023,41,21439
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2024,62,24826
+buzos_cardigan,cardigan,\bcardigans?\b,malefashionadvice,2025,35,15688
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2012,4,8298
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2013,5,10950
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2014,3,10467
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2015,1,9983
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2016,8,9330
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2017,1,9223
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2018,5,13176
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2019,6,14760
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2020,3,12511
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2021,3,13392
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2022,3,16830
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2023,4,14097
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2024,4,17947
+abrigos_campera,bomber jacket,\bbombers?\b,femalefashionadvice,2025,2,16704
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2012,47,62239
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2013,131,67424
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2014,189,71436
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2015,353,65278
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2016,551,62375
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2017,313,48470
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2018,191,40396
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2019,159,33631
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2020,113,23768
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2021,65,20400
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2022,74,23814
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2023,69,21439
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2024,63,24826
+abrigos_campera,bomber jacket,\bbombers?\b,malefashionadvice,2025,57,15688
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2012,21,8298
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2013,37,10950
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2014,37,10467
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2015,37,9983
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2016,45,9330
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2017,49,9223
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2018,77,13176
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2019,88,14760
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2020,74,12511
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2021,75,13392
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2022,147,16830
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2023,98,14097
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2024,152,17947
+calzado_zapatillas,sneakers,\bsneakers?\b,femalefashionadvice,2025,80,16704
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2012,467,62239
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2013,581,67424
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2014,726,71436
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2015,949,65278
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2016,1003,62375
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2017,774,48470
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2018,621,40396
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2019,572,33631
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2020,315,23768
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2021,257,20400
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2022,351,23814
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2023,277,21439
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2024,354,24826
+calzado_zapatillas,sneakers,\bsneakers?\b,malefashionadvice,2025,276,15688
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2012,11,8298
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2013,10,10950
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2014,15,10467
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2015,9,9983
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2016,14,9330
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2017,14,9223
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2018,14,13176
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2019,17,14760
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2020,12,12511
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2021,16,13392
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2022,47,16830
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2023,39,14097
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2024,66,17947
+calzado_mocasines,loafers,\bloafers?\b,femalefashionadvice,2025,36,16704
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2012,178,62239
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2013,252,67424
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2014,282,71436
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2015,193,65278
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2016,206,62375
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2017,186,48470
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2018,122,40396
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2019,102,33631
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2020,69,23768
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2021,73,20400
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2022,94,23814
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2023,99,21439
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2024,192,24826
+calzado_mocasines,loafers,\bloafers?\b,malefashionadvice,2025,217,15688
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2012,9,8298
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2013,25,10950
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2014,30,10467
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2015,48,9983
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2016,30,9330
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2017,16,9223
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2018,26,13176
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2019,35,14760
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2020,14,12511
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2021,31,13392
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2022,50,16830
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2023,31,14097
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2024,27,17947
+accesorios_tote,tote,\btotes?\b,femalefashionadvice,2025,33,16704
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2012,6,62239
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2013,12,67424
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2014,10,71436
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2015,11,65278
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2016,10,62375
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2017,15,48470
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2018,10,40396
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2019,9,33631
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2020,5,23768
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2021,7,20400
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2022,7,23814
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2023,13,21439
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2024,8,24826
+accesorios_tote,tote,\btotes?\b,malefashionadvice,2025,9,15688
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2012,1,8298
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2013,4,10950
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2014,6,10467
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2015,18,9983
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2016,16,9330
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2017,11,9223
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2018,21,13176
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2019,42,14760
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2020,18,12511
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2021,17,13392
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2022,34,16830
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2023,29,14097
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2024,36,17947
+enteritos_largo,jumpsuit,\bjumpsuits?\b,femalefashionadvice,2025,18,16704
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2012,0,62239
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2013,2,67424
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2014,2,71436
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2015,5,65278
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2016,2,62375
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2017,7,48470
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2018,4,40396
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2019,6,33631
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2020,8,23768
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2021,5,20400
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2022,4,23814
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2023,7,21439
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2024,2,24826
+enteritos_largo,jumpsuit,\bjumpsuits?\b,malefashionadvice,2025,2,15688
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2012,8,8298
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2013,3,10950
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2014,10,10467
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2015,22,9983
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2016,20,9330
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2017,8,9223
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2018,13,13176
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2019,15,14760
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2020,5,12511
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2021,7,13392
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2022,6,16830
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2023,8,14097
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2024,10,17947
+enteritos_corto,romper,\brompers?\b,femalefashionadvice,2025,6,16704
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2012,0,62239
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2013,0,67424
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2014,0,71436
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2015,1,65278
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2016,2,62375
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2017,24,48470
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2018,3,40396
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2019,7,33631
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2020,2,23768
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2021,0,20400
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2022,1,23814
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2023,0,21439
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2024,0,24826
+enteritos_corto,romper,\brompers?\b,malefashionadvice,2025,0,15688
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2012,2,8298
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2013,2,10950
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2014,4,10467
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2015,3,9983
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2016,2,9330
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2017,7,9223
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2018,8,13176
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2019,12,14760
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2020,2,12511
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2021,8,13392
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2022,13,16830
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2023,6,14097
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2024,6,17947
+enteritos_jardinero,overalls,\boveralls\b,femalefashionadvice,2025,5,16704
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2012,5,62239
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2013,10,67424
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2014,10,71436
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2015,20,65278
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2016,16,62375
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2017,18,48470
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2018,12,40396
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2019,11,33631
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2020,23,23768
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2021,8,20400
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2022,12,23814
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2023,22,21439
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2024,6,24826
+enteritos_jardinero,overalls,\boveralls\b,malefashionadvice,2025,15,15688
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2012,2,8298
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2013,3,10950
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2014,4,10467
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2015,7,9983
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2016,7,9330
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2017,1,9223
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2018,8,13176
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2019,15,14760
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2020,8,12511
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2021,7,13392
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2022,38,16830
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2023,29,14097
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2024,26,17947
+fleece,fleece,\bfleeces?\b,femalefashionadvice,2025,18,16704
+fleece,fleece,\bfleeces?\b,malefashionadvice,2012,23,62239
+fleece,fleece,\bfleeces?\b,malefashionadvice,2013,48,67424
+fleece,fleece,\bfleeces?\b,malefashionadvice,2014,57,71436
+fleece,fleece,\bfleeces?\b,malefashionadvice,2015,54,65278
+fleece,fleece,\bfleeces?\b,malefashionadvice,2016,64,62375
+fleece,fleece,\bfleeces?\b,malefashionadvice,2017,62,48470
+fleece,fleece,\bfleeces?\b,malefashionadvice,2018,44,40396
+fleece,fleece,\bfleeces?\b,malefashionadvice,2019,65,33631
+fleece,fleece,\bfleeces?\b,malefashionadvice,2020,60,23768
+fleece,fleece,\bfleeces?\b,malefashionadvice,2021,36,20400
+fleece,fleece,\bfleeces?\b,malefashionadvice,2022,59,23814
+fleece,fleece,\bfleeces?\b,malefashionadvice,2023,37,21439
+fleece,fleece,\bfleeces?\b,malefashionadvice,2024,39,24826
+fleece,fleece,\bfleeces?\b,malefashionadvice,2025,24,15688
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2012,3,8298
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2013,1,10950
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2014,0,10467
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2015,2,9983
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2016,0,9330
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2017,0,9223
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2018,0,13176
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2019,2,14760
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2020,0,12511
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2021,1,13392
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2022,3,16830
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2023,2,14097
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2024,3,17947
+cable,cable knit,\bcable[- ]?knits?\b,femalefashionadvice,2025,1,16704
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2012,14,62239
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2013,24,67424
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2014,24,71436
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2015,20,65278
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2016,14,62375
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2017,9,48470
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2018,6,40396
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2019,2,33631
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2020,1,23768
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2021,2,20400
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2022,3,23814
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2023,5,21439
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2024,5,24826
+cable,cable knit,\bcable[- ]?knits?\b,malefashionadvice,2025,5,15688
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2012,1,8298
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2013,0,10950
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2014,0,10467
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2015,2,9983
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2016,0,9330
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2017,0,9223
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2018,2,13176
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2019,0,14760
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2020,0,12511
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2021,0,13392
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2022,0,16830
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2023,0,14097
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2024,2,17947
+boucle,bouclé,\bboucl[eé]\b,femalefashionadvice,2025,1,16704
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2012,0,62239
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2013,1,67424
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2014,3,71436
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2015,1,65278
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2016,0,62375
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2017,0,48470
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2018,0,40396
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2019,0,33631
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2020,0,23768
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2021,3,20400
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2022,0,23814
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2023,0,21439
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2024,0,24826
+boucle,bouclé,\bboucl[eé]\b,malefashionadvice,2025,0,15688
+algodon,cotton,\bcotton\b,femalefashionadvice,2012,5,8298
+algodon,cotton,\bcotton\b,femalefashionadvice,2013,17,10950
+algodon,cotton,\bcotton\b,femalefashionadvice,2014,15,10467
+algodon,cotton,\bcotton\b,femalefashionadvice,2015,21,9983
+algodon,cotton,\bcotton\b,femalefashionadvice,2016,16,9330
+algodon,cotton,\bcotton\b,femalefashionadvice,2017,15,9223
+algodon,cotton,\bcotton\b,femalefashionadvice,2018,32,13176
+algodon,cotton,\bcotton\b,femalefashionadvice,2019,40,14760
+algodon,cotton,\bcotton\b,femalefashionadvice,2020,44,12511
+algodon,cotton,\bcotton\b,femalefashionadvice,2021,42,13392
+algodon,cotton,\bcotton\b,femalefashionadvice,2022,63,16830
+algodon,cotton,\bcotton\b,femalefashionadvice,2023,76,14097
+algodon,cotton,\bcotton\b,femalefashionadvice,2024,88,17947
+algodon,cotton,\bcotton\b,femalefashionadvice,2025,81,16704
+algodon,cotton,\bcotton\b,malefashionadvice,2012,127,62239
+algodon,cotton,\bcotton\b,malefashionadvice,2013,189,67424
+algodon,cotton,\bcotton\b,malefashionadvice,2014,214,71436
+algodon,cotton,\bcotton\b,malefashionadvice,2015,204,65278
+algodon,cotton,\bcotton\b,malefashionadvice,2016,229,62375
+algodon,cotton,\bcotton\b,malefashionadvice,2017,168,48470
+algodon,cotton,\bcotton\b,malefashionadvice,2018,125,40396
+algodon,cotton,\bcotton\b,malefashionadvice,2019,142,33631
+algodon,cotton,\bcotton\b,malefashionadvice,2020,106,23768
+algodon,cotton,\bcotton\b,malefashionadvice,2021,145,20400
+algodon,cotton,\bcotton\b,malefashionadvice,2022,123,23814
+algodon,cotton,\bcotton\b,malefashionadvice,2023,129,21439
+algodon,cotton,\bcotton\b,malefashionadvice,2024,197,24826
+algodon,cotton,\bcotton\b,malefashionadvice,2025,184,15688
+popelina,poplin,\bpoplin\b,femalefashionadvice,2012,0,8298
+popelina,poplin,\bpoplin\b,femalefashionadvice,2013,0,10950
+popelina,poplin,\bpoplin\b,femalefashionadvice,2014,1,10467
+popelina,poplin,\bpoplin\b,femalefashionadvice,2015,0,9983
+popelina,poplin,\bpoplin\b,femalefashionadvice,2016,1,9330
+popelina,poplin,\bpoplin\b,femalefashionadvice,2017,0,9223
+popelina,poplin,\bpoplin\b,femalefashionadvice,2018,1,13176
+popelina,poplin,\bpoplin\b,femalefashionadvice,2019,0,14760
+popelina,poplin,\bpoplin\b,femalefashionadvice,2020,0,12511
+popelina,poplin,\bpoplin\b,femalefashionadvice,2021,0,13392
+popelina,poplin,\bpoplin\b,femalefashionadvice,2022,1,16830
+popelina,poplin,\bpoplin\b,femalefashionadvice,2023,2,14097
+popelina,poplin,\bpoplin\b,femalefashionadvice,2024,1,17947
+popelina,poplin,\bpoplin\b,femalefashionadvice,2025,0,16704
+popelina,poplin,\bpoplin\b,malefashionadvice,2012,6,62239
+popelina,poplin,\bpoplin\b,malefashionadvice,2013,7,67424
+popelina,poplin,\bpoplin\b,malefashionadvice,2014,7,71436
+popelina,poplin,\bpoplin\b,malefashionadvice,2015,4,65278
+popelina,poplin,\bpoplin\b,malefashionadvice,2016,10,62375
+popelina,poplin,\bpoplin\b,malefashionadvice,2017,5,48470
+popelina,poplin,\bpoplin\b,malefashionadvice,2018,4,40396
+popelina,poplin,\bpoplin\b,malefashionadvice,2019,5,33631
+popelina,poplin,\bpoplin\b,malefashionadvice,2020,0,23768
+popelina,poplin,\bpoplin\b,malefashionadvice,2021,2,20400
+popelina,poplin,\bpoplin\b,malefashionadvice,2022,0,23814
+popelina,poplin,\bpoplin\b,malefashionadvice,2023,2,21439
+popelina,poplin,\bpoplin\b,malefashionadvice,2024,3,24826
+popelina,poplin,\bpoplin\b,malefashionadvice,2025,3,15688
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2012,7,8298
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2013,1,10950
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2014,4,10467
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2015,5,9983
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2016,2,9330
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2017,4,9223
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2018,4,13176
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2019,8,14760
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2020,3,12511
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2021,2,13392
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2022,6,16830
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2023,5,14097
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2024,9,17947
+corduroy,corduroy,\bcorduroys?\b,femalefashionadvice,2025,3,16704
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2012,98,62239
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2013,69,67424
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2014,45,71436
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2015,44,65278
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2016,48,62375
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2017,38,48470
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2018,43,40396
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2019,27,33631
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2020,26,23768
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2021,26,20400
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2022,34,23814
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2023,24,21439
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2024,46,24826
+corduroy,corduroy,\bcorduroys?\b,malefashionadvice,2025,28,15688
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2012,11,8298
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2013,19,10950
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2014,39,10467
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2015,25,9983
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2016,20,9330
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2017,27,9223
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2018,49,13176
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2019,37,14760
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2020,37,12511
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2021,62,13392
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2022,72,16830
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2023,65,14097
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2024,66,17947
+lana,wool,\bwool(en|l?y)?\b,femalefashionadvice,2025,88,16704
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2012,242,62239
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2013,318,67424
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2014,388,71436
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2015,389,65278
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2016,387,62375
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2017,294,48470
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2018,201,40396
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2019,187,33631
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2020,145,23768
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2021,85,20400
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2022,113,23814
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2023,151,21439
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2024,186,24826
+lana,wool,\bwool(en|l?y)?\b,malefashionadvice,2025,191,15688
+merino,merino,\bmerino\b,femalefashionadvice,2012,2,8298
+merino,merino,\bmerino\b,femalefashionadvice,2013,2,10950
+merino,merino,\bmerino\b,femalefashionadvice,2014,0,10467
+merino,merino,\bmerino\b,femalefashionadvice,2015,3,9983
+merino,merino,\bmerino\b,femalefashionadvice,2016,3,9330
+merino,merino,\bmerino\b,femalefashionadvice,2017,0,9223
+merino,merino,\bmerino\b,femalefashionadvice,2018,1,13176
+merino,merino,\bmerino\b,femalefashionadvice,2019,2,14760
+merino,merino,\bmerino\b,femalefashionadvice,2020,5,12511
+merino,merino,\bmerino\b,femalefashionadvice,2021,11,13392
+merino,merino,\bmerino\b,femalefashionadvice,2022,4,16830
+merino,merino,\bmerino\b,femalefashionadvice,2023,0,14097
+merino,merino,\bmerino\b,femalefashionadvice,2024,2,17947
+merino,merino,\bmerino\b,femalefashionadvice,2025,2,16704
+merino,merino,\bmerino\b,malefashionadvice,2012,14,62239
+merino,merino,\bmerino\b,malefashionadvice,2013,24,67424
+merino,merino,\bmerino\b,malefashionadvice,2014,54,71436
+merino,merino,\bmerino\b,malefashionadvice,2015,54,65278
+merino,merino,\bmerino\b,malefashionadvice,2016,56,62375
+merino,merino,\bmerino\b,malefashionadvice,2017,53,48470
+merino,merino,\bmerino\b,malefashionadvice,2018,28,40396
+merino,merino,\bmerino\b,malefashionadvice,2019,22,33631
+merino,merino,\bmerino\b,malefashionadvice,2020,20,23768
+merino,merino,\bmerino\b,malefashionadvice,2021,26,20400
+merino,merino,\bmerino\b,malefashionadvice,2022,16,23814
+merino,merino,\bmerino\b,malefashionadvice,2023,11,21439
+merino,merino,\bmerino\b,malefashionadvice,2024,22,24826
+merino,merino,\bmerino\b,malefashionadvice,2025,29,15688
+tweed,tweed,\btweed\b,femalefashionadvice,2012,0,8298
+tweed,tweed,\btweed\b,femalefashionadvice,2013,1,10950
+tweed,tweed,\btweed\b,femalefashionadvice,2014,4,10467
+tweed,tweed,\btweed\b,femalefashionadvice,2015,4,9983
+tweed,tweed,\btweed\b,femalefashionadvice,2016,1,9330
+tweed,tweed,\btweed\b,femalefashionadvice,2017,3,9223
+tweed,tweed,\btweed\b,femalefashionadvice,2018,1,13176
+tweed,tweed,\btweed\b,femalefashionadvice,2019,1,14760
+tweed,tweed,\btweed\b,femalefashionadvice,2020,2,12511
+tweed,tweed,\btweed\b,femalefashionadvice,2021,1,13392
+tweed,tweed,\btweed\b,femalefashionadvice,2022,6,16830
+tweed,tweed,\btweed\b,femalefashionadvice,2023,2,14097
+tweed,tweed,\btweed\b,femalefashionadvice,2024,5,17947
+tweed,tweed,\btweed\b,femalefashionadvice,2025,5,16704
+tweed,tweed,\btweed\b,malefashionadvice,2012,149,62239
+tweed,tweed,\btweed\b,malefashionadvice,2013,117,67424
+tweed,tweed,\btweed\b,malefashionadvice,2014,78,71436
+tweed,tweed,\btweed\b,malefashionadvice,2015,63,65278
+tweed,tweed,\btweed\b,malefashionadvice,2016,60,62375
+tweed,tweed,\btweed\b,malefashionadvice,2017,35,48470
+tweed,tweed,\btweed\b,malefashionadvice,2018,30,40396
+tweed,tweed,\btweed\b,malefashionadvice,2019,20,33631
+tweed,tweed,\btweed\b,malefashionadvice,2020,13,23768
+tweed,tweed,\btweed\b,malefashionadvice,2021,15,20400
+tweed,tweed,\btweed\b,malefashionadvice,2022,21,23814
+tweed,tweed,\btweed\b,malefashionadvice,2023,25,21439
+tweed,tweed,\btweed\b,malefashionadvice,2024,35,24826
+tweed,tweed,\btweed\b,malefashionadvice,2025,21,15688
+lino,linen,\blinen\b,femalefashionadvice,2012,1,8298
+lino,linen,\blinen\b,femalefashionadvice,2013,1,10950
+lino,linen,\blinen\b,femalefashionadvice,2014,6,10467
+lino,linen,\blinen\b,femalefashionadvice,2015,5,9983
+lino,linen,\blinen\b,femalefashionadvice,2016,1,9330
+lino,linen,\blinen\b,femalefashionadvice,2017,7,9223
+lino,linen,\blinen\b,femalefashionadvice,2018,12,13176
+lino,linen,\blinen\b,femalefashionadvice,2019,12,14760
+lino,linen,\blinen\b,femalefashionadvice,2020,15,12511
+lino,linen,\blinen\b,femalefashionadvice,2021,17,13392
+lino,linen,\blinen\b,femalefashionadvice,2022,30,16830
+lino,linen,\blinen\b,femalefashionadvice,2023,20,14097
+lino,linen,\blinen\b,femalefashionadvice,2024,36,17947
+lino,linen,\blinen\b,femalefashionadvice,2025,32,16704
+lino,linen,\blinen\b,malefashionadvice,2012,69,62239
+lino,linen,\blinen\b,malefashionadvice,2013,103,67424
+lino,linen,\blinen\b,malefashionadvice,2014,110,71436
+lino,linen,\blinen\b,malefashionadvice,2015,127,65278
+lino,linen,\blinen\b,malefashionadvice,2016,130,62375
+lino,linen,\blinen\b,malefashionadvice,2017,92,48470
+lino,linen,\blinen\b,malefashionadvice,2018,78,40396
+lino,linen,\blinen\b,malefashionadvice,2019,78,33631
+lino,linen,\blinen\b,malefashionadvice,2020,39,23768
+lino,linen,\blinen\b,malefashionadvice,2021,30,20400
+lino,linen,\blinen\b,malefashionadvice,2022,82,23814
+lino,linen,\blinen\b,malefashionadvice,2023,75,21439
+lino,linen,\blinen\b,malefashionadvice,2024,185,24826
+lino,linen,\blinen\b,malefashionadvice,2025,119,15688
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2012,13,8298
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2013,18,10950
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2014,18,10467
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2015,32,9983
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2016,11,9330
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2017,16,9223
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2018,39,13176
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2019,45,14760
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2020,36,12511
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2021,47,13392
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2022,57,16830
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2023,58,14097
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2024,54,17947
+seda,silk,\bsilk(y)?\b,femalefashionadvice,2025,37,16704
+seda,silk,\bsilk(y)?\b,malefashionadvice,2012,33,62239
+seda,silk,\bsilk(y)?\b,malefashionadvice,2013,32,67424
+seda,silk,\bsilk(y)?\b,malefashionadvice,2014,24,71436
+seda,silk,\bsilk(y)?\b,malefashionadvice,2015,28,65278
+seda,silk,\bsilk(y)?\b,malefashionadvice,2016,24,62375
+seda,silk,\bsilk(y)?\b,malefashionadvice,2017,40,48470
+seda,silk,\bsilk(y)?\b,malefashionadvice,2018,25,40396
+seda,silk,\bsilk(y)?\b,malefashionadvice,2019,33,33631
+seda,silk,\bsilk(y)?\b,malefashionadvice,2020,35,23768
+seda,silk,\bsilk(y)?\b,malefashionadvice,2021,14,20400
+seda,silk,\bsilk(y)?\b,malefashionadvice,2022,33,23814
+seda,silk,\bsilk(y)?\b,malefashionadvice,2023,17,21439
+seda,silk,\bsilk(y)?\b,malefashionadvice,2024,31,24826
+seda,silk,\bsilk(y)?\b,malefashionadvice,2025,22,15688
+satenseda,satin,\bsatin\b,femalefashionadvice,2012,4,8298
+satenseda,satin,\bsatin\b,femalefashionadvice,2013,3,10950
+satenseda,satin,\bsatin\b,femalefashionadvice,2014,3,10467
+satenseda,satin,\bsatin\b,femalefashionadvice,2015,2,9983
+satenseda,satin,\bsatin\b,femalefashionadvice,2016,3,9330
+satenseda,satin,\bsatin\b,femalefashionadvice,2017,2,9223
+satenseda,satin,\bsatin\b,femalefashionadvice,2018,8,13176
+satenseda,satin,\bsatin\b,femalefashionadvice,2019,2,14760
+satenseda,satin,\bsatin\b,femalefashionadvice,2020,9,12511
+satenseda,satin,\bsatin\b,femalefashionadvice,2021,9,13392
+satenseda,satin,\bsatin\b,femalefashionadvice,2022,25,16830
+satenseda,satin,\bsatin\b,femalefashionadvice,2023,13,14097
+satenseda,satin,\bsatin\b,femalefashionadvice,2024,32,17947
+satenseda,satin,\bsatin\b,femalefashionadvice,2025,16,16704
+satenseda,satin,\bsatin\b,malefashionadvice,2012,4,62239
+satenseda,satin,\bsatin\b,malefashionadvice,2013,3,67424
+satenseda,satin,\bsatin\b,malefashionadvice,2014,10,71436
+satenseda,satin,\bsatin\b,malefashionadvice,2015,5,65278
+satenseda,satin,\bsatin\b,malefashionadvice,2016,9,62375
+satenseda,satin,\bsatin\b,malefashionadvice,2017,7,48470
+satenseda,satin,\bsatin\b,malefashionadvice,2018,8,40396
+satenseda,satin,\bsatin\b,malefashionadvice,2019,5,33631
+satenseda,satin,\bsatin\b,malefashionadvice,2020,6,23768
+satenseda,satin,\bsatin\b,malefashionadvice,2021,3,20400
+satenseda,satin,\bsatin\b,malefashionadvice,2022,12,23814
+satenseda,satin,\bsatin\b,malefashionadvice,2023,4,21439
+satenseda,satin,\bsatin\b,malefashionadvice,2024,7,24826
+satenseda,satin,\bsatin\b,malefashionadvice,2025,4,15688
+poliester,polyester,\bpolyester\b,femalefashionadvice,2012,2,8298
+poliester,polyester,\bpolyester\b,femalefashionadvice,2013,3,10950
+poliester,polyester,\bpolyester\b,femalefashionadvice,2014,4,10467
+poliester,polyester,\bpolyester\b,femalefashionadvice,2015,9,9983
+poliester,polyester,\bpolyester\b,femalefashionadvice,2016,5,9330
+poliester,polyester,\bpolyester\b,femalefashionadvice,2017,8,9223
+poliester,polyester,\bpolyester\b,femalefashionadvice,2018,7,13176
+poliester,polyester,\bpolyester\b,femalefashionadvice,2019,13,14760
+poliester,polyester,\bpolyester\b,femalefashionadvice,2020,18,12511
+poliester,polyester,\bpolyester\b,femalefashionadvice,2021,8,13392
+poliester,polyester,\bpolyester\b,femalefashionadvice,2022,13,16830
+poliester,polyester,\bpolyester\b,femalefashionadvice,2023,26,14097
+poliester,polyester,\bpolyester\b,femalefashionadvice,2024,43,17947
+poliester,polyester,\bpolyester\b,femalefashionadvice,2025,27,16704
+poliester,polyester,\bpolyester\b,malefashionadvice,2012,19,62239
+poliester,polyester,\bpolyester\b,malefashionadvice,2013,23,67424
+poliester,polyester,\bpolyester\b,malefashionadvice,2014,26,71436
+poliester,polyester,\bpolyester\b,malefashionadvice,2015,32,65278
+poliester,polyester,\bpolyester\b,malefashionadvice,2016,49,62375
+poliester,polyester,\bpolyester\b,malefashionadvice,2017,41,48470
+poliester,polyester,\bpolyester\b,malefashionadvice,2018,26,40396
+poliester,polyester,\bpolyester\b,malefashionadvice,2019,28,33631
+poliester,polyester,\bpolyester\b,malefashionadvice,2020,31,23768
+poliester,polyester,\bpolyester\b,malefashionadvice,2021,31,20400
+poliester,polyester,\bpolyester\b,malefashionadvice,2022,29,23814
+poliester,polyester,\bpolyester\b,malefashionadvice,2023,24,21439
+poliester,polyester,\bpolyester\b,malefashionadvice,2024,45,24826
+poliester,polyester,\bpolyester\b,malefashionadvice,2025,40,15688
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2012,3,8298
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2013,3,10950
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2014,1,10467
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2015,3,9983
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2016,5,9330
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2017,2,9223
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2018,3,13176
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2019,5,14760
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2020,5,12511
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2021,6,13392
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2022,9,16830
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2023,8,14097
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2024,12,17947
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,femalefashionadvice,2025,3,16704
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2012,8,62239
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2013,19,67424
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2014,7,71436
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2015,16,65278
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2016,17,62375
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2017,9,48470
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2018,7,40396
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2019,9,33631
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2020,11,23768
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2021,11,20400
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2022,12,23814
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2023,13,21439
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2024,15,24826
+elastano,spandex,\bspandex\b|\blycra\b|\belastane\b,malefashionadvice,2025,15,15688
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2012,0,8298
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2013,0,10950
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2014,0,10467
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2015,1,9983
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2016,0,9330
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2017,4,9223
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2018,0,13176
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2019,1,14760
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2020,1,12511
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2021,1,13392
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2022,0,16830
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2023,0,14097
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2024,0,17947
+neoprene,neoprene,\bneoprene\b|\bscuba\b,femalefashionadvice,2025,1,16704
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2012,2,62239
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2013,1,67424
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2014,1,71436
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2015,2,65278
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2016,2,62375
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2017,0,48470
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2018,1,40396
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2019,2,33631
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2020,0,23768
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2021,0,20400
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2022,1,23814
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2023,0,21439
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2024,0,24826
+neoprene,neoprene,\bneoprene\b|\bscuba\b,malefashionadvice,2025,1,15688
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2012,6,8298
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2013,5,10950
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2014,6,10467
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2015,5,9983
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2016,5,9330
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2017,0,9223
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2018,3,13176
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2019,4,14760
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2020,3,12511
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2021,0,13392
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2022,6,16830
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2023,2,14097
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2024,4,17947
+gasa,chiffon,\bchiffon\b,femalefashionadvice,2025,3,16704
+gasa,chiffon,\bchiffon\b,malefashionadvice,2012,0,62239
+gasa,chiffon,\bchiffon\b,malefashionadvice,2013,0,67424
+gasa,chiffon,\bchiffon\b,malefashionadvice,2014,0,71436
+gasa,chiffon,\bchiffon\b,malefashionadvice,2015,0,65278
+gasa,chiffon,\bchiffon\b,malefashionadvice,2016,0,62375
+gasa,chiffon,\bchiffon\b,malefashionadvice,2017,2,48470
+gasa,chiffon,\bchiffon\b,malefashionadvice,2018,2,40396
+gasa,chiffon,\bchiffon\b,malefashionadvice,2019,0,33631
+gasa,chiffon,\bchiffon\b,malefashionadvice,2020,0,23768
+gasa,chiffon,\bchiffon\b,malefashionadvice,2021,0,20400
+gasa,chiffon,\bchiffon\b,malefashionadvice,2022,0,23814
+gasa,chiffon,\bchiffon\b,malefashionadvice,2023,1,21439
+gasa,chiffon,\bchiffon\b,malefashionadvice,2024,0,24826
+gasa,chiffon,\bchiffon\b,malefashionadvice,2025,0,15688
+tul,tulle,\btulle\b,femalefashionadvice,2012,1,8298
+tul,tulle,\btulle\b,femalefashionadvice,2013,0,10950
+tul,tulle,\btulle\b,femalefashionadvice,2014,3,10467
+tul,tulle,\btulle\b,femalefashionadvice,2015,2,9983
+tul,tulle,\btulle\b,femalefashionadvice,2016,4,9330
+tul,tulle,\btulle\b,femalefashionadvice,2017,0,9223
+tul,tulle,\btulle\b,femalefashionadvice,2018,8,13176
+tul,tulle,\btulle\b,femalefashionadvice,2019,1,14760
+tul,tulle,\btulle\b,femalefashionadvice,2020,1,12511
+tul,tulle,\btulle\b,femalefashionadvice,2021,3,13392
+tul,tulle,\btulle\b,femalefashionadvice,2022,3,16830
+tul,tulle,\btulle\b,femalefashionadvice,2023,3,14097
+tul,tulle,\btulle\b,femalefashionadvice,2024,3,17947
+tul,tulle,\btulle\b,femalefashionadvice,2025,2,16704
+tul,tulle,\btulle\b,malefashionadvice,2012,0,62239
+tul,tulle,\btulle\b,malefashionadvice,2013,0,67424
+tul,tulle,\btulle\b,malefashionadvice,2014,0,71436
+tul,tulle,\btulle\b,malefashionadvice,2015,0,65278
+tul,tulle,\btulle\b,malefashionadvice,2016,0,62375
+tul,tulle,\btulle\b,malefashionadvice,2017,0,48470
+tul,tulle,\btulle\b,malefashionadvice,2018,0,40396
+tul,tulle,\btulle\b,malefashionadvice,2019,0,33631
+tul,tulle,\btulle\b,malefashionadvice,2020,0,23768
+tul,tulle,\btulle\b,malefashionadvice,2021,0,20400
+tul,tulle,\btulle\b,malefashionadvice,2022,0,23814
+tul,tulle,\btulle\b,malefashionadvice,2023,1,21439
+tul,tulle,\btulle\b,malefashionadvice,2024,0,24826
+tul,tulle,\btulle\b,malefashionadvice,2025,0,15688
+organza,organza,\borganza\b,femalefashionadvice,2012,0,8298
+organza,organza,\borganza\b,femalefashionadvice,2013,0,10950
+organza,organza,\borganza\b,femalefashionadvice,2014,0,10467
+organza,organza,\borganza\b,femalefashionadvice,2015,0,9983
+organza,organza,\borganza\b,femalefashionadvice,2016,0,9330
+organza,organza,\borganza\b,femalefashionadvice,2017,0,9223
+organza,organza,\borganza\b,femalefashionadvice,2018,0,13176
+organza,organza,\borganza\b,femalefashionadvice,2019,0,14760
+organza,organza,\borganza\b,femalefashionadvice,2020,1,12511
+organza,organza,\borganza\b,femalefashionadvice,2021,0,13392
+organza,organza,\borganza\b,femalefashionadvice,2022,2,16830
+organza,organza,\borganza\b,femalefashionadvice,2023,3,14097
+organza,organza,\borganza\b,femalefashionadvice,2024,0,17947
+organza,organza,\borganza\b,femalefashionadvice,2025,1,16704
+organza,organza,\borganza\b,malefashionadvice,2012,0,62239
+organza,organza,\borganza\b,malefashionadvice,2013,0,67424
+organza,organza,\borganza\b,malefashionadvice,2014,0,71436
+organza,organza,\borganza\b,malefashionadvice,2015,0,65278
+organza,organza,\borganza\b,malefashionadvice,2016,0,62375
+organza,organza,\borganza\b,malefashionadvice,2017,0,48470
+organza,organza,\borganza\b,malefashionadvice,2018,0,40396
+organza,organza,\borganza\b,malefashionadvice,2019,0,33631
+organza,organza,\borganza\b,malefashionadvice,2020,0,23768
+organza,organza,\borganza\b,malefashionadvice,2021,0,20400
+organza,organza,\borganza\b,malefashionadvice,2022,0,23814
+organza,organza,\borganza\b,malefashionadvice,2023,1,21439
+organza,organza,\borganza\b,malefashionadvice,2024,0,24826
+organza,organza,\borganza\b,malefashionadvice,2025,0,15688
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2012,0,8298
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2013,0,10950
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2014,5,10467
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2015,3,9983
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2016,7,9330
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2017,5,9223
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2018,3,13176
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2019,7,14760
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2020,10,12511
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2021,8,13392
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2022,9,16830
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2023,5,14097
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2024,19,17947
+bordado,embroidery,\bembroider(ed|y)\b,femalefashionadvice,2025,18,16704
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2012,8,62239
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2013,8,67424
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2014,11,71436
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2015,15,65278
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2016,19,62375
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2017,23,48470
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2018,18,40396
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2019,16,33631
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2020,9,23768
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2021,7,20400
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2022,11,23814
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2023,3,21439
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2024,15,24826
+bordado,embroidery,\bembroider(ed|y)\b,malefashionadvice,2025,16,15688
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2012,4,8298
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2013,2,10950
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2014,3,10467
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2015,2,9983
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2016,0,9330
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2017,2,9223
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2018,2,13176
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2019,7,14760
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2020,2,12511
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2021,2,13392
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2022,4,16830
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2023,3,14097
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2024,7,17947
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,femalefashionadvice,2025,6,16704
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2012,0,62239
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2013,0,67424
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2014,0,71436
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2015,0,65278
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2016,4,62375
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2017,0,48470
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2018,2,40396
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2019,0,33631
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2020,0,23768
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2021,2,20400
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2022,0,23814
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2023,10,21439
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2024,2,24826
+volados,ruffles,\bruffle[sd]?\b|\bruffly\b,malefashionadvice,2025,0,15688
+tachas,studded,\bstudded\b,femalefashionadvice,2012,1,8298
+tachas,studded,\bstudded\b,femalefashionadvice,2013,6,10950
+tachas,studded,\bstudded\b,femalefashionadvice,2014,1,10467
+tachas,studded,\bstudded\b,femalefashionadvice,2015,0,9983
+tachas,studded,\bstudded\b,femalefashionadvice,2016,1,9330
+tachas,studded,\bstudded\b,femalefashionadvice,2017,1,9223
+tachas,studded,\bstudded\b,femalefashionadvice,2018,1,13176
+tachas,studded,\bstudded\b,femalefashionadvice,2019,0,14760
+tachas,studded,\bstudded\b,femalefashionadvice,2020,0,12511
+tachas,studded,\bstudded\b,femalefashionadvice,2021,2,13392
+tachas,studded,\bstudded\b,femalefashionadvice,2022,0,16830
+tachas,studded,\bstudded\b,femalefashionadvice,2023,1,14097
+tachas,studded,\bstudded\b,femalefashionadvice,2024,0,17947
+tachas,studded,\bstudded\b,femalefashionadvice,2025,2,16704
+tachas,studded,\bstudded\b,malefashionadvice,2012,1,62239
+tachas,studded,\bstudded\b,malefashionadvice,2013,0,67424
+tachas,studded,\bstudded\b,malefashionadvice,2014,0,71436
+tachas,studded,\bstudded\b,malefashionadvice,2015,2,65278
+tachas,studded,\bstudded\b,malefashionadvice,2016,0,62375
+tachas,studded,\bstudded\b,malefashionadvice,2017,0,48470
+tachas,studded,\bstudded\b,malefashionadvice,2018,1,40396
+tachas,studded,\bstudded\b,malefashionadvice,2019,5,33631
+tachas,studded,\bstudded\b,malefashionadvice,2020,1,23768
+tachas,studded,\bstudded\b,malefashionadvice,2021,0,20400
+tachas,studded,\bstudded\b,malefashionadvice,2022,0,23814
+tachas,studded,\bstudded\b,malefashionadvice,2023,1,21439
+tachas,studded,\bstudded\b,malefashionadvice,2024,1,24826
+tachas,studded,\bstudded\b,malefashionadvice,2025,1,15688
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2012,1,8298
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2013,5,10950
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2014,4,10467
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2015,3,9983
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2016,0,9330
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2017,4,9223
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2018,1,13176
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2019,2,14760
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2020,5,12511
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2021,7,13392
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2022,6,16830
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2023,6,14097
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2024,9,17947
+cutouts,cut-out,\bcut[- ]?outs?\b,femalefashionadvice,2025,6,16704
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2012,1,62239
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2013,2,67424
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2014,1,71436
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2015,0,65278
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2016,2,62375
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2017,1,48470
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2018,1,40396
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2019,1,33631
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2020,3,23768
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2021,0,20400
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2022,5,23814
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2023,3,21439
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2024,0,24826
+cutouts,cut-out,\bcut[- ]?outs?\b,malefashionadvice,2025,1,15688
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2012,8,8298
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2013,11,10950
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2014,7,10467
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2015,4,9983
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2016,4,9330
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2017,4,9223
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2018,4,13176
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2019,4,14760
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2020,14,12511
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2021,9,13392
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2022,15,16830
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2023,12,14097
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2024,17,17947
+plisado,pleated,\bpleat(ed|s)?\b,femalefashionadvice,2025,14,16704
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2012,34,62239
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2013,20,67424
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2014,19,71436
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2015,20,65278
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2016,22,62375
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2017,15,48470
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2018,19,40396
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2019,24,33631
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2020,8,23768
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2021,13,20400
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2022,21,23814
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2023,26,21439
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2024,34,24826
+plisado,pleated,\bpleat(ed|s)?\b,malefashionadvice,2025,29,15688
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2012,1,8298
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2013,6,10950
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2014,4,10467
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2015,1,9983
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2016,1,9330
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2017,1,9223
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2018,5,13176
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2019,10,14760
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2020,7,12511
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2021,17,13392
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2022,18,16830
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2023,14,14097
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2024,18,17947
+acolchado,quilted,\bquilted\b|\bpuffers?\b,femalefashionadvice,2025,17,16704
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2012,50,62239
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2013,52,67424
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2014,61,71436
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2015,76,65278
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2016,71,62375
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2017,44,48470
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2018,43,40396
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2019,27,33631
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2020,25,23768
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2021,27,20400
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2022,36,23814
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2023,59,21439
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2024,41,24826
+acolchado,quilted,\bquilted\b|\bpuffers?\b,malefashionadvice,2025,41,15688
+flecos,fringe,\bfringed?\b,femalefashionadvice,2012,2,8298
+flecos,fringe,\bfringed?\b,femalefashionadvice,2013,3,10950
+flecos,fringe,\bfringed?\b,femalefashionadvice,2014,1,10467
+flecos,fringe,\bfringed?\b,femalefashionadvice,2015,3,9983
+flecos,fringe,\bfringed?\b,femalefashionadvice,2016,2,9330
+flecos,fringe,\bfringed?\b,femalefashionadvice,2017,2,9223
+flecos,fringe,\bfringed?\b,femalefashionadvice,2018,4,13176
+flecos,fringe,\bfringed?\b,femalefashionadvice,2019,1,14760
+flecos,fringe,\bfringed?\b,femalefashionadvice,2020,1,12511
+flecos,fringe,\bfringed?\b,femalefashionadvice,2021,1,13392
+flecos,fringe,\bfringed?\b,femalefashionadvice,2022,2,16830
+flecos,fringe,\bfringed?\b,femalefashionadvice,2023,3,14097
+flecos,fringe,\bfringed?\b,femalefashionadvice,2024,1,17947
+flecos,fringe,\bfringed?\b,femalefashionadvice,2025,3,16704
+flecos,fringe,\bfringed?\b,malefashionadvice,2012,7,62239
+flecos,fringe,\bfringed?\b,malefashionadvice,2013,6,67424
+flecos,fringe,\bfringed?\b,malefashionadvice,2014,4,71436
+flecos,fringe,\bfringed?\b,malefashionadvice,2015,6,65278
+flecos,fringe,\bfringed?\b,malefashionadvice,2016,4,62375
+flecos,fringe,\bfringed?\b,malefashionadvice,2017,1,48470
+flecos,fringe,\bfringed?\b,malefashionadvice,2018,3,40396
+flecos,fringe,\bfringed?\b,malefashionadvice,2019,5,33631
+flecos,fringe,\bfringed?\b,malefashionadvice,2020,5,23768
+flecos,fringe,\bfringed?\b,malefashionadvice,2021,1,20400
+flecos,fringe,\bfringed?\b,malefashionadvice,2022,4,23814
+flecos,fringe,\bfringed?\b,malefashionadvice,2023,0,21439
+flecos,fringe,\bfringed?\b,malefashionadvice,2024,1,24826
+flecos,fringe,\bfringed?\b,malefashionadvice,2025,0,15688
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2012,15,8298
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2013,9,10950
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2014,7,10467
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2015,11,9983
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2016,2,9330
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2017,2,9223
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2018,7,13176
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2019,13,14760
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2020,9,12511
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2021,4,13392
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2022,9,16830
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2023,7,14097
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2024,20,17947
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,femalefashionadvice,2025,16,16704
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2012,3,62239
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2013,2,67424
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2014,3,71436
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2015,2,65278
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2016,4,62375
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2017,7,48470
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2018,7,40396
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2019,6,33631
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2020,0,23768
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2021,1,20400
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2022,3,23814
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2023,8,21439
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2024,2,24826
+pedreria,sequins,\bsequin(s|ned)?\b|\bbeaded\b,malefashionadvice,2025,1,15688
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2012,3,8298
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2013,2,10950
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2014,1,10467
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2015,0,9983
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2016,1,9330
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2017,2,9223
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2018,4,13176
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2019,3,14760
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2020,2,12511
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2021,0,13392
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2022,1,16830
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2023,0,14097
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2024,0,17947
+camo,camo,\bcamo\b|\bcamouflage\b,femalefashionadvice,2025,2,16704
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2012,60,62239
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2013,73,67424
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2014,46,71436
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2015,51,65278
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2016,61,62375
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2017,32,48470
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2018,34,40396
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2019,24,33631
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2020,19,23768
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2021,5,20400
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2022,7,23814
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2023,5,21439
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2024,14,24826
+camo,camo,\bcamo\b|\bcamouflage\b,malefashionadvice,2025,5,15688
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2012,1,8298
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2013,0,10950
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2014,1,10467
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2015,0,9983
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2016,0,9330
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2017,1,9223
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2018,0,13176
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2019,1,14760
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2020,2,12511
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2021,2,13392
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2022,0,16830
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2023,2,14097
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2024,2,17947
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,femalefashionadvice,2025,0,16704
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2012,3,62239
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2013,5,67424
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2014,10,71436
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2015,4,65278
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2016,6,62375
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2017,2,48470
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2018,4,40396
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2019,9,33631
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2020,5,23768
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2021,3,20400
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2022,4,23814
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2023,4,21439
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2024,2,24826
+tiedye,tie-dye,\btie[- ]?dye[ds]?\b,malefashionadvice,2025,0,15688
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2012,1,8298
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2013,0,10950
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2014,0,10467
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2015,0,9983
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2016,0,9330
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2017,0,9223
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2018,0,13176
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2019,0,14760
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2020,0,12511
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2021,0,13392
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2022,0,16830
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2023,0,14097
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2024,2,17947
+espiga,herringbone,\bherringbone\b,femalefashionadvice,2025,0,16704
+espiga,herringbone,\bherringbone\b,malefashionadvice,2012,35,62239
+espiga,herringbone,\bherringbone\b,malefashionadvice,2013,32,67424
+espiga,herringbone,\bherringbone\b,malefashionadvice,2014,28,71436
+espiga,herringbone,\bherringbone\b,malefashionadvice,2015,22,65278
+espiga,herringbone,\bherringbone\b,malefashionadvice,2016,17,62375
+espiga,herringbone,\bherringbone\b,malefashionadvice,2017,13,48470
+espiga,herringbone,\bherringbone\b,malefashionadvice,2018,11,40396
+espiga,herringbone,\bherringbone\b,malefashionadvice,2019,7,33631
+espiga,herringbone,\bherringbone\b,malefashionadvice,2020,4,23768
+espiga,herringbone,\bherringbone\b,malefashionadvice,2021,5,20400
+espiga,herringbone,\bherringbone\b,malefashionadvice,2022,9,23814
+espiga,herringbone,\bherringbone\b,malefashionadvice,2023,2,21439
+espiga,herringbone,\bherringbone\b,malefashionadvice,2024,5,24826
+espiga,herringbone,\bherringbone\b,malefashionadvice,2025,3,15688

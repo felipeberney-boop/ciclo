@@ -2941,3 +2941,40 @@ calle lo que mostró Prada». La foto de Bottega Veneta se cambió porque era la
 menú dice «15 casas, del lujo al fast fashion». Totême sólo tiene un look en el corpus, de 2017.
 
 Demo 8 de 8. Capturas en `diseno/brief_casas_2026-11-17/`.
+
+## 2026-11-17 · Completar las capas: Reddit sí, Vogue todavía no
+
+**Pedido (Felipe).** Listar los atributos con una sola capa y ver cuáles se completan con Reddit (por Arctic Shift, con
+el pipeline que ya está) y qué haría falta para llevar Vogue Runway hasta 2026, avisando antes de empezar.
+
+**Reddit, hecho.** Los títulos de r/malefashionadvice ya estaban bajados (17/11); los de r/femalefashionadvice no: los
+25 términos de septiembre se habían bajado término por término. Se bajaron todos (2012–2025, 177.668 posts; 0,5 % menos
+que los 178.519 de septiembre, por posts borrados) y se contaron 52 términos, uno por atributo, como palabra entera con
+plural («tee» no cuenta «between»). Misma regla que RDS y RDH: proporción del año, media centrada de 3 años, 100 = su
+máximo, y sólo términos con 100 posts o más en ese subreddit. Entran 25 en mujeres y 28 en hombres; quedan afuera, por
+pocos posts, los vestidos slip, camisero, cruzado y evasé, bouclé, popelina, neoprene, gasa, tul, organza, volados,
+tachas, cut-outs, flecos y tie-dye. Las series tienen sentido sin mirarlas contra nada: la falda maxi pica en 2012–13,
+el romper en 2015, la campera bomber en 2016 y el lino y los mocasines están en su máximo ahora.
+
+| capas | antes | ahora |
+|---|---|---|
+| 4 | 7 | 8 |
+| 3 | 6 | 23 |
+| 2 | 3 | 19 |
+| 1 (sólo búsqueda) | 49 | 15 |
+
+Con la regla de las tres capas, el gráfico de capas pasa de 16 atributos a 31. Reddit sigue fuera del modelo: comprueba,
+no decide. Script: `codigo/armar_reddit_terminos_nuevos.py`.
+
+**r/malefashionadvice.** Ya estaba sumado y declarado desde la mañana del 17/11 (serie «Reddit hombres», `RDH`), en la
+ficha, El ciclo, Acerca de y la fuente de cada número. Con esto, además, cubre 28 atributos más.
+
+**Vogue Runway, sin empezar (lo que haría falta).** Nuestro corpus (traopia/vogue-runway en Hugging Face) se raspó el
+31/03/2023: no hay nada después y sus copias son idénticas. Lo único más nuevo es tonyassi/vogue933k-embedding (933.328
+looks, 1990–2025, con link a cada foto), pero sus vectores son de otro modelo (ViT de Google, no CLIP), así que no sirven
+para nuestro método. Llevarlo a 2025 sería: bajar las columnas de link, casa y temporada; tomar 1.000 looks por año de
+2024 y 2025, como el resto del corpus; bajar esas 2.000 fotos sólo para calcular su vector CLIP ViT-B/32 (hay que
+instalar torch y open_clip, ~1–2 GB); y rehacer las series de pasarela. Es un día de trabajo, pero cambia el K-means
+(que hoy usa la pasarela hasta 2023), el cono y lo que dice el racional. 2026 no existe en ningún dataset y Vogue Runway
+ahora es sólo para suscriptores. Con el mismo trabajo (CLIP instalado) se podría sumar la pasarela a atributos que hoy no
+la tienen, sin cambiar de corpus.

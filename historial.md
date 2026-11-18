@@ -493,6 +493,12 @@ Los atributos de El ciclo con tres capas o más pasan de 16 a 31; los que sólo 
 Cada sección de Acerca de se abre tocando su título y despliega su texto completo; todas igual y todas cerradas al
 llegar, con el adelanto (párrafo o diagrama) siempre a la vista.
 
+## v1.67 · 17/11/2026 · La vibe de la entrada, en toda la web
+
+Lo que Felipe quería desde las referencias (i-D, Vogue Runway): la web entera con el aire de la entrada. Fondo blanco,
+títulos grandes en Bodoni liviana y a la izquierda, una fila de looks de pasarela a sangre debajo del título de cada
+sección, y las tarjetas de Tendencias como fotos altas, sin caja.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -1635,6 +1635,39 @@ svg.rfoco .rcapa.on path{stroke-width:3px}
 .metfull{margin:18px 0 0 calc(1.2em + 16px)}
 .metfull>p{max-width:720px}
 @media (max-width:600px){.metprev,.metfull{margin-left:0}}
+
+/* ================= la vibe de la entrada, en toda la web (17/11) · última =================
+   Elegida por Felipe entre dos propuestas (B, «Pasarela»; diseno/propuestas/vibe_2026-11-17/). Fondo blanco; el título
+   grande y a la izquierda, sobre blanco; debajo, una fila de looks de pasarela a sangre que corre sola, con el nombre del
+   atributo en Bodoni sobre cada foto; las tarjetas de Tendencias son fotos altas de borde a borde, sin caja. */
+body,.app{background:#fff!important}
+.vbanda{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:10px;margin-bottom:36px;height:min(46vh,440px);overflow:hidden;background:#111}
+.vbanda .gbt{height:100%}
+.vbanda .gbf{aspect-ratio:2/3}
+.vbanda .gbf img{object-position:50% 22%}
+.vbanda .gbf::before{content:'';position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0));pointer-events:none;z-index:1}
+.vbanda .gbf::after{content:'';position:absolute;left:0;right:0;top:0;height:18%;background:linear-gradient(to bottom,rgba(0,0,0,.38),rgba(0,0,0,0));pointer-events:none}
+.app .vbanda .gbf figcaption:not(#q):not(#qq):not(#qqq):not(#qqqq){position:absolute;left:12px;right:12px;top:16px;bottom:auto;z-index:2;border:0!important;padding:0!important;margin:0!important;font:400 13px/1.3 var(--sf)!important;color:#fff!important;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.vbanda .vbn{position:absolute;left:12px;right:12px;bottom:14px;z-index:2;color:#fff;font-family:var(--moda);font-weight:400;font-size:var(--t-sub);line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.app .vhead>div:not(#q):not(#qq):not(#qqq):not(#qqqq){text-align:left!important;max-width:none!important;margin:0!important}
+.app .vhead h1:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .lthead h1:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-racional .vhead h1:not(#q):not(#qq):not(#qqq):not(#qqqq){text-align:left!important;margin-left:0!important}
+.app .vhead .sub:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .vhead p:not(#q):not(#qq):not(#qqq):not(#qqqq){margin-left:0!important;text-align:left!important}
+.app .vhead .perfilrad:not(#q):not(#qq):not(#qqq):not(#qqqq){margin-left:0!important;text-align:left!important;justify-content:flex-start!important}
+.app #grid:not(#q):not(#qq):not(#qqq):not(#qqqq){gap:2px!important}
+.app #grid .plate:not(#q):not(#qq):not(#qqq):not(#qqqq){border-radius:0!important;background:transparent!important;box-shadow:none!important;border:0!important;padding:0!important}
+.app #grid .pdib:not(#q):not(#qq):not(#qqq):not(#qqqq){border-radius:0!important;aspect-ratio:3/4!important;height:auto!important;position:relative}
+.app #grid .pdib img.pfoto:not(#q):not(#qq):not(#qqq):not(#qqqq){height:100%!important;width:100%!important;object-fit:cover!important}
+.app #grid .pbody:not(#q):not(#qq):not(#qqq):not(#qqqq){padding:10px 2px 22px!important;background:transparent!important}
+.app #grid .pbody .ptop:not(#q):not(#qq):not(#qqq):not(#qqqq){border:0!important}
+@media (max-width:760px){.vbanda{height:52vh;margin-bottom:24px}.vbanda .gbf{aspect-ratio:auto;width:78vw}}
+.app .vhead .dzdesde:not(#q):not(#qq):not(#qqq):not(#qqqq){justify-content:flex-start!important;text-align:left!important;margin-left:0!important}
+.app #v-detalle .back:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .back#volver:not(#q):not(#qq):not(#qqq):not(#qqqq){display:block!important;margin-left:0!important;margin-right:auto!important;text-align:left!important}
+.app .vhead .dzdesde:not(#q):not(#qq):not(#qqq):not(#qqqq){display:flex!important;align-items:flex-start!important}
+.app #v-mover .mv:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-mover #mv:not(#q):not(#qq):not(#qqq):not(#qqqq){margin-left:0!important}
+.app .vhead .dzdesde .dzcon:not(#q):not(#qq):not(#qqq):not(#qqqq){margin-left:0!important}
+.app #v-mover .bfbrief:not(#q):not(#qq):not(#qqq):not(#qqqq){justify-content:flex-start!important;margin-left:0!important}
+.app #v-mover .bfcard:not(#q):not(#qq):not(#qqq):not(#qqqq){margin-left:0!important}
+.app #v-disenar .vhead h1.sr:not(#q):not(#qq):not(#qqq):not(#qqqq){position:static!important;width:auto!important;height:auto!important;clip:auto!important;clip-path:none!important;overflow:visible!important;white-space:normal!important;margin:20px 0 0!important}
 </style>
 
 <div class="app">
@@ -4435,6 +4468,24 @@ function pintarLystX(){
 }
 
 /* ---------- navegación ---------- */
+/* 17/11 · la vibe de la entrada en toda la web: cada sección principal tiene su fila de looks de pasarela debajo del título.
+   Tendencias, El ciclo y Diseñar usan la foto de cada atributo (FOTO_ATR) con su nombre; Preguntar, Retornos y Acerca de,
+   las pasarelas de la entrada. Decorativa: las fotos y los nombres ya están, con su fuente, en cada pantalla */
+const VB_PRENDA=/^(vestidos|faldas|pantalones|remeras|camisas|buzos|abrigos|enteritos|calzado|accesorios)_|^(jamplio|jmedio|jajust|cargo|trench|capa|kimono|buzo)$/;
+function vbFotos(v){const nom=id=>{const o=REC.find(x=>x.id===id);return o?o.n:'';};
+  const A=Object.entries(FOTO_ATR).map(([id,f])=>({id,x:[f.f,f.d,f.s,f.y,nom(id)]}));
+  const mez=(L,k)=>L.map((x,i)=>[x,Math.sin(i*9301+k)]).sort((a,b)=>a[1]-b[1]).map(x=>x[0]);
+  if(v==='radar')return A.map(a=>a.x);
+  if(v==='recorridos')return mez(A,3).map(a=>a.x);
+  if(v==='disenar')return A.filter(a=>VB_PRENDA.test(a.id)).map(a=>a.x);
+  const G=GATE_FOTOS.var.map(x=>[...x,'']);return v==='retornos'?mez(G,5):v==='racional'?mez(G,7):G;}
+function vistaBanda(v){if(!['radar','recorridos','disenar','lectura','retornos','racional'].includes(v))return;const sec=$('#v-'+v);
+  if(!sec||sec.querySelector(':scope > .vbanda'))return;const L=vbFotos(v);if(!L.length)return;
+  const d=document.createElement('div');d.className='vbanda';d.setAttribute('aria-hidden','true');
+  const it=L.map((x,i)=>`<figure class="gbf"><img src="${vogueFoto(x[0],720)}" alt="" ${i<5?'':'loading="lazy" '}decoding="async"><figcaption>${x[1]} · ${TEMP[x[2]]||''} ${x[3]}</figcaption>${x[4]?`<span class="vbn">${x[4]}</span>`:''}</figure>`).join('');
+  d.innerHTML=`<div class="gbt" style="--dur:${L.length*6}s">${it}${it}</div>`;
+  const ref=v==='lectura'?sec.querySelector('.lthead'):sec.querySelector(':scope > .vhead');
+  if(ref)ref.insertAdjacentElement('afterend',d);else sec.insertBefore(d,sec.firstChild);}
 function mostrar(v,keepNav){
   if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando
   document.body.classList.toggle('on-gate',v==='perfil');
@@ -4449,6 +4500,7 @@ function mostrar(v,keepNav){
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='lectura')asAbrir();
   if(v==='racional'){pintarMetodoGate();pintarLectura();}
+  vistaBanda(v);
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
   if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}else tvParar();

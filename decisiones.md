@@ -2998,3 +2998,28 @@ Con teclado, cada título se abre con Enter.
 
 Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/acerca_abrir_2026-11-17/` (cerrada, la hipótesis abierta y la señal
 abierta).
+
+## 2026-11-17 · La vibe de la entrada, en toda la web
+
+**Devolución (Felipe).** «Me encanta ahora lo de las preguntas; quiero lo mismo cuando entres a Tendencias, Diseñar, El
+ciclo, Preguntar… que esa sea la vibe de toda la web. Ahora sí estamos más cerca de lo que buscaba y de las refes.»
+
+**Dos propuestas, renderizadas en una copia** (`diseno/propuestas/vibe_2026-11-17/`): A, «Portada», cada sección abre con
+la banda de fotos a pantalla completa y el título encima, como la entrada; B, «Pasarela», el título grande sobre blanco y
+una fila de looks a sangre debajo, y las tarjetas como fotos de borde a borde. La recomendación fue B (A repetía la
+entrada cuatro veces seguidas, el mismo problema que tenía el gráfico). Felipe eligió B.
+
+**Cómo quedó.** Una capa última, «la vibe de la entrada»:
+- Fondo blanco en toda la web (antes, gris #f5f5f7).
+- Títulos a la izquierda, sobre el borde del contenido, con todo lo que los acompaña (el perfil, «Volver», el botón de
+  diseñar, la tarjeta del brief); antes iban centrados.
+- Debajo del título de Tendencias, El ciclo, Diseñar, Preguntar, Retornos y Acerca de, una fila de looks de Vogue
+  Runway a sangre (46 % de la pantalla; 52 % en el celular) que corre sola. En Tendencias, El ciclo y Diseñar son las fotos
+  de cada atributo (las de `FOTO_ATR`, ya elegidas a ojo) con su nombre en Bodoni; en Preguntar, Retornos y Acerca de,
+  las pasarelas de la entrada. Cada foto con «Casa · Temporada año». Es decorativa: las mismas fotos ya están, con su
+  fuente, en cada pantalla. El brief y la ficha no llevan fila: ya abren con su foto o su gráfico.
+- Las tarjetas de Tendencias pierden la caja blanca y las esquinas: foto alta 3:4, de borde a borde con 2 px entre una y
+  otra, y debajo el nombre, la pista y la señal.
+- Diseñar muestra su título («Diseñar»), que estaba oculto y dejaba un blanco arriba.
+
+Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/vibe_2026-11-17/`.

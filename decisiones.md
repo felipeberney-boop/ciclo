@@ -3139,3 +3139,37 @@ la app) no aparecía en ningún lado.
 
 Probado sin clave y con una clave falsa y la API de Groq simulada en el test (la respuesta simulada trae su `usage`), a
 1400 y 393 px. Demo 8 de 8. Capturas en `diseno/modelo_tokens_2026-11-18/`.
+
+## 2026-11-18 · Un tratamiento por pantalla, y las fotos que tardaban
+
+**Devolución (Felipe).** La banda de fotos estaba igual en Tendencias, Diseñar, El ciclo, Preguntar y Acerca de: entrás
+cinco veces y ves lo mismo. Se queda sólo en Tendencias, donde la sección se llama «qué se está moviendo» y las fotos se
+mueven; cada pantalla con un tratamiento que diga lo mismo que la sección. Además: «sigue habiendo fotos en negro».
+
+**Un error mío de proceso.** Armé las propuestas en una copia y volví a preguntar antes de aplicarlas, así que en la
+app no cambió nada y la banda siguió en todas las secciones. Se aplicó directamente.
+
+**Cómo quedó.**
+- *El ciclo · cuándo picó y cuánto tardó en volver.* Una línea de tiempo de fotos: lunares, 2010–2023, catorce marcos.
+  Hay foto donde la pasarela medida pasa el 60 % de su máximo y marco vacío donde no (lunares es el atributo con el dibujo
+  más claro: está en 2015, se va en 2016, vuelve de 2017 a 2019, se va en 2020, vuelve en 2021–2022 y se va en 2023). Las
+  fotos son looks etiquetados «Polka Dot» del corpus completo, elegidas a ojo. Ningún número: la sección contada en fotos.
+- *Diseñar · vos construís algo.* Las fotos no se mueven: se acumulan. Un panel «Tu look, hasta ahora» al costado (arriba
+  en el celular) suma una pieza por cada elección real: el dibujo de la prenda, la foto del tipo, del material o de la
+  estampa cuando existe en `FOTO_ATR`, el color como muestra, y un marco punteado con lo que falta elegir.
+- *Preguntar · una conversación.* La pantalla vacía arranca con una sola foto grande (del público de tu perfil), las
+  preguntas sugeridas y una invitación clara: «Sumá tu diseño», que abre el selector de archivos. Los looks de ejemplo
+  pasan a texto; las fotos aparecen dentro de las respuestas.
+- *Acerca de · el método.* Una pared de miniaturas del corpus al ancho de la pantalla (340 a 1400 px) con «1.281.633 looks
+  de desfile… Acá hay 340. Para verlos todos harían falta 3.770 pantallas como esta»; la cuenta se ajusta a la pantalla.
+
+**Las fotos en negro, la segunda causa.** Medido con curl: el servicio de imágenes de Vogue (CloudFront) genera cada
+tamaño a pedido. Un tamaño que nadie pidió antes tarda alrededor de un segundo («Miss from cloudfront»); uno ya pedido,
+un cuarto de segundo («Hit»). La app pedía la misma foto en seis tamaños distintos (240, 480, 640, 720, 960, 1280), así
+que casi siempre caía en el caso lento, y la banda de 28 fotos tenía su fondo casi negro a la vista durante segundos. Ahora
+toda foto mostrada se pide a 640 px (el tamaño de las tarjetas de Tendencias): la banda de Tendencias reusa las fotos que
+ya bajaron las tarjetas y carga sus fotos visibles en menos de un segundo. La placa de carga de las bandas pasa a ser
+clara (oscura se leía como una foto negra) y las miniaturas de la pared se piden con carga diferida, para no frenar la
+página.
+
+Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/tratamientos_2026-11-18/`.

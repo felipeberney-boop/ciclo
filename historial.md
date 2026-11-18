@@ -523,6 +523,13 @@ En Preguntar se ve siempre, debajo de la caja, qué modelo contesta, por qué AP
 con un detalle que se despliega. Y cada respuesta dice quién la hizo: el modelo de lenguaje (con sus tokens), CLIP o las
 reglas de CICLO.
 
+## v1.72 · 18/11/2026 · Cada pantalla con su tratamiento
+
+La banda de fotos que se mueve queda sólo en Tendencias («qué se está moviendo») y en la entrada. El ciclo muestra una
+línea de tiempo de fotos con huecos donde el atributo desapareció; Diseñar suma tus elecciones en una composición al
+costado; Preguntar arranca con una sola foto y una invitación a sumar tu diseño; Acerca de, con una pared de miniaturas
+del corpus. Y las fotos piden siempre el mismo tamaño, así cargan rápido.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

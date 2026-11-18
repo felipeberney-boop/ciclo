@@ -1706,6 +1706,79 @@ img:not(.fcarga){transition:opacity .35s ease}
 .asiac dl{margin:0;display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr);gap:6px 14px}
 .asiac dt{color:var(--ink)}.asiac dd{margin:0}
 @media (max-width:600px){.asiac dl{grid-template-columns:minmax(0,1fr)}.asiac dd{margin-bottom:6px}}
+/* 18/11 · un tratamiento por pantalla */
+/* El ciclo · línea de tiempo de fotos */
+.ctl{margin:6px 0 40px;border-top:1px solid var(--ink);padding-top:16px}
+.app .ctl .ctlk:not(#q):not(#qq):not(#qqq){margin:0 0 14px!important;font:400 var(--t-eti)/1.3 var(--sf)!important;color:var(--ink-2)!important;text-align:left!important}
+.ctlf{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:4px}
+.ctlc{margin:0;position:relative;aspect-ratio:2/3;border:1px solid var(--rule)}
+.ctlc.esta{border:0;background:#1c1c1e}
+.ctlc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.app .ctlc figcaption:not(#q):not(#qq){position:absolute;left:6px;right:6px;bottom:6px;z-index:1;margin:0!important;padding:0!important;border:0!important;font:400 11px/1.2 var(--sf)!important;color:#fff!important;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.ctly{position:absolute;left:0;right:0;top:calc(100% + 6px);text-align:center;font:400 var(--t-eti)/1 var(--sf);color:var(--ink-2)}
+.ctlc.esta .ctly{color:var(--ink)}
+.ctlf{margin-bottom:24px}
+/* Diseñar · composición que se acumula */
+.dzlay{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start}
+.dzac{position:sticky;top:76px;border-top:1px solid var(--ink);padding-top:12px}
+.app .dzac .dzack:not(#q):not(#qq):not(#qqq){margin:0 0 12px!important;font-family:var(--moda)!important;font-size:var(--t-sub)!important;text-align:left!important}
+.dzacg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.dzaci{margin:0;position:relative;aspect-ratio:3/4;background:#fff;border:1px solid var(--rule);overflow:hidden;animation:dzentra .5s calc(var(--i)*.15s) both}
+@keyframes dzentra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.dzaci.t-foto{border:0;background:#1c1c1e}
+.dzaci img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+.dzaci img.dzdib{object-fit:contain;padding:12px;box-sizing:border-box}
+.dzsw{position:absolute;inset:0}
+.app .dzaci figcaption:not(#q):not(#qq){position:absolute;left:8px;right:8px;bottom:8px;margin:0!important;padding:0!important;border:0!important;font:400 12px/1.25 var(--sf)!important;color:var(--ink)!important}
+.dzaci.t-foto figcaption,.dzaci.t-color figcaption{color:#fff!important;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.dzaci figcaption b{display:block;font-weight:400;color:inherit;opacity:.75}
+.dzaci.vacio{border:1px dashed var(--ink-3);background:transparent}
+.dzaci.vacio figcaption{color:var(--ink-3)!important}
+/* Preguntar · una sola imagen grande + invitación a sumar un diseño */
+.pvcol{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;align-items:start}
+.pvfoto{margin:0;position:relative;aspect-ratio:3/4;background:#1c1c1e;overflow:hidden}
+.pvfoto img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.app .pvfoto figcaption:not(#q):not(#qq){position:absolute;left:12px;right:12px;bottom:10px;margin:0!important;padding:0!important;border:0!important;font:400 12px/1.25 var(--sf)!important;color:#fff!important;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.app #v-lectura .pvder .ltsug:not(#q):not(#qq){grid-template-columns:minmax(0,1fr)!important;gap:8px!important;margin-top:14px}
+.app #v-lectura .pvder .ltsugb:not(#q):not(#qq){border-radius:999px!important;padding:12px 18px!important}
+.pvsuma{all:unset;box-sizing:border-box;display:flex;gap:14px;align-items:flex-start;width:100%;margin-top:18px;padding:18px;border:1px dashed var(--ink);border-radius:18px;cursor:pointer}
+.pvsuma:hover{background:#f6f6f8}
+.pvmas{flex:none;width:40px;height:40px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font-size:22px}
+.pvsuma b{display:block;font-family:var(--moda);font-weight:400;font-size:var(--t-sub);line-height:1.15;color:var(--ink);margin-bottom:4px}
+.pvsuma span{font:400 var(--t-cue)/1.4 var(--sf);color:var(--ink-2)}
+.app #v-lectura .pvej:not(#q):not(#qq){background:none!important;padding:0!important;margin-top:14px!important;border:0!important}
+.pvej div{display:flex;gap:6px}
+/* Acerca de · la pared de miniaturas */
+.apared{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-bottom:30px;overflow:hidden;background:#111}
+.apg{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:1px}
+.apg img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;background:#1c1c1e}
+.aptxt{position:absolute;left:clamp(16px,5vw,72px);bottom:clamp(16px,4vw,48px);max-width:min(520px,calc(100% - 32px));background:#fff;padding:18px 22px 20px}
+.app .aptxt .apn:not(#q):not(#qq):not(#qqq){margin:0!important;font-family:var(--moda)!important;font-weight:400!important;font-variation-settings:'opsz' 96!important;font-size:clamp(48px,7vw,96px)!important;line-height:1!important;letter-spacing:-.02em!important;text-align:left!important;color:var(--ink)!important}
+.app .aptxt .apl:not(#q):not(#qq):not(#qqq){margin:10px 0 0!important;font:400 var(--t-cue)/1.4 var(--sf)!important;color:var(--ink-2)!important;text-align:left!important}
+@media (max-width:760px){
+.ctlf{grid-template-columns:repeat(7,minmax(0,1fr));row-gap:30px}
+.dzlay{grid-template-columns:minmax(0,1fr)}
+.dzac{position:static;order:-1}.dzacg{grid-template-columns:repeat(5,minmax(0,1fr))}
+.pvcol{grid-template-columns:minmax(0,1fr)}.pvfoto{aspect-ratio:4/5}
+.aptxt{position:relative;left:auto;bottom:auto;max-width:none;margin:0;padding:16px}
+}
+
+.aptxt{top:clamp(16px,3vw,40px);bottom:auto!important}
+.app .dzaci.t-color figcaption:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .dzaci.t-foto figcaption:not(#q):not(#qq):not(#qqq):not(#qqqq){color:#fff!important}
+.app .dzaci.t-color figcaption b:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .dzaci.t-foto figcaption b:not(#q):not(#qq):not(#qqq):not(#qqqq){color:#fff!important}
+.app #v-lectura .pvmas:not(#q):not(#qq):not(#qqq):not(#qqqq){border-radius:50%!important;width:40px!important;height:40px!important}
+.app #v-lectura .pvsuma:not(#q):not(#qq):not(#qqq):not(#qqqq){border-radius:18px!important}
+@media (max-width:760px){.aptxt{top:auto}}
+
+@media (max-width:760px){.pvfoto{aspect-ratio:auto;height:38vh}
+.app .dzaci figcaption b:not(#q):not(#qq):not(#qqq):not(#qqqq){display:none!important}.app .dzaci figcaption:not(#q):not(#qq):not(#qqq):not(#qqqq){font-size:11px!important;left:5px!important;right:5px!important;bottom:5px!important}}
+
+.dzacv{margin:0 0 10px;font:400 var(--t-eti)/1.4 var(--sf);color:var(--ink-2)}
+/* la placa de carga de las bandas, clara: oscura se leía como una foto negra */
+.app .gbf.fotocarga:not(#q),.app .vbanda .gbf.fotocarga:not(#q){background:linear-gradient(100deg,#d9d9de 30%,#ececf0 50%,#d9d9de 70%) #d9d9de!important;background-size:220% 100%!important}
+.app .gbf:not(#q){background:#d9d9de}
+.vbanda,.gbanda{background:#d9d9de!important}
+.ctlc.esta,.dzaci.t-foto,.pvfoto,.apg img{background:#e4e4e8!important}
 </style>
 
 <div class="app">
@@ -3096,7 +3169,7 @@ function dzBarra(){
   b.hidden=vista!=='disenar';
   $$('#dzbarra [data-ir]').forEach(x=>x.onclick=()=>dzIr(x.dataset.ir));
 }
-function pintarDisenar(){
+function pintarDisenar(){setTimeout(dzAcum,0);
   const C=$('#dzcuerpo'),pr=dzPrenda(),t=dzTipo(),cl=dzClip(),P=dzPasos(),hex=(dzColores().L.find(x=>x.id===dz.color)||{}).hex;
   if(!pr&&dz.paso!=='prenda')dz.paso='prenda';else if(pr&&!t&&!['prenda','tipo'].includes(dz.paso))dz.paso='tipo';
   $('#dzpasos').innerHTML=P.map((p,i)=>`<button type="button" class="dzp${dz.paso===p?' on':''}" data-p="${p}" ${(p!=='prenda'&&!pr)||(p!=='prenda'&&p!=='tipo'&&!t)?'disabled':''}><span class="dzpn">${String(i+1).padStart(2,'0')}</span><span class="dzpt">${DZ_NOMBRE[p]}</span></button>`).join('<span class="dzsep" aria-hidden="true">›</span>');
@@ -3491,7 +3564,7 @@ function asIA(){const s=$('#asias'),c=$('#asiac');if(!s)return;const mod=$('#asm
 function asPintar(nuevo){
   const ch=$('#aschat');if(!ch)return;const D=asDiseno();
   const ultLect=as.hist.reduce((u,m,k)=>m.tipo==='lectura'&&!m.leyendo&&!m.fallo?k:u,-1);
-  if(as.hist.length)ltRender(ch,as.hist.map((m,k)=>m.role==='user'?ltYo(m):ltBurbuja(m,k,ultLect)));else{ch.innerHTML=ltVacio();ch._ltp=null;fotosCargando(ch);}
+  if(as.hist.length)ltRender(ch,as.hist.map((m,k)=>m.role==='user'?ltYo(m):ltBurbuja(m,k,ultLect)));else{ch.innerHTML=ltVacio();ch._ltp=null;fotosCargando(ch);setTimeout(preguntarVacio,0);}
   $('#ltnueva').hidden=!as.hist.length;asIA();
   $('#asdisw').hidden=!D.chips.length||!as.hist.length;
   $('#asdis').innerHTML=D.chips.length?`Con tu diseño: <button type="button" class="ltdisb">${escH(D.chips.map(c=>c.v.toLowerCase()).join(' · '))}</button>`:'';
@@ -3548,7 +3621,7 @@ async function ltLeerImagen(img,texto,obtener){
   m.pend=!m.fallo&&ltClave()&&m.clip.length>0;asPintar();
   if(m.pend)ltEscribir(m);}
 async function rvEjemplo(i,n){
-  const imgDe=idx=>({src:vogueFoto(idx.f[i],1280),alt:`${idx.disenadores[idx.d[i]]}, ${TEMP[idx.s[i]]||''} ${idx.y[i]}`,pie:`Ejemplo (${n}): ${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]} · Vogue Runway`});
+  const imgDe=idx=>({src:vogueFoto(idx.f[i],640),alt:`${idx.disenadores[idx.d[i]]}, ${TEMP[idx.s[i]]||''} ${idx.y[i]}`,pie:`Ejemplo (${n}): ${idx.disenadores[idx.d[i]]} · ${TEMP[idx.s[i]]||''} ${idx.y[i]} · Vogue Runway`});
   if(CLIP.idx)return ltLeerImagen(imgDe(CLIP.idx),'',async()=>({q:clipVectorDelIndice(i),mismo:i}));
   return ltLeerImagen({src:'',alt:'',pie:`Ejemplo (${n})`},'',async(est,u)=>{await clipIndice(est);u.img=as.img=imgDe(CLIP.idx);return {q:clipVectorDelIndice(i),mismo:i};});}
 function pintarConsulta(){tzArrastre();ltEventos();}
@@ -3625,7 +3698,7 @@ const CICLO_CORTO=12;let cicloTodos=false; // doce tarjetas a la vista; el resto
 function pintarCiclos(){
   const L=REC.filter(o=>cicloGrupo==='todos'||o.tipo===cicloGrupo).map(cicloDe).filter(Boolean).sort((a,b)=>({entrar:0,esperar:1,salir:2,'sin-dato':3}[a.sg.estado]-{entrar:0,esperar:1,salir:2,'sin-dato':3}[b.sg.estado])||a.anios-b.anios);
   const grupos=REC_ORDEN.filter(g=>REC.some(o=>o.tipo===g));
-  $('#ciclos').innerHTML=`<div class="ciclofilt" role="group" aria-label="Grupo">${['todos',...grupos].map(g=>`<button type="button" class="chip" data-g="${g}" aria-pressed="${cicloGrupo===g}">${g==='todos'?'Todos':g==='Estampa'?'Estampas':g==='Material'?'Materiales':g}</button>`).join('')}</div>`+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">${FOTO_ATR[c.o.id]?`<span class="cfoto"><img loading="lazy"${fotoPos(c.o.id)} src="${vogueFoto(FOTO_ATR[c.o.id].f,480)}" alt="${c.o.n.split(' /')[0]} en la pasarela"><span class="pcred">${fotoCred(FOTO_ATR[c.o.id])}</span></span>`:''}
+  $('#ciclos').innerHTML=`<div class="ciclofilt" role="group" aria-label="Grupo">${['todos',...grupos].map(g=>`<button type="button" class="chip" data-g="${g}" aria-pressed="${cicloGrupo===g}">${g==='todos'?'Todos':g==='Estampa'?'Estampas':g==='Material'?'Materiales':g}</button>`).join('')}</div>`+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">${FOTO_ATR[c.o.id]?`<span class="cfoto"><img loading="lazy"${fotoPos(c.o.id)} src="${vogueFoto(FOTO_ATR[c.o.id].f,640)}" alt="${c.o.n.split(' /')[0]} en la pasarela"><span class="pcred">${fotoCred(FOTO_ATR[c.o.id])}</span></span>`:''}
     <span class="cn serif">${c.o.n.split(' /')[0]}</span><span class="cf">${c.f}</span>
     <span class="cm"><span><b${src('g','el último máximo que se despega 15 puntos, 2010–2024 · 180 meses')}>${c.ultimo}${c.ultimo===2010?'*':''}</b>último pico</span><span><b${src('g','de su último pico a 2024')}>${c.anios===0?'ahora':c.anios+' año'+(c.anios>1?'s':'')}</b>desde el pico</span><span><b${c.ciclo?src('g','los años entre sus dos últimos picos'):''}>${c.ciclo?c.ciclo+' años':'—'}</b>entre picos</span><span>${senBadge(c.sg)}</span></span></button>`).join('')+
     (L.length>CICLO_CORTO?`<button type="button" class="kbtn ghost ciclomas" aria-expanded="${cicloTodos}">${cicloTodos?'Mostrar menos':`Ver los ${L.length} atributos`}</button>`:'')+
@@ -4617,13 +4690,56 @@ function vbFotos(v){const nom=id=>{const o=REC.find(x=>x.id===id);return o?o.n:'
   if(v==='recorridos')return mez(A,3).map(a=>a.x);
   if(v==='disenar')return A.filter(a=>VB_PRENDA.test(a.id)).map(a=>a.x);
   const G=GATE_FOTOS.var.map(x=>[...x,'']);return v==='retornos'?mez(G,5):v==='racional'?mez(G,7):G;}
-function vistaBanda(v){if(!['radar','recorridos','disenar','lectura','retornos','racional'].includes(v))return;const sec=$('#v-'+v);
+function vistaBanda(v){if(v!=='radar')return;const sec=$('#v-'+v);
   if(!sec||sec.querySelector(':scope > .vbanda'))return;const L=vbFotos(v);if(!L.length)return;
   const d=document.createElement('div');d.className='vbanda';d.setAttribute('aria-hidden','true');
-  const it=L.map((x,i)=>`<figure class="gbf"><img src="${vogueFoto(x[0],720)}" alt="" ${i<5?'':'loading="lazy" '}decoding="async"><figcaption>${x[1]} · ${TEMP[x[2]]||''} ${x[3]}</figcaption>${x[4]?`<span class="vbn">${x[4]}</span>`:''}</figure>`).join('');
+  const it=L.map((x,i)=>`<figure class="gbf"><img src="${vogueFoto(x[0],640)}" alt="" ${i<8?'fetchpriority="high" ':'loading="lazy" '}decoding="async"><figcaption>${x[1]} · ${TEMP[x[2]]||''} ${x[3]}</figcaption>${x[4]?`<span class="vbn">${x[4]}</span>`:''}</figure>`).join('');
   d.innerHTML=`<div class="gbt" style="--dur:${L.length*6}s">${it}${it}</div>`;
   const ref=v==='lectura'?sec.querySelector('.lthead'):sec.querySelector(':scope > .vhead');
   if(ref)ref.insertAdjacentElement('afterend',d);else sec.insertBefore(d,sec.firstChild);fotosCargando(d);}
+/* 18/11 · un tratamiento por pantalla (la banda que se mueve queda sólo en Tendencias, «qué se está moviendo»):
+   El ciclo, una línea de tiempo de fotos con huecos; Diseñar, tus elecciones que se acumulan; Preguntar, una sola foto e
+   invitación a sumar tu diseño; Acerca de, una pared de miniaturas del corpus */
+const TL_LUN={"2015": ["https://assets.vogue.com/photos/55c6514208298d8be21e42d3/Saloni_001_1366.1366x2048.JPG", "Saloni"], "2017": ["https://assets.vogue.com/photos/5a8b1c43f613120ba8eba3b5/_ARC0629.jpg", "Mother of Pearl"], "2018": ["https://assets.vogue.com/photos/5a9fe5fc2da21b0baa10e892/19-vika-gazinskaya-fall-2018.jpg", "Vika Gazinskaya"], "2019": ["https://assets.vogue.com/photos/5c3e275563f8482d552fbe63/00020-fausto-puglisi-pre-fall-2019.jpg", "Fausto Puglisi"], "2021": ["https://assets.vogue.com/photos/60350b482e8e171f2a85d7fe/00024-Carolina-Herrera-Fall-21.jpg", "Carolina Herrera"], "2022": ["https://assets.vogue.com/photos/621157076c06c30de8f58ccd/IS1_0490.jpg", "Richard Quinn"]};
+const vuFoto=(u,w)=>u.replace(/(photos\/[0-9a-f]+)\/(?:master\/[^/]+\/)?/,`$1/master/w_${w},c_limit/`);
+function cicloTL(){const sec=$('#v-recorridos');if(!sec||sec.querySelector('.ctl'))return;
+  const o=REC.find(r=>r.id==='lunares');if(!o||!o.v)return;const mx=Math.max(...o.v.filter(x=>x!=null));
+  const d=document.createElement('div');d.className='ctl';
+  d.innerHTML=`<p class="ctlk">Lunares en la pasarela, 2010–2023 · una foto cuando está, un hueco cuando se fue</p><div class="ctlf">${[...Array(14).keys()].map(i=>{const y=2010+i,v=o.v[y-2004],f=TL_LUN[y];
+    const esta=v!=null&&v>=0.6*mx&&f;return `<figure class="ctlc${esta?' esta':''}"${esta?` title="${escH(f[1])} · ${y} · Vogue Runway"`:''}>${esta?`<img src="${vuFoto(f[0],640)}" alt="Lunares en la pasarela: ${escH(f[1])}, ${y}">`:''}<span class="ctly">${y}</span></figure>`;}).join('')}</div>`;
+  sec.querySelector(':scope > .vhead').insertAdjacentElement('afterend',d);fotosCargando(d);}
+function dzAcum(){const cuerpo=$('#dzcuerpo');if(!cuerpo)return;let lay=cuerpo.closest('.dzlay');
+  if(!lay){lay=document.createElement('div');lay.className='dzlay';cuerpo.parentNode.insertBefore(lay,cuerpo);lay.appendChild(cuerpo);}
+  let a=lay.querySelector('.dzac');if(!a){a=document.createElement('aside');a.className='dzac';a.setAttribute('aria-label','Tu look, hasta ahora');lay.appendChild(a);}
+  const pr=dzPrenda(),t=dzTipo(),orden=['prenda','tipo','corte','material','color','estampa','detalle'],P=[];
+  orden.forEach(k=>{if(!dz[k])return;const n=dzValor(k)||'';let vis='';
+    if(k==='prenda'&&pr&&pr.sil)vis=`<img class="dzdib" src="siluetas/${pr.sil}.svg" alt="">`;
+    else if(k==='tipo'&&t){const fo=FOTO_ATR[t.serie]||FOTO_ATR[t.id];vis=fo?`<img src="${vogueFoto(fo.f,640)}" alt="">`:(t.sil?`<img class="dzdib" src="siluetas/${t.sil}.svg" alt="">`:'');}
+    else if(k==='color'){const hx=(dzColores().L.find(x=>x.id===dz.color)||{}).hex;if(hx)vis=`<span class="dzsw" style="background:${hx}"></span>`;}
+    else{const fo=FOTO_ATR[dz[k]];if(fo)vis=`<img src="${vogueFoto(fo.f,640)}" alt="">`;}
+    P.push([k,n,vis]);});
+  const falta=orden.find(k=>!dz[k]&&dzPasos().includes(k));
+  a.innerHTML=`<p class="dzack">Tu look, hasta ahora</p>${P.length?'':'<p class="dzacv">Cada cosa que elijas se va sumando acá.</p>'}<div class="dzacg">${P.map(([k,n,vis])=>`<figure class="dzaci${vis.includes('<img src')?' t-foto':vis.includes('dzsw')?' t-color':''}">${vis}<figcaption><b>${DZ_NOMBRE[k]||k}</b> ${escH(n)}</figcaption></figure>`).join('')}${falta?`<figure class="dzaci vacio"><figcaption>${DZ_NOMBRE[falta]||falta}<br>falta elegir</figcaption></figure>`:''}</div>`;
+  fotosCargando(a);}
+function preguntarVacio(){const v=$('#v-lectura .ltvacio');if(!v||v.dataset.p)return;v.dataset.p=1;
+  const pool=GATE_FOTOS.pub[{mujer:'mujer',hombre:'hombre'}[publico]||'todos']||GATE_FOTOS.var,f=pool[0];
+  const intro=v.querySelector('.ltintro'),sug=v.querySelector('.ltsug'),ej=v.querySelector('.ltej');
+  const col=document.createElement('div');col.className='pvcol';
+  col.innerHTML=`<figure class="pvfoto"><img src="${vogueFoto(f[0],640)}" alt="" fetchpriority="high"><figcaption>${escH(f[1])} · ${TEMP[f[2]]||''} ${f[3]} · Vogue Runway</figcaption></figure>`;
+  const der=document.createElement('div');der.className='pvder';if(intro)der.appendChild(intro);if(sug)der.appendChild(sug);
+  der.insertAdjacentHTML('beforeend',`<button type="button" class="pvsuma" id="pvsuma"><span class="pvmas" aria-hidden="true">＋</span><span><b>Sumá tu diseño</b>Subí una foto o un dibujo y CICLO te dice en qué etapa está cada cosa que tiene: el corte, el material, la estampa, el color.</span></button>`);
+  if(ej){ej.querySelectorAll('img').forEach(i=>i.remove());ej.classList.add('pvej');der.appendChild(ej);}
+  col.appendChild(der);v.appendChild(col);$('#pvsuma').addEventListener('click',()=>$('#asfile').click());fotosCargando(col);}
+let apLooks=null;
+async function acercaPared(){const sec=$('#v-racional');if(!sec||sec.querySelector('.apared'))return;
+  const d=document.createElement('div');d.className='apared';sec.querySelector(':scope > .vhead').insertAdjacentElement('afterend',d);
+  try{apLooks=apLooks||await fetch('clip/looks.json').then(r=>r.json());}catch(e){d.remove();return;}
+  const L=apLooks,cols=innerWidth<600?10:34,alto=(innerWidth/cols)*1.5,filas=Math.max(6,Math.floor(innerHeight*(innerWidth<600?.5:.72)/alto)),n=cols*filas;
+  const ix=[];let r=7;for(let i=0;i<n;i++){r=(r*1103515245+12345)%2147483648;ix.push(r%L.n);}
+  d.style.setProperty('--cols',cols);
+  d.innerHTML=`<div class="apg" aria-hidden="true">${ix.map(i=>`<img alt="" loading="lazy" decoding="async" src="${vogueFoto(L.f[i],120)}">`).join('')}</div>
+    <div class="aptxt"><p class="apn"${src('v')}>1.281.633</p><p class="apl">looks de desfile en el corpus de Vogue Runway, 2000–2023. Acá hay ${n.toLocaleString('es-AR')}, uno por cuadradito. Para verlos todos harían falta ${Math.ceil(1281633/n).toLocaleString('es-AR')} pantallas como esta.</p></div>`;}
+function tratamiento(v){if(v==='recorridos')cicloTL();if(v==='disenar')dzAcum();if(v==='lectura')setTimeout(preguntarVacio,30);if(v==='racional')acercaPared();}
 function mostrar(v,keepNav){
   if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando
   document.body.classList.toggle('on-gate',v==='perfil');
@@ -4638,7 +4754,7 @@ function mostrar(v,keepNav){
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
   if(v==='lectura')asAbrir();
   if(v==='racional'){pintarMetodoGate();pintarLectura();}
-  vistaBanda(v);
+  vistaBanda(v);tratamiento(v);
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
   if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}else tvParar();
@@ -4682,7 +4798,7 @@ function gbElegir(){const g={mujer:'m',hombre:'h'}[gateSel.publico]||'x';
   return ['v'+g+vi,GATE_FOTOS.vinc[g][vi],(vi==='marca'?'Casas con escala':'Diseño independiente')+(g==='m'?', looks de mujer':g==='h'?', looks de hombre':'')];}
 function gateBanda(){const b=$('#gbanda');if(!b)return;const [k,L,txt]=gbElegir();
   $('#gbcap').innerHTML=`<b>${txt}</b><br>Fotos: Vogue Runway`;
-  if(b.dataset.k===k)return;b.dataset.k=k;const w=innerWidth<760?720:960;
+  if(b.dataset.k===k)return;b.dataset.k=k;const w=640;
   const it=L.map((x,i)=>`<figure class="gbf"><img src="${vogueFoto(x[0],w)}" alt="" ${i<4?'':'loading="lazy" '}decoding="async"><figcaption>${x[1]} · ${TEMP[x[2]]||''} ${x[3]}</figcaption></figure>`).join('');
   const t=document.createElement('div');t.className='gbt';t.style.setProperty('--dur',(L.length*7)+'s');t.innerHTML=it+it;
   const viejo=b.querySelector('.gbt:not(.sale)');if(viejo){viejo.classList.add('sale');t.classList.add('entra');setTimeout(()=>viejo.remove(),800);}
@@ -4994,7 +5110,7 @@ function bfPasos(){const pr=bfBrief().prenda;return BF_PASOS[pr].concat([BF_MAT[
 /* cada opción con su foto de Vogue Runway (FOTO_ATR, la misma de Tendencias); la forma conserva la silueta en la esquina.
    Sin foto, queda el dibujo. */
 function bfImg(id,n,img,forma){const fo=FOTO_ATR[id];if(!fo)return `<span class="dzimg"><img src="${img}" alt=""></span>`;
-  return `<span class="dzimg bfconf"><img class="bfph" loading="lazy"${fotoPos(id)} src="${vogueFoto(fo.f,480)}" alt="${n} en la pasarela: ${fotoCred(fo)}"><span class="pcred">${fotoCred(fo)}</span>${forma?`<span class="psil" aria-hidden="true"><img src="${img}" alt=""></span>`:''}</span>`;}
+  return `<span class="dzimg bfconf"><img class="bfph" loading="lazy"${fotoPos(id)} src="${vogueFoto(fo.f,640)}" alt="${n} en la pasarela: ${fotoCred(fo)}"><span class="pcred">${fotoCred(fo)}</span>${forma?`<span class="psil" aria-hidden="true"><img src="${img}" alt=""></span>`:''}</span>`;}
 const bfNum=d=>(d>0?'+':d<0?'−':'')+Math.abs(Math.round(d));
 function pintarBrief(){const C=$('#mv');if(!C||typeof GREL==='undefined')return;if(!bf)bfNuevo();
   const B=bfBrief(),P=PERFIL[B.cat],temp=`${BF_TEMP[B.cat]} ${P.hasta}`,f=bfFoto(B);
@@ -5019,7 +5135,7 @@ function bfVeredicto(C,B,temp){const el=bf.el,cnt={};el.forEach(x=>cnt[x.m.k]=(c
   const dom=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]||(a===el[0].m.k?-1:1))[0];
   const pts=x=>BF_PTS[B.cat][x.m.k],ord=el.slice().sort((a,b)=>pts(b)-pts(a)),mejor=ord[0],peor=ord[ord.length-1];
   const cats=['premium','medio','fast'],nom=c=>c===B.cat?B.casa:BF_CASAS[c];
-  const linea=x=>`<li class="bfli">${FOTO_ATR[x.id]?`<img class="bfliph"${fotoPos(x.id)} src="${vogueFoto(FOTO_ATR[x.id].f,240)}" alt="${x.n}: ${fotoCred(FOTO_ATR[x.id])}" title="${fotoCred(FOTO_ATR[x.id])}">`:`<img src="${x.img}" alt="">`}<span><b>${x.n}</b> · ${BF_MOM[x.m.k].n.toLowerCase()}: ${bfNum(x.m.d)} puntos en la búsqueda mundial, 2022→2024, ${BF_MOM[x.m.k].d}.</span><em>${pts(x)>=7?'▲ te sumó':pts(x)<=4?'▼ te restó':'■ neutro'}</em></li>`;
+  const linea=x=>`<li class="bfli">${FOTO_ATR[x.id]?`<img class="bfliph"${fotoPos(x.id)} src="${vogueFoto(FOTO_ATR[x.id].f,640)}" alt="${x.n}: ${fotoCred(FOTO_ATR[x.id])}" title="${fotoCred(FOTO_ATR[x.id])}">`:`<img src="${x.img}" alt="">`}<span><b>${x.n}</b> · ${BF_MOM[x.m.k].n.toLowerCase()}: ${bfNum(x.m.d)} puntos en la búsqueda mundial, 2022→2024, ${BF_MOM[x.m.k].d}.</span><em>${pts(x)>=7?'▲ te sumó':pts(x)<=4?'▼ te restó':'■ neutro'}</em></li>`;
   C.innerHTML=`<div class="bfver"><p class="bfde">${B.casa} · ${temp} · ${B.pn}</p>
     <h2 class="bftit bfr" style="--t:0s">${BF_TIT[B.cat][dom]}</h2>
     <ul class="bflist">${el.map((x,i)=>linea(x).replace('class="bfli"',`class="bfli bfr" style="--t:${.9+i*.55}s"`)).join('')}</ul>

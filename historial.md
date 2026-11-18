@@ -557,6 +557,12 @@ lo que ya se entiende.
 La apertura de Acerca de rota como los gráficos de Tendencias: la pared de miniaturas del corpus, el diagrama de las
 fuentes y el del modelo, nueve segundos cada uno.
 
+## v1.78 · 18/11/2026 · El brief, con racha
+
+El brief tiene algo que perder: una racha de briefs clavados (7/10 o más) que se corta si fallás. El veredicto llega por
+partes —el puntaje grande, la racha, el porqué, las tres casas— y cierra con una frase para contar: «Mi look: 8/10 para
+Prada, 6/10 para COS, 3/10 para Zara», con un botón para copiarla.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

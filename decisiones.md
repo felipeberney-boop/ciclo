@@ -3266,3 +3266,23 @@ secciones.
 movería la página entera. Queda la pared, ahora con 14 columnas para que se vean cientos de looks y no 70.
 
 Demo 8 de 8. Capturas en `diseno/acerca_rota_2026-11-18/`.
+
+## 2026-11-18 (noche) · El brief, con tensión
+
+**Pedido (Felipe).** El juego funciona pero es tibio. Buscar tensión, no más contenido: una racha con algo que perder, el
+veredicto por partes con ritmo, y un resultado que dé ganas de contar.
+
+**Cómo quedó.** Se hicieron las tres cosas.
+- *La racha.* Clavás un brief con 7/10 o más para su casa. La racha cuenta los clavados seguidos y se guarda en el
+  navegador con tu mejor marca. Antes de aceptar un brief se ve qué está en juego («Racha: 3 · si este no llega a 7,
+  vuelve a cero»); al terminar, «Racha: 4 briefs clavados seguidos · tu récord» o «Se cortó la racha: ibas 3».
+- *El veredicto por partes.* Primero, sólo el puntaje, enorme, contando hasta su número, con «Clavado», «Casi» o
+  «Errado»; al segundo, la racha; a los 2,6 s el título; después cada elección con lo que sumó o restó; a los 5 s la
+  comparación entre las tres escalas; al final, la frase y los botones. Antes llegaba casi todo junto y el puntaje al final.
+- *La frase.* «Mi look: 3/10 para Bottega Veneta, 6/10 para COS, 6/10 para Zara.», con «Copiar». El botón principal
+  dice «Seguir la racha →» si clavaste.
+
+**Decisiones discutibles.** El umbral de 7 para «clavado» y de 5 para «casi» los fijé yo. La racha vive en el navegador
+(no hay cuentas): se pierde si se borran los datos del sitio.
+
+Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/brief_racha_2026-11-18/` (el veredicto a 1, 3 y 8,5 segundos).

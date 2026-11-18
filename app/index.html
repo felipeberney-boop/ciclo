@@ -1839,6 +1839,24 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app .arota .arsel button:not(#q):not(#qq){font:400 var(--t-eti)/1 var(--sf)!important;padding:9px 14px!important;border:1px solid var(--rule)!important;border-radius:999px!important;background:#fff!important;color:var(--ink)!important;cursor:pointer}
 .app .arota .arsel button.on:not(#q):not(#qq){border-color:var(--ink)!important}
 .app .arota .arsel .arpausa:not(#q):not(#qq){margin-left:auto;border:0!important;text-decoration:underline;text-underline-offset:4px}
+
+/* 18/11 (noche) · El brief con tensión */
+.bfnota{display:flex;align-items:baseline;gap:10px;margin:6px 0 4px}
+.app #v-mover .bfnum:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-variation-settings:'opsz' 96!important;font-size:clamp(110px,14vw,180px)!important;line-height:.85!important;letter-spacing:-.04em!important;color:var(--ink)!important;font-variant-numeric:lining-nums tabular-nums}
+.bfde10{font-family:var(--moda);font-size:var(--t-sub);color:var(--ink-3)}
+.bfetq{margin-left:14px;font:400 var(--t-cue)/1 var(--sf);padding:8px 14px;border-radius:999px;border:1px solid currentColor}
+.bfetq.ok{color:var(--act-entrar,#2a6b3c)}.bfetq.casi{color:var(--act-esperar,#8a6100)}.bfetq.mal{color:var(--act-salir,#a32b2b)}
+.app #v-mover .bfracha:not(#q):not(#qq){margin:6px 0 26px!important;font:400 var(--t-cue)/1.4 var(--sf)!important;color:var(--ink-2)!important}
+.bfracha b{font-family:var(--moda);font-weight:400;font-size:var(--t-sub);color:var(--ink)}
+.app #v-mover .bfcomp:not(#q):not(#qq){margin:30px 0 10px!important;font:400 var(--t-eti)/1 var(--sf)!important;color:var(--ink-2)!important}
+.bffrase{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:26px 0 6px;padding:18px 20px;border:1px solid var(--ink);border-radius:18px}
+.app #v-mover .bffrase p:not(#q):not(#qq){margin:0!important;flex:1;font-family:var(--moda)!important;font-size:var(--t-sub)!important;line-height:1.25!important;color:var(--ink)!important}
+.app #v-mover .bfjuego:not(#q):not(#qq){margin:6px 0 14px!important;font:400 var(--t-eti)/1.4 var(--sf)!important;color:var(--ink-2)!important}
+.bfjuego b{color:var(--ink);font-weight:400}
+
+.app #v-mover .bfetq:not(#q):not(#qq):not(#qqq){border-radius:999px!important}
+.app #v-mover .bfver:not(#q):not(#qq){margin-left:0!important;margin-right:auto!important}
+.app #v-mover .bfver .mvbotones:not(#q):not(#qq){justify-content:flex-start!important}
 </style>
 
 <div class="app">
@@ -5244,6 +5262,7 @@ function pintarBrief(){const C=$('#mv');if(!C||typeof GREL==='undefined')return;
         <div class="bffoto">${f?`<img src="${vogueFoto(f.f,640)}" alt="${f.d}, ${TEMP[f.s]||''} ${f.y}"><span class="bfcred">${B.ref?'Referencia: ':''}${f.d} · ${TEMP[f.s]||''} ${f.y} · Vogue Runway</span>`:''}</div>
         <div class="bftxt"><p class="bfde">Brief</p><h2>${B.casa}</h2><p class="bfl">${temp}</p><p class="bfl">${B.pn}</p>
           <p class="bfcat">${P.n} · produce en ${P.prod}${B.ref?` · baja a la calle lo que mostró ${f?f.d:'el lujo'}`:''}</p>
+          ${(()=>{const R=bfRacha();return R.r>0?`<p class="bfjuego">Racha: <b>${R.r}</b> · si este no llega a 7, vuelve a cero</p>`:R.m>0?`<p class="bfjuego">Tu mejor racha: ${R.m}. Clavás con 7 o más.</p>`:`<p class="bfjuego">Clavás con 7 o más. Encadená briefs y armá una racha.</p>`;})()}
           <button type="button" class="mvbtn" id="bfok">Aceptar el brief</button></div></div></div>`;
     $('#bfok').onclick=()=>{bf.fase=0;bf.el=[];pintarBrief();};return;}
   if(typeof bf.fase==='number'){const pasos=bfPasos(),[tit,ops]=pasos[bf.fase];
@@ -5256,23 +5275,38 @@ function pintarBrief(){const C=$('#mv');if(!C||typeof GREL==='undefined')return;
     if($('#bfatras'))$('#bfatras').onclick=()=>{bf.fase--;bf.el.length=bf.fase;pintarBrief();};return;}
   bfVeredicto(C,B,temp);
 }
+/* 18/11 (noche) · El brief con tensión: una racha de briefs clavados (7/10 o más) que se puede perder, el veredicto por
+   partes (primero el puntaje, después la racha, el porqué y las tres casas) y una frase para contar */
+const bfRacha=()=>{try{return {r:+localStorage.getItem('ciclo.bf_racha')||0,m:+localStorage.getItem('ciclo.bf_mejor')||0};}catch(e){return {r:0,m:0};}};
+const bfGuardar=(r,m)=>{try{localStorage.setItem('ciclo.bf_racha',r);localStorage.setItem('ciclo.bf_mejor',m);}catch(e){}};
 function bfVeredicto(C,B,temp){const el=bf.el,cnt={};el.forEach(x=>cnt[x.m.k]=(cnt[x.m.k]||0)+1);
   const dom=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]||(a===el[0].m.k?-1:1))[0];
   const pts=x=>BF_PTS[B.cat][x.m.k],ord=el.slice().sort((a,b)=>pts(b)-pts(a)),mejor=ord[0],peor=ord[ord.length-1];
   const cats=['premium','medio','fast'],nom=c=>c===B.cat?B.casa:BF_CASAS[c];
   const linea=x=>`<li class="bfli">${FOTO_ATR[x.id]?`<img class="bfliph"${fotoPos(x.id)} src="${vogueFoto(FOTO_ATR[x.id].f,640)}" alt="${x.n}: ${fotoCred(FOTO_ATR[x.id])}" title="${fotoCred(FOTO_ATR[x.id])}">`:`<img src="${x.img}" alt="">`}<span><b>${x.n}</b> · ${BF_MOM[x.m.k].n.toLowerCase()}: ${bfNum(x.m.d)} puntos en la búsqueda mundial, 2022→2024, ${BF_MOM[x.m.k].d}.</span><em>${pts(x)>=7?'▲ te sumó':pts(x)<=4?'▼ te restó':'■ neutro'}</em></li>`;
+  const nota=bfPuntaje(B.cat,el),clavo=nota>=7,R0=bfRacha();
+  if(!bf.contado){bf.contado=true;const r=clavo?R0.r+1:0;bfGuardar(r,Math.max(R0.m,r));bf.racha={antes:R0.r,ahora:r,mejor:Math.max(R0.m,r),record:clavo&&r>R0.m};}
+  const RR=bf.racha,etq=nota>=7?'Clavado':nota>=5?'Casi':'Errado';
+  const frase=`Mi look: ${cats.map(c=>`${bfPuntaje(c,el)}/10 para ${nom(c)}`).join(', ')}.`;
+  const T=x=>`style="--t:${x}s"`;
   C.innerHTML=`<div class="bfver"><p class="bfde">${B.casa} · ${temp} · ${B.pn}</p>
-    <h2 class="bftit bfr" style="--t:0s">${BF_TIT[B.cat][dom]}</h2>
-    <ul class="bflist">${el.map((x,i)=>linea(x).replace('class="bfli"',`class="bfli bfr" style="--t:${.9+i*.55}s"`)).join('')}</ul>
-    <p class="bfpor bfr" style="--t:${.9+el.length*.55+.2}s">${pts(mejor)>pts(peor)?`${mejor.n} te subió el puntaje; ${peor.n} te lo bajó.`:'Las tres elecciones pesan lo mismo para esta casa.'}</p>
-    <div class="bfcasas">${cats.map((c,i)=>`<div class="bfcasa bfr${c===B.cat?' es':''}" style="--t:${3.3+i*.45}s"><b data-n="${bfPuntaje(c,el)}">0</b><span>/10 para ${nom(c)}</span><small>${PERFIL[c].n} · produce en ${PERFIL[c].prod}</small></div>`).join('')}</div>
+    <div class="bfnota bfr" ${T(0)}><b class="bfnum" data-n="${nota}">0</b><span class="bfde10">/10</span><span class="bfetq bfr ${clavo?'ok':nota>=5?'casi':'mal'}" ${T(1)}>${etq}</span></div>
+    <p class="bfracha bfr" ${T(1.6)}>${clavo?`Racha: <b>${RR.ahora}</b> ${RR.ahora===1?'brief clavado':'briefs clavados seguidos'}${RR.record&&RR.ahora>1?' · tu récord':''}`:RR.antes>0?`Se cortó la racha: ibas <b>${RR.antes}</b>. Tu mejor: ${RR.mejor}.`:`Sin racha todavía. Clavás con 7 o más.`}</p>
+    <h2 class="bftit bfr" ${T(2.6)}>${BF_TIT[B.cat][dom]}</h2>
+    <ul class="bflist">${el.map((x,i)=>linea(x).replace('class="bfli"',`class="bfli bfr" style="--t:${3.2+i*.5}s"`)).join('')}</ul>
+    <p class="bfpor bfr" style="--t:${3.2+el.length*.5+.2}s">${pts(mejor)>pts(peor)?`${mejor.n} te subió el puntaje; ${peor.n} te lo bajó.`:'Las tres elecciones pesan lo mismo para esta casa.'}</p>
+    <p class="bfcomp bfr" ${T(5.2)}>El mismo look, en las tres escalas</p>
+    <div class="bfcasas">${cats.map((c,i)=>`<div class="bfcasa bfr${c===B.cat?' es':''}" style="--t:${5.5+i*.45}s"><b data-n="${bfPuntaje(c,el)}">0</b><span>/10 para ${nom(c)}</span><small>${PERFIL[c].n} · produce en ${PERFIL[c].prod}</small></div>`).join('')}</div>
+    <div class="bffrase bfr" ${T(7.2)}><p>${escH(frase)}</p><button type="button" class="gvolver" id="bfcopiar">Copiar</button></div>
     <details class="qm bfqm"><summary aria-label="Cómo se calcula">?</summary><div class="qmc"><p>Cada elección tiene su serie de búsqueda mundial (Google Trends, corregida). Baja si perdió más de 3 puntos entre 2022 y 2024; quieta entre −3 y +3; pico si ganó y está en su techo; sube si ganó y todavía no llegó. Las tres pesan lo mismo.</p><p>Cada casa puntúa distinto el mismo momento: el lujo lo pone de moda mientras sube (10) y pierde interés cuando el fast fashion lo copia en el pico (4); el fast fashion gana en el pico (10) y no se arriesga con lo que recién sube (3); contemporary queda en el medio. Cuando baja, pierden todos. Es una regla del juego, no un pronóstico: CICLO no dice qué va a pasar.</p></div></details>
-    <div class="mvbotones bfr" style="--t:${3.3+3*.45+.3}s"><button type="button" class="mvbtn" id="bfotro">Otro brief</button><button type="button" class="gvolver" id="bfre">Rediseñar este</button></div></div>`;
+    <div class="mvbotones bfr" style="--t:7.6s"><button type="button" class="mvbtn" id="bfotro">${clavo?`Seguir la racha →`:'Otro brief →'}</button><button type="button" class="gvolver" id="bfre">Rediseñar este</button></div></div>`;
   const red=matchMedia('(prefers-reduced-motion:reduce)').matches;
   $$('#mv .bfcasa b').forEach((b,i)=>{const n=+b.dataset.n;if(red){b.textContent=n;return;}
-    setTimeout(()=>{const t0=performance.now();const paso=t=>{const q=Math.min(1,(t-t0)/700);b.textContent=Math.round(n*q);if(q<1)requestAnimationFrame(paso);};requestAnimationFrame(paso);},(3.3+i*.45)*1000);});
-  $('#bfotro').onclick=()=>{bf.i++;bf.fase='brief';bf.el=[];pintarBrief();window.scrollTo({top:0,behavior:'smooth'});};
-  $('#bfre').onclick=()=>{bf.fase=0;bf.el=[];pintarBrief();};
+    setTimeout(()=>{const t0=performance.now();const paso=t=>{const q=Math.min(1,(t-t0)/700);b.textContent=Math.round(n*q);if(q<1)requestAnimationFrame(paso);};requestAnimationFrame(paso);},(5.5+i*.45)*1000);});
+  {const b=$('#mv .bfnum'),n=+b.dataset.n;if(red)b.textContent=n;else{const t0=performance.now();const paso=t=>{const q=Math.min(1,(t-t0)/900),e=1-Math.pow(1-q,3);b.textContent=Math.round(n*e);if(q<1)requestAnimationFrame(paso);};requestAnimationFrame(paso);}}
+  $('#bfcopiar').onclick=e=>{const t=`${frase} — CICLO, El brief de ${B.casa}`;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{e.target.textContent='Copiado ✓';}).catch(()=>{e.target.textContent='No se pudo copiar';});};
+  $('#bfotro').onclick=()=>{bf.i++;bf.fase='brief';bf.el=[];bf.contado=false;pintarBrief();window.scrollTo({top:0,behavior:'smooth'});};
+  $('#bfre').onclick=()=>{bf.fase=0;bf.el=[];bf.contado=false;pintarBrief();};
 }
 /* links entre vistas (data-vista); data-ir es otra cosa: el paso de Diseñar al que vuelve un chip */
 document.addEventListener('click',e=>{const a=e.target.closest('a[data-vista]');if(a){e.preventDefault();mostrar(a.dataset.vista);}});

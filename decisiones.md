@@ -3089,3 +3089,30 @@ La ficha aparece en todos los números medidos que ya tenían su fuente, sobre c
 leyenda, en los siete recuadros del diagrama de datos de Acerca de y en cada fuente del pie. Con el dedo, se toca.
 
 Demo 8 de 8. Capturas en `diseno/fuentes_2026-11-18/`.
+
+## 2026-11-18 · El bug de las fotos negras en Preguntar: la causa y el arreglo
+
+**Devolución (Felipe).** En Preguntar algunas fotos se ponen en negro de la nada, sin patrón. Encontrar la causa, no
+taparla con un color, y poner un estado de carga.
+
+**Lo que se descartó, medido.** No son rutas rotas ni imágenes que faltan: ninguna respuesta de error de assets.vogue.com
+(las URLs sospechosas devuelven 200 con curl). No es la carga diferida de la banda: medida cada 3 segundos durante 90, con
+red lenta simulada, en Chrome y en WebKit (el motor de Safari, Mac y iPhone), ninguna foto visible de la banda queda sin
+cargar después de los primeros segundos.
+
+**La causa.** `asPintar()` reescribía el chat entero con `innerHTML` cada vez que algo cambiaba: un mensaje nuevo, el
+«leyendo…», la cuenta regresiva cuando Groq pide esperar (una vez por segundo). Eso destruía y volvía a crear todas las
+imágenes de todas las respuestas anteriores; cada una arrancaba vacía y mostraba el fondo negro de su caja hasta volver a
+cargar y decodificar. Por eso eran «algunas, de la nada»: las que justo se estaban rearmando. Medido con un
+MutationObserver: un solo look de ejemplo recreaba las imágenes dos veces.
+
+**El arreglo.** `ltRender()`: cada mensaje del chat se compara con el que ya estaba; si es igual no se toca, y si cambió,
+las fotos ya cargadas se mudan al mensaje nuevo en vez de rehacerse. Medido: diez redibujos seguidos crean cero imágenes
+nuevas y los elementos son los mismos. Además, `fotosCargando()`: mientras una foto baja, su caja muestra una placa con un
+brillo suave (oscura en las bandas, clara en el chat) y la foto aparece con un fundido; si no llega, dice «foto no
+disponible». Se aplica al chat, a la entrada y a la banda de Tendencias.
+
+**De paso.** En las fotos de una respuesta («Lo que más sube») el crédito y el nombre del atributo se pisaban abajo: el
+crédito pasa arriba.
+
+Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/fotos_negras_2026-11-18/`.

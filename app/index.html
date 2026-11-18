@@ -1675,6 +1675,22 @@ body,.app{background:#fff!important}
 #tip.src span.fobs:not(#q):not(#qq):not(#qqq),#tip.src span.fval:not(#q):not(#qq):not(#qqq){color:#fff!important;border-top:1px solid rgba(255,255,255,.18);padding-top:6px}
 #tip.src span.fobs + span.fobs{border-top:0!important;padding-top:0!important}
 .dgb[data-src],.colofon [data-src]{cursor:help}
+
+/* 18/11 · el estado de carga de las fotos: placa con brillo mientras bajan, fundido al llegar, aviso si fallan */
+@keyframes fbrillo{0%{background-position:-160% 0}100%{background-position:260% 0}}
+.fotocarga{background:linear-gradient(100deg,var(--rule-2) 30%,#f4f4f6 50%,var(--rule-2) 70%) var(--rule-2)!important;background-size:220% 100%!important;animation:fbrillo 1.4s linear infinite}
+.gbf.fotocarga,.vbanda .gbf.fotocarga{background:linear-gradient(100deg,#1c1c1e 30%,#2c2c2e 50%,#1c1c1e 70%) #1c1c1e!important;background-size:220% 100%!important}
+img.fcarga{opacity:0}
+img:not(.fcarga){transition:opacity .35s ease}
+.fotoerr{position:relative;background:var(--rule-2)!important}
+.fotoerr::before{content:'foto no disponible';position:absolute;left:10px;bottom:10px;z-index:3;font:400 12px/1.2 var(--sf);color:var(--ink-2)}
+.fotoerr img{opacity:0}
+@media (prefers-reduced-motion:reduce){.fotocarga{animation:none}}
+
+/* 18/11 · en las fotos de una respuesta el crédito va arriba y el atributo abajo: se pisaban */
+.app .tzfotos .pcred:not(#q):not(#qq):not(#qqq){top:10px!important;bottom:auto!important;left:10px!important;right:10px!important;font:400 12px/1.25 var(--sf)!important;font-style:normal!important;color:#fff!important;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.app .tzfotos figcaption:not(#q):not(#qq){bottom:12px!important}
+.tzfotos figure::before{content:'';position:absolute;left:0;right:0;top:0;height:22%;background:linear-gradient(rgba(0,0,0,.35),transparent);z-index:1;pointer-events:none}
 </style>
 
 <div class="app">
@@ -3419,10 +3435,34 @@ function ltVacio(){const D=asDiseno(),idx=CLIP.idx;
     <div class="ltsug">${sug.map(t=>`<button type="button" class="ltsugb" data-q="${escH(t)}">${escH(t)}</button>`).join('')}</div>
     <div class="ltej"><span>O probá con un look de pasarela</span><div>${LT_EJ.map(([n,k])=>`<button type="button" class="ltejb" data-i="${QEJ[k]}" data-n="${n}">${idx?`<img alt="" src="${vogueFoto(idx.f[QEJ[k]],320)}">`:''}<span>${n}</span></button>`).join('')}</div></div></div>`;}
 /* el hilo entero; si nuevo, baja hasta el último mensaje (sin mover lo de arriba) */
+/* 18/11 · el bug de las fotos negras: asPintar reescribía todo el chat con innerHTML en cada cambio (un mensaje, «leyendo…»,
+   la cuenta regresiva de Groq, una vez por segundo). Eso destruía y volvía a crear todas las imágenes de las respuestas
+   anteriores, que arrancaban vacías y mostraban el fondo negro hasta recargar. Ahora cada mensaje se compara con el que ya
+   estaba: si es igual no se toca, y si cambió, sus fotos ya cargadas pasan al mensaje nuevo */
+function ltRender(ch,partes){
+  if(!ch._ltp){ch.innerHTML='';ch._ltp=[];}
+  while(ch.children.length>partes.length)ch.lastElementChild.remove();
+  ch._ltp.length=Math.min(ch._ltp.length,partes.length);
+  partes.forEach((h,i)=>{if(ch._ltp[i]===h&&ch.children[i])return;
+    const t=document.createElement('template');t.innerHTML=h.trim();
+    if(t.content.children.length!==1){ch.innerHTML=partes.join('');ch._ltp=partes.slice();fotosCargando(ch);return;}
+    const nuevo=t.content.firstElementChild,viejo=ch.children[i];
+    if(viejo){const ya=new Map();viejo.querySelectorAll('img').forEach(im=>{if(im.complete&&im.naturalWidth)ya.set(im.getAttribute('src'),im);});
+      nuevo.querySelectorAll('img').forEach(im=>{const o=ya.get(im.getAttribute('src'));if(!o)return;ya.delete(im.getAttribute('src'));
+        for(const a of im.attributes)if(a.name!=='src')o.setAttribute(a.name,a.value);im.replaceWith(o);});
+      viejo.replaceWith(nuevo);}
+    else ch.appendChild(nuevo);
+    ch._ltp[i]=h;fotosCargando(nuevo);});}
+/* el estado de carga de una foto: una placa con brillo mientras baja, fundido al llegar, y un aviso si no llega */
+function fotosCargando(raiz){if(!raiz)return;raiz.querySelectorAll('img').forEach(im=>{if(im.dataset.fc)return;im.dataset.fc=1;
+  const caja=im.parentElement;if(im.complete){if(!im.naturalWidth&&im.getAttribute('src'))caja&&caja.classList.add('fotoerr');return;}
+  im.classList.add('fcarga');caja&&caja.classList.add('fotocarga');
+  im.addEventListener('load',()=>{im.classList.remove('fcarga');caja&&caja.classList.remove('fotocarga');},{once:true});
+  im.addEventListener('error',()=>{im.classList.remove('fcarga');caja&&(caja.classList.remove('fotocarga'),caja.classList.add('fotoerr'));},{once:true});});}
 function asPintar(nuevo){
   const ch=$('#aschat');if(!ch)return;const D=asDiseno();
   const ultLect=as.hist.reduce((u,m,k)=>m.tipo==='lectura'&&!m.leyendo&&!m.fallo?k:u,-1);
-  ch.innerHTML=as.hist.length?as.hist.map((m,k)=>m.role==='user'?ltYo(m):ltBurbuja(m,k,ultLect)).join(''):ltVacio();
+  if(as.hist.length)ltRender(ch,as.hist.map((m,k)=>m.role==='user'?ltYo(m):ltBurbuja(m,k,ultLect)));else{ch.innerHTML=ltVacio();ch._ltp=null;fotosCargando(ch);}
   $('#ltnueva').hidden=!as.hist.length;
   $('#asdisw').hidden=!D.chips.length||!as.hist.length;
   $('#asdis').innerHTML=D.chips.length?`Con tu diseño: <button type="button" class="ltdisb">${escH(D.chips.map(c=>c.v.toLowerCase()).join(' · '))}</button>`:'';
@@ -4554,7 +4594,7 @@ function vistaBanda(v){if(!['radar','recorridos','disenar','lectura','retornos',
   const it=L.map((x,i)=>`<figure class="gbf"><img src="${vogueFoto(x[0],720)}" alt="" ${i<5?'':'loading="lazy" '}decoding="async"><figcaption>${x[1]} · ${TEMP[x[2]]||''} ${x[3]}</figcaption>${x[4]?`<span class="vbn">${x[4]}</span>`:''}</figure>`).join('');
   d.innerHTML=`<div class="gbt" style="--dur:${L.length*6}s">${it}${it}</div>`;
   const ref=v==='lectura'?sec.querySelector('.lthead'):sec.querySelector(':scope > .vhead');
-  if(ref)ref.insertAdjacentElement('afterend',d);else sec.insertBefore(d,sec.firstChild);}
+  if(ref)ref.insertAdjacentElement('afterend',d);else sec.insertBefore(d,sec.firstChild);fotosCargando(d);}
 function mostrar(v,keepNav){
   if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando
   document.body.classList.toggle('on-gate',v==='perfil');
@@ -4617,7 +4657,7 @@ function gateBanda(){const b=$('#gbanda');if(!b)return;const [k,L,txt]=gbElegir(
   const it=L.map((x,i)=>`<figure class="gbf"><img src="${vogueFoto(x[0],w)}" alt="" ${i<4?'':'loading="lazy" '}decoding="async"><figcaption>${x[1]} · ${TEMP[x[2]]||''} ${x[3]}</figcaption></figure>`).join('');
   const t=document.createElement('div');t.className='gbt';t.style.setProperty('--dur',(L.length*7)+'s');t.innerHTML=it+it;
   const viejo=b.querySelector('.gbt:not(.sale)');if(viejo){viejo.classList.add('sale');t.classList.add('entra');setTimeout(()=>viejo.remove(),800);}
-  b.appendChild(t);}
+  b.appendChild(t);fotosCargando(t);}
 function pintarGate(){if(gatePaso!==3)gbPrevia=null;requestAnimationFrame(gateBanda);
   const g=$('#ggrid');$('#gvolver').hidden=gatePaso===1;g.classList.remove('g4');
   $('#gmirar').parentElement.hidden=gatePaso!==1; // «Sólo estoy mirando», sólo en la primera pregunta (10/11)

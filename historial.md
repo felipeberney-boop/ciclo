@@ -511,6 +511,12 @@ queda en retorno). La validación contra Reddit, Shopping y Amazon se sigue sost
 Al pasar el mouse (o tocar) por cualquier fuente —una curva, la leyenda, el diagrama de Acerca de, el pie, un número
 medido— aparece su ficha: de dónde viene, cómo lo procesamos y qué sacamos de ese dato.
 
+## v1.70 · 18/11/2026 · Sin fotos negras en Preguntar
+
+Las fotos de Preguntar se ponían en negro porque el chat se reescribía entero en cada cambio y volvía a crear todas las
+imágenes. Ahora cada mensaje se actualiza sólo si cambió, las fotos ya cargadas se conservan, y mientras una foto baja se
+ve una placa con brillo en vez del fondo negro.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

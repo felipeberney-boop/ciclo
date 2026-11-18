@@ -3213,3 +3213,26 @@ baja (52 y 50), el cargo baja (67 y 72).
   recalculó el K-means: ninguna de las 17 etapas cambia (nivel y momento se mueven centésimas).
 
 Scripts en `codigo/pasarela_clip/`; resultados en `datasets_procesados/pasarela_clip/`.
+
+## 2026-11-18 (noche) · El ciclo, todos los atributos en movimiento
+
+**Pedido (Felipe).** La línea de tiempo de lunares mostraba un solo atributo y no decía nada. Tiene que mostrar todos a la
+vez y moverse: un eje de años 2004–2024, las fotos chiquitas flotando, subiendo cuando un atributo se acerca a su pico y
+bajando cuando cae, con un movimiento que sea la serie medida y no una animación decorativa.
+
+**Cómo quedó.** Los 48 atributos que tienen serie de búsqueda y foto de pasarela. Cada foto está, en horizontal, en el
+año de su pico (los que pican el mismo año se abren en abanico) y, en vertical, a la altura de su búsqueda en el año del
+cursor. El cursor recorre 2004–2024 en veinte segundos (interpolando entre años), se detiene dos segundos y vuelve a
+empezar; un año enorme en Bodoni dice dónde está. Al llegar a su pico una foto toca el techo y muestra su nombre. Se puede
+pausar, volver a 2004 y tocar una foto para abrir ese atributo abajo. Con «reducir movimiento» queda quieta en 2024.
+
+**Decisiones discutibles.**
+- *La altura va del peor año al pico de cada atributo*, no de 0 a su máximo. La búsqueda de un atributo casi nunca cae a
+  cero, así que con 0–máximo todo flotaba entre el 30 y el 90 % y no se veía el ciclo. Sigue siendo la serie medida (la
+  misma de Tendencias, frente a 35 búsquedas de moda), en su propio rango, y el texto lo dice.
+- *La búsqueda, no la pasarela*, porque es la serie que llega a todos los atributos y de 2004 a 2024; la pasarela sólo
+  existe para 13.
+- *El eje en horizontal es el año del pico*, para que la ola que sube vaya acompañando al cursor y se vea que cada
+  atributo tuvo su momento.
+
+Demo 8 de 8. Capturas en `diseno/ciclo_movimiento_2026-11-18/` (tres momentos de la animación).

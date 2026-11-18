@@ -541,6 +541,12 @@ Con 20.000 looks por año de 2024 y 2025 leídos con CLIP, la pasarela de 12 de 
 (lunares queda en 2023: su margen de error era grande). Va punteada y marcada como leída con CLIP. El modelo sigue con la
 pasarela hasta 2023; las etapas no cambian.
 
+## v1.75 · 18/11/2026 · El ciclo, en movimiento
+
+El ciclo abre con todos los atributos a la vez sobre un eje de 2004 a 2024: cada foto en el año de su pico, subiendo y
+bajando con su búsqueda medida mientras un cursor recorre los veinte años en veinte segundos. Tocar una foto abre ese
+atributo.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

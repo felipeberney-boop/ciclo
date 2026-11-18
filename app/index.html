@@ -1795,6 +1795,24 @@ img:not(.fcarga){transition:opacity .35s ease}
 
 .app #v-disenar .dzhead:not(#q):not(#qq):not(#qqq){margin-bottom:28px!important;padding-bottom:4px!important}
 .app #v-disenar .dzhead .dzh:not(#q):not(#qq):not(#qqq):not(#qqqq){line-height:1.12!important}
+
+/* 18/11 (noche) · El ciclo en movimiento */
+.cmov{margin:6px 0 40px;border-top:1px solid var(--ink);padding-top:18px}
+.cmhead{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:end;margin-bottom:6px}
+.app .cmov .cmy:not(#q):not(#qq):not(#qqq){margin:0!important;font-family:var(--moda)!important;font-weight:400!important;font-variation-settings:'opsz' 96!important;font-size:clamp(64px,8vw,120px)!important;line-height:.9!important;letter-spacing:-.03em!important;color:var(--ink)!important;font-variant-numeric:lining-nums tabular-nums;min-width:3.2ch}
+.app .cmov .cmk:not(#q):not(#qq):not(#qqq){margin:0!important;max-width:520px;font:400 var(--t-eti)/1.45 var(--sf)!important;color:var(--ink-2)!important;text-align:left!important}
+.cmbot{display:flex;gap:8px}
+.app .cmov .cmbot button:not(#q):not(#qq){font:400 var(--t-eti)/1 var(--sf)!important;padding:8px 14px!important;border:1px solid var(--ink)!important;border-radius:999px!important;background:#fff!important;color:var(--ink)!important;cursor:pointer}
+.cmesc{position:relative;height:clamp(340px,52vh,520px);overflow:hidden}
+.cmeje{position:absolute;inset:0;width:100%;height:100%}
+.cmcur{position:absolute;top:0;bottom:30px;left:0;width:1px;background:var(--azul);opacity:.5}
+.app .cmov .cmf:not(#q):not(#qq){all:unset;position:absolute;left:0;top:0;width:var(--fw);aspect-ratio:5/7;cursor:pointer;will-change:transform,opacity;transition:outline-color .15s}
+.cmf img{width:100%;height:100%;object-fit:cover;display:block;background:var(--rule-2)}
+.cmf span{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);white-space:nowrap;font:400 11px/1 var(--sf);color:var(--ink);background:rgba(255,255,255,.92);padding:3px 5px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}
+.cmf.alto span,.cmf:hover span,.cmf:focus-visible span{opacity:1}
+.cmf:hover,.cmf:focus-visible{z-index:5;outline:2px solid var(--azul);outline-offset:1px}
+.app .cmov .cmsrc:not(#q):not(#qq):not(#qqq){margin:8px 0 0!important;font:400 var(--t-eti)/1.4 var(--sf)!important;color:var(--ink-3)!important;text-align:left!important}
+@media (max-width:760px){.cmhead{grid-template-columns:minmax(0,1fr);gap:8px}.cmesc{height:360px}.cmf span{display:none}}
 </style>
 
 <div class="app">
@@ -4726,12 +4744,45 @@ function vistaBanda(v){if(v!=='radar')return;const sec=$('#v-'+v);
    invitación a sumar tu diseño; Acerca de, una pared de miniaturas del corpus */
 const TL_LUN={"2015": ["https://assets.vogue.com/photos/55c6514208298d8be21e42d3/Saloni_001_1366.1366x2048.JPG", "Saloni"], "2017": ["https://assets.vogue.com/photos/5a8b1c43f613120ba8eba3b5/_ARC0629.jpg", "Mother of Pearl"], "2018": ["https://assets.vogue.com/photos/5a9fe5fc2da21b0baa10e892/19-vika-gazinskaya-fall-2018.jpg", "Vika Gazinskaya"], "2019": ["https://assets.vogue.com/photos/5c3e275563f8482d552fbe63/00020-fausto-puglisi-pre-fall-2019.jpg", "Fausto Puglisi"], "2021": ["https://assets.vogue.com/photos/60350b482e8e171f2a85d7fe/00024-Carolina-Herrera-Fall-21.jpg", "Carolina Herrera"], "2022": ["https://assets.vogue.com/photos/621157076c06c30de8f58ccd/IS1_0490.jpg", "Richard Quinn"]};
 const vuFoto=(u,w)=>u.replace(/(photos\/[0-9a-f]+)\/(?:master\/[^/]+\/)?/,`$1/master/w_${w},c_limit/`);
-function cicloTL(){const sec=$('#v-recorridos');if(!sec||sec.querySelector('.ctl'))return;
-  const o=REC.find(r=>r.id==='lunares');if(!o||!o.v)return;const mx=Math.max(...o.v.filter(x=>x!=null));
-  const d=document.createElement('div');d.className='ctl';
-  d.innerHTML=`<p class="ctlk">Lunares en la pasarela, 2010–2023 · una foto cuando está, un hueco cuando se fue</p><div class="ctlf">${[...Array(14).keys()].map(i=>{const y=2010+i,v=o.v[y-2004],f=TL_LUN[y];
-    const esta=v!=null&&v>=0.6*mx&&f;return `<figure class="ctlc${esta?' esta':''}"${esta?` title="${escH(f[1])} · ${y} · Vogue Runway"`:''}>${esta?`<img src="${vuFoto(f[0],640)}" alt="Lunares en la pasarela: ${escH(f[1])}, ${y}">`:''}<span class="ctly">${y}</span></figure>`;}).join('')}</div>`;
-  sec.querySelector(':scope > .vhead').insertAdjacentElement('afterend',d);fotosCargando(d);}
+/* 18/11 (noche) · El ciclo, en movimiento: todos los atributos a la vez sobre un eje de años (2004–2024). Cada foto está en
+   el año de su pico; un cursor avanza año por año y la altura de cada foto es su búsqueda medida ese año (0–100 de su
+   propio máximo, frente a las otras búsquedas de moda): sube cuando se acerca a su pico, baja cuando cae, y los que
+   vuelven suben dos veces. 20 años en 20 segundos. Tocar una foto abre ese atributo */
+let cmov=null;
+function cicloTL(){const sec=$('#v-recorridos');if(!sec||sec.querySelector('.cmov'))return;
+  const Y0=2004,Y1=ANIO_G||2024;
+  const L=REC.filter(o=>GREL[o.id]&&FOTO_ATR[o.id]).map(o=>{const g=GREL[o.id],vs=[];for(let y=Y0;y<=Y1;y++){const v=g[y-2004];vs.push(v==null?null:v);}
+    const ok=vs.filter(v=>v!=null),mx=Math.max(...ok),mn=Math.min(...ok);const pk=Y0+vs.indexOf(mx);return {o,vs:vs.map(v=>v==null?null:(v-mn)/((mx-mn)||1)),pk};}).sort((a,b)=>a.pk-b.pk||a.o.n.localeCompare(b.o.n));
+  const d=document.createElement('div');d.className='cmov';
+  d.innerHTML=`<div class="cmhead"><p class="cmy" aria-live="off">${Y0}</p><p class="cmk">Cada foto es un atributo, ubicado en el año de su pico. Su altura es cuánto se lo buscó ese año, entre su peor año (abajo) y su pico (arriba): sube cuando se acerca a su pico y baja cuando cae. Los que vuelven suben dos veces.</p>
+    <div class="cmbot"><button type="button" class="cmplay" aria-label="Pausar">Pausar</button><button type="button" class="cmre">Desde 2004</button></div></div>
+    <div class="cmesc" role="img" aria-label="${L.length} atributos subiendo y bajando según su búsqueda medida, de ${Y0} a ${Y1}"><svg class="cmeje" aria-hidden="true"></svg><span class="cmcur"></span>
+    ${L.map((x,i)=>`<button type="button" class="cmf" data-i="${i}" data-id="${x.o.id}" title="${escH(x.o.n)} · pico ${x.pk}"><img alt="" src="${vogueFoto(FOTO_ATR[x.o.id].f,640)}"${fotoPos(x.o.id)}><span>${escH(x.o.n)}</span></button>`).join('')}</div>
+    <p class="cmsrc"${src('g')}>Búsqueda mundial de Google, ${Y0}–${Y1}, frente a 35 búsquedas de moda · fotos: Vogue Runway</p>`;
+  sec.querySelector(':scope > .vhead').insertAdjacentElement('afterend',d);fotosCargando(d);
+  const esc=d.querySelector('.cmesc'),fs=[...d.querySelectorAll('.cmf')],cur=d.querySelector('.cmcur'),yy=d.querySelector('.cmy');
+  let W=0,H=0,X=null,pos=[];
+  const medir=()=>{W=esc.clientWidth;H=esc.clientHeight;const ml=8,mr=8,mt=34,mb=30,fw=innerWidth<600?24:34;X=y=>ml+fw/2+(y-Y0)/(Y1-Y0)*(W-ml-mr-fw);
+    const porAnio={};L.forEach((x,i)=>{(porAnio[x.pk]=porAnio[x.pk]||[]).push(i);});
+    pos=L.map(()=>0);Object.entries(porAnio).forEach(([y,ix])=>{const paso=fw*0.62;ix.forEach((i,k)=>{pos[i]=Math.max(fw/2+ml,Math.min(W-mr-fw/2,X(+y)+(k-(ix.length-1)/2)*paso));});});
+    esc.style.setProperty('--fw',fw+'px');esc.dataset.mt=mt;esc.dataset.mb=mb;
+    const ticks=[];for(let y=Y0;y<=Y1;y++)ticks.push(y);
+    d.querySelector('.cmeje').innerHTML=`<line x1="0" x2="${W}" y1="${H-mb}" y2="${H-mb}" stroke="${cssv('--ink')}"/>`+ticks.map(y=>`<line x1="${X(y)}" x2="${X(y)}" y1="${H-mb}" y2="${H-mb+(y%4===0?7:4)}" stroke="${cssv('--ink-3')}"/>${y%4===0||y===Y1?`<text x="${X(y)}" y="${H-mb+21}" text-anchor="middle" font-size="12" fill="${cssv('--ink-2')}">${y}</text>`:''}`).join('');};
+  const pintar=t=>{const mt=+esc.dataset.mt,mb=+esc.dataset.mb,fh=parseFloat(getComputedStyle(esc).getPropertyValue('--fw'))*1.4,a=Math.floor(t),b=Math.min(Y1,a+1),f=t-a;
+    yy.textContent=Math.round(t);cur.style.transform=`translateX(${X(t)}px)`;
+    fs.forEach((el,i)=>{const vs=L[i].vs,va=vs[a-Y0],vb=vs[b-Y0];
+      if(va==null&&vb==null){el.style.opacity=0;return;}const v=va==null?vb:vb==null?va:va+(vb-va)*f;
+      const y=(H-mb-fh)-(H-mb-fh-mt)*v;el.style.opacity=(.45+.55*v).toFixed(2);el.style.transform=`translate(${pos[i]-parseFloat(getComputedStyle(esc).getPropertyValue('--fw'))/2}px,${y}px)`;
+      el.classList.toggle('alto',v>=.97);});};
+  const quieto=matchMedia('(prefers-reduced-motion:reduce)').matches;let t=Y0,corre=!quieto,ult=0,espera=0;
+  const btn=d.querySelector('.cmplay');const marcar=()=>{btn.textContent=corre?'Pausar':'Seguir';btn.setAttribute('aria-label',btn.textContent);};
+  const cuadro=ts=>{if(!d.isConnected)return;const dt=ult?Math.min(.1,(ts-ult)/1000):0;ult=ts;
+    if(corre&&!esc.hidden){if(espera>0)espera-=dt;else{t+=dt;if(t>=Y1){t=Y1;espera=2.5;}}if(espera<=0&&t>=Y1){t=Y0;}}
+    pintar(Math.min(t,Y1));cmov.raf=requestAnimationFrame(cuadro);};
+  btn.onclick=()=>{corre=!corre;marcar();};d.querySelector('.cmre').onclick=()=>{t=Y0;espera=0;corre=true;marcar();};
+  fs.forEach(el=>el.onclick=()=>{recSel=el.dataset.id;pintarRecorridos();const c=$('#rchart');if(c)c.scrollIntoView({behavior:'smooth',block:'center'});});
+  medir();if(quieto)t=Y1;marcar();cmov={raf:requestAnimationFrame(cuadro)};
+  addEventListener('resize',()=>{if(d.isConnected)medir();});}
 function dzAcum(){const viejo=document.querySelector('#v-disenar .dzac');if(viejo)viejo.remove();return;const cuerpo=$('#dzcuerpo');if(!cuerpo)return;let lay=cuerpo.closest('.dzlay');
   if(!lay){lay=document.createElement('div');lay.className='dzlay';cuerpo.parentNode.insertBefore(lay,cuerpo);lay.appendChild(cuerpo);}
   let a=lay.querySelector('.dzac');if(!a){a=document.createElement('aside');a.className='dzac';a.setAttribute('aria-label','Tu look, hasta ahora');lay.appendChild(a);}

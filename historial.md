@@ -547,6 +547,11 @@ El ciclo abre con todos los atributos a la vez sobre un eje de 2004 a 2024: cada
 bajando con su búsqueda medida mientras un cursor recorre los veinte años en veinte segundos. Tocar una foto abre ese
 atributo.
 
+## v1.76 · 18/11/2026 · Preguntar, con aire
+
+La foto de Preguntar cambia sola entre casas distintas; «Sumá tu diseño» queda en una línea; sale el texto que explicaba
+lo que ya se entiende.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -3236,3 +3236,18 @@ pausar, volver a 2004 y tocar una foto para abrir ese atributo abajo. Con «redu
   atributo tuvo su momento.
 
 Demo 8 de 8. Capturas en `diseno/ciclo_movimiento_2026-11-18/` (tres momentos de la animación).
+
+## 2026-11-18 (noche) · Preguntar: la foto rota, menos texto
+
+**Pedido (Felipe).** La foto única tiene que ir cambiando entre marcas; «Sumá tu diseño» tenía un choclo de texto; menos
+texto y más aire en toda la pantalla.
+
+**Cómo quedó.** La foto rota cada 4 segundos entre ocho looks de casas distintas (del público del perfil primero), con
+fundido y su crédito; sólo pasa a la siguiente cuando ya cargó, así nunca aparece un hueco. «Sumá tu diseño · subí una
+foto o un dibujo» en una línea. La presentación queda en una frase («Por un atributo, una marca o un diseño tuyo.») y los
+looks de ejemplo en una fila «Probá con: Trench · Denim · Cuero».
+
+**Decisión discutible.** Sale «También podés soltar una imagen en cualquier parte»: explicaba algo que el botón de sumar
+diseño ya ofrece. Soltar una imagen sigue funcionando igual.
+
+Demo 8 de 8. Capturas en `diseno/preguntar_noche_2026-11-18/`.

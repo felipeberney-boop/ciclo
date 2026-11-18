@@ -1779,6 +1779,22 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app .gbf:not(#q){background:#d9d9de}
 .vbanda,.gbanda{background:#d9d9de!important}
 .ctlc.esta,.dzaci.t-foto,.pvfoto,.apg img{background:#e4e4e8!important}
+
+/* 18/11 · Diseñar con fotos: la tarjeta es la foto, sin caja; la silueta, etiqueta en la esquina */
+.app #v-disenar .dzc.dzconfoto:not(#q):not(#qq){padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible}
+.app #v-disenar .dzc.dzconfoto .dzimg.bfconf:not(#q):not(#qq){position:relative;display:block;width:100%;height:auto!important;aspect-ratio:3/4;border-radius:0!important;margin:0!important;padding:0!important}
+.app #v-disenar .dzc.dzconfoto .bfconf .bfph:not(#q):not(#qq){position:absolute;inset:0;width:100%;height:100%}
+.app #v-disenar .dzc.dzconfoto .bfconf .psil:not(#q):not(#qq){position:absolute;background:#fff;border-radius:6px;display:grid;place-items:center;width:44px;height:64px}
+.app #v-disenar .dzc.dzconfoto .bfconf .psil svg,.app #v-disenar .dzc.dzconfoto .bfconf .psil img{width:100%;height:100%;object-fit:contain}
+.app #v-disenar .dzc.dzconfoto .bfconf .pcred:not(#q):not(#qq){position:absolute;left:10px;right:56px;bottom:8px;font:400 12px/1.25 var(--sf)!important;font-style:normal!important;color:#fff!important}
+.app #v-disenar .dzc.dzconfoto .dzb:not(#q):not(#qq){padding:10px 2px 18px!important}
+.app #v-disenar .dzc.dzconfoto.on .dzimg:not(#q):not(#qq){outline:3px solid var(--azul);outline-offset:3px}
+.dzmini{width:22px;height:30px;object-fit:cover;object-position:50% 25%;border-radius:4px;margin-right:6px;vertical-align:middle;display:inline-block;background:var(--rule-2)}
+.dzminic{width:22px;height:22px;border-radius:50%;border:1px solid var(--rule)}
+.app .dzchip:not(#q):not(#qq){display:inline-flex!important;align-items:center}
+
+.app #v-disenar .dzhead:not(#q):not(#qq):not(#qqq){margin-bottom:28px!important;padding-bottom:4px!important}
+.app #v-disenar .dzhead .dzh:not(#q):not(#qq):not(#qqq):not(#qqqq){line-height:1.12!important}
 </style>
 
 <div class="app">
@@ -3091,8 +3107,12 @@ function dzDesdeLink(qs){
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-dz]');if(b)disenarCon(JSON.parse(b.dataset.dz));});
 /* ---- una tarjeta: dibujo, nombre, definición y la señal; todo el color sale de la señal ---- */
-function dzTarjeta({id,n,en,d,vis,s,dato,attr,on,nota,extra}){
-  return `<button class="dzc ${s.cls}${on?' on':''}" type="button" ${attr}="${id}" aria-pressed="${!!on}"><span class="dzimg">${vis}${nota?`<span class="dzsilnota">${nota}</span>`:''}</span>
+/* 18/11 · Diseñar, con el lenguaje de Tendencias: la foto de pasarela de esa prenda y la silueta como etiqueta en la esquina.
+   La prenda usa la foto de su tipo más representativo; un tipo sin foto propia conserva su dibujo (no se le presta otra) */
+const DZ_FOTO_PRENDA={pantalones:'jmedio',faldas:'faldas_maxi',vestidos:'vestidos_evase',remeras:'remeras_remera',camisas:'camisas_blusa',buzos:'buzo',sweaters:'buzos_cardigan',abrigos:'trench',calzado:'calzado_mocasines',accesorios:'accesorios_tote',enteritos:'enteritos_largo'};
+function dzVisFoto(fo,sil,n){return `<img class="bfph" loading="lazy" src="${vogueFoto(fo.f,640)}" alt="${escH(n)} en la pasarela: ${fotoCred(fo)}"><span class="pcred">${fotoCred(fo)}</span><span class="psil" aria-hidden="true">${sil}</span>`;}
+function dzTarjeta({id,n,en,d,vis,s,dato,attr,on,nota,extra,foto}){
+  return `<button class="dzc ${s.cls}${on?' on':''}${foto?' dzconfoto':''}" type="button" ${attr}="${id}" aria-pressed="${!!on}"><span class="dzimg${foto?' bfconf':''}">${vis}${nota?`<span class="dzsilnota">${nota}</span>`:''}</span>
     <span class="dzb"><span class="dzn">${n}</span>${en?`<span class="dzen">${en}</span>`:''}${d?`<span class="dzdef">${d}</span>`:''}<span class="dzm">${senBadge(s)}${dzProc(s)}</span>
     ${s.liso?'':`<span class="dzq"${!s.interpretado&&s.num?src('t',s.proc==='prestado'?'prestado de '+s.de:null):''}>${s.proc==='prestado'?`Sin serie propia. Mostrando: ${s.de}${s.num?', '+s.num:s.etapa?', etapa '+s.etapa.toLowerCase():''}.<br>Por qué: ${s.presta_porque}`:s.estado==='sin-dato'?'Ni serie propia ni de un pariente: se puede explorar, no se recomienda.':dato||s.num}</span>`}${extra||''}</span></button>`;
 }
@@ -3163,7 +3183,11 @@ function dzNombre(){
 /* ---- la barra que acumula lo elegido ---- */
 function dzBarra(){
   const b=$('#dzbarra');if(!b)return;const P=dzPasos().filter(p=>p!=='fin');
-  const chips=P.filter(p=>dz[p]).map(p=>`<button type="button" class="dzchip${dz.paso===p?' on':''}" data-ir="${p}"><span>${DZ_NOMBRE[p]}</span>${dzValor(p)}</button>`).join('');
+  const mini=p=>{if(p==='color'){const hx=(dzColores().L.find(x=>x.id===dz.color)||{}).hex;return hx?`<i class="dzmini dzminic" style="background:${hx}"></i>`:'';}
+    if(p==='prenda'){const fo=FOTO_ATR[DZ_FOTO_PRENDA[dz.prenda]];return fo?`<img class="dzmini" alt="" src="${vogueFoto(fo.f,640)}">`:'';}
+    if(p==='tipo'){const t=dzTipo(),fo=t&&(FOTO_ATR[t.serie]||FOTO_ATR[t.id]);return fo?`<img class="dzmini" alt="" src="${vogueFoto(fo.f,640)}">`:'';}
+    const fo=FOTO_ATR[dz[p]];return fo?`<img class="dzmini" alt="" src="${vogueFoto(fo.f,640)}">`:'';};
+  const chips=P.filter(p=>dz[p]).map(p=>`<button type="button" class="dzchip${dz.paso===p?' on':''}" data-ir="${p}">${mini(p)}<span>${DZ_NOMBRE[p]}</span>${dzValor(p)}</button>`).join('');
   b.innerHTML=`<div class="dzbi"><span class="lbl">Tu diseño</span>${chips||'<span class="dzvacio">Elegí una prenda para empezar.</span>'}
     ${dz.tipo?`<button type="button" class="kbtn dzarmar" data-ir="fin">Armar la ficha →</button>`:''}</div>`;
   b.hidden=vista!=='disenar';
@@ -3180,13 +3204,13 @@ function pintarDisenar(){setTimeout(dzAcum,0);
   const enlazar=(attr,p)=>$$(`#dzcuerpo [${attr}]`).forEach(b=>b.onclick=()=>dzElegir(p,b.getAttribute(attr)));
   if(dz.paso==='prenda'){
     const L=TAX.prendas.filter(dzVisible).filter(p=>dzCompat(p.id,null)).map(p=>{const tv=p.tipos.filter(dzVisible),con=tv.filter(x=>dzSeñal(x).estado!=='sin-dato').length;
-      return {id:p.id,n:p.n,d:p.d,vis:dzSil(p.sil,p.n),s:señalDe('sin-dato','',''),attr:'data-pr',on:dz.prenda===p.id,dato:''};});
+      const fo=FOTO_ATR[DZ_FOTO_PRENDA[p.id]];return {id:p.id,n:p.n,d:p.d,vis:fo?dzVisFoto(fo,dzSil(p.sil,p.n),p.n):dzSil(p.sil,p.n),foto:!!fo,s:señalDe('sin-dato','',''),attr:'data-pr',on:dz.prenda===p.id,dato:''};});
     C.innerHTML=`<div class="dzhead"><h2 class="dzh">¿Qué prenda?</h2></div><details class="qm izq dzqm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>El jean no es una prenda: es un pantalón de denim, y lo elegís en material.</p></div></details>
-      <div class="dzgrid">${L.map(x=>`<button class="dzc dzc-prenda${x.on?' on':''}" type="button" data-pr="${x.id}"><span class="dzimg">${x.vis}</span><span class="dzb"><span class="dzn">${x.n}</span>
+      <div class="dzgrid">${L.map(x=>`<button class="dzc dzc-prenda${x.on?' on':''}${x.foto?' dzconfoto':''}" type="button" data-pr="${x.id}"><span class="dzimg${x.foto?' bfconf':''}">${x.vis}</span><span class="dzb"><span class="dzn">${x.n}</span>
         </span></span></button>`).join('')}</div>`;
     enlazar('data-pr','prenda');
   }else if(dz.paso==='tipo'){
-    const T0=x=>{const s=dzSeñal(x);return {id:x.id,n:x.n,en:x.en,d:x.d,vis:dzSil(x.sil,x.n),s,dato:s.num?`${s.num} afuera`:'',attr:'data-ti',on:dz.tipo===x.id,extra:pr.id==='calzado'?dzPasCalzado(x.id):pr.id==='accesorios'?dzBusqCalzado(x.id):''};};
+    const T0=x=>{const s=dzSeñal(x),fo=FOTO_ATR[x.serie]||FOTO_ATR[x.id];return {id:x.id,n:x.n,en:x.en,d:x.d,vis:fo?dzVisFoto(fo,dzSil(x.sil,x.n),x.n):dzSil(x.sil,x.n),foto:!!fo,s,dato:s.num?`${s.num} afuera`:'',attr:'data-ti',on:dz.tipo===x.id,extra:pr.id==='calzado'?dzPasCalzado(x.id):pr.id==='accesorios'?dzBusqCalzado(x.id):''};};
     const L=pr.tipos.filter(x=>dzVisible(x)&&!x.secundario&&dzCompat(pr.id,x.id)).map(T0).sort(dzOrden),L2=pr.tipos.filter(x=>dzVisible(x)&&x.secundario&&dzCompat(pr.id,x.id)).map(T0);
     const SING={pantalones:'pantalón',faldas:'falda',vestidos:'vestido',remeras:'remera o top',camisas:'camisa',buzos:'buzo',sweaters:'sweater',abrigos:'campera o abrigo',enteritos:'enterito',calzado:'calzado',accesorios:'accesorio'};
     C.innerHTML=dzPanel(`¿Qué tipo de ${SING[pr.id]||pr.n.toLowerCase()}?`,'',L,'')+(L2.length?`<h3 class="dzh3">También</h3><div class="dzgrid">${L2.map(dzTarjeta).join('')}</div>`:'')+(pr.id==='calzado'?'<section class="czint"><h3 class="dzh3">Lo intentamos dos veces</h3><p class="czlead">El calzado es donde más probamos y menos medimos. Dos de ocho estilos tienen señal; uno más se lee en la pasarela, como interpretación. Los otros cinco no los mide ninguna de las dos fuentes, y por eso no se recomiendan: se pueden diseñar, pero CICLO no dice si conviene.</p><div class="czt"><div class="czf czh"><b>Estilo</b><span>Búsqueda · Google Trends, 21/10</span><span>Pasarela · CLIP, 25/10</span><span>Qué queda</span></div><div class="czf"><b>Zapatillas</b><span><i>Búsqueda</i>entra · «sneakers», 21 años</span><span><i>Pasarela</i>8 de 8 · lee looks deportivos</span><span><i>Queda</i>Señal por búsqueda, y la pasarela como interpretación</span></div><div class="czf"><b>Mocasines</b><span><i>Búsqueda</i>entra · «loafers», 20 años</span><span><i>Pasarela</i>5 de 8 · lee sastrería de hombre</span><span><i>Queda</i>Señal por búsqueda</span></div><div class="czf"><b>Botas texanas</b><span><i>Búsqueda</i>ruido · «cowboy boots»</span><span><i>Pasarela</i>7 de 8 · lee el look western</span><span><i>Queda</i>Sólo pasarela, interpretada: sin señal</span></div><div class="czf"><b>Botinetas</b><span><i>Búsqueda</i>ruido · «ankle boots»</span><span><i>Pasarela</i>5 de 8, confianza muy baja</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Sandalias</b><span><i>Búsqueda</i>estación · «sandals», 20,1 dentro del año contra 11,6 entre años</span><span><i>Pasarela</i>4 de 8 · lee ropa de verano</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Chatitas</b><span><i>Búsqueda</i>sin señal · «ballet flats»</span><span><i>Pasarela</i>0 de 8 · lee tutús y bailarinas</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Plataformas</b><span><i>Búsqueda</i>sin señal · «platform shoes»</span><span><i>Pasarela</i>0 de 8 · el cajón de lo que no encaja</span><span><i>Queda</i>Sin medición</span></div><div class="czf"><b>Guillerminas</b><span><i>Búsqueda</i>sin señal · «mary janes»</span><span><i>Pasarela</i>0 de 8 · ruido</span><span><i>Queda</i>Sin medición</span></div></div><p class="note dznota"><b>Búsqueda.</b> 14 términos de calzado y accesorios contra «trench coat», el mismo filtro que las otras 65 series: entra con 12 años útiles o más; es ruido si el máximo no pasa de 6 o tiene menos de 24 meses con señal; se descarta si se mueve más dentro de cada año que entre años (mide el verano, no la moda). <b>Pasarela.</b> 10 estilos, dos frases y tres plantillas cada uno, contra los 14.000 looks ya embebidos; cada look va al estilo más parecido y miramos a mano los 8 más seguros de cada uno. CLIP mira el look entero y adivina el zapato por la ropa. Medir los otros cinco exige recortar los pies de cada foto, y eso obliga a bajar las imágenes. <a href="https://github.com/felipeberney-boop/ciclo/blob/main/decisiones.md" target="_blank" rel="noopener">El detalle de las dos pruebas →</a></p></section>':'<p class="note dznota">La señal sale de la etapa del K-means y tu perfil, o de la búsqueda mundial 2022→2024 frente a las otras búsquedas de moda.</p>');
@@ -4708,7 +4732,7 @@ function cicloTL(){const sec=$('#v-recorridos');if(!sec||sec.querySelector('.ctl
   d.innerHTML=`<p class="ctlk">Lunares en la pasarela, 2010–2023 · una foto cuando está, un hueco cuando se fue</p><div class="ctlf">${[...Array(14).keys()].map(i=>{const y=2010+i,v=o.v[y-2004],f=TL_LUN[y];
     const esta=v!=null&&v>=0.6*mx&&f;return `<figure class="ctlc${esta?' esta':''}"${esta?` title="${escH(f[1])} · ${y} · Vogue Runway"`:''}>${esta?`<img src="${vuFoto(f[0],640)}" alt="Lunares en la pasarela: ${escH(f[1])}, ${y}">`:''}<span class="ctly">${y}</span></figure>`;}).join('')}</div>`;
   sec.querySelector(':scope > .vhead').insertAdjacentElement('afterend',d);fotosCargando(d);}
-function dzAcum(){const cuerpo=$('#dzcuerpo');if(!cuerpo)return;let lay=cuerpo.closest('.dzlay');
+function dzAcum(){const viejo=document.querySelector('#v-disenar .dzac');if(viejo)viejo.remove();return;const cuerpo=$('#dzcuerpo');if(!cuerpo)return;let lay=cuerpo.closest('.dzlay');
   if(!lay){lay=document.createElement('div');lay.className='dzlay';cuerpo.parentNode.insertBefore(lay,cuerpo);lay.appendChild(cuerpo);}
   let a=lay.querySelector('.dzac');if(!a){a=document.createElement('aside');a.className='dzac';a.setAttribute('aria-label','Tu look, hasta ahora');lay.appendChild(a);}
   const pr=dzPrenda(),t=dzTipo(),orden=['prenda','tipo','corte','material','color','estampa','detalle'],P=[];

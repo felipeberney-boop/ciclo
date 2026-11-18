@@ -3173,3 +3173,21 @@ clara (oscura se leía como una foto negra) y las miniaturas de la pared se pide
 página.
 
 Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/tratamientos_2026-11-18/`.
+
+## 2026-11-18 (noche) · Diseñar, con fotos de pasarela
+
+**Pedido (Felipe).** Diseñar quedó blanco. Usar el tratamiento de Tendencias: foto de pasarela de cada prenda con la
+silueta como etiqueta. «Tu look hasta ahora» está desprolijo: ordenarlo o sacarlo.
+
+**Cómo quedó.** Las once prendas muestran una foto de pasarela (la de su tipo más representativo: pantalones con el jean
+recto, faldas con la maxi, buzos con el de athleisure…) y su dibujo en una etiqueta blanca en la esquina, sin caja,
+como las tarjetas de Tendencias. En el paso de tipo, los que tienen foto propia (los cinco vestidos, minifalda y maxi,
+remera y musculosa, trench, campera, capa…) la llevan igual.
+
+**Decisiones discutibles.**
+- *Un tipo sin foto propia conserva su dibujo*, aunque eso deje la grilla mezclada: prestarle la foto de otro tipo
+  diría algo falso de esa prenda. Lo mismo materiales, colores, estampas sin foto y detalles: siguen con su muestra.
+- *«Tu look hasta ahora» se sacó como panel.* Repetía lo que ya mostraba la barra de abajo («Tu diseño»), que se queda:
+  ahora cada elección lleva su miniatura (la foto o el color), así que la composición está ahí, alineada y sin duplicar.
+
+Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/disenar_fotos_2026-11-18/`.

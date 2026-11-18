@@ -530,6 +530,11 @@ línea de tiempo de fotos con huecos donde el atributo desapareció; Diseñar su
 costado; Preguntar arranca con una sola foto y una invitación a sumar tu diseño; Acerca de, con una pared de miniaturas
 del corpus. Y las fotos piden siempre el mismo tamaño, así cargan rápido.
 
+## v1.73 · 18/11/2026 · Diseñar, con fotos
+
+Cada prenda y cada tipo con foto propia se muestran como en Tendencias: la foto de pasarela y la silueta como etiqueta en
+la esquina. «Tu look hasta ahora» sale como panel suelto: las elecciones quedan en la barra de abajo, cada una con su foto.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

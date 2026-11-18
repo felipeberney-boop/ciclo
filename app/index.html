@@ -1691,6 +1691,21 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app .tzfotos .pcred:not(#q):not(#qq):not(#qqq){top:10px!important;bottom:auto!important;left:10px!important;right:10px!important;font:400 12px/1.25 var(--sf)!important;font-style:normal!important;color:#fff!important;text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .app .tzfotos figcaption:not(#q):not(#qq){bottom:12px!important}
 .tzfotos figure::before{content:'';position:absolute;left:0;right:0;top:0;height:22%;background:linear-gradient(rgba(0,0,0,.35),transparent);z-index:1;pointer-events:none}
+
+/* 18/11 · qué modelo contesta y cuántos tokens: en cada respuesta y debajo de la caja */
+.ltquien{display:block;font:400 var(--t-eti)/1.45 var(--sf);color:var(--ink-2)}
+.ltquien b{font-weight:400;color:var(--ink)}
+.ltpie2{margin-top:14px;padding-top:10px;border-top:1px solid var(--rule)}
+.app #v-lectura .asia:not(#q):not(#qq){margin:6px 0 0;font:400 var(--t-eti)/1.45 var(--sf);color:var(--ink-2)}
+.app #v-lectura .asia summary:not(#q):not(#qq){cursor:pointer;list-style:none;padding:2px 0}
+.asia summary::-webkit-details-marker{display:none}
+.asia summary b{font-weight:400;color:var(--ink)}
+.asia summary::after{content:' · ver detalle';color:var(--azul)}
+.asia[open] summary::after{content:' · cerrar'}
+.asiac{margin:8px 0 6px;padding:12px 14px;border:1px solid var(--rule);border-radius:14px;background:#fff}
+.asiac dl{margin:0;display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr);gap:6px 14px}
+.asiac dt{color:var(--ink)}.asiac dd{margin:0}
+@media (max-width:600px){.asiac dl{grid-template-columns:minmax(0,1fr)}.asiac dd{margin-bottom:6px}}
 </style>
 
 <div class="app">
@@ -2050,6 +2065,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
             <textarea id="astexto" rows="1" maxlength="600" placeholder="Preguntá algo…" aria-label="Tu pregunta"></textarea>
             <button type="submit" class="ltmandar" id="asenviar" aria-label="Mandar">↑</button>
           </form>
+          <details class="asia" id="asia"><summary id="asias"></summary><div class="asiac" id="asiac"></div></details>
           <div class="ltpieform">
             <details class="asact" id="asclave">
               <summary id="asclaves">Respuesta escrita: activar · 1 minuto</summary>
@@ -3404,7 +3420,10 @@ function ltEscrita(m,pieza){const r=m.r,E=m.E,sp=r.accion&&señalPalabra(r.accio
 /* 17/11: qué modelo contestó, por qué API y cuántos tokens usó esta consulta (lo que devuelve Groq en usage) */
 const ltNum=n=>Number(n).toLocaleString('es-AR');
 const ltUso=m=>`<span class="ltuso">${escH(m.modelo)} · API de Groq${m.uso?` · <span title="${ltNum(m.uso.e)} de entrada (instrucciones, datos y tu pregunta) y ${ltNum(m.uso.s)} de salida">${ltNum(m.uso.t)} tokens <span class="ltusod">(${ltNum(m.uso.e)} entran, ${ltNum(m.uso.s)} salen)</span></span>`:''}</span>`;
-const ltPie=m=>`<div class="ltpie"><span class="tag ia2">interpretación</span>${ltUso(m)}${m.sys?`<details class="ltver"><summary>Qué se le mandó al modelo</summary><p class="ascap">${escH(m.tok)}</p><pre>${escH(m.sys)}</pre></details>`:''}</div>`;
+/* 18/11 · quién contestó cada mensaje: el modelo de lenguaje (con sus tokens), CLIP o las reglas de CICLO */
+const LT_CLIPQ=`<span class="ltquien"><b>Leyó la imagen:</b> CLIP ViT-B/32 (OpenAI), en tu navegador · sin tokens · la foto no sale de tu computadora</span>`;
+const LT_REGLAS=`<span class="ltquien"><b>Contestó:</b> reglas de CICLO con los datos medidos, sin modelo de lenguaje · 0 tokens</span>`;
+const ltPie=m=>`<div class="ltpie"><span class="tag ia2">interpretación</span><span class="ltquien"><b>Escribió:</b></span>${ltUso(m)}${m.sys?`<details class="ltver"><summary>Qué se le mandó al modelo</summary><p class="ascap">${escH(m.tok)}</p><pre>${escH(m.sys)}</pre></details>`:''}</div>`;
 const ltErr=m=>`<p class="lterr">${escH(m.error)} Lo medido sigue valiendo.</p>`;
 const ltPend=t=>`<p class="ltpend"><span class="ltpunto"></span><span>${escH(t)}</span></p>`;
 const ltEspera=m=>t=>{m.espera=t;const e=$(`#lt-m${as.hist.indexOf(m)} .ltpend`);if(e)e.lastChild.textContent=t;};
@@ -3416,16 +3435,17 @@ function ltBurbuja(m,k,ultLect){
     if(m.leyendo)return `<div class="ltcic" id="lt-m${k}">${ltPend(m.leyendo)}</div>`;
     if(m.fallo)return `<div class="ltcic"><p class="lterr">${escH(m.fallo)}</p></div>`;
     const edit=k===ultLect,dev=m.r?ltEscrita(m)+ltPie(m):m.pend?ltPend(m.espera||'Escribiendo la devolución…'):(m.error?ltErr(m):'')+(m.clip.length?rvDevolucion(m.clip):'')+(ltClave()?'':ltActivar());
+    const quien=LT_CLIPQ+(m.r?'':(m.clip.length?`<span class="ltquien"><b>La devolución:</b> reglas de CICLO, sin modelo de lenguaje · 0 tokens</span>`:''));
     return `<div class="ltcic" id="lt-m${k}">
       ${ltSec('Lo que leyó',LT_CLIP+(edit?'<span class="ltayuda">tocá × para sacar, + para sumar</span>':''),(m.clip.length?'':`<p class="rvcap">${escH(m.nada||'CLIP no reconoció con claridad ningún atributo.')} Si sabés qué es, agregalo.</p>`)+ltChips(m,edit)+(m.cambios&&m.cambios.length?`<p class="ltcorr">Corregido: ${m.cambios.map(escH).join(', ')}.</p>`:''))}
       ${ltCurva(m)}${ltLooks(m)}
-      ${m.clip.length||m.r?ltSec('La devolución','',dev):''}</div>`;}
+      ${m.clip.length||m.r?ltSec('La devolución','',dev):''}<div class="ltpie ltpie2">${quien}</div></div>`;}
   // una pregunta
   const pieza=ltPieza(m.P);
   if(m.r)return `<div class="ltcic">${ltEscrita(m,pieza)}${ltPie(m)}</div>`;
   if(m.pend)return `<div class="ltcic" id="lt-m${k}">${ltPend(m.espera||'Escribiendo…')}${pieza}</div>`;
   if(m.error)return `<div class="ltcic">${ltErr(m)}${pieza}</div>`;
-  return `<div class="ltcic"><p class="ltsin">${pieza?'Lo que CICLO tiene sobre esto:':'No encontré esto en los datos de CICLO.'}</p>${pieza||ltPieza({t:'inicio'})}${ltActivar()}</div>`;}
+  return `<div class="ltcic"><p class="ltsin">${pieza?'Lo que CICLO tiene sobre esto:':'No encontré esto en los datos de CICLO.'}</p>${pieza||ltPieza({t:'inicio'})}<div class="ltpie ltpie2">${LT_REGLAS}</div>${ltActivar()}</div>`;}
 /* tu mensaje: la imagen grande, como la mandaste, y el texto si escribiste algo */
 const ltYo=m=>`<div class="ltyo${m.img?' conimg':''}">${m.img&&m.img.src?`<figure><img src="${m.img.src}" alt="${escH(m.img.alt)}"><figcaption>${escH(m.img.pie)}</figcaption></figure>`:''}${m.content?`<p>${escH(m.content)}</p>`:''}</div>`;
 /* vacía: una línea de qué hace, las sugerencias y tres looks para probar sin tener una imagen */
@@ -3459,11 +3479,20 @@ function fotosCargando(raiz){if(!raiz)return;raiz.querySelectorAll('img').forEac
   im.classList.add('fcarga');caja&&caja.classList.add('fotocarga');
   im.addEventListener('load',()=>{im.classList.remove('fcarga');caja&&caja.classList.remove('fotocarga');},{once:true});
   im.addEventListener('error',()=>{im.classList.remove('fcarga');caja&&(caja.classList.remove('fotocarga'),caja.classList.add('fotoerr'));},{once:true});});}
+function asIA(){const s=$('#asias'),c=$('#asiac');if(!s)return;const mod=$('#asmodelo').value,clave=ltClave();
+  const usos=as.hist.filter(m=>m.uso),tot=usos.reduce((a,m)=>a+m.uso.t,0),ult=usos[usos.length-1];
+  s.innerHTML=clave?`<b>IA:</b> ${escH(mod)} · API de Groq · ${ult?`última consulta ${ltNum(ult.uso.t)} tokens · conversación ${ltNum(tot)}`:'0 tokens hasta ahora'}`
+    :`<b>IA:</b> sin clave, contestan las reglas de CICLO (0 tokens) · las imágenes las lee CLIP en tu navegador`;
+  c.innerHTML=`<dl><dt>Respuesta escrita</dt><dd>${escH(mod)}, un modelo abierto de OpenAI, servido por la API de Groq (api.groq.com/openai/v1/chat/completions) con tu clave, desde tu navegador. ${clave?'Activada.':'Sin activar: pegá una clave abajo.'}</dd>
+    <dt>Qué se le manda</dt><dd>Las instrucciones (<a href="https://github.com/felipeberney-boop/ciclo/blob/main/prompts/prompt_asistente_v9.md" target="_blank" rel="noopener">prompt v9</a>), sólo las partes de <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">los datos de CICLO</a> que nombra tu pregunta, y tu pregunta. Nunca una fila de la base: métricas ya calculadas.</dd>
+    <dt>Tokens</dt><dd>${usos.length?usos.map((m,i)=>`Consulta ${i+1}: ${ltNum(m.uso.t)} (${ltNum(m.uso.e)} entran, ${ltNum(m.uso.s)} salen)`).join('<br>')+`<br><b>Total: ${ltNum(tot)}</b>.`:'Todavía ninguna consulta al modelo.'} Cada consulta usa unos 6.000; el plan gratis de Groq deja 8.000 por minuto, por eso a veces pide esperar.</dd>
+    <dt>Lectura de imagen</dt><dd>CLIP ViT-B/32 (OpenAI) con transformers.js, en tu navegador, contra 14.000 looks de Vogue. No usa tokens ni manda la foto a ningún lado.</dd>
+    <dt>Sin clave</dt><dd>Lo medido aparece igual; la devolución la arman reglas fijas de CICLO y lo dice.</dd></dl>`;}
 function asPintar(nuevo){
   const ch=$('#aschat');if(!ch)return;const D=asDiseno();
   const ultLect=as.hist.reduce((u,m,k)=>m.tipo==='lectura'&&!m.leyendo&&!m.fallo?k:u,-1);
   if(as.hist.length)ltRender(ch,as.hist.map((m,k)=>m.role==='user'?ltYo(m):ltBurbuja(m,k,ultLect)));else{ch.innerHTML=ltVacio();ch._ltp=null;fotosCargando(ch);}
-  $('#ltnueva').hidden=!as.hist.length;
+  $('#ltnueva').hidden=!as.hist.length;asIA();
   $('#asdisw').hidden=!D.chips.length||!as.hist.length;
   $('#asdis').innerHTML=D.chips.length?`Con tu diseño: <button type="button" class="ltdisb">${escH(D.chips.map(c=>c.v.toLowerCase()).join(' · '))}</button>`:'';
   const ult=[...as.hist].reverse().find(m=>m.r),hechas=as.hist.filter(m=>m.role==='user').map(m=>m.content),
@@ -4162,7 +4191,7 @@ function asEstadoClave(){const k=$('#askey').value.trim();$('#asclaves').textCon
 $('#askey').addEventListener('input',()=>{asGuardar('groq_key',$('#askey').value.trim());asEstadoClave();});asEstadoClave();
 $('#askey').addEventListener('change',()=>{if(vista==='lectura')asPintar();});
 $('#asmodelo').value=asLeer('ciclo.as_modelo')||'openai/gpt-oss-120b';
-$('#asmodelo').addEventListener('change',()=>asGuardar('ciclo.as_modelo',$('#asmodelo').value));
+$('#asmodelo').addEventListener('change',()=>{asGuardar('ciclo.as_modelo',$('#asmodelo').value);asIA();});
 $('#asfile').addEventListener('change',e=>asFoto(e.target.files[0]));
 $('#asform').addEventListener('submit',e=>{e.preventDefault();asPreguntar();});
 $('#astexto').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();asPreguntar();}});

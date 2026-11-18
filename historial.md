@@ -517,6 +517,12 @@ Las fotos de Preguntar se ponían en negro porque el chat se reescribía entero 
 imágenes. Ahora cada mensaje se actualiza sólo si cambió, las fotos ya cargadas se conservan, y mientras una foto baja se
 ve una placa con brillo en vez del fondo negro.
 
+## v1.71 · 18/11/2026 · Qué modelo contesta y cuántos tokens
+
+En Preguntar se ve siempre, debajo de la caja, qué modelo contesta, por qué API y cuántos tokens lleva la conversación,
+con un detalle que se despliega. Y cada respuesta dice quién la hizo: el modelo de lenguaje (con sus tokens), CLIP o las
+reglas de CICLO.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

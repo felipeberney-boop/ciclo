@@ -3116,3 +3116,26 @@ disponible». Se aplica al chat, a la entrada y a la banda de Tendencias.
 crédito pasa arriba.
 
 Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/fotos_negras_2026-11-18/`.
+
+## 2026-11-18 · Qué modelo contesta y cuántos tokens, a la vista
+
+**Devolución (Felipe, tercera vez).** En Preguntale a CICLO tiene que verse, discreto pero accesible, qué modelo contesta,
+por qué API y el consumo de tokens. Es lo que evalúa el criterio de integración de IA.
+
+**Por qué no se veía.** El pie con modelo y tokens existía desde el 17/11, pero sólo se dibujaba en las respuestas que
+escribía el modelo de lenguaje, o sea sólo con una clave de Groq cargada. Sin clave (el caso de casi cualquiera que abre
+la app) no aparecía en ningún lado.
+
+**Cómo quedó.**
+- Debajo de la caja, siempre: «IA: openai/gpt-oss-120b · API de Groq · última consulta N tokens · conversación N», o sin
+  clave «IA: sin clave, contestan las reglas de CICLO (0 tokens) · las imágenes las lee CLIP en tu navegador». Al tocarlo
+  se despliega: el modelo y el endpoint, qué se le manda (el prompt v9, sólo las partes de los datos que nombra la
+  pregunta, la pregunta; nunca una fila), los tokens consulta por consulta (entrada y salida) y el total, el límite del plan
+  gratis, cómo se lee una imagen (CLIP ViT-B/32 con transformers.js, sin tokens, la foto no sale de la computadora) y qué
+  pasa sin clave.
+- En cada respuesta, un pie que dice quién la hizo: «Escribió: openai/gpt-oss-120b · API de Groq · 5.730 tokens (5.412
+  entran, 318 salen)», «Contestó: reglas de CICLO con los datos medidos, sin modelo de lenguaje · 0 tokens» o «Leyó la
+  imagen: CLIP ViT-B/32 (OpenAI), en tu navegador · sin tokens».
+
+Probado sin clave y con una clave falsa y la API de Groq simulada en el test (la respuesta simulada trae su `usage`), a
+1400 y 393 px. Demo 8 de 8. Capturas en `diseno/modelo_tokens_2026-11-18/`.

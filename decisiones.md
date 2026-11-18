@@ -3074,3 +3074,18 @@ mayoría de los atributos abarca entre 30 y 90 puntos del índice: no se puede p
 2026 no está en ningún dataset.
 
 Scripts en `codigo/pasarela_clip/` (con su README); resultados en `datasets_procesados/pasarela_clip/`.
+
+## 2026-11-18 · La ficha de cada fuente: de dónde viene, cómo se procesa, qué sacamos
+
+**Pedido (Felipe, por Christian, de la cátedra).** Que se entienda de dónde viene cada dato y cómo está procesado, en
+todas las fuentes, al pasar el mouse por arriba.
+
+**Cómo quedó.** Cada fuente tiene una ficha (`FUENTE_INFO`) con tres partes: *De dónde viene* (el dataset, quién lo
+publica, cuándo se bajó, la licencia cuando importa), *Cómo lo procesamos* (la cuenta exacta: proporción, media de 3
+años, división por las 35 búsquedas de moda, el clasificador CLIP desde 2022…) y *Qué sacamos* (qué dice ese dato en la
+app y si entra al modelo, lo comprueba o es contexto). Debajo, las observaciones y, sobre una curva, el término y el
+valor de ese año. Se suman cinco fuentes que no tenían ficha: Google Shopping, Amazon, H&M, los informes de Lyst y CLIP.
+La ficha aparece en todos los números medidos que ya tenían su fuente, sobre cada curva del gráfico de capas, en la
+leyenda, en los siete recuadros del diagrama de datos de Acerca de y en cada fuente del pie. Con el dedo, se toca.
+
+Demo 8 de 8. Capturas en `diseno/fuentes_2026-11-18/`.

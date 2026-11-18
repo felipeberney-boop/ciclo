@@ -506,6 +506,11 @@ Vogue dejó de etiquetar los looks desde 2022, y la serie de pasarela caía por 
 recalculó: cambian 15 de las 17 etapas (casi todo lo saturado pasa a pico; jeans amplios y cargo, a en ascenso; ninguno
 queda en retorno). La validación contra Reddit, Shopping y Amazon se sigue sosteniendo con los grupos nuevos.
 
+## v1.69 · 18/11/2026 · De dónde viene cada dato
+
+Al pasar el mouse (o tocar) por cualquier fuente —una curva, la leyenda, el diagrama de Acerca de, el pie, un número
+medido— aparece su ficha: de dónde viene, cómo lo procesamos y qué sacamos de ese dato.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

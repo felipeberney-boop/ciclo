@@ -1668,6 +1668,13 @@ body,.app{background:#fff!important}
 .app #v-mover .bfbrief:not(#q):not(#qq):not(#qqq):not(#qqqq){justify-content:flex-start!important;margin-left:0!important}
 .app #v-mover .bfcard:not(#q):not(#qq):not(#qqq):not(#qqqq){margin-left:0!important}
 .app #v-disenar .vhead h1.sr:not(#q):not(#qq):not(#qqq):not(#qqqq){position:static!important;width:auto!important;height:auto!important;clip:auto!important;clip-path:none!important;overflow:visible!important;white-space:normal!important;margin:20px 0 0!important}
+
+/* 18/11 · la ficha de cada fuente: de dónde viene, cómo lo procesamos, qué sacamos */
+#tip.src:not(#q):not(#qq){max-width:min(360px,calc(100vw - 16px))!important;gap:6px!important;padding:12px 14px!important}
+#tip.src span i:not(#q):not(#qq):not(#qqq){display:block;font-style:normal!important;color:rgba(255,255,255,.55);margin-bottom:1px}
+#tip.src span.fobs:not(#q):not(#qq):not(#qqq),#tip.src span.fval:not(#q):not(#qq):not(#qqq){color:#fff!important;border-top:1px solid rgba(255,255,255,.18);padding-top:6px}
+#tip.src span.fobs + span.fobs{border-top:0!important;padding-top:0!important}
+.dgb[data-src],.colofon [data-src]{cursor:help}
 </style>
 
 <div class="app">
@@ -2074,12 +2081,12 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <section class="metsec" aria-labelledby="met3">
         <h2 class="methd" id="met3"><button type="button" class="methead" aria-expanded="false" aria-controls="met3f"><span class="metn">2</span><span class="mett">Los datos</span><span class="metab" aria-hidden="true">Abrir</span></button></h2>
         <div class="metprev"><figure class="dg dgdatos" role="img" aria-label="Las fuentes de CICLO y cómo se cruzan: pasarela y búsqueda entran al modelo por atributo y año; Reddit, Google Shopping, Amazon y H&amp;M comprueban; Lyst se cruza por marca y Zara es una foto de un mes.">
-  <div class="dgcol"><span class="dgk">Entran al modelo</span><div class="dgb "><b>Vogue Runway</b><span>cuánto aparece en los desfiles · 902.566 looks, 2000–2023</span></div><div class="dgb "><b>Google Trends</b><span>cuánto lo busca la gente · 65 series, 2004–2024</span></div></div>
+  <div class="dgcol"><span class="dgk">Entran al modelo</span><div data-src="v" class="dgb "><b>Vogue Runway</b><span>cuánto aparece en los desfiles · 902.566 looks, 2000–2023</span></div><div data-src="g" class="dgb "><b>Google Trends</b><span>cuánto lo busca la gente · 65 series, 2004–2024</span></div></div>
   <div class="dgflecha" aria-hidden="true"></div>
   <div class="dgcol dgcentro"><span class="dgk">La clave</span><div class="dgb dgclave"><b>atributo × año</b><span>17 atributos con el mismo nombre en todas las fuentes. Jeans amplios es «denim» en Vogue y «baggy jeans» en Google y en Reddit.</span></div></div>
   <div class="dgflecha dgpunt" aria-hidden="true"></div>
-  <div class="dgcol"><span class="dgk">Comprueban, no entran</span><div class="dgb dgpunt"><b>Reddit</b><span>de qué se habla · mujeres y hombres, 2012–2025</span></div><div class="dgb dgpunt"><b>Google Shopping y Amazon</b><span>intención y compra · 2008–2025</span></div><div class="dgb dgpunt"><b>H&amp;M</b><span>venta masiva · 30,6 M de compras, 2018–2020</span></div></div>
-  <div class="dgotra"><span class="dgk">Con otra clave</span><div class="dgb dgotr"><b>Lyst Index</b><span>marca × trimestre · 55 marcas, Q1-18 a Q2-26</span></div><div class="dgb dgotr"><b>Catálogo de Zara</b><span>atributo, en un solo mes · 228 prendas, febrero de 2024</span></div></div>
+  <div class="dgcol"><span class="dgk">Comprueban, no entran</span><div data-src="r" class="dgb dgpunt"><b>Reddit</b><span>de qué se habla · mujeres y hombres, 2012–2025</span></div><div data-src="s" class="dgb dgpunt"><b>Google Shopping y Amazon</b><span>intención y compra · 2008–2025</span></div><div data-src="hm" class="dgb dgpunt"><b>H&amp;M</b><span>venta masiva · 30,6 M de compras, 2018–2020</span></div></div>
+  <div class="dgotra"><span class="dgk">Con otra clave</span><div data-src="l" class="dgb dgotr"><b>Lyst Index</b><span>marca × trimestre · 55 marcas, Q1-18 a Q2-26</span></div><div data-src="z" class="dgb dgotr"><b>Catálogo de Zara</b><span>atributo, en un solo mes · 228 prendas, febrero de 2024</span></div></div>
   <figcaption class="dgley"><span><i class="dgl"></i>entra al modelo</span><span><i class="dgl dgp"></i>comprueba después</span></figcaption></figure></div>
         <div class="metfull" id="met3f" hidden><p><b>Vogue Runway.</b> <b>Vogue Runway</b> (HuggingFace, traopia): 1.281.633 imágenes con diseñador, temporada y etiquetas. Usamos las de la sección «Collection», sin novias, 2000–2023, y medimos qué parte de los looks de cada año lleva cada etiqueta. Las etiquetas vienen de un modelo de visión genérico: antes de 2010 detecta menos.</p><p><b>Google Trends.</b> <b>Google Trends</b>: 65 series mundiales en inglés (con «trench coat» de ancla común) y 14 términos en español para Argentina; índice mensual promediado por año y corregido por el crecimiento general de las búsquedas de moda. El análisis corta en 2024: 2025 y 2026 traen un salto de medición que afecta a casi todos los términos a la vez. <a href="https://github.com/felipeberney-boop/ciclo/blob/main/datasets/trends_lotes/informe.md" target="_blank" rel="noopener">Qué entró y qué no, término por término →</a></p><p><b>Reddit.</b> <b>Reddit</b> vía Arctic Shift, dos comunidades en dos series separadas que no se suman. <b>Mujeres, r/femalefashionadvice</b>: 4.404 posts cuyo título nombra alguno de los 25 términos, 2012–2025, sobre los 178.519 posts del subreddit en esos años, suavizados con media de 3 años; <b>completado a octubre de 2026</b> con 14.495 posts nuevos. <b>Hombres, r/malefashionadvice</b> (sumado el 17/11): los 581.184 posts de 2012–2025, contados con la misma regla; entran 12 términos con 100 posts o más (los otros, como corset o crop top, casi no aparecen), y «lace» queda afuera porque ahí nombra los cordones, no el encaje. <b>Qué mide esta capa:</b> la conversación de dos foros de consejos de moda en inglés, con mayoría de Estados Unidos; no mide ventas ni otros países, y la ropa sin género o la que no se discute en esos foros queda afuera. La validación del modelo (abajo, «¿La etapa coincide con afuera?») se hizo sólo con la de mujeres.</p><p><b>Google Shopping y Amazon.</b> <b>Google Shopping</b> (búsquedas de compra, 2008–2025) y <b>Amazon Reviews 2023</b>: muestra de 1,1 millones de reseñas de ropa, 2012 a abril 2023. No son ventas: son intención de compra y compras reseñadas. No existe un dataset público de ventas de moda posterior a 2020 con atributos.</p><p><b>H&amp;M.</b> <b>H&amp;M</b>: 30,6 millones de compras de ropa adulta, mes por mes, con color, estampa y descripción de cada artículo.</p><p><b>Lyst Index.</b> <b>Lyst Index</b>: los <b>34 trimestres</b> desde Q1-18 hasta Q2-26, transcritos de los informes públicos. 55 marcas distintas en 640 puestos. Los de 2018 son top 10 porque el índice recién se amplió a 20 en Q1-19. <b>En Q1-26 Lyst cambió la fórmula</b> (de apoyarse en búsquedas a cruzar deseo, demanda y descubrimiento; Chanel y Dior entraron directo al 1º y 3º): las métricas se calculan dentro de cada tramo, nunca a través.</p><p><b>Catálogo de Zara.</b> Minería de texto sobre las descripciones reales del catálogo de Zara de febrero 2024: 38 prendas amplias, 16 rectas, 5 ajustadas sobre 228 únicas.</p></div>
       </section>
@@ -2115,10 +2122,10 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
 
     <footer class="colofon">
       <div><b>CICLO</b>En qué etapa de su ciclo está cada atributo de moda, y si conviene entrar, esperar o salir.<br>Última lectura de datos: 21.10.2026<br><a href="https://github.com/felipeberney-boop/ciclo" target="_blank" rel="noopener">Datos y código abiertos →</a><br><button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link de este diseño</button></div>
-      <div><b>Pasarela</b>Vogue Runway · 1,28 M looks</div>
-      <div><b>Búsqueda y redes</b>Google Trends · 65 series, 2004–2024<br>Google Shopping · 25 términos<br>Reddit · r/femalefashionadvice y r/malefashionadvice, 2012–2025</div>
-      <div><b>Mercado masivo</b>H&amp;M · 30,6 M compras<br>Amazon · 1,1 M reseñas<br>Zara feb-2024 · 252 prendas</div>
-      <div><b>Marcas y señales</b>Lyst Index · 34 trimestres<br>Lyst editorial · 19 señales<br>Launchmetrics · Met Gala</div>
+      <div><b>Pasarela</b><span data-src="v">Vogue Runway · 1,28 M looks</span></div>
+      <div><b>Búsqueda y redes</b><span data-src="g">Google Trends · 65 series, 2004–2024</span><br><span data-src="s">Google Shopping · 25 términos</span><br><span data-src="r">Reddit · r/femalefashionadvice</span> y <span data-src="h">r/malefashionadvice</span>, 2012–2025</div>
+      <div><b>Mercado masivo</b><span data-src="hm">H&amp;M · 30,6 M compras</span><br><span data-src="m">Amazon · 1,1 M reseñas</span><br><span data-src="z">Zara feb-2024 · 252 prendas</span></div>
+      <div><b>Marcas y señales</b><span data-src="l">Lyst Index · 34 trimestres</span><br><span data-src="ly">Lyst editorial · 19 señales</span><br>Launchmetrics · Met Gala</div>
     </footer>
   </main>
 </div>
@@ -2196,19 +2203,73 @@ const hideTip=()=>{tip.style.opacity=0;tip.classList.remove('src');};
 const FUENTES={
   g:['Google Trends · búsqueda mundial','Promedio anual frente a 35 búsquedas de moda, hasta 2024 (2025–26 fuera: salto de medición)','12 meses por año y término'],
   t:['Google Trends · búsqueda mundial','Cuántos puntos ganó o perdió de 2022 a 2024, frente a 35 búsquedas de moda','36 meses por término'],
-  v:['Vogue Runway · looks de colección','Proporción de looks por año: etiquetas de Vogue hasta 2021; desde 2022, un clasificador CLIP entrenado con esas etiquetas','902.566 looks hasta 2023 · muestra de 3.000 por año en 2024–2025'],
+  v:['Vogue Runway · looks de colección','Proporción de looks por año: etiquetas de Vogue hasta 2021; desde 2022, un clasificador CLIP entrenado con esas etiquetas','902.566 looks, 2000–2023'],
   l:['Lyst Index','Ranking trimestral, Q1-18 a Q2-26; corte de fórmula en Q1-26','34 trimestres · 640 puestos'],
   r:['Reddit · r/femalefashionadvice, vía Arctic Shift','Posts que nombran el término, sobre el total del año; media de 3 años, 2012–2025','178.519 posts'],
   h:['Reddit · r/malefashionadvice, vía Arctic Shift','Posts que nombran el término, sobre el total del año; media de 3 años, 2012–2025','581.184 posts'],
   z:['Catálogo de Zara','Febrero de 2024, leído en las descripciones','228 prendas'],
   k:['K-means de CICLO (k = 4)','Pasarela hasta 2023 y búsqueda hasta 2024, estandarizadas','17 atributos · 4 rasgos'],
   a:['Google Trends · Argentina','Promedio anual, 2004–2025 (Argentina no tuvo el salto)','14 términos'],
-  c:['El cono de CICLO','Cuánto se movió de verdad la búsqueda a cada distancia, con 2025 corregido','224 tramos medidos']};
+  c:['El cono de CICLO','Cuánto se movió de verdad la búsqueda a cada distancia, con 2025 corregido','224 tramos medidos'],
+  s:['Google Shopping · búsqueda de compra','Promedio anual, 2008–2025','25 términos'],
+  m:['Amazon · reseñas de ropa','Reseñas por año que nombran el término, 2012–2023','1,1 M de reseñas'],
+  hm:['H&M · compras','Compras de adultos por artículo, 2018–2020','30,6 M de compras'],
+  ly:['Lyst · informes anuales','Crecimiento de búsqueda y venta que publica Lyst cada año','19 señales, cada una con su link'],
+  x:['CLIP · lectura de imagen','Compara una foto con textos de atributos y con looks de pasarela, en tu navegador','14.000 looks de Vogue, 2010–2023']};
+/* 18/11 · la ficha de cada fuente, para entender de dónde viene cada dato y qué hicimos con él (pedido de Christian, de la cátedra) */
+const FUENTE_INFO={
+  g:{de:'Google Trends, «todo el mundo», búsqueda web. 65 series bajadas del sitio entre septiembre y octubre de 2026, 2004–2025. Términos de servicio de Google, uso académico.',
+     como:'Promedio de cada año. Cada término se divide por el promedio de 35 búsquedas de moda de ese mismo año: así se descuenta que Google crezca o cambie cómo mide. 2025 y 2026 quedan afuera por el salto de medición de Google.',
+     saca:'Cuánto se busca cada atributo frente a su máximo y si gana o pierde terreno. Entra al K-means.'},
+  t:{de:'Google Trends, «todo el mundo», búsqueda web, 2016–2024.',
+     como:'El peso de cada término frente a 35 búsquedas de moda, en 2022 y en 2024; la resta son los puntos ganados o perdidos.',
+     saca:'Qué gana y qué pierde terreno hoy. Es la señal cuando un atributo no tiene etapa del K-means.'},
+  v:{de:'Dataset traopia/vogue-runway (Hugging Face): una copia de Vogue Runway al 31/03/2023, con 1,28 M fotos de desfile, su casa, temporada, etiquetas y el vector CLIP de cada foto. Las fotos se enlazan, nunca se bajan.',
+     como:'Proporción de looks de colección del año que tienen la etiqueta del atributo (sin novias); 100 es su máximo. Desde 2022 Vogue dejó de etiquetar: esos años los lee un clasificador CLIP entrenado con las etiquetas de 2010–2021 (va punteado).',
+     saca:'Cuánto aparece el atributo en los desfiles y si sube o baja. Entra al K-means.'},
+  l:{de:'Lyst Index, el ranking trimestral de marcas de Lyst, transcrito a mano del sitio: Q1-18 a Q2-26, 55 marcas.',
+     como:'El puesto de cada marca en cada trimestre. En Q1-26 Lyst cambió la fórmula, así que las comparaciones se hacen dentro de cada tramo.',
+     saca:'Si una marca sube o baja en el interés. No entra al modelo: se cruza por marca.'},
+  r:{de:'Arctic Shift, un archivo público de Reddit: todos los títulos de r/femalefashionadvice, 2012–2025 (bajados en septiembre, octubre y noviembre de 2026). Sólo se guardan los conteos.',
+     como:'Posts del año cuyo título nombra el término (palabra entera), sobre el total de posts del año; media de 3 años; 100 es su máximo. Entran los términos con 100 posts o más.',
+     saca:'Si se habla más o menos del atributo. No entra al modelo: lo comprueba.'},
+  h:{de:'Arctic Shift, un archivo público de Reddit: todos los títulos de r/malefashionadvice, 2012–2025 (581.184 posts, bajados el 17/11/2026). Sólo se guardan los conteos.',
+     como:'Igual que la serie de mujeres: posts que nombran el término sobre el total del año, media de 3 años, 100 es su máximo. Sin «lace», que ahí son cordones.',
+     saca:'Si los hombres hablan más o menos del atributo. No entra al modelo: lo comprueba.'},
+  z:{de:'«ZARA Sales» (Kaggle): un scrape de zara.com del 19/02/2024, 228 prendas.',
+     como:'Atributos leídos en el nombre y la descripción de cada prenda (corte, material).',
+     saca:'Qué tenía una fast fashion en la góndola ese mes. Es una foto, no una serie.'},
+  k:{de:'El modelo de CICLO, sobre la pasarela (hasta 2023) y la búsqueda (hasta 2024) de 17 atributos.',
+     como:'Cuatro variables estandarizadas (nivel y momento de cada capa) y k = 4 grupos; cada grupo toma el nombre de la etapa teórica más cercana. Corre en tu navegador.',
+     saca:'La etapa de cada atributo: en ascenso, pico, saturada o en retorno.'},
+  a:{de:'Google Trends Argentina, 14 términos en español, 2004–2025 (septiembre de 2026).',
+     como:'Promedio de cada año; Argentina no tuvo el salto de medición de 2025.',
+     saca:'Si acá un atributo va antes o después que afuera. No entra al modelo.'},
+  c:{de:'Nuestra propia historia de búsqueda, 2004–2024: 224 tramos de 1 a 5 años.',
+     como:'Cuánto se movió de verdad la búsqueda a cada distancia: mediana y percentiles.',
+     saca:'La escala del movimiento posible hasta tu ventana. No es un pronóstico.'},
+  s:{de:'Google Trends, propiedad Shopping (búsquedas de compra), 25 términos, 2008–2025 (22/09/2026).',
+     como:'Promedio de cada año y cambio entre 2021–22 y 2024–25.',
+     saca:'Si la intención de compra acompaña a la etapa. Valida el modelo; no entra.'},
+  m:{de:'Amazon Reviews 2023 (McAuley Lab, UCSD): una muestra de 1,1 M de reseñas de indumentaria, 2012–2023.',
+     como:'Reseñas del año que nombran el término, sobre el total; cambio entre 2019 y 2022.',
+     saca:'Si el consumo masivo confirma lo que dice el modelo. Valida; no entra.'},
+  hm:{de:'H&M Personalized Fashion Recommendations (Kaggle): 31,8 M transacciones de 2018 a 2020; usamos las 30,6 M de adultos.',
+     como:'Compras por atributo y por mes, leídas del tipo y la descripción de cada artículo.',
+     saca:'Qué compra el mercado masivo. Es contexto: no entra al modelo.'},
+  ly:{de:'Los informes anuales de Lyst (Year in Fashion y similares), 19 señales cargadas a mano, cada una con su link.',
+     como:'El porcentaje que publica Lyst, tal cual, con el año y la fuente.',
+     saca:'Un jurado externo que no vio nuestras cuentas. No entra al modelo.'},
+  x:{de:'CLIP ViT-B/32 (OpenAI), un modelo que relaciona fotos y textos, corriendo en tu navegador con 14.000 looks de Vogue de 2010 a 2023.',
+     como:'Compara la foto con textos de los 17 atributos y con los looks; los umbrales se calibraron contra las etiquetas de Vogue.',
+     saca:'Qué atributos ve en una foto y looks parecidos. Es interpretación, no medición.'}};
+const fuenteHTML=(k,n,extra)=>{const F=FUENTES[k],I=FUENTE_INFO[k];if(!F)return '';const e=x=>String(x).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  return `<b>${e(F[0])}</b>`+(I?`<span><i>De dónde viene</i>${e(I.de)}</span><span><i>Cómo lo procesamos</i>${e(I.como)}</span><span><i>Qué sacamos</i>${e(I.saca)}</span>`:`<span>${e(F[1])}</span>`)+`<span class="fobs">${e(n||F[2])}</span>`+(extra?`<span class="fobs">${extra}</span>`:'');};
 const src=(k,n)=>` data-src="${k}${n!=null?'|'+String(n).replace(/"/g,'&quot;'):''}"`;
 (function(){
   const tactil=matchMedia('(hover:none)').matches;let fijo=null;
   const ver=(ev,d)=>{const [k,n]=d.dataset.src.split('|'),F=FUENTES[k];if(!F)return;const e=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-    tip.innerHTML=`<b>${e(F[0])}</b><span>${e(F[1])}</span><span>${e(n||F[2])}</span>`;tip.classList.add('src');
+    tip.innerHTML=fuenteHTML(k,n);tip.classList.add('src');
     if(ev.clientX!=null&&!tactil)showPos(ev);else{const r=d.getBoundingClientRect();showPos({clientX:r.left+r.width/2,clientY:r.bottom+18});}};
   const showPos=ev=>{tip.style.opacity=1;const r=tip.getBoundingClientRect();let x=ev.clientX+13,y=ev.clientY-8;
     if(x+r.width>innerWidth-8)x=Math.max(8,ev.clientX-r.width-13);if(tactil)x=Math.min(Math.max(8,ev.clientX-r.width/2),innerWidth-r.width-8);if(y+r.height>innerHeight-8)y=innerHeight-r.height-8;
@@ -4188,7 +4249,7 @@ function recChart(o,W=640,H=300,solo=null){
     s.classList.toggle('rfoco',!!cerca);$$('.rcapa',s).forEach(g=>g.classList.toggle('on',!!cerca&&g.dataset.k===cerca.k));
     if(cerca){const F=FUENTES[cerca.k]||['','',''],v=enY(cerca),e2=x=>String(x).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
       cross.setAttribute('x1',X(y));cross.setAttribute('x2',X(y));cross.setAttribute('opacity',.6);
-      tip.innerHTML=`<b>${e2(cerca.n)} · ${e2(F[0])}</b><span>${e2(cerca.d.split(' · ').slice(1).join(' · '))}</span><span>${e2(F[1])}</span><span>${e2(cerca.obs||F[2])}</span><span>${y}: ${Math.round(v)} ${cerca.clip&&y>=cerca.clip&&y<=cerca.ult?'leído con CLIP (Vogue dejó de etiquetar)':y<=cerca.ult&&!(cerca.dudoso===y)?'medido':cerca.dudoso===y?'dudoso (salto de Google)':'mediana de la historia, no un pronóstico'}</span>`;
+      tip.innerHTML=fuenteHTML(cerca.k,cerca.obs||F[2],`${e2(cerca.d.split(' · ').slice(1).join(' · '))}`)+`<span class="fval">${y}: ${Math.round(v)} ${cerca.clip&&y>=cerca.clip&&y<=cerca.ult?'leído con CLIP (Vogue dejó de etiquetar)':y<=cerca.ult&&!(cerca.dudoso===y)?'medido':cerca.dudoso===y?'dudoso (salto de Google)':'mediana de la historia, no un pronóstico'}</span>`;
       tip.classList.add('src');tipEn(e);return;}
     tip.classList.remove('src');
     cross.setAttribute('x1',X(y));cross.setAttribute('x2',X(y));cross.setAttribute('opacity',.6);
@@ -4212,7 +4273,7 @@ function recChart(o,W=640,H=300,solo=null){
 function legDestaca(leg,caja){if(!leg)return;$$('.legi',leg).forEach(b=>{const on=v=>{const sv=$('svg',caja);if(!sv)return;sv.classList.toggle('rfoco',v);$$('.rcapa',sv).forEach(g=>g.classList.toggle('on',v&&g.dataset.k===b.dataset.k));};
   b.addEventListener('mouseenter',()=>on(true));b.addEventListener('mouseleave',()=>on(false));});}
 function recLeyenda(o){
-  return recSeries(o).map(se=>`<button type="button" class="legi" data-k="${se.k}" aria-pressed="${recFoco===se.k}" title="Aislar esta capa"><svg width="34" height="8" aria-hidden="true"><line x1="1" x2="17" y1="4" y2="4" stroke="${cssv(se.c)}" stroke-width="2.4" ${se.dm!=='none'?`stroke-dasharray="${se.dm}"`:''}/><line x1="19" x2="33" y1="4" y2="4" stroke="${cssv(se.c)}" stroke-width="2" stroke-dasharray="${se.dp}"/></svg><span style="white-space:nowrap">${se.n}</span><em>${se.d}</em></button>`).join('');
+  return recSeries(o).map(se=>`<button type="button" class="legi" data-k="${se.k}"${src(se.k,se.obs)} aria-pressed="${recFoco===se.k}" title="Aislar esta capa"><svg width="34" height="8" aria-hidden="true"><line x1="1" x2="17" y1="4" y2="4" stroke="${cssv(se.c)}" stroke-width="2.4" ${se.dm!=='none'?`stroke-dasharray="${se.dm}"`:''}/><line x1="19" x2="33" y1="4" y2="4" stroke="${cssv(se.c)}" stroke-width="2" stroke-dasharray="${se.dp}"/></svg><span style="white-space:nowrap">${se.n}</span><em>${se.d}</em></button>`).join('');
 }
 const CLAVE=`<div class="clave" aria-label="Cómo leer las líneas"><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2.4"/></svg>medido</span><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/></svg>punteada: no predice, muestra la escala posible</span><span><svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>año incompleto</span><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2.4" opacity=".4"/></svg>poco dato</span><span><svg width="16" height="10" aria-hidden="true"><rect width="16" height="10" fill="currentColor" opacity=".12"/></svg>error medido (búsqueda)</span></div>`;
 function pintarRecorridos(){

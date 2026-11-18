@@ -13,6 +13,9 @@ carpeta de trabajo con una subcarpeta `datos/` (los archivos grandes no se suben
    angosto (por ahora, no: esperan la muestra grande).
 4. `km_nuevos.py`, `kmeans_comparar.js`, `km_final.js` — nivel y momento de pasarela para el K-means, con las mismas
    ventanas de antes, y el `KM` nuevo calculado con el código de la app.
+4b. `km_2025.py`, `km_final_2025.js` — 18/11: la pasarela hasta 2025 entra al modelo (nivel 2024–25, momento 2023–25
+   contra 2020–22; lunares y piel conservan sus años). El `KM` nuevo se pasó a la app sin tocar `REC`.
+   `prueba_reddit_modelo_2025.py`, la prueba de Reddit con esas etapas.
 5. `inyectar.py` — pasa la serie y el `KM` a `app/index.html` y a la exportación.
 6. `prueba_reddit_modelo_corregido.py` — la prueba de Reddit con las etapas nuevas (no preregistrada; la original sigue
    en `codigo/prueba_reddit.py`).

@@ -69,7 +69,8 @@ productos con venta real (VISUELLE), explica el 0,1 %. Y «en retorno»: con la 
 atributo cae ahí, así que esa etapa hoy no tiene con qué probarse.
 
 **Lo que sí está probado.** Lo que el K-means pone en ascenso es lo que más crece en Reddit, una fuente que no usa: los
-tres atributos en ascenso (Y2K, cargo, jeans amplios) son los tres que más crecen (η² = 0,83, p = 0,0025). La prueba se
+dos atributos en ascenso (Y2K, jeans amplios) están entre los tres que más crecen; el tercero, cargo, queda en pico, y el
+crecimiento medio baja de etapa en etapa (+194 %, +64 %, −29 %; η² = 0,71, p = 0,013, con la pasarela hasta 2025). La prueba se
 fijó antes de calcular (27/10) y con las etapas de entonces también se sostuvo (p = 0,0013). El detalle, prueba por
 prueba, está en `hipotesis.md`.
 
@@ -78,7 +79,8 @@ en 2023 el 48 % y Fall 2023 ninguno. La serie de pasarela dividía por todos los
 curvas caían juntas por falta de etiquetas. Esos dos años ahora los lee un clasificador CLIP por atributo, entrenado
 con las etiquetas de 2010–2021 (correlación con ellas, de 0,84 a 0,99), sobre todos los looks. Cambiaron 15 de las 17
 etapas: lo que estaba «saturado» quedó mayormente «en pico», jeans amplios y cargo pasaron a «en ascenso» y ningún
-atributo quedó «en retorno».
+atributo quedó «en retorno». Ese mismo día la pasarela llegó a 2025 y entró al modelo: cambiaron 6 etapas más (jeans
+medios y ajustados, kimono, capa y piel a «saturada»; cargo a «en pico»).
 
 **De dónde salió.** La hipótesis de la Entrega 1 prometía anticipar: «señales tempranas de los desfiles». Las pruebas
 la corrigieron dos veces. La unidad pasó de «tendencia» a atributo, y el foco, de anticipar a leer el presente.
@@ -196,7 +198,7 @@ la señal no las decide la IA: las deciden el K-means y una regla fija.
 - **El calzado.** Dos de ocho estilos tienen señal en la búsqueda; CLIP lee la ropa, no el zapato. Está contado como
   resultado, no escondido (26/10).
 - **Pasarela y venta por género.** Vogue y los agregados de H&M no traen esa columna; está declarado en Método.
-- **Lo emergente.** Ningún atributo del set está empezando: haría falta pasarela posterior a 2023.
+- **Lo emergente.** Ningún atributo del set está empezando, aun con la pasarela hasta 2025.
 
 ---
 

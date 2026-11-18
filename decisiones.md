@@ -3286,3 +3286,33 @@ veredicto por partes con ritmo, y un resultado que dé ganas de contar.
 (no hay cuentas): se pierde si se borran los datos del sitio.
 
 Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/brief_racha_2026-11-18/` (el veredicto a 1, 3 y 8,5 segundos).
+
+## 2026-11-18 · La pasarela 2024–2025 entra al modelo
+
+**Pedido (Felipe).** «Metele 2024–2025 al modelo también.» Anoche se mostraba en los gráficos pero el K-means seguía con
+la pasarela hasta 2023.
+
+**Cómo.** Las ventanas de la pasarela se corren dos años: nivel = media 2024–25 sobre el máximo 2010–2025; momento =
+media 2023–25 contra 2020–22. La búsqueda no cambia (hasta 2024; 2025 sigue afuera por la deriva de Google Trends).
+
+**Decisiones discutibles.**
+- *Lunares y piel conservan sus ventanas viejas* (2022–23; 2021–23 contra 2018–20): no pasaron el control de 2024–2025.
+  El modelo mezcla, para esos dos, ventanas que terminan dos años antes. La alternativa era sacarlos del K-means.
+- *Centroides nuevos.* Arrancar k=4 de los centroides guardados dejaba un óptimo peor (inercia 27,7). Se tomó el mejor de
+  50 arranques con semilla 42 (inercia 23,1) y se guardó como `KM.cent`, así que la app sigue siendo determinista.
+- *Silhouette más baja:* k=4 0,30 (antes 0,31); k=2 0,28, k=3 0,30, k=5 0,31. Sigue sin elegir cuatro, igual que antes.
+
+**Qué cambió.** 6 de 17 etapas:
+- jeans rectos y ajustados, kimono, capa y piel pasan de «en pico» a «saturada»;
+- el cargo pasa de «en ascenso» a «en pico» (en la pasarela bajó desde 2022: 98 → 67 y 72).
+
+Quedan: en ascenso Y2K y jeans amplios; en pico buzo, floral, trench, cargo y blazer; saturada, los diez restantes.
+Ninguno cae en retorno ni en emergente.
+
+**Reddit (no preregistrada, mismo criterio).** η² = 0,71, p = 0,013 (antes 0,83 y 0,0025): se sigue sosteniendo. Baja el
+η² porque el cargo, que crece +187 % en Reddit, deja el grupo de arriba, pero ahora el crecimiento medio baja de etapa en
+etapa (en ascenso +194 %, en pico +64 %, saturada −29 %); antes pico y saturada daban casi lo mismo (−14 % y −17 %).
+
+Scripts: `codigo/pasarela_clip/km_2025.py`, `km_final_2025.js`, `prueba_reddit_modelo_2025.py`. Actualizados la app
+(KM, textos de Acerca de, El modelo, fuentes y el contexto del LLM), `app/llm/ciclo_datos.md`, readme, racional e
+hipótesis.

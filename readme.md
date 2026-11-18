@@ -213,17 +213,19 @@ sólo en su navegador y es la misma para los dos. El `.gitignore` bloquea `.env`
 
 K-means sobre 17 atributos que existen a la vez en la pasarela y en Google Trends, con cuatro variables
 estandarizadas: nivel y momento en pasarela, nivel y momento en búsqueda. La búsqueda llega hasta 2024:
-nivel 2023–24 contra su máximo, momento 2023–24 contra 2020–21 (`codigo/recalcular_kmeans_sin_2025.py`).
+nivel 2023–24 contra su máximo, momento 2023–24 contra 2020–21 (`codigo/recalcular_kmeans_sin_2025.py`). La pasarela
+llega hasta 2025: nivel 2024–25 contra su máximo, momento 2023–25 contra 2020–22; lunares y piel, que no llegan a 2025,
+conservan 2022–23 y 2021–23 contra 2018–20.
 
-`k = 4`. La silhouette no elige cuatro (k=2 0,361 · k=3 0,287 · k=4 0,320 · k=5 0,348): los datos no piden
-cuatro, pero con menos no se separan etapas. Con 4, Y2K queda solo en su grupo. Los grupos se nombran por la
+`k = 4`. La silhouette no elige cuatro (k=2 0,280 · k=3 0,303 · k=4 0,299 · k=5 0,310): los datos no piden
+cuatro, pero con menos no se separan etapas. Con 4, el grupo más chico tiene dos (Y2K y jeans amplios). Los grupos se nombran por la
 combinación de etapas teóricas más cercana a los cuatro centros a la vez.
 
 Los grupos que encontró, leídos como etapas (jeans ya reagrupados: mom y boyfriend cuentan en los medios):
 
-- **En ascenso** — Y2K · Jeans amplios · Cargo
-- **En pico** — Jeans medios · Jeans ajustados · Buzo/hoodie · Floral · Kimono · Capa · Trench · Blazer oversize · Piel
-- **Saturada** — Lunares · Cuero · Animal print · Encaje · Cuadros
+- **En ascenso** — Y2K · Jeans amplios
+- **En pico** — Cargo · Buzo/hoodie · Floral · Trench · Blazer oversize
+- **Saturada** — Jeans medios · Jeans ajustados · Lunares · Cuero · Animal print · Encaje · Cuadros · Kimono · Capa · Piel
 - **En retorno** — ninguno, desde la corrección de la pasarela (18/11)
 
 Hasta el 20/10/2026 el modelo usaba la búsqueda 2024–25. Sacar ese año y después reagrupar los jeans (mom y
@@ -231,7 +233,9 @@ boyfriend a los medios) movió varios atributos de grupo; los pasos intermedios 
 asignación de arriba es la vigente desde el 18/11/2026: ese día se corrigió la pasarela de 2022–2023. Vogue dejó de
 etiquetar los looks (en 2023 sólo tiene etiquetas el 48 %, y Fall 2023 ninguno), y la serie caía por falta de etiquetas,
 no por la moda. Ahora esos dos años los lee un clasificador CLIP entrenado con las etiquetas de 2010–2021, sobre todos
-los looks; cambiaron 15 de las 17 etapas. El proceso está en `codigo/pasarela_clip/` y en `decisiones.md`.
+los looks; cambiaron 15 de las 17 etapas. El mismo día entraron al modelo 2024 y 2025 (20.000 looks por año de otro
+dataset de Vogue Runway, leídos con CLIP): cambiaron 6 más (jeans medios y ajustados, kimono, capa y piel a «saturada»;
+cargo, de «en ascenso» a «en pico»). El proceso está en `codigo/pasarela_clip/` y en `decisiones.md`.
 
 Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022) y Google Shopping
 (2021-22→2024-25). El orden se respeta: lo que está en ascenso sube más en Google Shopping (mediana +95 %) que lo que
@@ -285,7 +289,8 @@ exacto, filas, SKU y fecha). El detalle está en `datasets/fuentes_y_descargas.m
 
 ## Límites declarados
 
-- **No detectamos lo emergente.** La pasarela pública llega hasta 2023.
+- **No detectamos lo emergente.** La pasarela llega hasta 2025 (2024–2025 con una muestra de 20.000 looks por año), y
+  aun así ningún atributo del set está empezando.
 - **El corpus mezcla menswear y womenswear.** Separarlo exige volver a agregar desde el archivo original.
 - **El calzado se mide poco, y lo intentamos dos veces.** Google Trends (14 términos): entran «sneakers» y
   «loafers»; «sandals» mide el verano, y los demás son ruido o vuelven sin señal. CLIP sobre 14.000 looks de pasarela:

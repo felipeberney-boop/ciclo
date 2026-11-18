@@ -1,0 +1,87 @@
+{
+ "Jeans baggy": {
+  "pn": 0.975,
+  "pm": 0.011,
+  "pico_pas": 2021
+ },
+ "Jeans rectos": {
+  "pn": 0.975,
+  "pm": 0.011,
+  "pico_pas": 2021
+ },
+ "Jeans skinny": {
+  "pn": 0.975,
+  "pm": 0.011,
+  "pico_pas": 2021
+ },
+ "Buzo / hoodie": {
+  "pn": 0.47,
+  "pm": -0.361,
+  "pico_pas": 2021
+ },
+ "Floral": {
+  "pn": 0.684,
+  "pm": -0.044,
+  "pico_pas": 2018
+ },
+ "Lunares": {
+  "pn": 0.546,
+  "pm": -0.068,
+  "pico_pas": 2015
+ },
+ "Cuero": {
+  "pn": 0.698,
+  "pm": 0.215,
+  "pico_pas": 2018
+ },
+ "Animal print": {
+  "pn": 0.171,
+  "pm": 0.054,
+  "pico_pas": 2019
+ },
+ "Kimono": {
+  "pn": 0.509,
+  "pm": -0.331,
+  "pico_pas": 2021
+ },
+ "Capa": {
+  "pn": 0.608,
+  "pm": -0.242,
+  "pico_pas": 2021
+ },
+ "Trench": {
+  "pn": 0.806,
+  "pm": -0.1,
+  "pico_pas": 2021
+ },
+ "Encaje": {
+  "pn": 0.901,
+  "pm": 0.235,
+  "pico_pas": 2016
+ },
+ "Cargo": {
+  "pn": 0.693,
+  "pm": -0.212,
+  "pico_pas": 2021
+ },
+ "Cuadros": {
+  "pn": 0.489,
+  "pm": -0.269,
+  "pico_pas": 2018
+ },
+ "Piel": {
+  "pn": 0.683,
+  "pm": 0.103,
+  "pico_pas": 2011
+ },
+ "Blazer oversize": {
+  "pn": 0.706,
+  "pm": -0.081,
+  "pico_pas": 2013
+ },
+ "Y2K": {
+  "pn": 0.253,
+  "pm": 0.174,
+  "pico_pas": 2013
+ }
+}

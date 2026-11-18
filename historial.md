@@ -535,6 +535,12 @@ del corpus. Y las fotos piden siempre el mismo tamaño, así cargan rápido.
 Cada prenda y cada tipo con foto propia se muestran como en Tendencias: la foto de pasarela y la silueta como etiqueta en
 la esquina. «Tu look hasta ahora» sale como panel suelto: las elecciones quedan en la barra de abajo, cada una con su foto.
 
+## v1.74 · 18/11/2026 · La pasarela llega a 2025
+
+Con 20.000 looks por año de 2024 y 2025 leídos con CLIP, la pasarela de 12 de los 13 atributos de El ciclo llega a 2025
+(lunares queda en 2023: su margen de error era grande). Va punteada y marcada como leída con CLIP. El modelo sigue con la
+pasarela hasta 2023; las etapas no cambian.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

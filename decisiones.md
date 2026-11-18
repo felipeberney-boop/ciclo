@@ -3191,3 +3191,25 @@ remera y musculosa, trench, campera, capa…) la llevan igual.
   ahora cada elección lleva su miniatura (la foto o el color), así que la composición está ahí, alineada y sin duplicar.
 
 Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/disenar_fotos_2026-11-18/`.
+
+## 2026-11-18 (noche) · La pasarela 2024–2025, publicada
+
+**Lo que terminó de correr.** 48.000 fotos más del dataset tonyassi/vogue933k (20.000 por año de 2024 y 2025 en total,
+10.000 de 2022 y de 2023 para el empalme), cada una bajada a 400 px sólo para calcular su vector CLIP. El clasificador de
+cada atributo se aplicó a esa muestra y 2024–2025 se empalmaron sobre 2022–2023 (la proporción entre el dataset nuevo y el
+original en esos dos años).
+
+**El control.** Un año nuevo entra sólo si su intervalo de 90 % (bootstrap, 400 remuestreos) abarca 25 puntos del índice o
+menos. Pasan 13 de 15: denim, buzo, cuero, floral, animal print, cargo, encaje, kimono, capa, trench, cuadros, blazer e
+Y2K, con intervalos de 2 a 18 puntos. Lunares (27–32) y piel (21–25 en un año, pero el otro no) quedan hasta 2023.
+Lo que dicen: el denim sigue arriba (98 y 97), el encaje sube (86 y 95), el trench vuelve a subir (76 y 85), el kimono
+baja (52 y 50), el cargo baja (67 y 72).
+
+**Decisiones discutibles.**
+- *2024–2025 se muestran, pero no entran al K-means.* El modelo sigue con las mismas ventanas (pasarela hasta 2023).
+  Correrlas a 2023–2024, como la búsqueda, movería etapas otra vez y es una decisión para Felipe, no para la noche.
+- *Se adoptó la corrida grande entera.* Al sumar el bootstrap cambiaron los negativos al azar de cada clasificador y
+  2022–2023 se movieron entre 0,4 y 5 puntos. En vez de mezclar corridas, se usó la grande para 2022–2025 y se
+  recalculó el K-means: ninguna de las 17 etapas cambia (nivel y momento se mueven centésimas).
+
+Scripts en `codigo/pasarela_clip/`; resultados en `datasets_procesados/pasarela_clip/`.

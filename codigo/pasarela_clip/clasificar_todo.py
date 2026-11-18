@@ -27,7 +27,7 @@ COMBO.update({'cuadros': ['Plaid', 'Tartan'], 'piel': ['Fur'], 'blazer': ['Blaze
 A = list(range(2010, 2024))
 import csv, os
 U, EN, meta = [], [], {}
-for npz, mc in (('datos/emb_2022_2025.npz', 'datos/muestra_2022_2025.csv'), ('datos/emb2.npz', 'datos/muestra2.csv')):
+for npz, mc in (('datos/emb_2022_2025.npz', 'datos/muestra_2022_2025.csv'), ('datos/emb2.npz', 'datos/muestra2.csv'), ('datos/emb3.npz', 'datos/muestra3.csv')):
     if not os.path.exists(npz): continue
     z = np.load(npz, allow_pickle=True); U += z['u'].tolist(); EN.append(z['e'])
     meta.update({r['u'].strip('"'): int(r['y']) for r in csv.DictReader(open(mc))})
@@ -70,4 +70,4 @@ for vk, combo in COMBO.items():
     k = sum(tag[a] for a in V if a >= 2016) / sum(clip[a] for a in V if a >= 2016)
     res[vk] = {'w': w_.numpy().tolist(), 'b': float(b_), 'n_nueva': {a: int((YN == a).sum()) for a in range(2022, 2026)}, 'combo': combo, 'positivos': int(len(ip)), 'r_2010_2021': round(r, 3), 'k': k, 'clip': clip, 'tag': tag, 'nueva': nueva, 'nueva_ic90': bs}
     print(f"{vk:13s} pos {len(ip):6d} r {r:+.3f} k {k:.2f} | tag 21–23 {[round(1000*tag[a],1) for a in (2021,2022,2023)]} clip·k {[round(1000*k*clip[a],1) for a in (2021,2022,2023)]} nueva·k {[round(1000*k*nueva[a],1) for a in range(2022,2026)]}", flush=True)
-json.dump(res, open('datos/pasarela_clip.json', 'w'), indent=1)
+json.dump(res, open('datos/pasarela_clip_grande.json', 'w'), indent=1)

@@ -63,6 +63,8 @@ fecha en que lo bajamos y su licencia.
 - tonyassi/vogue933k-embedding (Hugging Face): 933.328 looks de Vogue Runway, 1990–2025, con link a cada foto. Sus
   vectores son de otro modelo; se bajaron sólo las columnas de link, desfile y casa de 2022–2025 (184.802 looks) y, de una
   muestra, la foto chica (400 px) para calcular su vector CLIP. Las fotos no se guardan ni se suben. Sin licencia declarada.
+  Muestra final (18/11): 10.000 looks de 2022 y de 2023 y 20.000 de 2024 y de 2025 (59.991 con vector), al azar con semilla
+  fija, sin novias.
 
 ## Redes
 

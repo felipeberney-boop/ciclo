@@ -221,17 +221,21 @@ combinación de etapas teóricas más cercana a los cuatro centros a la vez.
 
 Los grupos que encontró, leídos como etapas (jeans ya reagrupados: mom y boyfriend cuentan en los medios):
 
-- **En ascenso** — Y2K
-- **En pico** — Jeans amplios · Cargo
-- **Saturada** — Jeans medios · Jeans ajustados · Buzo/hoodie · Floral · Kimono · Capa · Trench · Blazer oversize
-- **En retorno** — Lunares · Cuero · Animal print · Encaje · Cuadros · Piel
+- **En ascenso** — Y2K · Jeans amplios · Cargo
+- **En pico** — Jeans medios · Jeans ajustados · Buzo/hoodie · Floral · Kimono · Capa · Trench · Blazer oversize · Piel
+- **Saturada** — Lunares · Cuero · Animal print · Encaje · Cuadros
+- **En retorno** — ninguno, desde la corrección de la pasarela (18/11)
 
 Hasta el 20/10/2026 el modelo usaba la búsqueda 2024–25. Sacar ese año y después reagrupar los jeans (mom y
 boyfriend a los medios) movió varios atributos de grupo; los pasos intermedios están en `decisiones.md`. La
-asignación de arriba es la vigente y se reproduce exacta con `codigo/recalcular_kmeans_sin_2025.py`.
+asignación de arriba es la vigente desde el 18/11/2026: ese día se corrigió la pasarela de 2022–2023. Vogue dejó de
+etiquetar los looks (en 2023 sólo tiene etiquetas el 48 %, y Fall 2023 ninguno), y la serie caía por falta de etiquetas,
+no por la moda. Ahora esos dos años los lee un clasificador CLIP entrenado con las etiquetas de 2010–2021, sobre todos
+los looks; cambiaron 15 de las 17 etapas. El proceso está en `codigo/pasarela_clip/` y en `decisiones.md`.
 
 Validado contra dos capas que el modelo no usó: reseñas de Amazon (2019→2022) y Google Shopping
-(2021-22→2024-25). Los jeans ajustados, en «saturada», caen 39 % en Amazon mientras los amplios suben 79 %.
+(2021-22→2024-25). El orden se respeta: lo que está en ascenso sube más en Google Shopping (mediana +95 %) que lo que
+está en pico (+53 %) y que lo saturado (+24 %); en Amazon, +51 %, +48 % y +25 %.
 
 ## Decisiones de diseño
 

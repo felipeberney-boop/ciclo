@@ -1,0 +1,14 @@
+const {chromium}=require(process.env.S+'/pw/node_modules/playwright');const fs=require('fs');
+const N=JSON.parse(fs.readFileSync(process.argv[2]));
+(async()=>{const b=await chromium.launch();const p=await b.newPage();
+await p.goto('http://localhost:8000/#etapas',{waitUntil:'networkidle'});await p.waitForTimeout(800);
+const r=await p.evaluate(N=>{KM.rows.forEach(r=>{if(N[r.n])Object.assign(r,N[r.n]);});
+  const cl=(v,i)=>(i===1||i===3)?Math.max(-1,Math.min(1.5,v)):v;
+  ['pn','pm','bn','bm'].forEach((k,i)=>{const x=KM.rows.map(r=>cl(r[k],i)),m=x.reduce((a,b)=>a+b,0)/x.length;KM.sc.m[i]=m;KM.sc.s[i]=Math.sqrt(x.reduce((a,b)=>a+(b-m)**2,0)/x.length);});
+  const P=KM.rows.map(kZ);const F=kFit(P,4);KM.cent=F.C;const Nm=kName(F.C,4);
+  KM.rows.forEach((r,i)=>{r.cl=F.L[i];});
+  const sil=F=>{const n=P.length;let t=0;for(let i=0;i<n;i++){const own=P.filter((_,j)=>F.L[j]===F.L[i]&&j!==i);const a=own.length?own.reduce((s,q)=>s+Math.sqrt(kD(P[i],q)),0)/own.length:0;let bb=1e9;F.C.forEach((_,g)=>{if(g===F.L[i])return;const o=P.filter((_,j)=>F.L[j]===g);if(o.length)bb=Math.min(bb,o.reduce((s,q)=>s+Math.sqrt(kD(P[i],q)),0)/o.length)});t+=own.length?(bb-a)/Math.max(a,bb):0}return +(t/n).toFixed(3)};
+  const el={};[2,3,4,5,6].forEach(k=>{const f=kFit(P,k);el[k]={inercia:+f.inertia.toFixed(2),sil:sil(f)};});
+  const old=JSON.parse(JSON.stringify(KM.elbow));KM.elbow=el;
+  return {KM,etapas:KM.rows.map((r,i)=>[r.n,Nm[F.L[i]].n]),old};},N);
+fs.writeFileSync(__dirname+'/../datos/KM_nuevo.json',JSON.stringify(r.KM));console.log(JSON.stringify(r.etapas));console.log('elbow viejo',JSON.stringify(r.old),'\nnuevo',JSON.stringify(r.KM.elbow));await b.close();})();

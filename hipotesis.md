@@ -10,7 +10,7 @@ puede **identificar la etapa** del presente.
 
 **La hipótesis ajustada (Entrega 3):** cruzando lo que propone la pasarela con lo que busca la gente, CICLO ubica cada
 atributo de moda en su etapa del ciclo y distingue lo que está subiendo de lo que no. Esa lectura coincide con fuentes
-que el modelo nunca vio: Reddit, con prueba formal (p = 0,0013), y Lyst y Amazon, en casos.
+que el modelo nunca vio: Reddit, con prueba formal (p = 0,0013 con las etapas de antes; p = 0,0025 con la pasarela corregida el 18/11), y Lyst y Amazon, en casos.
 
 **Qué cambió y por qué:** la unidad pasó de «tendencia» a atributo, que es lo que se puede contar en todas las capas; y
 el foco pasó de anticipar a leer el presente, porque pasarela y búsqueda se mueven juntas, a la vez (por año y por
@@ -24,7 +24,7 @@ temporada). Ahí, en el presente, es donde CICLO es preciso.
 
 | Afirmación | Prueba | Contra qué fuente externa |
 |---|---|---|
-| Lo que el K-means pone en ascenso o pico es lo que más crece afuera | Los tres de arriba (Y2K, cargo, jeans baggy) son los tres que más crecen, de 14: p = 0,0013 (η² = 0,88) barajando las etapas 10.000 veces; por rangos, p = 0,047. Criterio commiteado antes de calcular (27/10) | Reddit, r/femalefashionadvice, 2020–21 contra 2023–24. El modelo no lo usa |
+| Lo que el K-means pone arriba es lo que más crece afuera | Los tres de arriba (Y2K, cargo, jeans baggy) son los tres que más crecen, de 14: p = 0,0013 (η² = 0,88) barajando las etapas 10.000 veces; por rangos, p = 0,047. Criterio commiteado antes de calcular (27/10). Con la pasarela corregida (18/11) esos tres quedan solos «en ascenso» y la misma prueba da p = 0,0025 (η² = 0,83) | Reddit, r/femalefashionadvice, 2020–21 contra 2023–24. El modelo no lo usa |
 | CLIP reconoce los atributos en una foto | AUC mediano 0,90 en 150.000 looks de Vogue que no están en el índice (13/10) | Las etiquetas de Vogue de esos looks |
 
 **Coherente en los casos, sin prueba formal.** Son ejemplos que el modelo no vio y van en la dirección que dice. No
@@ -32,15 +32,15 @@ alcanzan como prueba: son pocos, y en dos de ellos la ventana toca 2025, que tie
 
 | Afirmación | El caso | Fuente que el modelo no vio |
 |---|---|---|
-| Los jeans ajustados están saturados | −39 % en reseñas, 2019→2022 | Amazon Reviews |
-| Los jeans amplios están en pico | +79 % en reseñas, 2019→2022; +95 % en búsquedas de compra, 2022→2025 (2025, dudoso) | Amazon Reviews, Google Shopping |
+| Los jeans ajustados caen frente a los amplios (desde el 18/11, en pico; antes, saturados) | −39 % en reseñas, 2019→2022 | Amazon Reviews |
+| Los jeans amplios suben (desde el 18/11, en ascenso; antes, en pico) | +79 % en reseñas, 2019→2022; +95 % en búsquedas de compra, 2022→2025 (2025, dudoso) | Amazon Reviews, Google Shopping |
 | El Y2K está en ascenso | +203 % en búsquedas de compra (la ventana incluye 2025) | Google Shopping |
-| Pico coincide con Lyst | Jeans anchos +55 % (2024) y cargo +56 % (2022), los dos en pico. El corset (+74 %, 2021) coincidía con el modelo de septiembre, de 18 atributos; el de hoy no lo incluye (23/09) | Informe anual de Lyst |
+| El grupo de arriba coincide con Lyst | Jeans anchos +55 % (2024) y cargo +56 % (2022), los dos en ascenso (antes del 18/11, en pico). El corset (+74 %, 2021) coincidía con el modelo de septiembre, de 18 atributos; el de hoy no lo incluye (23/09) | Informe anual de Lyst |
 
 **El límite de esta columna.** Atributo por atributo, contra Amazon (n = 11) no hay correlación; contra Google
 Shopping (n = 12) el nivel de búsqueda (+0,61) y el de pasarela (+0,67) pasan raspando el umbral de 0,6, y Shopping
 sigue siendo búsqueda, no venta (13/10). Y lo que sí se probó formalmente (Reddit) separa lo que sube de lo que no,
-pero **no distingue «en retorno» de «saturada»** (p = 0,88).
+pero **no distinguía «en retorno» de «saturada»** (p = 0,88). Con la pasarela corregida (18/11) ningún atributo cae «en retorno», así que esa etapa hoy no tiene con qué probarse.
 
 ---
 

@@ -57,6 +57,13 @@ fecha en que lo bajamos y su licencia.
 - Exportado: 22/09/2026 · 25 términos, 2008–2025
 - Misma licencia.
 
+**Vogue Runway, vectores CLIP y años 2024–2025 (18/11/2026)**
+- `VogueRunway_image.npy` del mismo dataset de traopia (1.281.633 × 512, float16, CLIP ViT-B/32), bajado el 18/11 para
+  leer con un clasificador los looks de 2022–2023 que Vogue dejó sin etiquetar. No se sube (1,3 GB).
+- tonyassi/vogue933k-embedding (Hugging Face): 933.328 looks de Vogue Runway, 1990–2025, con link a cada foto. Sus
+  vectores son de otro modelo; se bajaron sólo las columnas de link, desfile y casa de 2022–2025 (184.802 looks) y, de una
+  muestra, la foto chica (400 px) para calcular su vector CLIP. Las fotos no se guardan ni se suben. Sin licencia declarada.
+
 ## Redes
 
 **Reddit vía Arctic Shift**

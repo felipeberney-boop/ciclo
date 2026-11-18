@@ -65,11 +65,20 @@ crece y cambia cómo mide. Que el tipo de marca cambia qué conviene hacer con u
 **Qué no podemos afirmar.** Que CICLO prediga: cuatro métodos de predicción no le ganan a repetir el último valor
 (`hipotesis.md`). Que la pasarela adelante a la búsqueda: no lo hace ni por año ni por temporada; la prueba por
 temporada se registró antes de tener los datos y se rechazó (27/10). Que la búsqueda prediga la venta: contra 5.577
-productos con venta real (VISUELLE), explica el 0,1 %. Y que distinga «en retorno» de «saturada»: contra Reddit, no
-lo hace (p = 0,88).
+productos con venta real (VISUELLE), explica el 0,1 %. Y «en retorno»: con la pasarela corregida (18/11) ningún
+atributo cae ahí, así que esa etapa hoy no tiene con qué probarse.
 
-**Lo que sí está probado.** Lo que el K-means pone en ascenso o en pico es lo que más crece en Reddit, una fuente que no
-usa: p = 0,0013, con el criterio fijado antes de calcular (27/10). El detalle, prueba por prueba, está en `hipotesis.md`.
+**Lo que sí está probado.** Lo que el K-means pone en ascenso es lo que más crece en Reddit, una fuente que no usa: los
+tres atributos en ascenso (Y2K, cargo, jeans amplios) son los tres que más crecen (η² = 0,83, p = 0,0025). La prueba se
+fijó antes de calcular (27/10) y con las etapas de entonces también se sostuvo (p = 0,0013). El detalle, prueba por
+prueba, está en `hipotesis.md`.
+
+**Una corrección de los datos (18/11).** Desde 2022 Vogue dejó de etiquetar los looks: en 2022 tiene etiquetas el 76 %,
+en 2023 el 48 % y Fall 2023 ninguno. La serie de pasarela dividía por todos los looks, así que en 2022–2023 todas las
+curvas caían juntas por falta de etiquetas. Esos dos años ahora los lee un clasificador CLIP por atributo, entrenado
+con las etiquetas de 2010–2021 (correlación con ellas, de 0,84 a 0,99), sobre todos los looks. Cambiaron 15 de las 17
+etapas: lo que estaba «saturado» quedó mayormente «en pico», jeans amplios y cargo pasaron a «en ascenso» y ningún
+atributo quedó «en retorno».
 
 **De dónde salió.** La hipótesis de la Entrega 1 prometía anticipar: «señales tempranas de los desfiles». Las pruebas
 la corrigieron dos veces. La unidad pasó de «tendencia» a atributo, y el foco, de anticipar a leer el presente.
@@ -391,7 +400,7 @@ pieza más clara de la app. Toma un atributo, los jeans, y en siete pasos animad
 arma una lectura: entra la pasarela, entra la búsqueda, cada curva se vuelve dos números, los tres cortes se comparan
 con los otros 14 atributos en la misma escala, el K-means junta a los que se parecen, cada grupo toma el nombre de su
 etapa y el perfil la vuelve señal. Muestra algo que antes no se veía: la pasarela de los tres jeans es la misma (Vogue
-mide «denim», no el corte), así que toda la diferencia entre el baggy (Pico, Entrar) y el skinny (Saturada) sale de la
+mide «denim», no el corte), así que toda la diferencia entre el baggy (En ascenso) y el skinny (Pico) sale de la
 búsqueda. Está hecha con las mismas funciones que la app, así que no puede contradecirla.
 
 *Qué capacidad de IA usamos.* Dos, y se ven trabajando: CLIP (visión y lenguaje), que convierte las fotos de pasarela

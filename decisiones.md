@@ -3023,3 +3023,54 @@ entrada cuatro veces seguidas, el mismo problema que tenía el gráfico). Felipe
 - Diseñar muestra su título («Diseñar»), que estaba oculto y dejaba un blanco arriba.
 
 Demo 8 de 8 a 1400 y 393 px. Capturas en `diseno/vibe_2026-11-17/`.
+
+## 2026-11-18 · La pasarela de 2022–2023 estaba mal medida: corregida con CLIP, y el K-means recalculado
+
+**Pedido (Felipe).** Llevar Vogue Runway hasta 2026. Al encararlo apareció algo peor que la falta de años.
+
+**Lo que se encontró.** La cobertura de etiquetas del dataset de Vogue (traopia), medida por año: 99,9 % hasta 2020,
+97,8 % en 2021, **75,8 % en 2022 y 47,8 % en 2023**; por temporada, Fall 2023 tiene 0 % y Pre-Fall 2023, 2,7 %. Vogue
+dejó de etiquetar los looks nuevos. La serie de pasarela (`REC[].v`) es la proporción de looks del año con la etiqueta,
+dividida por *todos* los looks del año (se reprodujo con error medio menor a 0,2 puntos en 9 de 11 series). En 2022–2023
+todas las curvas caían juntas por falta de etiquetas: el trench pasaba de 100 a 20, la capa a 22. Y eso entraba al
+K-means como momento negativo de la pasarela.
+
+**Primera idea, descartada.** Dividir sólo por los looks etiquetados. No alcanza: lo etiquetado de 2023 es casi sólo
+Spring y Resort, así que abrigos, trench y cuero (de otoño) quedaban subrepresentados.
+
+**Cómo se corrigió.** El dataset trae el vector CLIP (ViT-B/32) de cada uno de sus 1,28 M looks. Por atributo, una
+regresión logística sobre ese vector, entrenada con las etiquetas de 2010–2021 (cuando Vogue etiquetaba todo; todos los
+positivos y 80.000 negativos con peso), estima la proporción de cada año como la probabilidad media de todos los looks
+de colección, también los no etiquetados. Validación en 2010–2021, contra la proporción de las etiquetas: correlación
+de 0,84 a 0,99 según el atributo. La serie queda: etiquetas hasta 2021 y CLIP en 2022–2023, ajustado a la escala de las
+etiquetas con 2016–2021. En los gráficos ese tramo va punteado y la tarjeta de la fuente dice «leído con CLIP (Vogue dejó
+de etiquetar)». Con la pasarela corregida, el trench en 2023 queda en 68, la capa en 59 y el denim en 93.
+
+**El K-means, recalculado (con el visto bueno de Felipe).** Nivel y momento de pasarela con las mismas ventanas de antes
+(media 2022–23 sobre el máximo; media 2021–23 sobre media 2018–20), también para las cuatro filas que no tienen serie en
+El ciclo (cuadros: Plaid + Tartan; piel: Fur; blazer oversize: Blazer; Y2K: Miniskirt, que reproducen los valores
+guardados). Estandarización y centroides recalculados con el código de la app. Cambian 15 de las 17 etapas:
+- En ascenso: Y2K, y ahora jeans amplios y cargo (antes en pico).
+- En pico: jeans medios y ajustados, buzo, floral, kimono, capa, trench y blazer (antes saturados) y piel (antes en retorno).
+- Saturada: lunares, cuero, animal print, encaje y cuadros (antes en retorno).
+- En retorno: ninguno.
+Silhouette con k=4: 0,31 (antes 0,32).
+
+**Un ajuste a cómo se nombran los grupos.** Con los datos nuevos, jeans amplios y cargo (pasarela y búsqueda subiendo)
+salían «Emergente», porque la regla no repetía nombres y «En ascenso» ya la tenía Y2K; «emergente» quiere decir lo
+contrario (la pasarela adelante y el público todavía no). La regla ahora deja que un grupo comparta la etapa más cercana
+cuando la que le toca queda a más de 1,5 veces esa distancia (con 2 veces no alcanzaba: 9,7 contra 2 × 4,9).
+
+**La validación, rehecha.** Reddit (misma prueba que el preregistro, con las etapas nuevas; no preregistrada): los tres
+en ascenso son los tres que más crecen, η² = 0,83, p = 0,0025; la prueba preregistrada, con las etapas de antes, había
+dado p = 0,0013 y se deja como está. Compra: Google Shopping, mediana +95 % en ascenso, +53 % en pico, +24 % saturada;
+Amazon, +51 %, +48 %, +25 %. Se actualizaron El modelo, Acerca de, el readme, el racional (y su PDF) y `hipotesis.md`.
+
+**2024–2025, todavía no.** El único dataset con looks de 2024–2025 (tonyassi/vogue933k-embedding, 933.328 looks hasta
+Fall 2025) trae vectores de otro modelo, así que se bajan las fotos de una muestra sólo para calcular su vector CLIP (el
+de open_clip ViT-B-32-quickgelu da coseno 0,988 con el del dataset). Con 3.000 looks por año, el intervalo de 90 % de la
+mayoría de los atributos abarca entre 30 y 90 puntos del índice: no se puede publicar. Quedó corriendo una muestra de
+17.000 looks por año de 2024–2025 (y 7.000 de 2022–2023, para el empalme); se publica cuando termine y pase el control.
+2026 no está en ningún dataset.
+
+Scripts en `codigo/pasarela_clip/` (con su README); resultados en `datasets_procesados/pasarela_clip/`.

@@ -499,6 +499,13 @@ Lo que Felipe quería desde las referencias (i-D, Vogue Runway): la web entera c
 títulos grandes en Bodoni liviana y a la izquierda, una fila de looks de pasarela a sangre debajo del título de cada
 sección, y las tarjetas de Tendencias como fotos altas, sin caja.
 
+## v1.68 · 18/11/2026 · La pasarela corregida
+
+Vogue dejó de etiquetar los looks desde 2022, y la serie de pasarela caía por falta de etiquetas, no por la moda. 2022 y
+2023 ahora los lee un clasificador CLIP entrenado con las etiquetas de 2010–2021, sobre todos los looks. El K-means se
+recalculó: cambian 15 de las 17 etapas (casi todo lo saturado pasa a pico; jeans amplios y cargo, a en ascenso; ninguno
+queda en retorno). La validación contra Reddit, Shopping y Amazon se sigue sosteniendo con los grupos nuevos.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

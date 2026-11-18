@@ -1826,6 +1826,19 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app #v-lectura .pvej>span:not(#q):not(#qq){font:400 var(--t-eti)/1 var(--sf)!important;color:var(--ink-3)!important}
 
 .app #v-lectura .pvsuma .pvmas:not(#q):not(#qq):not(#qqq){color:#fff!important;font:400 22px/1 var(--sf)!important}
+
+/* 18/11 (noche) · Acerca de rota: corpus, fuentes, modelo */
+.arota{margin-bottom:34px}
+.arsc{display:grid}
+.arsl{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility 0s .8s}
+.arsl.on{opacity:1;visibility:visible;transition:opacity .8s ease}
+.arota .apared{margin-bottom:0}
+.arsl-dg{padding:28px 0 8px;align-self:center}
+.app .arota .arst:not(#q):not(#qq):not(#qqq){margin:0 0 18px!important;font-family:var(--moda)!important;font-size:var(--t-sub)!important;text-align:left!important;color:var(--ink)!important}
+.arsel{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.app .arota .arsel button:not(#q):not(#qq){font:400 var(--t-eti)/1 var(--sf)!important;padding:9px 14px!important;border:1px solid var(--rule)!important;border-radius:999px!important;background:#fff!important;color:var(--ink)!important;cursor:pointer}
+.app .arota .arsel button.on:not(#q):not(#qq){border-color:var(--ink)!important}
+.app .arota .arsel .arpausa:not(#q):not(#qq){margin-left:auto;border:0!important;text-decoration:underline;text-underline-offset:4px}
 </style>
 
 <div class="app">
@@ -4830,11 +4843,27 @@ let apLooks=null;
 async function acercaPared(){const sec=$('#v-racional');if(!sec||sec.querySelector('.apared'))return;
   const d=document.createElement('div');d.className='apared';sec.querySelector(':scope > .vhead').insertAdjacentElement('afterend',d);
   try{apLooks=apLooks||await fetch('clip/looks.json').then(r=>r.json());}catch(e){d.remove();return;}
-  const L=apLooks,cols=innerWidth<600?10:34,alto=(innerWidth/cols)*1.5,filas=Math.max(6,Math.floor(innerHeight*(innerWidth<600?.5:.72)/alto)),n=cols*filas;
+  const L=apLooks,cols=innerWidth<600?14:34,alto=(innerWidth/cols)*1.5,filas=Math.max(6,Math.floor(innerHeight*(innerWidth<600?.62:.72)/alto)),n=cols*filas;
   const ix=[];let r=7;for(let i=0;i<n;i++){r=(r*1103515245+12345)%2147483648;ix.push(r%L.n);}
   d.style.setProperty('--cols',cols);
   d.innerHTML=`<div class="apg" aria-hidden="true">${ix.map(i=>`<img alt="" loading="lazy" decoding="async" src="${vogueFoto(L.f[i],120)}">`).join('')}</div>
-    <div class="aptxt"><p class="apn"${src('v')}>1.281.633</p><p class="apl">looks de desfile en el corpus de Vogue Runway, 2000–2023. Acá hay ${n.toLocaleString('es-AR')}, uno por cuadradito. Para verlos todos harían falta ${Math.ceil(1281633/n).toLocaleString('es-AR')} pantallas como esta.</p></div>`;}
+    <div class="aptxt"><p class="apn"${src('v')}>1.281.633</p><p class="apl">looks de desfile en el corpus de Vogue Runway, 2000–2023. Acá hay ${n.toLocaleString('es-AR')}, uno por cuadradito. Para verlos todos harían falta ${Math.ceil(1281633/n).toLocaleString('es-AR')} pantallas como esta.</p></div>`;
+  acercaRota(d);}
+/* 18/11 (noche) · Acerca de rota como los gráficos de Tendencias: la pared del corpus, las fuentes y el modelo, 9 s cada
+   uno. En el celular no rota (los diagramas apilados son muy altos y cada cambio movería la página): queda la pared */
+function acercaRota(pared){if(innerWidth<760)return;const sec=$('#v-racional');
+  const dd=sec.querySelector('.dg.dgdatos'),dm=sec.querySelector('.dg.dgmodelo');if(!dd||!dm)return;
+  const cl=(n,t)=>{const c=n.cloneNode(true);c.querySelectorAll('[id]').forEach(x=>x.removeAttribute('id'));return `<div class="arsl arsl-dg"><p class="arst">${t}</p>${c.outerHTML}</div>`;};
+  const box=document.createElement('div');box.className='arota';pared.parentNode.insertBefore(box,pared);
+  box.innerHTML=`<div class="arsc"><div class="arsl on"></div>${cl(dd,'Las fuentes: dos entran al modelo, el resto comprueba')}${cl(dm,'El modelo: qué entra, qué se calcula, qué sale')}</div>
+    <div class="arsel"><button type="button" data-i="0" class="on">El corpus</button><button type="button" data-i="1">Las fuentes</button><button type="button" data-i="2">El modelo</button><button type="button" class="arpausa">Pausar</button></div>`;
+  box.querySelector('.arsl').appendChild(pared);
+  const sl=[...box.querySelectorAll('.arsl')],bs=[...box.querySelectorAll('.arsel [data-i]')],pa=box.querySelector('.arpausa');let k=0,corre=!matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const ir=i=>{k=i;sl.forEach((x,j)=>x.classList.toggle('on',j===i));bs.forEach((x,j)=>x.classList.toggle('on',j===i));};
+  bs.forEach(b=>b.onclick=()=>{ir(+b.dataset.i);corre=false;pa.textContent='Seguir';});
+  pa.onclick=()=>{corre=!corre;pa.textContent=corre?'Pausar':'Seguir';};
+  pa.textContent=corre?'Pausar':'Seguir';
+  const t=setInterval(()=>{if(!box.isConnected){clearInterval(t);return;}if(corre&&!sec.hidden)ir((k+1)%sl.length);},9000);}
 function tratamiento(v){if(v==='recorridos')cicloTL();if(v==='disenar')dzAcum();if(v==='lectura')setTimeout(preguntarVacio,30);if(v==='racional')acercaPared();}
 function mostrar(v,keepNav){
   if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando

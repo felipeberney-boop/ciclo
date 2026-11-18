@@ -552,6 +552,11 @@ atributo.
 La foto de Preguntar cambia sola entre casas distintas; «Sumá tu diseño» queda en una línea; sale el texto que explicaba
 lo que ya se entiende.
 
+## v1.77 · 18/11/2026 · Acerca de, que rota
+
+La apertura de Acerca de rota como los gráficos de Tendencias: la pared de miniaturas del corpus, el diagrama de las
+fuentes y el del modelo, nueve segundos cada uno.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

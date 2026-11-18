@@ -3251,3 +3251,18 @@ looks de ejemplo en una fila «Probá con: Trench · Denim · Cuero».
 diseño ya ofrece. Soltar una imagen sigue funcionando igual.
 
 Demo 8 de 8. Capturas en `diseno/preguntar_noche_2026-11-18/`.
+
+## 2026-11-18 (noche) · Acerca de rota
+
+**Pedido (Felipe).** La pared de miniaturas quedó bien; que la sección rote como Tendencias: la pared, después los
+diagramas, y así.
+
+**Cómo quedó.** Arriba de las seis secciones, un escenario con tres vistas: «El corpus» (la pared con 1.281.633),
+«Las fuentes» (el diagrama de datos) y «El modelo» (qué entra, qué se calcula, qué sale). Cambian cada 9 segundos con
+fundido; las pestañas permiten elegir una (y entonces se detiene) y hay Pausar. Los diagramas siguen también dentro de sus
+secciones.
+
+**Decisión discutible.** *En el celular no rota*: ahí los diagramas se apilan y miden más de una pantalla, y cada cambio
+movería la página entera. Queda la pared, ahora con 14 columnas para que se vean cientos de looks y no 70.
+
+Demo 8 de 8. Capturas en `diseno/acerca_rota_2026-11-18/`.

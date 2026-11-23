@@ -3,9 +3,10 @@
 **Entrega 4 · 17/11/2026** · *Sistemas generativos e IA para Diseño* (K534/K576), UdeSA · Felipe Berney y Abril Dobler ·
 Docentes: Cristian Reynaga e Iván Fardjoume
 
-> **Versión del 04/11.** La redactó Claude a partir del repositorio y de las conversaciones de trabajo con Felipe en
-> Claude Code (del 13/10 al 04/11). Lo que dice quién decidió qué sale de esas conversaciones y cita las palabras de
-> Felipe tal como las escribió.
+> **Versión del 23/11.** La primera versión (04/11) la redactó Claude a partir del repositorio y de las conversaciones
+> de trabajo con Felipe en Claude Code; se actualizó después de cada cambio grande (el último, la pasarela 2022–2025 y el
+> diseño del 17 y 18/11). Lo que dice quién decidió qué sale de esas conversaciones y cita las palabras de Felipe tal
+> como las escribió.
 
 App: https://felipeberney-boop.github.io/ciclo/ · Repositorio: https://github.com/felipeberney-boop/ciclo ·
 Figma: https://www.figma.com/design/4lvJEf2ZjBX87sXEySXqa7
@@ -89,8 +90,8 @@ la corrigieron dos veces. La unidad pasó de «tendencia» a atributo, y el foco
 
 ## 3 · Los datos y su trazabilidad
 
-**Qué datos, para qué y cómo conviven.** En la app lo cuenta una sola pieza, arriba de todo en Método: «Cómo se arma
-una lectura» (en el ítem 8). Lleva a los jeans de los datos a la señal en siete pasos.
+**Qué datos, para qué y cómo conviven.** En la app lo cuenta una sola pieza, arriba de todo en Acerca de: «Cómo se
+arma una señal» (en el ítem 8). Lleva a los jeans de los datos a la señal en siete pasos.
 
 ```
 ENTRAN AL MODELO                    SE CRUZAN POR                  QUÉ SALE
@@ -105,9 +106,10 @@ Reddit · Google Shopping · Amazon · Lyst
 
 | Fuente | Quién la produce | Cada cuánto se actualiza | Cubre | Licencia | Limitación |
 |---|---|---|---|---|---|
-| Vogue Runway (`traopia/vogue-runway`) | Condé Nast; el dataset lo armó un tercero en HuggingFace | No se actualiza: se scrapeó el 31/03/2023 | 1.281.633 imágenes; usamos 902.566 looks de colección, 2000–2023 | Sin licencia declarada; uso académico, sin redistribuir | Después de 2023 no hay dato; las etiquetas las puso un modelo de visión genérico |
+| Vogue Runway (`traopia/vogue-runway`) | Condé Nast; el dataset lo armó un tercero en HuggingFace | No se actualiza: se scrapeó el 31/03/2023 | 1.281.633 imágenes con su vector CLIP; usamos 902.566 looks de colección, 2000–2023 | Sin licencia declarada; uso académico, sin redistribuir | Las etiquetas las puso un modelo de visión genérico, y desde 2022 Vogue dejó de etiquetar (2022: 76 %; 2023: 48 %; Fall 2023: ninguno). 2022–2023 se leen con CLIP (abajo) |
+| Vogue Runway 2024–2025 (`tonyassi/vogue933k-embedding`) | Condé Nast; el dataset lo armó otro tercero en HuggingFace | No se actualiza | 933.328 looks, 1990–2025; usamos una muestra de 20.000 por año de 2024 y 2025 (y 10.000 de 2022 y 2023 para empalmar), bajada a 400 px sólo para calcular su vector CLIP (18/11) | Sin licencia declarada; las fotos no se guardan ni se suben | Es una muestra: un año entra sólo si su intervalo de 90 % abarca 25 puntos o menos. Pasan 13 de 15 atributos; lunares y piel quedan hasta 2023. 2026 no está en ningún dataset |
 | Google Trends | Google | Continua; exportado el 22/09 y el 20–21/10 | 65 series, mundo y 14 términos de Argentina, 2004–2024 | Términos de servicio de Google | Índice relativo, no volumen; salto de medición desde 2025, por eso se corta en 2024 |
-| Reddit (Arctic Shift) | Usuarios de r/femalefashionadvice y, desde el 17/11, de r/malefashionadvice (dos series separadas) | Continua; consultado el 22/09 y el 13/10 | 4.404 posts que nombran los términos, 2012–2025 | Datos públicos, con atribución | Dos foros de consejos en inglés, mayoría de Estados Unidos; la validación (p = 0,0013) se hizo sólo con el de mujeres |
+| Reddit (Arctic Shift) | Usuarios de r/femalefashionadvice y, desde el 17/11, de r/malefashionadvice (dos series separadas) | Continua; consultado el 22/09 y el 13/10, y bajados los dos foros enteros el 17/11 | Títulos de 2012–2025: 177.668 posts en mujeres y 581.184 en hombres; entran los términos con 100 posts o más (25 en mujeres, 28 en hombres) | Datos públicos, con atribución | Dos foros de consejos en inglés, mayoría de Estados Unidos; la validación (p = 0,0013 la preregistrada; 0,013 con el modelo de hoy) se hizo sólo con el de mujeres. La serie de hombres se ve, pero no entra al modelo ni a la validación |
 | H&M, Amazon, Google Shopping | H&M (Kaggle), Amazon (McAuley Lab), Google | Fijos | 30,6 M de compras 2018–2020; 1,1 M de reseñas 2012–2023 | Kaggle académico; Amazon sin licencia declarada | Validan después; no entran al modelo |
 | Lyst Index | Lyst | Trimestral | 34 trimestres, Q1-18 a Q2-26, 55 marcas | Editorial, citado | Cambió la fórmula en Q1-26: se calcula dentro de cada tramo |
 | Zara 2018–22 y Mix de marcas | Kaggle | Fijos | 660 y 2.176 productos | Kaggle | **Sintéticos**: sólo muestran el método |
@@ -135,8 +137,9 @@ las que salen del cálculo:
 
 | Variable | Qué es | Unidad y rango | Cómo se calcula |
 |---|---|---|---|
-| Nivel de pasarela (`pn`) | Dónde está hoy contra su propio máximo | 0 a 1 (1 = en su pico) | Proporción de looks con la etiqueta en 2022–23, sobre su máximo histórico |
-| Momento de pasarela (`pm`) | Cuánto cambió | Proporción, puede ser negativa | 2021–23 contra 2018–20 |
+| Pasarela de un año | Cuánto aparece el atributo en los desfiles de ese año | Índice 0 a 100 (100 = su máximo) | Hasta 2021, proporción de looks con la etiqueta de Vogue. De 2022 a 2025, la probabilidad media que da un clasificador CLIP por atributo (regresión logística sobre el vector de cada look, entrenada con las etiquetas de 2010–2021; correlación con ellas de 0,84 a 0,99), llevada a la escala de las etiquetas con 2016–2021. En los gráficos ese tramo va punteado |
+| Nivel de pasarela (`pn`) | Dónde está hoy contra su propio máximo | 0 a 1 (1 = en su pico) | Media 2024–25 sobre el máximo 2010–2025. Lunares y piel, que no pasaron el control de 2024–2025: media 2022–23 |
+| Momento de pasarela (`pm`) | Cuánto cambió | Proporción, puede ser negativa | Media 2023–25 contra media 2020–22. Lunares y piel: 2021–23 contra 2018–20 |
 | Nivel de búsqueda (`bn`) | Igual, en la búsqueda mundial | 0 a 1 | 2023–24 sobre el máximo hasta 2024, con la búsqueda corregida por el crecimiento general de Google |
 | Momento de búsqueda (`bm`) | Igual | Proporción | 2023–24 contra 2020–21 |
 | Gana o pierde terreno | Cuánto peso ganó dentro de las búsquedas de moda | Puntos, de −31 a +50 en los datos de hoy | Peso del término frente a las otras búsquedas de moda, 2022→2024 |
@@ -148,11 +151,14 @@ las que salen del cálculo:
 **Cómo se construye cada índice.**
 - **El K-means.** 17 atributos que existen a la vez en Vogue y en Google Trends (sin calzado). Cuatro rasgos: nivel y
   momento de pasarela y de búsqueda, estandarizados (z-score) para que ninguno pese más por su escala. k = 4, que
-  arranca de los centroides guardados para que el resultado sea siempre el mismo. Los grupos se nombran por el
-  prototipo de etapa más cercano. Una tendencia nueva se asigna al centroide más cercano y nunca reentrena el modelo:
-  hacerlo convertía a cada tendencia nueva en su propio grupo y les cambiaba el nombre a los demás (22/09). Con la
-  búsqueda hasta 2024, la silhouette ya no prefiere k = 4 (0,373 contra 0,387 con k = 2); nos quedamos con 4 porque
-  con menos grupos las etapas no se separan, y la pantalla del modelo lo dice (20/10).
+  arranca de centroides guardados para que el resultado sea siempre el mismo: desde el 18/11, el mejor de 50
+  arranques con semilla 42 (inercia 23,1; arrancar de los centroides anteriores dejaba 27,7). Los grupos se nombran por
+  el prototipo de etapa más cercano; si el que le toca queda a más de 1,5 veces la distancia del más cercano, comparte
+  esa etapa (18/11: sin esa regla, jeans amplios y cargo salían «emergentes», que quiere decir lo contrario de lo que
+  muestran sus datos). Una tendencia nueva se asigna al centroide más cercano y nunca reentrena el modelo: hacerlo
+  convertía a cada tendencia nueva en su propio grupo y les cambiaba el nombre a los demás (22/09). La silhouette no
+  elige k = 4: da 0,28, 0,30, 0,30 y 0,31 para k de 2 a 5. Nos quedamos con 4 porque con menos grupos las etapas no se
+  separan, y la pantalla del modelo lo dice (20/10).
 - **La señal.** Si el atributo tiene etapa del K-means, decide la regla de CICLO para la categoría (`CONSEJO`): con un
   atributo en pico, fast fashion entra y una marca de autor sale. Si no tiene etapa pero tiene serie, decide si gana o
   pierde terreno (más de 3 puntos). Si no tiene nada, queda sin dato: es neutro, porque «no tengo datos» no es lo
@@ -186,8 +192,8 @@ Una foto (opcional)          ────────►  CLIP: parecido con 14.
 Una pregunta (opcional)      ────────►  LLM con métricas ya calculadas             una lectura marcada ◇ interpretación
 ```
 
-**La IA, dónde entra y dónde no.** CLIP (ViT-B/32) lee imágenes: etiquetó la pasarela y, en el navegador, compara la
-foto que sube la persona con 14.000 looks; acierta el atributo entre los tres primeros entre el 67 % y el 92 % de las
+**La IA, dónde entra y dónde no.** CLIP (ViT-B/32) lee imágenes: estima la pasarela de 2022 a 2025, cuando Vogue ya
+no etiquetaba, y, en el navegador, compara la foto que sube la persona con 14.000 looks; acierta el atributo entre los tres primeros entre el 67 % y el 92 % de las
 veces según el atributo, en 150.000 looks que no vio. El modelo de lenguaje (Groq, `gpt-oss-120b`) **nunca ve una fila
 de datos**: recibe métricas ya calculadas y las traduce, y lo que dice aparece marcado como interpretación. La etapa y
 la señal no las decide la IA: las deciden el K-means y una regla fija.
@@ -195,9 +201,12 @@ la señal no las decide la IA: las deciden el K-means y una regla fija.
 **Qué quedó afuera y por qué.**
 - **La predicción.** Se probó de cuatro maneras y con un modelo global; ninguna le gana a repetir el último valor.
 - **2025 y 2026 en la búsqueda.** Google cambió la medición: en 2025, 15 de 16 series suben y 12 tocan su máximo.
+- **2026 en la pasarela.** No está en ningún dataset; la pasarela llega a 2025, y lunares y piel, a 2023.
 - **El calzado.** Dos de ocho estilos tienen señal en la búsqueda; CLIP lee la ropa, no el zapato. Está contado como
   resultado, no escondido (26/10).
-- **Pasarela y venta por género.** Vogue y los agregados de H&M no traen esa columna; está declarado en Método.
+- **Pasarela y venta por género.** Vogue y los agregados de H&M no traen esa columna; está declarado en Acerca de.
+  Lo único separado por género es Reddit (un foro de mujeres y otro de hombres, desde el 17/11, a pedido de la
+  cátedra): se ve en El ciclo y en la ficha, pero no entra al modelo ni a la validación.
 - **Lo emergente.** Ningún atributo del set está empezando, aun con la pasarela hasta 2025.
 
 ---
@@ -210,7 +219,8 @@ decisión de diseño.
 
 **El recorrido.** Tres preguntas → Tendencias → la ficha de un atributo → «Diseñar con…» → Preguntale a CICLO. Está
 paso a paso, con capturas, en el readme, y en papel, una pantalla por hoja, en
-`entregas/entrega_4/disenos_en_papel/`.
+`entregas/entrega_4/disenos_en_papel/`. El papel es del 04/11: no tiene lo que cambió después (El brief, Preguntale a
+CICLO como un solo hilo, la entrada con fotos y la letra del 17/11).
 
 **Por qué la ramificación es así.** Tres preguntas: ¿para quién diseñás? (mujer, hombre, sin género), ¿trabajás para
 una marca o por tu cuenta?, y la categoría. La del vínculo viene de una devolución del 13/10 (`decisiones.md`). En la
@@ -242,20 +252,9 @@ autor sale, aunque la de autor tenga un lead time más corto que high fashion). 
 para una marca, high fashion, contemporary, fast fashion y de autor; por tu cuenta, el tipo de prenda que querés
 diseñar.
 
-Después de las tres preguntas la app abre en Tendencias, con el perfil escrito arriba y «Cambiar» al lado.
-
----|---|---|
-| El alcance | Una colección · Una prenda · Si algo sigue vigente | Colección o prenda no cambia ningún número: habría que inventar ventanas |
-| **El compromiso** | **Qué diseñar · Qué producir · Si algo ya pasó** | **Elegida.** Es el objetivo de la persona, conserva todo lo que la lectura usa y agrega mirar hacia atrás |
-| El plazo | ¿Para cuándo en tienda? · ¿Cuánto tiene que durar? | Da la ventana directo, pero pierde el posicionamiento y obliga a reescribir las reglas |
-
-**La categoría se queda**, y esto no era obvio: se pensó que el lead time la podía reemplazar. No puede. La categoría
-lleva dos cosas que el lead time no tiene: la ventana (de la que depende el error medido, porque los lead times son
-todos menores a un año y el error se mide año a año) y el posicionamiento (en pico, fast fashion entra y una marca de
-autor sale, aunque la de autor tenga un lead time más corto que high fashion).
-
-Cada respuesta lleva a un lugar distinto: Qué diseñar entra a Diseñar; Qué producir, a Tendencias; Si algo ya pasó, a
-Tendencias con la pregunta «¿Sigue vigente?» y lo que ya hay que dejar primero.
+Después de las tres preguntas la app abre en Tendencias, con el perfil escrito arriba y «Cambiar» al lado. Quien
+todavía no quiere contestar tiene «Sólo estoy mirando» (10/11): entra con un perfil general, una marca contemporary sin
+género, y Tendencias lo dice.
 
 ---
 
@@ -265,38 +264,82 @@ Tendencias con la pregunta «¿Sigue vigente?» y lo que ya hay que dejar primer
 
 | Pantalla | Lo primero que se ve | Por qué |
 |---|---|---|
-| La entrada | Una pregunta y sus opciones, nada más | Cada respuesta cambia la lectura; lo que cambia está en Método |
-| Tendencias | Un gráfico que rota entre cinco lecturas animadas de la búsqueda: qué sube y qué baja, qué está en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro (hasta el 10/11, un bloque oscuro de texto que la devolución marcó como obstructivo) | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal. Sólo lo que tiene dato medido: el catálogo sintético no se muestra |
-| La ficha | La señal grande, con una línea de por qué | Es la decisión. El gráfico la sostiene; el detalle está en el «?» |
-| Diseñar | La pregunta del paso | Un paso, una decisión; lo elegido queda en una barra abajo |
-| Preguntale a CICLO, «Preguntar» en el menú (antes Buscar por imagen, Preguntar, Tiza y Lectura) | Un solo hilo: tu imagen o tu pregunta, y la respuesta con todo adentro (lo que leyó CLIP, la curva que importa, los looks parecidos, la conclusión en una frase) | La devolución pidió filtrar lo que devuelve la IA: primero la conclusión, después el dato que la sostiene y su curva; el detalle queda plegado. Una sola columna, para que se sienta un asistente y no un tablero con un chat al costado |
-| Acerca de (hasta el 17/11, «Método») | «Cómo se arma una señal», animado; después los datos y el modelo como diagramas | La devolución pidió que se entienda qué datos se usan y cómo conviven, sin tener que leer |
+| La entrada | Una banda de fotos de pasarela que corre sola a pantalla completa, con la pregunta encima y sus opciones (17/11). Las fotos responden a lo que se contesta: looks de mujer, de hombre o sin género, y después casas de la escala elegida | Cada respuesta cambia la lectura (lo que cambia está en Acerca de). La ropa primero, como i-D y Vogue Runway; el gráfico que estuvo antes en ese lugar repetía el de Tendencias cuatro pantallas seguidas |
+| Tendencias | Un gráfico que rota entre cinco lecturas animadas de la búsqueda: qué sube y qué baja, qué está en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro (hasta el 10/11, un bloque oscuro de texto que la devolución marcó como obstructivo); debajo del título, una fila de looks que se mueve, y las tarjetas como fotos a sangre | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal. Sólo lo que tiene dato medido: el catálogo sintético no se muestra. La fila de looks queda sólo acá, donde la sección habla de «qué se está moviendo» |
+| La ficha | La señal grande, con una línea de por qué | Es la decisión. El gráfico la sostiene; el detalle está en el «?». Con menos de tres capas de datos, una franja por capa en vez del gráfico de capas, para que una sola línea no parezca un dato flojo |
+| Diseñar | La pregunta del paso, con la foto de pasarela de cada prenda y su silueta como etiqueta (18/11) | Un paso, una decisión; lo elegido queda en una barra abajo, cada elección con su miniatura. Un tipo sin foto propia conserva su dibujo: prestarle la foto de otro diría algo falso de esa prenda |
+| El ciclo | Los 48 atributos con serie de búsqueda y foto, a la vez, sobre un eje de 2004 a 2024: cada foto en el año de su pico, subiendo y bajando con su búsqueda medida mientras un cursor recorre veinte años en veinte segundos (18/11) | La pantalla trata de cuándo picó cada uno y cuánto tardó en volver. El movimiento es la serie medida, no una animación decorativa; tocar una foto abre ese atributo |
+| Preguntale a CICLO, «Preguntar» en el menú (antes Buscar por imagen, Preguntar, Tiza y Lectura) | Vacía, una foto que rota entre casas, las preguntas sugeridas y «Sumá tu diseño». Después, un solo hilo: tu imagen o tu pregunta, y la respuesta con todo adentro (lo que leyó CLIP, la curva que importa, los looks parecidos, la conclusión en una frase) | La devolución pidió filtrar lo que devuelve la IA: primero la conclusión, después el dato que la sostiene y su curva; el detalle queda plegado. Una sola columna, para que se sienta un asistente y no un tablero con un chat al costado. Debajo de la caja, siempre, qué modelo contesta, por qué API y cuántos tokens usó (o que sin clave contestan las reglas, con 0 tokens) |
+| El brief | El encargo de una casa real con la foto de su desfile; después, el veredicto por partes: el puntaje enorme, la racha, el porqué, las tres casas y una frase para copiar (18/11) | La devolución de la pirueta: «no es un juego, no tiene hook». La racha le da algo que perder, y el ritmo del veredicto hace que el puntaje llegue primero |
+| Acerca de (hasta el 17/11, «Método») | «Cómo se arma una señal», animado; después los datos y el modelo como diagramas; arriba, la pared del corpus, las fuentes y el modelo rotando cada 9 segundos | La devolución pidió que se entienda qué datos se usan y cómo conviven, sin tener que leer |
+
+**Cada número dice de dónde sale.** Desde el 17/11, cada número medido muestra su fuente al pasar el mouse (o al
+tocarlo en el celular): la fuente, el período y las observaciones. Desde el 18/11, a pedido de la cátedra, cada fuente
+tiene una ficha con tres partes: de dónde viene, cómo la procesamos y qué sacamos de ella. Nada queda fijo en
+pantalla: la información está, pero no ensucia la decisión. Lo interpretado (lo que lee CLIP, lo que escribe el modelo)
+no lleva fuente medida: lleva su marca ◇.
 
 **Cómo se jerarquizó.** Tres grupos para cada bloque de texto: lo que se necesita para decidir se queda; lo que aclara
 cómo usar la app pasa a un «?» que se abre si lo tocan; lo que no aporta se borra (`decisiones.md`, 04/11).
 
-**Tipografía.** Había 31 tamaños de letra y 49 combinaciones de tamaño y peso (medido). Quedan cinco, con un peso por
-tamaño: Título 48, Subtítulo 24 y Dato 34 en Semi Bold; Cuerpo 17 y Etiqueta 13 en Regular. Es la tipografía del
-sistema (SF Pro en Apple, Inter en el resto), porque la referencia que pasó la cátedra (el sistema de diseño de Apple)
-hace que la interfaz se corra y la ropa hable. Cinco estilos hacen que el tamaño signifique algo: si es grande, decide.
+**Tipografía.** Había 31 tamaños de letra y 49 combinaciones de tamaño y peso (medido, 04/11). Quedan cinco estilos:
+Título 64 px (40 en el celular), Subtítulo 24 y Dato 34 en **Bodoni Moda**, peso 400, con el corte óptico de display
+(filetes finos); Cuerpo 17 y Etiqueta 13 en la letra del sistema (SF Pro en Apple, Inter en el resto), también 400.
+Nada pasa de 400 salvo el logotipo, y no hay cursivas. Cinco estilos hacen que el tamaño signifique algo: si es grande,
+decide.
+
+*Por qué Bodoni, y por qué fina.* Del 27/10 al 17/11 todo iba en la letra del sistema, por la referencia que pasó
+la cátedra (el sistema de diseño de Apple): la interfaz se corría y la ropa hablaba. Antes, en octubre, la app había
+sido una revista con Bodoni en los títulos, y la cátedra la veía «muy IA»; esta vez la Bodoni vuelve sola, fina y sin
+los adornos de revista que la acompañaban. En la Entrega 4 la
+devolución fue que el diseño era superficial, todo blanco y sin identidad propia. Bodoni Moda es la Didone de Vogue y
+Harper's Bazaar: la única de las tres que se probaron (con Cormorant y Archivo expandida) que se lee como moda sin
+explicarla. Va en lo que se mira (títulos, preguntas, nombres, los números que deciden); el texto corrido, los
+botones y las etiquetas siguen en la letra del sistema, porque una Didone de alto contraste se pierde en tamaños
+chicos. Felipe pidió después una letra derecha, fina y liviana, como la de Vogue Runway, Saint Laurent y Celine: por
+eso 400 y nunca negrita.
+
+*Lo que se probó y no quedó.* El mismo 17/11 se aplicó una dirección a la 032c (bordes duros, etiquetas chicas en
+mayúsculas y el gráfico de Tendencias repetido en cada pantalla) y se revirtió en el día: «los gráficos repetidos [...]
+¿y la identidad propia dónde está?» (Felipe). La identidad salió de la letra y de las fotos, no de repetir.
 
 **Color.** El de las prendas, que es el dato que la persona vino a ver; la señal, con su palabra; y un solo azul para lo
-que se toca. Nada más tiene color, y por eso la señal se ve.
+que se toca. Nada más tiene color, y por eso la señal se ve. Desde el 17/11 el fondo es blanco (antes, el gris perla de
+la referencia de Apple), para que las fotos de pasarela lo llenen.
 
 **Grilla.** El contenido va hasta 1.360 px, con un margen que va de 16 px en el celular a 80 px en la compu, y las
 tarjetas se acomodan solas, de 268 px como mínimo. En el celular todo va en una columna y los gráficos anchos se
 deslizan. No es una grilla de columnas fija: es fluida, porque la cantidad de tarjetas cambia con el perfil y con el
 filtro, y una grilla de 12 columnas dejaría huecos. Las hojas en papel usan la misma regla.
 
+**De Figma al código.** La app no se construyó leyendo un Figma: se escribió en código con Claude Code, y el Figma
+cuenta el camino en tres etapas (el detalle, con qué leyó un agente y qué no, está en
+[`entregas/entrega_3/figma_a_codigo.md`](../entrega_3/figma_a_codigo.md)):
+1. *El diseño original* (05/10): el prototipo navegable de la Entrega 2, diez pantallas en escritorio y en celular.
+   El MCP de Figma lo leyó para subir las capturas y las láminas.
+2. *La devolución y la referencia* (13/10 y 27/10): «un mar de datos y gráficos» (Cristian) dio la entrada de tres
+   preguntas y Diseñar; «muy IA» (Iván) dio la referencia del sistema de Apple, que adaptamos en el código.
+3. *El sistema implementado* (03/11): el MCP de Figma reconstruyó en Figma la app de ese día a partir del código
+   (variables, estilos, componentes y pantallas a 1400 y 393 px). Es el sentido inverso: del código al diseño.
+
+Lo que se decidió en el código y no en Figma, porque ningún Figma lo dibujó: los cuatro estados de lo que se toca, el
+celular a 393 px, la carga de CLIP (nada baja al abrir la app; el modelo de imágenes, 89 MB, baja con la primera foto,
+avisa el avance y queda guardado), los casos de error (sin clave de Groq, clave rechazada, el límite del plan gratis,
+sin conexión, una imagen que CLIP no reconoce, un atributo sin serie) y apagar el modo oscuro. **La diferencia más grande con el Figma es de
+después:** desde el 17/11 la app usa Bodoni Moda, fondo blanco y fotos de pasarela a sangre, y la página 3 del Figma
+sigue mostrando el sistema del 03/11 (letra del sistema, gris perla, tarjetas blancas). No se actualizó: el registro de
+ese cambio está en esta sección y en `decisiones.md` (17/11).
+
 ---
 
 ## 7 · El recorte de alcance
 
 Ropa, no calzado ni accesorios (sin señal medible). Leer el presente, no predecir (refutado). Mundo y Argentina sólo en
-la búsqueda (no hay pasarela local). Sin separar por género (las fuentes no lo traen). Y menos pantallas a la vista: el
-04/11 «Más» pasó de cinco a dos (Adiviná vos y Método) y Retornos se abre desde El ciclo, donde se usa. El 10/11, El
-modelo y Marcas salieron de la navegación: no ayudaban a tomar una decisión, y lo que explicaban lo cuenta ahora la
-pieza de Método.
+la búsqueda (no hay pasarela local). Sin separar por género en la pasarela ni en la venta (las fuentes no lo traen; sólo Reddit
+tiene un foro de cada uno, y no entra al modelo). Hasta 2024 en la búsqueda y hasta 2025 en la pasarela. Y menos
+pantallas a la vista: el 04/11 «Más» pasó de cinco a dos y Retornos se abre desde El ciclo, donde se usa. El 10/11, El
+modelo y Marcas salieron de la navegación (no ayudaban a tomar una decisión, y lo que explicaban lo cuenta ahora
+«Cómo se arma una señal»), y Adiviná vos dejó «Más» (sigue por su link). Hoy «Más» tiene El brief y Acerca de.
 
 ---
 
@@ -335,6 +378,8 @@ ejemplo de como se veria la web»), sobre una captura de la app que ya estaba en
 | 10/11 | La devolución de la Entrega 3, con notas: el chat contesta primero, «Cómo se arma una lectura» (hoy «una señal») reemplaza al esquema, El modelo y Marcas salen de la navegación | Felipe fijó el criterio («no agregamos nada. Sacamos») y eligió; Claude corrigió la pieza contra el modelo, la construyó y la probó |
 | 16/11 | La sección de IA, otra vez: Tiza (la mesa y el chat al costado) se sentía un tablero con un chat pegado. Pasa a ser **Lectura**, un solo hilo donde la imagen es tu mensaje y la respuesta trae adentro los chips de CLIP, la curva, los looks y la devolución | Felipe pidió el cambio, eligió el nombre (por el botón «Pedir lectura», el que a la cátedra le gustó) y aprobó el guion de la pantalla antes de que se escribiera código; Claude propuso el guion y lo construyó |
 | 16/11 | El nombre, otra vez: «Lectura» no decía que es un chat con el que se conversa. Pasa a **Preguntale a CICLO** en el título y **Preguntar** en el menú | Felipe eligió el nombre: es el original, dice que es una conversación, lleva la marca y no envejece como «IA» |
+| 17/11 | La Entrega 4 y su devolución: falta identidad propia, «¿y el racional?», «¿y la info de hombres?». Método pasa a **Acerca de** y resume el racional; Reddit de hombres entra como serie aparte; cada número dice de dónde sale; la dirección 032c se aplica y se revierte en el día; queda la identidad por la letra (Bodoni Moda, fina) y por las fotos (la entrada como una banda de looks, fondo blanco) | Felipe pidió cada cambio y eligió entre propuestas renderizadas; la letra la delegó |
+| 18/11 | La pasarela 2022–2023 estaba mal medida (Vogue dejó de etiquetar): la corrige un clasificador CLIP y el K-means se recalcula. Llega 2024–2025 y entra al modelo. Diseñar con fotos, El ciclo en movimiento, El brief con racha, la ficha de cada fuente, el modelo y los tokens a la vista | El problema de la pasarela lo encontró Claude al ir a buscar 2026; recalcular el modelo y meter 2024–2025 los aprobó o pidió Felipe |
 
 **Qué propuso la IA, qué decidió Felipe y por qué.** Las citas de Felipe son textuales, de las conversaciones en Claude
 Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y el 10/11) cuentan como suyas: las eligió y las mandó.
@@ -368,13 +413,18 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y e
 | Las fotos (10/11) | Eligió cada foto con CLIP en el corpus de Vogue y la revisó a ojo; donde ninguna mostraba el atributo, dejó el dibujo | Decidió la fuente: «usa fotos de vogue», sabiendo que no tienen licencia declarada | La devolución pidió fotos reales en vez de ilustraciones; las siluetas de los cortes se quedan |
 | La tercera pirueta (10/11) | Propuso «¿Tenés ojo?» y después un juego de cartas que movían los datos; construyó la versión final, eligió las opciones para que haya de los cuatro momentos y calculó el puntaje desde las series | Descartó las dos primeras («es literal un memo test»; las cartas «son confusas»), escribió el juego final y fijó la lógica: «sube por el lujo y se pone malo por el fast». Pidió Chanel y las fotos de Vogue | La devolución: la pirueta anterior no era un juego |
 | El modelo y Marcas (10/11) | Propuso sacarlas de la navegación: ninguna ayuda a tomar una decisión | Lo aprobó: «sí a las dos» | Cada pantalla tiene que poder decir en una frase qué decisión ayuda a tomar |
+| La identidad (17/11) | Tres propuestas renderizadas para Preguntar (Portada, Índice, Hoja de contacto); con la elección delegada, eligió la Portada y la aplicó a la entrada, Preguntar y El ciclo | La rechazó al verla en la app: «No me gustó para nada: los gráficos repetidos en las primeras preguntas y la parte de Preguntar también malísima, antes era mejor. ¿Y la identidad propia dónde está?». Se revirtió entera | Llenar el blanco con el mismo gráfico no es identidad: es repetición. Desde ahí, toda propuesta se muestra renderizada antes de tocar la app |
+| La letra (17/11) | Tres letras renderizadas: Bodoni Moda, Cormorant y Archivo expandida | Lo delegó: «elegí vos la que más vibe de moda da». Después la corrigió: más fina, sin negrita y sin cursiva | Bodoni es la letra de las revistas de moda; la versión fina, la de Vogue Runway y las casas que le gustan |
+| La entrada con fotos (17/11) | Dos propuestas renderizadas: una fila de looks arriba con la pregunta abajo, o las fotos en toda la pantalla con la pregunta encima | Eligió la segunda | El gráfico que había ahí se repetía en Tendencias; la referencia pasó a ser i-D y Vogue Runway |
+| La pasarela corregida (18/11) | Al ir a buscar 2026 encontró que Vogue dejó de etiquetar desde 2022 y que eso hacía caer todas las curvas; la corrigió con CLIP | Aprobó recalcular el modelo, y después pidió: «Metele 2024–2025 al modelo también» | Las etapas cambiaron dos veces; está dicho en la hipótesis, con la validación rehecha |
+| El brief con racha (18/11) | La racha, el veredicto por partes y la frase para copiar; fijó los umbrales (7 para «clavado», 5 para «casi») | Pidió tensión, no más contenido: algo que perder, ritmo y un resultado para contar | Responde a la devolución de que la pirueta no tenía hook |
 
 **Qué modelos usamos.**
 
 | Para qué | Modelo |
 |---|---|
 | Escribir el código, analizar los datos, redactar | Claude: en el chat hasta la Entrega 2, en Claude Code desde el 13/10 |
-| Leer imágenes: etiquetar la pasarela y Buscar por imagen | CLIP ViT-B/32 (en el navegador, sin servidor) |
+| Leer imágenes: estimar la pasarela de 2022–2025 y leer la foto que se suelta en Preguntar | CLIP ViT-B/32 (la pasarela, offline sobre los vectores de cada look; la foto, en el navegador, sin servidor) |
 | Preguntar y la lectura en vivo | Groq, `openai/gpt-oss-120b` (antes Llama, hasta que Groq lo dio de baja) |
 | Propuestas de pantalla del 13/10 (Abril) | La herramienta integrada de imágenes (prompts en `prototipo_abril_1/prompts.md`) |
 | Figma: el sistema implementado y el papel | El MCP de Figma |
@@ -396,13 +446,19 @@ ojo?», adivinar la etapa de una tarjeta, Felipe la descartó antes de construir
 cartas que movían los datos se construyó y no funcionó: pedía leer curvas para jugar. La idea final y la lógica de las
 casas son de Felipe; el cálculo, las opciones y la construcción, de Claude (`decisiones.md`, 10/11).
 
-**«Cómo se arma una señal»** (hasta el 16/11, «Cómo se arma una lectura»: el nombre pasó a la sección de IA, que el mismo día se renombró). Fue la pirueta entre el 10/11 y la devolución, y queda arriba de todo en Método. Las dos notas más bajas de la Entrega 3 (datos e
+Desde el 17/11 hay quince casas (siete de lujo, cinco contemporary y tres de fast fashion), cada una con una foto suya
+de pasarela; las que no desfilan llevan una foto de referencia de una casa de lujo y lo dicen («baja a la calle lo que
+mostró Prada»). Desde el 18/11 tiene algo que perder: una racha de briefs clavados (7/10 o más para su casa) que se
+corta si fallás, y el veredicto llega por partes, primero el puntaje y al final una frase para contar («Mi look: 3/10
+para Bottega Veneta, 6/10 para COS, 6/10 para Zara»). Los umbrales de 7 y 5 son una regla del juego, no del modelo.
+
+**«Cómo se arma una señal»** (hasta el 16/11, «Cómo se arma una lectura»: el nombre pasó a la sección de IA, que el mismo día se renombró). Fue la pirueta entre el 10/11 y la devolución, y queda arriba de todo en Acerca de (hasta el 17/11, «Método»). Las dos notas más bajas de la Entrega 3 (datos e
 IA, 5 sobre 10) decían lo mismo: el modelo es demasiado complejo para explicarlo. La pirueta convierte esa debilidad en la
 pieza más clara de la app. Toma un atributo, los jeans, y en siete pasos animados, sin texto que leer, muestra cómo se
 arma una lectura: entra la pasarela, entra la búsqueda, cada curva se vuelve dos números, los tres cortes se comparan
 con los otros 14 atributos en la misma escala, el K-means junta a los que se parecen, cada grupo toma el nombre de su
 etapa y el perfil la vuelve señal. Muestra algo que antes no se veía: la pasarela de los tres jeans es la misma (Vogue
-mide «denim», no el corte), así que toda la diferencia entre el baggy (En ascenso) y el skinny (Pico) sale de la
+mide «denim», no el corte), así que toda la diferencia entre el baggy (En ascenso) y el skinny (Saturada, desde el 18/11) sale de la
 búsqueda. Está hecha con las mismas funciones que la app, así que no puede contradecirla.
 
 *Qué capacidad de IA usamos.* Dos, y se ven trabajando: CLIP (visión y lenguaje), que convierte las fotos de pasarela

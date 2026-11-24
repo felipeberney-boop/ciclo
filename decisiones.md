@@ -3771,3 +3771,21 @@ Felipe aprobó las tres mejoras anotadas al cerrar la vuelta K («aplicá las 3 
 El racional cuenta el recorrido nuevo (home → crear tu proyecto → Mis ciclos → ficha → Explorar → Preguntar → El brief),
 qué filtra de verdad el proyecto y la vuelta K en la línea de tiempo. PDF regenerado. `probar_demo.js` 8 de 8 en los dos
 anchos. Capturas en `diseno/rediseno_2026-11-24/L/`.
+
+## 2026-11-24 · Vuelta L, punto 1: el título del home, otra vez
+
+Pedido: «El título “¿Cuándo usar una tendencia y cuándo dejarla?” no me convence, sobre todo el “usar”. Puede ir por el
+lado de “cuándo entrar en una tendencia”, pero reformulalo. Dame 5 opciones y poné la más clara».
+
+1. **«Cuándo entrar en una tendencia, y cuándo salir.»**
+2. «Entrá a tiempo en cada tendencia.»
+3. «Sabé cuándo entrar en una tendencia.»
+4. «Llegá a tiempo a cada tendencia.»
+5. «Cada tendencia tiene su momento. CICLO te dice cuál.»
+
+Se eligió la 1: dice las dos decisiones con las mismas palabras que la señal de la app (▲ Entrar, ▼ Salir), así que lo
+que promete el título es lo que después aparece en cada tarjeta. La 2 y la 4 prometen llegar a tiempo, que es una
+predicción, y CICLO no predice. La 3 deja afuera salir. La 5 es un eslogan en dos frases. Queda igual el resto: la
+etiqueta, la bajada «CICLO cruza…», «Una etapa para cada atributo. No una predicción.», los tres pasos y las fuentes.
+
+`probar_demo.js` 8 de 8 en los dos anchos. Capturas `L/1_antes_*` y `L/1_despues_*`.

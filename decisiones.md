@@ -4076,3 +4076,25 @@ Cada paso, en la compu y en el celular, en `M/7_recorrido/` (antes) y `M/7_recor
     *Pendiente.*
 
 `probar_demo.js` 8 de 8 en los dos anchos.
+
+## 2026-11-24 · Vuelta N, punto 1: las tarjetas que se desarmaban
+
+Pedido: «en varias tarjetas con foto nueva, el texto se cae para abajo o queda desarmado. Pasa en Bucle, Vestido base,
+Punto trenzado, Camuflado y otras… Buscá la causa (no lo parchees tarjeta por tarjeta), arreglalo y revisá TODAS las
+tarjetas de las dos pantallas».
+
+**La causa.** No eran las fotos. En la vuelta M puse los valores de los datos en una sola línea, para que «+50 puntos» no
+se partiera. Pero cuando el atributo no aparece en Reddit, el valor era «sin el término en el foro de mujeres»: en una
+línea se comía todo el ancho de la tarjeta, y la etiqueta («Búsqueda 2022→2024») quedaba en una columna de una letra.
+Pasaba en todas las tarjetas sin Reddit (Bouclé, Vestido evasé, Camuflado…). Además, como cada tarjeta tiene distinta
+cantidad de datos, «Ver la ficha» caía a alturas distintas en la misma fila.
+
+**El arreglo, en la regla de la tarjeta.**
+- La etiqueta tiene al menos la mitad del ancho, y el valor de texto puede partirse.
+- El valor sin Reddit dice «no aparece»; el foro ya está en la etiqueta («Reddit, mujeres»).
+- La tarjeta ocupa el alto de la fila y el link va al pie, así que en cada fila queda a la misma altura. Lo mismo en
+  Explorar.
+
+**La revisión.** Un script mira las 65 tarjetas de Mis ciclos y las 65 de Explorar a 1400, 1000 y 393 px y busca texto en
+columnas angostas o que se salga de la tarjeta: cero casos. Capturas de las que fallaban en `N/1_bug/antes_*` y
+`despues_*`. `probar_demo.js` 8 de 8 en los dos anchos.

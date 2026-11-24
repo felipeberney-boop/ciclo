@@ -2418,9 +2418,17 @@ html body .app #v-mover .bfcomp:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not
 html body .app #v-mover .bftit:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:auto!important;margin-right:auto!important}
 html body .app #v-mover :is(.bfracha,.bfpor,.bfcomp):not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:auto!important;margin-right:auto!important}
 /* ---- vuelta M, punto 7: lo que trababa a las dos usuarias ---- */
-html body .app #v-radar .mcdat:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(0,1fr) auto!important}
-html body .app #v-radar .mcdat dd:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:nowrap}
-html body .app #v-radar .mcdat dt:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:normal!important;min-width:0;overflow-wrap:anywhere}
+/* la tarjeta: la etiqueta tiene al menos la mitad del ancho; el valor, el resto, y se parte si es texto largo (antes
+   un valor largo en una sola línea dejaba la etiqueta en una columna de una letra) */
+html body .app #v-radar .mcdat:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(50%,1fr) minmax(0,auto)!important}
+html body .app #v-radar .mcdat dt:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:normal!important;min-width:0;overflow-wrap:normal!important}
+html body .app #v-radar .mcdat dd:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:nowrap;min-width:0}
+html body .app #v-radar .mcdat dd.mcno:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:normal!important}
+/* «Ver la ficha» y «Ver su recorrido» al pie de la tarjeta, a la misma altura en toda la fila */
+html body .app #v-radar .mcf:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){height:100%}
+html body .app #v-radar .mccu:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex:1 1 auto;display:flex;flex-direction:column}
+html body .app :is(#v-radar,#v-recorridos) .mcver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-top:auto!important;padding-top:10px}
+html body .app #v-recorridos .ciclo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){height:100%}
 html body .app :is(#v-radar,#v-recorridos) .mcver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:inline-block;margin-top:10px;font-size:16px;color:var(--accion);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 html body .app :is(#v-radar .mcf,#v-recorridos .ciclo):hover .mcver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){text-decoration-thickness:2px}
 html body .app #v-recorridos .ciclo .mcver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){align-self:flex-start}
@@ -3237,7 +3245,7 @@ function mcFicha(o,s){
     <span class="sen ${s.cls}">${s.icono} ${s.palabra}</span>
     <dl class="mcdat">${et&&et.n?`<dt>Etapa</dt><dd${src('k')}>${et.n}</dd>`:''}
       <dt>Búsqueda 2022→2024</dt><dd${d!=null?src('t'):''}>${d!=null?mcPts(d)+' puntos':'sin dato'}</dd>
-      ${rd.length?rd.map(r=>`<dt>Reddit, ${r.q}</dt><dd${src(r.k)}>${mcPts(r.d)} puntos</dd>`).join(''):`<dt>Reddit</dt><dd class="mcno">sin el término en ${publico==='todos'?'los foros':'el foro de '+(publico==='mujer'?'mujeres':'hombres')}</dd>`}</dl>
+      ${rd.length?rd.map(r=>`<dt>Reddit, ${r.q}</dt><dd${src(r.k)}>${mcPts(r.d)} puntos</dd>`).join(''):`<dt>Reddit, ${publico==='todos'?'los dos foros':publico==='mujer'?'mujeres':'hombres'}</dt><dd class="mcno">no aparece</dd>`}</dl>
     <span class="mcver" aria-hidden="true">Ver la ficha →</span></div>`;
   b.onclick=()=>mcAbrir(o.id);
   return b;

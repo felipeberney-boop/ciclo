@@ -3852,3 +3852,25 @@ flecos (R13, Spring 2019) y pedrería (Isaac Mizrahi, Fall 2010).
 punto; el neoprene no se distingue de la tela en una foto de pasarela); y **espiga**: las candidatas son sacos y tapados
 de tweed gris donde, a tamaño de tarjeta, no se ve el tejido en espiga. Quedan con su dibujo. Ahora 63 de 65 atributos
 tienen foto. `probar_demo.js` 8 de 8 en los dos anchos. Capturas `L/3_despues_explorar_*`.
+
+## 2026-11-24 · Vuelta M, punto 1: el home, qué diseñar y cuándo
+
+Pedido: «Título: la idea es "QUÉ DISEÑAR Y CUÁNDO"… dame 5 opciones y poné la mejor. SACÁ entera la sección "Una etapa
+para cada atributo, no una predicción"… Después del título va directo a cómo funciona… Fotos: la primera no convence.
+Probá la verde como primera y proponeme otra si hay una mejor».
+
+**Título.** Cinco opciones: (1) «Qué corte, qué estampa, qué color. Y cuándo.» (2) «Qué diseñar ahora, y qué dejar para
+después.» (3) «Qué entra, qué sale, y cuándo.» (4) «Cada atributo tiene su momento. Diseñá en el tuyo.» (5) «El color, el
+corte, la tela: cuándo conviene cada uno.» Va la 1: nombra el QUÉ con tres cosas concretas que se diseñan (las mismas que
+mide CICLO) y deja el CUÁNDO solo, al final, como remate. La 2 suena a consejo genérico, la 3 a lista de tendencias, la 4 es
+eslogan y la 5 es larga.
+
+**Secuencia.** Se saca «Una etapa para cada atributo. No una predicción.» El home queda: título → Tres pasos (medimos,
+agrupamos, te decimos) → Dos fuentes deciden → Una señal para tu proyecto → Creá tu proyecto. «Bajá para ver cómo funciona»
+lleva a los tres pasos.
+
+**Fotos.** Sale Burberry. La verde (Miu Miu, Spring 2023) va primera; siguen Hermès (naranja), Bottega Veneta (negra),
+Saint Laurent (negra, la señal) y Valentino (blanca, en «Creá tu proyecto»). Alternativa para la primera, buscada con CLIP
+(«a bold saturated color-blocked runway look…») sobre los 14.000 looks y elegida a ojo: Off-White Fall 2021, un traje
+naranja, plano y de un solo color; no la puse porque pediste probar la verde. Capturas en `M/1_home/` (secuencia antes y
+después a 1400 y 393, y `alternativa_offwhite_*`). `probar_demo.js` 8 de 8 en los dos anchos.

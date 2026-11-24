@@ -3635,3 +3635,41 @@ datos: 21.10.2026» cuando Reddit de hombres se bajó el 17/11.
 Quedan sin pasar por este criterio las pantallas que no están en el menú (El modelo, Marcas, Retornos, Adiviná): no se llega a
 ellas desde la app. `probar_demo.js` 8 de 8 en los dos anchos; el recorrido de proyectos, 34 de 34.
 
+
+## 2026-11-24 · Vuelta K, punto 1: la primera pantalla del home define
+
+Pedido de Felipe después de ver la dirección 2: «Sacá “Crear tu proyecto” y “Sólo estoy mirando” de la PRIMERA pantalla.
+Van solo al final. Primera pantalla: una definición clara de qué es CICLO. Que se entienda de entrada que es una herramienta
+de moda, para quién es y qué te da. Hoy “¿En qué momento está cada color, estampa, corte o material?” no se entiende sola».
+Y de la devolución: el home tiene que explicar qué es antes de pedir nada.
+
+Tres versiones del título y la bajada:
+
+1. **«Cuándo usar una tendencia, y cuándo dejarla.»** Etiqueta: «Una herramienta de moda para diseñadores y marcas». Bajada:
+   «CICLO cruza 25 años de desfiles con 20 de búsquedas en Google y te dice, para cada color, estampa, corte o material, si
+   en tu proyecto conviene entrar, esperar o salir».
+2. «Si una tendencia de moda sube, está en su pico o ya pasó.» Bajada: «Para diseñadores y marcas: 65 colores, estampas,
+   cortes y materiales, medidos en la pasarela y en Google».
+3. «Una herramienta de moda que te dice en qué momento está cada tendencia.» Bajada: «Para diseñar con datos: …».
+
+Se eligió la 1. La etiqueta dice qué es y para quién, el título dice qué te da en palabras de quien diseña (usar, dejar), y la
+bajada dice de dónde sale y qué decide. La 2 describe etapas, que es el vocabulario del modelo y no del usuario; la 3 dice
+«herramienta» en el título y se lee como un eslogan. Los números de la bajada son los de la app: Vogue 2000–2025, Google
+2004–2024. «Tendencia» en el título es el término de quien llega; adentro la app sigue diciendo «atributo».
+
+Los dos botones salen de arriba y quedan sólo en «Creá tu proyecto», al final (el formulario ya tenía «Sólo estoy
+mirando»). El botón «Crear proyecto» del menú, arriba a la derecha, sigue: es del encabezado de toda la app, no del home.
+Abajo de la primera pantalla, «Bajá para ver cómo funciona ↓», con la flecha que sube y baja despacio (sin movimiento si el
+sistema pide menos animación); tocarlo baja a la siguiente idea. En el celular la foto de arriba se achica a un tercio de la
+pantalla para que el aviso entre sin bajar. Queda igual el resto: la foto que cambia con el scroll, «Tres pasos», «Dos
+fuentes deciden», «Una señal para tu proyecto» y «Creá tu proyecto».
+
+## 2026-11-24 · Vuelta K, punto 4: la franja de fuentes, sólo en el home
+
+Pedido: «Sacá la franja de abajo de fuentes (“pasarela · búsqueda · redes · mercado…”). Va solo en el home». En el home el
+pie sigue entero. En las demás pantallas queda una sola línea: CICLO · la fecha de los datos · «Datos y código abiertos» ·
+«Copiar link de este diseño» (el link sirve en cualquier pantalla). De dónde es cada fuente sigue en Acerca de y en el «?»
+de cada número.
+
+`probar_demo.js` 8 de 8 a 1400 y a 393 (el paso 1 ahora toca el aviso y baja hasta «Creá tu proyecto»). Capturas en
+`diseno/rediseno_2026-11-24/K/` (`antes_*`, `1_despues_*`, `4_despues_*`).

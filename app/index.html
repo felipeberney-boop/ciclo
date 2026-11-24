@@ -2140,6 +2140,20 @@ img:not(.fcarga){transition:opacity .35s ease}
   .app #v-inicio .hdos{grid-template-columns:1fr}
 }
 
+/* 24/11 vuelta K: la franja de fuentes del pie va sólo en el home; en las demás pantallas queda una línea (CICLO, fecha, código, copiar link) */
+body:not(.on-inicio) .app .colofon>div:not(:first-child){display:none}
+body:not(.on-inicio) .app .colofon:not(#q){display:block;padding-top:22px;padding-bottom:28px}
+body:not(.on-inicio) .app .colofon>div:first-child{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 24px}
+body:not(.on-inicio) .app .colofon>div:first-child :is(br,.cdesc){display:none}
+body:not(.on-inicio) .app .colofon>div:first-child b{display:inline;margin:0}
+/* 24/11 vuelta K: la primera pantalla define, y avisa que se baja */
+.app #v-inicio #in-hero{position:relative}
+.app #v-inicio .hbaja:not(#q):not(#qq):not(#qqq){position:absolute;left:clamp(24px,5vw,80px);bottom:36px;display:inline-flex;align-items:center;gap:10px;font-size:15px!important;color:var(--tinta-2)!important;text-decoration:none!important}
+.app #v-inicio .hbaja span{display:inline-block;font-size:18px;color:var(--accion);animation:hbaja 2.2s ease-in-out infinite}
+.app #v-inicio .hbaja:hover{color:var(--tinta)!important}
+@keyframes hbaja{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(6px);opacity:1}}
+@media (prefers-reduced-motion:reduce){.app #v-inicio .hbaja span{animation:none}}
+@media (max-width:860px){.app #v-inicio .hbaja:not(#q):not(#qq):not(#qqq){position:static;margin-top:0}.app #v-inicio #in-hero .hmfoto{height:34vh}.app #v-inicio #in-hero{gap:16px}.app #v-inicio #in-hero h1:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:36px!important}}
 /* el formulario limpio (home y Mi cuenta) */
 .app .pyform.limpio:not(#z):not(#zz){display:flex;flex-direction:column;gap:12px;background:none;padding:0;border-radius:0!important;max-width:520px;grid-template-columns:none}
 .app .pyform.limpio input[type=text],.app .pyform.limpio input[type=email]{font:400 17px var(--sf);padding:15px 18px;border:1px solid var(--linea);background:#fff;color:var(--tinta);width:100%}
@@ -2273,9 +2287,10 @@ img:not(.fcarga){transition:opacity .35s ease}
         <div class="hcol">
           <section class="hidea" data-f="0" id="in-hero">
             <img class="hmfoto" alt="" src="https://assets.vogue.com/photos/63f8e41547fee8ca53688b16/master/w_800,c_limit/00049-burberry-fall-2023-ready-to-wear-credit-brand.jpg">
-            <p class="eti hrev">Una herramienta de moda</p>
-            <h1 class="hrev" style="--i:1">En qué momento está cada color, estampa, corte o material.</h1>
-            <div class="hacc hrev" style="--i:2"><a class="btn-pri" href="#crear" data-crear>Crear tu proyecto</a><a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a></div>
+            <p class="eti hrev">Una herramienta de moda para diseñadores y marcas</p>
+            <h1 class="hrev" style="--i:1">Cuándo usar una tendencia, y cuándo dejarla.</h1>
+            <p class="hlead hrev" style="--i:2">CICLO cruza 25 años de desfiles con 20 de búsquedas en Google y te dice, para cada color, estampa, corte o material, si en tu proyecto conviene entrar, esperar o salir.</p>
+            <a class="hbaja hrev" style="--i:3" href="#in-que" data-baja>Bajá para ver cómo funciona <span aria-hidden="true">↓</span></a>
           </section>
           <section class="hidea" data-f="1" id="in-que">
             <img class="hmfoto" alt="" loading="lazy" src="https://assets.vogue.com/photos/633c453a802c86f37bb5ae35/master/w_800,c_limit/00044-miu-miu-spring-2023-ready-to-wear-credit-gorunway.jpg">
@@ -2773,7 +2788,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
     </section>
 
     <footer class="colofon">
-      <div><b>CICLO</b>En qué etapa de su ciclo está cada atributo de moda, y si conviene entrar, esperar o salir.<br>Datos bajados entre septiembre y noviembre de 2026<br><a href="https://github.com/felipeberney-boop/ciclo" target="_blank" rel="noopener">Datos y código abiertos →</a><br><button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link de este diseño</button></div>
+      <div><b>CICLO</b><span class="cdesc">En qué etapa de su ciclo está cada atributo de moda, y si conviene entrar, esperar o salir.<br></span><span class="cfecha">Datos bajados entre septiembre y noviembre de 2026</span><br><a href="https://github.com/felipeberney-boop/ciclo" target="_blank" rel="noopener">Datos y código abiertos →</a><br><button class="copiar" id="copiar" type="button" aria-live="polite">Copiar link de este diseño</button></div>
       <div><b>Pasarela</b><span data-src="v">Vogue Runway · 1,28 M looks</span></div>
       <div><b>Búsqueda y redes</b><span data-src="g">Google Trends · 65 series, 2004–2024</span><br><span data-src="s">Google Shopping · 25 términos</span><br><span data-src="r">Reddit · r/femalefashionadvice</span> y <span data-src="h">r/malefashionadvice</span>, 2012–2025</div>
       <div><b>Mercado masivo</b><span data-src="hm">H&amp;M · 30,6 M compras</span><br><span data-src="m">Amazon · 1,1 M reseñas</span><br><span data-src="z">Zara feb-2024 · 252 prendas</span></div>
@@ -5775,6 +5790,7 @@ function pintarInicio(){
 document.addEventListener('click',e=>{
   const cr=e.target.closest('[data-crear]');if(cr){e.preventDefault();abrirGate(pyDestino);return;}
   const mi=e.target.closest('[data-mirar]');if(mi){e.preventDefault();gateMirar();}
+  const hb=e.target.closest('.hbaja');if(hb){e.preventDefault();const t=document.getElementById('in-que');if(t)t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
 });
 /* Método · la entrada: lo que el gate ya no explica en cada tarjeta */
 function pintarMetodoGate(){

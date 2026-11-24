@@ -30,7 +30,8 @@ const OUT = path.join(os.tmpdir(), 'ciclo_demo');
   // desde el 24/11 la app abre en el home y las tres preguntas están en «Crear tu proyecto», en una sola pantalla
   await paso('El home y «Crear tu proyecto»: mujer, para una marca, fast fashion', async () => {
     await p.waitForSelector('#v-inicio:not([hidden])');
-    await p.click('#v-inicio .hacc [data-crear]'); await p.waitForTimeout(500);
+    // 24/11 vuelta K: la primera pantalla sólo define y avisa que se baja; «Crear tu proyecto» va al final
+    await p.click('#v-inicio .hbaja'); await p.waitForTimeout(400); await p.locator('#crear').scrollIntoViewIfNeeded(); await p.waitForTimeout(500);
     await p.fill('#inform input[id^=pn-]', 'Demo de clase'); await p.fill('#inform input[id^=pe-]', 'demo.ciclo@ejemplo.com');
     for (const t of ['Mujer', 'Para una marca', 'Fast fashion']) await p.click(`#inform .seg label:has-text("${t}")`);
     await p.click('#inform button[type=submit]');

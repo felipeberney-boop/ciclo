@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CICLO · home, dirección 1: una palabra por vez</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="comun.css">
+<style>
+/* Dirección 1 · «Una palabra por vez». Tipográfica, blanco y negro, sin fotos arriba: lo distinto a la herramienta es
+   que no hay tarjetas ni carrusel. Una idea por pantalla; cada pantalla entra con el scroll. Las fotos aparecen una sola
+   vez, en «Qué obtenés», como prueba de que es moda. */
+.pant{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px clamp(20px,6vw,96px) 80px;max-width:1240px;margin:0 auto}
+.pant.centro{align-items:center;text-align:center}
+.pant + .pant{border-top:1px solid var(--linea)}
+h1{font-size:clamp(44px,7.4vw,104px);font-weight:600;letter-spacing:-.035em;line-height:1}
+h2{font-size:clamp(34px,5vw,68px);font-weight:600;letter-spacing:-.03em;line-height:1.04;max-width:16ch;margin-left:auto;margin-right:auto}
+.centro h2{margin:0 auto}
+.lead{font-size:clamp(18px,1.8vw,22px);line-height:1.45;color:var(--tinta-2);max-width:44ch;margin:22px auto 0}
+.centro .lead{margin-left:auto;margin-right:auto}
+/* hero: la palabra que rota y su etapa */
+.rota{display:inline-block;transition:opacity .35s,transform .35s}
+.rota.fuera{opacity:0;transform:translateY(.2em)}
+.pista{margin:56px auto 0;width:min(820px,100%)}
+.pista .riel{position:relative;height:2px;background:var(--linea);margin:0 7%}
+.pista .punto{position:absolute;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--tinta);transition:left .9s cubic-bezier(.5,0,.2,1)}
+.pista ol{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);padding:0;margin:18px 0 0}
+.pista li{font-size:15px;color:var(--tinta-2);transition:color .4s,font-weight .4s}
+.pista li.on{color:var(--tinta);font-weight:600}
+.pista .nota{margin-top:20px;font-size:13px;color:var(--tinta-2)}
+.acc{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:center;margin-top:48px}
+/* cómo funciona */
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px);margin-top:64px}
+.paso .n{font-size:14px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.paso h3{font-size:clamp(26px,2.6vw,34px);font-weight:600;letter-spacing:-.02em;margin:10px 0 10px}
+.paso p{color:var(--tinta-2);max-width:30ch;margin:0 auto}
+.pasos,.fuentes{width:100%}
+@media (max-width:820px){.pasos{grid-template-columns:1fr;gap:36px}}
+/* datos */
+.fuentes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);margin-top:64px}
+.fu .num{font-size:clamp(56px,8vw,120px);font-weight:600;letter-spacing:-.04em;line-height:.95;font-variant-numeric:tabular-nums}
+.fu h3{font-size:22px;font-weight:600;margin:16px 0 6px}
+.fu p{color:var(--tinta-2);max-width:36ch;margin:0 auto}
+.comp{width:100%}
+.comp{margin-top:56px;padding-top:24px;border-top:1px solid var(--linea);display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.comp div b{display:block;font-weight:600}
+.comp div span{display:block;font-size:15px;color:var(--tinta-2)}
+@media (max-width:820px){.fuentes{grid-template-columns:1fr}.comp{grid-template-columns:1fr 1fr}}
+/* qué obtenés */
+.senales{display:flex;flex-direction:column;gap:6px;margin-top:48px}
+.senales{width:min(720px,100%)}
+.senales div{display:flex;flex-direction:column;align-items:center;gap:8px;padding:22px 0;border-bottom:1px solid var(--linea)}
+.senales b{font-size:clamp(40px,6vw,84px);font-weight:600;letter-spacing:-.035em;line-height:1}
+.senales .e{color:var(--entrar)}.senales .a{color:var(--esperar)}.senales .s{color:var(--salir)}
+.senales p{color:var(--tinta-2);font-size:19px}
+@media (max-width:700px){.senales div{grid-template-columns:1fr;gap:6px}}
+.fotos3{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:56px;width:min(720px,100%)}
+.fotos3 img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 18%;display:block}
+footer{padding:40px clamp(20px,6vw,96px) 64px;color:var(--tinta-2);font-size:14px;max-width:1240px;margin:0 auto;border-top:1px solid var(--linea)}
+</style>
+</head>
+<body>
+<p class="marca">Dirección 1 · una palabra por vez · <a href="direccion_2_foto.html">ver la 2</a></p>
+<header class="mast">
+  <a class="logo" href="#"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10.00" cy="2.50" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17.13" cy="7.68" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="14.41" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="5.59" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="2.87" cy="7.68" r="2.3" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg>CICLO</a>
+  <nav><a class="n" href="#como">Cómo funciona</a><a class="n" href="#datos">Los datos</a><a class="btn" href="#crear">Crear tu proyecto</a></nav>
+</header>
+
+<!-- 1 · la pregunta -->
+<section class="pant centro" id="hero">
+  <p class="eti rev">Una herramienta de moda</p>
+  <h1 class="rev" style="--i:1;margin-top:20px">¿En qué momento está<br><span class="rota" id="rota"></span></h1>
+  <div class="pista rev" style="--i:2" aria-hidden="true">
+    <div class="riel"><span class="punto" id="punto"></span></div>
+    <ol id="etapas"><li>Emergente</li><li>En ascenso</li><li>En pico</li><li>Saturada</li><li>En retorno</li></ol>
+    <p class="nota">Etapas reales del modelo de CICLO.</p>
+  </div>
+  <div class="acc rev" style="--i:3"><a class="btn" href="#crear">Crear tu proyecto</a><a href="#">Sólo estoy mirando</a></div>
+</section>
+
+<!-- 2 · qué es -->
+<section class="pant" id="que">
+  <p class="eti rev">Qué es</p>
+  <h2 class="rev" style="--i:1;margin-top:18px">Cada color, estampa, corte o material, en su etapa.</h2>
+  <p class="lead rev" style="--i:2">No predice el futuro: dice dónde está hoy cada atributo, y si para tu marca conviene entrar, esperar o salir.</p>
+</section>
+
+<!-- 3 · cómo funciona -->
+<section class="pant" id="como">
+  <p class="eti rev">Cómo funciona</p>
+  <h2 class="rev" style="--i:1;margin-top:18px">Tres pasos.</h2>
+  <div class="pasos">
+    <div class="paso rev" style="--i:2"><span class="n">1 / 3</span><h3>Medimos</h3><p>Cuánto aparece en los desfiles y cuánto se lo busca, año por año.</p></div>
+    <div class="paso rev" style="--i:4"><span class="n">2 / 3</span><h3>Agrupamos</h3><p>Un K-means junta a los que se mueven parecido y nombra la etapa.</p></div>
+    <div class="paso rev" style="--i:6"><span class="n">3 / 3</span><h3>Te decimos</h3><p>Según tu tipo de marca y sus plazos, una señal.</p></div>
+  </div>
+</section>
+
+<!-- 4 · de dónde salen los datos -->
+<section class="pant" id="datos">
+  <p class="eti rev">De dónde salen los datos</p>
+  <h2 class="rev" style="--i:1;margin-top:18px">Dos fuentes deciden.</h2>
+  <div class="fuentes">
+    <div class="fu rev" style="--i:2"><span class="num">1,28 M</span><h3>looks de Vogue Runway</h3><p>Desfiles de París, Milán, Nueva York, Londres y otras semanas de la moda. 2000–2025.</p></div>
+    <div class="fu rev" style="--i:3"><span class="num">65</span><h3>búsquedas en Google Trends</h3><p>Todo el mundo, con los términos en inglés, 2004–2024. Y 14 términos en español sólo de Argentina, para comparar.</p></div>
+  </div>
+  <div class="comp rev" style="--i:4">
+    <p class="eti" style="grid-column:1/-1">Comprueban, no deciden</p>
+    <div><b>Reddit</b><span>Foros de moda en inglés, uno de mujeres y uno de hombres. Sin país. 2012–2025</span></div>
+    <div><b>Google Shopping</b><span>Todo el mundo, en inglés. 2008–2025</span></div>
+    <div><b>Lyst</b><span>Ranking global de marcas. 2018–2026</span></div>
+    <div><b>H&amp;M</b><span>Compras; el dataset no dice de qué país. 2018–2020</span></div>
+    <div><b>Amazon</b><span>Reseñas de amazon.com. 2012–2023</span></div>
+  </div>
+</section>
+
+<!-- 5 · qué obtenés -->
+<section class="pant" id="obtenes">
+  <p class="eti rev">Qué obtenés</p>
+  <h2 class="rev" style="--i:1;margin-top:18px">Una señal para tu proyecto.</h2>
+  <div class="senales">
+    <div class="rev" style="--i:2"><b class="e">▲ Entrar</b><p>Llegás a tiempo con tus plazos.</p></div>
+    <div class="rev" style="--i:3"><b class="a">■ Esperar</b><p>Todavía no, o ya no con tus plazos.</p></div>
+    <div class="rev" style="--i:4"><b class="s">▼ Salir</b><p>Para tu tipo de marca, ya pasó.</p></div>
+  </div>
+  <div class="fotos3 rev" style="--i:5" aria-hidden="true">
+    <img src="https://assets.vogue.com/photos/63c2e25b7022d35c31c76518/master/w_640,c_limit/00050-our-legacy-fall-2023-mens-credit-isak-berglund-mattsson-marn.jpg" alt="">
+    <img src="https://assets.vogue.com/photos/57eea6e0e1628caf6828ae8d/master/w_640,c_limit/_UMB9755.jpg" alt="">
+    <img src="https://assets.vogue.com/photos/63daac67d43a506d2813b576/master/w_640,c_limit/00038-marni-fall-2023-ready-to-wear-credit-brand.jpg" alt="">
+  </div>
+</section>
+
+<!-- 6 · crear tu proyecto -->
+<section class="pant centro" id="crear">
+  <div class="crear">
+    <h2 class="rev">Creá tu proyecto.</h2>
+    <p class="bajada rev" style="--i:1">Un minuto. Se guarda en tu navegador.</p>
+    <form class="rev" style="--i:2" onsubmit="event.preventDefault()">
+      <input type="text" placeholder="Nombre del proyecto" aria-label="Nombre del proyecto">
+      <input type="email" placeholder="Tu email" aria-label="Tu email">
+      <div class="seg" role="radiogroup" aria-label="Para quién diseñás"><label><input type="radio" name="pu" checked><span>Mujer</span></label><label><input type="radio" name="pu"><span>Hombre</span></label><label><input type="radio" name="pu"><span>Sin género</span></label></div>
+      <p class="linea">Elige qué foro de Reddit se lee. Google y Vogue son de todos.</p>
+      <div class="seg" role="radiogroup" aria-label="Para una marca o por tu cuenta"><label><input type="radio" name="vi" checked><span>Para una marca</span></label><label><input type="radio" name="vi"><span>Por mi cuenta</span></label></div>
+      <p class="linea">Por tu cuenta, donde una marca espera, vos explorás.</p>
+      <div class="seg" role="radiogroup" aria-label="Tipo de marca"><label><input type="radio" name="ti"><span>High fashion</span></label><label><input type="radio" name="ti"><span>Contemporary</span></label><label><input type="radio" name="ti" checked><span>Fast fashion</span></label><label><input type="radio" name="ti"><span>De autor</span></label></div>
+      <p class="linea">Cambia los plazos y, con ellos, la señal.</p>
+      <button class="btn" type="submit">Crear proyecto</button>
+      <div class="pie"><a href="#">Sólo estoy mirando</a><span>Sin servidor: nadie más lo ve.</span></div>
+    </form>
+  </div>
+</section>
+<footer>CICLO · Fotos de Vogue Runway: Our Legacy, Umbro / Kim Jones, Marni.</footer>
+
+<script>
+// la palabra que rota, con su etapa real en el K-means de CICLO (24/11/2026)
+const P=[['el jean baggy',1],['el floral',2],['los lunares',3],['el trench',2],['el kimono',3]];
+const R=document.getElementById('rota'),PT=document.getElementById('punto'),LI=[...document.querySelectorAll('#etapas li')];
+let i=0;
+function ir(){R.textContent=P[i][0]+'?';const e=P[i][1];PT.style.left=(e/4*100)+'%';LI.forEach((l,k)=>l.classList.toggle('on',k===e));}
+ir();if(!matchMedia('(prefers-reduced-motion:reduce)').matches)setInterval(()=>{R.classList.add('fuera');setTimeout(()=>{i=(i+1)%P.length;ir();R.classList.remove('fuera');},350);},2800);
+// aparecer con el scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}}),{threshold:.18});
+document.querySelectorAll('.pant').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

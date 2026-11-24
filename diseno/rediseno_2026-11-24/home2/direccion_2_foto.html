@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CICLO · home, dirección 2: una foto por idea</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="comun.css">
+<style>
+/* Dirección 2 · «Una foto por idea». Editorial (i-D): a la izquierda una sola foto de pasarela, quieta y grande, que
+   cambia cuando cambia la idea; a la derecha, una idea por pantalla. Nada de carrusel ni de tarjetas: lo opuesto a la
+   herramienta. Sin créditos sobre las fotos (van al pie). */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.foto{position:sticky;top:0;height:100vh;overflow:hidden;background:#e8e6e1}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;opacity:0;transform:scale(1.04);transition:opacity .9s ease,transform 1.6s ease}
+.foto img.on{opacity:1;transform:none}
+.foto .num{position:absolute;left:24px;bottom:22px;color:#fff;font-size:14px;font-variant-numeric:tabular-nums;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.col{display:flex;flex-direction:column}
+.idea{min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:100px clamp(24px,5vw,80px) 72px}
+.idea + .idea{border-top:1px solid var(--linea)}
+h1{font-size:clamp(44px,5.6vw,84px);font-weight:600;letter-spacing:-.035em;line-height:1}
+h2{font-size:clamp(34px,4vw,58px);font-weight:600;letter-spacing:-.03em;line-height:1.04}
+.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:var(--tinta-2);max-width:40ch}
+.acc{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:10px}
+.lista{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column}
+.lista li{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:18px 0;border-top:1px solid var(--linea)}
+.lista li .n{font-size:14px;color:var(--tinta-2);padding-top:6px;font-variant-numeric:tabular-nums}
+.lista li b{font-size:24px;font-weight:600;letter-spacing:-.02em}
+.lista li p{grid-column:2;color:var(--tinta-2)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.dos .num{font-size:clamp(48px,5vw,76px);font-weight:600;letter-spacing:-.04em;line-height:.95}
+.dos b{display:block;font-size:18px;margin:10px 0 4px}
+.dos p{color:var(--tinta-2);font-size:16px}
+.chico{font-size:15px;color:var(--tinta-2);line-height:1.6;max-width:52ch}
+.chico b{color:var(--tinta);font-weight:600}
+.sen{display:flex;flex-direction:column}
+.sen div{display:flex;align-items:baseline;gap:18px;padding:14px 0;border-top:1px solid var(--linea)}
+.sen b{font-size:clamp(32px,3.4vw,48px);font-weight:600;letter-spacing:-.03em;min-width:5.2em}
+.sen .e{color:var(--entrar)}.sen .a{color:var(--esperar)}.sen .s{color:var(--salir)}
+.sen p{color:var(--tinta-2)}
+.idea.crearw{align-items:stretch}
+footer{grid-column:1/-1;padding:36px clamp(24px,5vw,80px) 56px;color:var(--tinta-2);font-size:14px;border-top:1px solid var(--linea)}
+@media (max-width:860px){
+  .split{grid-template-columns:1fr}
+  .foto{position:relative;height:auto}
+  .foto{display:none}
+  .idea{min-height:0;padding:72px 20px 56px}
+  .idea .mfoto{display:block;margin:-72px -20px 8px;height:62vh;object-fit:cover;object-position:50% 20%;width:calc(100% + 40px)}
+  .dos{grid-template-columns:1fr}
+}
+.mfoto{display:none}
+</style>
+</head>
+<body>
+<p class="marca">Dirección 2 · una foto por idea · <a href="direccion_1_palabra.html">ver la 1</a></p>
+<header class="mast">
+  <a class="logo" href="#"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10.00" cy="2.50" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17.13" cy="7.68" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="14.41" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="5.59" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="2.87" cy="7.68" r="2.3" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg>CICLO</a>
+  <nav><a class="n" href="#como">Cómo funciona</a><a class="n" href="#datos">Los datos</a><a class="btn" href="#crear">Crear tu proyecto</a></nav>
+</header>
+
+<div class="split">
+  <div class="foto" aria-hidden="true">
+    <img data-f="0" class="on" src="https://assets.vogue.com/photos/63f8e41547fee8ca53688b16/master/w_1280,c_limit/00049-burberry-fall-2023-ready-to-wear-credit-brand.jpg" alt="">
+    <img data-f="1" src="https://assets.vogue.com/photos/633c453a802c86f37bb5ae35/master/w_1280,c_limit/00044-miu-miu-spring-2023-ready-to-wear-credit-gorunway.jpg" alt="">
+    <img data-f="2" src="https://assets.vogue.com/photos/633963ce22fa29f69ae6d2ea/master/w_1280,c_limit/00003-hermes-spring-2023-ready-to-wear-credit-gorunway.jpg" alt="">
+    <img data-f="3" src="https://assets.vogue.com/photos/635fca5500affda64572718d/master/w_1280,c_limit/00051-bottega-veneta-resort-2023-credit-brand.jpg" alt="">
+    <img data-f="4" src="https://assets.vogue.com/photos/63335c0aa30a6f73b05c2522/master/w_1280,c_limit/00049-saint-laurent-spring-2023-ready-to-wear-credit-gorunway.jpg" alt="">
+    <img data-f="5" src="https://assets.vogue.com/photos/634d93b37a2a7b869a7a6a9a/master/w_1280,c_limit/00013-valentino-resort-2023-credit-brand.jpg" alt="">
+    <span class="num" id="num">1 / 6</span>
+  </div>
+  <div class="col">
+    <section class="idea" data-f="0" id="hero">
+      <img class="mfoto" src="https://assets.vogue.com/photos/63f8e41547fee8ca53688b16/master/w_800,c_limit/00049-burberry-fall-2023-ready-to-wear-credit-brand.jpg" alt="">
+      <p class="eti rev">Una herramienta de moda</p>
+      <h1 class="rev" style="--i:1">En qué momento está cada color, estampa, corte o material.</h1>
+      <div class="acc rev" style="--i:2"><a class="btn" href="#crear">Crear tu proyecto</a><a href="#">Sólo estoy mirando</a></div>
+    </section>
+
+    <section class="idea" data-f="1" id="que">
+      <img class="mfoto" src="https://assets.vogue.com/photos/633c453a802c86f37bb5ae35/master/w_800,c_limit/00044-miu-miu-spring-2023-ready-to-wear-credit-gorunway.jpg" alt="">
+      <p class="eti rev">Qué es</p>
+      <h2 class="rev" style="--i:1">Una etapa para cada atributo. No una predicción.</h2>
+      <p class="lead rev" style="--i:2">Emergente, en ascenso, en pico, saturada o en retorno: dónde está hoy, y si para tu marca conviene entrar, esperar o salir.</p>
+    </section>
+
+    <section class="idea" data-f="2" id="como">
+      <img class="mfoto" src="https://assets.vogue.com/photos/633963ce22fa29f69ae6d2ea/master/w_800,c_limit/00003-hermes-spring-2023-ready-to-wear-credit-gorunway.jpg" alt="">
+      <p class="eti rev">Cómo funciona</p>
+      <h2 class="rev" style="--i:1">Tres pasos.</h2>
+      <ol class="lista">
+        <li class="rev" style="--i:2"><span class="n">1 / 3</span><b>Medimos</b><p>Cuánto aparece en los desfiles y cuánto se lo busca, año por año.</p></li>
+        <li class="rev" style="--i:3"><span class="n">2 / 3</span><b>Agrupamos</b><p>Un K-means junta a los que se mueven parecido y nombra la etapa.</p></li>
+        <li class="rev" style="--i:4"><span class="n">3 / 3</span><b>Te decimos</b><p>Según tu tipo de marca y sus plazos, una señal.</p></li>
+      </ol>
+    </section>
+
+    <section class="idea" data-f="3" id="datos">
+      <img class="mfoto" src="https://assets.vogue.com/photos/635fca5500affda64572718d/master/w_800,c_limit/00051-bottega-veneta-resort-2023-credit-brand.jpg" alt="">
+      <p class="eti rev">De dónde salen los datos</p>
+      <h2 class="rev" style="--i:1">Dos fuentes deciden.</h2>
+      <div class="dos rev" style="--i:2">
+        <div><span class="num">1,28 M</span><b>looks de Vogue Runway</b><p>Desfiles de París, Milán, Nueva York, Londres y otras semanas de la moda. 2000–2025.</p></div>
+        <div><span class="num">65</span><b>búsquedas en Google</b><p>Todo el mundo, con los términos en inglés. 2004–2024.</p></div>
+      </div>
+      <p class="chico rev" style="--i:3"><b>Comprueban, no deciden:</b> Reddit (foros de moda en inglés, uno de mujeres y uno de hombres, sin país, 2012–2025) · Google Shopping (todo el mundo, 2008–2025) · Lyst (ranking global de marcas, 2018–2026) · H&amp;M (compras, el dataset no dice el país, 2018–2020) · Amazon (reseñas de amazon.com, 2012–2023) · Google Trends Argentina (14 términos en español).</p>
+    </section>
+
+    <section class="idea" data-f="4" id="obtenes">
+      <img class="mfoto" src="https://assets.vogue.com/photos/63335c0aa30a6f73b05c2522/master/w_800,c_limit/00049-saint-laurent-spring-2023-ready-to-wear-credit-gorunway.jpg" alt="">
+      <p class="eti rev">Qué obtenés</p>
+      <h2 class="rev" style="--i:1">Una señal para tu proyecto.</h2>
+      <div class="sen">
+        <div class="rev" style="--i:2"><b class="e">▲ Entrar</b><p>Llegás a tiempo con tus plazos.</p></div>
+        <div class="rev" style="--i:3"><b class="a">■ Esperar</b><p>Todavía no, o ya no con tus plazos.</p></div>
+        <div class="rev" style="--i:4"><b class="s">▼ Salir</b><p>Para tu tipo de marca, ya pasó.</p></div>
+      </div>
+    </section>
+
+    <section class="idea crearw" data-f="5" id="crear">
+      <img class="mfoto" src="https://assets.vogue.com/photos/634d93b37a2a7b869a7a6a9a/master/w_800,c_limit/00013-valentino-resort-2023-credit-brand.jpg" alt="">
+      <div class="crear" style="margin:0;max-width:520px">
+        <h2 class="rev" style="text-align:left">Creá tu proyecto.</h2>
+        <p class="bajada rev" style="--i:1;text-align:left">Un minuto. Se guarda en tu navegador.</p>
+        <form class="rev" style="--i:2" onsubmit="event.preventDefault()">
+          <input type="text" placeholder="Nombre del proyecto" aria-label="Nombre del proyecto">
+          <input type="email" placeholder="Tu email" aria-label="Tu email">
+          <div class="seg" role="radiogroup" aria-label="Para quién diseñás"><label><input type="radio" name="pu" checked><span>Mujer</span></label><label><input type="radio" name="pu"><span>Hombre</span></label><label><input type="radio" name="pu"><span>Sin género</span></label></div>
+          <p class="linea">Elige qué foro de Reddit se lee. Google y Vogue son de todos.</p>
+          <div class="seg" role="radiogroup" aria-label="Para una marca o por tu cuenta"><label><input type="radio" name="vi" checked><span>Para una marca</span></label><label><input type="radio" name="vi"><span>Por mi cuenta</span></label></div>
+          <p class="linea">Por tu cuenta, donde una marca espera, vos explorás.</p>
+          <div class="seg" role="radiogroup" aria-label="Tipo de marca"><label><input type="radio" name="ti"><span>High fashion</span></label><label><input type="radio" name="ti"><span>Contemporary</span></label><label><input type="radio" name="ti" checked><span>Fast fashion</span></label><label><input type="radio" name="ti"><span>De autor</span></label></div>
+          <p class="linea">Cambia los plazos y, con ellos, la señal.</p>
+          <button class="btn" type="submit">Crear proyecto</button>
+          <div class="pie"><a href="#">Sólo estoy mirando</a><span>Sin servidor: nadie más lo ve.</span></div>
+        </form>
+      </div>
+    </section>
+  </div>
+  <footer>CICLO · Fotos de Vogue Runway: Burberry Fall 2023, Miu Miu Spring 2023, Hermès Spring 2023, Bottega Veneta Resort 2023, Saint Laurent Spring 2023, Valentino Resort 2023.</footer>
+</div>
+
+<script>
+// la foto de la izquierda cambia con la idea que está en el centro de la pantalla
+const fotos=[...document.querySelectorAll('.foto img')],num=document.getElementById('num');
+const ver=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const f=+e.target.dataset.f;fotos.forEach(i=>i.classList.toggle('on',+i.dataset.f===f));num.textContent=`${f+1} / ${fotos.length}`;}),{rootMargin:'-45% 0px -45% 0px'});
+document.querySelectorAll('.idea').forEach(s=>ver.observe(s));
+// aparecer con el scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}}),{threshold:.18});
+document.querySelectorAll('.idea').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>

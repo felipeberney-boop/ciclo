@@ -2159,6 +2159,17 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app .pyform.limpio .pie{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}
 .app .pyform.limpio .pie span{font-size:14px;color:var(--tinta-2)}
 #v-cuenta .cuform .pyform.limpio{margin:18px 0 6px}
+/* ================= Preguntar: ejemplos de conversación (24/11) · última ================= */
+.app #v-lectura .ltejb span:not(#q):not(#qq):not(#qqq):not(#qqqq){border:0!important;padding:0!important;background:none!important;box-shadow:none!important}
+.app #v-lectura .ltejemplos{display:flex;flex-direction:column;gap:14px;margin:36px 0 0;padding-top:24px;border-top:1px solid var(--linea)}
+.app #v-lectura .ltejemplos .eti{margin:0}
+.app #v-lectura .ltejm{display:flex;flex-direction:column;gap:8px}
+.app #v-lectura .ltejq:not(#q):not(#qq):not(#qqq){align-self:flex-end;max-width:80%;margin:0!important;padding:10px 16px;background:var(--bloque);font-size:16px!important}
+.app #v-lectura .ltejq:not(#z):not(#zz){border-radius:18px 18px 4px 18px!important}
+.app #v-lectura .ltejr:not(#q):not(#qq):not(#qqq){max-width:88%;margin:0!important;font-size:17px!important;line-height:1.5}
+.app #v-lectura .ltejr b{font-weight:600}
+.app #v-lectura .ltejquien:not(#q):not(#qq):not(#qqq){margin:0!important;font-size:13px!important;color:var(--tinta-2)!important}
+.app #v-lectura .ltejquien .lnk:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-size:13px!important;padding:0!important}
 </style>
 
 <div class="app">
@@ -4060,7 +4071,7 @@ function tzFotos(gs){const F=gs.filter(g=>FOTO_ATR[g]).slice(0,3);if(!F.length)r
 const ltAncho=()=>Math.min(680,Math.max(300,(($('#aschat')||{}).clientWidth||700)-(matchMedia('(max-width:640px)').matches?32:56)));
 const ltSec=(t,tag,c)=>`<div class="ltsec"><div class="lth"><span class="lbl">${t}</span>${tag||''}</div>${c}</div>`;
 const LT_MED='<span class="tag real">● medido</span>',LT_CLIP='<span class="tag ia2">interpretado · CLIP</span>';
-const ltClave=()=>!!$('#askey').value.trim();
+const ltClave=()=>asPropia()||asServ===true;
 const ltActivar=t=>`<p class="ltact">${t||'Para que además te lo escriba un modelo de lenguaje,'} <button type="button" class="ltactb">activá la respuesta escrita · 1 minuto</button></p>`;
 /* la pieza de datos de una pregunta: lo que más sube, una marca (Lyst por tramo; Zara, su catálogo), o los atributos que nombra */
 function ltPieza(P){if(!P)return '';const W=ltAncho();
@@ -4123,10 +4134,19 @@ function ltBurbuja(m,k,ultLect){
 /* tu mensaje: la imagen grande, como la mandaste, y el texto si escribiste algo */
 const ltYo=m=>`<div class="ltyo${m.img?' conimg':''}">${m.img&&m.img.src?`<figure><img src="${m.img.src}" alt="${escH(m.img.alt)}"><figcaption>${escH(m.img.pie)}</figcaption></figure>`:''}${m.content?`<p>${escH(m.content)}</p>`:''}</div>`;
 /* vacía: una línea de qué hace, las sugerencias y tres looks para probar sin tener una imagen */
+/* 24/11 · ejemplos de conversación (devolución: «¡Faltan ejemplos de conversación!»). No son textos inventados: cada
+   respuesta se calcula ahora con los mismos datos y reglas con que CICLO contesta sin modelo de lenguaje, y lo dice */
+function ltEjemplos(){
+  const L=tzSube().slice(0,3),fl=REC.find(o=>o.id==='floral'),sf=fl?mcSeñal(fl):null,et=fl&&etapaDe(fl.n);
+  const cat=((GATE[vinculo]||GATE.marca).c[cliente]||['—'])[0].toLowerCase(),quien=pyActivo()&&!mirando?cat:'una marca contemporary de ejemplo, sin proyecto';
+  const E=[['¿Qué está subiendo más ahora?',`En la búsqueda mundial, de 2022 a 2024, lo que más ganó es ${L.map(g=>`${escH(tzNom(g))} (${tzPts(terreno(g))})`).join(', ').replace(/, ([^,]*)$/,' y $1')}.`],
+    ...(sf?[['¿Me conviene el floral?',`Está ${et&&et.n?'en '+et.n.toLowerCase().replace(/^en /,''):'sin etapa'} según el K-means. Para ${escH(quien)}: <b class="${sf.cls}">${sf.icono} ${sf.palabra}</b>. ${escH(sf.corto||'')}`]]:[])];
+  return `<div class="ltejemplos"><p class="eti">Así contesta CICLO</p>${E.map(([q,a])=>`<div class="ltejm"><p class="ltejq">${escH(q)}</p><p class="ltejr">${a}</p><p class="ltejquien">Contestó: reglas de CICLO con datos medidos, sin modelo de lenguaje · <button type="button" class="lnk" data-q="${escH(q)}">Preguntalo</button></p></div>`).join('')}</div>`;}
 function ltVacio(){const D=asDiseno(),idx=CLIP.idx;
   const sug=[...TZ_SUG,...(D.chips.length?[`Leé mi diseño: ${D.chips.map(c=>c.v.toLowerCase()).join(' · ')}`]:[])];
   return `<div class="ltvacio"><p class="ltintro">Por un atributo, una marca o un diseño tuyo. CICLO te contesta con los datos que tiene.</p>
     <div class="ltsug">${sug.map(t=>`<button type="button" class="ltsugb" data-q="${escH(t)}">${escH(t)}</button>`).join('')}</div>
+    ${ltEjemplos()}
     <div class="ltej"><span>O probá con un look de pasarela</span><div>${LT_EJ.map(([n,k])=>`<button type="button" class="ltejb" data-i="${QEJ[k]}" data-n="${n}">${idx?`<img alt="" src="${vogueFoto(idx.f[QEJ[k]],320)}">`:''}<span>${n}</span></button>`).join('')}</div></div></div>`;}
 /* el hilo entero; si nuevo, baja hasta el último mensaje (sin mover lo de arriba) */
 /* 18/11 · el bug de las fotos negras: asPintar reescribía todo el chat con innerHTML en cada cambio (un mensaje, «leyendo…»,
@@ -4153,13 +4173,13 @@ function fotosCargando(raiz){if(!raiz)return;raiz.querySelectorAll('img').forEac
   im.classList.add('fcarga');caja&&caja.classList.add('fotocarga');
   im.addEventListener('load',()=>{im.classList.remove('fcarga');caja&&caja.classList.remove('fotocarga');},{once:true});
   im.addEventListener('error',()=>{im.classList.remove('fcarga');caja&&(caja.classList.remove('fotocarga'),caja.classList.add('fotoerr'));},{once:true});});}
-function asIA(){const s=$('#asias'),c=$('#asiac');if(!s)return;const mod=$('#asmodelo').value,clave=ltClave();
+function asIA(){const s=$('#asias'),c=$('#asiac');if(!s)return;const mod=$('#asmodelo').value,clave=ltClave(),porCiclo=clave&&!asPropia();
   const usos=as.hist.filter(m=>m.uso),tot=usos.reduce((a,m)=>a+m.uso.t,0),ult=usos[usos.length-1];
-  s.innerHTML=clave?`<b>IA:</b> ${escH(mod)} · API de Groq · ${ult?`última consulta ${ltNum(ult.uso.t)} tokens · conversación ${ltNum(tot)}`:'0 tokens hasta ahora'}`
+  s.innerHTML=clave?`<b>IA:</b> ${escH(mod)} · Groq${porCiclo?', con la clave de CICLO':', con tu clave'} · ${ult?`última consulta ${ltNum(ult.uso.t)} tokens · conversación ${ltNum(tot)}`:'0 tokens hasta ahora'}`
     :`<b>IA:</b> sin clave, contestan las reglas de CICLO (0 tokens) · las imágenes las lee CLIP en tu navegador`;
-  c.innerHTML=`<dl><dt>Respuesta escrita</dt><dd>${escH(mod)}, un modelo abierto de OpenAI, servido por la API de Groq (api.groq.com/openai/v1/chat/completions) con tu clave, desde tu navegador. ${clave?'Activada.':'Sin activar: pegá una clave abajo.'}</dd>
+  c.innerHTML=`<dl><dt>Respuesta escrita</dt><dd>${escH(mod)}, un modelo abierto de OpenAI, servido por la API de Groq. ${porCiclo?'Pasa por el servidor de CICLO (una función de Netlify con la clave del proyecto); no hace falta pegar nada.':clave?'Con tu clave, desde tu navegador.':'Sin activar: el servidor de CICLO no respondió; podés pegar tu propia clave abajo.'}</dd>
     <dt>Qué se le manda</dt><dd>Las instrucciones (<a href="https://github.com/felipeberney-boop/ciclo/blob/main/prompts/prompt_asistente_v9.md" target="_blank" rel="noopener">prompt v9</a>), sólo las partes de <a href="llm/ciclo_datos.md" target="_blank" rel="noopener">los datos de CICLO</a> que nombra tu pregunta, y tu pregunta. Nunca una fila de la base: métricas ya calculadas.</dd>
-    <dt>Tokens</dt><dd>${usos.length?usos.map((m,i)=>`Consulta ${i+1}: ${ltNum(m.uso.t)} (${ltNum(m.uso.e)} entran, ${ltNum(m.uso.s)} salen)`).join('<br>')+`<br><b>Total: ${ltNum(tot)}</b>.`:'Todavía ninguna consulta al modelo.'} Cada consulta usa unos 6.000; el plan gratis de Groq deja 8.000 por minuto, por eso a veces pide esperar.</dd>
+    <dt>Tokens</dt><dd>${usos.length?usos.map((m,i)=>`Consulta ${i+1}: ${ltNum(m.uso.t)} (${ltNum(m.uso.e)} entran, ${ltNum(m.uso.s)} salen)`).join('<br>')+`<br><b>Total: ${ltNum(tot)}</b>.`:'Todavía ninguna consulta al modelo.'}</dd>
     <dt>Lectura de imagen</dt><dd>CLIP ViT-B/32 (OpenAI) con transformers.js, en tu navegador, contra 14.000 looks de Vogue. No usa tokens ni manda la foto a ningún lado.</dd>
     <dt>Sin clave</dt><dd>Lo medido aparece igual; la devolución la arman reglas fijas de CICLO y lo dice.</dd></dl>`;}
 function asPintar(nuevo){
@@ -4178,7 +4198,7 @@ function asPintar(nuevo){
 /* los clics del hilo, una sola vez (delegados) */
 function ltEventos(){if(ltEventos.listo)return;ltEventos.listo=true;const ch=$('#aschat');
   ch.addEventListener('click',e=>{const t=e.target;let b;
-    if((b=t.closest('.ltsugb,#assug [data-q]')))return ltMandar(b.dataset.q);
+    if((b=t.closest('.ltsugb,#assug [data-q],.ltejquien [data-q]')))return ltMandar(b.dataset.q);
     if((b=t.closest('.ltejb')))return rvEjemplo(+b.dataset.i,b.dataset.n);
     if((b=t.closest('.ltx')))return ltCorregir(+b.dataset.x,null);
     if((b=t.closest('.ltactb'))){const d=$('#asclave');d.open=true;d.scrollIntoView({behavior:'smooth',block:'end'});setTimeout(()=>$('#askey').focus(),300);return;}
@@ -4621,6 +4641,13 @@ function lectParar(){clearInterval(lect.timer);lect.timer=null;const b=$('#lectp
    y muestra lo que leyó para que lo corrijas, cada respuesta trae la serie que la sostiene y termina en cambios que se
    aplican con un botón. La respuesta es un JSON que se valida antes de mostrarlo. */
 const AS_API='https://api.groq.com/openai/v1/chat/completions';
+/* 24/11 · sin pegar una clave: la función de Netlify (netlify/functions/preguntar.mjs) reenvía a Groq con la clave del
+   proyecto (GROQ_API_KEY, variable de entorno). asServ: null sin preguntar, true si tiene clave, false si no responde o no tiene */
+const AS_SERV='https://ciclo-udesa.netlify.app/api/preguntar';let asServ=null;
+const asPropia=()=>!!$('#askey').value.trim();
+async function asServidor(){if(asServ!==null)return asServ;asServ=false;
+  try{const c=new AbortController(),t=setTimeout(()=>c.abort(),4000);const j=await fetch(AS_SERV,{signal:c.signal}).then(r=>r.json());clearTimeout(t);asServ=!!j.clave;}catch(e){asServ=false;}
+  asEstadoClave();if(vista==='lectura')asPintar();return asServ;}
 const AS_INSTR=`Sos el asistente de CICLO dentro de una herramienta de diseño: quien pregunta está armando una prenda y tiene una duda concreta. Contestás como un colega apurado: primero la respuesta, después el dato que la sostiene, y nada más salvo que haga falta.
 FORMATO (lo más importante):
 - "conclusion": UNA frase, de 20 palabras como máximo, que contesta la pregunta. Si alguien lee sólo esto, ya sabe qué hacer o qué pasa. Empieza por la respuesta o por lo que SÍ hay sobre ese tema («Gamuza.», «Sí, pero…», «Prada está quinta en Lyst…»), nunca por lo que falta, una aclaración, un corte o un «depende».
@@ -4792,7 +4819,7 @@ async function asFoto(file){
     return {q:Float32Array.from(image_embeds.data),mismo:-1};});
 }
 async function asAbrir(){
-  asPintar();
+  asPintar();asServidor();
   // el índice de looks se baja de fondo: así los ejemplos tienen foto y la primera imagen se lee más rápido
   if(!CLIP.idx&&!asAbrir.idx){asAbrir.idx=1;clipIndice(()=>{}).then(()=>{if(!as.hist.length&&vista==='lectura')asPintar();}).catch(()=>{asAbrir.idx=0;});}
   if(!as.datos)try{as.datos=await fetch('llm/ciclo_datos.md').then(r=>{if(!r.ok)throw 0;return r.text();});}
@@ -4801,7 +4828,7 @@ async function asAbrir(){
 let asN=0;
 /* la llamada al modelo: sólo métricas ya calculadas (asElegir), nunca una fila; lo que vuelve se valida (asNormalizar) */
 async function asLlamar(texto,clip,previas,espera){
-  const key=$('#askey').value.trim(),D=asDiseno(),O=asOpciones(),clipTxt=clip.map(c=>(c.color?'color '+c.n.toLowerCase():c.n)+(c.manual?' (lo agregó quien diseña)':'')).join(', ');
+  const key=$('#askey').value.trim(),viaServ=!key,D=asDiseno(),O=asOpciones(),clipTxt=clip.map(c=>(c.color?'color '+c.n.toLowerCase():c.n)+(c.manual?' (lo agregó quien diseña)':'')).join(', ');
   const recientes=[...previas.slice(-1).map(m=>m.q),texto].join(' ')+' '+D.chips.map(c=>c.v).join(' ')+' '+clipTxt;
   const E=asElegir(as.datos,recientes,D.ids);
   const opc=Object.keys(O).length?'OPCIONES (paso: valores posibles para "acciones"):\n'+Object.entries(O).map(([k,v])=>`${k}: ${v.join(', ')}`).join('\n'):'OPCIONES: ninguna (no hay diseño armado).';
@@ -4812,7 +4839,7 @@ async function asLlamar(texto,clip,previas,espera){
   // vista (con cuenta regresiva en la burbuja) y se reintenta sola, hasta dos veces
   let res,data;
   for(let intento=0;;intento++){
-    try{res=await fetch(AS_API,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+key},
+    try{res=await fetch(viaServ?AS_SERV:AS_API,{method:'POST',headers:viaServ?{'content-type':'application/json'}:{'content-type':'application/json',authorization:'Bearer '+key},
       body:JSON.stringify({model:modelo,temperature:0.3,max_tokens:700,response_format:{type:'json_object'},
         ...(modelo.startsWith('openai/gpt-oss')?{reasoning_effort:'low',include_reasoning:false}:{}),
         messages:[{role:'system',content:system},...mensajes]})});}
@@ -4862,7 +4889,7 @@ async function asPreguntar(){
 function ltAltura(){const t=$('#astexto');t.style.height='auto';t.style.height=Math.min(t.scrollHeight,130)+'px';}
 $('#askey').value=asLeer('groq_key');
 /* con clave, una línea; sin clave, los tres pasos a la vista cuando hacen falta */
-function asEstadoClave(){const k=$('#askey').value.trim();$('#asclaves').textContent=k?'Respuesta escrita activada ✓ · cambiar clave':'Respuesta escrita: activar · 1 minuto';$('#asclave').classList.toggle('ok',!!k);}
+function asEstadoClave(){const k=$('#askey').value.trim();$('#asclaves').textContent=k?'Respuesta escrita con tu clave ✓ · cambiar':asServ?'Respuesta escrita activada por CICLO · usar mi clave':'Respuesta escrita: activar · 1 minuto';$('#asclave').classList.toggle('ok',!!k||!!asServ);}
 $('#askey').addEventListener('input',()=>{asGuardar('groq_key',$('#askey').value.trim());asEstadoClave();});asEstadoClave();
 $('#askey').addEventListener('change',()=>{if(vista==='lectura')asPintar();});
 $('#asmodelo').value=asLeer('ciclo.as_modelo')||'openai/gpt-oss-120b';
@@ -5371,7 +5398,7 @@ function preguntarVacio(){const v=$('#v-lectura .ltvacio');if(!v||v.dataset.p)re
   const der=document.createElement('div');der.className='pvder';if(intro)der.appendChild(intro);if(sug)der.appendChild(sug);
   der.insertAdjacentHTML('beforeend',`<button type="button" class="pvsuma" id="pvsuma"><span class="pvmas" aria-hidden="true">＋</span><span><b>Sumá tu diseño</b> · subí una foto o un dibujo</span></button>`);
   if(ej){ej.querySelectorAll('img').forEach(i=>i.remove());const t=ej.querySelector(':scope > span');if(t)t.textContent='Probá con:';ej.classList.add('pvej');der.appendChild(ej);}
-  col.appendChild(der);v.appendChild(col);$('#pvsuma').addEventListener('click',()=>$('#asfile').click());fotosCargando(col);
+  col.appendChild(der);v.appendChild(col);{const ex=v.querySelector('.ltejemplos');if(ex)v.appendChild(ex);}$('#pvsuma').addEventListener('click',()=>$('#asfile').click());fotosCargando(col);
   const ims=[...col.querySelectorAll('.pvfoto img')],cap=col.querySelector('.pvfoto figcaption');let k=0;clearInterval(pvRota);
   if(!matchMedia('(prefers-reduced-motion:reduce)').matches)pvRota=setInterval(()=>{if(!col.isConnected){clearInterval(pvRota);return;}
     const sig=(k+1)%ims.length;if(!(ims[sig].complete&&ims[sig].naturalWidth)){ims[sig].loading='eager';return;}

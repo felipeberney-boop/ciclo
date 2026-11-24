@@ -3512,3 +3512,30 @@ o del nombre, si se carga en Mi perfil. El mismo formulario edita proyectos en M
 anchos, ya con el formulario nuevo. Corregido antes del commit: en el celular la foto de cada idea quedaba corta (la regla
 global de imágenes le ganaba al ancho). Capturas en `diseno/rediseno_2026-11-24/home2/en_la_app_1400.jpg` y `_393.jpg`.
 
+## 2026-11-24 · Rediseño, fase G: Preguntar, con la IA andando
+
+Devolución: «En “Preguntale” no funciona la IA»; a mano: «¡Faltan ejemplos de conversación!»; en clase: «Que la IA funcione
+sin pegar una clave: Netlify Function con GROQ_API_KEY como variable de entorno (nunca en el repo)», «Ejemplos de
+conversación visibles (pregunta + respuesta), no sólo botones» y «Sale lo de los tokens de arriba (los 8.000 por minuto).
+Queda sólo la línea chica debajo de la caja».
+
+**La función.** `netlify/functions/preguntar.mjs` recibe lo mismo que la app le mandaba a Groq (instrucciones, sólo las
+métricas que nombra la pregunta y la pregunta) y lo reenvía con la clave del proyecto, que vive en Netlify. Como la clave es
+del proyecto, se cuida: sólo los dos modelos que usa la app, tope de 900 tokens de salida, mensajes acotados, y sólo desde
+GitHub Pages, Netlify o localhost (otro origen: 403). La app pregunta primero si el servidor tiene clave; si no la tiene o no
+responde, contesta con las reglas de CICLO, como antes, y lo dice. Quien pega su propia clave sigue yendo directo a Groq.
+Probado en producción: «¿Qué material le va a un jean baggy?» lo contestó openai/gpt-oss-120b por la función (6.414 tokens),
+sin pegar nada; la línea de abajo dice «Groq, con la clave de CICLO».
+
+**Ejemplos de conversación.** Con el hilo vacío, debajo de las sugerencias, «Así contesta CICLO»: dos preguntas con su
+respuesta. No están escritas a mano: se calculan en el momento con las mismas reglas y datos con que CICLO contesta sin
+modelo de lenguaje («lo que más ganó es Jeans baggy (+50 puntos), Gamuza (+29) y Falda maxi (+21)»; el floral, con la señal
+del proyecto), y cada una dice «Contestó: reglas de CICLO con datos medidos, sin modelo de lenguaje», con un «Preguntalo» que
+la manda al hilo. Mostrar una respuesta del modelo guardada de antes sería presentar algo viejo como si fuera de ahora.
+
+**Los tokens.** Sale la frase de los 8.000 por minuto del detalle; queda la línea chica debajo de la caja (modelo, quién pone
+la clave y tokens de la conversación).
+
+`probar_demo.js` sin clave: 8 de 8 en los dos anchos (ahora, con la función activa, la pregunta del paso 6 la contesta el
+modelo). Capturas en `diseno/rediseno_2026-11-24/G/`.
+

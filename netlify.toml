@@ -1,7 +1,12 @@
 # Netlify publica la misma app que GitHub Pages (03/11/2026): la carpeta app/ tal cual, sin build.
 # Del 25/10 al 03/11 estuvo pausado (sin créditos) y redirigía a GitHub Pages; se reactivó porque la cátedra
-# acepta Netlify o Vercel. La app no necesita servidor: IA-5 y «Preguntar» llaman a Groq desde el navegador con la
-# clave de cada usuario. La función que tenía una clave del proyecto se borró el 04/11 (está en el historial de git).
+# acepta Netlify o Vercel. Desde el 24/11 hay una función: «Preguntar» sin pegar una clave (devolución de la Entrega 4:
+# «En Preguntale no funciona la IA»). netlify/functions/preguntar.mjs reenvía a Groq con GROQ_API_KEY, una variable de
+# entorno que se carga en Netlify (Site configuration → Environment variables), nunca en el repo. La app la llama también
+# desde GitHub Pages. Sin la variable, responde 503 y la app contesta con las reglas de CICLO, como antes.
 [build]
   publish = "app"
   command = ""
+
+[functions]
+  directory = "netlify/functions"

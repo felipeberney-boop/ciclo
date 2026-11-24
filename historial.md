@@ -590,6 +590,11 @@ Desde Mis ciclos, cada atributo abre la ficha del proyecto (sólo el Reddit de s
 Explorar muestra lo mismo para todos, sin señal. Cada fuente dice de qué país es. Y el home se rehace: una foto de
 pasarela por idea, una idea por pantalla que aparece con el scroll, y un cierre limpio para crear el proyecto.
 
+## v1.83 · 24/11/2026 · Preguntar, con la IA andando
+
+«Preguntale a CICLO» contesta con un modelo de lenguaje sin que haya que pegar una clave: una función de Netlify la pone, desde
+una variable de entorno. Con el hilo vacío se ven dos ejemplos de conversación, calculados con los datos del momento.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

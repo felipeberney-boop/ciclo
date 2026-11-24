@@ -127,7 +127,12 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   plus client type; its output is shown labelled as interpretation. Prompts live in `prompts/` and are
   versioned: add `_v2.md` etc., never overwrite an existing version. No API keys in the repo; IA-5 («Pedir lectura en vivo»,
   `lvPedir()`) and «Preguntale a CICLO» (`prompts/prompt_asistente_v9.md`) both call Groq from the browser with the user's own key (localStorage `groq_key`).
-  `netlify/functions/` was deleted on 04/11 (the app needs no server; it is in git history).
+  Since 24/11 «Preguntale a CICLO» also works without a pasted key: `netlify/functions/preguntar.mjs` (path
+  `/api/preguntar`, declared in `netlify.toml`) forwards the same request to Groq with `GROQ_API_KEY`, a Netlify environment
+  variable (never in the repo); it allows only the two gpt-oss models, caps tokens and only accepts the GitHub Pages,
+  Netlify and localhost origins. The app probes it with GET (`asServidor()`, `asServ`); `ltClave()` is true with a pasted
+  key or a server key. A pasted key still goes straight to Groq. Deploy the draft with `--functions netlify/functions`.
+  The empty thread shows two example conversations computed live by the rules (`ltEjemplos()`), labelled as such.
 
 ## Scripts (`codigo/`)
 

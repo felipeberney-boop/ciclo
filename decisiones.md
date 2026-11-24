@@ -3896,3 +3896,22 @@ gráficos quedan UNO AL LADO DEL OTRO, chicos… Abajo de Mis tendencias, un gan
 - Técnica: El brief vive en otro bloque del script, así que el gancho se define al lado de El brief y se expone como
   `window.pintarGancho`. `probar_demo.js` 8 de 8 en los dos anchos (el paso 2 lee ahora el título del gráfico). Capturas
   `M/2_misciclos/antes_radar_*` y `despues_radar_*`.
+
+## 2026-11-24 · Vuelta M, punto 3: Explorar, las tendencias del mundo
+
+Pedido: «Renombrá lo que dice "todos los atributos para todos" a algo como "Explorar las tendencias del mundo": cualquier
+género, cualquier mercado. Mis ciclos es MI proyecto; Explorar es TODO… Más tarjetas: hoy hay 3 filas, poné 2 más antes
+del gráfico. El gráfico del recorrido, un poco más chico… Que el título sea el selector, tipo "El recorrido de [Jeans
+baggy ▾]"».
+
+- Título «Explorar las tendencias del mundo»; bajada «Cualquier género, cualquier mercado: los 65 atributos, sin tu
+  proyecto y sin señal.» El menú sigue diciendo «Explorar ciclos» (cabe en la barra); el título de la pantalla es lo que
+  separa MI proyecto de TODO.
+- Tarjetas: cinco filas antes del recorrido, según cuántas columnas entran (3 × 5 = 15 en la compu, 5 en el celular);
+  antes eran 12 fijas. «Ver los 65 atributos» sigue abajo.
+- El título es el selector: «El recorrido de **Jeans baggy ▾**», el nombre en azul subrayado (la regla: azul = se toca) y
+  con la flecha; el select mide lo que mide el nombre elegido (`rtAncho()`), no el más largo de los 65. Fuera la etiqueta
+  «Ver el recorrido de» y el select suelto a la derecha.
+- El gráfico, hasta 820 px de ancho (antes, todo el ancho).
+- Las tarjetas siguen eligiendo el recorrido, y «Diseñar con…» sigue debajo del título. `probar_demo.js` 8 de 8 en los dos
+  anchos. Capturas `M/3_explorar/antes_*` y `despues_*`.

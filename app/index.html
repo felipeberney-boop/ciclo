@@ -721,7 +721,7 @@ main a:not([class]){color:inherit}
   #cycsvg{overflow-x:auto}#cycsvg>svg{min-width:470px}#jshare>svg{min-width:900px}#lag>svg{min-width:830px}#bump>svg{min-width:630px}#kplot>svg{min-width:560px}
   .chdesliza{display:block;margin:6px 0 0;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
 }
-.ciclos.corto .ciclo:nth-of-type(n+13):not(.on){display:none}
+.ciclos.corto .ciclo:not(.on){} /* 24/11 vuelta M: cuántas se ven lo decide pintarCiclos (cinco filas) */
 .ciclomas{grid-column:1/-1;justify-self:start}
 @media (max-width:600px){.mast nav a,.navmas,.navperfil{padding:14px 8px 13px!important;letter-spacing:.12em!important}.gvolver{padding:12px 0!important}}
 .dzpasos .dzp{padding:8px 9px!important;margin:0!important}.dzsep{margin:0 1px}
@@ -2123,6 +2123,14 @@ img:not(.fcarga){transition:opacity .35s ease}
 
 /* 24/11 vuelta L: Explorar termina en el recorrido, sin el pie (queda la flecha para volver arriba) */
 body[data-vista="recorridos"] .app .colofon{display:none!important}
+/* 24/11 vuelta M: Explorar, el título es el selector y el gráfico más chico */
+.app #v-recorridos #rtitulo:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .3em}
+.app #v-recorridos .rtsel{position:relative;display:inline-flex;align-items:baseline}
+.app #v-recorridos .rtsel select:not(#q):not(#qq):not(#qqq){font:inherit;letter-spacing:inherit;color:var(--accion);background:none;border:0;border-bottom:2px solid var(--accion);border-radius:0!important;padding:0 1.05em 2px 0;margin:0;appearance:none;-webkit-appearance:none;cursor:pointer;min-width:0;max-width:calc(100vw - 48px)}
+.app #v-recorridos .rtsel select:hover{color:var(--accion-2);border-bottom-color:var(--accion-2)}
+.app #v-recorridos .rtsel select:focus-visible{outline:2px solid var(--accion);outline-offset:3px}
+.app #v-recorridos .rtflecha{position:absolute;right:0;bottom:.12em;color:var(--accion);font-size:.6em;pointer-events:none}
+.app #v-recorridos #rchart{max-width:820px}
 /* 24/11 vuelta M: Mis ciclos, la fuente chica debajo de los dos gráficos, y el gancho a El brief */
 .app #v-radar .mcdos:not(#q){grid-template-columns:1fr;gap:8px 40px}
 @media (min-width:700px){.app #v-radar .mcdos:not(#q){grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
@@ -2546,8 +2554,8 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
     <section class="view" id="v-recorridos" hidden>
       <div class="vhead">
         <div>
-          <h1>Explorar ciclos</h1>
-          <p class="exmision">Todos los atributos, para todos: sin tu proyecto y sin señal. Buscá uno o elegí una categoría, y mirá su recorrido.</p>
+          <h1>Explorar las tendencias del mundo</h1>
+          <p class="exmision">Cualquier género, cualquier mercado: los 65 atributos, sin tu proyecto y sin señal.</p>
         </div>
       </div>
       <div class="mcbarra exbarra" id="exbarra">
@@ -2558,8 +2566,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <div class="ciclos" id="ciclos"></div>
       <section class="exrec" aria-labelledby="rtitulo">
         <div class="exrecab">
-          <h2 id="rtitulo">El recorrido</h2>
-          <div class="exsel"><label for="rsel">Ver el recorrido de</label><select id="rsel"></select></div>
+          <h2 id="rtitulo"><span>El recorrido de</span> <span class="rtsel"><select id="rsel" aria-label="Elegí el atributo: cualquiera de los 65"></select><span class="rtflecha" aria-hidden="true">▾</span></span></h2>
         </div>
         <div class="decide" id="rdecide" aria-live="polite"></div>
         <div class="lys">
@@ -4440,7 +4447,7 @@ function cicloDe(o){
   if(ciclo)f+=` Entre sus dos últimos picos pasaron ${numTxt(ciclo)} años.`;
   return {o,ultimo,anios,ciclo,sg,f,nm,picos,desde:ys[0]};
 }
-const CICLO_CORTO=12;let cicloTodos=false; // doce tarjetas a la vista; el resto, a un toque
+const CICLO_CORTO=10;let cicloTodos=false; // 24/11 vuelta M: cinco filas a la vista (antes doce tarjetas); el resto, a un toque
 /* 24/11 vuelta K: el buscador y las categorías que estaban arriba de Mis ciclos pasan acá, a una barra fija arriba */
 let exQ='';
 function pintarCiclos(){
@@ -4458,6 +4465,9 @@ function pintarCiclos(){
     `<details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Búsqueda mundial frente a las otras búsquedas de moda, 2010–2024 (2025 y 2026 tienen el salto de medición de Google), ● medido. Un pico es un máximo que se despega al menos 15 puntos de lo que lo rodea. Sube o baja: 2022→2024. *2010 es donde empieza la serie corregida: el pico pudo ser antes.</p></div></details>`;
   $$('#exchips [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;cicloTodos=false;pintarCiclos();});
   $('#ciclos').classList.toggle('corto',corto);
+  {const g=$('#ciclos'),cols=Math.max(1,getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length),n=cols*5;
+   $$('#ciclos .ciclo').forEach((b,i)=>{b.style.display=corto&&i>=n&&!b.classList.contains('on')?'none':'';});
+   const mas=$('#ciclos .ciclomas');if(mas&&corto&&L.length<=n)mas.remove();}
   const mas=$('#ciclos .ciclomas');if(mas)mas.onclick=()=>{cicloTodos=!cicloTodos;pintarCiclos();if(!cicloTodos)$('#ciclos').scrollIntoView({behavior:'instant'});};
   $$('#ciclos .ciclo').forEach(b=>b.onclick=()=>{recSel=b.dataset.r;pintarRecorridos();pintarCiclos();$('#rtitulo').scrollIntoView({behavior:'smooth'});});
 }
@@ -5180,6 +5190,11 @@ function recLeyenda(o){
   return recSeries(o).map(se=>`<button type="button" class="legi" data-k="${se.k}"${src(se.k,se.obs)} aria-pressed="${recFoco===se.k}" title="Aislar esta capa"><svg width="34" height="8" aria-hidden="true"><line x1="1" x2="17" y1="4" y2="4" stroke="${cssv(se.c)}" stroke-width="2.4" ${se.dm!=='none'?`stroke-dasharray="${se.dm}"`:''}/><line x1="19" x2="33" y1="4" y2="4" stroke="${cssv(se.c)}" stroke-width="2" stroke-dasharray="${se.dp}"/></svg><span style="white-space:nowrap">${se.n}</span><em>${se.d}</em></button>`).join('');
 }
 const CLAVE=`<div class="clave" aria-label="Cómo leer las líneas"><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2.4"/></svg>medido</span><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/></svg>punteada: no predice, muestra la escala posible</span><span><svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>año incompleto</span><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2.4" opacity=".4"/></svg>poco dato</span><span><svg width="16" height="10" aria-hidden="true"><rect width="16" height="10" fill="currentColor" opacity=".12"/></svg>error medido (búsqueda)</span></div>`;
+/* 24/11 vuelta M: «El recorrido de [Jeans baggy ▾]»: el select mide lo que mide el nombre elegido, no el más largo */
+function rtAncho(){const f=$('#rsel');if(!f||f.selectedIndex<0)return;let m=$('#rtmide');
+  if(!m){m=document.createElement('span');m.id='rtmide';m.setAttribute('aria-hidden','true');m.style.cssText='position:absolute;visibility:hidden;white-space:pre;left:-9999px';document.body.appendChild(m);}
+  const cs=getComputedStyle(f);m.style.font=cs.font;m.style.letterSpacing=cs.letterSpacing;m.textContent=f.options[f.selectedIndex].text;
+  f.style.width=Math.ceil(m.getBoundingClientRect().width+parseFloat(cs.paddingRight)+parseFloat(cs.paddingLeft)+2)+'px';}
 function pintarRecorridos(){
   /* 24/11 vuelta K: el recorrido de cualquier atributo, con un selector (antes, una lista escondida) */
   const f=$('#rsel');
@@ -5204,7 +5219,7 @@ function pintarRecorridos(){
   }else rc.appendChild(recChart(o));
   if(!pocas){rc.insertAdjacentHTML('beforeend',CLAVE);legDestaca($('#rleg'),rc);}
   if(!pocas)$('#rcap').textContent='Cada curva es un índice de 0 a 100 de su propio máximo. Lleno: medido. Punteado: no predice, muestra cuánto se movieron casos parecidos. Pasá el mouse por una curva para ver de dónde sale.';
-  pintarCiclos();$('#rtitulo').textContent='El recorrido de '+o.n.split(' /')[0].toLowerCase();
+  pintarCiclos();rtAncho();
   const rd=$('#rdesde');rd.hidden=recCapas(o)<3;rd.textContent=recDesde2004?'ver desde que hay dos capas':'ver desde 2004';rd.onclick=()=>{recDesde2004=!recDesde2004;pintarRecorridos();};
   let rz=$('#rdz');if(!rz){rz=document.createElement('div');rz.id='rdz';rz.className='dzdesde';($('#v-recorridos .exrecab')||$('#rtitulo')).after(rz);}
   rz.innerHTML=botonDz(hojaDeRec(recSel));

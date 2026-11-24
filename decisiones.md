@@ -3618,3 +3618,20 @@ qué se guarda en el navegador y qué sale de tu computadora (sólo lo que le pr
 Probado a 1400 y 393 px: ocho partes, «+» abre y «−» cierra, sin la pared, sin errores. `probar_demo.js` 8 de 8. Capturas
 en `diseno/rediseno_2026-11-24/I/`.
 
+## 2026-11-24 · Rediseño, fase J: el texto
+
+Pedido en clase: «Sacar todo el texto de relleno escrito por IA. Releé cada línea: si no explica un dato ni ayuda a decidir,
+sale. Ejemplo de lo que no tiene sentido: “la búsqueda de 2023–24 sobre su punto más alto de 2004”. Pasame la lista de lo que
+sacás y lo que reescribís».
+
+La lista completa está en `entregas/entrega_4/texto_que_sale.md`. Se releyeron los textos visibles de todas las pantallas con
+un proyecto de ejemplo. La mayor parte del relleno ya había salido en las fases D a I junto con lo que lo mostraba (las cinco
+lecturas rotativas de Tendencias, con el ejemplo de la devolución; las notas y el panel lateral de El ciclo; la pared de Acerca
+de; la frase de cada tarjeta, que repetía sus tres números). En esta fase se reescribieron cinco textos: el párrafo de las
+tarjetas de Mis ciclos (a la mitad); el «?» de Preguntar, que decía que la respuesta la escribe un modelo «con tu clave de
+Groq» y desde el 24/11 ya no es así; dos adelantos de Acerca de que daban vueltas; y el pie, que decía «Última lectura de
+datos: 21.10.2026» cuando Reddit de hombres se bajó el 17/11.
+
+Quedan sin pasar por este criterio las pantallas que no están en el menú (El modelo, Marcas, Retornos, Adiviná): no se llega a
+ellas desde la app. `probar_demo.js` 8 de 8 en los dos anchos; el recorrido de proyectos, 34 de 34.
+

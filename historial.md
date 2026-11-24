@@ -609,6 +609,11 @@ El brief vuelve a una columna centrada, sin la tira de lo elegido y con temporad
 La ficha de cada atributo dice a la vista qué es la etapa, qué es lo punteado y qué es el 100. Acerca de pasa a ocho partes
 de una línea que se abren con «+», con dos nuevas: de dónde es cada dato y qué se guarda en tu navegador.
 
+## v1.87 · 24/11/2026 · El texto, releído
+
+Cada línea de la app, releída: lo que no explica un dato ni ayuda a decidir, sale. La lista de lo que salió y lo que se
+reescribió está en `entregas/entrega_4/texto_que_sale.md`.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

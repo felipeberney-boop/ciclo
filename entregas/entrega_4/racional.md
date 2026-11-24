@@ -217,10 +217,13 @@ la señal no las decide la IA: las deciden el K-means y una regla fija.
 que asesora a varias marcas. Desde el 13/10 es quien diseña, porque la app dejó de mostrar todo y pasó a acompañar una
 decisión de diseño.
 
-**El recorrido.** Tres preguntas → Tendencias → la ficha de un atributo → «Diseñar con…» → Preguntale a CICLO. Está
-paso a paso, con capturas, en el readme, y en papel, una pantalla por hoja, en
-`entregas/entrega_4/disenos_en_papel/`. El papel es del 04/11: no tiene lo que cambió después (El brief, Preguntale a
-CICLO como un solo hilo, la entrada con fotos y la letra del 17/11).
+**El recorrido (desde el 24/11).** El home (qué es, para quién y qué te da, una idea por pantalla) → «Creá tu
+proyecto» (nombre, email, las tres preguntas en una sola pantalla) → Mis ciclos (qué gana y qué pierde terreno, y Mis
+tendencias: los 65 atributos por señal para tu proyecto) → la ficha de un atributo, sólo con lo de tu proyecto →
+«Diseñar con…» → Explorar ciclos (lo mismo para todos, sin señal, con buscador y el recorrido de cualquier atributo) →
+Preguntale a CICLO → El brief. Está paso a paso, con capturas en la compu y en el celular, en el readme
+(`codigo/capturar_recorrido.js`). Hasta el 24/11 el recorrido empezaba con las tres preguntas en pasos y caía en
+Tendencias; así está en papel, una pantalla por hoja, en `entregas/entrega_4/disenos_en_papel/` (del 04/11).
 
 **Por qué la ramificación es así.** Tres preguntas: ¿para quién diseñás? (mujer, hombre, sin género), ¿trabajás para
 una marca o por tu cuenta?, y la categoría. La del vínculo viene de una devolución del 13/10 (`decisiones.md`). En la
@@ -252,9 +255,17 @@ autor sale, aunque la de autor tenga un lead time más corto que high fashion). 
 para una marca, high fashion, contemporary, fast fashion y de autor; por tu cuenta, el tipo de prenda que querés
 diseñar.
 
-Después de las tres preguntas la app abre en Tendencias, con el perfil escrito arriba y «Cambiar» al lado. Quien
-todavía no quiere contestar tiene «Sólo estoy mirando» (10/11): entra con un perfil general, una marca contemporary sin
-género, y Tendencias lo dice.
+Hasta el 24/11, después de las tres preguntas la app abría en Tendencias, con el perfil escrito arriba y «Cambiar» al
+lado. Desde la devolución de la Entrega 4 las tres preguntas son un proyecto con nombre que se guarda en el navegador
+(se pueden tener varios y cambiar entre ellos desde el avatar), y la app abre en Mis ciclos con la línea «PROYECTO
+<nombre> · Mujer · Para una marca · Fast fashion · Editar». Quien todavía no quiere contestar tiene «Sólo estoy mirando»
+(10/11): entra a Explorar ciclos con un perfil general, una marca contemporary sin género, y la pantalla lo dice.
+
+**Qué filtra de verdad el proyecto**, porque la devolución preguntó por qué Rayas mostraba Reddit de hombres en un
+proyecto de mujer. El público cambia sólo Reddit (el foro de mujeres o el de hombres); Google Trends y Vogue no separan
+por género, y la pantalla lo dice. El tipo de marca y el vínculo cambian la señal (los plazos y Esperar o Explorar), no
+los datos. Por eso Mis ciclos muestra la búsqueda de todos con la señal de tu proyecto encima, y Explorar ciclos muestra
+los mismos datos sin señal.
 
 ---
 
@@ -376,7 +387,7 @@ ejemplo de como se veria la web»), sobre una captura de la app que ya estaba en
 | 16/11 | El nombre, otra vez: «Lectura» no decía que es un chat con el que se conversa. Pasa a **Preguntale a CICLO** en el título y **Preguntar** en el menú | Felipe eligió el nombre: es el original, dice que es una conversación, lleva la marca y no envejece como «IA» |
 | 17/11 | La Entrega 4 y su devolución: falta identidad propia, «¿y el racional?», «¿y la info de hombres?». Método pasa a **Acerca de** y resume el racional; Reddit de hombres entra como serie aparte; cada número dice de dónde sale; la dirección 032c se aplica y se revierte en el día; queda la identidad por la letra (Bodoni Moda, fina) y por las fotos (la entrada como una banda de looks, fondo blanco) | Felipe pidió cada cambio y eligió entre propuestas renderizadas; la letra la delegó |
 | 18/11 | La pasarela 2022–2023 estaba mal medida (Vogue dejó de etiquetar): la corrige un clasificador CLIP y el K-means se recalcula. Llega 2024–2025 y entra al modelo. Diseñar con fotos, El ciclo en movimiento, El brief con racha, la ficha de cada fuente, el modelo y los tokens a la vista | El problema de la pasarela lo encontró Claude al ir a buscar 2026; recalcular el modelo y meter 2024–2025 los aprobó o pidió Felipe |
-| 24/11 | La devolución de la Entrega 4 (6/10) abre un rediseño por fases. Primero, la letra del sistema de Apple (la Bodoni, sólo en el logo), una escala tipográfica fija y una paleta por rol. Después: un home sin preguntas, rehecho de cero con una foto de pasarela por idea (de dónde sale cada dato, de qué país y qué período, y qué obtenés), «Crear tu proyecto» en una sola pantalla, un menú sin «Más» con avatar, Mis ciclos (sólo lo del proyecto: 65 atributos por señal, el Reddit de tu público, «Gana y pierde terreno» con eje 0–100 y una línea de tiempo de picos) contra Explorar ciclos (lo mismo para todos, sin señal), Preguntar con la IA andando sin pegar clave (una función de Netlify), El brief centrado, la ficha que dice que no predice, Acerca de corto y el texto releído línea por línea | Felipe pasó la devolución y el orden de la cátedra; Claude armó el plan y la lámina del sistema y lo aplicó a mano, sin revertir los commits del 17/11 |
+| 24/11 | La devolución de la Entrega 4 (6/10) abre un rediseño por fases. Primero, la letra del sistema de Apple (la Bodoni, sólo en el logo), una escala tipográfica fija y una paleta por rol. Después: un home sin preguntas, rehecho de cero con una foto de pasarela por idea (de dónde sale cada dato, de qué país y qué período, y qué obtenés), «Crear tu proyecto» en una sola pantalla, un menú sin «Más» con avatar, Mis ciclos (sólo lo del proyecto: 65 atributos por señal, el Reddit de tu público, «Gana y pierde terreno» con eje 0–100 y una línea de tiempo de picos) contra Explorar ciclos (lo mismo para todos, sin señal), Preguntar con la IA andando sin pegar clave (una función de Netlify), El brief centrado, la ficha que dice que no predice, Acerca de corto y el texto releído línea por línea. Esa misma tarde, una vuelta más (K): el home define en la primera pantalla y avisa que se baja; Mis ciclos en dos secciones a la vista (la gráfica y Mis tendencias); el buscador y las categorías pasan a Explorar, con el recorrido de cualquier atributo; El brief en 2024, el último año con búsqueda medida; la franja de fuentes sólo en el home; y se borra lo que había quedado oculto | Felipe pasó la devolución y el orden de la cátedra; Claude armó el plan y la lámina del sistema y lo aplicó a mano, sin revertir los commits del 17/11 |
 
 **Qué propuso la IA, qué decidió Felipe y por qué.** Las citas de Felipe son textuales, de las conversaciones en Claude
 Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y el 10/11) cuentan como suyas: las eligió y las mandó.

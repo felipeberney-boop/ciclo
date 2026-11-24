@@ -3759,3 +3759,15 @@ imágenes de una entrada que ya no existe. El readme muestra el recorrido nuevo.
 
 Al revisar las capturas apareció un problema: en Explorar la barra fija (buscador y dos filas de chips) tapaba el título del
 recorrido al bajar. En Explorar la barra deja de ser fija; en Mis ciclos ya no hay barra.
+
+## 2026-11-24 · Vuelta L, punto 0: tres arreglos chicos y el racional al día
+
+Felipe aprobó las tres mejoras anotadas al cerrar la vuelta K («aplicá las 3 mejoras de acerca de»):
+- En Acerca de, el adelanto de «Cómo se arma una señal» estaba en negro con otra clase; ahora es gris como los otros siete.
+- Acerca de terminaba con 120 px de aire debajo de la última parte; quedan 40 y la última parte sin línea abajo.
+- «Aceptar el brief» era un botón negro de contorno; es la acción principal de la pantalla y pasa a azul lleno, como pide
+  el sistema (acción = azul).
+
+El racional cuenta el recorrido nuevo (home → crear tu proyecto → Mis ciclos → ficha → Explorar → Preguntar → El brief),
+qué filtra de verdad el proyecto y la vuelta K en la línea de tiempo. PDF regenerado. `probar_demo.js` 8 de 8 en los dos
+anchos. Capturas en `diseno/rediseno_2026-11-24/L/`.

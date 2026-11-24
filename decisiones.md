@@ -3559,3 +3559,22 @@ Las partes que salen quedan ocultas en el HTML (algunas funciones todavía escri
 texto (J). `probar_demo.js` 8 de 8 en los dos anchos; la prueba de Mis ciclos contra Explorar sigue pasando. Capturas en
 `diseno/rediseno_2026-11-24/E/`.
 
+## 2026-11-24 · Rediseño, fase H: El brief
+
+Lo pedido en clase: «Centrado como antes, el veredicto y el puntaje también. Sale “Tu look hasta ahora”. Sin temporadas 2028:
+sólo años que cubren los datos».
+
+**Centrado.** El título, el encargo, cada paso del juego (la pregunta, las opciones y «Volver») y el veredicto (el puntaje,
+la etiqueta, la racha, la frase, cómo sumó cada elección, las tres casas, la frase para copiar y los botones) van en una
+columna centrada, en la computadora y en el celular.
+
+**Sale lo elegido hasta ahora.** «Tu look, hasta ahora» ya no aparecía en Diseñar desde el 18/11; en El brief quedaba su
+resto: la tira de abajo de cada paso con lo ya elegido («Slip · Material · Estampa»). Sale; queda sólo «Volver».
+
+**La temporada.** Decía el horizonte de decisión de cada categoría (`PERFIL.hasta`: «Otoño 2028» para high fashion), un año
+del que no hay ningún dato. Ahora dice 2025, el último año con pasarela; el veredicto sigue saliendo de la búsqueda
+2022→2024, como antes.
+
+`probar_demo.js` 8 de 8 en los dos anchos. Capturas antes y después del encargo, del juego y del veredicto en
+`diseno/rediseno_2026-11-24/H/`.
+

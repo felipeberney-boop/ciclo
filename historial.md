@@ -600,6 +600,10 @@ una variable de entorno. Con el hilo vacío se ven dos ejemplos de conversación
 El ciclo pasa a ser Explorar ciclos, la parte informativa, sin proyecto: filtros y tarjetas para elegir, el recorrido del
 atributo elegido y los tres jeans por corte. Sale el resto.
 
+## v1.85 · 24/11/2026 · El brief, centrado
+
+El brief vuelve a una columna centrada, sin la tira de lo elegido y con temporadas de 2025, el último año con datos.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -2179,6 +2179,31 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app #v-recorridos .three-j:not(#q):not(#qq){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 @media (max-width:820px){.app #v-recorridos .three-j:not(#q):not(#qq){grid-template-columns:1fr}}
 .app #v-recorridos .three-j .lbl:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-h4)!important;font-weight:600!important;text-transform:none!important;letter-spacing:-.01em!important;color:var(--tinta)!important}
+/* ================= El brief, centrado (24/11, rediseño H) · última ================= */
+.app #v-mover #mv:not(#q):not(#qq):not(#qqq):not(#qqqq){display:flex!important;flex-direction:column;align-items:center;margin-left:auto!important;margin-right:auto!important;width:100%;max-width:880px!important}
+.app #v-mover #mv>*{max-width:100%}
+.app #v-mover .bfver:not(#q):not(#qq){display:flex!important;flex-direction:column;align-items:center;width:min(720px,100%)}
+.app #v-mover .bfver>*:not(.bfnota):not(.bfetq){width:100%}
+.app #v-mover :has(> #bfotro):not(#q):not(#qq){display:flex!important;justify-content:center!important;gap:12px;flex-wrap:wrap}
+.app #v-mover .bfbrief:not(#q):not(#qq){display:flex!important;justify-content:center;width:100%}
+.app #v-mover .bfcard:not(#q):not(#qq):not(#qqq):not(#qqqq){margin-left:auto!important;margin-right:auto!important}
+.app #v-mover .bfgrid:not(#q):not(#qq):not(#qqq){width:fit-content;max-width:100%}
+.app #v-mover .vhead p:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+.app #v-mover .vhead:not(#q):not(#qq){text-align:center}
+.app #v-mover .vhead>div{margin:0 auto}
+.app #v-mover .vhead h1:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){text-align:center!important}
+.app #v-mover .vhead .sub:not(#q):not(#qq):not(#qqq){margin-left:auto!important;margin-right:auto!important;text-align:center}
+.app #v-mover #mv{max-width:820px;margin:0 auto}
+.app #v-mover :is(.bfhead,.bfpreg,.bfde,.bfracha,.bftit,.bfpor,.bfjuego,.bfcat):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+.app #v-mover .bfhead{justify-content:center!important;gap:24px}
+.app #v-mover .bfgrid:not(#q):not(#qq){justify-content:center!important;margin-left:auto;margin-right:auto}
+.app #v-mover .bfbarra:not(#q):not(#qq){justify-content:center!important}
+.app #v-mover .bfnota:not(#q):not(#qq){justify-content:center!important;margin-left:auto;margin-right:auto}
+.app #v-mover .bflist:not(#q):not(#qq){margin-left:auto!important;margin-right:auto!important;text-align:left}
+.app #v-mover .bfcasas:not(#q):not(#qq){justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
+.app #v-mover .bffrase:not(#q):not(#qq){margin-left:auto!important;margin-right:auto!important}
+.app #v-mover .bfacc:not(#q):not(#qq),.app #v-mover .bfbtns:not(#q):not(#qq){justify-content:center!important}
+.app #v-mover .bfbrief:not(#q):not(#qq){margin-left:auto!important;margin-right:auto!important}
 </style>
 
 <div class="app">
@@ -5950,7 +5975,7 @@ function bfImg(id,n,img,forma){const fo=FOTO_ATR[id];if(!fo)return `<span class=
   return `<span class="dzimg bfconf"><img class="bfph" loading="lazy"${fotoPos(id)} src="${vogueFoto(fo.f,640)}" alt="${n} en la pasarela: ${fotoCred(fo)}"><span class="pcred">${fotoCred(fo)}</span>${forma?`<span class="psil" aria-hidden="true"><img src="${img}" alt=""></span>`:''}</span>`;}
 const bfNum=d=>(d>0?'+':d<0?'−':'')+Math.abs(Math.round(d));
 function pintarBrief(){const C=$('#mv');if(!C||typeof GREL==='undefined')return;if(!bf)bfNuevo();
-  const B=bfBrief(),P=PERFIL[B.cat],temp=`${BF_TEMP[B.cat]} ${P.hasta}`,f=bfFoto(B);
+  const B=bfBrief(),P=PERFIL[B.cat],temp=`${BF_TEMP[B.cat]} 2025`,f=bfFoto(B); // 24/11: antes era el horizonte de decisión (2026–2028); ahora, el último año con datos
   if(bf.fase==='brief'){
     C.innerHTML=`<div class="bfbrief"><div class="bfcard">
         <div class="bffoto">${f?`<img src="${vogueFoto(f.f,640)}" alt="${f.d}, ${TEMP[f.s]||''} ${f.y}"><span class="bfcred">${B.ref?'Referencia: ':''}${f.d} · ${TEMP[f.s]||''} ${f.y} · Vogue Runway</span>`:''}</div>
@@ -5963,7 +5988,7 @@ function pintarBrief(){const C=$('#mv');if(!C||typeof GREL==='undefined')return;
     C.innerHTML=`<div class="bfhead"><span>${B.casa} · ${temp} · ${B.pn}</span><span>${bf.fase+1} de ${pasos.length}</span></div>
       <h2 class="bfpreg">${tit}</h2>
       <div class="dzgrid bfgrid${ops.length>5?' bf6':''}">${ops.map(([id,n,img])=>`<button type="button" class="dzc bfop" data-id="${id}">${bfImg(id,n,img,bf.fase===0)}<span class="dzb"><span class="dzn">${n}</span></span></button>`).join('')}</div>
-      <div class="bfbarra">${pasos.map(([t],i)=>`<span class="${i<bf.el.length?'si':''}">${i<bf.el.length?bf.el[i].n:t}</span>`).join('<i>·</i>')}${bf.fase?`<button type="button" class="gvolver" id="bfatras">← Volver</button>`:''}</div>`;
+      <div class="bfbarra">${bf.fase?`<button type="button" class="gvolver" id="bfatras">← Volver</button>`:''}</div>`;
     $$('#mv .bfop').forEach(b=>b.onclick=()=>{const o=ops.find(x=>x[0]===b.dataset.id);bf.el[bf.fase]={id:o[0],n:o[1],img:o[2],paso:tit,m:bfMomento(o[0])};
       b.classList.add('on');setTimeout(()=>{bf.fase=bf.fase+1<pasos.length?bf.fase+1:'veredicto';pintarBrief();},260);});
     if($('#bfatras'))$('#bfatras').onclick=()=>{bf.fase--;bf.el.length=bf.fase;pintarBrief();};return;}

@@ -3789,3 +3789,31 @@ predicción, y CICLO no predice. La 3 deja afuera salir. La 5 es un eslogan en d
 etiqueta, la bajada «CICLO cruza…», «Una etapa para cada atributo. No una predicción.», los tres pasos y las fuentes.
 
 `probar_demo.js` 8 de 8 en los dos anchos. Capturas `L/1_antes_*` y `L/1_despues_*`.
+
+## 2026-11-24 · Vuelta L, punto 2: Mis ciclos más corto, y qué filtra de verdad la gráfica
+
+Pedido: «GANA TERRENO / PIERDE TERRENO: confirmame que están calculados con los filtros del proyecto (Mujer · para una
+marca · fast fashion) y que cambian si cambio el proyecto (probalo con Hombre · por mi cuenta · nicho…). En la pantalla,
+una línea chica que diga con qué filtros está hecho. Más chicos y más concisos… Sacá el texto explicativo de las
+tarjetas… Las fotos tienen que aparecer mucho más arriba».
+
+**La respuesta honesta: no cambian.** Probado con los dos proyectos: los dos gráficos, sus diez atributos y la frase
+(«29 ganaron terreno y 32 lo perdieron») son idénticos, porque salen de la búsqueda mundial de Google, que no separa por
+público ni por tipo de marca. Incluso las señales de esos diez son iguales (los cinco que más suben dan Entrar y los que
+más caen dan Salir con cualquier perfil). Lo que sí cambia con el proyecto está debajo: Mis tendencias pasa de ▲ Entrar 24
+· ■ Esperar 12 · ▼ Salir 29 (Mujer · para una marca · fast fashion) a ▲ Entrar 20 · ■ Explorar 12 · ▼ Salir 33 (Hombre ·
+por mi cuenta · de autor), y el Reddit de cada tarjeta pasa del foro de mujeres al de hombres. No se inventó un filtro:
+la línea chica que pidió Felipe dice exactamente eso («Hecho con la búsqueda mundial de Google, que no separa por público
+ni por tipo de marca: es igual para todos los proyectos. Con tu proyecto (…) cambia la señal de cada uno»). Si se quiere
+que la gráfica cambie de verdad con el público, la única fuente que lo permite es Reddit (un foro de mujeres y uno de
+hombres): queda como propuesta, no se hizo.
+
+**Más corto.** La conclusión pasa a una frase y el «+50» a una línea en la misma frase. Salen el rótulo de las listas,
+la línea «Los cinco que más se movieron…» y el párrafo arriba de las tarjetas («Cada tarjeta es un atributo…»). Los
+gráficos bajan de 300 a 165 px de alto y, en la compu, van lado a lado (gana a la izquierda, pierde a la derecha); en el
+celular siguen uno debajo del otro. Antes Felipe había pedido uno debajo del otro: en la compu se cambió porque el pedido
+de esta vuelta es que las fotos lleguen antes, y apilados la primera tarjeta seguía fuera de la pantalla.
+
+**Resultado:** la primera tarjeta pasa de y ≈ 1.780 a y ≈ 850 px en la compu (se ve sin bajar en una pantalla de 900) y
+de ≈ 2.400 a ≈ 1.275 en el celular. Queda igual el encabezado del proyecto, «Mis tendencias» y los grupos Entrar / Esperar
+/ Salir. `probar_demo.js` 8 de 8 en los dos anchos. Capturas `L/2_despues_{mujer_marca_fast,hombre_propia_nicho}_*`.

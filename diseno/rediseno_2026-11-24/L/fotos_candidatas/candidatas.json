@@ -1,0 +1,1464 @@
+{
+ "encaje": [
+  {
+   "f": "55c651c008298d8be2275846/_LKV2536.jpg",
+   "d": "Badgley Mischka",
+   "s": "S",
+   "y": 2015,
+   "c": 0.3441
+  },
+  {
+   "f": "55c650fb08298d8be2196c5e/HER_0721.1366x2048.JPG",
+   "d": "Akris",
+   "s": "S",
+   "y": 2013,
+   "c": 0.3428
+  },
+  {
+   "f": "55c6510308298d8be219fc28/00370fullscreen.jpg",
+   "d": "BCBG Max Azria",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3412
+  },
+  {
+   "f": "55c650a808298d8be2140379/00300fullscreen.jpg",
+   "d": "Givenchy",
+   "s": "F",
+   "y": 2010,
+   "c": 0.3386
+  },
+  {
+   "f": "59d115ab9322714e6854b420/_LLL8831.jpg",
+   "d": "Akris",
+   "s": "S",
+   "y": 2017,
+   "c": 0.3372
+  },
+  {
+   "f": "55c651c608298d8be227ca61/NIN_0722.jpg",
+   "d": "Nina Ricci",
+   "s": "S",
+   "y": 2015,
+   "c": 0.3372
+  },
+  {
+   "f": "55c650d208298d8be216bfa8/00380fullscreen.jpg",
+   "d": "Valentino",
+   "s": "S",
+   "y": 2012,
+   "c": 0.337
+  },
+  {
+   "f": "5a8237764bab8b3e87d7955d/03-area-fall-2018.jpg",
+   "d": "Area",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3369
+  },
+  {
+   "f": "55c6516f08298d8be2218774/54fullscreen.jpg",
+   "d": "Chanel",
+   "s": "P",
+   "y": 2011,
+   "c": 0.3349
+  },
+  {
+   "f": "55c6512f08298d8be21d155c/Valentino_034_1366.1366x2048.JPG",
+   "d": "Valentino",
+   "s": "P",
+   "y": 2014,
+   "c": 0.3325
+  },
+  {
+   "f": "55c651b708298d8be226aa73/26fullscreen.jpg",
+   "d": "Stella McCartney",
+   "s": "P",
+   "y": 2010,
+   "c": 0.3322
+  },
+  {
+   "f": "63f8e9ec079237f39a10373c/00044-sportmax-fall-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Sportmax",
+   "s": "F",
+   "y": 2023,
+   "c": 0.3321
+  }
+ ],
+ "corset": [
+  {
+   "f": "604510c5fa01490fcaaab0e6/00024-danielle-frankel-RTW-Fall-21.jpg",
+   "d": "Danielle Frankel",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3342
+  },
+  {
+   "f": "55c650dc08298d8be2175d77/00270fullscreen.jpg",
+   "d": "Catherine Malandrino",
+   "s": "F",
+   "y": 2012,
+   "c": 0.3293
+  },
+  {
+   "f": "63725e98c243ffcb40136011/00021-de-petsa-fall-22-ready-to-wear-paris-credit-verity-smiley-jones-brand.jpg",
+   "d": "Di Petsa",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3266
+  },
+  {
+   "f": "62828fa3d7032f980fe8e6cd/00006-academy-of-art-university-fall-2022-credit-brand.jpg",
+   "d": "Academy of Art University",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3245
+  },
+  {
+   "f": "613e89eff52078b5c3bb9fac/00034-Puppets-and-Puppets-RTW-Spring-22-New-York-credit-Gorunway.jpg",
+   "d": "Puppets and Puppets",
+   "s": "S",
+   "y": 2022,
+   "c": 0.3238
+  },
+  {
+   "f": "603505ed116512a7f1f277ce/00029-Fashion-East-Fall-21-NENSI.jpg",
+   "d": "Fashion East",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3216
+  },
+  {
+   "f": "632ccd3c5057422b317d0d57/00027-gcds-spring-2023-ready-to-wear-credit-gorunway.JPG",
+   "d": "GCDS",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3208
+  },
+  {
+   "f": "5e2868fdf767d2000843d4ef/_FIO0145.jpg",
+   "d": "Julie de Libran",
+   "s": "S",
+   "y": 2020,
+   "c": 0.319
+  },
+  {
+   "f": "60376bcb3b8e9b3b1209772d/00024-BLUMARINE-FALL-21-RTW.jpg",
+   "d": "Blumarine",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3174
+  },
+  {
+   "f": "602abeb06676ba890be777d3/00019-staud-RTW-fall-21.jpg",
+   "d": "Staud",
+   "s": "F",
+   "y": 2021,
+   "c": 0.315
+  },
+  {
+   "f": "6212733ffb709e331ac23198/00010-Christopher-Kane-Fall-22-rtw-credit-brand.jpg",
+   "d": "Christopher Kane",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3135
+  },
+  {
+   "f": "5c699c023abfbb2d520e821b/_ALE0568.jpg",
+   "d": "Burberry",
+   "s": "F",
+   "y": 2019,
+   "c": 0.3133
+  }
+ ],
+ "calzado_zapatillas": [
+  {
+   "f": "55c650ee08298d8be2189650/00430fullscreen.jpg",
+   "d": "Issey Miyake",
+   "s": "S",
+   "y": 2013,
+   "c": 0.3185
+  },
+  {
+   "f": "627e19959db167d672677ecd/00021-jordan-dalah-australia-resort-2023-credit-indigital-via-brand.jpg",
+   "d": "Jordan Dalah",
+   "s": "R",
+   "y": 2023,
+   "c": 0.3173
+  },
+  {
+   "f": "57d0cab908b2727e4d2ed43e/_ARC0305.jpg",
+   "d": "VFiles",
+   "s": "S",
+   "y": 2016,
+   "c": 0.3164
+  },
+  {
+   "f": "60d890d2ba99f7b4e05eb366/00027-Y-Project-Mens-SS22.jpg",
+   "d": "Y/Project",
+   "s": "S",
+   "y": 2022,
+   "c": 0.3126
+  },
+  {
+   "f": "575d6d12c927c89a56ad3a0e/_RAE0176.jpg",
+   "d": "Raeburn",
+   "s": "S",
+   "y": 2016,
+   "c": 0.3113
+  },
+  {
+   "f": "5f9c3a825174d25dadea530e/00020-LACOSTE-MENS-SPRING-21.jpg",
+   "d": "Lacoste",
+   "s": "S",
+   "y": 2021,
+   "c": 0.3098
+  },
+  {
+   "f": "55c650ae08298d8be2144f14/00390fullscreen.jpg",
+   "d": "Iceberg",
+   "s": "S",
+   "y": 2010,
+   "c": 0.3094
+  },
+  {
+   "f": "62068fc3bbc90c806268d123/00015-Tia-Adeola-New-York-Fall-2022-RTW-Credit-Brand.jpg",
+   "d": "Tia Adeola",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3089
+  },
+  {
+   "f": "55c6511808298d8be21b75f6/_ON_0422.1366x2048.JPG",
+   "d": "Iceberg",
+   "s": "S",
+   "y": 2014,
+   "c": 0.3086
+  },
+  {
+   "f": "5aafc26ad3a5026d7da8e34f/freik-219.jpg",
+   "d": "Freiknock",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3084
+  },
+  {
+   "f": "55c650c708298d8be216042e/018fullscreen.jpg",
+   "d": "Richard Chai Love",
+   "s": "S",
+   "y": 2012,
+   "c": 0.3078
+  },
+  {
+   "f": "55c651a908298d8be225c0b3/00080fullscreen.jpg",
+   "d": "Proenza Schouler",
+   "s": "S",
+   "y": 2010,
+   "c": 0.3068
+  }
+ ],
+ "enteritos_jardinero": [
+  {
+   "f": "59b0975b7228fa59037ec2c5/_ARC0728.jpg",
+   "d": "R13",
+   "s": "S",
+   "y": 2017,
+   "c": 0.3805
+  },
+  {
+   "f": "56f45cbf2e893fef66fd1ba4/16FWJSPY66.jpg",
+   "d": "SJYP",
+   "s": "F",
+   "y": 2016,
+   "c": 0.3636
+  },
+  {
+   "f": "5a7c943a6d76a95f4b1c5cae/03-oak-fall-2018.jpg",
+   "d": "Oak",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3596
+  },
+  {
+   "f": "5c050e1d1235332cfb17cca4/00025-dsquared2-milan-pre-fall-19.jpg",
+   "d": "Dsquared2",
+   "s": "P",
+   "y": 2019,
+   "c": 0.3588
+  },
+  {
+   "f": "5e2868fdf767d2000843d4ef/_FIO0145.jpg",
+   "d": "Julie de Libran",
+   "s": "S",
+   "y": 2020,
+   "c": 0.3583
+  },
+  {
+   "f": "613e42201ce93cbe8a27f311/00011-Sandy-Liang-Spring-22-RTW-New-York-credit-gorunway.jpg",
+   "d": "Sandy Liang",
+   "s": "S",
+   "y": 2022,
+   "c": 0.357
+  },
+  {
+   "f": "63249c4c32b60f6ccb28725d/00036-r13-spring-2023-ready-to-wear-credit-brand.jpg",
+   "d": "R13",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3567
+  },
+  {
+   "f": "55c6511508298d8be21b363a/Zambesi_018_1366.1366x2048.JPG",
+   "d": "Zambesi",
+   "s": "F",
+   "y": 2013,
+   "c": 0.355
+  },
+  {
+   "f": "5b90aa8d1732602dd6d454d8/_DSC1767.jpg",
+   "d": "VFiles",
+   "s": "S",
+   "y": 2019,
+   "c": 0.3505
+  },
+  {
+   "f": "5e552fc735804f0008d3b8c4/_ALE0242.jpg",
+   "d": "Christian Dior",
+   "s": "F",
+   "y": 2020,
+   "c": 0.3468
+  },
+  {
+   "f": "5895d28112a7b1df212ca4d4/KCH_2771.jpg",
+   "d": "Flow the Label",
+   "s": "F",
+   "y": 2017,
+   "c": 0.3467
+  },
+  {
+   "f": "55c650c508298d8be215dff4/27fullscreen.jpg",
+   "d": "Iceberg",
+   "s": "R",
+   "y": 2012,
+   "c": 0.3429
+  }
+ ],
+ "fleece": [
+  {
+   "f": "58917a28ce34fb453af7b0d0/493A3341.jpg",
+   "d": "Boss",
+   "s": "F",
+   "y": 2017,
+   "c": 0.3323
+  },
+  {
+   "f": "5cf7d896747ce1ad12fb9469/00088-balenciaga-pre-fall-19.jpg",
+   "d": "Balenciaga",
+   "s": "P",
+   "y": 2019,
+   "c": 0.3301
+  },
+  {
+   "f": "55c6513208298d8be21d444a/TSE_017_1366.1366x2048.JPG",
+   "d": "TSE",
+   "s": "F",
+   "y": 2014,
+   "c": 0.3283
+  },
+  {
+   "f": "5a9194401a71770bab842da6/03-piazza-sempione-fall-2018-rtw.jpg",
+   "d": "Piazza Sempione",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3244
+  },
+  {
+   "f": "55c650b508298d8be214c886/Oak-014-1366.jpg",
+   "d": "Oak",
+   "s": "F",
+   "y": 2015,
+   "c": 0.3232
+  },
+  {
+   "f": "58c87f54d9843061e6b549bf/07-tosia-fall-17-lookbook.jpg",
+   "d": "Tosia",
+   "s": "F",
+   "y": 2017,
+   "c": 0.3223
+  },
+  {
+   "f": "55c6513808298d8be21db33b/KIM_8746.1366x2048.JPG",
+   "d": "Les Copains",
+   "s": "F",
+   "y": 2014,
+   "c": 0.3205
+  },
+  {
+   "f": "584869438499d75e5201225f/07-dion-lee-pre-fall-2017.jpg",
+   "d": "Dion Lee",
+   "s": "P",
+   "y": 2016,
+   "c": 0.3204
+  },
+  {
+   "f": "55c650d708298d8be2171090/00340fullscreen.jpg",
+   "d": "John Richmond",
+   "s": "F",
+   "y": 2012,
+   "c": 0.3204
+  },
+  {
+   "f": "5c65bc4e9dc93d2d50b0cda4/00031-robert-rodriguez-fall-2019-ready-to-wear-credit-vince-aung.jpg",
+   "d": "Robert Rodriguez",
+   "s": "F",
+   "y": 2019,
+   "c": 0.3184
+  },
+  {
+   "f": "55c6511508298d8be21b40d9/MarcByMarcJacobs_025_1366.1366x2048.JPG",
+   "d": "Marc by Marc Jacobs",
+   "s": "R",
+   "y": 2014,
+   "c": 0.3183
+  },
+  {
+   "f": "6058eef96900e763b53f1a49/00002-Stefan-Cooke-Fall-21.jpg",
+   "d": "Stefan Cooke",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3182
+  }
+ ],
+ "poliester": [
+  {
+   "f": "58af8d740e203128d17f51ba/22-attico-fall-17-lookbook.jpg",
+   "d": "The Attico",
+   "s": "F",
+   "y": 2017,
+   "c": 0.3634
+  },
+  {
+   "f": "588bd6aadeeab719087b6888/04-paco-rabanne-pre-fall-2017.jpg",
+   "d": "Paco Rabanne",
+   "s": "P",
+   "y": 2016,
+   "c": 0.3571
+  },
+  {
+   "f": "5d767787e1bb8c000982e3d6/00015-Rebecca-Taylor-Spring-2020-Ready-to-Wear.jpg",
+   "d": "Rebecca Taylor",
+   "s": "S",
+   "y": 2020,
+   "c": 0.3526
+  },
+  {
+   "f": "633b1189a027cd7dbb0e8742/00035-stella-mccartney-spring-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Stella McCartney",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3499
+  },
+  {
+   "f": "61446e5e0f46f7b8ee363399/00011-Saul-Nash-Mens-SS22-London-credit-gorunway.jpg",
+   "d": "Saul Nash",
+   "s": "S",
+   "y": 2022,
+   "c": 0.3473
+  },
+  {
+   "f": "5a660565e000223878464214/04-Pigalle-Fall-18-Mens.jpg",
+   "d": "Pigalle",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3452
+  },
+  {
+   "f": "5a527257b50b330b5c897b14/_BON0125.jpg",
+   "d": "Wales Bonner",
+   "s": "F",
+   "y": 2018,
+   "c": 0.345
+  },
+  {
+   "f": "5d875777ce68e90008ff57c0/_ALE0259.jpg",
+   "d": "Boss",
+   "s": "S",
+   "y": 2020,
+   "c": 0.3441
+  },
+  {
+   "f": "5f68a40c9df3f2a333eabfd9/00002-AHLUWALIA-MENSWEAR-SPRING-21.jpg",
+   "d": "Ahluwalia",
+   "s": "S",
+   "y": 2021,
+   "c": 0.3434
+  },
+  {
+   "f": "618218b4836042f4ca5bde2c/Look_042.jpg",
+   "d": "Gucci",
+   "s": "S",
+   "y": 2022,
+   "c": 0.3424
+  },
+  {
+   "f": "594bb8f4c7b924579359e182/_AG11173.jpg",
+   "d": "Ami",
+   "s": "S",
+   "y": 2017,
+   "c": 0.3423
+  },
+  {
+   "f": "632277330a8e0a2d00bab62b/00018-willy-chavarria-spring-2023-menswear-credit-gorunway.jpg",
+   "d": "Willy Chavarria",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3417
+  }
+ ],
+ "elastano": [
+  {
+   "f": "60be4029deeade9d50fa68c8/00009-Victor-Glemaud-Resort-2022-credit-brand.jpg",
+   "d": "Victor Glemaud",
+   "s": "R",
+   "y": 2022,
+   "c": 0.3444
+  },
+  {
+   "f": "602abeb06676ba890be777d3/00019-staud-RTW-fall-21.jpg",
+   "d": "Staud",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3432
+  },
+  {
+   "f": "6337330512d49c1b07d34cff/00024-victoria-beckham-spring-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Victoria Beckham",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3355
+  },
+  {
+   "f": "62a0c79b804de350b0f0be6e/00013-mugler-spring-2022-ready-to-wear-credit-brand.jpg",
+   "d": "Mugler",
+   "s": "S",
+   "y": 2022,
+   "c": 0.333
+  },
+  {
+   "f": "5d0a8722d4c3e946bc210d75/00014-Mugler-Resort-2020-credit-Arnaud-Lajeunie.jpg",
+   "d": "Mugler",
+   "s": "R",
+   "y": 2020,
+   "c": 0.3316
+  },
+  {
+   "f": "602c86826b77cd09bd36f8ac/00025-Kim-Shui-Fall-21.jpg",
+   "d": "Kim Shui",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3308
+  },
+  {
+   "f": "63e59c261226a4d7f32e38cc/00019-christian-siriano-fall-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Christian Siriano",
+   "s": "F",
+   "y": 2023,
+   "c": 0.3308
+  },
+  {
+   "f": "5ad670b179a08f0efd0f7339/14-threeasfour-cuba-fall-2018.jpg",
+   "d": "Threeasfour",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3302
+  },
+  {
+   "f": "620b88b85e5a0a25f1c2bd98/00033-Tory-Burch-Fall-2022-Credit-GoRunway.jpg",
+   "d": "Tory Burch",
+   "s": "F",
+   "y": 2022,
+   "c": 0.33
+  },
+  {
+   "f": "55c651cd08298d8be2284ee1/00550fullscreen.jpg",
+   "d": "Paul & Joe",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3291
+  },
+  {
+   "f": "6208378957489203b61af4df/00013-Jason-Wu-Collection-Fall-22-RTW-New-York-credit-Alessandro-Lucioni-Gorunway.jpg",
+   "d": "Jason Wu Collection",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3286
+  },
+  {
+   "f": "6207fbfd0009ec3af7e4f63e/00024-St-John-Fall-22-credit-brand.jpg",
+   "d": "St. John",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3284
+  }
+ ],
+ "neoprene": [
+  {
+   "f": "6217ab0e583e407b99593973/00014-mm6-maison-margiela-fall-22-ready-to-wear-credit-filippo-fior-gorunway.jpg",
+   "d": "MM6 Maison Margiela",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3529
+  },
+  {
+   "f": "5947ef509d94cb14039aa3a8/12-nomia-resort-2018.jpg",
+   "d": "Nomia",
+   "s": "R",
+   "y": 2017,
+   "c": 0.3505
+  },
+  {
+   "f": "60421d4b43a886d2043e560a/00040-Elie-Saab-Fall-21.jpg",
+   "d": "Elie Saab",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3459
+  },
+  {
+   "f": "60be4029deeade9d50fa68c8/00009-Victor-Glemaud-Resort-2022-credit-brand.jpg",
+   "d": "Victor Glemaud",
+   "s": "R",
+   "y": 2022,
+   "c": 0.3429
+  },
+  {
+   "f": "602abeb06676ba890be777d3/00019-staud-RTW-fall-21.jpg",
+   "d": "Staud",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3426
+  },
+  {
+   "f": "55c6511408298d8be21b2b16/A_Degree_Fahrenheit_002_1366.1366x2048.JPG",
+   "d": "A Degree Fahrenheit",
+   "s": "F",
+   "y": 2013,
+   "c": 0.3413
+  },
+  {
+   "f": "631d04782d6252bb36749c93/00006-victor-glemaud-spring-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Victor Glemaud",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3397
+  },
+  {
+   "f": "627e19959db167d672677ecd/00021-jordan-dalah-australia-resort-2023-credit-indigital-via-brand.jpg",
+   "d": "Jordan Dalah",
+   "s": "R",
+   "y": 2023,
+   "c": 0.3397
+  },
+  {
+   "f": "55c651cd08298d8be22853f2/00190fullscreen.jpg",
+   "d": "Gareth Pugh",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3389
+  },
+  {
+   "f": "605b067515ee3dfc8ba6f977/00016-RAF-SIMONS-FALL-21.jpg",
+   "d": "Raf Simons",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3385
+  },
+  {
+   "f": "6224f85ed608f0964f4fd386/00003-balenciaga-fall-2022-ready-to-wear-paris-credit-brand.jpg",
+   "d": "Balenciaga",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3381
+  },
+  {
+   "f": "6324c939a50112cdb12eaa3b/00020-mark-fast-spring-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Mark Fast",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3375
+  }
+ ],
+ "gasa": [
+  {
+   "f": "55c6512b08298d8be21cca6b/00330fullscreen.jpg",
+   "d": "Tao",
+   "s": "S",
+   "y": 2011,
+   "c": 0.336
+  },
+  {
+   "f": "63e8d999e8301171039087a1/00007-anna-sui-fall-2023-ready-to-wear-details-credit-richie-lee-harris.jpg",
+   "d": "Anna Sui",
+   "s": "F",
+   "y": 2023,
+   "c": 0.3323
+  },
+  {
+   "f": "55c6512908298d8be21c9d6c/00770fullscreen.jpg",
+   "d": "Emporio Armani",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3307
+  },
+  {
+   "f": "5804fcc034023b05331dd118/LarisaLOBANOVA_38.jpg",
+   "d": "Larisa Lobanova",
+   "s": "S",
+   "y": 2016,
+   "c": 0.3305
+  },
+  {
+   "f": "55c651c308298d8be2279656/BRA_0331.jpg",
+   "d": "Angelos Bratis",
+   "s": "S",
+   "y": 2015,
+   "c": 0.3304
+  },
+  {
+   "f": "55c6510408298d8be21a0073/00350fullscreen.jpg",
+   "d": "Ports 1961",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3298
+  },
+  {
+   "f": "59fde45c8b86ae229b942471/EJ__4182.JPG",
+   "d": "Lado Bokuchava",
+   "s": "S",
+   "y": 2017,
+   "c": 0.3295
+  },
+  {
+   "f": "55c651cd08298d8be22843eb/00200fullscreen.jpg",
+   "d": "John Galliano",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3294
+  },
+  {
+   "f": "55c650ed08298d8be218800a/014fullscreen.jpg",
+   "d": "Viktor & Rolf",
+   "s": "R",
+   "y": 2013,
+   "c": 0.3294
+  },
+  {
+   "f": "55c6513208298d8be21d411d/KIM_0203.1366x2048.JPG",
+   "d": "Viktor & Rolf",
+   "s": "S",
+   "y": 2014,
+   "c": 0.3294
+  },
+  {
+   "f": "55c6510508298d8be21a17e7/00060fullscreen.jpg",
+   "d": "Marc Jacobs",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3286
+  },
+  {
+   "f": "55c651a408298d8be2256d93/46fullscreen.jpg",
+   "d": "Bottega Veneta",
+   "s": "R",
+   "y": 2010,
+   "c": 0.3283
+  }
+ ],
+ "tul": [
+  {
+   "f": "55c651c208298d8be2277ef9/NCK_1631.jpg",
+   "d": "Marchesa",
+   "s": "S",
+   "y": 2015,
+   "c": 0.3356
+  },
+  {
+   "f": "60353764116512a7f1f27859/00005-NO-21-RTW-fall-21.jpg",
+   "d": "No. 21",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3334
+  },
+  {
+   "f": "55c6514408298d8be21e6d7b/Camilla_and_Marc_009_1366.1366x2048.JPG",
+   "d": "Camilla and Marc",
+   "s": "R",
+   "y": 2015,
+   "c": 0.3328
+  },
+  {
+   "f": "63383274c32fec0ac42eb376/00063-vetements-spring-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Vetements",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3325
+  },
+  {
+   "f": "61e5bbfab1c1870aceac9323/00009-Giambattista-Valli-Couture-Spring-22-credit-brand.jpg",
+   "d": "Giambattista Valli",
+   "s": "S",
+   "y": 2022,
+   "c": 0.3305
+  },
+  {
+   "f": "5a7df21e1c7a764f97cd86b5/_ARC0647.jpg",
+   "d": "Bibhu Mohapatra",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3299
+  },
+  {
+   "f": "62ff7c1b0924a50b0859db59/00025-moravy-spring-2023-ready-to-wear-mexico-credit-israel-esparza-mbfw.jpg",
+   "d": "Moravy",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3295
+  },
+  {
+   "f": "55c650aa08298d8be21414d2/50fullscreen.jpg",
+   "d": "Christian Dior",
+   "s": "R",
+   "y": 2011,
+   "c": 0.3288
+  },
+  {
+   "f": "63ceffc42ed1b4df1a4ecc9e/00033-giambattista-valli-spring-2023-couture-credit-gorunway.jpg",
+   "d": "Giambattista Valli",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3285
+  },
+  {
+   "f": "5f0300f725ecc6bbb2e921e6/00006-GIAMBATTISTA-VALLI-COUTURE-FALL-20.jpg",
+   "d": "Giambattista Valli",
+   "s": "F",
+   "y": 2020,
+   "c": 0.3278
+  },
+  {
+   "f": "55f0f0a2cf92660346581d4a/_AG11720.jpg",
+   "d": "VFiles",
+   "s": "S",
+   "y": 2016,
+   "c": 0.3276
+  },
+  {
+   "f": "5b9d0b9c35d1b930650f2181/_LLL0299.jpg",
+   "d": "Molly Goddard",
+   "s": "S",
+   "y": 2019,
+   "c": 0.3269
+  }
+ ],
+ "organza": [
+  {
+   "f": "63da88235f5efe969434ed8a/00014-selam-fessahaye-fall-2023-ready-to-wear-copenhagen-credit-gorunway.jpg",
+   "d": "Selam Fessahaye",
+   "s": "F",
+   "y": 2023,
+   "c": 0.3494
+  },
+  {
+   "f": "55c6512908298d8be21c9d6c/00770fullscreen.jpg",
+   "d": "Emporio Armani",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3431
+  },
+  {
+   "f": "5cfe2e2e78a2827f0d0459ad/_ALE0601.jpg",
+   "d": "Craig Green",
+   "s": "S",
+   "y": 2020,
+   "c": 0.3396
+  },
+  {
+   "f": "63e8d999e8301171039087a1/00007-anna-sui-fall-2023-ready-to-wear-details-credit-richie-lee-harris.jpg",
+   "d": "Anna Sui",
+   "s": "F",
+   "y": 2023,
+   "c": 0.3392
+  },
+  {
+   "f": "63383274c32fec0ac42eb376/00063-vetements-spring-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Vetements",
+   "s": "S",
+   "y": 2023,
+   "c": 0.3341
+  },
+  {
+   "f": "63d92dcd04605e2e780f9fd7/00024-mugler-fall-2022-ready-to-wear-credit-gorunway.jpg",
+   "d": "Mugler",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3334
+  },
+  {
+   "f": "5af9876c4d393e7dd4d5a193/_LLL0336.jpg",
+   "d": "Karla Spetic",
+   "s": "R",
+   "y": 2018,
+   "c": 0.3334
+  },
+  {
+   "f": "5804fcc034023b05331dd118/LarisaLOBANOVA_38.jpg",
+   "d": "Larisa Lobanova",
+   "s": "S",
+   "y": 2016,
+   "c": 0.3321
+  },
+  {
+   "f": "55c6512b08298d8be21cca6b/00330fullscreen.jpg",
+   "d": "Tao",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3317
+  },
+  {
+   "f": "5bb7894be4d87a2dde617385/_EMP0114.jpg",
+   "d": "Emporio Armani",
+   "s": "S",
+   "y": 2019,
+   "c": 0.3304
+  },
+  {
+   "f": "624ef9107891d933ce106a60/00022-moises-nieto-madrid-fall-2022-ready-to-wear-credit-brand.jpg",
+   "d": "Moisés Nieto",
+   "s": "F",
+   "y": 2022,
+   "c": 0.3295
+  },
+  {
+   "f": "55c651a808298d8be225b9d7/00250fullscreen.jpg",
+   "d": "Michael Kors Collection",
+   "s": "S",
+   "y": 2010,
+   "c": 0.3287
+  }
+ ],
+ "bordado": [
+  {
+   "f": "61697d94578d5659b47d0520/00011-Sea-Spring-22-RTW-New-York-credit-brand.jpg",
+   "d": "Sea",
+   "s": "S",
+   "y": 2022,
+   "c": 0.3536
+  },
+  {
+   "f": "55c651d708298d8be2291540/MARC0226.jpg",
+   "d": "Libertine",
+   "s": "F",
+   "y": 2015,
+   "c": 0.3424
+  },
+  {
+   "f": "55c651cd08298d8be2284ee1/00550fullscreen.jpg",
+   "d": "Paul & Joe",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3366
+  },
+  {
+   "f": "5e5bc98956da1c0008bf796a/_ALE0655.jpg",
+   "d": "Balenciaga",
+   "s": "F",
+   "y": 2020,
+   "c": 0.335
+  },
+  {
+   "f": "55c651b008298d8be2264ed9/00230fullscreen.jpg",
+   "d": "Betsey Johnson",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3341
+  },
+  {
+   "f": "5f6b806c989e0e9a1779fd32/_ALE0568.jpg",
+   "d": "Dolce & Gabbana",
+   "s": "S",
+   "y": 2021,
+   "c": 0.333
+  },
+  {
+   "f": "61e9d6652211a4aa04cf4c89/00034-Sea-Pre-Fall-22-credit-brand.jpg",
+   "d": "Sea",
+   "s": "P",
+   "y": 2022,
+   "c": 0.3321
+  },
+  {
+   "f": "55c651cd08298d8be2284dd5/00270fullscreen.jpg",
+   "d": "Saint Laurent",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3321
+  },
+  {
+   "f": "55c6511908298d8be21b8555/MARC0638.1366x2048.JPG",
+   "d": "3.1 Phillip Lim",
+   "s": "S",
+   "y": 2014,
+   "c": 0.332
+  },
+  {
+   "f": "617fb914842b6d00d5ee6c06/00035-Tae-Ashida-Tokyo-Spring-22-credit-brand.jpg",
+   "d": "Tae Ashida",
+   "s": "S",
+   "y": 2022,
+   "c": 0.3303
+  },
+  {
+   "f": "55c6515008298d8be21f54b4/00350fullscreen.jpg",
+   "d": "Chanel",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3302
+  },
+  {
+   "f": "55c650d108298d8be216a39e/00300fullscreen.jpg",
+   "d": "Andreas Kronthaler for Vivienne Westwood",
+   "s": "S",
+   "y": 2012,
+   "c": 0.3293
+  }
+ ],
+ "volados": [
+  {
+   "f": "55c6512b08298d8be21cca6b/00330fullscreen.jpg",
+   "d": "Tao",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3274
+  },
+  {
+   "f": "55c651a908298d8be225cf94/00080fullscreen.jpg",
+   "d": "Richard Nicoll",
+   "s": "S",
+   "y": 2010,
+   "c": 0.3267
+  },
+  {
+   "f": "59e8b18172cddd6cf07676fb/BLINDNESS-F001.jpg",
+   "d": "Blindness",
+   "s": "S",
+   "y": 2017,
+   "c": 0.326
+  },
+  {
+   "f": "55c651cd08298d8be228557d/00230fullscreen.jpg",
+   "d": "Alexander McQueen",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3254
+  },
+  {
+   "f": "5d4affb27078ab0008376c78/_FIO0284.jpg",
+   "d": "Cecilie Bahnsen",
+   "s": "S",
+   "y": 2020,
+   "c": 0.325
+  },
+  {
+   "f": "5b99a3e96378762df39e7be9/_JAC0418.jpg",
+   "d": "Marc Jacobs",
+   "s": "S",
+   "y": 2019,
+   "c": 0.3249
+  },
+  {
+   "f": "60f9a651404550f37f8c2fe4/00002-Greta-Constantine-Resort-2022-Credit-Carlos-and-Alyse.jpg",
+   "d": "Greta Constantine",
+   "s": "R",
+   "y": 2022,
+   "c": 0.3246
+  },
+  {
+   "f": "55c651a608298d8be225916b/00260fullscreen.jpg",
+   "d": "Ruffian",
+   "s": "S",
+   "y": 2010,
+   "c": 0.3234
+  },
+  {
+   "f": "55c651b108298d8be226643b/00180fullscreen.jpg",
+   "d": "Milly",
+   "s": "F",
+   "y": 2011,
+   "c": 0.323
+  },
+  {
+   "f": "55c6510508298d8be21a17e7/00060fullscreen.jpg",
+   "d": "Marc Jacobs",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3228
+  },
+  {
+   "f": "55c651a508298d8be2257825/19fullscreen.jpg",
+   "d": "Monique Lhuillier",
+   "s": "R",
+   "y": 2010,
+   "c": 0.3227
+  },
+  {
+   "f": "56004f88925cc19607f65188/_ARC0349.jpg",
+   "d": "Giles Deacon",
+   "s": "S",
+   "y": 2016,
+   "c": 0.3225
+  }
+ ],
+ "tachas": [
+  {
+   "f": "5e51c41773ac0e0008431980/_ALE2629.jpg",
+   "d": "Philipp Plein",
+   "s": "F",
+   "y": 2020,
+   "c": 0.3514
+  },
+  {
+   "f": "55c6511d08298d8be21bc148/LUX_7745.1366x2048.JPG",
+   "d": "Nicole Miller",
+   "s": "S",
+   "y": 2014,
+   "c": 0.3393
+  },
+  {
+   "f": "63fb1bb3079237f39a10389d/00060-philip-plein-fall-2023-ready-to-wear-credit-gorunway.jpg",
+   "d": "Philipp Plein",
+   "s": "F",
+   "y": 2023,
+   "c": 0.3382
+  },
+  {
+   "f": "55c650f108298d8be218bbd4/020fullscreen.jpg",
+   "d": "BLK DNM",
+   "s": "S",
+   "y": 2013,
+   "c": 0.3381
+  },
+  {
+   "f": "55c6510608298d8be21a2da4/00230fullscreen.jpg",
+   "d": "Temperley London",
+   "s": "S",
+   "y": 2011,
+   "c": 0.336
+  },
+  {
+   "f": "55c650ce08298d8be2166eba/00010fullscreen.jpg",
+   "d": "Moschino",
+   "s": "S",
+   "y": 2012,
+   "c": 0.3353
+  },
+  {
+   "f": "603e69242d512b3541b180d0/00119-dolce-and-gabbana-RTW-fall-21.jpg",
+   "d": "Dolce & Gabbana",
+   "s": "F",
+   "y": 2021,
+   "c": 0.334
+  },
+  {
+   "f": "55c6513008298d8be21d16ce/_ARC0449.1366x2048.JPG",
+   "d": "Roberto Cavalli",
+   "s": "F",
+   "y": 2014,
+   "c": 0.3339
+  },
+  {
+   "f": "55c6514508298d8be21e8357/AA2X1370.1366x2048.JPG",
+   "d": "Saint Laurent",
+   "s": "S",
+   "y": 2015,
+   "c": 0.3337
+  },
+  {
+   "f": "55c651db08298d8be2295bde/MOS_0519.jpg",
+   "d": "Moschino",
+   "s": "F",
+   "y": 2015,
+   "c": 0.3334
+  },
+  {
+   "f": "55c651a408298d8be2256ec9/00120fullscreen.jpg",
+   "d": "Oscar de la Renta",
+   "s": "R",
+   "y": 2010,
+   "c": 0.3333
+  },
+  {
+   "f": "59c53ee62074f949c2746f3f/_VER0149.jpg",
+   "d": "Versace",
+   "s": "S",
+   "y": 2017,
+   "c": 0.3326
+  }
+ ],
+ "flecos": [
+  {
+   "f": "55c650a708298d8be213ee1f/00290fullscreen.jpg",
+   "d": "Issey Miyake",
+   "s": "F",
+   "y": 2010,
+   "c": 0.3579
+  },
+  {
+   "f": "55c6510508298d8be21a1c57/00010fullscreen.jpg",
+   "d": "Diesel Black Gold",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3519
+  },
+  {
+   "f": "5e55516681ff4b0009e7174d/IS5_0308.jpg",
+   "d": "Victoria/Tomas",
+   "s": "F",
+   "y": 2020,
+   "c": 0.3384
+  },
+  {
+   "f": "589284047caf41c472cb6bf6/_UMB4904.jpg",
+   "d": "Ivan Grundahl",
+   "s": "F",
+   "y": 2017,
+   "c": 0.3367
+  },
+  {
+   "f": "5d4affb27078ab0008376c78/_FIO0284.jpg",
+   "d": "Cecilie Bahnsen",
+   "s": "S",
+   "y": 2020,
+   "c": 0.3353
+  },
+  {
+   "f": "60f09140c61393e033a42d56/00026-Valentino-Couture-Fall-21-credit-Filippo-Fior-GoRunway.jpg",
+   "d": "Valentino",
+   "s": "F",
+   "y": 2021,
+   "c": 0.334
+  },
+  {
+   "f": "55c6510608298d8be21a2d87/00300fullscreen.jpg",
+   "d": "J. Mendel",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3324
+  },
+  {
+   "f": "5a65ee9103798d1f95f6e928/_IRI0301.jpg",
+   "d": "Iris van Herpen",
+   "s": "S",
+   "y": 2018,
+   "c": 0.3321
+  },
+  {
+   "f": "5b942d59284df27bef1f57f6/_DSC1294.jpg",
+   "d": "R13",
+   "s": "S",
+   "y": 2019,
+   "c": 0.3319
+  },
+  {
+   "f": "603e69242d512b3541b180d0/00119-dolce-and-gabbana-RTW-fall-21.jpg",
+   "d": "Dolce & Gabbana",
+   "s": "F",
+   "y": 2021,
+   "c": 0.3311
+  },
+  {
+   "f": "55c650db08298d8be21753e8/00260fullscreen.jpg",
+   "d": "Rebecca Taylor",
+   "s": "F",
+   "y": 2012,
+   "c": 0.3311
+  },
+  {
+   "f": "59e8b18172cddd6cf07676fb/BLINDNESS-F001.jpg",
+   "d": "Blindness",
+   "s": "S",
+   "y": 2017,
+   "c": 0.331
+  }
+ ],
+ "pedreria": [
+  {
+   "f": "5a8233fb4650d478d14aa158/_LLL4677.jpg",
+   "d": "Anna Sui",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3442
+  },
+  {
+   "f": "55c651b208298d8be2266d85/00240fullscreen.jpg",
+   "d": "Isaac Mizrahi",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3429
+  },
+  {
+   "f": "55c651aa08298d8be225dfe4/00360fullscreen.jpg",
+   "d": "Giorgio Armani",
+   "s": "S",
+   "y": 2010,
+   "c": 0.3417
+  },
+  {
+   "f": "55c651bb08298d8be226e93b/00300fullscreen.jpg",
+   "d": "Isaac Mizrahi",
+   "s": "F",
+   "y": 2010,
+   "c": 0.3415
+  },
+  {
+   "f": "614f6f4f89f88c48a3a01290/00062-Giorgio-Armani-Spring22-RTW-MIlan-credit-gorunway.jpg",
+   "d": "Giorgio Armani",
+   "s": "S",
+   "y": 2022,
+   "c": 0.3414
+  },
+  {
+   "f": "55c650a808298d8be2140379/00300fullscreen.jpg",
+   "d": "Givenchy",
+   "s": "F",
+   "y": 2010,
+   "c": 0.3404
+  },
+  {
+   "f": "5a7ccc39492615229cae63c1/_TAD0419.jpg",
+   "d": "Tadashi Shoji",
+   "s": "F",
+   "y": 2018,
+   "c": 0.3382
+  },
+  {
+   "f": "55c6510b08298d8be21a8a42/YVL_2407.1366x2048.JPG",
+   "d": "Kaufmanfranco",
+   "s": "F",
+   "y": 2013,
+   "c": 0.3379
+  },
+  {
+   "f": "55c650f708298d8be219271f/GUC_0518.1366x2048.JPG",
+   "d": "Gucci",
+   "s": "S",
+   "y": 2013,
+   "c": 0.3377
+  },
+  {
+   "f": "55c650f408298d8be218f23c/MJA_1126.900x1350.JPG",
+   "d": "Jenny Packham",
+   "s": "S",
+   "y": 2013,
+   "c": 0.3369
+  },
+  {
+   "f": "55f83323a4dae55a43a5f26b/_ROD0717.jpg",
+   "d": "Rodarte",
+   "s": "S",
+   "y": 2016,
+   "c": 0.3364
+  },
+  {
+   "f": "55c650ad08298d8be21446bd/00090fullscreen.jpg",
+   "d": "Naeem Khan",
+   "s": "R",
+   "y": 2011,
+   "c": 0.3362
+  }
+ ],
+ "espiga": [
+  {
+   "f": "55c650d408298d8be216e3c7/00060fullscreen.jpg",
+   "d": "Oscar de la Renta",
+   "s": "P",
+   "y": 2012,
+   "c": 0.3505
+  },
+  {
+   "f": "55c651c208298d8be2278233/NCK_2956.jpg",
+   "d": "Vivienne Westwood",
+   "s": "S",
+   "y": 2015,
+   "c": 0.3459
+  },
+  {
+   "f": "55c650aa08298d8be2141357/00170fullscreen.jpg",
+   "d": "Banana Republic",
+   "s": "F",
+   "y": 2010,
+   "c": 0.3429
+  },
+  {
+   "f": "55c6510408298d8be219ff4d/00070fullscreen.jpg",
+   "d": "Steven Alan",
+   "s": "S",
+   "y": 2011,
+   "c": 0.3429
+  },
+  {
+   "f": "55c650af08298d8be2146675/004fullscreen.jpg",
+   "d": "Talbots",
+   "s": "F",
+   "y": 2011,
+   "c": 0.3414
+  },
+  {
+   "f": "58b8533a3e60ad5dd88e41eb/12-carven-fall-17.jpg",
+   "d": "Carven",
+   "s": "F",
+   "y": 2017,
+   "c": 0.3379
+  },
+  {
+   "f": "55c650d708298d8be2170f88/00150fullscreen.jpg",
+   "d": "Prada",
+   "s": "F",
+   "y": 2012,
+   "c": 0.3364
+  },
+  {
+   "f": "55c650db08298d8be2175472/014fullscreen.jpg",
+   "d": "Bespoken",
+   "s": "F",
+   "y": 2012,
+   "c": 0.3347
+  },
+  {
+   "f": "55c650c408298d8be215d201/00190fullscreen.jpg",
+   "d": "Agnès B.",
+   "s": "S",
+   "y": 2012,
+   "c": 0.3345
+  },
+  {
+   "f": "55c6511808298d8be21b732a/MARC0206.1366x2048.JPG",
+   "d": "Zegna",
+   "s": "S",
+   "y": 2014,
+   "c": 0.3345
+  },
+  {
+   "f": "55c651ae08298d8be2262d8a/00240fullscreen.jpg",
+   "d": "Kenzo",
+   "s": "S",
+   "y": 2010,
+   "c": 0.333
+  },
+  {
+   "f": "5a991dd11d6ee50bf5842874/_ARC0757.jpg",
+   "d": "Loewe",
+   "s": "F",
+   "y": 2018,
+   "c": 0.333
+  }
+ ]
+}

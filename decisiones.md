@@ -3825,3 +3825,30 @@ volver arriba». En Explorar ciclos ya no aparece el pie (CICLO, la fecha de los
 pantalla termina en «Cómo se lee · CICLO no predice». Queda la flecha redonda para volver arriba. Para eso `mostrar()`
 anota la vista en el `body` (`data-vista`). En el home el pie sigue entero; en las demás pantallas, la línea de la vuelta
 K. `probar_demo.js` 8 de 8 en los dos anchos. Capturas `L/4_antes_*` y `L/4_despues_explorar_abajo_*`.
+
+## 2026-11-24 · Vuelta L, punto 3: las fotos que faltaban
+
+Pedido: «Faltan fotos de pasarela en: lycra, poliéster, pedrería, organza, neoprén, espiga, tul, gasa, zapatillas, corset
+(Explorar) y cualquier otro atributo que hoy muestre dibujo o hueco. Recorré toda la app y listalos. Mismo método que
+FOTO_ATR… Si alguna no tiene un buen candidato, decímelo en vez de poner una floja».
+
+**La lista.** De los 65 atributos, 17 no tenían foto (todos aparecen en Mis ciclos y en Explorar): encaje, corset,
+zapatillas, jardinero, polar, poliéster, lycra, neoprene, gasa, tul, organza, bordado, volados, tachas, flecos, pedrería y
+espiga. Las 32 opciones de El brief ya tenían foto. Diseñar muestra dibujos a propósito (la silueta de cada corte).
+
+**El método.** El mismo que `FOTO_ATR`: CLIP ViT-B/32 (pesos de OpenAI, vía transformers.js), tres frases en inglés por
+atributo con tres plantillas («a runway look with…»), promedio normalizado, y coseno contra los 14.000 looks del índice de
+la app (`app/clip/looks.bin`, Vogue Runway 2010–2023, 1.000 por año). Las 12 mejores de cada atributo se miraron a ojo en
+hojas de contacto, y las dudosas, en grande (`diseno/rediseno_2026-11-24/L/fotos_candidatas/`). Hotlink a Vogue con
+crédito (diseñador · temporada · año · Vogue Runway). El script queda en `codigo/buscar_fotos_clip.mjs`.
+
+**Elegidas (15):** encaje (Nina Ricci, Spring 2015), corset (Catherine Malandrino, Fall 2012), zapatillas (Raeburn, Spring
+2016, encuadre abajo), jardinero (Oak, Fall 2018), polar (Boss, Fall 2017), poliéster (Saul Nash, 2022, un conjunto de
+nylon brillante), lycra (Mugler, Spring 2022), gasa (Bottega Veneta, 2010), tul (Giambattista Valli, Spring 2022), organza
+(Selam Fessahaye, 2023), bordado (Sea, Spring 2022), volados (Milly, Fall 2011), tachas (Nicole Miller, Spring 2014),
+flecos (R13, Spring 2019) y pedrería (Isaac Mizrahi, Fall 2010).
+
+**Sin foto, a propósito (2):** **neoprene**: ninguna de las 12 muestra el material (CLIP trae vestidos negros lisos y
+punto; el neoprene no se distingue de la tela en una foto de pasarela); y **espiga**: las candidatas son sacos y tapados
+de tweed gris donde, a tamaño de tarjeta, no se ve el tejido en espiga. Quedan con su dibujo. Ahora 63 de 65 atributos
+tienen foto. `probar_demo.js` 8 de 8 en los dos anchos. Capturas `L/3_despues_explorar_*`.

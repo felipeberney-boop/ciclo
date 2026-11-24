@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CICLO · el sistema (24/11)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* La lámina usa los mismos tokens que van a entrar en app/index.html */
+:root{
+  --sf:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter",system-ui,sans-serif;
+  --logo:"Bodoni Moda",Didot,"Bodoni 72",serif;
+  /* escala */
+  --h1:56px; --h2:32px; --h3:22px; --h4:18px; --p:17px; --eti:12px; --dato:40px; --graf:12px;
+  /* paleta por rol */
+  --accion:#0066cc; --accion-hover:#0071e3;
+  --tinta:#1d1d1f; --tinta-2:#6e6e73; --linea:#d2d2d7; --bloque:#f5f5f7; --blanco:#fff;
+  --entrar:#2C6A3D; --esperar:#9A6200; --salir:#A5372A;
+  --entrar-f:#e6f2e9; --esperar-f:#fbf0dc; --salir-f:#f8e6e3;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
+}
+@media (max-width:600px){:root{--h1:36px;--h2:26px;--h3:20px;--dato:34px}}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--tinta);font:400 var(--p)/1.5 var(--sf);letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+.w{max-width:1240px;margin:0 auto;padding:48px 40px 80px}
+@media (max-width:600px){.w{padding:28px 18px 60px}}
+.logo{font-family:var(--logo);font-weight:500;font-size:26px;letter-spacing:.14em;display:inline-flex;align-items:center;gap:10px}
+.logo svg{width:22px;height:22px}
+.eti{font-size:var(--eti);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tinta-2)}
+.h1{font-size:var(--h1);font-weight:600;letter-spacing:-.025em;line-height:1.05;margin:0}
+.h2{font-size:var(--h2);font-weight:600;letter-spacing:-.02em;line-height:1.12;margin:0}
+.h3{font-size:var(--h3);font-weight:500;letter-spacing:-.015em;line-height:1.2;margin:0}
+.h4{font-size:var(--h4);font-weight:600;letter-spacing:-.01em;line-height:1.3;margin:0}
+.p{font-size:var(--p);margin:0;max-width:62ch}
+.p2{color:var(--tinta-2)}
+.dato{font-size:var(--dato);font-weight:600;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+a{color:var(--accion);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--accion-hover)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 16px/1 var(--sf);padding:13px 22px;border-radius:999px;border:1.5px solid var(--accion);cursor:pointer;text-decoration:none}
+.btn.pri{background:var(--accion);color:#fff}
+.btn.sec{background:#fff;color:var(--accion)}
+.btn.sel{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.btn.opc{background:#fff;color:var(--tinta);border-color:var(--linea)}
+.sen{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;padding:5px 11px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.sen.e{color:var(--entrar);background:var(--entrar-f)}.sen.a{color:var(--esperar);background:var(--esperar-f)}.sen.s{color:var(--salir);background:var(--salir-f)}
+header.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;border-bottom:1px solid var(--linea);padding-bottom:24px;margin-bottom:40px;flex-wrap:wrap}
+section{margin:0 0 56px}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:start}
+@media (max-width:900px){.grid2{grid-template-columns:1fr;gap:40px}}
+.fila{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:baseline;padding:16px 0;border-top:1px solid var(--linea)}
+.fila .q{display:flex;flex-direction:column;gap:2px}
+.fila .q b{font-size:14px;font-weight:600}
+.fila .q span{font-size:13px;color:var(--tinta-2);letter-spacing:0}
+@media (max-width:600px){.fila{grid-template-columns:1fr;gap:6px}}
+.roles{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:900px){.roles{grid-template-columns:1fr 1fr}}
+.rol{border:1px solid var(--linea);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.rol .mu{height:150px;position:relative;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:14px}
+.rol .tx{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px}
+.rol .tx p{margin:0;font-size:16px;line-height:1.4}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.sw i{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.08);display:inline-block}
+.sw code{font:12px ui-monospace,Menlo,monospace;color:var(--tinta-2)}
+.foto{background:#222 center 22%/cover no-repeat;padding:0!important;align-items:flex-end!important;justify-content:flex-start!important}
+.foto span{color:#fff;font-size:12px;padding:10px 12px;background:linear-gradient(to top,rgba(0,0,0,.55),transparent);width:100%}
+.ilu img{height:118px}
+.demo{background:var(--bloque);border-radius:20px;padding:28px}
+.demo .cab{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.tarjeta{display:grid;grid-template-columns:140px 1fr;gap:18px;background:#fff;border-radius:16px;overflow:hidden}
+.tarjeta .ft{background:#222 center 20%/cover no-repeat;min-height:200px}
+.tarjeta .cu{padding:18px 18px 18px 0;display:flex;flex-direction:column;gap:8px}
+.reglas{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+@media (max-width:900px){.reglas{grid-template-columns:1fr}}
+.reglas div{border-top:2px solid var(--tinta);padding-top:12px}
+.reglas p{margin:6px 0 0;font-size:16px;color:var(--tinta-2)}
+svg text{font-family:var(--sf)}
+</style>
+</head>
+<body>
+<div class="w">
+
+<header class="top">
+  <div>
+    <span class="logo"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10.00" cy="2.50" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17.13" cy="7.68" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="14.41" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="5.59" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="2.87" cy="7.68" r="2.3" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg>CICLO</span>
+    <p class="eti" style="margin:14px 0 0">El sistema · propuesta del 24/11, antes de aplicarlo</p>
+  </div>
+  <p class="p p2" style="max-width:46ch">La Bodoni queda sólo en el logo. Todo lo demás, en la letra del sistema (SF Pro; Inter fuera de Apple). Seis estilos de texto y un dato; cinco roles de color.</p>
+</header>
+
+<section class="grid2">
+  <div>
+    <p class="eti" style="margin:0 0 6px">Escala tipográfica</p>
+    <div class="fila"><div class="q"><b>H1</b><span>56 / 36 · 600 · −0,025 em</span></div><p class="h1">Mis ciclos</p></div>
+    <div class="fila"><div class="q"><b>H2</b><span>32 / 26 · 600 · −0,02 em</span></div><p class="h2">Gana y pierde terreno</p></div>
+    <div class="fila"><div class="q"><b>H3</b><span>22 / 20 · 500</span></div><p class="h3">Jeans baggy</p></div>
+    <div class="fila"><div class="q"><b>H4</b><span>18 · 600</span></div><p class="h4">De dónde sale este número</p></div>
+    <div class="fila"><div class="q"><b>Párrafo</b><span>17 · 400 · 1,5 · secundario en gris</span></div><p class="p">Ganó 50 puntos en la búsqueda mundial de 2022 a 2024. <span class="p2">Índice de Google Trends, 0–100: 100 es el máximo de ese término.</span></p></div>
+    <div class="fila"><div class="q"><b>Etiqueta</b><span>12 · 600 · MAYÚSCULAS · +0,08 em</span></div><p class="eti" style="margin:0">Fuente · Google Trends · 2004–2024</p></div>
+    <div class="fila"><div class="q"><b>Dato</b><span>40 / 34 · 600 · cifras tabulares</span></div><p class="dato" style="margin:0">+50</p></div>
+    <div class="fila"><div class="q"><b>Gráfico</b><span>12 · 400 · nunca menos</span></div>
+      <svg viewBox="0 0 360 70" width="360" height="70" style="max-width:100%"><polyline points="10,52 70,48 130,50 190,40 250,26 310,10" fill="none" stroke="var(--s1)" stroke-width="2.4"/><circle cx="310" cy="10" r="4" fill="var(--s1)"/><text x="10" y="68" font-size="12" fill="#6e6e73">2016</text><text x="236" y="68" font-size="12" fill="#6e6e73">2022</text><text x="296" y="68" font-size="12" fill="#6e6e73">2024</text><text x="320" y="14" font-size="12" fill="#1d1d1f">+50</text></svg></div>
+    <div class="reglas">
+      <div><b class="h4">Un estilo, un uso</b><p>H1 nombra la pantalla; H2, cada bloque; H3, cada cosa que se toca (una tarjeta, un atributo).</p></div>
+      <div><b class="h4">Nada bajo 16 px</b><p>El texto que se lee va a 17. Sólo etiquetas, créditos y números de gráfico bajan, hasta 12.</p></div>
+      <div><b class="h4">Sin negrita pesada</b><p>Títulos en 600 o 500. Nunca 700 ni 800, nunca cursiva.</p></div>
+    </div>
+  </div>
+
+  <div>
+    <p class="eti" style="margin:0 0 16px">Así se ve junto</p>
+    <div class="demo">
+      <div class="cab">
+        <div><p class="eti" style="margin:0 0 4px">Mi proyecto</p><p class="h3">Invierno Zara · Mujer · Para una marca · Fast fashion</p></div>
+        <a href="#">Editar</a>
+      </div>
+      <div class="tarjeta">
+        <div class="ft" style="background-image:url(https://assets.vogue.com/photos/631d2ce3a50112cdb12ea220/master/w_640,c_limit/IS1_0711.jpg)"></div>
+        <div class="cu">
+          <span class="sen e">▲ Entrar</span>
+          <p class="h3">Rayas</p>
+          <p class="p p2" style="font-size:16px">Ganó en la búsqueda de 2022 a 2024 y todavía no llegó a su techo.</p>
+          <p class="eti" style="margin:0">Estampa · Google Trends</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+        <a class="btn pri" href="#">Crear tu proyecto</a>
+        <a class="btn sec" href="#">Diseñar con rayas</a>
+      </div>
+      <p style="margin:16px 0 0"><a href="#">Sólo estoy mirando</a></p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px">
+        <span class="btn sel" style="padding:9px 16px;font-size:15px">Mujer</span><span class="btn opc" style="padding:9px 16px;font-size:15px">Hombre</span><span class="btn opc" style="padding:9px 16px;font-size:15px">Sin género</span>
+      </div>
+      <p class="p p2" style="font-size:16px;margin-top:8px">Cambia los foros de Reddit que se leen. Google y Vogue no separan por género.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eti" style="margin:0 0 16px">Paleta por rol · cada color significa una sola cosa</p>
+  <div class="roles">
+    <div class="rol"><div class="mu"><a class="btn pri" href="#">Botón</a><a href="#">un link</a></div>
+      <div class="tx"><b class="h4">Acción</b><p>Azul: lo único que se toca. Link = azul y subrayado. Botón = relleno o borde azul, redondeado.</p><div class="sw"><i style="background:#0066cc"></i><code>#0066cc</code></div></div></div>
+    <div class="rol"><div class="mu" style="background:var(--bloque);flex-direction:column;align-items:flex-start"><span class="eti">Info</span><span class="h4">Texto, líneas y gráficos</span><svg viewBox="0 0 160 24" width="160" height="24"><g stroke-width="3"><line x1="0" x2="28" y1="12" y2="12" stroke="#2a78d6"/><line x1="33" x2="61" y1="12" y2="12" stroke="#eb6834"/><line x1="66" x2="94" y1="12" y2="12" stroke="#1baf7a"/><line x1="99" x2="127" y1="12" y2="12" stroke="#eda100"/><line x1="132" x2="160" y1="12" y2="12" stroke="#e87ba4"/></g></svg></div>
+      <div class="tx"><b class="h4">Info</b><p>Tinta, gris y líneas para leer. Las series de los gráficos sólo distinguen curvas: no dicen nada bueno ni malo.</p><div class="sw"><i style="background:#1d1d1f"></i><i style="background:#6e6e73"></i><i style="background:#d2d2d7"></i><i style="background:#f5f5f7"></i></div></div></div>
+    <div class="rol"><div class="mu"><span class="sen e">▲ Entrar</span><span class="sen a">■ Esperar</span><span class="sen s">▼ Salir</span></div>
+      <div class="tx"><b class="h4">Señal</b><p>Verde, ámbar y rojo son sólo la decisión, siempre con su palabra y su ícono. En nada más.</p><div class="sw"><i style="background:#2C6A3D"></i><i style="background:#9A6200"></i><i style="background:#A5372A"></i></div></div></div>
+    <div class="rol"><div class="mu foto" style="background-image:url(https://assets.vogue.com/photos/631d2ce3a50112cdb12ea220/master/w_640,c_limit/IS1_0711.jpg)"><span>Sergio Hudson · Fall 2022 · Vogue Runway</span></div>
+      <div class="tx"><b class="h4">Foto</b><p>Pasarela de Vogue Runway, a sangre y sin filtros. El crédito va siempre encima, en blanco, a 12.</p></div></div>
+    <div class="rol"><div class="mu ilu"><img src="../../app/siluetas/jeans/corte_baggy.svg" alt=""><img src="../../app/siluetas/estampas/estampa_bengal.svg" alt="" style="height:80px;border:1px solid var(--linea);border-radius:8px"></div>
+      <div class="tx"><b class="h4">Ilustración</b><p>Dibujo técnico en línea negra sobre blanco: siluetas y estampas. Explica una forma; nunca lleva color de señal.</p></div></div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <!doctype html><html lang="es" data-theme="light"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>CICLO</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5,500;62.5,600;62.5,700;100,400;100,500;100,600&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5,500;62.5,600;62.5,700;100,400;100,500;100,600&family=Bodoni+Moda:opsz,wght@6..96,500&family=Inter:wght@300;400;600;700&display=swap">
 <style>
 :root{
   color-scheme:light;
@@ -39,7 +39,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
   font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;font-variation-settings:"wdth" 100;
   font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
 .lbl,.rail nav a,.chip,.tab,button,th{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 62.5}
-.serif{font-family:"Bodoni Moda","Didot",Georgia,serif}
+.serif{font-family:var(--sf)}
 .mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
 
 /* ---------- shell ---------- */
@@ -53,7 +53,7 @@ main{min-width:0}
 .mast .side{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;color:var(--ink-3);
   text-transform:uppercase;white-space:nowrap}
 .mast .side.r{text-align:right}
-.mk{font-family:"Bodoni Moda",serif;font-weight:700;font-size:34px;letter-spacing:.24em;line-height:1;
+.mk{font-family:var(--sf);font-weight:700;font-size:34px;letter-spacing:.24em;line-height:1;
   margin:0 0 0 .24em;background:none;border:0;padding:0;color:var(--ink);cursor:pointer;display:block}
 .mk:hover{color:var(--accent)}
 .mk:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
@@ -102,8 +102,8 @@ main{min-width:0}
 .dzpt{font-variation-settings:"wdth" 62.5;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .dzpv{font-size:12.5px;color:var(--ink)}
 .dzsep{color:var(--ink-3)}
-.dzh{font-family:"Bodoni Moda",serif;font-weight:400;font-size:30px;margin:22px 0 14px}
-.dzh3{font-family:"Bodoni Moda",serif;font-weight:400;font-size:22px;margin:26px 0 10px}
+.dzh{font-family:var(--sf);font-weight:400;font-size:30px;margin:22px 0 14px}
+.dzh3{font-family:var(--sf);font-weight:400;font-size:22px;margin:26px 0 10px}
 .dzsub{margin:-6px 0 14px;font-size:13.5px;color:var(--ink-2)}
 .dzgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
 .dzc{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:0;overflow:hidden;cursor:pointer;transition:border-color .15s}
@@ -121,7 +121,7 @@ main{min-width:0}
 .dzfotos{margin-top:22px;max-width:820px}.dzfotos summary{cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);padding:8px 0}
 .dzfotos .dzrefs{margin-top:8px}
 .dzb{display:flex;flex-direction:column;gap:5px;padding:11px 12px 13px}
-.dzn{font-family:"Bodoni Moda",serif;font-size:20px;line-height:1.1}
+.dzn{font-family:var(--sf);font-size:20px;line-height:1.1}
 .dzm{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .dze{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3)}
 .dzt{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-2)}
@@ -159,7 +159,7 @@ body.on-gate .top,body.on-gate .colofon{display:none}
 .gcard{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:18px 18px 16px;cursor:pointer;transition:border-color .15s,transform .15s}
 .gcard:hover{border-color:var(--ink-2)}
 .gcard:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.gcard .gt{font-family:"Bodoni Moda",serif;font-size:24px;line-height:1.1}
+.gcard .gt{font-family:var(--sf);font-size:24px;line-height:1.1}
 .gcard .gd{font-size:13.5px;line-height:1.5;color:var(--ink-2);margin:8px 0 14px;min-height:3em}
 .gcard dl{display:grid;width:100%;align-self:stretch;grid-template-columns:auto 1fr;gap:5px 12px;margin:0;padding-top:12px;border-top:1px solid var(--rule-2);font-size:12px}
 .gcard dt{font-variation-settings:"wdth" 62.5;font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);align-self:baseline}
@@ -173,7 +173,7 @@ body.on-gate .top,body.on-gate .colofon{display:none}
 .gfirma p{margin:0 0 10px}.gfirma .lbl{color:var(--ink-3);line-height:1.8}
 @media (max-width:760px){.ggrid{grid-template-columns:1fr}.gate{padding-top:14px}}
 .vhead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:6px}
-h1{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.05;margin:0;letter-spacing:-.01em}
+h1{font-family:var(--sf);font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.05;margin:0;letter-spacing:-.01em}
 .sub{font-size:14px;color:var(--ink-2);max-width:62ch;margin:8px 0 0}
 .lbl{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
 .rule{border:0;border-top:1px solid var(--ink);margin:18px 0 0}
@@ -199,7 +199,7 @@ h1{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(30px,3.6vw,44
 .swatches i{flex:1;display:block;box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent)}
 .pbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
 .ptop{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-.pname{font-family:"Bodoni Moda",serif;font-size:21px;font-weight:400;line-height:1.12;margin:0}
+.pname{font-family:var(--sf);font-size:21px;font-weight:400;line-height:1.12;margin:0}
 .pkind{font-variation-settings:"wdth" 62.5;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
 .pmeta{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-2);line-height:1.55;min-height:51px}
 /* pista del ciclo — posición, no color */
@@ -255,7 +255,7 @@ dd{margin:0;color:var(--ink)}
 .ai p{margin:0 0 9px;font-size:13.5px;line-height:1.55;color:var(--ink)}
 .ai p:last-child{margin-bottom:0}
 .rec{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin-top:14px;padding-top:13px;border-top:1px solid var(--rule)}
-.rec .a{font-family:"Bodoni Moda",serif;font-size:26px;line-height:1;grid-row:span 2;align-self:center;padding-right:4px}
+.rec .a{font-family:var(--sf);font-size:26px;line-height:1;grid-row:span 2;align-self:center;padding-right:4px}
 .rec .t{font-variation-settings:"wdth" 62.5;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
 .rec .d{font-size:13px;color:var(--ink-2);line-height:1.5}
 figure{margin:0}
@@ -309,7 +309,7 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--in
 .attrs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-2);border:1px solid var(--rule-2);margin-top:20px}
 .attrs>div{background:var(--card);padding:12px 14px}
 .attrs .k{font-variation-settings:"wdth" 62.5;font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
-.attrs .v{font-family:"Bodoni Moda",serif;font-size:19px;margin-top:5px;line-height:1.15}
+.attrs .v{font-family:var(--sf);font-size:19px;margin-top:5px;line-height:1.15}
 .attrs .n{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-2);margin-top:3px}
 
 /* ---------- marcas / lyst ---------- */
@@ -318,7 +318,7 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--in
 .lys>div{background:var(--card);padding:18px 20px}
 .hist{display:flex;flex-direction:column;gap:14px;margin-top:14px}
 .hist>div{display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
-.hist .m{font-family:"Bodoni Moda",serif;font-size:18px;line-height:1.1;grid-row:span 2}
+.hist .m{font-family:var(--sf);font-size:18px;line-height:1.1;grid-row:span 2}
 .hist .r{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--accent)}
 .hist .t{font-size:13.5px;color:var(--ink-2);line-height:1.45}
 @media (max-width:1000px){.lys{grid-template-columns:1fr}}
@@ -333,7 +333,7 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--in
 .rlist li[aria-pressed="true"]{background:var(--paper-2);box-shadow:inset 2px 0 0 var(--ink);padding-left:10px}
 .rlist .sw{display:flex;height:34px;border-radius:2px;overflow:hidden}
 .rlist .sw i{flex:1;box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent)}
-.rlist .nm{font-family:"Bodoni Moda",serif;font-size:17px;line-height:1.2}
+.rlist .nm{font-family:var(--sf);font-size:17px;line-height:1.2}
 .rlist .mt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);margin-top:2px}
 .rlist .pc{font-family:"IBM Plex Mono",monospace;font-size:16px;color:var(--ink);text-align:right}
 .rlist .pc small{display:block;font-variation-settings:"wdth" 62.5;font-family:"Archivo",sans-serif;
@@ -341,7 +341,7 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--in
 
 /* ---------- consulta ---------- */
 .drop{border:1px dashed var(--rule);border-radius:5px;padding:30px 24px;text-align:center;background:var(--card)}
-.drop .ic{font-family:"Bodoni Moda",serif;font-size:34px;line-height:1;color:var(--ink-3)}
+.drop .ic{font-family:var(--sf);font-size:34px;line-height:1;color:var(--ink-3)}
 .drop p{margin:10px 0 0;font-size:13.5px;color:var(--ink-2)}
 .qgrid{display:grid;grid-template-columns:1fr 1.25fr;gap:1px;background:var(--rule-2);border:1px solid var(--rule-2);margin-top:20px}
 .qgrid>div{background:var(--card);padding:20px 22px}
@@ -395,8 +395,8 @@ td.k{font-weight:600;white-space:nowrap}
 .km{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:18px;margin-top:20px;align-items:start}
 .kmL,.kmR{display:flex;flex-direction:column;gap:18px}
 .kcard{background:var(--card);border:1px solid var(--rule-2);border-radius:6px;padding:18px 20px}
-.kh{font-family:"Bodoni Moda",serif;font-weight:400;font-size:21px;margin:0}
-.kbig{font-family:"Bodoni Moda",serif;font-weight:400;font-size:25px;margin:34px 0 0}
+.kh{font-family:var(--sf);font-weight:400;font-size:21px;margin:0}
+.kbig{font-family:var(--sf);font-weight:400;font-size:25px;margin:34px 0 0}
 .kcap{font-size:10.5px;color:var(--ink-3);margin:5px 0 0}
 .ksub{font-size:13.5px;color:var(--ink-2);margin:8px 0 0}
 .khead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
@@ -423,11 +423,11 @@ td.k{font-weight:600;white-space:nowrap}
 .kgroups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule-2);border:1px solid var(--rule-2);margin-top:16px}
 .kgroups>div{background:var(--card);padding:16px 17px;display:flex;flex-direction:column;gap:8px}
 .kgroups .gt{display:flex;align-items:center;gap:8px}
-.kgroups .gn{font-family:"Bodoni Moda",serif;font-size:20px;line-height:1.1}
+.kgroups .gn{font-family:var(--sf);font-size:20px;line-height:1.1}
 .kgroups .gm{font-size:13px;color:var(--ink-2)}
 .kgroups .gv{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);line-height:1.6}
 .kgroups .gr{border-top:1px solid var(--rule-2);padding-top:8px;margin-top:auto;font-size:12.5px;color:var(--ink-2)}
-.kgroups .gr b{font-family:"Bodoni Moda",serif;font-size:17px;color:var(--ink);font-weight:400;display:block}
+.kgroups .gr b{font-family:var(--sf);font-size:17px;color:var(--ink);font-weight:400;display:block}
 .kbar{display:grid;grid-template-columns:96px 1fr 44px;gap:8px;align-items:center;font-size:12px;margin-top:6px}
 .kbar i{display:block;height:6px;border-radius:3px}
 @media (max-width:1000px){.km,.k2{grid-template-columns:1fr}.kgroups{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(3,1fr)}}
@@ -451,7 +451,7 @@ td.k{font-weight:600;white-space:nowrap}
 .rmini{margin-bottom:6px}.rminih{font-variation-settings:"wdth" 62.5;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin:8px 0 2px}
 @media (max-width:600px){.legi em{display:none}}
 .leg em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-3)}
-.h3{font-family:"Bodoni Moda",serif;font-weight:400;font-size:25px;margin:38px 0 0}
+.h3{font-family:var(--sf);font-weight:400;font-size:25px;margin:38px 0 0}
 .tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--paper);font-family:"IBM Plex Mono",monospace;
   font-size:11px;line-height:1.5;padding:5px 8px;border-radius:3px;opacity:0;transition:opacity .1s;z-index:60;white-space:pre}
 @media (max-width:1000px){
@@ -497,7 +497,7 @@ td.k{font-weight:600;white-space:nowrap}
 *:not(.sw):not(.kdot):not(.dot){border-radius:0!important}
 .app{max-width:1360px;border-left:0;border-right:0}
 
-/* tipografía: Bodoni enorme contra mono chiquita; nada intermedio */
+/* tipografía: título enorme contra mono chiquita; nada intermedio (capa vieja, la pisa la capa Apple) */
 h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font-weight:400}
 .gate h1{font-size:clamp(46px,7.6vw,104px)}
 /* subtítulos de sección: también display, más grandes y con regla arriba, para que abran sección como en una revista */
@@ -556,7 +556,7 @@ h1{font-size:clamp(46px,8.4vw,116px);line-height:.93;letter-spacing:-.028em;font
 .copiar,.gvolver{border:0;background:none;padding:2px 0;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;cursor:pointer;font:inherit}
 .dzp{border:0!important;border-bottom:1px solid transparent!important}.dzp.on{border-bottom-color:var(--ink)!important}
 .asq{align-self:flex-end;background:transparent;color:var(--ink);border:0;border-right:1px solid var(--ink);padding:2px 16px 2px 0;
-  font-family:"Bodoni Moda",serif;font-style:italic;font-size:22px;line-height:1.3;text-align:right;max-width:70%}
+  font-family:var(--sf);font-size:22px;line-height:1.3;text-align:right;max-width:70%}
 .asa .chips button,.assug button{border:0;border-bottom:1px solid var(--ink);background:none;padding:2px 0;margin-right:14px;font-size:13px}
 .assug button{border-bottom-style:dashed;border-bottom-color:var(--ia)}
 .ascard input,.ascard select,.asform textarea,.kform input{background:transparent;border:0;border-bottom:1px solid var(--ink)}
@@ -591,7 +591,7 @@ main a:not([class]){color:inherit}
 .dzhead+.dzgrid{margin-top:28px}
 .czint{margin-top:56px}.czlead{max-width:70ch;margin:6px 0 18px;font-size:15px;line-height:1.6}
 .czt{border-top:1px solid var(--ink)}.czf{display:grid;grid-template-columns:1.1fr 2fr 1.6fr 1.6fr;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule);font-size:13px;line-height:1.45}
-.czf b{font-family:"Bodoni Moda",serif;font-weight:400;font-size:18px;line-height:1.1}.czf i{display:none}
+.czf b{font-family:var(--sf);font-weight:400;font-size:18px;line-height:1.1}.czf i{display:none}
 .czh span,.czh b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:400}
 @media (max-width:760px){.czf{grid-template-columns:1fr;gap:3px}.czh{display:none}.czf i{display:inline;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-right:8px}}
 .dzh3{font-family:var(--mono)!important;font-size:10.5px!important;letter-spacing:.17em;text-transform:uppercase;margin:34px 0 12px;color:var(--ink-2)}
@@ -605,7 +605,7 @@ main a:not([class]){color:inherit}
 .dzc-prenda{border-top-color:var(--ink)}
 .dzb{padding:12px 0 6px}
 .dzdef{font-size:12.5px;line-height:1.45;color:var(--ink-2)}
-.dzsinimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"Bodoni Moda",serif;font-style:italic;font-size:22px;color:var(--ink-3);padding:12px;text-align:center}
+.dzsinimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--sf);font-size:22px;color:var(--ink-3);padding:12px;text-align:center}
 .dzcr{grid-template-columns:26px minmax(0,1.6fr) minmax(0,1fr) 44px 110px;background:transparent;border:0;border-bottom:1px solid var(--rule);padding:10px 4px}
 .dzcr.on{background:var(--card)}
 .dzcr .cb.vacio{background:transparent;border-top:1px dashed var(--rule)}
@@ -698,7 +698,7 @@ main a:not([class]){color:inherit}
 .asfoto{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--ink);cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;margin-top:4px}
 .asfoto input{position:absolute;width:1px;height:1px;opacity:0}.asfoto:focus-within{outline:2px solid var(--ink);outline-offset:3px}
 .asimg{display:block;max-width:100%;max-height:220px;margin-top:12px;border:1px solid var(--rule)}
-.asa .asleer{font-family:"Bodoni Moda",serif;font-size:21px;line-height:1.35;max-width:52ch}
+.asa .asleer{font-family:var(--sf);font-size:21px;line-height:1.35;max-width:52ch}
 .asdatos{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule)}
 .asdato{display:grid;grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr);gap:12px;align-items:center;padding:6px 0;font-size:13px}
 .asdato .n{font-weight:500}.asnos,.asanios{font-family:var(--mono);font-size:10px;color:var(--ink-3)}.asanios{display:block}.aspp{font-family:var(--mono);font-size:10px;color:var(--ink-3)}.asdato .v{font-family:var(--mono);font-size:11px;color:var(--ink-2)}.asspark{color:var(--ink)}
@@ -1161,7 +1161,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .bfcred:not(#z){position:absolute;left:10px;bottom:10px;right:10px;font-size:11px!important;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6);line-height:1.3!important}
 .app .bftxt{padding:40px 34px;display:flex;flex-direction:column;justify-content:center}
 .app .bftxt .bfde:not(#z),.app .bfver .bfde:not(#z){font-size:var(--t-eti)!important;color:var(--ink-3);letter-spacing:.08em!important;text-transform:uppercase!important;margin:0 0 10px}
-.app #mv .bftxt h2:not(#z){font-family:"Bodoni Moda",Didot,"Times New Roman",serif!important;font-size:52px!important;font-weight:500!important;line-height:1!important;margin:0 0 22px;letter-spacing:-.01em}
+.app #mv .bftxt h2:not(#z){font-family:var(--sf)!important;font-size:52px!important;font-weight:500!important;line-height:1!important;margin:0 0 22px;letter-spacing:-.01em}
 .app #mv .bftxt .bfl:not(#z){font-size:var(--t-sub)!important;font-weight:500!important;line-height:1.25!important;margin:0 0 4px}
 .app #mv .bftxt .bfcat:not(#z){font-size:var(--t-eti)!important;color:var(--ink-2);margin:20px 0 26px;line-height:1.4!important}
 .app .bftxt .mvbtn{align-self:flex-start}
@@ -1187,7 +1187,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .app .bfver{position:relative;background:var(--card);padding:34px 36px 30px;max-width:860px;margin:0 auto}
 .app .bfver:not(#z){border-radius:var(--r-card)!important}
 .app .bfr{opacity:0;animation:bfsube .6s cubic-bezier(.2,.9,.3,1.1) forwards;animation-delay:var(--t)}
-.app #mv .bftit:not(#z){font-family:"Bodoni Moda",Didot,"Times New Roman",serif!important;font-size:42px!important;font-weight:500!important;line-height:1.08!important;margin:0 0 24px;max-width:22ch}
+.app #mv .bftit:not(#z){font-family:var(--sf)!important;font-size:42px!important;font-weight:500!important;line-height:1.08!important;margin:0 0 24px;max-width:22ch}
 .app .bflist{list-style:none;margin:0 0 14px;padding:0}
 .app .bfli{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;padding:10px 0;border-top:1px solid var(--rule)}
 .app .bfli img{width:52px;height:52px;object-fit:contain;background:var(--paper);padding:4px;box-sizing:border-box}
@@ -1440,20 +1440,19 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 #v-lectura .ltuso:not(#z){font-size:12px!important;color:var(--ink-3);line-height:1.4!important;font-variant-numeric:tabular-nums}
 #v-lectura .ltusod{color:var(--ink-3)}
 @media (max-width:640px){#v-lectura .ltusod{display:none}}
-:root{--moda:"Bodoni Moda",Didot,"Bodoni 72",serif;--moda-w:500;--moda-ls:-.01em;--moda-var:normal;--moda-adj:0.5}
+:root{--moda:var(--sf);--moda-w:600;--moda-ls:-.02em;--moda-tit-ls:-.025em;--moda-var:normal}
 /* ================= la letra de la moda (17/11) · última =================
-   La identidad por la tipografía: Bodoni Moda, la Didone de las revistas de moda, en títulos, números que deciden,
-   logotipo y créditos de foto. El texto corrido, los botones (redondeados), los gráficos y los colores no cambian.
-   la letra de la moda: títulos, números que deciden, logotipo y créditos. El texto corrido y los botones no cambian */
-.app h1:not(#q):not(#qq),.app .vhead h1:not(#q):not(#qq),.app .gate h1:not(#q):not(#qq),.app .lthead h1:not(#q):not(#qq),.app .metsec h2:not(#q):not(#qq),.app .metgate>h2:not(#q):not(#qq),.app .metdatos>h2:not(#q):not(#qq),.app #rtitulo:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
-.app .mk:not(#q):not(#qq),.app .mast .mk span:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:.04em!important;font-variation-settings:var(--moda-var)!important;font-size:22px!important;display:inline-flex!important;align-items:center;gap:9px;text-transform:none!important}
+   Del 17 al 24/11 fue Bodoni Moda. Desde el 24/11 --moda apunta otra vez a la letra de Apple (--sf; la Bodoni sólo en el logo, capa «el sistema»), con los pesos y el
+   tracking de títulos de antes del 17/11 (600; -.025em el título, -.02em el resto; logotipo .14em). Sin opsz ni font-size-adjust. */
+.app h1:not(#q):not(#qq),.app .vhead h1:not(#q):not(#qq),.app .gate h1:not(#q):not(#qq),.app .lthead h1:not(#q):not(#qq),.app .metsec h2:not(#q):not(#qq),.app .metgate>h2:not(#q):not(#qq),.app .metdatos>h2:not(#q):not(#qq),.app #rtitulo:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important}
+.app .mk:not(#q):not(#qq),.app .mast .mk span:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:.14em!important;font-variation-settings:var(--moda-var)!important;font-size:22px!important;display:inline-flex!important;align-items:center;gap:9px;text-transform:none!important}
 .app .mk svg{width:20px;height:20px;flex:none}
-.app .gcard .gt:not(#q):not(#qq),.app .gcard>span:first-child:not(#q):not(#qq),.app .gcard b:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
+.app .gcard .gt:not(#q):not(#qq),.app .gcard>span:first-child:not(#q):not(#qq),.app .gcard b:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important}
 .app .gprog:not(#q):not(#qq),.app .gprog b:not(#q):not(#qq){font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important;font-size:15px!important;letter-spacing:.04em!important}
-.app .dzhead .dzh:not(#q):not(#qq),.app .pname:not(#q):not(#qq),.app .ciclo .cn:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj)}
-.app .ciclo .cm b:not(#q):not(#qq),.app .lyn b:not(#q):not(#qq),.app .tvfrase:not(#q):not(#qq){font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important;font-size-adjust:var(--moda-adj);font-variant-numeric:lining-nums}
+.app .dzhead .dzh:not(#q):not(#qq),.app .pname:not(#q):not(#qq),.app .ciclo .cn:not(#q):not(#qq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:var(--moda-var)!important}
+.app .ciclo .cm b:not(#q):not(#qq),.app .lyn b:not(#q):not(#qq),.app .tvfrase:not(#q):not(#qq){font-family:var(--moda)!important;font-variation-settings:var(--moda-var)!important;font-variant-numeric:lining-nums}
 .app .ciclo .cm b:not(#q):not(#qq),.app .lyn b:not(#q):not(#qq){font-weight:var(--moda-w)!important}
-.app .pcred:not(#q):not(#qq),.app .tzfotos .pcred:not(#q):not(#qq){font-family:var(--moda)!important;font-style:italic!important;font-variation-settings:var(--moda-var)!important;font-size:12.5px!important;letter-spacing:.01em!important}
+.app .pcred:not(#q):not(#qq),.app .tzfotos .pcred:not(#q):not(#qq){font-family:var(--sf)!important;font-size:12.5px!important}
 
 /* 17/11 · la procedencia de un número, al pasar o al tocar: fuente, período, observaciones */
 #tip.src{position:fixed;z-index:200;pointer-events:none;white-space:normal!important;width:max-content;box-sizing:border-box;display:flex;flex-direction:column;gap:3px;max-width:min(290px,calc(100vw - 16px));padding:10px 12px;background:var(--ink);color:#fff;font-size:12px!important;line-height:1.4;border-radius:12px;transition:opacity .12s}
@@ -1464,7 +1463,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 :not(text):not(tspan)[data-src]:hover{text-decoration:underline dotted;text-underline-offset:3px;text-decoration-thickness:1px}
 
 /* 17/11 · la entrada, una portada de fotos de pasarela (referencia: i-D y Vogue Runway). Las fotos ocupan toda la pantalla, a sangre
-   y sin esquinas, corren solas y cambian con cada respuesta; la pregunta va encima, en Bodoni liviana. En el celular, la banda arriba y la pregunta abajo */
+   y sin esquinas, corren solas y cambian con cada respuesta; la pregunta va encima, en la letra del sistema. En el celular, la banda arriba y la pregunta abajo */
 .app #v-perfil.view:not([hidden]):not(#q):not(#qq):not(#qqq){padding:0!important;max-width:none!important;width:100vw;margin-left:calc(50% - 50vw);box-sizing:border-box;display:block;position:relative;height:calc(100vh - 52px);min-height:560px;overflow:hidden;background:#111}
 .gbanda{position:absolute;inset:0;overflow:hidden;background:#111}
 .gbanda::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.5) 30%,rgba(0,0,0,0) 60%),linear-gradient(to right,rgba(0,0,0,.35),rgba(0,0,0,0) 50%);pointer-events:none}
@@ -1479,7 +1478,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .gbf::after{content:'';position:absolute;left:0;right:0;top:0;height:18%;background:linear-gradient(to bottom,rgba(0,0,0,.38),rgba(0,0,0,0));pointer-events:none}
 .app .gbf figcaption:not(#q):not(#qq){position:absolute;left:12px;right:12px;top:16px;z-index:1;border:0!important;padding:0!important;margin:0!important;font:400 13px/1.3 var(--sf)!important;letter-spacing:.01em!important;color:#fff!important;text-shadow:0 1px 8px rgba(0,0,0,.45)}
 .app #v-perfil .gate:not(#q):not(#qq):not(#qqq){position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 clamp(24px,5vw,72px) 44px!important;max-width:none!important;margin:0!important;text-align:left!important;color:#fff}
-.app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq):not(#qqqq){font-family:var(--moda)!important;font-weight:400!important;font-variation-settings:'opsz' 96!important;letter-spacing:-.022em!important;line-height:1.02!important;color:#fff!important;font-size:clamp(52px,6.4vw,104px)!important;margin:10px 0 26px!important;max-width:14ch;text-align:left!important}
+.app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq):not(#qqqq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-tit-ls)!important;line-height:1.02!important;color:#fff!important;font-size:clamp(52px,6.4vw,104px)!important;margin:10px 0 26px!important;max-width:14ch;text-align:left!important}
 .app #v-perfil .gprog:not(#q):not(#qq):not(#qqq){font:400 13px/1 var(--sf)!important;letter-spacing:.04em!important;color:rgba(255,255,255,.85)!important;text-align:left!important}
 .app #v-perfil .gprog b{font-weight:400!important;color:#fff!important}
 .app #v-perfil .ggrid:not(#q):not(#qq):not(#qqq),.app #v-perfil .ggrid.g4:not(#q):not(#qq):not(#qqq){display:flex!important;flex-wrap:wrap;gap:10px!important;max-width:none!important;grid-template-columns:none!important;justify-content:flex-start!important;margin:0!important}
@@ -1540,7 +1539,7 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 .dgdatos{display:grid;grid-template-columns:minmax(0,1fr) 44px minmax(0,1.1fr) 44px minmax(0,1fr);align-items:center;gap:0 6px}
 .dgcol{display:flex;flex-direction:column;gap:10px}
 .dgclave{border:2px solid var(--ink);padding:22px 20px}
-.dgclave b{font-family:var(--moda);font-size:34px!important;font-weight:500!important;letter-spacing:-.01em}
+.dgclave b{font-family:var(--moda);font-size:34px!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)}
 .dgotra{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--rule)}
 .dgotra .dgk{grid-column:1/-1;margin:0}
 .dgley{grid-column:1/-1;display:flex;gap:22px;margin-top:14px;font-size:var(--t-eti);color:var(--ink-2)}
@@ -1570,39 +1569,40 @@ body{background:var(--paper)!important;color:var(--ink);font:17px/1.47 var(--sf)
 
 .app .dgb:not(#z):not(#q){border-radius:16px!important}
 .app .vermas>summary:not(#z):not(#q){border-radius:999px!important}
-.app .dgclave b:not(#z):not(#q){font-family:var(--moda)!important;font-size:34px!important;font-weight:500!important;letter-spacing:-.01em!important}
+.app .dgclave b:not(#z):not(#q){font-family:var(--moda)!important;font-size:34px!important;font-weight:var(--moda-w)!important;letter-spacing:var(--moda-ls)!important}
 @media (max-width:760px){.app .dgclave b:not(#z):not(#q){font-size:28px!important}}
 
 /* ================= los cinco estilos (17/11) · última =================
-   Título 64 · Subtítulo 24 · Dato 34 en Bodoni Moda 400 (desde la capa «fina y derecha», abajo); Cuerpo 17 y Etiqueta 13 en la letra del sistema, regular.
-   Nunca negrita y cursiva juntas: no hay cursiva (la Bodoni se carga sin su itálica y el navegador la inclinaba a la
-   fuerza). Fuera de la regla: el logotipo, los íconos de los botones y el texto adentro de los gráficos. */
-.app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq),.app #v-mover h2:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-tit)!important;line-height:1.08!important}
-.app #v-lectura .lyn.on b:not(#q):not(#qq):not(#qqq),.app .rec .a:not(#q):not(#qq):not(#qqq),.app .dline .a:not(#q):not(#qq):not(#qqq),.app .dgclave b:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-dat)!important;line-height:1.05!important}
-.app #v-lectura .lyn b:not(#q):not(#qq):not(#qqq),.app .h3:not(#q):not(#qq):not(#qqq),.app .nm:not(#q):not(#qq):not(#qqq),.app #v-mover .bfl p:not(#q):not(#qq):not(#qqq),.app .tvfrase:not(#q):not(#qq):not(#qqq),.app .lectcap b:not(#q):not(#qq):not(#qqq),.app .metgate h3:not(#q):not(#qq):not(#qqq),.app .dzsinimg:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-sub)!important;line-height:1.2!important}
+   Título 64 · Subtítulo 24 · Dato 34 en --moda (la letra del sistema desde el 24/11) a 600; Cuerpo 17 y Etiqueta 13 en la letra del sistema, regular.
+   No hay cursiva. Fuera de la regla: el logotipo, los íconos de los botones y el texto adentro de los gráficos. */
+.app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq),.app #v-mover h2:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-style:normal!important;letter-spacing:var(--moda-tit-ls)!important;font-variation-settings:normal!important;font-size:var(--t-tit)!important;line-height:1.08!important}
+.app #v-lectura .lyn.on b:not(#q):not(#qq):not(#qqq),.app .rec .a:not(#q):not(#qq):not(#qqq),.app .dline .a:not(#q):not(#qq):not(#qqq),.app .dgclave b:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-style:normal!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:normal!important;font-size:var(--t-dat)!important;line-height:1.05!important}
+.app #v-lectura .lyn b:not(#q):not(#qq):not(#qqq),.app .h3:not(#q):not(#qq):not(#qqq),.app .nm:not(#q):not(#qq):not(#qqq),.app #v-mover .bfl p:not(#q):not(#qq):not(#qqq),.app .tvfrase:not(#q):not(#qq):not(#qqq),.app .lectcap b:not(#q):not(#qq):not(#qqq),.app .metgate h3:not(#q):not(#qq):not(#qqq),.app .dzsinimg:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-style:normal!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:normal!important;font-size:var(--t-sub)!important;line-height:1.2!important}
 .app #v-lectura .lyn.on b:not(#q):not(#qq):not(#qqq){font-size:var(--t-dat)!important}
 .app #v-racional .lectesc h4:not(#q):not(#qq):not(#qqq),.app #v-lectura p.lyfrase:not(#q):not(#qq):not(#qqq),.app #v-mover .mvbtn:not(#q):not(#qq):not(#qqq),.app .vermas .sen:not(#q):not(#qq):not(#qqq){font-family:var(--sf)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;text-transform:none!important;font-size:var(--t-cue)!important}
 .app .gprog:not(#q):not(#qq):not(#qqq),.app .gprog b:not(#q):not(#qq):not(#qqq),.app #lectplay:not(#q):not(#qq):not(#qqq),.app .tvsel span:not(#q):not(#qq):not(#qqq),.app .copiar:not(#q):not(#qq):not(#qqq),.app #asclaves:not(#q):not(#qq):not(#qqq),.app .tag:not(#q):not(#qq):not(#qqq),.app .colofon:not(#q):not(#qq):not(#qqq),.app .colofon *:not(#q):not(#qq):not(#qqq),.app .proc:not(#q):not(#qq):not(#qqq),.app .pcred:not(#q):not(#qq):not(#qqq),.app .tzfotos .pcred:not(#q):not(#qq):not(#qqq),.app #v-lectura .lyn .lyk:not(#q):not(#qq):not(#qqq),.app #v-lectura .lyn .lyp:not(#q):not(#qq):not(#qqq),#tip.src:not(#q):not(#qq):not(#qqq),#tip.src *:not(#q):not(#qq):not(#qqq){font-family:var(--sf)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;text-transform:none!important;font-size:var(--t-eti)!important}
 .app .colofon b:not(#q):not(#qq):not(#qqq),#tip.src b:not(#q):not(#qq):not(#qqq){font-weight:400!important;color:inherit}
 .app .colofon b:not(#q):not(#qq):not(#qqq){color:var(--ink)!important}
 .app .rec .a *:not(#q):not(#qq):not(#qqq),.app .dline .a *:not(#q):not(#qq):not(#qqq){font-weight:400!important;font-size:var(--t-dat)!important}
-.app #v-mover .bfl:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;font-variation-settings:normal!important;font-size:var(--t-sub)!important;line-height:1.2!important}
+.app #v-mover .bfl:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-style:normal!important;letter-spacing:var(--moda-ls)!important;font-variation-settings:normal!important;font-size:var(--t-sub)!important;line-height:1.2!important}
 .app #v-racional .sen:not(#q):not(#qq):not(#qqq){font-family:var(--sf)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;text-transform:none!important;font-size:inherit!important}
 .app .tvsel i:not(#q):not(#qq):not(#qqq),.app .bfcred:not(#q):not(#qq):not(#qqq){font-family:var(--sf)!important;font-weight:400!important;font-style:normal!important;letter-spacing:0!important;text-transform:none!important;font-size:var(--t-eti)!important}
 
 /* ================= fina y derecha (17/11) · última =================
-   Referencia: Vogue Runway, Saint Laurent, Celine. Letra derecha, fina y liviana: la Bodoni va en 400 (nunca en negrita)
-   y el Título, grande, con el corte óptico de display (filetes finos) y el tracking cerrado. Sigue habiendo cinco estilos:
-   Título 64 (40 en el celular) · Subtítulo 24 · Dato 34 en Bodoni 400; Cuerpo 17 y Etiqueta 13 en la letra del sistema, 400.
-   La entrada usa el mismo Título. Ningún peso por encima de 400 fuera del logotipo; ninguna cursiva. */
+   Referencia: Vogue Runway, Saint Laurent, Celine. Era la Bodoni en 400 con corte óptico de display;
+   desde el 24/11, la letra del sistema a 600 con el tracking de títulos de antes del 17/11. Sigue habiendo cinco estilos:
+   Título 64 (40 en el celular) · Subtítulo 24 · Dato 34 a 600; Cuerpo 17 y Etiqueta 13 a 400.
+   La entrada usa el mismo Título. Ninguna cursiva. */
 :root{--t-tit:64px}
 @media (max-width:600px){:root{--t-tit:40px}}
-.app h1:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .dzhead .dzh:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-mover h2:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-racional .metsec h2:not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important;font-variation-settings:'opsz' 96!important;letter-spacing:-.022em!important;line-height:1.04!important;font-size:var(--t-tit)!important}
-.app #v-racional .metsec h2:not(#q):not(#qq):not(#qqq):not(#qqqq){font-size:var(--t-sub)!important;font-variation-settings:normal!important;letter-spacing:-.01em!important;line-height:1.2!important}
+.app h1:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .dzhead .dzh:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-mover h2:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-racional .metsec h2:not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:var(--moda-w)!important;letter-spacing:var(--moda-tit-ls)!important;line-height:1.04!important;font-size:var(--t-tit)!important}
+.app #v-racional .metsec h2:not(#q):not(#qq):not(#qqq):not(#qqqq){font-size:var(--t-sub)!important;font-variation-settings:normal!important;letter-spacing:var(--moda-ls)!important;line-height:1.2!important}
 .app #v-perfil .gate h1:not(#q):not(#qq):not(#qqq):not(#qqqq){font-size:var(--t-tit)!important}
 .app :is(.pname,.nm,.h3,.tvfrase,.dzh,.gt,.cn,.lyn b,.rec .a,.dline .a,.dgclave b,.bfl,.metgate h3,.lectcap b):not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
 .app :is(.rec .a,.dline .a) *:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .ico:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .ltmandar:not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
 .app :is(b,strong,th,summary,button,a,label,h2,h3,h4,h5,dt):not(.mk):not(.mk *):not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:400!important}
+/* 24/11: con la letra de Apple, los subtítulos y datos vuelven a 600 como antes del 17/11; el texto común sigue en 400 */
+.app :is(.bfnum,.bfracha b,.dgclave b,.lyn b,.lectcap b,.metgate h3,.h3,.pvsuma b,.ciclo .cm b,.mett,.nm,.pname,.rec .a,.dline .a,.cmy,.apn,.bfl,.bfl p,.tvfrase,.cfn,.dzack,.arst,.bffrase p):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-weight:var(--moda-w)!important}
 
 /* 17/11 · capas: la procedencia se explora sobre la curva; con menos de tres capas, una franja por capa */
 .rcapa{transition:opacity .15s ease}
@@ -1614,7 +1614,7 @@ svg.rfoco .rcapa.on path{stroke-width:3px}
 .cfranjas{display:flex;flex-direction:column;gap:22px;margin:4px 0}
 .cfranja{margin:0}
 .app .cfranja figcaption:not(#q):not(#qq){display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 6px!important;padding:0!important;border:0!important;font:400 var(--t-cue)/1.3 var(--sf)!important;color:var(--ink)!important}
-.cfn{font-family:var(--moda);font-size:var(--t-sub);font-weight:400}
+.cfn{font-family:var(--moda);font-size:var(--t-sub);font-weight:var(--moda-w)}
 .cfd{font-size:var(--t-eti);color:var(--ink-2)}
 .cfranja svg{display:block;overflow:visible}
 .cfranja svg text{font-family:var(--sf)}
@@ -1626,7 +1626,7 @@ svg.rfoco .rcapa.on path{stroke-width:3px}
 .app #v-racional .methead:not(#q):not(#qq):not(#qqq):not(#qqqq){all:unset;box-sizing:border-box!important;display:flex!important;align-items:baseline!important;gap:16px!important;width:100%!important;cursor:pointer!important;padding:6px 0!important;background:none!important;border:0!important;box-shadow:none!important;min-height:0!important}
 .app #v-racional .methead:focus-visible:not(#q):not(#qq):not(#qqq):not(#qqqq){outline:2px solid var(--azul)!important;outline-offset:4px!important;border-radius:6px!important}
 .app #v-racional .metn:not(#q):not(#qq):not(#qqq):not(#qqqq){font:400 var(--t-eti)/1 var(--sf)!important;color:var(--ink-3)!important;min-width:1.2em}
-.app #v-racional .mett:not(#q):not(#qq):not(#qqq):not(#qqqq){flex:1;font-family:var(--moda)!important;font-weight:400!important;font-size:var(--t-sub)!important;line-height:1.2!important;letter-spacing:-.01em!important;color:var(--ink)!important;text-decoration:none!important}
+.app #v-racional .mett:not(#q):not(#qq):not(#qqq):not(#qqqq){flex:1;font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-size:var(--t-sub)!important;line-height:1.2!important;letter-spacing:var(--moda-ls)!important;color:var(--ink)!important;text-decoration:none!important}
 .app #v-racional .methead:hover .mett:not(#q):not(#qq):not(#qqq):not(#qqqq){text-decoration:underline!important;text-underline-offset:5px!important;text-decoration-thickness:1px!important}
 .app #v-racional .metab:not(#q):not(#qq):not(#qqq):not(#qqqq){font:400 var(--t-eti)/1 var(--sf)!important;color:var(--azul)!important;border:1px solid currentColor!important;border-radius:999px!important;padding:7px 14px!important;white-space:nowrap;background:none!important}
 .app #v-racional .metsec.abierta .metab:not(#q):not(#qq):not(#qqq):not(#qqqq){background:var(--azul)!important;color:#fff!important;border-color:var(--azul)!important}
@@ -1639,7 +1639,7 @@ svg.rfoco .rcapa.on path{stroke-width:3px}
 /* ================= la vibe de la entrada, en toda la web (17/11) · última =================
    Elegida por Felipe entre dos propuestas (B, «Pasarela»; diseno/propuestas/vibe_2026-11-17/). Fondo blanco; el título
    grande y a la izquierda, sobre blanco; debajo, una fila de looks de pasarela a sangre que corre sola, con el nombre del
-   atributo en Bodoni sobre cada foto; las tarjetas de Tendencias son fotos altas de borde a borde, sin caja. */
+   atributo sobre cada foto; las tarjetas de Tendencias son fotos altas de borde a borde, sin caja. */
 body,.app{background:#fff!important}
 .vbanda{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:10px;margin-bottom:36px;height:min(46vh,440px);overflow:hidden;background:#111}
 .vbanda .gbt{height:100%}
@@ -1648,7 +1648,7 @@ body,.app{background:#fff!important}
 .vbanda .gbf::before{content:'';position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0));pointer-events:none;z-index:1}
 .vbanda .gbf::after{content:'';position:absolute;left:0;right:0;top:0;height:18%;background:linear-gradient(to bottom,rgba(0,0,0,.38),rgba(0,0,0,0));pointer-events:none}
 .app .vbanda .gbf figcaption:not(#q):not(#qq):not(#qqq):not(#qqqq){position:absolute;left:12px;right:12px;top:16px;bottom:auto;z-index:2;border:0!important;padding:0!important;margin:0!important;font:400 13px/1.3 var(--sf)!important;color:#fff!important;text-shadow:0 1px 8px rgba(0,0,0,.45)}
-.vbanda .vbn{position:absolute;left:12px;right:12px;bottom:14px;z-index:2;color:#fff;font-family:var(--moda);font-weight:400;font-size:var(--t-sub);line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.vbanda .vbn{position:absolute;left:12px;right:12px;bottom:14px;z-index:2;color:#fff;font-family:var(--moda);font-weight:var(--moda-w);font-size:var(--t-sub);line-height:1.1;text-shadow:0 1px 10px rgba(0,0,0,.45)}
 .app .vhead>div:not(#q):not(#qq):not(#qqq):not(#qqqq){text-align:left!important;max-width:none!important;margin:0!important}
 .app .vhead h1:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .lthead h1:not(#q):not(#qq):not(#qqq):not(#qqqq),.app #v-racional .vhead h1:not(#q):not(#qq):not(#qqq):not(#qqqq){text-align:left!important;margin-left:0!important}
 .app .vhead .sub:not(#q):not(#qq):not(#qqq):not(#qqqq),.app .vhead p:not(#q):not(#qq):not(#qqq):not(#qqqq){margin-left:0!important;text-align:left!important}
@@ -1744,7 +1744,7 @@ img:not(.fcarga){transition:opacity .35s ease}
 .pvsuma{all:unset;box-sizing:border-box;display:flex;gap:14px;align-items:flex-start;width:100%;margin-top:18px;padding:18px;border:1px dashed var(--ink);border-radius:18px;cursor:pointer}
 .pvsuma:hover{background:#f6f6f8}
 .pvmas{flex:none;width:40px;height:40px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font-size:22px}
-.pvsuma b{display:block;font-family:var(--moda);font-weight:400;font-size:var(--t-sub);line-height:1.15;color:var(--ink);margin-bottom:4px}
+.pvsuma b{display:block;font-family:var(--moda);font-weight:var(--moda-w);font-size:var(--t-sub);line-height:1.15;color:var(--ink);margin-bottom:4px}
 .pvsuma span{font:400 var(--t-cue)/1.4 var(--sf);color:var(--ink-2)}
 .app #v-lectura .pvej:not(#q):not(#qq){background:none!important;padding:0!important;margin-top:14px!important;border:0!important}
 .pvej div{display:flex;gap:6px}
@@ -1753,7 +1753,7 @@ img:not(.fcarga){transition:opacity .35s ease}
 .apg{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:1px}
 .apg img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;background:#1c1c1e}
 .aptxt{position:absolute;left:clamp(16px,5vw,72px);bottom:clamp(16px,4vw,48px);max-width:min(520px,calc(100% - 32px));background:#fff;padding:18px 22px 20px}
-.app .aptxt .apn:not(#q):not(#qq):not(#qqq){margin:0!important;font-family:var(--moda)!important;font-weight:400!important;font-variation-settings:'opsz' 96!important;font-size:clamp(48px,7vw,96px)!important;line-height:1!important;letter-spacing:-.02em!important;text-align:left!important;color:var(--ink)!important}
+.app .aptxt .apn:not(#q):not(#qq):not(#qqq){margin:0!important;font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-size:clamp(48px,7vw,96px)!important;line-height:1!important;letter-spacing:-.02em!important;text-align:left!important;color:var(--ink)!important}
 .app .aptxt .apl:not(#q):not(#qq):not(#qqq){margin:10px 0 0!important;font:400 var(--t-cue)/1.4 var(--sf)!important;color:var(--ink-2)!important;text-align:left!important}
 @media (max-width:760px){
 .ctlf{grid-template-columns:repeat(7,minmax(0,1fr));row-gap:30px}
@@ -1799,7 +1799,7 @@ img:not(.fcarga){transition:opacity .35s ease}
 /* 18/11 (noche) · El ciclo en movimiento */
 .cmov{margin:6px 0 40px;border-top:1px solid var(--ink);padding-top:18px}
 .cmhead{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:end;margin-bottom:6px}
-.app .cmov .cmy:not(#q):not(#qq):not(#qqq){margin:0!important;font-family:var(--moda)!important;font-weight:400!important;font-variation-settings:'opsz' 96!important;font-size:clamp(64px,8vw,120px)!important;line-height:.9!important;letter-spacing:-.03em!important;color:var(--ink)!important;font-variant-numeric:lining-nums tabular-nums;min-width:3.2ch}
+.app .cmov .cmy:not(#q):not(#qq):not(#qqq){margin:0!important;font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-size:clamp(64px,8vw,120px)!important;line-height:.9!important;letter-spacing:var(--moda-tit-ls)!important;color:var(--ink)!important;font-variant-numeric:lining-nums tabular-nums;min-width:3.2ch}
 .app .cmov .cmk:not(#q):not(#qq):not(#qqq){margin:0!important;max-width:520px;font:400 var(--t-eti)/1.45 var(--sf)!important;color:var(--ink-2)!important;text-align:left!important}
 .cmbot{display:flex;gap:8px}
 .app .cmov .cmbot button:not(#q):not(#qq){font:400 var(--t-eti)/1 var(--sf)!important;padding:8px 14px!important;border:1px solid var(--ink)!important;border-radius:999px!important;background:#fff!important;color:var(--ink)!important;cursor:pointer}
@@ -1842,12 +1842,12 @@ img:not(.fcarga){transition:opacity .35s ease}
 
 /* 18/11 (noche) · El brief con tensión */
 .bfnota{display:flex;align-items:baseline;gap:10px;margin:6px 0 4px}
-.app #v-mover .bfnum:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:400!important;font-variation-settings:'opsz' 96!important;font-size:clamp(110px,14vw,180px)!important;line-height:.85!important;letter-spacing:-.04em!important;color:var(--ink)!important;font-variant-numeric:lining-nums tabular-nums}
+.app #v-mover .bfnum:not(#q):not(#qq):not(#qqq){font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-size:clamp(110px,14vw,180px)!important;line-height:.85!important;letter-spacing:var(--moda-tit-ls)!important;color:var(--ink)!important;font-variant-numeric:lining-nums tabular-nums}
 .bfde10{font-family:var(--moda);font-size:var(--t-sub);color:var(--ink-3)}
 .bfetq{margin-left:14px;font:400 var(--t-cue)/1 var(--sf);padding:8px 14px;border-radius:999px;border:1px solid currentColor}
 .bfetq.ok{color:var(--act-entrar,#2a6b3c)}.bfetq.casi{color:var(--act-esperar,#8a6100)}.bfetq.mal{color:var(--act-salir,#a32b2b)}
 .app #v-mover .bfracha:not(#q):not(#qq){margin:6px 0 26px!important;font:400 var(--t-cue)/1.4 var(--sf)!important;color:var(--ink-2)!important}
-.bfracha b{font-family:var(--moda);font-weight:400;font-size:var(--t-sub);color:var(--ink)}
+.bfracha b{font-family:var(--moda);font-weight:var(--moda-w);font-size:var(--t-sub);color:var(--ink)}
 .app #v-mover .bfcomp:not(#q):not(#qq){margin:30px 0 10px!important;font:400 var(--t-eti)/1 var(--sf)!important;color:var(--ink-2)!important}
 .bffrase{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:26px 0 6px;padding:18px 20px;border:1px solid var(--ink);border-radius:18px}
 .app #v-mover .bffrase p:not(#q):not(#qq){margin:0!important;flex:1;font-family:var(--moda)!important;font-size:var(--t-sub)!important;line-height:1.25!important;color:var(--ink)!important}
@@ -1857,6 +1857,56 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app #v-mover .bfetq:not(#q):not(#qq):not(#qqq){border-radius:999px!important}
 .app #v-mover .bfver:not(#q):not(#qq){margin-left:0!important;margin-right:auto!important}
 .app #v-mover .bfver .mvbotones:not(#q):not(#qq){justify-content:flex-start!important}
+
+/* ================= el sistema (24/11) · última =================
+   Devolución de la Entrega 4: «Paleta por rol» y «Tipografías como escala (Heading 1, 2, 3, 4, párrafo)»; «tamaños muy
+   chicos y fuentes con muy poco cuerpo». La lámina está en diseno/sistema_2026-11-24/.
+   Escala: H1 56/36 · H2 32/26 · H3 22/20 · H4 18 · Párrafo 17 (secundario 16) · Etiqueta 12 MAYÚSCULAS · Dato 40/34 ·
+   Gráfico 12. Títulos 600 (H3 500); nada en 700 o más. Nada que se lea bajo 16 px; etiquetas, créditos y gráficos, 12.
+   Paleta por rol: acción (azul, sólo lo que se toca), info (tinta, gris, líneas; las series de los gráficos), señal
+   (verde/ámbar/rojo con palabra), foto (pasarela a sangre, crédito blanco), ilustración (línea negra sobre blanco).
+   La Bodoni queda sólo en el logo. */
+:root{--t-tit:56px;--t-h2:32px;--t-sub:22px;--t-h4:18px;--t-cue:17px;--t-chico:16px;--t-eti:16px;--t-lab:12px;--t-dat:40px;--t-graf:12px;
+  --accion:#0066cc;--accion-2:#0071e3;--tinta:#1d1d1f;--tinta-2:#6e6e73;--linea:#d2d2d7;--bloque:#f5f5f7;
+  --moda-w:600;--h3-w:500}
+@media (max-width:600px){:root{--t-tit:36px;--t-h2:26px;--t-sub:20px;--t-dat:34px}}
+
+/* el logo, en Bodoni (lo único) */
+.app .mk:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq),.app .mk span:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-family:"Bodoni Moda",Didot,"Bodoni 72",serif!important;font-weight:500!important;letter-spacing:.14em!important}
+
+/* H2: el título de cada bloque, y la frase del veredicto del brief */
+.app .view h2:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq),.app #v-mover h2:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-h2)!important;font-weight:600!important;letter-spacing:-.02em!important;line-height:1.12!important}
+/* H3: lo que se toca (tarjeta, atributo, pregunta de un paso): 500 */
+.app :is(.nm,.pname,.h3,.metgate h3,.lectcap b,.tvfrase,.bfl,.bfl p,.cfn,.dzack,.arst,.bffrase p,.pvsuma b,.mett,.vbanda .vbn,.ciclo .cn,.dzhead .dzh3):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-weight:var(--h3-w)!important;letter-spacing:-.015em!important}
+/* H4: títulos chicos (el de cada gráfico, el de un grupo) */
+.app :is(.tvtit,.tt,.mdcol h3,.lectj h4,.lectesc h4):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-h4)!important;font-weight:600!important;letter-spacing:-.01em!important;text-transform:none!important;color:var(--tinta)!important}
+
+/* Etiqueta: lo importante, en MAYÚSCULAS con tracking, a 12 */
+.app :is(.lbl,.pkind,.dgk,.tde,.bfde,.cmk-eti,.eti,.vhead>div>.lbl,.metn,.lectk):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-lab)!important;font-weight:600!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:var(--tinta-2)!important}
+/* créditos de foto: 12, en caja normal (rol foto) */
+.app :is(.pcred,.bfcred,figcaption,.gbf figcaption):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-lab)!important;letter-spacing:0!important;text-transform:none!important}
+/* las marcas de procedencia (● medido, ◇ interpretado) son etiquetas: 12 */
+.app :is(.tag,.tag *):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-lab)!important}
+
+.app .tvsel span:not(#q):not(#qq):not(#qqq):not(#qqqq){font-size:16px!important}
+/* sobre una foto, el link va en blanco y subrayado (rol foto) */
+.app #v-perfil :is(.gmirar button,a):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq):not(#qqqqqqq){color:#fff!important}
+/* el «?» no pisa los filtros cuando los pills crecen */
+@media (max-width:760px){.app #v-recorridos :has(> .chip){padding-right:44px}}
+/* Gráficos: etiquetasSvg() ya deja cada texto de SVG en 13 px de pantalla, sea cual sea la escala del dibujo */
+
+/* Acción: un link es azul y subrayado; un botón se ve como botón */
+.app .view a:not([class]):not(#q):not(#qq),.app :is(.lnk,.copiar,.perfilrad button,summary.lbl,.gmirar button):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){color:var(--accion)!important;text-decoration:underline!important;text-underline-offset:3px;text-decoration-thickness:1px;background:none!important;border:0!important;box-shadow:none!important;cursor:pointer}
+.app :is(.lnk,.copiar,.perfilrad button,summary.lbl,.gmirar button):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-weight:400!important;color:var(--accion)!important;font-size:var(--t-chico)!important;padding:4px 0!important;text-transform:none!important;letter-spacing:-.01em!important}
+.app .view a:not([class]):hover,.app :is(.lnk,.copiar):hover{color:var(--accion-2)!important}
+/* botón principal: relleno azul */
+.app :is(.kbtn,.mvacceso,.btn-pri):not(.ghost):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){align-items:center;gap:8px;background:var(--accion)!important;color:#fff!important;border:1.5px solid var(--accion)!important;border-radius:999px!important;padding:12px 22px!important;font:500 16px/1.1 var(--sf)!important;letter-spacing:-.01em!important;text-transform:none!important;text-decoration:none!important;box-shadow:none!important;cursor:pointer}
+.app :is(.kbtn,.mvacceso,.btn-pri):not(.ghost):hover{background:var(--accion-2)!important;border-color:var(--accion-2)!important}
+.app .mvacceso b:not(#q):not(#qq):not(#qqq):not(#qqqq){font-weight:500!important;color:#fff!important}
+/* botón secundario: borde, para controles (pausar, desde 2004, ghost) */
+.app :is(.kbtn.ghost,.gvolver,.cmplay,.cmre,.arpausa,.ltejb,.btn-sec):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){align-items:center;background:#fff!important;color:var(--accion)!important;border:1.5px solid var(--accion)!important;border-radius:999px!important;padding:9px 16px!important;font:500 16px/1.1 var(--sf)!important;letter-spacing:-.01em!important;text-decoration:none!important;text-transform:none!important}
+/* opciones y filtros (pills): 15, tinta; la elegida, rellena en tinta */
+.app :is(.chip,.tvsel button,.ltsugb):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:16px!important;letter-spacing:-.01em!important}
 </style>
 
 <div class="app">
@@ -2123,7 +2173,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
         <div><div class="k">Vida media</div><div class="v serif">11,6</div><div class="n">trimestres por marca</div></div>
       </div>
 
-      <h3 style="font-family:Bodoni Moda,serif;font-weight:400;font-size:25px;margin:34px 0 0">Por qué Lyst cambió la fórmula</h3>
+      <h3 style="font-family:var(--sf);font-weight:400;font-size:25px;margin:34px 0 0">Por qué Lyst cambió la fórmula</h3>
       <p class="sub" style="margin-top:8px">En el primer trimestre de 2026 Chanel y Dior aparecen de la nada en el puesto 1 y el 3. No explotaron en tres meses: Lyst recalibró su metodología. Entender por qué ayuda a leer cualquier ranking de moda.</p>
       <div class="dcols" style="margin-top:18px">
         <div>
@@ -2145,7 +2195,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
         </div>
       </div>
 
-      <h3 style="font-family:Bodoni Moda,serif;font-weight:400;font-size:25px;margin:38px 0 0">La alfombra roja</h3>
+      <h3 style="font-family:var(--sf);font-weight:400;font-size:25px;margin:38px 0 0">La alfombra roja</h3>
       <p class="sub" style="margin-top:8px">El eslabón que faltaba entre la pasarela y las redes. Un famoso usa algo en la gala, las redes lo ven, y ahí empieza la cadena. Launchmetrics lo mide en dólares de impacto mediático, y lo hace en una <b>ventana de 48 horas después del evento</b> — que es exactamente la causalidad que nos interesa.</p>
       <div class="cyc" style="margin-top:18px">
         <div>
@@ -2293,7 +2343,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <section class="metsec" aria-labelledby="met6">
         <h2 class="methd" id="met6"><button type="button" class="methead" aria-expanded="false" aria-controls="met6f"><span class="metn">5</span><span class="mett">Las decisiones de diseño</span><span class="metab" aria-hidden="true">Abrir</span></button></h2>
         <div class="metprev"><p class="metlead">El color dice una sola cosa: si conviene avanzar o frenar. La etapa es un lugar en la pista, no un color. Lo primero de cada pantalla es lo que decide; lo que aclara va en un «?».</p></div>
-        <div class="metfull" id="met6f" hidden><p><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va con ▲ o ▼, y sólo la palabra lleva el mismo verde o rojo («Gana presencia», «Pierde presencia»); «Estable» va en negro. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series, y los grupos del K-means tienen tonos que no son de la señal. Hay un solo color más, el azul, y significa «se puede tocar»: botones, links y la opción elegida. El resto es blanco, gris y negro.</p><p><b>La letra.</b> Bodoni Moda, la de las revistas de moda, en los títulos y en los números que deciden; el texto, en la letra del sistema. Cinco estilos: título, subtítulo, cuerpo, etiqueta y dato.</p></div>
+        <div class="metfull" id="met6f" hidden><p><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va con ▲ o ▼, y sólo la palabra lleva el mismo verde o rojo («Gana presencia», «Pierde presencia»); «Estable» va en negro. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series, y los grupos del K-means tienen tonos que no son de la señal. Hay un solo color más, el azul, y significa «se puede tocar»: botones, links y la opción elegida. El resto es blanco, gris y negro.</p><p><b>La letra.</b> La del sistema de Apple (SF Pro; Inter en el resto) en todo; la Bodoni, sólo en el logo. Cinco estilos: título, subtítulo, cuerpo, etiqueta y dato.</p></div>
       </section>
       <section class="metsec" aria-labelledby="met7">
         <h2 class="methd" id="met7"><button type="button" class="methead" aria-expanded="false" aria-controls="met7f"><span class="metn">6</span><span class="mett">El racional completo</span><span class="metab" aria-hidden="true">Abrir</span></button></h2>

@@ -3316,3 +3316,43 @@ etapa (en ascenso +194 %, en pico +64 %, saturada −29 %); antes pico y saturad
 Scripts: `codigo/pasarela_clip/km_2025.py`, `km_final_2025.js`, `prueba_reddit_modelo_2025.py`. Actualizados la app
 (KM, textos de Acerca de, El modelo, fuentes y el contexto del LLM), `app/llm/ciclo_datos.md`, readme, racional e
 hipótesis.
+
+## 2026-11-24 · Rediseño, fase A: la letra y el sistema
+
+La Entrega 4 volvió con 6/10 (devolución completa en `entregas/entrega_4/devolucion.md`; el plan por fases en
+`entregas/entrega_4/plan_rediseno.md`). Esta fase responde a tres puntos:
+
+- «Legibilidad: tamaños muy chicos y fuentes con muy poco cuerpo.»
+- Las anotaciones a mano: «Paleta por rol (acción / info / foto / ilustración) y Tipografías como escala (Heading 1,
+  2, 3, 4, párrafo), cada estilo con un significado y una acción distintos».
+- En clase: «La Bodoni queda SOLO en el logo CICLO»; «texto ≥ 16 px, etiquetas ≥ 12 px, títulos en medium o
+  semibold»; «todo lo que es link va en color de link y subrayado; un botón se ve como botón»; y de la devolución
+  escrita, «el botón “ojo para Chanel” no tiene que verse como link».
+
+**La letra, a mano y no con `git revert`.** Los commits de la Bodoni (17/11: `5bb1766`, `032c769`, `746f429`,
+`93f973e`, `f6d6043`) mezclan la letra con cambios que se quedan (la entrada con fotos, Reddit de hombres). `--moda`
+apunta a `var(--sf)`; salen el corte óptico (`opsz` 96), el `font-size-adjust` y la cursiva de los créditos; los «Bodoni
+Moda» escritos a mano (reglas sueltas y los dos `<h3>` de Lyst y la alfombra roja) pasan a `var(--sf)`. Pesos y tracking
+de los títulos, de `fb5baa4` (el último commit sin Bodoni): 600 y −0,025 em. La Bodoni queda sólo en el logo (Google Fonts
+la carga sólo en 500). Sale IBM Plex Mono, que ningún elemento usaba; Archivo se queda porque los botones del menú la usan.
+Felipe ya lo había pedido a la mañana («a los profesores les gustaba esa letra y la Bodoni quedó rara»); la clase lo
+confirmó, con el logo como excepción.
+
+**El sistema** (lámina: `diseno/sistema_2026-11-24/`; documentado en CLAUDE.md). H1 56/36 · H2 32/26 · H3 22/20 en 500 ·
+H4 18 · Párrafo 17 (secundario 16) · Etiqueta 12 en MAYÚSCULAS · Dato 40/34. Medido antes y después en las siete
+pantallas: antes, 619 textos a 13 px y 18 combinaciones de tamaño y peso; después, nada que se lea bajo 16 px, y lo que
+queda en 12 son etiquetas, marcas de procedencia y créditos de foto. Los textos de los gráficos ya se veían a 13 px reales
+(`etiquetasSvg()` corrige la escala de cada SVG); una regla con `!important` sobre el texto de SVG rompía esa corrección y
+se sacó. Paleta por rol: acción (azul, sólo lo que se toca), info, señal, foto, ilustración.
+
+**Links y botones, relevados uno por uno.** «¿Tenés ojo para Chanel?» era texto azul suelto: ahora es botón principal.
+«Cambiar», «Copiar link de este diseño» y «Ver otro atributo» no se veían como links: ahora van en azul y subrayados.
+Los ejemplos de Preguntar (Trench, Denim, Cuero) eran mitad pill y mitad link: ahora son botones secundarios. Pausar y
+«Desde 2004», botones secundarios. Sobre una foto (la entrada), el link va en blanco.
+
+**Dos errores de la fase, corregidos antes del commit.** Forzar `display` en los botones hizo aparecer «← Volver» en el
+primer paso de la entrada; y con los pills más grandes, el «?» de El ciclo se montaba sobre «Faldas» en el celular.
+
+**Qué no cambia todavía.** La entrada con las tres preguntas, el menú y Tendencias siguen como estaban: son las fases
+B, C y D. Capturas antes y después, a 1400 y 393 px: `diseno/rediseno_2026-11-24/A/`. `probar_demo.js` sin clave: 8 de 8
+en los dos anchos.

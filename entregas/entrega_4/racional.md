@@ -283,21 +283,17 @@ no lleva fuente medida: lleva su marca ◇.
 cómo usar la app pasa a un «?» que se abre si lo tocan; lo que no aporta se borra (`decisiones.md`, 04/11).
 
 **Tipografía.** Había 31 tamaños de letra y 49 combinaciones de tamaño y peso (medido, 04/11). Quedan cinco estilos:
-Título 64 px (40 en el celular), Subtítulo 24 y Dato 34 en **Bodoni Moda**, peso 400, con el corte óptico de display
-(filetes finos); Cuerpo 17 y Etiqueta 13 en la letra del sistema (SF Pro en Apple, Inter en el resto), también 400.
-Nada pasa de 400 salvo el logotipo, y no hay cursivas. Cinco estilos hacen que el tamaño signifique algo: si es grande,
-decide.
+Desde el 24/11 hay una escala fija en la **letra del sistema de Apple** (SF Pro en Apple, Inter en el resto): H1 56
+(36 en el celular), H2 32, H3 22, H4 18, Párrafo 17, Etiqueta 12 en mayúsculas y Dato 40; títulos en 600, nunca más.
+Nada que se lea baja de 16 px. La Bodoni queda sólo en el logo. Cada estilo tiene un uso: H1 nombra la pantalla, H2 cada
+bloque, H3 lo que se toca.
 
-*Por qué Bodoni, y por qué fina.* Del 27/10 al 17/11 todo iba en la letra del sistema, por la referencia que pasó
-la cátedra (el sistema de diseño de Apple): la interfaz se corría y la ropa hablaba. Antes, en octubre, la app había
-sido una revista con Bodoni en los títulos, y la cátedra la veía «muy IA»; esta vez la Bodoni vuelve sola, fina y sin
-los adornos de revista que la acompañaban. En la Entrega 4 la
-devolución fue que el diseño era superficial, todo blanco y sin identidad propia. Bodoni Moda es la Didone de Vogue y
-Harper's Bazaar: la única de las tres que se probaron (con Cormorant y Archivo expandida) que se lee como moda sin
-explicarla. Va en lo que se mira (títulos, preguntas, nombres, los números que deciden); el texto corrido, los
-botones y las etiquetas siguen en la letra del sistema, porque una Didone de alto contraste se pierde en tamaños
-chicos. Felipe pidió después una letra derecha, fina y liviana, como la de Vogue Runway, Saint Laurent y Celine: por
-eso 400 y nunca negrita.
+*Por qué la letra del sistema.* Del 27/10 al 17/11 todo iba en la letra del sistema, por la referencia que pasó la
+cátedra (el sistema de diseño de Apple): la interfaz se corría y la ropa hablaba. Después de la devolución de la
+Entrega 4 (el diseño se veía superficial, sin identidad propia) los títulos y los números pasaron a Bodoni Moda, la
+Didone de Vogue, fina y en 400. Duró una semana: el 24/11 Felipe pidió volver a la letra de Apple, porque a los
+profesores les gustaba y la Bodoni quedó rara, y la devolución de la Entrega 4 lo confirmó: la Bodoni, sólo en el logo. Volvieron también los pesos y el tracking de antes del 17/11; la
+identidad queda en las fotos de pasarela a sangre, el fondo blanco y los títulos grandes a la izquierda.
 
 *Lo que se probó y no quedó.* El mismo 17/11 se aplicó una dirección a la 032c (bordes duros, etiquetas chicas en
 mayúsculas y el gráfico de Tendencias repetido en cada pantalla) y se revirtió en el día: «los gráficos repetidos [...]
@@ -326,7 +322,7 @@ Lo que se decidió en el código y no en Figma, porque ningún Figma lo dibujó:
 celular a 393 px, la carga de CLIP (nada baja al abrir la app; el modelo de imágenes, 89 MB, baja con la primera foto,
 avisa el avance y queda guardado), los casos de error (sin clave de Groq, clave rechazada, el límite del plan gratis,
 sin conexión, una imagen que CLIP no reconoce, un atributo sin serie) y apagar el modo oscuro. **La diferencia más grande con el Figma es de
-después:** desde el 17/11 la app usa Bodoni Moda, fondo blanco y fotos de pasarela a sangre, y la página 3 del Figma
+después:** desde el 17/11 la app usa fondo blanco y fotos de pasarela a sangre (y del 17 al 24/11 usó Bodoni Moda en los títulos), y la página 3 del Figma
 sigue mostrando el sistema del 03/11 (letra del sistema, gris perla, tarjetas blancas). No se actualizó: el registro de
 ese cambio está en esta sección y en `decisiones.md` (17/11).
 
@@ -380,6 +376,7 @@ ejemplo de como se veria la web»), sobre una captura de la app que ya estaba en
 | 16/11 | El nombre, otra vez: «Lectura» no decía que es un chat con el que se conversa. Pasa a **Preguntale a CICLO** en el título y **Preguntar** en el menú | Felipe eligió el nombre: es el original, dice que es una conversación, lleva la marca y no envejece como «IA» |
 | 17/11 | La Entrega 4 y su devolución: falta identidad propia, «¿y el racional?», «¿y la info de hombres?». Método pasa a **Acerca de** y resume el racional; Reddit de hombres entra como serie aparte; cada número dice de dónde sale; la dirección 032c se aplica y se revierte en el día; queda la identidad por la letra (Bodoni Moda, fina) y por las fotos (la entrada como una banda de looks, fondo blanco) | Felipe pidió cada cambio y eligió entre propuestas renderizadas; la letra la delegó |
 | 18/11 | La pasarela 2022–2023 estaba mal medida (Vogue dejó de etiquetar): la corrige un clasificador CLIP y el K-means se recalcula. Llega 2024–2025 y entra al modelo. Diseñar con fotos, El ciclo en movimiento, El brief con racha, la ficha de cada fuente, el modelo y los tokens a la vista | El problema de la pasarela lo encontró Claude al ir a buscar 2026; recalcular el modelo y meter 2024–2025 los aprobó o pidió Felipe |
+| 24/11 | La devolución de la Entrega 4 (6/10) abre un rediseño por fases. La primera: vuelve la letra del sistema de Apple (la Bodoni, sólo en el logo), una escala tipográfica fija y una paleta por rol | Felipe pasó la devolución y el orden de la cátedra; Claude armó el plan y la lámina del sistema y lo aplicó a mano, sin revertir los commits del 17/11 |
 
 **Qué propuso la IA, qué decidió Felipe y por qué.** Las citas de Felipe son textuales, de las conversaciones en Claude
 Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y el 10/11) cuentan como suyas: las eligió y las mandó.
@@ -418,6 +415,7 @@ Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y e
 | La entrada con fotos (17/11) | Dos propuestas renderizadas: una fila de looks arriba con la pregunta abajo, o las fotos en toda la pantalla con la pregunta encima | Eligió la segunda | El gráfico que había ahí se repetía en Tendencias; la referencia pasó a ser i-D y Vogue Runway |
 | La pasarela corregida (18/11) | Al ir a buscar 2026 encontró que Vogue dejó de etiquetar desde 2022 y que eso hacía caer todas las curvas; la corrigió con CLIP | Aprobó recalcular el modelo, y después pidió: «Metele 2024–2025 al modelo también» | Las etapas cambiaron dos veces; está dicho en la hipótesis, con la validación rehecha |
 | El brief con racha (18/11) | La racha, el veredicto por partes y la frase para copiar; fijó los umbrales (7 para «clavado», 5 para «casi») | Pidió tensión, no más contenido: algo que perder, ritmo y un resultado para contar | Responde a la devolución de que la pirueta no tenía hook |
+| La letra, de vuelta (24/11) | Hizo el cambio a mano: `--moda` a la letra del sistema, pesos y tracking de antes del 17/11, sin tocar layout, fotos ni textos; mostró capturas de antes y después | Lo pidió: «Quiero volver a la tipografía de antes, la de sistema de Apple […]. A los profesores les gustaba esa letra y la Bodoni quedó rara» | La letra la eligen los que la leen: la del sistema era la que funcionaba |
 
 **Qué modelos usamos.**
 

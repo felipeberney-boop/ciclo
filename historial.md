@@ -563,6 +563,12 @@ El brief tiene algo que perder: una racha de briefs clavados (7/10 o más) que s
 partes —el puntaje grande, la racha, el porqué, las tres casas— y cierra con una frase para contar: «Mi look: 8/10 para
 Prada, 6/10 para COS, 3/10 para Zara», con un botón para copiarla.
 
+## v1.79 · 24/11/2026 · Rediseño A: la letra y el sistema
+
+Después de la devolución de la Entrega 4 (6/10). La Bodoni queda sólo en el logo; todo lo demás vuelve a la letra del
+sistema de Apple. Una escala fija (H1, H2, H3, H4, párrafo, etiqueta, dato) con nada que se lea bajo 16 px, y una paleta
+por rol: el azul es sólo lo que se toca, los links van subrayados y los botones se ven como botones.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

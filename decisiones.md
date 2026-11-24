@@ -3410,3 +3410,49 @@ en el celular, «Menú» se partía en dos líneas y «Crear proyecto» tocaba e
 **Pendiente.** `capturar_recorrido.js` todavía recorre la entrada vieja. Mis ciclos sigue siendo Tendencias por dentro
 (fase D) y Explorar ciclos sigue siendo El ciclo (fase E). Falta el link de la página que mostró Cristian.
 
+## 2026-11-24 · Rediseño, fase D: Mis ciclos
+
+Responde a la devolución sobre «Qué se está moviendo»: «demasiados niveles de información. Un gráfico por vez, con un
+texto con su conclusión. ¿Qué unidad tiene el eje vertical? ¿Qué misión cumple la pantalla? ¿Qué período y qué alcance?
+¿Qué son las 8 tarjetas? Ordenarlas por entrar / esperar / salir», y a lo pedido en clase para Mis ciclos (D).
+
+**La misión, en una línea:** «Qué atributos conviene usar en tu proyecto ahora, y por qué». Arriba, el proyecto.
+
+**Las tarjetas ya no son 8.** Eran la lista vieja `T`. Ahora son los 65 atributos que tienen serie medida, y la pantalla
+dice qué es cada tarjeta («un color, una estampa, un corte o un material con datos medidos») y de dónde sale la señal.
+Van agrupadas: ▲ Entrar (24 para fast fashion), ■ Esperar (12), ▼ Salir (29), y dentro de cada grupo por cuánto se
+movieron. Cambian con el tipo de marca: es la regla de `CONSEJO`.
+
+**Qué filtra el proyecto, de verdad.** Se revisó antes en los datos (`entregas/entrega_4/plan_rediseno.md`). El tipo de
+marca y el vínculo cambian la señal. El público cambia la capa de Reddit de cada tarjeta: un proyecto de mujer ve sólo el
+foro de mujeres, uno de hombre sólo el de hombres, «sin género» los dos. Google Trends y Vogue no separan por género, y se
+dice en la pantalla y en el gráfico. Cuando un foro no tiene el término se dice («sin el término en el foro de mujeres»),
+no se rellena. Un caso: en el foro de mujeres el jean baggy está como «baggy jeans» y «mom jeans» por separado, no sumados;
+las series están en índice 0–100 y no se pueden sumar sin los conteos, así que se usa «baggy jeans» y la tarjeta lo dice.
+La categoría filtra todo (tarjetas y gráficos), desde una barra que queda pegada arriba con la búsqueda.
+
+**Gráfica: un gráfico por vez, con su conclusión.** Salen «Qué está en su máximo», «Lo que vuelve» y «Uno contra otro», y
+la rotación automática. Quedan dos, que se eligen:
+- **Gana y pierde terreno** (el nombre lo eligió Felipe entre tres): ganan arriba, pierden abajo, uno debajo del otro y más
+  grandes, con un eje vertical fijo de 0 a 100. La línea de la unidad: «el índice de búsqueda mundial de Google Trends, de 0
+  a 100, donde 100 es el año en que más se buscó ese término entre 2004 y 2024 (…). “+50” quiere decir que subió 50 puntos
+  de esa escala entre 2022 y 2024». Se verificó en los datos que las 65 series tienen su máximo en 100. Ya no es una
+  selección fija de diez: son los cinco que más se movieron hacia cada lado dentro del filtro. Conclusión, calculada: «De
+  los 65 atributos, 29 ganaron terreno y 32 lo perdieron entre 2022 y 2024. El que más ganó es Jeans baggy (+50); el que
+  más perdió, Blusa (−31)».
+- **Cuándo picó cada uno**, ahora una línea de tiempo con los años en el eje, arriba y abajo. Cada punto naranja abre la
+  ficha de la fuente al pasar o al tocar. Conclusión: «De los 65 atributos, 5 tuvieron su máximo en 2023 o 2024».
+
+**Sale la banda de fotos** arriba de Mis ciclos: las tarjetas ya son fotos, y era un nivel de información más.
+
+**Probado** a 1400 y 393 px: 65 tarjetas en tres grupos, la barra pegada al bajar, buscar «jean» (3), Vestidos (5), los dos
+gráficos con su conclusión, la ficha al pasar por un punto, el aviso sin proyecto; sin errores. `probar_demo.js` se
+actualizó (el paso 2 recorre Tendencias y Gráfica) y da 8 de 8 en los dos anchos. Capturas en
+`diseno/rediseno_2026-11-24/D/`. Corregido antes del commit: en el celular, las tarjetas iban de a una y después la segunda
+columna se salía de la pantalla.
+
+**Lo que esta fase no resolvió, y Felipe marcó al revisar:** la ficha de un atributo (Rayas, Floral) y Explorar ciclos
+todavía muestran lo mismo para todos: abrir Rayas con un proyecto de mujer muestra Reddit de hombres, y Floral da el mismo
+gráfico en Mis ciclos y en Explorar. Mis ciclos tiene que mostrar sólo lo del proyecto en todas sus pantallas. Queda para
+la próxima fase, junto con rehacer el home de cero.
+

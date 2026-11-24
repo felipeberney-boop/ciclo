@@ -2020,6 +2020,61 @@ img:not(.fcarga){transition:opacity .35s ease}
 @media (max-width:760px){.app .mast:not(#z):not(#zz){gap:8px!important;padding:0 14px!important}.app .navmenu:not(#z){white-space:nowrap}.app .mast .cuenta .cuentacrear:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq):not(#qqqqqqq){padding:7px 12px!important;font-size:14px!important;white-space:nowrap}}
 /* Mis ciclos: la línea del proyecto */
 .app .perfilrad .eti{margin-right:8px}
+/* ================= Mis ciclos (24/11) · última =================
+   Rediseño D: la misión en una línea, la barra sticky (buscar, categoría, Tendencias | Gráfica), las tarjetas agrupadas
+   Entrar → Esperar → Salir y un gráfico por vez con su conclusión. */
+.app #v-radar .mcmision:not(#q):not(#qq):not(#qqq){font-size:20px!important;line-height:1.4;color:var(--tinta-2)!important;margin:6px 0 0!important;max-width:52ch}
+.app #v-radar .mcbarra{position:sticky;top:52px;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:28px 0 8px;padding:12px 0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+@media (max-width:760px){.app #v-radar .mcbarra{top:48px}}
+.app #v-radar .mcbusca{flex:1 1 260px;position:relative}
+.app #v-radar .mcbusca input{width:100%;font:400 17px var(--sf);padding:12px 16px 12px 42px;border:1px solid var(--linea);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236e6e73' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 14px 50%;color:var(--tinta)}
+.app #v-radar .mcbarra select{font:400 16px var(--sf);padding:12px 36px 12px 14px;border:1px solid var(--linea);background:#fff;color:var(--tinta);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231d1d1f' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;max-width:100%}
+.app #v-radar .mcbarra :is(input,select):focus-visible{outline:2px solid var(--accion);outline-offset:1px}
+.app #v-radar .mcvista{display:inline-flex;padding:3px;background:var(--bloque);gap:2px}
+.app #v-radar .mcvista button{font:500 16px var(--sf);border:0;background:none;color:var(--tinta-2);padding:9px 18px;cursor:pointer}
+.app #v-radar .mcvista button[aria-selected=true]{background:#fff;color:var(--tinta);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.app #v-radar .mccuenta{font-size:14px;color:var(--tinta-2);white-space:nowrap}
+.app #v-radar :is(.mcbusca input,.mcbarra select):not(#z):not(#zz){border-radius:12px!important}
+.app #v-radar .mcvista:not(#z):not(#zz){border-radius:999px!important}
+.app #v-radar .mcvista button:not(#z):not(#zz){border-radius:999px!important}
+@media (max-width:600px){.app #v-radar .mcgrid:not(#z){grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 12px}.app #v-radar .mcf:not(#z){min-width:0}.app #v-radar .mcdat:not(#z){grid-template-columns:1fr;gap:0}.app #v-radar .mcdat dd:not(#z){text-align:left;margin-bottom:6px}.app #v-radar .mctop{flex-direction:column;gap:2px}.app #v-radar .mctop h3:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:18px!important}}
+@media (max-width:600px){.app #v-radar .mcbarra{gap:8px;padding:10px 0}.app #v-radar .mcbusca{flex-basis:100%}.app #v-radar .mcbarra select{flex:1;min-width:0;padding:10px 32px 10px 12px}.app #v-radar .mcvista button{padding:8px 14px}.app #v-radar .mccuenta{display:none}.app #v-radar .mcbusca input{padding:10px 14px 10px 38px}}
+.app #v-radar :is(.mcque,.mcunidad,.mcpie):not(#q):not(#qq):not(#qqq){font-size:16px!important;color:var(--tinta-2)!important;max-width:78ch;margin:18px 0 8px!important;line-height:1.5}
+.app #v-radar :is(.mcque,.mcunidad) b{color:var(--tinta);font-weight:600}
+.app #v-radar .mcconc:not(#q):not(#qq):not(#qqq){font-size:20px!important;line-height:1.4;color:var(--tinta)!important;margin:10px 0 0!important;max-width:60ch}
+.app #v-radar .mcvacio{font-size:17px;margin:32px 0}
+.app #v-radar .mcgr{margin:40px 0 0}
+.app #v-radar .mcgrcab{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap;margin:0 0 16px;padding-bottom:10px;border-bottom:2px solid var(--tinta)}
+.app #v-radar .mcgrcab h2:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-size:var(--t-h2)!important;margin:0!important;color:inherit}
+.app #v-radar .mcgrcab h2.s-entrar{color:var(--act-entrar)!important}.app #v-radar .mcgrcab h2.s-esperar{color:var(--act-esperar)!important}.app #v-radar .mcgrcab h2.s-salir{color:var(--act-salir)!important}
+.app #v-radar .mcgrcab h2 span{color:var(--tinta-2);font-weight:400}
+.app #v-radar .mcgrcab p{margin:0;font-size:16px;color:var(--tinta-2)}
+.app #v-radar .mcgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px 20px}
+.app #v-radar .mcf{display:flex;flex-direction:column;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:inherit;font:inherit}
+.app #v-radar .mcf:focus-visible{outline:2px solid var(--accion);outline-offset:4px}
+.app #v-radar .mcfoto{position:relative;aspect-ratio:4/5;background:var(--bloque);overflow:hidden}
+.app #v-radar .mcfoto img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.app #v-radar .mcf:hover .mcfoto img{transform:scale(1.03)}
+.app #v-radar .mcfoto .pcred{position:absolute;left:10px;right:10px;bottom:10px;color:#fff!important;text-shadow:0 1px 8px rgba(0,0,0,.55)}
+.app #v-radar .mcsin{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--tinta-2)}
+.app #v-radar .mccu{display:flex;flex-direction:column;gap:10px;padding:14px 2px 0}
+.app #v-radar .mctop{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.app #v-radar .mctop h3:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-sub)!important;font-weight:500!important;margin:0!important}
+.app #v-radar .mccu .sen{align-self:flex-start}
+.app #v-radar .mcdat{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:16px}
+.app #v-radar .mcdat dt{color:var(--tinta-2);font-weight:400}
+.app #v-radar .mcdat dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.app #v-radar .mcdat dd.mcno{color:var(--tinta-2)}
+.app #v-radar .mcgsel{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px}
+.app #v-radar .mcgcab h2:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){margin:18px 0 0!important}
+.app #v-radar #mcgraf .movp{margin:28px 0 0}
+.app #v-radar #mcgraf .movp .tt:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:12px!important;font-weight:600!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:var(--tinta-2)!important;margin:0 0 6px}
+.app #v-radar #mcgraf svg{width:100%;height:auto;display:block;overflow:visible}
+.app #v-radar #mcgraf .mvc{cursor:pointer}
+.app #v-radar .mclt .mcfila{cursor:pointer}
+.app #v-radar .mclt .mcfila:hover rect{fill:var(--bloque)}
+.app #v-radar .mclt .mcfila:hover .mcpunto{r:8}
+.app #v-radar .mclt .mcfila:focus-visible{outline:2px solid var(--accion)}
 </style>
 
 <div class="app">
@@ -2152,18 +2207,17 @@ img:not(.fcarga){transition:opacity .35s ease}
         <div>
           <h1 id="radtit">Mis ciclos</h1>
           <p class="perfilrad" id="perfilrad"></p>
-          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>El punto de la pista marca en qué etapa está el atributo según el K-means, que cruza pasarela y búsqueda medidas. Si no tiene etapa, la señal sale de cuánto ganó o perdió terreno en la búsqueda entre 2022 y 2024.</p></div></details>
+          <p class="mcmision">Qué atributos conviene usar en tu proyecto ahora, y por qué.</p>
         </div>
       </div>
-      <hr class="rule">
-      <div class="movi" id="terreno"></div>
-      <div class="filters" id="filt" role="group" aria-label="Filtrar por tipo de atributo">
-        <button class="chip" data-f="todos" aria-pressed="true">Todos</button>
-        <button class="chip" data-f="color" aria-pressed="false">Color y estampa</button>
-        <button class="chip" data-f="fit" aria-pressed="false">Corte</button>
-        <button class="chip" data-f="material" aria-pressed="false">Material</button>
+      <div class="mcbarra" id="mcbarra">
+        <div class="mcbusca"><label class="sr" for="mcq">Buscar un atributo</label><input id="mcq" type="search" placeholder="Buscar: floral, cuero, baggy…" autocomplete="off"></div>
+        <label class="sr" for="mccat">Categoría</label><select id="mccat"></select>
+        <div class="mcvista" id="mcvista" role="tablist" aria-label="Cómo verlo"><button type="button" role="tab" data-mv="tend" aria-selected="true">Tendencias</button><button type="button" role="tab" data-mv="graf" aria-selected="false">Gráfica</button></div>
+        <span class="mccuenta" id="mccuenta" aria-live="polite"></span>
       </div>
-      <div class="grid" id="grid"></div>
+      <div id="mctend"></div>
+      <div id="mcgraf" hidden></div>
       <p class="bfacceso"><a class="mvacceso" href="#mover" data-vista="mover">¿Tenés ojo para Chanel? <b>Jugá «El brief» →</b></a></p>
     </section>
 
@@ -2817,10 +2871,109 @@ function ficha(t){
   return b;
 }
 const señalTend=t=>señal({grupo:KMAP[t.id]||null,rec:DMAP[t.id]&&REC.some(o=>o.id===DMAP[t.id])?DMAP[t.id]:null});
+/* ---------- 24/11 · Mis ciclos (rediseño D) ----------
+   La herramienta: los 65 atributos con serie medida (REC con GREL), filtrados por el proyecto y por la barra (búsqueda y
+   categoría). Dos vistas: Tendencias (tarjetas agrupadas Entrar → Esperar → Salir) y Gráfica (un gráfico por vez, con su
+   conclusión). Qué filtra de verdad el proyecto: el tipo de marca y el vínculo cambian la señal (CONSEJO); el público
+   cambia la capa de Reddit (foro de mujeres o de hombres). Google Trends y Vogue no separan por género, y se dice. */
+let mcQ='',mcCat='todos',mcVista='tend',mcGraf='terreno',mcPicosTodos=false;
+const mcNorm=t=>String(t).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+const mcEnKM=o=>KM.rows.some(r=>r.n.split(' /')[0]===o.n.split(' /')[0]);
+const mcSeñal=o=>señal({grupo:mcEnKM(o)?o.n:null,rec:o.id});
+const mcPts=v=>`${v>0.5?'+':v<-0.5?'−':'±'}${Math.abs(Math.round(v))}`;
+const mcForos=()=>publico==='mujer'?[['r',RDS,'mujeres']]:publico==='hombre'?[['h',RDH,'hombres']]:[['r',RDS,'mujeres'],['h',RDH,'hombres']];
+function mcLista(){const q=mcNorm(mcQ.trim());
+  return REC.filter(o=>GREL[o.id]&&(mcCat==='todos'||o.tipo===mcCat)&&(!q||mcNorm(o.n+' '+o.tipo+' '+(o.gk||'')+' '+(o.vk||'')).includes(q)));}
+function mcReddit(o){if(!o.rk)return [];
+  /* si el foro no tiene el término sumado («baggy jeans + mom jeans»), se usa el primero solo y se dice: las series están en
+     índice 0–100 y no se pueden sumar sin los conteos */
+  return mcForos().map(([k,D,q])=>{let t=o.rk,s=D[t];if(!s&&t.includes(' + ')){t=t.split(' + ')[0];s=D[t];}if(!s)return null;
+    const a=s.i[2022-2004],b=s.i[2024-2004];return a==null||b==null?null:{k,q:t!==o.rk?`${q} («${t}»)`:q,d:b-a};}).filter(Boolean);}
+function mcFiltroTxt(n){return (mcCat==='todos'&&!mcQ.trim())?`los ${n} atributos`:`los ${n} atributos de este filtro`;}
+function mcFicha(o,s){
+  const fo=FOTO_ATR[o.id],d=terreno(o.id),et=mcEnKM(o)?etapaDe(o.n):null,rd=mcReddit(o);
+  const b=document.createElement('button');b.type='button';b.className='mcf';b.setAttribute('aria-label',`${o.n}: ${s.palabra}. Ver su ciclo`);
+  b.innerHTML=`<div class="mcfoto">${fo?`<img loading="lazy" decoding="async"${fotoPos(o.id)} src="${vogueFoto(fo.f,640)}" alt=""><span class="pcred">${fotoCred(fo)}</span>`:`<span class="mcsin">Sin foto de pasarela</span>`}</div>
+    <div class="mccu"><div class="mctop"><h3>${o.n}</h3><span class="eti">${o.tipo}</span></div>
+    <span class="sen ${s.cls}">${s.icono} ${s.palabra}</span>
+    <dl class="mcdat">${et&&et.n?`<dt>Etapa</dt><dd${src('k')}>${et.n}</dd>`:''}
+      <dt>Búsqueda 2022→2024</dt><dd${d!=null?src('t'):''}>${d!=null?mcPts(d)+' puntos':'sin dato'}</dd>
+      ${rd.length?rd.map(r=>`<dt>Reddit, ${r.q}</dt><dd${src(r.k)}>${mcPts(r.d)} puntos</dd>`).join(''):`<dt>Reddit</dt><dd class="mcno">sin el término en ${publico==='todos'?'los foros':'el foro de '+(publico==='mujer'?'mujeres':'hombres')}</dd>`}</dl></div>`;
+  b.onclick=()=>mcAbrir(o.id);
+  return b;
+}
+function mcAbrir(id){const tid=Object.keys(DMAP).find(k=>DMAP[k]===id);
+  if(tid&&T.some(t=>t.id===tid&&tieneDato(t)))abrirDetalle(tid);else{recSel=id;pintarRecorridos();mostrar('recorridos');$('#rtitulo')?.scrollIntoView();}}
+function mcTend(L){
+  const C=$('#mctend');if(!C)return;
+  const esp=vinculo==='propia'?'Explorar':'Esperar';
+  const G=[['entrar','▲ Entrar','Conviene usarlos ahora.'],['esperar','■ '+esp,vinculo==='propia'?'Probalos sin comprometer stock.':'Todavía no, o ya no con tu plazo: vigilalos.'],['salir','▼ Salir','Para tu tipo de marca, ya pasó su momento.'],['sin-dato','○ Sin señal','No hay dato suficiente para decidir.']];
+  const por={};L.forEach(o=>{const s=mcSeñal(o);(por[s.estado]=por[s.estado]||[]).push({o,s,d:terreno(o.id)});});
+  const foros=publico==='todos'?'del foro de mujeres y del de hombres':`del foro de ${publico==='mujer'?'mujeres':'hombres'}`;
+  C.innerHTML=`<p class="mcque"><b>Cada tarjeta es un atributo</b>: un color, una estampa, un corte o un material con datos medidos (${L.length} de 65). La señal es para tu proyecto y sale de su etapa en el K-means o, si no la tiene, de cuánto ganó o perdió en la búsqueda. Van ordenadas: primero lo que conviene usar. El Reddit de cada tarjeta es ${foros}; Google y Vogue no separan por género.</p>
+    ${L.length?'':'<p class="mcvacio">Nada con ese filtro. Probá otra palabra o «Todas las categorías».</p>'}
+    ${G.filter(([k])=>por[k]&&por[k].length).map(([k,t,q])=>`<section class="mcgr"><div class="mcgrcab"><h2 class="${SEN[k].cls}">${t} <span>${por[k].length}</span></h2><p>${q}</p></div><div class="mcgrid" data-k="${k}"></div></section>`).join('')}`;
+  G.forEach(([k])=>{const g=C.querySelector(`.mcgrid[data-k="${k}"]`);if(!g)return;
+    por[k].sort((a,b)=>k==='salir'?(a.d??0)-(b.d??0):(b.d??-1e9)-(a.d??-1e9)).forEach(x=>g.appendChild(mcFicha(x.o,x.s)));});
+}
+function mcGrafica(L){
+  const C=$('#mcgraf');if(!C||C.hidden)return;
+  const W=Math.max(300,Math.round(C.clientWidth||1000)),movil=W<620;
+  const pills=`<div class="mcgsel" role="group" aria-label="Qué gráfico">${[['terreno','Gana y pierde terreno'],['picos','Cuándo picó cada uno']].map(([k,n])=>`<button type="button" class="chip" data-g="${k}" aria-pressed="${mcGraf===k}">${n}</button>`).join('')}</div>`;
+  let h='';
+  if(mcGraf==='terreno'){
+    const con=L.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null),ga=con.filter(x=>x.d>0.5).sort((a,b)=>b.d-a.d),pi=con.filter(x=>x.d<-0.5).sort((a,b)=>a.d-b.d);
+    const G=ga.slice(0,5),P=pi.slice(0,5);
+    const conc=!con.length?'Sin atributos con este filtro.':`De ${mcFiltroTxt(con.length)}, ${ga.length} ganaron terreno y ${pi.length} lo perdieron entre 2022 y 2024.${G.length?` El que más ganó es ${G[0].o.n} (${mcPts(G[0].d)})`:''}${P.length?`${G.length?';':' El'} el que más perdió, ${P[0].o.n} (${mcPts(P[0].d)})`:''}${G.length||P.length?'.':''}`;
+    const Hh=movil?240:300;
+    h=`<div class="mcgcab"><h2>Gana y pierde terreno</h2><p class="mcconc">${conc}</p>
+      <p class="mcunidad"><b>Qué son los puntos:</b> el índice de búsqueda mundial de Google Trends, de 0 a 100, donde 100 es el año en que más se buscó ese término entre 2004 y 2024 (corregido contra 35 búsquedas de moda). «+50» quiere decir que subió 50 puntos de esa escala entre 2022 y 2024. Google no separa por género: es la búsqueda de todos. <span class="tag real">● medido</span></p></div>
+      ${G.length?moviPanel(G,'Gana terreno','+',W,Hh,true):''}${P.length?moviPanel(P,'Pierde terreno','−',W,Hh,true):''}
+      <p class="mcpie">Los cinco que más se movieron hacia cada lado. Tocá una línea para ver el ciclo de ese atributo.</p>`;
+  }else{
+    const F=L.map(o=>({o,y:tvMaxAnio(o.id).my})).filter(x=>x.y).sort((a,b)=>a.y-b.y||a.o.n.localeCompare(b.o.n));
+    const ver=mcPicosTodos||F.length<=24?F:F.slice(-24);
+    const ahora=F.filter(x=>x.y>=2023).length;
+    const conc=!F.length?'Sin atributos con este filtro.':`De ${mcFiltroTxt(F.length)}, ${ahora} tuvieron su máximo en 2023 o 2024: están en su punto más alto ahora. El que picó hace más tiempo es ${F[0].o.n}, en ${F[0].y}.`;
+    h=`<div class="mcgcab"><h2>Cuándo picó cada uno</h2><p class="mcconc">${conc}</p>
+      <p class="mcunidad"><b>Cómo se lee:</b> cada punto es el año en que más se buscó ese atributo en Google, entre 2004 y 2024. Pasá el mouse por un punto (o tocalo) para ver de dónde sale el dato. <span class="tag real">● medido</span></p></div>
+      ${mcLineaTiempo(ver,W)}
+      ${F.length>ver.length?`<p><button type="button" class="btn-sec" id="mcpicostodos">Ver los ${F.length}</button> <span class="mcpie">Ahora: los ${ver.length} que picaron más tarde.</span></p>`:''}`;
+  }
+  C.innerHTML=pills+h;
+  C.querySelectorAll('.mcgsel button').forEach(b=>b.onclick=()=>{mcGraf=b.dataset.g;mcGrafica(mcLista());});
+  $('#mcpicostodos')?.addEventListener('click',()=>{mcPicosTodos=true;mcGrafica(mcLista());});
+  C.querySelectorAll('.mvc,.mcfila').forEach(g=>{const ir=()=>mcAbrir(g.dataset.r);g.setAttribute('tabindex','0');g.setAttribute('role','button');g.addEventListener('click',ir);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ir();}});});
+}
+/* «Cuándo picó cada uno», ahora una línea de tiempo con los años en el eje (arriba y abajo) */
+function mcLineaTiempo(F,W){
+  if(!F.length)return '';
+  const movil=W<620,lab=movil?118:190,R=18,DY=30,T=34,Y0=2004,Y1=2024,X=y=>lab+(y-Y0)/(Y1-Y0)*(W-lab-R),H=T+F.length*DY+30;
+  const ticks=movil?[2004,2009,2014,2019,2024]:[2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024];
+  let s=`<svg class="mclt" viewBox="0 0 ${W} ${H}" role="img" aria-label="Año del máximo de búsqueda: ${F.map(x=>x.o.n+' '+x.y).join(', ')}">`;
+  ticks.forEach(y=>{s+=`<line x1="${X(y)}" x2="${X(y)}" y1="${T-8}" y2="${H-24}" stroke="var(--linea)"/><text x="${X(y)}" y="${T-14}" text-anchor="middle" fill="var(--tinta-2)">${y}</text><text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--tinta-2)">${y}</text>`;});
+  F.forEach((x,i)=>{const y=T+i*DY+12,ds=src('g',`${x.o.n}: su máximo entre 2004 y 2024 fue en ${x.y}`);
+    s+=`<g class="mcfila" data-r="${x.o.id}" aria-label="${x.o.n}, máximo en ${x.y}: ver su ciclo"><rect x="0" y="${y-DY/2}" width="${W}" height="${DY}" fill="transparent"/>
+      <text x="0" y="${y+5}" fill="var(--tinta)">${x.o.n}</text>
+      <line x1="${lab}" x2="${X(x.y)}" y1="${y}" y2="${y}" stroke="var(--linea)" stroke-width="2"/>
+      <circle cx="${X(x.y)}" cy="${y}" r="13" fill="transparent"${ds}/><circle class="mcpunto" cx="${X(x.y)}" cy="${y}" r="6.5" fill="var(--s2)"${ds}/>
+      <text x="${X(x.y)+(x.y>=2021?-14:14)}" y="${y+5}" text-anchor="${x.y>=2021?'end':'start'}" fill="var(--tinta-2)"${ds}>${x.y}</text></g>`;});
+  return s+'</svg>';
+}
 function pintarRadar(){
-  const g=$('#grid');g.innerHTML='';
-  const lista=T.filter(t=>tieneDato(t)&&(filtro==='todos'||t.tipo===filtro));
-  lista.forEach(t=>g.appendChild(ficha(t)));
+  const sel=$('#mccat');
+  if(sel&&!sel.options.length){const n={};REC.forEach(o=>{if(GREL[o.id])n[o.tipo]=(n[o.tipo]||0)+1;});
+    sel.innerHTML=`<option value="todos">Todas las categorías</option>`+REC_ORDEN.filter(k=>n[k]).map(k=>`<option value="${k}">${k} (${n[k]})</option>`).join('');
+    sel.onchange=()=>{mcCat=sel.value;mcPicosTodos=false;pintarRadar();};
+    let t=null;$('#mcq').oninput=e=>{clearTimeout(t);t=setTimeout(()=>{mcQ=e.target.value;mcPicosTodos=false;pintarRadar();},120);};
+    $$('#mcvista button').forEach(b=>b.onclick=()=>{mcVista=b.dataset.mv;pintarRadar();});
+    let rt=null;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(vista==='radar'&&mcVista==='graf')mcGrafica(mcLista());},200);});}
+  if(sel)sel.value=mcCat;
+  $$('#mcvista button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.mv===mcVista)));
+  if($('#mctend'))$('#mctend').hidden=mcVista!=='tend';if($('#mcgraf'))$('#mcgraf').hidden=mcVista!=='graf';
+  const L=mcLista();
+  if($('#mccuenta'))$('#mccuenta').textContent=`${L.length} de 65`;
+  if(mcVista==='tend')mcTend(L);else mcGrafica(L);
 }
 
 /* ---------- detalle ---------- */
@@ -4048,11 +4201,12 @@ const MOVI_Y0=2016,MOVI_Y1=2024,MOVI_COL=['--s1','--s2','--s4','--s3','--s5'];
 /* cinco que ganan y cinco que pierden, elegidos (10/11) entre los de mayor cambio con serie propia y reconocibles para un
    diseñador; quedan afuera las fibras (lana, merino, popelina), que suben pero no dicen nada de un diseño */
 const MOVI_SEL={gana:['jamplio','gamuza','faldas_maxi','faldas_mini','trench'],pierde:['camisas_blusa','vestidos_cruzado','buzos_polera','vestidos_slip','corset']};
-function moviPanel(L,titulo,signo,Wx,Hx){
-  const W=Wx||520,H=Hx||250,Lm=14,R=200,T=16,B=26,X=y=>Lm+(y-MOVI_Y0)/(MOVI_Y1-MOVI_Y0)*(W-Lm-R);
+function moviPanel(L,titulo,signo,Wx,Hx,ejes){ /* ejes (24/11): escala fija 0–100 con sus marcas, para que se lea la unidad */
+  const W=Wx||520,H=Hx||250,Lm=ejes?44:14,R=200,T=16,B=26,X=y=>Lm+(y-MOVI_Y0)/(MOVI_Y1-MOVI_Y0)*(W-Lm-R);
   const ser=L.map(x=>{const v=GREL[x.o.id],p=[];for(let y=MOVI_Y0;y<=MOVI_Y1;y++){const q=v[y-2004];if(q!=null)p.push([y,q]);}return p;});
-  const todos=ser.flat().map(q=>q[1]),mn=Math.min(0,...todos),mx=Math.max(...todos)*1.05,Y=v=>T+(1-(v-mn)/(mx-mn))*(H-T-B);
+  const todos=ser.flat().map(q=>q[1]),mn=ejes?0:Math.min(0,...todos),mx=ejes?Math.max(100,...todos):Math.max(...todos)*1.05,Y=v=>T+(1-(v-mn)/(mx-mn))*(H-T-B);
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${titulo}: búsqueda mundial ${MOVI_Y0} a ${MOVI_Y1} de ${L.map(x=>x.o.n).join(', ')}">`;
+  if(ejes)[0,50,100].forEach(v=>{s+=`<line x1="${Lm}" x2="${X(MOVI_Y1)}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--linea)" stroke-dasharray="${v?'3 4':'0'}"/><text x="${Lm-8}" y="${Y(v)+4}" text-anchor="end" fill="var(--tinta-2)">${v}</text>`;});
   s+=`<rect x="${X(2022)}" y="${T}" width="${X(2024)-X(2022)}" height="${H-T-B}" fill="var(--paper)" rx="6"/><text x="${X(2023)}" y="${T+14}" text-anchor="middle" fill="var(--ink-3)">2022→2024</text>`;
   [MOVI_Y0,2019,2022,MOVI_Y1].forEach(y=>s+=`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)">${y}</text>`);
   s+=`<line x1="${Lm}" x2="${X(MOVI_Y1)}" y1="${H-B}" y2="${H-B}" stroke="var(--rule)"/>`;
@@ -5012,7 +5166,7 @@ function vbFotos(v){const nom=id=>{const o=REC.find(x=>x.id===id);return o?o.n:'
   if(v==='recorridos')return mez(A,3).map(a=>a.x);
   if(v==='disenar')return A.filter(a=>VB_PRENDA.test(a.id)).map(a=>a.x);
   const G=GATE_FOTOS.var.map(x=>[...x,'']);return v==='retornos'?mez(G,5):v==='racional'?mez(G,7):G;}
-function vistaBanda(v){if(v!=='radar')return;const sec=$('#v-'+v);
+function vistaBanda(v){return; /* 24/11: Mis ciclos ya muestra fotos en las tarjetas; la banda sobraba */ if(v!=='radar')return;const sec=$('#v-'+v);
   if(!sec||sec.querySelector(':scope > .vbanda'))return;const L=vbFotos(v);if(!L.length)return;
   const d=document.createElement('div');d.className='vbanda';d.setAttribute('aria-hidden','true');
   const it=L.map((x,i)=>`<figure class="gbf"><img src="${vogueFoto(x[0],640)}" alt="" ${i<8?'fetchpriority="high" ':'loading="lazy" '}decoding="async"><figcaption>${x[1]} · ${TEMP[x[2]]||''} ${x[3]}</figcaption>${x[4]?`<span class="vbn">${x[4]}</span>`:''}</figure>`).join('');
@@ -5230,6 +5384,7 @@ function gateElegir(){
 function pintarPerfilRadar(){
   const e=$('#perfilrad');if(!e)return;const p=pyActivo();
   if(mirando){e.innerHTML=`<span>Estás mirando sin proyecto: las señales son para una marca contemporary de ejemplo.</span><button type="button" id="perfilradc">Crear tu proyecto</button>`;$('#perfilradc').onclick=()=>abrirGate('radar');return;}
+  if(p&&(p.publico!==publico||p.vinculo!==vinculo||p.cliente!==cliente)){e.innerHTML=`<span>Perfil de un link: <b>${pyResumen({publico,vinculo,cliente})}</b>, no el de tu proyecto.</span><button type="button" id="perfilradc">Volver a «${pyEsc(p.nombre)}»</button>`;$('#perfilradc').onclick=()=>{pyAplicar(p);pintarPerfilRadar();pintarRadar();escribirLink();};return;}
   if(p){e.innerHTML=`<span><span class="eti">Proyecto</span><b>${pyEsc(p.nombre)}</b> · ${pyResumen(p)}</span><button type="button" id="perfilradc">Editar</button>`;
     $('#perfilradc').onclick=()=>{cuentaEdita=p.id;cuentaFoco='proyectos';mostrar('cuenta');};return;}
   const q={publico,vinculo,cliente};

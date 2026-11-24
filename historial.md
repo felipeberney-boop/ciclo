@@ -577,6 +577,13 @@ proyecto»: nombre, email y las tres preguntas en una sola pantalla, cada una co
 El menú pierde «Más» (Mis ciclos · Diseñar · Explorar ciclos · Preguntar · El brief · Acerca de) y «Cambiar perfil» pasa a
 ser un avatar con iniciales: Mis proyectos · Mi perfil · Salir.
 
+## v1.81 · 24/11/2026 · Rediseño D: Mis ciclos
+
+Tendencias pasa a ser Mis ciclos, la herramienta. Los 65 atributos con datos, agrupados en Entrar, Esperar y Salir para tu
+proyecto, con el Reddit de tu público; una barra pegada arriba para buscar y filtrar por categoría; y una vista Gráfica con
+un gráfico por vez y su conclusión: «Gana y pierde terreno», con eje de 0 a 100, y «Cuándo picó cada uno», una línea de
+tiempo con años.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

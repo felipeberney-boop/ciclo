@@ -45,6 +45,18 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   from the email) or «Crear proyecto»; the avatar opens Mis proyectos · Mi perfil · Salir / cambiar de proyecto. Mi cuenta
   (`pintarCuentaVista()`) edits the name/email and lists projects (open, edit, delete, new). Mis ciclos shows
   `PROYECTO <name> · Mujer · Para una marca · Fast fashion · Editar` (`pintarPerfilRadar()`).
+- **Mis ciclos (`#v-radar`, since 24/11, rediseño D).** The tool: the 65 `REC` attributes with a `GREL` series, not the
+  old 8 `T` cards. A sticky bar (`#mcbarra`: search `#mcq`, category `#mccat` from `REC_ORDEN`, Tendencias | Gráfica)
+  filters both views (`mcLista()`). Tendencias (`mcTend()`): cards (`mcFicha()`) grouped ▲ Entrar → ■ Esperar/Explorar →
+  ▼ Salir by `señal()`, each with K-means stage, search 2022→2024 and Reddit **of the project's público only**
+  (`mcReddit()`: `RDS` women, `RDH` men; «baggy jeans + mom jeans» falls back to «baggy jeans» in women and says so).
+  Gráfica (`mcGrafica()`): one chart at a time with a one-sentence computed conclusion: «Gana y pierde terreno» (top 5
+  each way, stacked, `moviPanel(…,ejes=true)` draws a fixed 0–100 axis; the unit line says 100 = the term's max year
+  2004–2024) and «Cuándo picó cada uno» (`mcLineaTiempo()`, a year axis top and bottom, every dot carries `data-src`).
+  «Qué está en su máximo», «Lo que vuelve» and «Uno contra otro» are gone, and so is the rotation and the photo band
+  (`vistaBanda()` returns). What the project really filters: brand type and vínculo change the signal; público changes
+  only Reddit; Google and Vogue have no gender, and the screen says so. A link profile that differs from the active
+  project is shown as «Perfil de un link» with «Volver a <proyecto>».
 - **K-means runs in the browser** (`kRand`/`kInit`/`kLloyd`/`kFit`/`kName`): 17 attributes (no footwear), 4
   standardized features (runway level/momentum, search level/momentum through 2024). k=4 starts from the stored `KM.cent` centroids so
   results are deterministic; other k use seeded random restarts. Clusters get stage names by nearest

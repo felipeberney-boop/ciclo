@@ -36,12 +36,17 @@ const OUT = path.join(os.tmpdir(), 'ciclo_demo');
     await p.click('#inform button[type=submit]');
     await p.waitForSelector('#v-radar:not([hidden])'); return (await p.textContent('#perfilrad')).replace('Editar', '').replace(/\s+/g, ' ').trim();
   });
-  await paso('Mis ciclos: el gráfico que rota y las tarjetas', async () => {
-    await p.waitForSelector('#v-radar:not([hidden]) #terreno svg', { timeout: 8000 });
-    return (await p.$$eval('#grid .card, #grid [data-id], #grid button', a => a.length)) + ' tarjetas';
+  // 24/11 (rediseño D): Mis ciclos es Tendencias (tarjetas por señal) | Gráfica (un gráfico por vez)
+  await paso('Mis ciclos: las tarjetas por señal y «Gana y pierde terreno»', async () => {
+    await p.waitForSelector('#v-radar:not([hidden]) #mctend .mcf', { timeout: 8000 });
+    const n = await p.$$eval('#mctend .mcf', a => a.length), gr = await p.$$eval('#mctend .mcgrcab h2', h => h.map(x => x.textContent.trim()).join(' · '));
+    await p.click('#mcvista [data-mv=graf]'); await p.waitForSelector('#mcgraf .movp svg');
+    const c = (await p.textContent('#mcgraf .mcconc')).trim();
+    await p.click('#mcvista [data-mv=tend]');
+    return `${n} tarjetas (${gr}) · ${c.slice(0, 70)}…`;
   });
   await paso('La ficha de Jeans baggy', async () => {
-    await p.click('#grid >> text=/baggy|Amplio/i'); await p.waitForSelector('#v-detalle:not([hidden]) svg');
+    await p.click('#mctend .mcf:has-text("Jeans baggy")'); await p.waitForSelector('#v-detalle:not([hidden]) svg');
     return (await p.textContent('#v-detalle h1, #v-detalle h2')).trim().slice(0, 60);
   });
   await paso('Diseñar con este corte', async () => {

@@ -3874,3 +3874,25 @@ Saint Laurent (negra, la señal) y Valentino (blanca, en «Creá tu proyecto»).
 («a bold saturated color-blocked runway look…») sobre los 14.000 looks y elegida a ojo: Off-White Fall 2021, un traje
 naranja, plano y de un solo color; no la puse porque pediste probar la verde. Capturas en `M/1_home/` (secuencia antes y
 después a 1400 y 393, y `alternativa_offwhite_*`). `probar_demo.js` 8 de 8 en los dos anchos.
+
+## 2026-11-24 · Vuelta M, punto 2: Mis ciclos, sólo lo del proyecto
+
+Pedido: «Sacá "¿Qué atributos convienen en tu proyecto ahora y por qué?" y todo el texto de ese estilo. Arriba queda solo:
+el proyecto, "Gana terreno / Pierde terreno" y la explicación de la fuente… más corta, más ordenada, más chica. Los dos
+gráficos quedan UNO AL LADO DEL OTRO, chicos… Abajo de Mis tendencias, un gancho a El brief… que dé ganas de jugar».
+
+- Fuera la frase de misión, el título «Qué gana y qué pierde terreno» (queda sólo para lectores de pantalla), la frase
+  «De los 65 atributos…», la lista de nombres bajo cada gráfico y la frase de cada grupo («Conviene usarlos ahora.», etc.).
+- El conteo pasa al título de cada gráfico: «▲ Gana terreno · 29 de 65», «▼ Pierde terreno · 32 de 65».
+- Los dos gráficos, de 150 px de alto, lado a lado desde 700 px (antes desde 1000). En el celular siguen uno debajo del
+  otro: a 393 px, lado a lado, cada uno tendría 170 px y los nombres no entran.
+- La fuente, debajo, en 13 px y dos líneas: «Búsqueda en Google · todo el mundo · 2022→2024. +50 = subió 50 puntos; 100 =
+  su año más buscado desde 2004.» / «Es igual para todos los proyectos; lo que cambia con «<proyecto>» es la señal de cada
+  tarjeta.»
+- El gancho: en vez del botón «¿Tenés ojo para Chanel?», un bloque negro con la foto del próximo encargo real (el mismo
+  que te va a tocar), «Bottega Veneta te encarga un vestido para Otoño 2024.», una línea con la regla y la racha si la
+  hay, «Aceptar el encargo →» (entra directo al paso 1) y «Otra casa» (cambia el encargo ahí mismo). Que sea concreto
+  (una casa, una prenda, una fecha) es lo que da ganas de jugar; un botón genérico no.
+- Técnica: El brief vive en otro bloque del script, así que el gancho se define al lado de El brief y se expone como
+  `window.pintarGancho`. `probar_demo.js` 8 de 8 en los dos anchos (el paso 2 lee ahora el título del gráfico). Capturas
+  `M/2_misciclos/antes_radar_*` y `despues_radar_*`.

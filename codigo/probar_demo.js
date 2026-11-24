@@ -43,7 +43,7 @@ const OUT = path.join(os.tmpdir(), 'ciclo_demo');
     // 24/11 vuelta K: dos secciones a la vista, la gráfica arriba y «Mis tendencias» abajo; sin selector
     const n = await p.$$eval('#mctend .mcf', a => a.length), gr = await p.$$eval('#mctend .mcgrcab h3', h => h.map(x => x.textContent.trim()).join(' · '));
     await p.waitForSelector('#mcgraf .movp svg');
-    const c = (await p.textContent('#mcgraf .mcconc')).trim();
+    const c = (await p.textContent('#mcgraf .movp .tt')).trim();
     return `${n} tarjetas (${gr}) · ${c.slice(0, 70)}…`;
   });
   await paso('La ficha de Jeans baggy', async () => {

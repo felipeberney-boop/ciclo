@@ -2092,6 +2092,73 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app .fpgraf{margin:40px 0 0}
 .app .fpgraf h2:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){margin:0 0 4px!important}
 .app .fpgraf figure{margin:8px 0 0}
+/* ================= el home, una foto por idea (24/11, segunda vuelta) · última =================
+   Elegida por Felipe entre dos direcciones (diseno/rediseno_2026-11-24/home2/). Referencia de lógica: loopsii.com, una
+   idea por pantalla que aparece con el scroll. A la izquierda una sola foto de pasarela, fija, que cambia con la idea; a
+   la derecha, la idea. Sin carrusel ni créditos sobre las fotos (van al pie). En el celular, cada idea con su foto arriba. */
+.app #v-inicio .hsplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.app #v-inicio .hfoto{position:sticky;top:52px;height:calc(100vh - 52px);overflow:hidden;background:#e8e6e1}
+.app #v-inicio .hfoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;opacity:0;transform:scale(1.04);transition:opacity .9s ease,transform 1.6s ease}
+.app #v-inicio .hfoto img.on{opacity:1;transform:none}
+.app #v-inicio .hnum{position:absolute;left:24px;bottom:22px;color:#fff;font-size:14px;font-variant-numeric:tabular-nums;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.app #v-inicio .hidea{min-height:calc(100vh - 52px);display:flex;flex-direction:column;justify-content:center;gap:22px;padding:72px clamp(24px,5vw,80px)}
+.app #v-inicio .hidea + .hidea{border-top:1px solid var(--linea)}
+.app #v-inicio .hidea .eti{margin:0}
+.app #v-inicio .hidea h1:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:clamp(44px,5.4vw,80px)!important;line-height:1.02!important;letter-spacing:-.035em!important;margin:0!important;max-width:14ch;text-align:left!important}
+.app #v-inicio .hidea h2:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-size:clamp(34px,3.8vw,56px)!important;line-height:1.05!important;letter-spacing:-.03em!important;margin:0!important;max-width:16ch}
+.app #v-inicio .hlead:not(#q):not(#qq):not(#qqq){font-size:clamp(18px,1.5vw,21px)!important;line-height:1.45;color:var(--tinta-2)!important;margin:0!important;max-width:40ch}
+.app #v-inicio .hacc{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:6px}
+.app #v-inicio .hacc .btn-pri:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){padding:15px 26px!important;font-size:17px!important}
+.app #v-inicio .hlista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.app #v-inicio .hlista li{display:grid;grid-template-columns:48px 1fr;gap:4px 14px;padding:18px 0;border-top:1px solid var(--linea)}
+.app #v-inicio .hlista .hn{font-size:14px;color:var(--tinta-2);padding-top:6px;font-variant-numeric:tabular-nums}
+.app #v-inicio .hlista b{font-size:24px;font-weight:600;letter-spacing:-.02em}
+.app #v-inicio .hlista p{grid-column:2;margin:0;color:var(--tinta-2)}
+.app #v-inicio .hdos{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.app #v-inicio .hnumg{display:block;font-size:clamp(48px,5vw,76px);font-weight:600;letter-spacing:-.04em;line-height:.95;font-variant-numeric:tabular-nums}
+.app #v-inicio .hdos b{display:block;font-size:18px;font-weight:600;margin:12px 0 4px}
+.app #v-inicio .hdos p{margin:0;color:var(--tinta-2);font-size:16px}
+.app #v-inicio .hchico:not(#q):not(#qq):not(#qqq){font-size:15px!important;color:var(--tinta-2)!important;line-height:1.6;max-width:56ch;margin:0!important}
+.app #v-inicio .hchico b{color:var(--tinta);font-weight:600}
+.app #v-inicio .hsen{display:flex;flex-direction:column}
+.app #v-inicio .hsen div{display:flex;align-items:baseline;gap:20px;padding:14px 0;border-top:1px solid var(--linea)}
+.app #v-inicio .hsen b:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-size:clamp(30px,3.2vw,46px)!important;font-weight:600!important;letter-spacing:-.03em;min-width:5.2em}
+.app #v-inicio .hsen b.s-entrar{color:var(--act-entrar)}.app #v-inicio .hsen b.s-esperar{color:var(--act-esperar)}.app #v-inicio .hsen b.s-salir{color:var(--act-salir)}
+.app #v-inicio .hsen p{margin:0;color:var(--tinta-2)}
+.app #v-inicio .hcred:not(#q):not(#qq):not(#qqq){font-size:13px!important;color:var(--tinta-2)!important;margin:0!important;padding:24px var(--gut);border-top:1px solid var(--linea)}
+.app #v-inicio .hmfoto{display:none}
+/* aparecer con el scroll, uno por uno */
+.app #v-inicio .hrev{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*120ms)}
+.app #v-inicio .visto .hrev{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.app #v-inicio .hrev{opacity:1;transform:none;transition:none}.app #v-inicio .hfoto img{transition:none}}
+@media (max-width:860px){
+  .app #v-inicio .hsplit{grid-template-columns:1fr}
+  .app #v-inicio .hfoto{display:none}
+  .app #v-inicio .hidea{min-height:0;padding:0 20px 56px}
+  .app #v-inicio .hidea + .hidea{border-top:0}
+  .app #v-inicio .hmfoto{display:block;margin:0 -20px 8px;width:calc(100% + 40px);max-width:none;height:58vh;object-fit:cover;object-position:50% 20%}
+  .app #v-inicio .hdos{grid-template-columns:1fr}
+}
+
+/* el formulario limpio (home y Mi cuenta) */
+.app .pyform.limpio:not(#z):not(#zz){display:flex;flex-direction:column;gap:12px;background:none;padding:0;border-radius:0!important;max-width:520px;grid-template-columns:none}
+.app .pyform.limpio input[type=text],.app .pyform.limpio input[type=email]{font:400 17px var(--sf);padding:15px 18px;border:1px solid var(--linea);background:#fff;color:var(--tinta);width:100%}
+.app .pyform.limpio :is(input[type=text],input[type=email]):not(#z):not(#zz){border-radius:14px!important}
+.app .pyform.limpio input:focus-visible{outline:2px solid var(--accion);outline-offset:1px}
+.app .pyform.limpio .seg{display:flex;padding:4px;background:var(--bloque);gap:4px;margin-top:6px}
+.app .pyform.limpio .seg:not(#z):not(#zz){border-radius:14px!important}
+.app .pyform.limpio .seg label{flex:1;position:relative;cursor:pointer;min-width:0}
+.app .pyform.limpio .seg input{position:absolute;opacity:0;pointer-events:none}
+.app .pyform.limpio .seg span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:8px 6px;font-size:15px;color:var(--tinta-2);line-height:1.2}
+.app .pyform.limpio .seg span:not(#z):not(#zz){border-radius:10px!important}
+.app .pyform.limpio .seg input:checked+span{background:#fff;color:var(--tinta);font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.app .pyform.limpio .seg input:focus-visible+span{outline:2px solid var(--accion)}
+.app .pyform.limpio .linea:not(#q):not(#qq):not(#qqq){font-size:14px!important;color:var(--tinta-2)!important;margin:0 4px!important;line-height:1.4}
+.app .pyform.limpio .pyerr{margin:4px 0 0;color:#A5372A;font-weight:600}
+.app .pyform.limpio>.btn-pri:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){justify-content:center;width:100%;margin-top:10px;padding:16px 26px!important;font-size:17px!important}
+.app .pyform.limpio .pie{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}
+.app .pyform.limpio .pie span{font-size:14px;color:var(--tinta-2)}
+#v-cuenta .cuform .pyform.limpio{margin:18px 0 6px}
 </style>
 
 <div class="app">
@@ -2116,75 +2183,71 @@ img:not(.fcarga){transition:opacity .35s ease}
   <main>
     <p class="aviso" id="aviso" role="alert" hidden></p>
 
-    <!-- ================= INICIO (24/11): el home, sin preguntas; al final, «Crear tu proyecto» ================= -->
+    <!-- ================= INICIO (24/11, segunda vuelta): una foto por idea ================= -->
     <section class="view" id="v-inicio" hidden>
-      <div class="inportada">
-        <div class="infila" aria-hidden="true"><div class="incinta" id="incinta"></div></div>
-        <div class="intx">
-          <p class="eti">Una herramienta <br>de moda</p>
-          <div class="incuerpo">
-            <h1>En qué momento está cada color, estampa, corte o material.</h1>
-            <p class="inlead">CICLO cruza veinte años de pasarela y de búsquedas para decirte, atributo por atributo, si conviene entrar, esperar o salir.</p>
-          </div>
-          <div class="inacc"><a class="btn-pri" href="#crear" data-crear>Crear tu proyecto</a><a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a></div>
+      <div class="hsplit">
+        <div class="hfoto" aria-hidden="true">
+          <img data-f="0" class="on" alt="" src="https://assets.vogue.com/photos/63f8e41547fee8ca53688b16/master/w_1280,c_limit/00049-burberry-fall-2023-ready-to-wear-credit-brand.jpg">
+          <img data-f="1" alt="" loading="lazy" src="https://assets.vogue.com/photos/633c453a802c86f37bb5ae35/master/w_1280,c_limit/00044-miu-miu-spring-2023-ready-to-wear-credit-gorunway.jpg">
+          <img data-f="2" alt="" loading="lazy" src="https://assets.vogue.com/photos/633963ce22fa29f69ae6d2ea/master/w_1280,c_limit/00003-hermes-spring-2023-ready-to-wear-credit-gorunway.jpg">
+          <img data-f="3" alt="" loading="lazy" src="https://assets.vogue.com/photos/635fca5500affda64572718d/master/w_1280,c_limit/00051-bottega-veneta-resort-2023-credit-brand.jpg">
+          <img data-f="4" alt="" loading="lazy" src="https://assets.vogue.com/photos/63335c0aa30a6f73b05c2522/master/w_1280,c_limit/00049-saint-laurent-spring-2023-ready-to-wear-credit-gorunway.jpg">
+          <img data-f="5" alt="" loading="lazy" src="https://assets.vogue.com/photos/634d93b37a2a7b869a7a6a9a/master/w_1280,c_limit/00013-valentino-resort-2023-credit-brand.jpg">
+          <span class="hnum" id="hnum">1 / 6</span>
+        </div>
+        <div class="hcol">
+          <section class="hidea" data-f="0" id="in-hero">
+            <img class="hmfoto" alt="" src="https://assets.vogue.com/photos/63f8e41547fee8ca53688b16/master/w_800,c_limit/00049-burberry-fall-2023-ready-to-wear-credit-brand.jpg">
+            <p class="eti hrev">Una herramienta de moda</p>
+            <h1 class="hrev" style="--i:1">En qué momento está cada color, estampa, corte o material.</h1>
+            <div class="hacc hrev" style="--i:2"><a class="btn-pri" href="#crear" data-crear>Crear tu proyecto</a><a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a></div>
+          </section>
+          <section class="hidea" data-f="1" id="in-que">
+            <img class="hmfoto" alt="" loading="lazy" src="https://assets.vogue.com/photos/633c453a802c86f37bb5ae35/master/w_800,c_limit/00044-miu-miu-spring-2023-ready-to-wear-credit-gorunway.jpg">
+            <p class="eti hrev">Qué es</p>
+            <h2 class="hrev" style="--i:1">Una etapa para cada atributo. No una predicción.</h2>
+            <p class="hlead hrev" style="--i:2">Emergente, en ascenso, en pico, saturada o en retorno: dónde está hoy, y si para tu marca conviene entrar, esperar o salir.</p>
+          </section>
+          <section class="hidea" data-f="2" id="in-como">
+            <img class="hmfoto" alt="" loading="lazy" src="https://assets.vogue.com/photos/633963ce22fa29f69ae6d2ea/master/w_800,c_limit/00003-hermes-spring-2023-ready-to-wear-credit-gorunway.jpg">
+            <p class="eti hrev">Cómo funciona</p>
+            <h2 class="hrev" style="--i:1">Tres pasos.</h2>
+            <ol class="hlista">
+              <li class="hrev" style="--i:2"><span class="hn">1 / 3</span><b>Medimos</b><p>Cuánto aparece en los desfiles y cuánto se lo busca, año por año.</p></li>
+              <li class="hrev" style="--i:3"><span class="hn">2 / 3</span><b>Agrupamos</b><p>Un K-means junta a los que se mueven parecido y nombra la etapa.</p></li>
+              <li class="hrev" style="--i:4"><span class="hn">3 / 3</span><b>Te decimos</b><p>Según tu tipo de marca y sus plazos, una señal.</p></li>
+            </ol>
+          </section>
+          <section class="hidea" data-f="3" id="in-datos">
+            <img class="hmfoto" alt="" loading="lazy" src="https://assets.vogue.com/photos/635fca5500affda64572718d/master/w_800,c_limit/00051-bottega-veneta-resort-2023-credit-brand.jpg">
+            <p class="eti hrev">De dónde salen los datos</p>
+            <h2 class="hrev" style="--i:1">Dos fuentes deciden.</h2>
+            <div class="hdos hrev" style="--i:2">
+              <div><span class="hnumg">1,28 M</span><b>looks de Vogue Runway</b><p>Desfiles de París, Milán, Nueva York, Londres y otras semanas de la moda. 2000–2025.</p></div>
+              <div><span class="hnumg">65</span><b>búsquedas en Google</b><p>Todo el mundo, con los términos en inglés. 2004–2024.</p></div>
+            </div>
+            <p class="hchico hrev" style="--i:3"><b>Comprueban, no deciden:</b> Reddit (foros de moda en inglés, uno de mujeres y uno de hombres, sin país, 2012–2025) · Google Shopping (todo el mundo, 2008–2025) · Lyst (ranking global de marcas, 2018–2026) · H&amp;M (compras, el dataset no dice el país, 2018–2020) · Amazon (reseñas de amazon.com, 2012–2023) · Google Trends Argentina (14 términos en español). Se bajaron una vez, en 2026; Google y Reddit se renovarían cada mes, Vogue con cada temporada.</p>
+          </section>
+          <section class="hidea" data-f="4" id="in-obtenes">
+            <img class="hmfoto" alt="" loading="lazy" src="https://assets.vogue.com/photos/63335c0aa30a6f73b05c2522/master/w_800,c_limit/00049-saint-laurent-spring-2023-ready-to-wear-credit-gorunway.jpg">
+            <p class="eti hrev">Qué obtenés</p>
+            <h2 class="hrev" style="--i:1">Una señal para tu proyecto.</h2>
+            <div class="hsen">
+              <div class="hrev" style="--i:2"><b class="s-entrar">▲ Entrar</b><p>Llegás a tiempo con tus plazos.</p></div>
+              <div class="hrev" style="--i:3"><b class="s-esperar">■ Esperar</b><p>Todavía no, o ya no con tus plazos.</p></div>
+              <div class="hrev" style="--i:4"><b class="s-salir">▼ Salir</b><p>Para tu tipo de marca, ya pasó.</p></div>
+            </div>
+            <p class="hchico hrev" style="--i:5">Sin proyecto podés explorar todos los datos, sin señal.</p>
+          </section>
+          <section class="hidea hcrear" data-f="5" id="crear">
+            <img class="hmfoto" alt="" loading="lazy" src="https://assets.vogue.com/photos/634d93b37a2a7b869a7a6a9a/master/w_800,c_limit/00013-valentino-resort-2023-credit-brand.jpg">
+            <h2 class="hrev">Creá tu proyecto.</h2>
+            <p class="hlead hrev" style="--i:1">Un minuto. Se guarda en tu navegador.</p>
+            <div id="inform" class="hrev" style="--i:2"></div>
+          </section>
         </div>
       </div>
-
-      <div class="inw">
-        <section class="ins" id="in-que">
-          <div class="incab"><div><p class="eti">Qué es</p><h2>Una etapa para cada atributo, no una predicción.</h2></div>
-          <p class="insub">Un atributo es una cosa concreta que se puede medir en todos lados: el floral, el jean amplio, la gamuza. CICLO lo ubica en una de cinco etapas (emergente, en ascenso, en pico, saturada, en retorno) según cuánto aparece en los desfiles y cuánto se lo busca. No adivina el futuro: dice dónde está hoy.</p></div>
-        </section>
-
-        <section class="ins" id="in-como">
-          <div class="incab"><div><p class="eti">Cómo funciona</p><h2>Tres pasos.</h2></div><p class="insub">Lo mismo para los 65 atributos con datos.</p></div>
-          <div class="inpasos">
-            <div class="inpaso"><span class="inn">1</span><h3>Medimos</h3><p>Cuánto aparece en la pasarela de Vogue Runway y cuánto se busca en Google, año por año.</p></div>
-            <div class="inpaso"><span class="inn">2</span><h3>Agrupamos</h3><p>Un K-means junta a los que se mueven parecido y le da a cada grupo el nombre de una etapa. Corre en tu navegador.</p></div>
-            <div class="inpaso"><span class="inn">3</span><h3>Te decimos qué hacer</h3><p>Según tu tipo de marca y sus plazos, cada etapa es una señal: <span class="sen s-entrar">▲ Entrar</span> <span class="sen s-esperar">■ Esperar</span> <span class="sen s-salir">▼ Salir</span></p></div>
-          </div>
-        </section>
-
-        <section class="ins" id="in-datos">
-          <div class="incab"><div><p class="eti">De dónde salen los datos</p><h2>Dos fuentes deciden; el resto comprueba.</h2></div>
-          <p class="insub">Todo se bajó una vez, entre septiembre y noviembre de 2026. La última columna dice cada cuánto habría que volver a bajarlo si CICLO estuviera en uso; los datasets cerrados no cambian.</p></div>
-          <table class="intabla">
-            <thead><tr><th>Fuente</th><th>Qué mide</th><th>Período</th><th>Cuánto</th><th>Se actualizaría</th></tr></thead>
-            <tbody>
-              <tr class="ingrupo"><td colspan="5"><span class="indentro">Entran al modelo</span></td></tr>
-              <tr><td><b>Vogue Runway</b></td><td data-k="Mide">Qué parte de los looks de cada año tiene el atributo</td><td data-k="Período">2000–2025</td><td data-k="Cuánto">902.566 looks hasta 2023; 20.000 por año en 2024 y 2025</td><td data-k="Se actualizaría">Con cada temporada (4 por año)</td></tr>
-              <tr><td><b>Google Trends</b></td><td data-k="Mide">Cuánto se busca en el mundo, frente a 35 búsquedas de moda</td><td data-k="Período">2004–2024</td><td data-k="Cuánto">65 series</td><td data-k="Se actualizaría">Cada mes</td></tr>
-              <tr class="ingrupo"><td colspan="5"><span class="indentro infuera">Comprueban, no entran</span></td></tr>
-              <tr><td><b>Reddit</b></td><td data-k="Mide">De qué se habla: un foro de mujeres y uno de hombres, por separado</td><td data-k="Período">2012–2025</td><td data-k="Cuánto">178.519 y 581.184 posts</td><td data-k="Se actualizaría">Cada mes</td></tr>
-              <tr><td><b>Google Shopping</b></td><td data-k="Mide">Búsquedas con intención de compra</td><td data-k="Período">2008–2025</td><td data-k="Cuánto">25 términos</td><td data-k="Se actualizaría">Cada mes</td></tr>
-              <tr><td><b>Lyst Index</b></td><td data-k="Mide">El ranking de marcas más buscadas</td><td data-k="Período">2018–2026</td><td data-k="Cuánto">55 marcas, 34 trimestres</td><td data-k="Se actualizaría">Cada trimestre</td></tr>
-              <tr><td><b>H&amp;M</b></td><td data-k="Mide">Qué compra el mercado masivo</td><td data-k="Período">2018–2020</td><td data-k="Cuánto">30,6 M de compras</td><td data-k="Se actualizaría">No: dataset cerrado</td></tr>
-              <tr><td><b>Amazon</b></td><td data-k="Mide">Reseñas de ropa que nombran el atributo</td><td data-k="Período">2012–2023</td><td data-k="Cuánto">1,1 M de reseñas</td><td data-k="Se actualizaría">No: dataset cerrado</td></tr>
-              <tr><td><b>Zara</b></td><td data-k="Mide">Qué había en la góndola un mes</td><td data-k="Período">Febrero de 2024</td><td data-k="Cuánto">228 prendas</td><td data-k="Se actualizaría">No: es una foto de un mes</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="ins" id="in-modos">
-          <div class="incab"><div><p class="eti">Qué obtenés</p><h2>Con proyecto o sólo mirando.</h2></div><p class="insub">Los datos son los mismos. El proyecto cambia cómo se leen.</p></div>
-          <div class="inmodos">
-            <div class="inmodo con"><p class="eti">Con proyecto</p><h3>Mis ciclos</h3><ul>
-              <li>Cada atributo con su señal para tu tipo de marca y sus plazos.</li>
-              <li>Lo que se habla en Reddit, del foro de tu público.</li>
-              <li>Diseñar, Preguntar y El brief, con tu proyecto.</li></ul>
-              <p><a class="btn-pri" href="#crear" data-crear>Crear tu proyecto</a></p></div>
-            <div class="inmodo"><p class="eti">Sólo mirando</p><h3>Explorar ciclos</h3><ul>
-              <li>Todos los atributos, sus curvas y sus fotos de pasarela.</li>
-              <li>Las señales, para una marca contemporary de ejemplo, y dicho así.</li></ul>
-              <p><a class="lnk" href="#recorridos" data-mirar>Explorar ciclos</a></p></div>
-          </div>
-        </section>
-
-        <section class="ins" id="crear">
-          <div class="incab"><div><p class="eti">Crear tu proyecto</p><h2>Todo en una pantalla.</h2></div><p class="insub">Un nombre y tres preguntas. Podés cambiarlas cuando quieras.</p></div>
-          <div id="inform"></div>
-        </section>
-      </div>
+      <p class="hcred">Fotos de Vogue Runway: Burberry Fall 2023, Miu Miu Spring 2023, Hermès Spring 2023, Bottega Veneta Resort 2023, Saint Laurent Spring 2023, Valentino Resort 2023.</p>
     </section>
 
     <!-- ================= CUENTA (24/11): mi perfil y mis proyectos ================= -->
@@ -5486,38 +5549,37 @@ function pyActivar(id,destino){
 function pySalir(){activoId=null;pyEscribir(PY_K.a,null);pyMirar();pintarCuenta();mostrar('inicio');}
 function pyGuardarTodo(){pyEscribir(PY_K.u,usuario);pyEscribir(PY_K.p,proyectos);}
 
-/* el formulario: crear (p=null) o editar un proyecto; lo usan el home y Mi cuenta */
+/* el formulario: crear (p=null) o editar un proyecto; lo usan el home y Mi cuenta. 24/11, segunda vuelta: un bloque
+   limpio (devolución: «el final no puede parecer una encuesta»): nombre del proyecto, email, las tres opciones como
+   selectores con una línea cada una, y un botón. Las iniciales salen del email (o del nombre, si se cargó en Mi perfil). */
 let pyFormN=0;
 function pintarForm(cont,p,alGuardar){
   const n=++pyFormN,u=usuario||{},v=p||{publico:'mujer',vinculo:'marca',cliente:'fast'},nuevo=!p;
   const op=(name,val,lab,on)=>`<label><input type="radio" name="${name}-${n}" value="${val}"${on?' checked':''}><span>${lab}</span></label>`;
   const marcas=(vin,sel)=>Object.entries(GATE[vin].c).map(([k,[t]])=>op('ti',k,t,sel===k)).join('');
-  cont.innerHTML=`<form class="pyform" novalidate>
-    <div class="campo"><label for="pn-${n}">Nombre del proyecto</label><input id="pn-${n}" type="text" autocomplete="off" placeholder="Por ejemplo: Invierno 2026" value="${pyEsc(p?p.nombre:'')}"></div>
-    <div class="campo"><label for="pu-${n}">Tu nombre</label><input id="pu-${n}" type="text" autocomplete="name" placeholder="Nombre y apellido" value="${pyEsc(u.nombre||'')}"><p class="que">Para tus iniciales, arriba a la derecha.</p></div>
-    <div class="campo"><label for="pe-${n}">Tu email</label><input id="pe-${n}" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" value="${pyEsc(u.email||'')}"><p class="que">Queda en este navegador: no hay servidor y no se manda a ningún lado.</p></div>
-    <fieldset class="campo"><legend>¿Para quién diseñás?</legend>
-      <div class="ops">${op('pu','mujer','Mujer',v.publico==='mujer')}${op('pu','hombre','Hombre',v.publico==='hombre')}${op('pu','todos','Sin género',v.publico==='todos')}</div>
-      <p class="que"><b>Qué cambia:</b> qué foro de Reddit se lee (mujeres o hombres) y las fotos de pasarela que ves. Google y Vogue no separan por género: esas curvas son de todos.</p></fieldset>
-    <fieldset class="campo"><legend>¿Para una marca o por tu cuenta?</legend>
-      <div class="ops">${op('vi','marca','Para una marca',v.vinculo==='marca')}${op('vi','propia','Por mi cuenta',v.vinculo==='propia')}</div>
-      <p class="que"><b>Qué cambia:</b> por tu cuenta no comprometés producción ni stock, así que donde una marca debería esperar, vos podés <b>explorar</b>.</p></fieldset>
-    <fieldset class="campo ancho"><legend id="tl-${n}">${GATE[v.vinculo].preg}</legend>
-      <div class="ops" id="ti-${n}">${marcas(v.vinculo,v.cliente)}</div>
-      <p class="que"><b>Qué cambia:</b> los plazos y, con ellos, la señal. Fast fashion produce en 6 semanas: con el atributo en pico todavía llega. High fashion produce en 6 meses: en el pico llegaría tarde, así que la señal es esperar.</p></fieldset>
+  cont.innerHTML=`<form class="pyform limpio" novalidate>
+    <input id="pn-${n}" type="text" autocomplete="off" placeholder="Nombre del proyecto" aria-label="Nombre del proyecto" value="${pyEsc(p?p.nombre:'')}">
+    <input id="pe-${n}" type="email" autocomplete="email" placeholder="Tu email" aria-label="Tu email" value="${pyEsc(u.email||'')}">
+    <div class="seg" role="radiogroup" aria-label="¿Para quién diseñás?">${op('pu','mujer','Mujer',v.publico==='mujer')}${op('pu','hombre','Hombre',v.publico==='hombre')}${op('pu','todos','Sin género',v.publico==='todos')}</div>
+    <p class="linea">Elige qué foro de Reddit se lee. Google y Vogue son de todos.</p>
+    <div class="seg" role="radiogroup" aria-label="¿Para una marca o por tu cuenta?">${op('vi','marca','Para una marca',v.vinculo==='marca')}${op('vi','propia','Por mi cuenta',v.vinculo==='propia')}</div>
+    <p class="linea">Por tu cuenta, donde una marca espera, vos explorás.</p>
+    <div class="seg" role="radiogroup" id="ti-${n}" aria-label="${GATE[v.vinculo].preg}">${marcas(v.vinculo,v.cliente)}</div>
+    <p class="linea">Cambia los plazos y, con ellos, la señal.</p>
     <p class="pyerr" id="er-${n}" role="alert" hidden></p>
-    <div class="cierre"><button class="btn-pri" type="submit">${nuevo?'Crear proyecto':'Guardar cambios'}</button>${nuevo?'<a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a>':'<button type="button" class="lnk" data-cancelar>Cancelar</button>'}<p class="que">Se guarda en este navegador (localStorage). Si borrás los datos del navegador, se borra el proyecto.</p></div>
+    <button class="btn-pri" type="submit">${nuevo?'Crear proyecto':'Guardar cambios'}</button>
+    <div class="pie">${nuevo?'<a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a>':'<button type="button" class="lnk" data-cancelar>Cancelar</button>'}<span>Sin servidor: nadie más lo ve.</span></div>
   </form>`;
   const f=cont.querySelector('form'),val=nm=>(f.querySelector(`input[name="${nm}-${n}"]:checked`)||{}).value;
   f.addEventListener('input',()=>{$(`#er-${n}`).hidden=true;});
   f.addEventListener('change',e=>{if(e.target.name!==`vi-${n}`)return;const vin=val('vi'),sel=val('ti');
-    $(`#ti-${n}`).innerHTML=marcas(vin,sel);$(`#tl-${n}`).textContent=GATE[vin].preg;});
+    $(`#ti-${n}`).innerHTML=marcas(vin,sel);$(`#ti-${n}`).setAttribute('aria-label',GATE[vin].preg);});
   f.querySelector('[data-cancelar]')?.addEventListener('click',()=>alGuardar&&alGuardar(null));
   f.addEventListener('submit',e=>{e.preventDefault();
-    const nom=$(`#pn-${n}`).value.trim(),un=$(`#pu-${n}`).value.trim(),em=$(`#pe-${n}`).value.trim(),er=$(`#er-${n}`);
-    const falta=!nom?'Ponele un nombre al proyecto.':!un&&!em?'Poné tu nombre o tu email, para tus iniciales.':em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)?'Ese email no parece completo.':!val('ti')?'Elegí el tipo de marca.':'';
+    const nom=$(`#pn-${n}`).value.trim(),em=$(`#pe-${n}`).value.trim(),er=$(`#er-${n}`);
+    const falta=!nom?'Ponele un nombre al proyecto.':!em?'Poné tu email: de ahí salen tus iniciales.':!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)?'Ese email no parece completo.':!val('ti')?'Elegí el tipo de marca.':'';
     if(falta){er.textContent=falta;er.hidden=false;return;}
-    usuario={nombre:un,email:em};
+    usuario={nombre:(usuario&&usuario.email===em&&usuario.nombre)||'',email:em};
     const datos={nombre:nom,publico:val('pu')||'todos',vinculo:val('vi')||'marca',cliente:val('ti')};
     let id;if(p){Object.assign(p,datos);id=p.id;}else{id='p'+Date.now().toString(36);proyectos.push(Object.assign({id,creado:new Date().toISOString().slice(0,10)},datos));}
     pyGuardarTodo();if(alGuardar)alGuardar(id);else pyActivar(id,pyDestino);
@@ -5574,13 +5636,16 @@ function pintarCuentaVista(){
   const foco=$(cuentaFoco==='perfil'?'#cu-perfil':'#cu-proyectos');if(foco&&!cuentaEdita)requestAnimationFrame(()=>foco.scrollIntoView({block:'start'}));
 }
 
-/* el home: la serie de pasarela y el formulario */
+/* el home (24/11, segunda vuelta): la foto de la izquierda cambia con la idea que está en el centro; cada idea aparece
+   con el scroll, una por una; al final, el formulario */
+let inicioListo=false;
 function pintarInicio(){
-  const c=$('#incinta');
-  if(c&&!c.childElementCount){const F=(GATE_FOTOS.var||[]).slice(0,10);
-    const h=F.map(([f,d,s,y])=>`<figure><img src="${vogueFoto(f,640)}" alt="" loading="lazy" decoding="async"><figcaption>${pyEsc(d)} · ${TEMP[s]||''} ${y} · Vogue Runway</figcaption></figure>`).join('');
-    c.innerHTML=h+h;}
   if(!$('#inform .pyform'))pintarForm($('#inform'),null);
+  if(inicioListo)return;inicioListo=true;
+  const fotos=$$('#v-inicio .hfoto img'),num=$('#hnum');
+  const ver=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const f=+e.target.dataset.f;fotos.forEach(i=>i.classList.toggle('on',+i.dataset.f===f));if(num)num.textContent=`${f+1} / ${fotos.length}`;}),{rootMargin:'-45% 0px -45% 0px'});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target);}}),{threshold:.12});
+  $$('#v-inicio .hidea').forEach(x=>{ver.observe(x);io.observe(x);});
 }
 document.addEventListener('click',e=>{
   const cr=e.target.closest('[data-crear]');if(cr){e.preventDefault();abrirGate(pyDestino);return;}

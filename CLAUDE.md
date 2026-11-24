@@ -31,10 +31,13 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   lectura («Preguntale a CICLO», «Preguntar» in the nav, renamed on 16/11 from «Lectura», which had replaced «Tiza» (10/11), the merge of consulta and asistente), racional, mover («El brief», the Entrega 4 pirueta since 10/11, under Más), adivina (out of the nav since 10/11, direct link only); the old portada was removed on 26/10) toggled by `mostrar(v)`; nav links use `data-v`. Each view has a `pintar*()`
   renderer that builds SVG charts by hand (no chart library).
 - **Home, projects and account (since 24/11, rediseño B+C; see `entregas/entrega_4/plan_rediseno.md`).** The app opens on
-  `#v-inicio` (`pintarInicio()`): a full-bleed moving row of Vogue Runway looks (`GATE_FOTOS.var`) with the text under it
-  (i-D reference), then short sections (qué es · cómo funciona · de dónde salen los datos, with period and how often each
-  source would be refreshed · con proyecto o sólo mirando) and «Crear tu proyecto» (`#crear`, `pintarForm()`): project
-  name, your name, email and the three questions on one screen, each with a «Qué cambia» line. No server: everything is
+  `#v-inicio` (`pintarInicio()`; second version, 24/11, «una foto por idea», chosen by Felipe between two directions in
+  `diseno/rediseno_2026-11-24/home2/`, logic from loopsii.com): left, one sticky runway photo that changes with the idea in
+  the middle of the screen (`.hfoto`, IntersectionObserver); right, one idea per screen that appears on scroll (`.hrev`):
+  qué es · cómo funciona · de dónde salen los datos (with country and period) · qué obtenés · «Crear tu proyecto» (`#crear`).
+  No carousel and no credits over photos (credits in `.hcred`). On phones each idea carries its own photo (`.hmfoto`).
+  `pintarForm()` is a clean block (`.pyform.limpio`): project name, email, three segmented options each with one line, one
+  button; initials come from the email (or from the name set in Mi perfil). No server: everything is
   in localStorage (`ciclo.usuario`, `ciclo.proyectos`, `ciclo.activo`), stated next to the email field and in Acerca de.
   `abrirGate(destino)` no longer opens the gate: it scrolls to «Crear tu proyecto» and remembers where you were going
   (`pyDestino`). «Sólo estoy mirando» (`gateMirar()`, `[data-mirar]`) goes to Explorar ciclos without a project

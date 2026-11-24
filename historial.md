@@ -584,6 +584,12 @@ proyecto, con el Reddit de tu público; una barra pegada arriba para buscar y fi
 un gráfico por vez y su conclusión: «Gana y pierde terreno», con eje de 0 a 100, y «Cuándo picó cada uno», una línea de
 tiempo con años.
 
+## v1.82 · 24/11/2026 · Mis ciclos y Explorar, distintos; el home, de cero
+
+Desde Mis ciclos, cada atributo abre la ficha del proyecto (sólo el Reddit de su público, su señal y su ventana);
+Explorar muestra lo mismo para todos, sin señal. Cada fuente dice de qué país es. Y el home se rehace: una foto de
+pasarela por idea, una idea por pantalla que aparece con el scroll, y un cierre limpio para crear el proyecto.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

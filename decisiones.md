@@ -3486,3 +3486,29 @@ en Explorar con los dos foros, sin señal ni ventana; el link de la ficha la rea
 en los dos anchos. Capturas en `diseno/rediseno_2026-11-24/ficha/`. Error corregido antes de cerrar: «Ver en Explorar»
 abría siempre el jean baggy.
 
+## 2026-11-24 · El home, de cero: una foto por idea
+
+Felipe, al revisar el home de la fase B: «El de ahora no sirve. Hoy arranca con el mismo carrusel de pasarela que Mis
+ciclos. El home tiene que ser DISTINTO a cualquier pantalla de la herramienta»; sin créditos sobreimpresos en las fotos;
+la lógica de loopsii.com («secciones cortas, una idea por pantalla, que aparecen animadas una por una con el scroll,
+ordenado, simple, conciso. Copiá esa lógica, no el estilo»); y «el final no puede parecer una encuesta».
+
+**Qué se miró de Loopsii.** Cada sección es un título grande y casi nada de texto; los pasos van numerados («1/6»); todo el
+pedido de alta es un botón. De ahí: una idea por pantalla, que aparece al llegar, y un cierre con un solo botón.
+
+**Dos direcciones, renderizadas** (`diseno/rediseno_2026-11-24/home2/`): 1 · «una palabra por vez», tipográfica y
+centrada, con la pregunta y un atributo que rota sobre su etapa real; 2 · «una foto por idea», editorial. **Felipe eligió la
+2.** A la izquierda, una sola foto de pasarela, quieta y grande, que cambia cuando cambia la idea (1/6…6/6); a la derecha,
+la idea. Nada de carrusel ni de tarjetas: lo contrario de Mis ciclos. Los créditos de las seis fotos van al pie.
+
+**Cinco ideas y el cierre:** la pregunta («En qué momento está cada color, estampa, corte o material»), qué es («Una etapa
+para cada atributo. No una predicción»), cómo funciona (tres pasos), de dónde salen los datos (dos fuentes deciden, con
+país y período; el resto comprueba) y qué obtenés (Entrar, Esperar, Salir). El cierre: «Creá tu proyecto», nombre del
+proyecto, email, las tres opciones como selectores con una línea cada una, y un botón; «Sólo estoy mirando» subrayado.
+Sale «Tu nombre», que había sumado la fase B y la consigna no pedía: las iniciales salen del email (felipe.berney@… → FB)
+o del nombre, si se carga en Mi perfil. El mismo formulario edita proyectos en Mi cuenta.
+
+**Probado** a 1400 y 393 px: el recorrido de proyectos completo (34 verificaciones) y `probar_demo.js` 8 de 8 en los dos
+anchos, ya con el formulario nuevo. Corregido antes del commit: en el celular la foto de cada idea quedaba corta (la regla
+global de imágenes le ganaba al ancho). Capturas en `diseno/rediseno_2026-11-24/home2/en_la_app_1400.jpg` y `_393.jpg`.
+

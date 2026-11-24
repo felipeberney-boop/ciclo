@@ -3578,3 +3578,21 @@ del que no hay ningún dato. Ahora dice 2025, el último año con pasarela; el v
 `probar_demo.js` 8 de 8 en los dos anchos. Capturas antes y después del encargo, del juego y del veredicto en
 `diseno/rediseno_2026-11-24/H/`.
 
+## 2026-11-24 · Rediseño, fase F: la ficha dice que no predice
+
+A mano, sobre la ficha de Rayas: «¿Qué algoritmo usan para predecir?». En clase: «Que quede claro que no predice: qué es la
+etapa (K-means), qué es lo punteado (cono), qué es 100 en el eje».
+
+Debajo del gráfico, en la ficha del proyecto y en Explorar, un bloque a la vista («Cómo se lee · CICLO no predice»), no
+escondido detrás de un «?», con tres partes:
+
+- **La etapa:** sale de un K-means, que agrupa a los 17 atributos con pasarela y búsqueda según cuánto aparecen y cuánto se
+  buscan hoy y le pone a cada grupo el nombre de la etapa más parecida: dice dónde está, no adónde va. Si el atributo no entra
+  al K-means, lo dice y explica de dónde sale su señal.
+- **Lo punteado:** no es un pronóstico; es el cono, cuánto se movió de verdad la búsqueda a cada distancia en los 224 tramos de
+  nuestra historia. Cuando hay menos de tres capas no se dibuja, y lo dice.
+- **El 100:** el año en que más apareció o se buscó ese atributo en esa fuente; no compara un atributo con otro.
+
+Probado a 1400 y 393 px con Rayas (sin etapa, dos capas) y Floral (con etapa, tres capas) en Mis ciclos y en Explorar.
+`probar_demo.js` 8 de 8. Capturas en `diseno/rediseno_2026-11-24/F/`.
+

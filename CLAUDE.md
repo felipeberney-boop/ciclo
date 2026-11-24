@@ -66,7 +66,8 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   `recContexto='proyecto'` (`recSeries()` drops the other forum; `recChart()` draws the window). Shareable as
   `#ficha/<id>?c=…&v=…&pu=…` (`fichaId`). Explorar (`pintarRecorridos()`, `recContexto='explorar'`) shows everything for
   everyone: both forums, no signal, no window (`pintarExplorarDatos()` replaces `pintarDecision()` there), and a link back
-  to the attribute «para <proyecto>». `FUENTE_INFO` says where each source is from: Google Trends and Shopping worldwide
+  to the attribute «para <proyecto>». Both show `comoSeLee(o)` under the chart, always visible: the stage comes from a
+  K-means and does not predict, the dotted line is the cone (not a forecast), and 100 is the attribute's own max per source. `FUENTE_INFO` says where each source is from: Google Trends and Shopping worldwide
   with English terms (14 Argentine terms in Spanish), Reddit English-language forums with no country, Vogue Runway shows
   in Paris, Milan, New York, London and other weeks, Amazon = amazon.com, H&M dataset states no country.
 - **Explorar ciclos (`#v-recorridos`, since 24/11, rediseño E)** is the informative screen, without the project: title

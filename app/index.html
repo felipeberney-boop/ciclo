@@ -2204,6 +2204,13 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app #v-mover .bffrase:not(#q):not(#qq){margin-left:auto!important;margin-right:auto!important}
 .app #v-mover .bfacc:not(#q):not(#qq),.app #v-mover .bfbtns:not(#q):not(#qq){justify-content:center!important}
 .app #v-mover .bfbrief:not(#q):not(#qq){margin-left:auto!important;margin-right:auto!important}
+/* ================= la ficha: cómo se lee (24/11, rediseño F) · última ================= */
+.app .cslee{margin:28px 0 8px;padding:22px 0 0;border-top:1px solid var(--linea)}
+.app .cslee .eti{margin:0 0 14px}
+.app .cslee .csgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 32px}
+@media (max-width:820px){.app .cslee .csgrid{grid-template-columns:1fr}}
+.app .cslee b:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){display:block;font-size:var(--t-h4)!important;font-weight:600!important;margin:0 0 6px}
+.app .cslee p:not(#q):not(#qq):not(#qqq){margin:0!important;font-size:16px!important;line-height:1.5;color:var(--tinta-2)!important}
 </style>
 
 <div class="app">
@@ -3091,6 +3098,14 @@ function mcLineaTiempo(F,W){
    mostrar información distinta»; «Abro Rayas y aparece Reddit hombres») ----------
    recContexto decide qué ve el gráfico de capas: 'proyecto' (la ficha que se abre desde Mis ciclos) muestra sólo el foro
    de Reddit de tu público y tu ventana; 'explorar' (Explorar ciclos) muestra todo, para todos, sin nada del perfil. */
+/* 24/11 · F: que se lea en la pantalla que CICLO no predice (a mano, sobre la ficha de Rayas: «¿Qué algoritmo usan para
+   predecir?»). Tres líneas fijas, a la vista: qué es la etapa, qué es lo punteado y qué es 100 */
+function comoSeLee(o){const enKM=mcEnKM(o);
+  return `<div class="cslee"><p class="eti">Cómo se lee · CICLO no predice</p><div class="csgrid">
+    <div><b>La etapa</b><p>${enKM?'Sale de un K-means: un algoritmo que agrupa a los 17 atributos con pasarela y búsqueda según cuánto aparecen y cuánto se buscan hoy, y le pone a cada grupo el nombre de la etapa más parecida. Dice dónde está, no adónde va.':'Este atributo no entra al K-means (no tiene pasarela y búsqueda a la vez), así que no tiene etapa: la señal sale de cuánto ganó o perdió en la búsqueda de 2022 a 2024.'}</p></div>
+    <div><b>Lo punteado</b><p>${recCapas(o)<3?'Con menos de tres capas no hay punteado: cada capa va en su franja, sólo con lo medido. Cuando aparece, ':''}no es un pronóstico: es el cono, cuánto se movió de verdad la búsqueda, a cada distancia, en los 224 tramos de nuestra propia historia. Muestra la escala de lo posible.</p></div>
+    <div><b>El 100</b><p>Es el año en que más apareció o se buscó ese atributo en esa fuente (búsqueda: 2004–2024; Reddit: 2012–2025). No compara un atributo con otro.</p></div>
+  </div></div>`;}
 function abrirFichaProyecto(id){
   const o=REC.find(x=>x.id===id);if(!o)return;
   const p=pyActivo(),s=mcSeñal(o),et=mcEnKM(o)?etapaDe(o.n):null,d=terreno(o.id),rd=mcReddit(o),P=PERFIL[cliente]||PERFIL.premium;
@@ -3112,6 +3127,7 @@ function abrirFichaProyecto(id){
     <section class="fpgraf"><h2>Pasarela, búsqueda y Reddit de tu público</h2>
       <p class="fpnota">Cada curva es un índice de 0 a 100 de su propio máximo. Reddit: sólo ${foro}${publico==='todos'?'':', porque tu proyecto es de '+(publico==='mujer'?'mujer':'hombre')}. Google y Vogue no separan por género.</p>
       <div class="leg" id="dleg"></div><figure><div id="casc"></div></figure>
+      ${comoSeLee(o)}
       <p class="fpnota"><a href="#recorridos" id="fpexplorar">Ver ${o.n.toLowerCase()} en Explorar ciclos</a>: los mismos datos para todos, sin tu proyecto.</p></section>`;
   const ancho=innerWidth<600?Math.max(320,innerWidth-40):Math.min(900,innerWidth-120);
   if(recCapas(o)<3){$('#dleg').hidden=true;$('#casc').appendChild(capaFranjas(o,ancho));}
@@ -5098,6 +5114,7 @@ function pintarRecorridos(){
   recContexto='explorar';
   const o=REC.find(x=>x.id===recSel);
   pintarExplorarDatos(o);
+  {let c=$('#rcslee');if(!c){c=document.createElement('div');c.id='rcslee';$('#rdesde')?.insertAdjacentElement('afterend',c);}if(c)c.innerHTML=comoSeLee(o);}
   $('#rleg').innerHTML=recLeyenda(o);
   $$('#rleg .legi').forEach(b=>b.addEventListener('click',()=>{recFoco=recFoco===b.dataset.k?null:b.dataset.k;pintarRecorridos();$(`#rleg .legi[data-k="${b.dataset.k}"]`)?.focus();}));
   const rc=$('#rchart');rc.innerHTML='';

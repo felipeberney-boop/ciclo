@@ -622,6 +622,12 @@ muestra el recorrido de cualquier atributo con un selector; salen los gráficos 
 oculto. La franja de fuentes queda sólo en el home. El brief va a 2024 y su encabezado tiene jerarquía. El recorrido del
 readme se rehízo con el flujo nuevo.
 
+## v1.89 · 24/11/2026 · Vuelta L: el título, Mis ciclos más corto y las fotos que faltaban
+
+El home dice «Cuándo entrar en una tendencia, y cuándo salir.». Mis ciclos achica la gráfica y dice con qué está hecha
+(Google mundial, igual para todos los proyectos), y las fotos llegan sin bajar. 15 atributos más tienen foto de pasarela
+(63 de 65). Explorar termina en el recorrido. Acerca de y el botón de El brief, ajustados; el racional, al día.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

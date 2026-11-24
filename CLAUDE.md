@@ -57,6 +57,11 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   visible, «Qué gana y qué pierde terreno» (`#mcgraf`, gana above pierde, full width, the «+50» line, a line saying Google
   has no gender or brand type, and under each chart the five names with their project signal, `.mcgit`) and «Mis
   tendencias» (`#mctend`, groups are H3). Search and category moved to Explorar; `mcLista()` always returns the 65.
+  Since vuelta L (24/11, later) the chart block is short: one sentence, the «+50» line, a small line (`.mcfiltro`) saying the
+  chart is worldwide Google and the same for every project (only the signal changes), charts 165 px high and side by side
+  from 1000 px (`.mcdos`); no paragraph above the cards. Explorar hides the footer (`body[data-vista=recorridos]`).
+  `FOTO_ATR` covers 63 of 65 attributes (vuelta L added 15 with `codigo/buscar_fotos_clip.mjs`; neoprene and espiga have no
+  good candidate and keep their drawing).
   The text below describes the earlier version where it mentions the bar or Tendencias | Gráfica. Tendencias (`mcTend()`): cards (`mcFicha()`) grouped ▲ Entrar → ■ Esperar/Explorar →
   ▼ Salir by `señal()`, each with K-means stage, search 2022→2024 and Reddit **of the project's público only**
   (`mcReddit()`: `RDS` women, `RDH` men; «baggy jeans + mom jeans» falls back to «baggy jeans» in women and says so).

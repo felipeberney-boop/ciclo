@@ -3952,3 +3952,37 @@ Tokens en `:root` y documentación en `CLAUDE.md` («La grilla»). `?grilla` o S
 Preguntar), el texto centrado (El brief, centrado en el eje de la grilla) y los botones alineados a la derecha (terminan en
 una línea). Capturas con la grilla encima, antes y después, en `M/4_grilla/` (`grilla_antes_*`, `grilla_despues_*` y una
 por pantalla). `probar_demo.js` 8 de 8 en los dos anchos.
+
+## 2026-11-24 · Vuelta M, punto 5: El brief, el veredicto centrado y tres ideas de archivo
+
+Pedido: «El puntaje todavía está corrido a la izquierda: centralo bien, con todo el veredicto. Hacerlo más picante y
+adictivo para diseñadores. A la gente de moda le encanta el ARCHIVO… Proponeme 3 ideas… SOLO con años que cubren nuestros
+datos; revisá la cobertura real de Vogue y de la búsqueda antes de proponer. Con mockups, sin implementar hasta que
+elija».
+
+**El centrado.** El veredicto medía 720 px y estaba pegado a la izquierda de su bloque de 822: su centro caía en x=649
+con la página centrada en 700. Ahora ocupa el bloque entero (columnas 3–10), y el número va en el eje exacto: una grilla
+de tres (`1fr auto 1fr`) con el número en el medio y «/10» y la etiqueta colgando a la derecha, así la etiqueta no lo
+empuja. También quedan centrados el título, la racha, el porqué y «El mismo look, en las tres escalas». Capturas
+`M/5_brief/antes_veredicto_*` y `despues_veredicto_*`, con la grilla encima.
+
+**La cobertura, antes de proponer.**
+- Pasarela: 2000–2023 (902.566 looks); antes de 2010 las etiquetas detectan menos.
+- Fotos que podemos mostrar: 2010–2023, porque el índice de la app tiene 1.000 looks por año con su foto.
+- Búsqueda corregida: 2010–2024, y sus primeros años arrastran el arranque de la serie (muchos atributos tienen su
+  máximo en 2010).
+- Los 80 y los 90 no están en ninguna fuente. El «archivo» de CICLO va, entonces, de 2012 a 2021: hace falta una foto, un
+  año con búsqueda y dos o tres años después para puntuar.
+
+**Las tres ideas** (mockups con fotos y números reales en `M/5_brief/ideas_brief.html` y `ideas_brief_*.png`):
+1. **Modo Archivo.** Un encargo de una casa en una temporada pasada, por ejemplo «Céline te encarga un abrigo para
+   Otoño 2017» (foto Celine Fall 2017). Se puntúa con lo que pasó en los dos años siguientes y con la misma regla de hoy:
+   trench −6, lana −1, lunares +23 dan 5/10.
+2. **¿Lo viste venir?** Un look de archivo y un atributo, por ejemplo Gucci Fall 2016 y el bordado. Apostás si la
+   búsqueda subió, se quedó o bajó en los tres años siguientes, y la curva se dibuja sola (48 → 33, −15). Funciona con
+   racha.
+3. **El desafío del día.** El mismo encargo para todos durante un día, sacado de la fecha, con 30 segundos de reloj.
+   Termina con una línea para compartir: «CICLO · desafío 24/11 · 8/10 · ▲ ▲ ■ · 0:21».
+
+Los looks se eligieron con CLIP filtrando por año y diseñador (`codigo/buscar_look_clip.mjs`, nuevo) y se miraron a ojo.
+`probar_demo.js` 8 de 8 en los dos anchos.

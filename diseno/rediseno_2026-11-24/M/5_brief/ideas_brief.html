@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El brief · tres ideas (mockups, sin implementar)</title>
+<style>
+:root{--sf:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;--tinta:#1d1d1f;--gris:#6e6e73;--linea:#d2d2d7;--bloque:#f5f5f7;--accion:#0066cc;--entrar:#1f7a3a;--esperar:#a05a00;--salir:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:400 17px/1.45 var(--sf);color:var(--tinta);background:#fff}
+.w{max-width:1280px;margin:0 auto;padding:56px max(16px,5.5vw) 80px}
+.eti{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);margin:0 0 10px}
+h1{font-size:clamp(36px,4vw,56px);font-weight:600;letter-spacing:-.025em;line-height:1.05;margin:0 0 12px}
+.lead{color:var(--gris);max-width:68ch;margin:0 0 14px}
+.cob{font-size:15px;color:var(--gris);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:14px 0;margin:24px 0 40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.cob b{display:block;color:var(--tinta);font-weight:600;font-size:15px}
+.ideas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.idea h2{font-size:26px;font-weight:600;letter-spacing:-.01em;margin:0 0 6px}
+.idea .que{color:var(--gris);font-size:16px;margin:0 0 16px;min-height:4.4em}
+.tel{background:#111;color:#fff;border-radius:22px;overflow:hidden}
+.tel .ft{position:relative;aspect-ratio:4/5;background:#222}
+.tel .ft img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.tel .ft .cr{position:absolute;left:12px;bottom:10px;font-size:12px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.tel .ft .tag{position:absolute;left:12px;top:12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#fff;color:#111;border-radius:999px;padding:5px 10px}
+.tel .ft .reloj{position:absolute;right:12px;top:12px;font:600 22px var(--sf);font-variant-numeric:tabular-nums;background:rgba(0,0,0,.55);border-radius:999px;padding:4px 12px}
+.tel .tx{padding:18px 18px 20px}
+.tel h3{font-size:22px;font-weight:600;line-height:1.2;margin:0 0 6px}
+.tel p{margin:0;font-size:15px;color:rgba(255,255,255,.75)}
+.ops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0 0}
+.op{border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 6px;text-align:center;font-size:14px}
+.op.on{background:#fff;color:#111;border-color:#fff}
+.res{display:flex;align-items:baseline;gap:10px;margin:14px 0 2px}
+.res b{font-size:54px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.res span{color:rgba(255,255,255,.7)}
+.fila{display:flex;justify-content:space-between;gap:10px;font-size:14px;border-top:1px solid rgba(255,255,255,.15);padding:8px 0}
+.fila em{font-style:normal}
+.s-entrar{color:#6fd28c}.s-salir{color:#ff8a80}.s-esperar{color:#ffc46b}
+.btn{display:inline-block;margin:14px 0 0;background:var(--accion);color:#fff;border-radius:999px;padding:11px 18px;font-size:15px;text-decoration:none}
+.dat{margin:16px 0 0;font-size:15px;color:var(--gris)}
+.dat b{color:var(--tinta);font-weight:600}
+svg text{font:12px var(--sf);fill:rgba(255,255,255,.75)}
+.comp{font:500 15px var(--sf);background:rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;margin:12px 0 0;color:#fff}
+@media (max-width:999px){.ideas{grid-template-columns:1fr 1fr}.cob{grid-template-columns:1fr 1fr}}
+@media (max-width:599px){.ideas{grid-template-columns:1fr}.cob{grid-template-columns:1fr}.idea .que{min-height:0}}
+</style></head><body><div class="w">
+<p class="eti">El brief · vuelta M · mockups, sin implementar</p>
+<h1>Tres ideas para que El brief enganche</h1>
+<p class="lead">El archivo atrae, pero sólo podemos jugar con los años que medimos. Lo revisé antes de proponer:</p>
+<div class="cob">
+  <div><b>Pasarela (Vogue Runway)</b>2000–2023, 902.566 looks. Antes de 2010, las etiquetas detectan menos.</div>
+  <div><b>Fotos para mostrar</b>2010–2023: el índice de la app tiene 14.000 looks (1.000 por año) con su foto.</div>
+  <div><b>Búsqueda (Google, corregida)</b>2010–2024. Los primeros años arrastran el arranque de la serie: muchos atributos tienen su máximo en 2010.</div>
+  <div><b>Los 80 y los 90</b>No están: ni pasarela ni búsqueda. Por eso el «archivo» de CICLO va de 2012 a 2021.</div>
+</div>
+<div class="ideas">
+
+<section class="idea">
+  <p class="eti">Idea 1</p><h2>Modo Archivo</h2>
+  <p class="que">Un encargo de una casa en una temporada pasada. Elegís como si fuera ese año; CICLO te puntúa con lo que pasó los dos años siguientes.</p>
+  <div class="tel">
+    <div class="ft"><img src="https://assets.vogue.com/photos/58bc35093bbebb17ef1a57a1/master/w_800,c_limit/039_MON0418.jpg" alt="Celine, Fall 2017"><span class="tag">Archivo · 2017</span><span class="cr">Celine · Fall 2017 · Vogue Runway</span></div>
+    <div class="tx"><h3>Céline te encarga un abrigo para Otoño 2017.</h3><p>Elegís con lo que sabías en 2017.</p>
+      <div class="ops"><span class="op on">Trench</span><span class="op">Capa</span><span class="op">Campera</span></div>
+      <div class="res"><b>5</b><span>/10 · lo que pasó 2017→2019</span></div>
+      <div class="fila"><span>Trench</span><em class="s-salir">bajó −6</em></div>
+      <div class="fila"><span>Lana</span><em class="s-esperar">quieto −1</em></div>
+      <div class="fila"><span>Lunares</span><em class="s-entrar">subió +23</em></div>
+    </div>
+  </div>
+  <p class="dat"><b>Datos:</b> los 65 atributos de búsqueda, del año del encargo a dos años después, con la misma regla de puntos de hoy (el lujo gana si sube). Casas y temporadas sólo de 2012 a 2021, con foto del índice. <b>Por qué engancha:</b> jugás con tu memoria de moda, y el resultado es verificable.</p>
+</section>
+
+<section class="idea">
+  <p class="eti">Idea 2</p><h2>¿Lo viste venir?</h2>
+  <p class="que">Un look de archivo y un atributo. Apostás: ¿la búsqueda subió, se quedó o bajó los tres años siguientes? Después, la curva se dibuja sola.</p>
+  <div class="tel">
+    <div class="ft"><img src="https://assets.vogue.com/photos/569cd843d928983d20a788d9/master/w_800,c_limit/_GUC0227.jpg" alt="Gucci, Fall 2016"><span class="tag">Bordado</span><span class="cr">Gucci · Fall 2016 · Vogue Runway</span></div>
+    <div class="tx"><h3>Gucci, Otoño 2016. ¿Qué hizo el bordado después?</h3>
+      <div class="ops"><span class="op">Subió</span><span class="op">Se quedó</span><span class="op on">Bajó</span></div>
+      <svg viewBox="0 0 320 120" width="100%" role="img" aria-label="Búsqueda mundial del bordado 2010–2024">
+        <rect x="140" y="8" width="66" height="92" fill="rgba(255,255,255,.08)" rx="4"/>
+        <polyline fill="none" stroke="#ff8a80" stroke-width="3" stroke-linejoin="round" points="10,8 30,25 50,33 70,43 90,45 110,46 130,49 150,55 170,59 190,61 210,49 230,57 250,61 270,62 290,63"/>
+        <circle cx="130" cy="49" r="5" fill="#fff"/><circle cx="190" cy="61" r="5" fill="#ff8a80"/>
+        <text x="10" y="116">2010</text><text x="120" y="116">2016</text><text x="180" y="116">2019</text><text x="272" y="116">2024</text>
+      </svg>
+      <p><b style="color:#fff">Acertaste.</b> Búsqueda mundial 48 → 33, 2016→2019 (−15). Racha: 3.</p>
+    </div>
+  </div>
+  <p class="dat"><b>Datos:</b> un look del índice (2010–2023) elegido con CLIP para el atributo, y la búsqueda corregida del año del look a tres años después. Sin pronóstico: se juega sólo con años ya medidos. <b>Por qué engancha:</b> una decisión, diez segundos, y la curva como premio; se encadena.</p>
+</section>
+
+<section class="idea">
+  <p class="eti">Idea 3</p><h2>El desafío del día</h2>
+  <p class="que">El mismo encargo para todos, un día entero, contra reloj (30 segundos). Al final, una línea para compartir.</p>
+  <div class="tel">
+    <div class="ft"><img src="https://assets.vogue.com/photos/6273c58135634a1cdc9e5da6/master/w_800,c_limit/00063-chanel-resort-2023-monaco-credit-gorunway.jpg" alt="Chanel, Resort 2023"><span class="tag">Desafío · 24/11</span><span class="reloj">0:21</span><span class="cr">Referencia: Chanel · Resort 2023 · Vogue Runway</span></div>
+    <div class="tx"><h3>Zara te encarga un pantalón para Primavera 2024.</h3><p>Forma, material, estampa. Tres toques.</p>
+      <div class="res"><b>8</b><span>/10 en 0:21</span></div>
+      <div class="comp">CICLO · desafío 24/11 · 8/10 · ▲ ▲ ■ · 0:21</div>
+      <a class="btn" href="#">Copiar para compartir</a>
+    </div>
+  </div>
+  <p class="dat"><b>Datos:</b> los mismos de El brief hoy (búsqueda 2022→2024). El encargo del día sale de la fecha, así todos juegan el mismo; el tiempo va guardado en el navegador, sin servidor. <b>Por qué engancha:</b> la línea para compartir, con íconos y sin spoilers.</p>
+</section>
+</div>
+</div></body></html>

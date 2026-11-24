@@ -2408,6 +2408,15 @@ html body .app #v-recorridos .decide>*:not(#g1):not(#g2):not(#g3):not(#g4):not(#
 @media (max-width:599px){html body .app #v-racional .methead:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:minmax(0,1fr) 40px!important;column-gap:var(--g-med)!important}
   html body .app #v-racional .metn:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}}
 @media (max-width:860px){html body .app #v-inicio .hmfoto:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:calc(-1*var(--g-mar))!important;margin-right:calc(-1*var(--g-mar))!important;width:calc(100% + 2*var(--g-mar))!important}}
+/* El brief, el veredicto centrado en el eje de la grilla (vuelta M, punto 5): el bloque ocupa las columnas 3–10 y el
+   número va justo en el centro; «/10» y la etiqueta cuelgan a su derecha */
+html body .app #v-mover .bfver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important;width:100%!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important}
+html body .app #v-mover .bfnota:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:baseline!important;width:100%!important;margin-left:0!important;margin-right:0!important;column-gap:10px}
+html body .app #v-mover .bfnder:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:flex;align-items:baseline;gap:14px;justify-self:start}
+html body .app #v-mover .bfnder .bfetq:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:0!important}
+html body .app #v-mover .bfcomp:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){text-align:center!important}
+html body .app #v-mover .bftit:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:auto!important;margin-right:auto!important}
+html body .app #v-mover :is(.bfracha,.bfpor,.bfcomp):not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:auto!important;margin-right:auto!important}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -6105,7 +6114,7 @@ function bfVeredicto(C,B,temp){const el=bf.el,cnt={};el.forEach(x=>cnt[x.m.k]=(c
   const frase=`Mi look: ${cats.map(c=>`${bfPuntaje(c,el)}/10 para ${nom(c)}`).join(', ')}.`;
   const T=x=>`style="--t:${x}s"`;
   C.innerHTML=`<div class="bfver"><div class="bfenc bfencv"><span class="eti">${temp}</span><b class="bfencc">${B.casa}</b><span class="bfencp">${B.pn}</span></div>
-    <div class="bfnota bfr" ${T(0)}><b class="bfnum" data-n="${nota}">0</b><span class="bfde10">/10</span><span class="bfetq bfr ${clavo?'ok':nota>=5?'casi':'mal'}" ${T(1)}>${etq}</span></div>
+    <div class="bfnota bfr" ${T(0)}><span class="bfnizq" aria-hidden="true"></span><b class="bfnum" data-n="${nota}">0</b><span class="bfnder"><span class="bfde10">/10</span><span class="bfetq bfr ${clavo?'ok':nota>=5?'casi':'mal'}" ${T(1)}>${etq}</span></span></div>
     <p class="bfracha bfr" ${T(1.6)}>${clavo?`Racha: <b>${RR.ahora}</b> ${RR.ahora===1?'brief clavado':'briefs clavados seguidos'}${RR.record&&RR.ahora>1?' · tu récord':''}`:RR.antes>0?`Se cortó la racha: ibas <b>${RR.antes}</b>. Tu mejor: ${RR.mejor}.`:`Sin racha todavía. Clavás con 7 o más.`}</p>
     <h2 class="bftit bfr" ${T(2.6)}>${BF_TIT[B.cat][dom]}</h2>
     <ul class="bflist">${el.map((x,i)=>linea(x).replace('class="bfli"',`class="bfli bfr" style="--t:${3.2+i*.5}s"`)).join('')}</ul>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CICLO · home (propuesta B, 24/11)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Prototipo de la fase B: dos portadas (#una = una foto, #serie = una serie) con las mismas secciones debajo.
+   Usa los tokens del sistema del 24/11 (diseno/sistema_2026-11-24/). */
+:root{--sf:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter",system-ui,sans-serif;
+  --h1:56px;--h2:32px;--h3:22px;--h4:18px;--p:17px;--eti:12px;
+  --accion:#0066cc;--accion-2:#0071e3;--tinta:#1d1d1f;--tinta-2:#6e6e73;--linea:#d2d2d7;--bloque:#f5f5f7;
+  --entrar:#2C6A3D;--esperar:#9A6200;--salir:#A5372A}
+@media (max-width:700px){:root{--h1:36px;--h2:26px;--h3:20px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--tinta);font:400 var(--p)/1.5 var(--sf);letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:var(--accion);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.eti{font-size:var(--eti);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tinta-2);margin:0}
+h1,h2,h3,h4{margin:0;font-weight:600}
+h1{font-size:var(--h1);letter-spacing:-.025em;line-height:1.04}
+h2{font-size:var(--h2);letter-spacing:-.02em;line-height:1.12}
+h3{font-size:var(--h3);font-weight:500;letter-spacing:-.015em;line-height:1.2}
+h4{font-size:var(--h4);letter-spacing:-.01em}
+p{margin:0}
+.p2{color:var(--tinta-2)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 16px/1 var(--sf);padding:14px 24px;border-radius:999px;border:1.5px solid var(--accion);text-decoration:none;cursor:pointer}
+.btn.pri{background:var(--accion);color:#fff}.btn.pri:hover{background:var(--accion-2)}
+.mast{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 clamp(18px,4vw,56px);background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+.logo{font-family:"Bodoni Moda",Didot,serif;font-weight:500;font-size:22px;letter-spacing:.14em;display:inline-flex;align-items:center;gap:9px;color:var(--tinta);text-decoration:none}
+.logo svg{width:20px;height:20px}
+.mast nav{display:flex;gap:22px;align-items:center;font-size:16px}
+.mast nav a.n{color:var(--tinta);text-decoration:none}
+@media (max-width:700px){.mast nav a.n{display:none}}
+.w{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,56px)}
+
+/* ---------- portada A: una foto ---------- */
+.portada{display:none}
+body.una .portada.una,body.serie .portada.serie{display:grid}
+.portada.una{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);height:min(calc(100vh - 56px),880px)}
+.portada.una figure{margin:0;position:relative;background:#222;overflow:hidden}
+.portada.una img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.cred{position:absolute;left:14px;bottom:12px;color:#fff;font-size:12px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.portada .tx{display:flex;flex-direction:column;justify-content:center;gap:22px;padding:56px clamp(24px,4vw,64px) 64px}
+.portada .tx .lead{font-size:20px;line-height:1.45;max-width:30ch}
+.acc{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+@media (max-width:820px){.portada.una{grid-template-columns:1fr;height:auto}.portada.una figure{height:62vh}.portada .tx{padding:28px 18px 40px}}
+
+/* ---------- portada B: una serie ---------- */
+.portada.serie{grid-template-columns:1fr;min-height:calc(100vh - 56px);grid-template-rows:1fr auto}
+.fila{display:flex;gap:2px;overflow:hidden;background:#111}
+.fila .cinta{display:flex;gap:2px;animation:corre 60s linear infinite}
+.fila figure{margin:0;position:relative;flex:none;height:calc(100vh - 56px - 230px);min-height:340px;aspect-ratio:2/3}
+.fila img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+@keyframes corre{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.fila .cinta{animation:none}}
+.portada.serie .tx{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:end;gap:20px 48px;padding:32px clamp(18px,4vw,56px) 40px}
+@media (max-width:900px){.portada.serie .tx{grid-template-columns:1fr;gap:16px}.fila figure{height:52vh;min-height:0}}
+
+/* ---------- secciones ---------- */
+section.s{padding:88px 0;border-top:1px solid var(--linea)}
+@media (max-width:700px){section.s{padding:56px 0}}
+.cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:40px;margin-bottom:40px;align-items:end}
+@media (max-width:820px){.cab{grid-template-columns:1fr;gap:14px;margin-bottom:28px}}
+.cab .eti{margin-bottom:10px}
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:p}
+@media (max-width:820px){.pasos{grid-template-columns:1fr}}
+.paso{background:var(--bloque);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.paso .n{font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.sen{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.sen.e{color:var(--entrar);background:#e6f2e9}.sen.a{color:var(--esperar);background:#fbf0dc}.sen.s{color:var(--salir);background:#f8e6e3}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th{text-align:left;font-size:var(--eti);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tinta-2);padding:0 14px 10px 0;border-bottom:1px solid var(--tinta)}
+td{padding:14px 14px 14px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+td b{font-weight:600}
+tr.grupo td{padding-top:28px;border-bottom:0}
+.dentro{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--tinta);color:#fff}
+.fuera{background:#fff;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+@media (max-width:820px){table,thead,tbody,tr,td{display:block}thead{display:none}tr{padding:14px 0;border-bottom:1px solid var(--linea)}td{border:0;padding:2px 0}tr.grupo{border:0}td[data-k]::before{content:attr(data-k) " · ";font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tinta-2)}}
+.modos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.modos{grid-template-columns:1fr}}
+.modo{border:1px solid var(--linea);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.modo.con{border:2px solid var(--tinta)}
+.modo ul{margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:6px}
+
+/* ---------- crear proyecto ---------- */
+.form{background:var(--bloque);border-radius:24px;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px 48px}
+@media (max-width:900px){.form{grid-template-columns:1fr;gap:28px}}
+.campo{display:flex;flex-direction:column;gap:8px}
+.campo label,.campo legend{font-size:var(--h4);font-weight:600;padding:0}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+input[type=text],input[type=email]{font:400 17px var(--sf);padding:14px 16px;border:1px solid var(--linea);border-radius:12px;background:#fff;color:var(--tinta)}
+input:focus{outline:2px solid var(--accion);outline-offset:1px}
+.ops{display:flex;flex-wrap:wrap;gap:8px}
+.ops label{font-size:16px;font-weight:400;cursor:pointer}
+.ops input{position:absolute;opacity:0;pointer-events:none}
+.ops span{display:inline-flex;padding:10px 18px;border-radius:999px;border:1px solid var(--linea);background:#fff}
+.ops input:checked+span{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+.ops input:focus-visible+span{outline:2px solid var(--accion);outline-offset:2px}
+.que{font-size:16px;color:var(--tinta-2);margin:0;max-width:52ch}
+.que b{color:var(--tinta);font-weight:600}
+.cierre{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;border-top:1px solid var(--linea);padding-top:28px}
+.cierre .p2{font-size:16px;flex:1 1 280px}
+footer{padding:48px 0 64px;color:var(--tinta-2);font-size:16px}
+.marca{position:fixed;right:14px;bottom:14px;z-index:9;background:var(--tinta);color:#fff;font-size:13px;padding:8px 12px;border-radius:10px;display:flex;gap:10px}
+.marca a{color:#fff}
+</style>
+</head>
+<body class="una">
+
+<div class="marca">Propuesta B · <a href="#una" onclick="document.body.className='una'">una foto</a> <a href="#serie" onclick="document.body.className='serie'">una serie</a></div>
+
+<header class="mast">
+  <a class="logo" href="#"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10.00" cy="2.50" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17.13" cy="7.68" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="14.41" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="5.59" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="2.87" cy="7.68" r="2.3" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg>CICLO</a>
+  <nav><a class="n" href="#explorar">Explorar ciclos</a><a class="n" href="#acerca">Acerca de</a><a class="btn pri" href="#crear" style="padding:9px 16px;font-size:15px">Crear tu proyecto</a></nav>
+</header>
+
+<!-- A · una foto -->
+<div class="portada una">
+  <figure><img src="https://assets.vogue.com/photos/63f8e41547fee8ca53688b16/master/w_1600,c_limit/00049-burberry-fall-2023-ready-to-wear-credit-brand.jpg" alt="Look de Burberry, Fall 2023"><figcaption class="cred">Burberry · Fall 2023 · Vogue Runway</figcaption></figure>
+  <div class="tx">
+    <p class="eti">Una herramienta de moda</p>
+    <h1>En qué momento está cada color, estampa, corte o material.</h1>
+    <p class="lead p2">CICLO cruza veinte años de pasarela y de búsquedas para decirte, atributo por atributo, si conviene entrar, esperar o salir.</p>
+    <div class="acc"><a class="btn pri" href="#crear">Crear tu proyecto</a><a href="#explorar">Sólo estoy mirando</a></div>
+  </div>
+</div>
+
+<!-- B · una serie -->
+<div class="portada serie">
+  <div class="fila" aria-hidden="true"><div class="cinta" id="cinta"></div></div>
+  <div class="tx">
+    <p class="eti" style="align-self:start;padding-top:8px">Una herramienta<br>de moda</p>
+    <div style="display:flex;flex-direction:column;gap:14px"><h1>En qué momento está cada color, estampa, corte o material.</h1>
+    <p class="lead p2" style="font-size:20px;max-width:52ch">CICLO cruza veinte años de pasarela y de búsquedas para decirte, atributo por atributo, si conviene entrar, esperar o salir.</p></div>
+    <div class="acc" style="flex-direction:column;align-items:flex-start"><a class="btn pri" href="#crear">Crear tu proyecto</a><a href="#explorar">Sólo estoy mirando</a></div>
+  </div>
+</div>
+
+<main class="w">
+
+<section class="s" id="que">
+  <div class="cab"><div><p class="eti">Qué es</p><h2>Una etapa para cada atributo, no una predicción.</h2></div>
+  <p class="p2">Un atributo es una cosa concreta que se puede medir en todos lados: el floral, el jean amplio, la gamuza. CICLO lo ubica en una de cinco etapas (emergente, en ascenso, en pico, saturada, en retorno) según cuánto aparece en los desfiles y cuánto se lo busca. No adivina el futuro: te dice dónde está hoy y cuánto se movieron casos parecidos.</p></div>
+</section>
+
+<section class="s" id="como">
+  <div class="cab"><div><p class="eti">Cómo funciona</p><h2>Tres pasos.</h2></div><p class="p2">Lo mismo para los 65 atributos que tienen datos.</p></div>
+  <div class="pasos">
+    <div class="paso"><span class="n">1</span><h3>Medimos</h3><p class="p2">Cuánto aparece en la pasarela de Vogue Runway y cuánto se busca en Google, año por año.</p></div>
+    <div class="paso"><span class="n">2</span><h3>Agrupamos</h3><p class="p2">Un K-means junta a los que se mueven parecido y le da a cada grupo el nombre de una etapa. Corre en tu navegador.</p></div>
+    <div class="paso"><span class="n">3</span><h3>Te decimos qué hacer</h3><p class="p2">Según tu tipo de marca y sus plazos, cada etapa es una señal: <span class="sen e">▲ Entrar</span> <span class="sen a">■ Esperar</span> <span class="sen s">▼ Salir</span></p></div>
+  </div>
+</section>
+
+<section class="s" id="datos">
+  <div class="cab"><div><p class="eti">De dónde salen los datos</p><h2>Dos fuentes deciden; el resto comprueba.</h2></div>
+  <p class="p2">Todo se bajó una vez, entre septiembre y noviembre de 2026. La última columna dice cada cuánto habría que volver a bajarlo si CICLO estuviera en uso; los datasets cerrados no cambian.</p></div>
+  <table>
+    <thead><tr><th>Fuente</th><th>Qué mide</th><th>Período</th><th>Cuánto</th><th>Se actualizaría</th></tr></thead>
+    <tbody>
+      <tr class="grupo"><td colspan="5"><span class="dentro">Entran al modelo</span></td></tr>
+      <tr><td><b>Vogue Runway</b></td><td data-k="Mide">Qué parte de los looks de cada año tiene el atributo</td><td data-k="Período">2000–2025</td><td data-k="Cuánto">902.566 looks hasta 2023; 20.000 por año en 2024 y 2025</td><td data-k="Se actualizaría">Con cada temporada (4 por año)</td></tr>
+      <tr><td><b>Google Trends</b></td><td data-k="Mide">Cuánto se busca en el mundo, frente a 35 búsquedas de moda</td><td data-k="Período">2004–2024</td><td data-k="Cuánto">65 series</td><td data-k="Se actualizaría">Cada mes</td></tr>
+      <tr class="grupo"><td colspan="5"><span class="dentro fuera">Comprueban, no entran</span></td></tr>
+      <tr><td><b>Reddit</b></td><td data-k="Mide">De qué se habla: un foro de mujeres y uno de hombres, por separado</td><td data-k="Período">2012–2025</td><td data-k="Cuánto">178.519 y 581.184 posts</td><td data-k="Se actualizaría">Cada mes</td></tr>
+      <tr><td><b>Google Shopping</b></td><td data-k="Mide">Búsquedas con intención de compra</td><td data-k="Período">2008–2025</td><td data-k="Cuánto">25 términos</td><td data-k="Se actualizaría">Cada mes</td></tr>
+      <tr><td><b>Lyst Index</b></td><td data-k="Mide">El ranking de marcas más buscadas</td><td data-k="Período">2018–2026</td><td data-k="Cuánto">55 marcas, 34 trimestres</td><td data-k="Se actualizaría">Cada trimestre</td></tr>
+      <tr><td><b>H&amp;M</b></td><td data-k="Mide">Qué compra el mercado masivo</td><td data-k="Período">2018–2020</td><td data-k="Cuánto">30,6 M de compras</td><td data-k="Se actualizaría">No: dataset cerrado</td></tr>
+      <tr><td><b>Amazon</b></td><td data-k="Mide">Reseñas de ropa que nombran el atributo</td><td data-k="Período">2012–2023</td><td data-k="Cuánto">1,1 M de reseñas</td><td data-k="Se actualizaría">No: dataset cerrado</td></tr>
+      <tr><td><b>Zara</b></td><td data-k="Mide">Qué había en la góndola un mes</td><td data-k="Período">Febrero de 2024</td><td data-k="Cuánto">228 prendas</td><td data-k="Se actualizaría">No: es una foto de un mes</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="s" id="obtenes">
+  <div class="cab"><div><p class="eti">Qué obtenés</p><h2>Con proyecto o sólo mirando.</h2></div><p class="p2">Los datos son los mismos. El proyecto cambia cómo se leen.</p></div>
+  <div class="modos">
+    <div class="modo con"><p class="eti">Con proyecto</p><h3>Mis ciclos</h3><ul>
+      <li>Cada atributo con su señal para tu tipo de marca y sus plazos, ordenados: primero lo que conviene entrar.</li>
+      <li>Lo que se habla en Reddit, del foro de tu público.</li>
+      <li>Diseñar, Preguntar y El brief, con tu proyecto.</li></ul></div>
+    <div class="modo" id="explorar"><p class="eti">Sólo mirando</p><h3>Explorar ciclos</h3><ul>
+      <li>Todos los atributos, sus curvas y sus fotos de pasarela.</li>
+      <li>Sin señal: no sabemos para quién diseñás.</li></ul>
+      <p><a href="#">Explorar ciclos</a></p></div>
+  </div>
+</section>
+
+<section class="s" id="crear">
+  <div class="cab"><div><p class="eti">Crear tu proyecto</p><h2>Todo en una pantalla.</h2></div><p class="p2">Tres preguntas y un nombre. Podés cambiarlas cuando quieras.</p></div>
+  <form class="form" onsubmit="event.preventDefault()">
+    <div class="campo"><label for="pn">Nombre del proyecto</label><input id="pn" type="text" placeholder="Por ejemplo: Invierno 2026" autocomplete="off"></div>
+    <div class="campo"><label for="pe">Tu email</label><input id="pe" type="email" placeholder="nombre@ejemplo.com"><p class="que">Sólo para tus iniciales y para reconocer tus proyectos. Queda en este navegador: no hay servidor y no se manda a ningún lado.</p></div>
+    <fieldset class="campo"><legend>¿Para quién diseñás?</legend>
+      <div class="ops"><label><input type="radio" name="pu" checked><span>Mujer</span></label><label><input type="radio" name="pu"><span>Hombre</span></label><label><input type="radio" name="pu"><span>Sin género</span></label></div>
+      <p class="que"><b>Qué cambia:</b> qué foro de Reddit se lee (mujeres o hombres) y las fotos de pasarela que ves. Google y Vogue no separan por género: esas curvas son de todos.</p></fieldset>
+    <fieldset class="campo"><legend>¿Diseñás para una marca o por tu cuenta?</legend>
+      <div class="ops"><label><input type="radio" name="vi" checked><span>Para una marca</span></label><label><input type="radio" name="vi"><span>Por mi cuenta</span></label></div>
+      <p class="que"><b>Qué cambia:</b> por tu cuenta no comprometés producción ni stock, así que donde una marca debería esperar, vos podés <b>explorar</b>.</p></fieldset>
+    <fieldset class="campo" style="grid-column:1/-1"><legend>¿Qué tipo de marca?</legend>
+      <div class="ops"><label><input type="radio" name="ti"><span>High fashion</span></label><label><input type="radio" name="ti"><span>Contemporary</span></label><label><input type="radio" name="ti" checked><span>Fast fashion</span></label><label><input type="radio" name="ti"><span>De autor</span></label></div>
+      <p class="que"><b>Qué cambia:</b> los plazos y, con ellos, la señal. Fast fashion produce en 6 semanas: con el atributo en pico todavía llega. High fashion produce en 6 meses: en el pico llegaría tarde, así que la señal es esperar.</p></fieldset>
+    <div class="cierre"><button class="btn pri" type="submit">Crear proyecto</button><a href="#explorar">Sólo estoy mirando</a><p class="p2">Se guarda en este navegador (localStorage). Si borrás los datos del navegador, se borra el proyecto.</p></div>
+  </form>
+</section>
+
+<section class="s" id="acerca"><footer>CICLO · <a href="#">Acerca de</a> · Fotos: Vogue Runway, enlazadas desde su sitio.</footer></section>
+</main>
+
+<script>
+const F=[["633c453a802c86f37bb5ae35/00044-miu-miu-spring-2023-ready-to-wear-credit-gorunway.jpg","Miu Miu · Spring 2023"],["63f8e41547fee8ca53688b16/00049-burberry-fall-2023-ready-to-wear-credit-brand.jpg","Burberry · Fall 2023"],["633963ce22fa29f69ae6d2ea/00003-hermes-spring-2023-ready-to-wear-credit-gorunway.jpg","Hermès · Spring 2023"],["62bb03b557e02992012fd398/00031-craig-green-spring-2023-menswear-credit-gorunway.jpg","Craig Green · Spring 2023"],["634d93b37a2a7b869a7a6a9a/00013-valentino-resort-2023-credit-brand.jpg","Valentino · Resort 2023"],["63f8c28f471c91dc830f6797/00010-paolina-russo-fall-2023-ready-to-wear-credit-aidan-zamiri.jpg","Paolina Russo · Fall 2023"],["635fca5500affda64572718d/00051-bottega-veneta-resort-2023-credit-brand.jpg","Bottega Veneta · Resort 2023"],["63335c0aa30a6f73b05c2522/00049-saint-laurent-spring-2023-ready-to-wear-credit-gorunway.jpg","Saint Laurent · Spring 2023"]];
+const u=f=>{const i=f.indexOf('/');return `https://assets.vogue.com/photos/${f.slice(0,i)}/master/w_640,c_limit/${f.slice(i+1)}`};
+const h=F.map(([f,c])=>`<figure><img src="${u(f)}" alt=""><figcaption class="cred">${c} · Vogue Runway</figcaption></figure>`).join('');
+document.getElementById('cinta').innerHTML=h+h;
+if(location.hash==='#serie')document.body.className='serie';
+</script>
+</body>
+</html>

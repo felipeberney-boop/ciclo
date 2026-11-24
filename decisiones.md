@@ -3596,3 +3596,25 @@ escondido detrás de un «?», con tres partes:
 Probado a 1400 y 393 px con Rayas (sin etapa, dos capas) y Floral (con etapa, tres capas) en Mis ciclos y en Explorar.
 `probar_demo.js` 8 de 8. Capturas en `diseno/rediseno_2026-11-24/F/`.
 
+## 2026-11-24 · Rediseño, fase I: Acerca de, corto
+
+Lo pedido en clase: «Rediseñarlo entero: organizado, corto, y que lo que se despliega se vea desplegable (flecha o +, estado
+abierto o cerrado)». Y de Cristian: que se sepa de qué países es la información y de dónde viene cada cosa.
+
+**Corto.** Sale la pared de fotos con sus tres pestañas que rotaban. Debajo del título y su párrafo quedan ocho partes,
+todas cerradas, cada una en una sola línea; los diagramas grandes que antes estaban siempre a la vista (las fuentes y el
+modelo) aparecen sólo al abrir su parte.
+
+**Desplegable que se ve desplegable.** Cada parte se abre tocando su título o un «+» en un círculo azul (acción) a la
+derecha; abierta, el círculo se llena y muestra «−». El estado se lee también para un lector de pantalla
+(`aria-expanded`). Antes era una pastilla que decía «Abrir».
+
+**Dos partes nuevas.** «De dónde es cada dato»: una tabla con cada fuente, de dónde es (Google Trends y Shopping, todo el
+mundo en inglés; los 14 términos de Argentina, en español; Reddit, foros en inglés, sin país; Vogue, las semanas de la moda
+de París, Milán, Nueva York, Londres y otras; Amazon, amazon.com; H&M, el dataset no lo dice; Zara, zara.com un día), su
+período, cuánto y cada cuánto se actualizaría. En el celular muestra fuente, de dónde y período. «Tus datos y tu proyecto»:
+qué se guarda en el navegador y qué sale de tu computadora (sólo lo que le preguntás a Preguntar, que va a Groq).
+
+Probado a 1400 y 393 px: ocho partes, «+» abre y «−» cierra, sin la pared, sin errores. `probar_demo.js` 8 de 8. Capturas
+en `diseno/rediseno_2026-11-24/I/`.
+

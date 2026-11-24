@@ -604,6 +604,11 @@ atributo elegido y los tres jeans por corte. Sale el resto.
 
 El brief vuelve a una columna centrada, sin la tira de lo elegido y con temporadas de 2025, el último año con datos.
 
+## v1.86 · 24/11/2026 · La ficha que no predice, y Acerca de corto
+
+La ficha de cada atributo dice a la vista qué es la etapa, qué es lo punteado y qué es el 100. Acerca de pasa a ocho partes
+de una línea que se abren con «+», con dos nuevas: de dónde es cada dato y qué se guarda en tu navegador.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

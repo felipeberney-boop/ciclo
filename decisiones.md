@@ -3696,3 +3696,30 @@ ficha (Mujer → sólo el foro de mujeres). En el celular el eje de años mostra
 2020 · 2024 y la franja dice «22→24».
 
 `probar_demo.js` 8 de 8 en los dos anchos (el paso 2 ya no toca el selector). Capturas `K/2_despues_radar_*`.
+
+## 2026-11-24 · Vuelta K, punto 3: Explorar ciclos, el buscador arriba y el recorrido de cualquier atributo
+
+Pedido: «Arriba, exactamente como estaba la parte de arriba de Mis ciclos: el buscador y los chips de categoría (Todos,
+Jeans, Pantalones, Faldas, Vestidos…). Las dos cosas. El gráfico grande del recorrido (hoy solo Jeans baggy) con un
+selector para cambiarlo a CUALQUIER atributo (satén, rayas, floral…). Sacá los tres gráficos chicos de jeans de abajo». Y
+aparte: «limpiá lo oculto de Explorar».
+
+**Arriba.** La barra que estaba en Mis ciclos (el buscador con la lupa, «N de 65») pasa a Explorar, con los chips de
+categoría abajo del buscador en vez del desplegable. Queda fija arriba al bajar, como estaba. En la compu los chips van en
+dos filas; en el celular, en una fila que se desliza. El buscador busca en el nombre, la categoría y los términos de
+Google y Vogue; si no encuentra nada, lo dice. Con una búsqueda escrita se muestran todos los resultados, sin el «Ver los
+65».
+
+**El recorrido de cualquier atributo.** Al lado del título «El recorrido de …» hay un selector con los 65 atributos,
+agrupados por categoría. Antes había una lista escondida («Ver otro atributo», que ya estaba oculta) y sólo se cambiaba
+tocando una tarjeta, que sigue andando.
+
+**Sale.** «Los jeans, por corte» y sus tres gráficos. Y lo que estaba escondido desde la fase E (`<div hidden
+class="exsale">`): el panel «Cuándo tocó techo cada capa», «Quién lo llevó a la pasarela», la «Lectura», la cuota de
+jeans apilada, el gráfico del retraso y las notas largas. Se borraron también las funciones que sólo dibujaban ahí
+(`lagChart`, `jeansShare`, `jeansSub`, `pintarJeans`), el gráfico animado que ya no se llamaba (`cicloTL`, con su CSS y las
+fotos de lunares que usaba) y la lista oculta de atributos. `JE` y los nombres visibles de los términos quedan: los usan
+Diseñar y Acerca de. La app pesa 1.129 KB (antes 1.151).
+
+Probado: buscar «sat» deja Satén (1 de 65), «zzz» dice que no hay nada, Faldas filtra, el selector cambia el recorrido a
+Rayas y a Floral; 65 opciones, sin errores. `probar_demo.js` 8 de 8 en los dos anchos. Capturas `K/3_despues_*`.

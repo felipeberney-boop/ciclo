@@ -723,8 +723,6 @@ main a:not([class]){color:inherit}
 }
 .ciclos.corto .ciclo:nth-of-type(n+13):not(.on){display:none}
 .ciclomas{grid-column:1/-1;justify-self:start}
-.rfiltd{margin:18px 0 6px}.rfiltd>summary{cursor:pointer;padding:10px 0;list-style:none}.rfiltd>summary::-webkit-details-marker{display:none}
-.rfiltd>summary::after{content:" +"}.rfiltd[open]>summary::after{content:" −"}.rfiltd>summary:hover{color:var(--ink)}
 @media (max-width:600px){.mast nav a,.navmas,.navperfil{padding:14px 8px 13px!important;letter-spacing:.12em!important}.gvolver{padding:12px 0!important}}
 .dzpasos .dzp{padding:8px 9px!important;margin:0!important}.dzsep{margin:0 1px}
 @media (max-width:760px){.dzpasos{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:0}.dzpasos::-webkit-scrollbar{display:none}.dzsep{display:none}.dzp{flex:none}}
@@ -1796,23 +1794,6 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app #v-disenar .dzhead:not(#q):not(#qq):not(#qqq){margin-bottom:28px!important;padding-bottom:4px!important}
 .app #v-disenar .dzhead .dzh:not(#q):not(#qq):not(#qqq):not(#qqqq){line-height:1.12!important}
 
-/* 18/11 (noche) · El ciclo en movimiento */
-.cmov{margin:6px 0 40px;border-top:1px solid var(--ink);padding-top:18px}
-.cmhead{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:end;margin-bottom:6px}
-.app .cmov .cmy:not(#q):not(#qq):not(#qqq){margin:0!important;font-family:var(--moda)!important;font-weight:var(--moda-w)!important;font-size:clamp(64px,8vw,120px)!important;line-height:.9!important;letter-spacing:var(--moda-tit-ls)!important;color:var(--ink)!important;font-variant-numeric:lining-nums tabular-nums;min-width:3.2ch}
-.app .cmov .cmk:not(#q):not(#qq):not(#qqq){margin:0!important;max-width:520px;font:400 var(--t-eti)/1.45 var(--sf)!important;color:var(--ink-2)!important;text-align:left!important}
-.cmbot{display:flex;gap:8px}
-.app .cmov .cmbot button:not(#q):not(#qq){font:400 var(--t-eti)/1 var(--sf)!important;padding:8px 14px!important;border:1px solid var(--ink)!important;border-radius:999px!important;background:#fff!important;color:var(--ink)!important;cursor:pointer}
-.cmesc{position:relative;height:clamp(340px,52vh,520px);overflow:hidden}
-.cmeje{position:absolute;inset:0;width:100%;height:100%}
-.cmcur{position:absolute;top:0;bottom:30px;left:0;width:1px;background:var(--azul);opacity:.5}
-.app .cmov .cmf:not(#q):not(#qq){all:unset;position:absolute;left:0;top:0;width:var(--fw);aspect-ratio:5/7;cursor:pointer;will-change:transform,opacity;transition:outline-color .15s}
-.cmf img{width:100%;height:100%;object-fit:cover;display:block;background:var(--rule-2)}
-.cmf span{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);white-space:nowrap;font:400 11px/1 var(--sf);color:var(--ink);background:rgba(255,255,255,.92);padding:3px 5px;border-radius:4px;opacity:0;transition:opacity .25s;pointer-events:none}
-.cmf.alto span,.cmf:hover span,.cmf:focus-visible span{opacity:1}
-.cmf:hover,.cmf:focus-visible{z-index:5;outline:2px solid var(--azul);outline-offset:1px}
-.app .cmov .cmsrc:not(#q):not(#qq):not(#qqq){margin:8px 0 0!important;font:400 var(--t-eti)/1.4 var(--sf)!important;color:var(--ink-3)!important;text-align:left!important}
-@media (max-width:760px){.cmhead{grid-template-columns:minmax(0,1fr);gap:8px}.cmesc{height:360px}.cmf span{display:none}}
 
 /* 18/11 (noche) · Preguntar vacío: la foto rota entre casas, más aire */
 .pvfoto img{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
@@ -2140,6 +2121,23 @@ img:not(.fcarga){transition:opacity .35s ease}
   .app #v-inicio .hdos{grid-template-columns:1fr}
 }
 
+/* 24/11 vuelta K: Explorar, la barra de arriba (buscador + categorías) y el selector del recorrido */
+.app #v-recorridos .exbarra{margin:28px 0 24px}
+.app #v-recorridos .exbarra .ciclofilt:not(#q){flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px;margin:0!important;padding:2px 0 4px;scrollbar-width:none}
+.app #v-recorridos .exbarra .ciclofilt::-webkit-scrollbar{display:none}
+.app #v-recorridos .exbarra .ciclofilt .chip{flex:0 0 auto}
+@media (max-width:760px){.app #v-recorridos .exbarra .ciclofilt:not(#q){flex-wrap:nowrap;overflow-x:auto}}
+.app #v-recorridos .dzdesde{margin:0 0 18px}
+.app #v-recorridos .exrec{margin:72px 0 0}
+.app #v-recorridos .exrecab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 28px;padding-bottom:14px;border-bottom:1px solid var(--linea);margin-bottom:18px}
+.app #v-recorridos .exrecab h2:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-h2)!important;margin:0!important}
+.app #v-recorridos .exsel{display:flex;flex-direction:column;gap:6px}
+.app #v-recorridos .exsel label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tinta-2)}
+.app #v-recorridos .exsel select{font:400 17px var(--sf);padding:12px 40px 12px 16px;min-width:260px;border:1px solid var(--accion);background:#fff;color:var(--tinta);appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230066cc' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.app #v-recorridos .exsel select:not(#z):not(#zz){border-radius:12px!important}
+.app #v-recorridos .exsel select:focus-visible{outline:2px solid var(--accion);outline-offset:1px}
+.app #v-recorridos .mcvacio{font-size:17px;margin:24px 0}
+@media (max-width:600px){.app #v-recorridos .exsel,.app #v-recorridos .exsel select{width:100%;min-width:0}}
 /* 24/11 vuelta K: Mis ciclos en dos secciones con título */
 .app #v-radar .mcsec{margin:44px 0 0}
 .app #v-radar .mcsec+.mcsec{margin-top:72px}
@@ -2503,67 +2501,30 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <div class="vhead">
         <div>
           <h1>Explorar ciclos</h1>
-          <p class="exmision">Todos los atributos, para todos: sin tu proyecto y sin señal. Elegí uno para ver su recorrido.</p>
+          <p class="exmision">Todos los atributos, para todos: sin tu proyecto y sin señal. Buscá uno o elegí una categoría, y mirá su recorrido.</p>
         </div>
       </div>
-      <hr class="rule">
+      <div class="mcbarra exbarra" id="exbarra">
+        <div class="mcbusca"><label class="sr" for="exq">Buscar un atributo</label><input id="exq" type="search" placeholder="Buscar: floral, cuero, baggy…" autocomplete="off"></div>
+        <span class="mccuenta" id="excuenta" aria-live="polite"></span>
+        <div class="ciclofilt" id="exchips" role="group" aria-label="Categoría"></div>
+      </div>
       <div class="ciclos" id="ciclos"></div>
-      <h2 class="h3" id="rtitulo">El recorrido</h2>
-      <div class="decide" id="rdecide" aria-live="polite"></div>
-      <details class="rfiltd" hidden><summary class="lbl">Ver otro atributo · la lista completa</summary><div class="filters" id="rfilt" role="group" aria-label="Atributo"></div></details>
-      <div class="lys">
-        <div>
-          <div class="leg" id="rleg"></div>
-          <figure><div id="rchart"></div>
-            <figcaption id="rcap"></figcaption></figure>
-          <button type="button" class="gvolver" id="rdesde">ver desde 2004</button>
+      <section class="exrec" aria-labelledby="rtitulo">
+        <div class="exrecab">
+          <h2 id="rtitulo">El recorrido</h2>
+          <div class="exsel"><label for="rsel">Ver el recorrido de</label><select id="rsel"></select></div>
         </div>
-        <div hidden class="exsale">
-          <span class="lbl">Cuándo tocó techo cada capa</span>
-          <dl id="rdl" style="margin-top:12px"></dl>
-          <div id="rpion"></div>
-          <div class="ai">
-            <div class="h"><span class="lbl" style="color:var(--accent)">Lectura</span><span class="tag ia2">interpretación</span></div>
-            <p id="rlect"></p>
+        <div class="decide" id="rdecide" aria-live="polite"></div>
+        <div class="lys">
+          <div>
+            <div class="leg" id="rleg"></div>
+            <figure><div id="rchart"></div>
+              <figcaption id="rcap"></figcaption></figure>
+            <button type="button" class="gvolver" id="rdesde">ver desde 2004</button>
           </div>
         </div>
-      </div>
-
-      <h3 class="h3">Los jeans, por corte</h3>
-      <p class="exsub">Cuánto se busca cada corte en el mundo, 2004–2024. Cada uno en su gráfico.</p>
-      <div hidden class="exsale"><p class="sub" style="margin-top:8px">Todos los jeans en un solo lugar, separados por silueta: <b>amplios</b> (baggy, wide leg, barrel y relaxed), <b>medios</b> (straight, bootcut, flare y tapered) y <b>ajustados</b> (skinny y slim). Las búsquedas del recto de tiro alto y del tapered relajado cuentan dentro de los medios, como en Diseñar (antes de octubre estaban en los amplios). Qué parte de la búsqueda de jeans se lleva cada corte, año por año.</p>
-      <div class="lys" style="grid-template-columns:1fr">
-        <div><figure><div id="jshare"></div><p class="chdesliza" aria-hidden="true">Deslizá el gráfico →</p>
-          <figcaption>Google Trends mundo, 13 términos en tres consultas con «skinny jeans» como ancla común · suma por corte · dato medido.</figcaption></figure></div>
-      </div>
-      </div>
-      <div class="three-j">
-        <div><span class="lbl">Amplios</span><div id="jsub-amplio"></div></div>
-        <div><span class="lbl">Medios</span><div id="jsub-medio"></div></div>
-        <div><span class="lbl">Ajustados</span><div id="jsub-ajustado"></div></div>
-      </div>
-      <div hidden class="exsale">
-      <p class="note"><b>Mirar adentro del grupo importa.</b> Juntar todos los amplios muestra el cambio grande —del 5 % de la búsqueda en 2012 al 41 % en 2024—, y ahí suben todos. Los medios, en cambio, esconden dos historias: el recto de tiro alto tocó techo en 2021 y ya cae, mientras straight, bootcut y flare están en su máximo en 2024. Por eso la app agrupa por corte y deja ver cada estilo adentro. En H&amp;M, en 2018–2020, todavía había 1.500 jeans ajustados distintos a la venta contra 411 amplios: el mainstream seguía en el corte anterior.</p>
-      <p class="note a"><b>La pasarela no distingue cortes.</b> Vogue etiqueta «Denim» y «Jeans», no «baggy» ni «skinny». Los tres grupos comparten la misma curva de pasarela, así que para los jeans el retraso entre capas no se puede medir por corte.</p>
-      <h3 class="h3">El retraso, atributo por atributo</h3>
-      <p class="sub" style="margin-top:8px">Año en que cada atributo tocó su máximo en la pasarela y en la búsqueda mundial. Un anillo vacío quiere decir que la búsqueda todavía sube: el pico real está a la derecha, fuera del gráfico.</p>
-      <div class="lys" style="grid-template-columns:1fr">
-        <div><figure><div id="lag"></div><p class="chdesliza" aria-hidden="true">Deslizá el gráfico →</p>
-          <figcaption>Pasarela: cuota de looks con la etiqueta sobre el total del año, 2010–2023. Búsqueda: promedio anual de Google Trends hasta 2024 (2025 trae el salto de medición de Google). Datos medidos.</figcaption></figure></div>
-      </div>
-      <div class="cyc" style="margin-top:18px">
-        <div>
-          <span class="lbl">Lo que confirma</span>
-          <p style="font-size:14px;color:var(--ink-2);margin:10px 0 0">El recto de tiro alto recorre las tres capas en orden: la pasarela de denim despega en 2016, Reddit toca techo en 2020 y la búsqueda en 2021. En los ciclos que ya se cerraron, la búsqueda llega <b>al mismo tiempo o hasta dos años después</b> que la pasarela: encaje 0, cargo +2. Y el mundo le lleva ventaja a Argentina — el jean ajustado tocó techo en 2012 afuera y en 2016 acá.</p>
-        </div>
-        <div>
-          <span class="lbl">Lo que no</span>
-          <p style="font-size:14px;color:var(--ink-2);margin:10px 0 0">El kimono va al revés: la búsqueda llegó antes. Y la mitad de los atributos todavía no cerró su ciclo en la búsqueda, así que su retraso es un piso, no un número. Con cuatro ciclos cerrados el número es orientativo, no una fecha.</p>
-        </div>
-      </div>
-      <p class="note a"><b>Los límites de estos datos.</b> Las etiquetas de Vogue Runway no las puso un editor: las generó un modelo de visión genérico, que reconoce «Leather Jacket» o «Polka Dot» pero no «rayas» ni «oversize». Antes de 2010 las fotos eran chicas y el modelo detecta menos, por eso ese tramo va punteado. En 2020 y 2021 hubo menos desfiles y más lookbooks. Reddit es un solo subreddit y en 2012–2013 era chico: sus primeros años exageran lo que se nombraba entonces. Y enero–septiembre 2026 de Google Trends quedó afuera: 33 de 35 términos marcan su récord el mismo mes, incluso búsquedas sin relación entre sí — es un salto en la medición de Google, no en la moda.</p>
-      <p class="note"><b>Por qué en Argentina hay menos términos.</b> Descartamos «lunares», «rayas», «gamuza» y «bordo»: en español también son manchas de la piel, líneas, un paño de limpieza y un club de fútbol. En inglés «polka dot dress» no tiene ese problema. Es la razón por la que la capa argentina se arma con términos compuestos.</p>
-    </div>
+      </section>
     </section>
 
     <!-- ================= MARCAS ================= -->
@@ -4439,16 +4400,23 @@ function cicloDe(o){
   return {o,ultimo,anios,ciclo,sg,f,nm,picos,desde:ys[0]};
 }
 const CICLO_CORTO=12;let cicloTodos=false; // doce tarjetas a la vista; el resto, a un toque
+/* 24/11 vuelta K: el buscador y las categorías que estaban arriba de Mis ciclos pasan acá, a una barra fija arriba */
+let exQ='';
 function pintarCiclos(){
-  const L=REC.filter(o=>cicloGrupo==='todos'||o.tipo===cicloGrupo).map(cicloDe).filter(Boolean).sort((a,b)=>a.anios-b.anios||a.o.n.localeCompare(b.o.n)); // 24/11: Explorar no tiene perfil, así que no ordena por señal
+  const q=mcNorm(exQ.trim());
+  const L=REC.filter(o=>(cicloGrupo==='todos'||o.tipo===cicloGrupo)&&(!q||mcNorm(o.n+' '+o.tipo+' '+(o.gk||'')+' '+(o.vk||'')).includes(q))).map(cicloDe).filter(Boolean).sort((a,b)=>a.anios-b.anios||a.o.n.localeCompare(b.o.n)); // 24/11: Explorar no tiene perfil, así que no ordena por señal
   const grupos=REC_ORDEN.filter(g=>REC.some(o=>o.tipo===g));
-  $('#ciclos').innerHTML=`<div class="ciclofilt" role="group" aria-label="Grupo">${['todos',...grupos].map(g=>`<button type="button" class="chip" data-g="${g}" aria-pressed="${cicloGrupo===g}">${g==='todos'?'Todos':g==='Estampa'?'Estampas':g==='Material'?'Materiales':g}</button>`).join('')}</div>`+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">${FOTO_ATR[c.o.id]?`<span class="cfoto"><img loading="lazy"${fotoPos(c.o.id)} src="${vogueFoto(FOTO_ATR[c.o.id].f,640)}" alt="${c.o.n.split(' /')[0]} en la pasarela"><span class="pcred">${fotoCred(FOTO_ATR[c.o.id])}</span></span>`:''}
+  const ch=$('#exchips');if(ch)ch.innerHTML=['todos',...grupos].map(g=>`<button type="button" class="chip" data-g="${g}" aria-pressed="${cicloGrupo===g}">${g==='todos'?'Todos':g==='Estampa'?'Estampas':g==='Material'?'Materiales':g}</button>`).join('');
+  const eq=$('#exq');if(eq&&!eq.dataset.ok){eq.dataset.ok=1;let t=null;eq.oninput=e=>{clearTimeout(t);t=setTimeout(()=>{exQ=e.target.value;cicloTodos=false;pintarCiclos();},120);};}
+  if($('#excuenta'))$('#excuenta').textContent=`${L.length} de 65`;
+  const corto=!cicloTodos&&!q;
+  $('#ciclos').innerHTML=(L.length?'':'<p class="mcvacio">Nada con ese filtro. Probá otra palabra o «Todos».</p>')+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">${FOTO_ATR[c.o.id]?`<span class="cfoto"><img loading="lazy"${fotoPos(c.o.id)} src="${vogueFoto(FOTO_ATR[c.o.id].f,640)}" alt="${c.o.n.split(' /')[0]} en la pasarela"><span class="pcred">${fotoCred(FOTO_ATR[c.o.id])}</span></span>`:''}
     <span class="cn serif">${c.o.n.split(' /')[0]}</span><span class="cf">${c.f}</span>
     <span class="cm"><span><b${src('g','el último máximo que se despega 15 puntos, 2010–2024 · 180 meses')}>${c.ultimo}${c.ultimo===2010?'*':''}</b>último pico</span><span><b${src('g','de su último pico a 2024')}>${c.anios===0?'ahora':c.anios+' año'+(c.anios>1?'s':'')}</b>desde el pico</span><span><b${c.ciclo?src('g','los años entre sus dos últimos picos'):''}>${c.ciclo?c.ciclo+' años':'—'}</b>entre picos</span><span>${senBadge(c.sg)}</span></span></button>`).join('')+
-    (L.length>CICLO_CORTO?`<button type="button" class="kbtn ghost ciclomas" aria-expanded="${cicloTodos}">${cicloTodos?'Mostrar menos':`Ver los ${L.length} atributos`}</button>`:'')+
+    (L.length>CICLO_CORTO&&!q?`<button type="button" class="kbtn ghost ciclomas" aria-expanded="${cicloTodos}">${cicloTodos?'Mostrar menos':`Ver los ${L.length} atributos`}</button>`:'')+
     `<details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Búsqueda mundial frente a las otras búsquedas de moda, 2010–2024 (2025 y 2026 tienen el salto de medición de Google), ● medido. Un pico es un máximo que se despega al menos 15 puntos de lo que lo rodea. Sube o baja: 2022→2024. *2010 es donde empieza la serie corregida: el pico pudo ser antes.</p></div></details>`;
-  $$('#ciclos [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;cicloTodos=false;pintarCiclos();});
-  $('#ciclos').classList.toggle('corto',!cicloTodos);
+  $$('#exchips [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;cicloTodos=false;pintarCiclos();});
+  $('#ciclos').classList.toggle('corto',corto);
   const mas=$('#ciclos .ciclomas');if(mas)mas.onclick=()=>{cicloTodos=!cicloTodos;pintarCiclos();if(!cicloTodos)$('#ciclos').scrollIntoView({behavior:'instant'});};
   $$('#ciclos .ciclo').forEach(b=>b.onclick=()=>{recSel=b.dataset.r;pintarRecorridos();pintarCiclos();$('#rtitulo').scrollIntoView({behavior:'smooth'});});
 }
@@ -5172,15 +5140,13 @@ function recLeyenda(o){
 }
 const CLAVE=`<div class="clave" aria-label="Cómo leer las líneas"><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2.4"/></svg>medido</span><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/></svg>punteada: no predice, muestra la escala posible</span><span><svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>año incompleto</span><span><svg width="22" height="8" aria-hidden="true"><line x1="1" x2="21" y1="4" y2="4" stroke="currentColor" stroke-width="2.4" opacity=".4"/></svg>poco dato</span><span><svg width="16" height="10" aria-hidden="true"><rect width="16" height="10" fill="currentColor" opacity=".12"/></svg>error medido (búsqueda)</span></div>`;
 function pintarRecorridos(){
-  const f=$('#rfilt');
-  if(!f.childElementCount){
-    const TIPOS=REC_ORDEN;
-    TIPOS.forEach(tp=>{const its=REC.filter(o=>o.tipo===tp);if(!its.length)return;const row=document.createElement('div');row.className='rgrp';
-      row.innerHTML=`<span class="lbl">${tp==='Estampa'?'Estampas':tp==='Material'?'Materiales':tp}</span>`;
-      its.forEach(o=>{const b=document.createElement('button');b.className='chip';b.dataset.r=o.id;b.textContent=o.n;
-        b.addEventListener('click',()=>{recSel=o.id;pintarRecorridos();});row.appendChild(b)});f.appendChild(row)});
+  /* 24/11 vuelta K: el recorrido de cualquier atributo, con un selector (antes, una lista escondida) */
+  const f=$('#rsel');
+  if(f&&!f.options.length){
+    f.innerHTML=REC_ORDEN.map(tp=>{const its=REC.filter(o=>o.tipo===tp).sort((a,b)=>a.n.localeCompare(b.n));return its.length?`<optgroup label="${tp==='Estampa'?'Estampas':tp==='Material'?'Materiales':tp}">${its.map(o=>`<option value="${o.id}">${o.n.split(' /')[0]}</option>`).join('')}</optgroup>`:'';}).join('');
+    f.onchange=()=>{recSel=f.value;pintarRecorridos();};
   }
-  $$('#rfilt .chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===recSel));
+  if(f)f.value=recSel;
   recContexto='explorar';
   const o=REC.find(x=>x.id===recSel);
   pintarExplorarDatos(o);
@@ -5197,64 +5163,12 @@ function pintarRecorridos(){
   }else rc.appendChild(recChart(o));
   if(!pocas){rc.insertAdjacentHTML('beforeend',CLAVE);legDestaca($('#rleg'),rc);}
   if(!pocas)$('#rcap').textContent='Cada curva es un índice de 0 a 100 de su propio máximo. Lleno: medido. Punteado: no predice, muestra cuánto se movieron casos parecidos. Pasá el mouse por una curva para ver de dónde sale.';
-  const fila=(k,v,t,f)=>`<dt>${k}</dt><dd class="mono"${f||''}>${v}${t?` <span class="tag ${t==='abierto'?'demo':'real'}">${t}</span>`:''}</dd>`;
-  let h='';
-  h+=fila('Pasarela',o.pv||'sin etiqueta',o.pv?'medido':'',o.pv?src('v',`«${o.vk}»: el año de su máximo`):'');
-  const pg=picoBusq(o,'g');
-  h+=fila('Búsqueda (volumen)',pg.abierto?'sigue subiendo':pg.y,pg.abierto?'abierto':'medido',src('g',`«${o.gk}»: el año de su máximo, 2004–2024 · 252 meses`));
-  if(o.r) h+=fila('Reddit mujeres',o.pr,'medido',src('r',`«${o.rk}»`)); else if(typeof RDS!=='undefined'&&o.rk&&RDS[o.rk]) h+=fila('Reddit mujeres',RDS[o.rk].pk,'medido',src('r',`«${o.rk}»: ${RDS[o.rk].n} posts que lo nombran`));
-  if(typeof RDH!=='undefined'&&o.rk&&RDH[o.rk]) h+=fila('Reddit hombres',RDH[o.rk].pk,'medido',src('h',`«${o.rk}»: ${RDH[o.rk].n} posts que lo nombran`));
-  if(o.pv&&!pg.abierto) h+=`<dt>Retraso</dt><dd class="mono">${(pg.y-o.pv>0?'+':'')+(pg.y-o.pv)} años</dd>`;
-  else if(o.pv) h+=`<dt>Retraso</dt><dd class="mono">≥ ${ANIO_BASE-o.pv} años</dd>`;
-  $('#rdl').innerHTML=h;
-  const p=$('#rpion');
-  if(o.pion){
-    const W={'00-09':'2000–09','10-14':'2010–14','15-18':'2015–18','19-23':'2019–23'};
-    p.innerHTML=`<span class="lbl" style="display:block;margin-top:20px">Quién lo llevó a la pasarela</span><div class="hist">`+
-      Object.keys(W).filter(k=>o.pion[k]).map(k=>`<div style="grid-template-columns:64px 1fr;align-items:baseline"><div class="r">${W[k]}</div><p class="t" style="margin:0">${o.pion[k].replace(/ (\d+)/g,' <span class="mono" style="color:var(--ink-3);font-size:11px">$1</span>')}</p></div>`).join('')+
-      `</div><p class="mono" style="font-size:10.5px;color:var(--ink-3);margin:10px 0 0">looks con la etiqueta, por diseñador · medido</p>`;
-  } else p.innerHTML='';
-  $('#rlect').textContent=o.lect;
   pintarCiclos();$('#rtitulo').textContent='El recorrido de '+o.n.split(' /')[0].toLowerCase();
   const rd=$('#rdesde');rd.hidden=recCapas(o)<3;rd.textContent=recDesde2004?'ver desde que hay dos capas':'ver desde 2004';rd.onclick=()=>{recDesde2004=!recDesde2004;pintarRecorridos();};
-  $('#lag').innerHTML='';$('#lag').appendChild(lagChart());
-  let rz=$('#rdz');if(!rz){rz=document.createElement('div');rz.id='rdz';rz.className='dzdesde';$('#rtitulo').after(rz);}
+  let rz=$('#rdz');if(!rz){rz=document.createElement('div');rz.id='rdz';rz.className='dzdesde';($('#v-recorridos .exrecab')||$('#rtitulo')).after(rz);}
   rz.innerHTML=botonDz(hojaDeRec(recSel));
   if(vista==='recorridos')escribirLink(false);
 }
-function lagChart(){
-  const L=REC.filter(o=>o.pv&&o.tipo!=='Jeans').map(o=>{const q=picoBusq(o,'g');return Object.assign({},o,{pg:q.y,abierto:q.abierto});}).sort((a,b)=>(a.abierto-b.abierto)||((a.pg-a.pv)-(b.pg-b.pv)));
-  const W=960,rh=30,ml=150,mr=80,mt=30,H=mt+L.length*rh+30;
-  const s=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%',role:'img','aria-label':'Año de pico en pasarela y en búsqueda por atributo'});
-  const X=y=>ml+(y-2010)/(2025-2010)*(W-ml-mr);
-  [2010,2013,2016,2019,2022,2025].forEach(y=>{
-    s.appendChild(el('line',{x1:X(y),x2:X(y),y1:mt-8,y2:H-26,stroke:cssv('--rule-2'),'stroke-width':1}));
-    const t=el('text',{x:X(y),y:H-10,'text-anchor':'middle','font-size':10.5,fill:cssv('--ink-2'),'font-family':'IBM Plex Mono, monospace'});t.textContent=y;s.appendChild(t);});
-  [['Pasarela','--s1',false],['Búsqueda','--s2',false],['todavía sube','--s2',true]].forEach(([n,c,h],i)=>{
-    const x=ml+i*110;
-    s.appendChild(el('circle',{cx:x,cy:10,r:5,fill:h?cssv('--card'):cssv(c),stroke:cssv(c),'stroke-width':2}));
-    const t=el('text',{x:x+10,y:14,'font-size':11,fill:cssv('--ink-2'),'font-family':'Archivo, Arial, sans-serif'});t.textContent=n;s.appendChild(t);});
-  L.forEach((o,i)=>{
-    const y=mt+i*rh+rh/2, g=el('g',{style:'cursor:pointer'});
-    const sel=o.id===recSel;
-    const t=el('text',{x:ml-12,y:y+4,'text-anchor':'end','font-size':12.5,'font-weight':sel?600:400,fill:cssv('--ink'),'font-family':'Archivo, Arial, sans-serif'});t.textContent=o.n;g.appendChild(t);
-    g.appendChild(el('line',{x1:X(o.pv),x2:X(o.pg),y1:y,y2:y,stroke:cssv('--ink-3'),'stroke-width':1.4,opacity:.6}));
-    g.appendChild(el('circle',{cx:X(o.pv),cy:y,r:5.5,fill:cssv('--s1'),stroke:cssv('--card'),'stroke-width':2}));
-    const same=o.pg===o.pv;
-    if(same){g.children[g.children.length-1].setAttribute('cx',X(o.pv)-5);}
-    g.appendChild(el('circle',{cx:X(o.pg)+(same?5:0),cy:y,r:5.5,fill:o.abierto?cssv('--card'):cssv('--s2'),stroke:o.abierto?cssv('--s2'):cssv('--card'),'stroke-width':2}));
-    const d=o.pg-o.pv;
-    const v=el('text',{x:W-mr+14,y:y+4,'font-size':11.5,fill:o.abierto?cssv('--ink-3'):cssv('--ink'),'font-family':'IBM Plex Mono, monospace'});
-    v.textContent=o.abierto?`≥ +${ANIO_BASE-o.pv}`:(d>0?'+':'')+d;g.appendChild(v);
-    g.appendChild(el('rect',{x:0,y:y-rh/2,width:W,height:rh,fill:'transparent'}));
-    g.addEventListener('mousemove',e=>showTip(e,`${o.n}\npasarela ${o.pv} · búsqueda ${o.abierto?'sigue subiendo':o.pg}`));
-    g.addEventListener('mouseleave',hideTip);
-    g.addEventListener('click',()=>{recSel=o.id;pintarRecorridos();window.scrollTo({top:0,behavior:'smooth'});});
-    s.appendChild(g);
-  });
-  return s;
-}
-
 const KM={"rows":[{"n":"Jeans baggy","tipo":"Jeans","pn":0.975,"pm":0.011,"bn":0.841,"bm":1.612,"cl":2,"pico_pas":2021,"pico_bus":2024,"amz_19_22":0.79,"shop_22_25":0.95},{"n":"Jeans rectos","tipo":"Jeans","pn":0.975,"pm":0.011,"bn":0.637,"bm":-0.344,"cl":1,"pico_pas":2021,"pico_bus":2021,"amz_19_22":null,"shop_22_25":0.99},{"n":"Jeans skinny","tipo":"Jeans","pn":0.975,"pm":0.011,"bn":0.239,"bm":-0.391,"cl":1,"pico_pas":2021,"pico_bus":2010,"amz_19_22":-0.39,"shop_22_25":0.53},{"n":"Buzo / hoodie","tipo":"Tejidos y buzos","pn":0.47,"pm":-0.361,"bn":0.874,"bm":-0.098,"cl":0,"pico_pas":2021,"pico_bus":2020,"amz_19_22":0.64,"shop_22_25":-0.16},{"n":"Floral","tipo":"Estampa","pn":0.684,"pm":-0.044,"bn":0.874,"bm":0.167,"cl":0,"pico_pas":2018,"pico_bus":2017,"amz_19_22":0.07,"shop_22_25":0.95},{"n":"Lunares","tipo":"Estampa","pn":0.546,"pm":-0.068,"bn":0.315,"bm":-0.286,"cl":3,"pico_pas":2015,"pico_bus":2006,"amz_19_22":0.1,"shop_22_25":0.24},{"n":"Cuero","tipo":"Material","pn":0.698,"pm":0.215,"bn":0.29,"bm":-0.106,"cl":1,"pico_pas":2018,"pico_bus":2004,"amz_19_22":0.48,"shop_22_25":0.29},{"n":"Animal print","tipo":"Estampa","pn":0.171,"pm":0.054,"bn":0.259,"bm":-0.325,"cl":3,"pico_pas":2019,"pico_bus":2012,"amz_19_22":1.49,"shop_22_25":0.05},{"n":"Kimono","tipo":"Abrigo","pn":0.509,"pm":-0.331,"bn":0.408,"bm":-0.196,"cl":3,"pico_pas":2021,"pico_bus":2014,"amz_19_22":0.53,"shop_22_25":0.11},{"n":"Capa","tipo":"Abrigo","pn":0.608,"pm":-0.242,"bn":0.419,"bm":-0.05,"cl":3,"pico_pas":2021,"pico_bus":2011,"amz_19_22":null,"shop_22_25":null},{"n":"Trench","tipo":"Abrigo","pn":0.806,"pm":-0.1,"bn":0.579,"bm":0.177,"cl":0,"pico_pas":2021,"pico_bus":2004,"amz_19_22":0.43,"shop_22_25":0.16},{"n":"Encaje","tipo":"Material","pn":0.901,"pm":0.235,"bn":0.229,"bm":-0.197,"cl":1,"pico_pas":2016,"pico_bus":2013,"amz_19_22":0.01,"shop_22_25":0.33},{"n":"Cuadros","tipo":"Estampa","pn":0.489,"pm":-0.269,"bn":0.185,"bm":-0.295,"cl":3,"pico_pas":2018,"pico_bus":2004,"amz_19_22":0.25,"shop_22_25":-0.3},{"n":"Piel","tipo":"Material","pn":0.683,"pm":0.103,"bn":0.425,"bm":-0.025,"cl":1,"pico_pas":2011,"pico_bus":2004,"amz_19_22":null,"shop_22_25":null},{"n":"Cargo","tipo":"Pantalones","pn":0.693,"pm":-0.212,"bn":0.882,"bm":0.642,"cl":0,"pico_pas":2021,"pico_bus":2023,"amz_19_22":0.23,"shop_22_25":0.27},{"n":"Y2K","tipo":"Estética","pn":0.253,"pm":0.174,"bn":0.952,"bm":0.814,"cl":2,"pico_pas":2013,"pico_bus":2022,"amz_19_22":null,"shop_22_25":2.03},{"n":"Blazer oversize","tipo":"Abrigo","pn":0.706,"pm":-0.081,"bn":0.84,"bm":0.15,"cl":0,"pico_pas":2013,"pico_bus":2022,"amz_19_22":1.05,"shop_22_25":0.89}],"sc":{"m":[0.6554117647058825,-0.052588235294117644,0.5439999999999999,0.06688235294117649],"s":[0.22894645118160384,0.17780890562740445,0.27135845622479854,0.4836920364851685]},"cent":[[0.0716,-0.6018,0.9795,0.2909],[0.8342,0.9425,-0.6633,-0.5778],[-0.1809,0.816,1.299,2.2537],[-0.8334,-0.6671,-0.8358,-0.6146]],"elbow":{"2":{"inercia":45.12,"sil":0.28},"3":{"inercia":31.75,"sil":0.303},"4":{"inercia":23.14,"sil":0.299},"5":{"inercia":16.66,"sil":0.31},"6":{"inercia":12.49,"sil":0.307}}};
 
 /* ---------- etapas: K-means (pasarela × búsqueda) ---------- */
@@ -5366,38 +5280,9 @@ $('#kstep').addEventListener('click',()=>{ // animación del algoritmo desde cen
 
 const JE={"Y":[2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"web":{"ajustado":[1.3,3.4,10.5,14.6,20.6,30.3,35.3,33.8,39.7,37.8,37.9,41.2,42.4,43.4,42.0,42.8,40.4,44.5,36.2,33.9,32.3,34.7],"medio":[3.0,3.8,4.2,4.9,5.9,9.2,9.5,9.8,11.6,13.8,18.3,21.0,23.7,28.8,30.8,34.6,46.0,55.5,47.0,43.1,41.9,46.9],"amplio":[2.0,2.1,2.2,2.6,3.0,3.0,2.7,2.4,2.7,2.5,2.6,2.9,3.4,3.5,3.9,4.9,8.6,16.9,22.7,32.9,51.5,72.7]},"shop":{"ajustado":[0,0,0,7.2,48.1,57,64.7,62.8,70.3,69,69,73.4,69.9,62,52.3,46.1,37.4,41.3,36.3,39.8,42.2,76.3],"medio":[0,0,0,0.4,0.5,4.1,9.7,12.5,12.6,14.7,15.3,16.6,17.1,16.2,15.7,14.7,14.6,20.9,23,30.8,34.1,53.4],"amplio":[0,0,0,0,0.3,0.5,5,4.6,3.7,6.5,10.9,14.4,16.6,17.8,17.5,20.2,29,44.6,46.7,59.3,72.4,106]},"terms":{"skinny":[0.3,2.1,7.7,11.8,17.8,25.9,25,22.8,29.3,27,25.5,25.7,27.6,27.8,26.2,26.1,24.3,26.8,21,19.3,18.2,18.8],"straight leg":[0.3,0.7,0.9,0.9,1,1,1,1.1,1.2,1.1,1,1,1.4,1.8,1.9,2.3,3.3,5.7,5.5,5.9,6.8,8.1],"baggy":[1.6,1.6,1.3,1.3,1.9,1.8,1.8,1.3,1.7,1.5,1.5,1.5,1.5,1.5,1.8,2,4.5,8.7,12.1,20,30.7,41],"mom":[0.3,0.7,0.9,1,1,1.6,1.2,1,1.4,1.8,2.7,3.2,4.9,8.6,11,14.1,22.2,24,17.3,12.9,10.3,8.8],"wide leg":[0.3,0.4,0.7,1.2,1,1,0.8,0.9,0.7,0.6,0.5,0.7,0.9,1,1.1,1.9,3,6.9,9.3,11.1,15.4,20.4],"bootcut":[1,1.1,1.1,1.2,1.4,2.1,2.3,2.8,3.4,3.8,3.7,3.7,3.8,4.3,4.7,5,5.9,7.5,7.2,7.9,9.2,12.7],"flare":[1.3,1.2,1.1,1.1,1.1,1.1,1.2,1.5,1.5,1.4,1.6,2.3,3,3.2,3.8,4,4.8,7.6,8.7,9.2,9.4,11],"barrel":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.4,3.2,8.9],"slim":[1,1.3,2.8,2.8,2.8,3.1,3.2,3.8,4.3,4.4,5.1,6.2,7.3,8,8.1,8.8,8.8,10.3,9.3,9.8,10.3,12.7],"boyfriend":[0.1,0,0.2,0.7,1.4,3.4,3.7,2.7,3.1,4.7,8.3,9.7,9.3,9.1,7.8,7.3,8,8.4,6.3,5.2,3.9,3.5],"jeggings":[0,0,0,0,0,1.3,7.1,7.2,6.1,6.4,7.3,9.3,7.5,7.6,7.7,7.9,7.3,7.4,5.9,4.8,3.8,3.2],"relaxed fit":[0.1,0.1,0.2,0.1,0.1,0.2,0.1,0.2,0.3,0.4,0.6,0.7,1,1,1,1,1.1,1.3,1.3,1.4,2.2,2.4],"tapered":[0,0.1,0,0,0,0,0.1,0.7,1,1,1,1.1,1.3,1.8,1.6,1.9,1.8,2.3,2,2,2.3,2.8]},"defs":{"ajustado":["skinny","slim","jeggings"],"medio":["straight leg","bootcut","flare","tapered","mom","boyfriend"],"amplio":["baggy","wide leg","barrel","relaxed fit"]},"hm":{"ajustado":1500,"medio":335,"amplio":411}};
 
-/* ---------- jeans por corte ---------- */
-const JC={amplio:'--s1',medio:'--s3',ajustado:'--s2'},JN={amplio:'Amplios',medio:'Medios',ajustado:'Ajustados'};
-function jeansShare(){const Y=JE.Y.filter(y=>y<=ANIO_G),W=1000,H=300,ml=44,mr=130,mt=14,mb=30,s=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%',role:'img','aria-label':`Parte de cada corte en la búsqueda de jeans, 2004 a ${ANIO_G}`});
-  const X=i=>ml+i/(Y.length-1)*(W-ml-mr),Yp=v=>mt+(1-v)*(H-mt-mb);const tot=Y.map((_,i)=>JE.web.amplio[i]+JE.web.medio[i]+JE.web.ajustado[i]);
-  const ord=['ajustado','medio','amplio'];let low=Y.map(()=>0);const mid={};
-  ord.forEach(k=>{const hi=low.map((l,i)=>l+JE.web[k][i]/tot[i]);
-    const d=hi.map((v,i)=>(i?'L':'M')+X(i)+','+Yp(v)).join(' ')+' '+low.map((v,i)=>'L'+X(Y.length-1-i)+','+Yp(low[Y.length-1-i])).join(' ')+'Z';
-    s.appendChild(el('path',{d,fill:cssv(JC[k]),opacity:.85,stroke:cssv('--card'),'stroke-width':1.5}));mid[k]=(hi[Y.length-1]+low[Y.length-1])/2;low=hi});
-  [0,.5,1].forEach(v=>{const t=el('text',{x:ml-6,y:Yp(v)+4,'text-anchor':'end','font-size':10,fill:cssv('--ink-3'),'font-family':'IBM Plex Mono, monospace'});t.textContent=Math.round(v*100)+'%';s.appendChild(t)});
-  [2004,2009,2014,2019,ANIO_G].forEach(y=>{const t=el('text',{x:X(Y.indexOf(y)),y:H-8,'text-anchor':'middle','font-size':10.5,fill:cssv('--ink-2'),'font-family':'IBM Plex Mono, monospace'});t.textContent=y;s.appendChild(t)});
-  ord.forEach(k=>{const i=Y.length-1,t=el('text',{x:X(i)+8,y:Yp(mid[k])+4,'font-size':12,'font-weight':600,fill:cssv('--ink'),'font-family':'Archivo, Arial, sans-serif'});t.textContent=JN[k]+' '+Math.round(JE.web[k][i]/tot[i]*100)+'%';s.appendChild(t)});
-  // el año en que el amplio pasa al ajustado, calculado (desde 2010: antes la serie es chica y salta)
-  const i21=Y.findIndex((y,i)=>y>=2010&&JE.web.amplio[i]>JE.web.ajustado[i]);
-  if(i21>=0){s.appendChild(el('line',{x1:X(i21),x2:X(i21),y1:mt,y2:H-mb,stroke:cssv('--ink'),'stroke-width':1,'stroke-dasharray':'3 3'}));
-  const t=el('text',{x:X(i21)-5,y:mt+12,'text-anchor':'end','font-size':10.5,fill:cssv('--ink'),'font-family':'Archivo, Arial, sans-serif'});t.textContent=Y[i21]+': el amplio pasa al ajustado';s.appendChild(t);}
-  const hit=el('rect',{x:ml,y:mt,width:W-ml-mr,height:H-mt-mb,fill:'transparent'});hit.addEventListener('mousemove',e=>{const b=s.getBoundingClientRect();const i=Math.max(0,Math.min(Y.length-1,Math.round(((e.clientX-b.left)/b.width*W-ml)/(W-ml-mr)*(Y.length-1))));
-    showTip(e,Y[i]+'\n'+['amplio','medio','ajustado'].map(k=>JN[k].padEnd(10)+Math.round(JE.web[k][i]/tot[i]*100)+' %').join('\n'))});hit.addEventListener('mouseleave',hideTip);s.appendChild(hit);
-  return s}
-function jeansSub(k){const Y=JE.Y.filter(y=>y<=ANIO_G),W=300,H=180,ml=30,mr=8,mt=24,mb=24,s=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%',role:'img','aria-label':'Términos del grupo '+JN[k]});
-  const ts=JE.defs[k],mx=Math.max(...ts.flatMap(t=>JE.terms[t].slice(0,Y.length))),X=i=>ml+i/(Y.length-1)*(W-ml-mr),Yv=v=>mt+(1-v/mx)*(H-mt-mb);
-  [0,mx].forEach(v=>{s.appendChild(el('line',{x1:ml,x2:W-mr,y1:Yv(v),y2:Yv(v),stroke:cssv('--rule-2')}))});
-  [2004,2014,ANIO_G].forEach(y=>{const t=el('text',{x:X(Y.indexOf(y)),y:H-6,'text-anchor':y===2004?'start':y===ANIO_G?'end':'middle','font-size':9.5,fill:cssv('--ink-3'),'font-family':'IBM Plex Mono, monospace'});t.textContent=y;s.appendChild(t)});
-  const top=ts.slice().sort((a,b)=>JE.terms[b][Y.length-1]-JE.terms[a][Y.length-1]);
-  ts.forEach(t=>{const v=JE.terms[t].slice(0,Y.length),lead=t===top[0];s.appendChild(el('path',{d:v.map((x,i)=>(i?'L':'M')+X(i)+','+Yv(x)).join(' '),fill:'none',stroke:lead?cssv(JC[k]):cssv('--ink-3'),'stroke-width':lead?2.2:1.2,opacity:lead?1:.7}))});
-  const lab=el('text',{x:ml,y:11,'font-size':10.5,fill:cssv('--ink-2'),'font-family':'Archivo, Arial, sans-serif'});lab.textContent=`más buscado hoy: ${termVis(top[0])}`;s.appendChild(lab);
-  const hit=el('rect',{x:ml,y:mt,width:W-ml-mr,height:H-mt-mb,fill:'transparent'});hit.addEventListener('mousemove',e=>{const b=s.getBoundingClientRect();const i=Math.max(0,Math.min(Y.length-1,Math.round(((e.clientX-b.left)/b.width*W-ml)/(W-ml-mr)*(Y.length-1))));
-    showTip(e,Y[i]+'\n'+ts.map(t=>termVis(t).padEnd(18)+Math.round(JE.terms[t][i])).join('\n'))});hit.addEventListener('mouseleave',hideTip);s.appendChild(hit);return s}
 /* nombres visibles de los términos de Google Trends: mom, boyfriend y jeggings quedan sólo como alias de los datos */
 const TERMINO_VISIBLE={'mom':'recto tiro alto','boyfriend':'tapered relajado','jeggings':'skinny elastizado','relaxed fit':'relaxed','straight leg':'straight','baggy jeans + mom jeans':'jeans amplios (dos términos)','mom jeans':'recto tiro alto'};
 const termVis=t=>TERMINO_VISIBLE[t]||t;
-function pintarJeans(){const a=$('#jshare');if(!a)return;a.innerHTML='';a.appendChild(jeansShare());
-  ['amplio','medio','ajustado'].forEach(k=>{const d=$('#jsub-'+k);d.innerHTML='';d.appendChild(jeansSub(k))})}
 
 
 /* ---------- Lyst editorial: señales externas con fuente ---------- */
@@ -5455,47 +5340,6 @@ function vistaBanda(v){return; /* 24/11: Mis ciclos ya muestra fotos en las tarj
 /* 18/11 · un tratamiento por pantalla (la banda que se mueve queda sólo en Tendencias, «qué se está moviendo»):
    El ciclo, una línea de tiempo de fotos con huecos; Diseñar, tus elecciones que se acumulan; Preguntar, una sola foto e
    invitación a sumar tu diseño; Acerca de, una pared de miniaturas del corpus */
-const TL_LUN={"2015": ["https://assets.vogue.com/photos/55c6514208298d8be21e42d3/Saloni_001_1366.1366x2048.JPG", "Saloni"], "2017": ["https://assets.vogue.com/photos/5a8b1c43f613120ba8eba3b5/_ARC0629.jpg", "Mother of Pearl"], "2018": ["https://assets.vogue.com/photos/5a9fe5fc2da21b0baa10e892/19-vika-gazinskaya-fall-2018.jpg", "Vika Gazinskaya"], "2019": ["https://assets.vogue.com/photos/5c3e275563f8482d552fbe63/00020-fausto-puglisi-pre-fall-2019.jpg", "Fausto Puglisi"], "2021": ["https://assets.vogue.com/photos/60350b482e8e171f2a85d7fe/00024-Carolina-Herrera-Fall-21.jpg", "Carolina Herrera"], "2022": ["https://assets.vogue.com/photos/621157076c06c30de8f58ccd/IS1_0490.jpg", "Richard Quinn"]};
-const vuFoto=(u,w)=>u.replace(/(photos\/[0-9a-f]+)\/(?:master\/[^/]+\/)?/,`$1/master/w_${w},c_limit/`);
-/* 18/11 (noche) · El ciclo, en movimiento: todos los atributos a la vez sobre un eje de años (2004–2024). Cada foto está en
-   el año de su pico; un cursor avanza año por año y la altura de cada foto es su búsqueda medida ese año (0–100 de su
-   propio máximo, frente a las otras búsquedas de moda): sube cuando se acerca a su pico, baja cuando cae, y los que
-   vuelven suben dos veces. 20 años en 20 segundos. Tocar una foto abre ese atributo */
-let cmov=null;
-function cicloTL(){const sec=$('#v-recorridos');if(!sec||sec.querySelector('.cmov'))return;
-  const Y0=2004,Y1=ANIO_G||2024;
-  const L=REC.filter(o=>GREL[o.id]&&FOTO_ATR[o.id]).map(o=>{const g=GREL[o.id],vs=[];for(let y=Y0;y<=Y1;y++){const v=g[y-2004];vs.push(v==null?null:v);}
-    const ok=vs.filter(v=>v!=null),mx=Math.max(...ok),mn=Math.min(...ok);const pk=Y0+vs.indexOf(mx);return {o,vs:vs.map(v=>v==null?null:(v-mn)/((mx-mn)||1)),pk};}).sort((a,b)=>a.pk-b.pk||a.o.n.localeCompare(b.o.n));
-  const d=document.createElement('div');d.className='cmov';
-  d.innerHTML=`<div class="cmhead"><p class="cmy" aria-live="off">${Y0}</p><p class="cmk">Cada foto es un atributo, ubicado en el año de su pico. Su altura es cuánto se lo buscó ese año, entre su peor año (abajo) y su pico (arriba): sube cuando se acerca a su pico y baja cuando cae. Los que vuelven suben dos veces.</p>
-    <div class="cmbot"><button type="button" class="cmplay" aria-label="Pausar">Pausar</button><button type="button" class="cmre">Desde 2004</button></div></div>
-    <div class="cmesc" role="img" aria-label="${L.length} atributos subiendo y bajando según su búsqueda medida, de ${Y0} a ${Y1}"><svg class="cmeje" aria-hidden="true"></svg><span class="cmcur"></span>
-    ${L.map((x,i)=>`<button type="button" class="cmf" data-i="${i}" data-id="${x.o.id}" title="${escH(x.o.n)} · pico ${x.pk}"><img alt="" src="${vogueFoto(FOTO_ATR[x.o.id].f,640)}"${fotoPos(x.o.id)}><span>${escH(x.o.n)}</span></button>`).join('')}</div>
-    <p class="cmsrc"${src('g')}>Búsqueda mundial de Google, ${Y0}–${Y1}, frente a 35 búsquedas de moda · fotos: Vogue Runway</p>`;
-  sec.querySelector(':scope > .vhead').insertAdjacentElement('afterend',d);fotosCargando(d);
-  const esc=d.querySelector('.cmesc'),fs=[...d.querySelectorAll('.cmf')],cur=d.querySelector('.cmcur'),yy=d.querySelector('.cmy');
-  let W=0,H=0,X=null,pos=[];
-  const medir=()=>{W=esc.clientWidth;H=esc.clientHeight;const ml=8,mr=8,mt=34,mb=30,fw=innerWidth<600?24:34;X=y=>ml+fw/2+(y-Y0)/(Y1-Y0)*(W-ml-mr-fw);
-    const porAnio={};L.forEach((x,i)=>{(porAnio[x.pk]=porAnio[x.pk]||[]).push(i);});
-    pos=L.map(()=>0);Object.entries(porAnio).forEach(([y,ix])=>{const paso=fw*0.62;ix.forEach((i,k)=>{pos[i]=Math.max(fw/2+ml,Math.min(W-mr-fw/2,X(+y)+(k-(ix.length-1)/2)*paso));});});
-    esc.style.setProperty('--fw',fw+'px');esc.dataset.mt=mt;esc.dataset.mb=mb;
-    const ticks=[];for(let y=Y0;y<=Y1;y++)ticks.push(y);
-    d.querySelector('.cmeje').innerHTML=`<line x1="0" x2="${W}" y1="${H-mb}" y2="${H-mb}" stroke="${cssv('--ink')}"/>`+ticks.map(y=>`<line x1="${X(y)}" x2="${X(y)}" y1="${H-mb}" y2="${H-mb+(y%4===0?7:4)}" stroke="${cssv('--ink-3')}"/>${y%4===0||y===Y1?`<text x="${X(y)}" y="${H-mb+21}" text-anchor="middle" font-size="12" fill="${cssv('--ink-2')}">${y}</text>`:''}`).join('');};
-  const pintar=t=>{const mt=+esc.dataset.mt,mb=+esc.dataset.mb,fh=parseFloat(getComputedStyle(esc).getPropertyValue('--fw'))*1.4,a=Math.floor(t),b=Math.min(Y1,a+1),f=t-a;
-    yy.textContent=Math.round(t);cur.style.transform=`translateX(${X(t)}px)`;
-    fs.forEach((el,i)=>{const vs=L[i].vs,va=vs[a-Y0],vb=vs[b-Y0];
-      if(va==null&&vb==null){el.style.opacity=0;return;}const v=va==null?vb:vb==null?va:va+(vb-va)*f;
-      const y=(H-mb-fh)-(H-mb-fh-mt)*v;el.style.opacity=(.45+.55*v).toFixed(2);el.style.transform=`translate(${pos[i]-parseFloat(getComputedStyle(esc).getPropertyValue('--fw'))/2}px,${y}px)`;
-      el.classList.toggle('alto',v>=.97);});};
-  const quieto=matchMedia('(prefers-reduced-motion:reduce)').matches;let t=Y0,corre=!quieto,ult=0,espera=0;
-  const btn=d.querySelector('.cmplay');const marcar=()=>{btn.textContent=corre?'Pausar':'Seguir';btn.setAttribute('aria-label',btn.textContent);};
-  const cuadro=ts=>{if(!d.isConnected)return;const dt=ult?Math.min(.1,(ts-ult)/1000):0;ult=ts;
-    if(corre&&!esc.hidden){if(espera>0)espera-=dt;else{t+=dt;if(t>=Y1){t=Y1;espera=2.5;}}if(espera<=0&&t>=Y1){t=Y0;}}
-    pintar(Math.min(t,Y1));cmov.raf=requestAnimationFrame(cuadro);};
-  btn.onclick=()=>{corre=!corre;marcar();};d.querySelector('.cmre').onclick=()=>{t=Y0;espera=0;corre=true;marcar();};
-  fs.forEach(el=>el.onclick=()=>{recSel=el.dataset.id;pintarRecorridos();const c=$('#rchart');if(c)c.scrollIntoView({behavior:'smooth',block:'center'});});
-  medir();if(quieto)t=Y1;marcar();cmov={raf:requestAnimationFrame(cuadro)};
-  addEventListener('resize',()=>{if(d.isConnected)medir();});}
 function dzAcum(){const viejo=document.querySelector('#v-disenar .dzac');if(viejo)viejo.remove();return;const cuerpo=$('#dzcuerpo');if(!cuerpo)return;let lay=cuerpo.closest('.dzlay');
   if(!lay){lay=document.createElement('div');lay.className='dzlay';cuerpo.parentNode.insertBefore(lay,cuerpo);lay.appendChild(cuerpo);}
   let a=lay.querySelector('.dzac');if(!a){a=document.createElement('aside');a.className='dzac';a.setAttribute('aria-label','Tu look, hasta ahora');lay.appendChild(a);}
@@ -6125,7 +5969,7 @@ function etiquetasSvg(){
 }
 {let pend=0;const pedir=()=>{if(pend)return;pend=requestAnimationFrame(()=>{pend=0;etiquetasSvg();});};
   new MutationObserver(pedir).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','open']});window.addEventListener('resize',pedir);}
-  extenderREC();sumarRedditREC();pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
+  extenderREC();sumarRedditREC();pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
   pintarCuenta();
   fichaId=null;
   if(!leerLink()){const p=pyActivo();if(p){pyAplicar(p);mostrar('radar');}else{pyMirar();mostrar('inicio');}} // 24/11: con proyecto, Mis ciclos; sin proyecto, el home

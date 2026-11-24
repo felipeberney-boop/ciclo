@@ -1,0 +1,373 @@
+{
+ "jersey": {
+  "f": "55c650e408298d8be217daa3/00340fullscreen.jpg",
+  "d": "Vivienne Westwood",
+  "s": "F",
+  "y": 2012,
+  "c": 0.343
+ },
+ "rib": {
+  "f": "5ff82ac656c2bd3d9ec83b68/00010-ADAM-LIPPES-PRE-FALL-21-Credit-Paul-Westlake.jpg",
+  "d": "Adam Lippes",
+  "s": "P",
+  "y": 2021,
+  "c": 0.3384
+ },
+ "frenchterry": {
+  "f": "60ccb0944d345ea73b6d8fdf/00043-Kiton-Menswear-Spring-2022-credit-brand.jpg",
+  "d": "Kiton",
+  "s": "S",
+  "y": 2022,
+  "c": 0.3389
+ },
+ "pique": {
+  "f": "55c6512708298d8be21c7de8/Orley_002_1366.1366x2048.JPG",
+  "d": "Orley",
+  "s": "S",
+  "y": 2014,
+  "c": 0.3312
+ },
+ "gabardina": {
+  "f": "5b217800644aeb44b18373ce/00009-Corneliani-Vogue-Menswear-SS19-pr.jpg",
+  "d": "Corneliani",
+  "s": "S",
+  "y": 2019,
+  "c": 0.3559
+ },
+ "lona": {
+  "f": "61f976f3b503d85fc1e8fa3c/00009-Versace-Mens-FW-22-credit-brand.jpg",
+  "d": "Versace",
+  "s": "F",
+  "y": 2022,
+  "c": 0.3337
+ },
+ "denimrigido": {
+  "f": "601305e7d1b81c0dc1839507/00015-EYTYS-FALL-21.jpg",
+  "d": "Eytys",
+  "s": "F",
+  "y": 2021,
+  "c": 0.3383
+ },
+ "denimelastano": {
+  "f": "5bc9f5355caa53301eb3b336/00022-3X1-spring-2019-ready-to-wear.jpg",
+  "d": "3x1",
+  "s": "S",
+  "y": 2019,
+  "c": 0.3324
+ },
+ "denimlavado": {
+  "f": "62b31163ecc9569a4eba983f/00010-hed-mayner-spring-2023-menswear-credit-gorunway.jpg",
+  "d": "Hed Mayner",
+  "s": "S",
+  "y": 2023,
+  "c": 0.3289
+ },
+ "cashmere": {
+  "f": "55c6513a08298d8be21dd8ed/_ARC0033.1366x2048.JPG",
+  "d": "Barbara Bui",
+  "s": "F",
+  "y": 2014,
+  "c": 0.3339
+ },
+ "pano": {
+  "f": "63da7049ebb6eaa542ce93de/00015-the-garment-fall-2023-copenhagen-credit-gorunway.jpg",
+  "d": "The Garment",
+  "s": "F",
+  "y": 2023,
+  "c": 0.3569
+ },
+ "cuerina": {
+  "f": "55c650e908298d8be2183d55/00130fullscreen.jpg",
+  "d": "Hakaan",
+  "s": "F",
+  "y": 2012,
+  "c": 0.3513
+ },
+ "nylon": {
+  "f": "59a8754a327a7408ed37effe/1243_Emelie%2520Jansson.jpg",
+  "d": "Swedish School of Textiles",
+  "s": "S",
+  "y": 2017,
+  "c": 0.3406
+ },
+ "acrilico": {
+  "f": "5a8234090eb2eb69430d065d/_AG32364.jpg",
+  "d": "Libertine",
+  "s": "F",
+  "y": 2018,
+  "c": 0.3362
+ },
+ "crepe": {
+  "f": "55c650f008298d8be218a89a/00240fullscreen.jpg",
+  "d": "Alexis Mabille",
+  "s": "F",
+  "y": 2012,
+  "c": 0.3529
+ },
+ "liso": {
+  "f": "55c651b408298d8be22697b2/19fullscreen.jpg",
+  "d": "Zero + Maria Cornejo",
+  "s": "P",
+  "y": 2010,
+  "c": 0.3252
+ },
+ "breton": {
+  "f": "5da5c6d9d2ad650009e5c684/_HYK0586.jpg",
+  "d": "Hyke",
+  "s": "S",
+  "y": 2020,
+  "c": 0.3698
+ },
+ "pinstripe": {
+  "f": "62114696ff35e64e32290ae2/FIO00150.jpg",
+  "d": "Labrum London",
+  "s": "F",
+  "y": 2022,
+  "c": 0.36
+ },
+ "bengal": {
+  "f": "59b710ceb5930144289cc281/_COR0229.jpg",
+  "d": "Zero + Maria Cornejo",
+  "s": "S",
+  "y": 2017,
+  "c": 0.3373
+ },
+ "awning": {
+  "f": "57abaf4a78aacd0a56e68692/_UMB2360.jpg",
+  "d": "Lala Berlin",
+  "s": "S",
+  "y": 2016,
+  "c": 0.3587
+ },
+ "pindot": {
+  "f": "5dcda1f2f9dcb20009560b12/_ALE0071.jpg",
+  "d": "Giorgio Armani",
+  "s": "P",
+  "y": 2020,
+  "c": 0.3329
+ },
+ "cuadros": {
+  "f": "56d87458050ae6403a815356/_ARC0477.jpg",
+  "d": "Barbara Bui",
+  "s": "F",
+  "y": 2016,
+  "c": 0.367
+ },
+ "gingham": {
+  "f": "55c650fc08298d8be2197b99/CHA_0420.1366x2048.JPG",
+  "d": "Chanel",
+  "s": "S",
+  "y": 2013,
+  "c": 0.3429
+ },
+ "pow": {
+  "f": "55c6510208298d8be219dc57/ports1961_007_1366.1366x2048.JPG",
+  "d": "Ports 1961",
+  "s": "F",
+  "y": 2013,
+  "c": 0.3531
+ },
+ "windowpane": {
+  "f": "55c6511808298d8be21b72b0/Brioni_017_1366.1366x2048.JPG",
+  "d": "Brioni",
+  "s": "S",
+  "y": 2014,
+  "c": 0.3578
+ },
+ "argyle": {
+  "f": "55c6513408298d8be21d6a4d/_ARC0102.1366x2048.JPG",
+  "d": "Vera Wang",
+  "s": "F",
+  "y": 2014,
+  "c": 0.3356
+ },
+ "cebra": {
+  "f": "55c650d208298d8be216b810/00030fullscreen.jpg",
+  "d": "Giambattista Valli",
+  "s": "S",
+  "y": 2012,
+  "c": 0.3813
+ },
+ "toile": {
+  "f": "5d77bb1e4ed768000817e502/00012-Brooks-Brothers-2020-Ready-To-Wear-Spring-2020.jpg",
+  "d": "Brooks Brothers",
+  "s": "S",
+  "y": 2020,
+  "c": 0.3414
+ },
+ "chevron": {
+  "f": "55c6514108298d8be21e4060/Valentino_062_1366.1366x2048.JPG",
+  "d": "Valentino",
+  "s": "R",
+  "y": 2015,
+  "c": 0.3651
+ },
+ "pantalones/largo": {
+  "f": "62d1f19dec1fe9c13c92cb72/00006-saint-laurent-spring-2023-menswear-credit-brand.jpg",
+  "d": "Saint Laurent",
+  "s": "S",
+  "y": 2023,
+  "c": 0.342
+ },
+ "pantalones/bermuda": {
+  "f": "55c650c708298d8be215f802/00010fullscreen.jpg",
+  "d": "Organic by John Patrick",
+  "s": "S",
+  "y": 2012,
+  "c": 0.3498
+ },
+ "pantalones/capri": {
+  "f": "5810f2240914547b3db427a8/22-atlein-spring-2017-rtw.jpg",
+  "d": "Atlein",
+  "s": "S",
+  "y": 2016,
+  "c": 0.3393
+ },
+ "faldas/midi": {
+  "f": "5baa39ca6841cb2d49d51289/00010-vanessa-bruno-spring-2019-ready-to-wear.jpg",
+  "d": "Vanessa Bruno",
+  "s": "S",
+  "y": 2019,
+  "c": 0.3451
+ },
+ "remeras/top": {
+  "f": "5f07436f8da2d39183ef4565/00002-ADAM-SELMAN-SPORT-FALL-20-Credit-Christelle-de-Castro.jpg",
+  "d": "Adam Selman Sport",
+  "s": "F",
+  "y": 2020,
+  "c": 0.3278
+ },
+ "camisas/clasica": {
+  "f": "5bfedc5549cb3f2d65c6225e/00018-frame-new-york-pre-fall-19.jpg",
+  "d": "Frame",
+  "s": "P",
+  "y": 2019,
+  "c": 0.3428
+ },
+ "camisas/oversize": {
+  "f": "614dbba68d405c134e334786/00023-Zanini-Spring-2022-RTW-Credit-Brand.jpg",
+  "d": "Zanini",
+  "s": "S",
+  "y": 2022,
+  "c": 0.3342
+ },
+ "camisas/cropped": {
+  "f": "5be411953f0a9344b1de43d3/EJ__1007.jpg",
+  "d": "Anouki",
+  "s": "S",
+  "y": 2019,
+  "c": 0.3338
+ },
+ "buzos/hoodie": {
+  "f": "608bcba525ab454467c05d4b/00009-TOMMY-HILFIGER-FALL-2021.jpg",
+  "d": "Tommy Hilfiger",
+  "s": "F",
+  "y": 2021,
+  "c": 0.3211
+ },
+ "buzos/zip": {
+  "f": "575d6d12c927c89a56ad3a0e/_RAE0176.jpg",
+  "d": "Raeburn",
+  "s": "S",
+  "y": 2016,
+  "c": 0.3311
+ },
+ "buzos/redondo": {
+  "f": "588679403f6a60711076584b/06-mens-Maison-kitsune%25CC%2581-pre-fall-2017.jpg",
+  "d": "Maison Kitsuné",
+  "s": "F",
+  "y": 2017,
+  "c": 0.3338
+ },
+ "sweaters/redondo": {
+  "f": "55c6513608298d8be21d9108/Wayne_005_1366.1366x2048.JPG",
+  "d": "Wayne",
+  "s": "F",
+  "y": 2014,
+  "c": 0.3357
+ },
+ "sweaters/cuello_v": {
+  "f": "61e70851475117e934c448cd/00016-massimo-alba-Menswear-Fall-22-Credit-Curti-Parini.jpg",
+  "d": "Massimo Alba",
+  "s": "F",
+  "y": 2022,
+  "c": 0.3264
+ },
+ "abrigos/blazer": {
+  "f": "55c6511e08298d8be21be1bf/Ovadia_Sons_025_1366.1366x2048.JPG",
+  "d": "Ovadia & Sons",
+  "s": "S",
+  "y": 2014,
+  "c": 0.3353
+ },
+ "abrigos/tapado": {
+  "f": "63da7049ebb6eaa542ce93de/00015-the-garment-fall-2023-copenhagen-credit-gorunway.jpg",
+  "d": "The Garment",
+  "s": "F",
+  "y": 2023,
+  "c": 0.3583
+ },
+ "abrigos/piel": {
+  "f": "5a9300d485604a74564eb574/_LLL5346.jpg",
+  "d": "Au Jour Le Jour",
+  "s": "F",
+  "y": 2018,
+  "c": 0.3437
+ },
+ "abrigos/puffer": {
+  "f": "5a562df64186b171a2644bef/35-z-zegna-mens-fall-18.jpg",
+  "d": "Z Zegna",
+  "s": "F",
+  "y": 2018,
+  "c": 0.348
+ },
+ "calzado/sandalias": {
+  "f": "62ace99987be2172cd2bfd9e/00019-alyx-mens-spring-2023-credit-gorunway.jpg",
+  "d": "Alyx",
+  "s": "S",
+  "y": 2023,
+  "c": 0.3133
+ },
+ "calzado/plataformas": {
+  "f": "5d70156e69504e00098423cf/00022-Greta-Constantine-SS20-RTW.jpg",
+  "d": "Greta Constantine",
+  "s": "S",
+  "y": 2020,
+  "c": 0.3157
+ },
+ "calzado/texanas": {
+  "f": "55c651aa08298d8be225e181/00240fullscreen.jpg",
+  "d": "D&G",
+  "s": "S",
+  "y": 2010,
+  "c": 0.3175
+ },
+ "accesorios/piluso": {
+  "f": "614cc0471a25c5f3bdb1dace/_FIO0151.jpg",
+  "d": "MM6 Maison Margiela",
+  "s": "S",
+  "y": 2022,
+  "c": 0.319
+ },
+ "accesorios/gorra": {
+  "f": "5f6dd747e6b998a2a6343ea2/00025-Neil-Barrett-RTW-Spring21.jpg",
+  "d": "Neil Barrett",
+  "s": "S",
+  "y": 2021,
+  "c": 0.2901
+ },
+ "accesorios/cinturon": {
+  "f": "55c6512808298d8be21c8d6c/00040fullscreen.jpg",
+  "d": "Gucci",
+  "s": "S",
+  "y": 2011,
+  "c": 0.3244
+ },
+ "accesorios/anteojos": {
+  "f": "5a7e157bdfd313614130f132/14-osklen-fall-ready-to-wear-2018.jpg",
+  "d": "Osklen",
+  "s": "F",
+  "y": 2018,
+  "c": 0.3238
+ }
+}

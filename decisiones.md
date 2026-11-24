@@ -3986,3 +3986,49 @@ empuja. También quedan centrados el título, la racha, el porqué y «El mismo 
 
 Los looks se eligieron con CLIP filtrando por año y diseñador (`codigo/buscar_look_clip.mjs`, nuevo) y se miraron a ojo.
 `probar_demo.js` 8 de 8 en los dos anchos.
+
+## 2026-11-24 · Vuelta M, punto 6: las fotos que faltaban, en Diseñar
+
+Pedido: «revisá de nuevo cuáles siguen sin foto (lycra, neoprén y las que falten) y completalas con el mismo método.
+Listame las que no tengan un buen candidato».
+
+**La revisión.** En Mis ciclos, Explorar y El brief faltaban sólo dos de los 65 atributos: neoprene y espiga. Lycra ya
+tenía foto desde la vuelta L (Mugler, Spring 2022). El hueco grande estaba en Diseñar:
+- 16 materiales y 17 estampas se mostraban como texturas dibujadas, no como fotos;
+- 27 tipos de prenda (bermuda, hoodie, blazer, sandalias, gorra…) mostraban la silueta.
+
+En total, 61 opciones sin foto.
+
+**El método**, el mismo que `FOTO_ATR`:
+- CLIP ViT-B/32 con tres frases en inglés por opción y tres plantillas, coseno contra los 14.000 looks del índice.
+- Las 8 mejores de cada opción, en 16 hojas de contacto. Se eligieron a ojo y las dudosas se miraron en grande
+  (`M/6_fotos/candidatas/`, script `codigo/buscar_fotos_diseniar_clip.mjs`).
+- Los tipos se guardan como `prenda/tipo` («redondo» existe en buzos y en sweaters). Diseñar los busca así en los tres
+  lugares donde pinta un tipo.
+
+**Con foto ahora (53).**
+- 14 materiales: jersey, morley, frisa, piqué, gabardina, lona, los tres denim, cashmere, paño, cuerina, nylon,
+  acrílico y crepé.
+- 15 estampas: liso, bretón, diplomática, bengala, toldo, pin dot, escocés, vichy, príncipe de Gales, ventana, rombos,
+  cebra, toile y chevron.
+- 24 tipos de prenda: pantalón largo, bermuda, capri, falda midi, top, camisa clásica, oversize y cropped, hoodie,
+  canguro con cierre, buzo y sweater de cuello redondo, sweater en V, blazer, tapado, tapado de piel, puffer, sandalias,
+  plataformas, texanas, piluso, gorra, cinturón y anteojos.
+
+En los pasos de material y de estampa la foto va grande y la textura (o la muestra en tu color) queda en la esquina,
+como la silueta en los tipos. Cambia la nota de abajo, que decía que las texturas estaban dibujadas porque las fotos de
+tela no tenían licencia.
+
+**Sin un buen candidato (8): quedan con su dibujo o su textura.**
+- **Neoprene:** sigue sin uno que muestre la tela; la mejor, de Staud 2021, puede ser un punto grueso.
+- **Espiga:** los sacos grises no dejan ver el tejido.
+- **Pitón:** salen tigre y tweed.
+- **Vaca:** salen lunares.
+- **Paisley:** salen remolinos, un foulard y un floral.
+- **Botinetas:** salen botas altas o zapatos.
+- **Chatitas:** salen stilettos y mules.
+- **Guillerminas:** ninguna se ve con la tira.
+
+Los cortes de jean, los tiros y los fits siguen con silueta a propósito: CLIP no distingue cortes de jean (está en
+`datasets/diccionario.md`). Los colores siguen con la muestra de color, que es el dato. Capturas
+`M/6_fotos/despues_disenar_*`. `probar_demo.js` 8 de 8 en los dos anchos.

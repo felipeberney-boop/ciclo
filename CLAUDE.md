@@ -57,6 +57,15 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   (`vistaBanda()` returns). What the project really filters: brand type and vínculo change the signal; público changes
   only Reddit; Google and Vogue have no gender, and the screen says so. A link profile that differs from the active
   project is shown as «Perfil de un link» with «Volver a <proyecto>».
+- **Mis ciclos and Explorar show different things (since 24/11).** A card in Mis ciclos (and `abrirDetalle()` for any
+  attribute with a series) opens `abrirFichaProyecto(id)` in `#v-detalle`: the project line, its signal, stage, search
+  2022→2024, Reddit of the project's público only and «tu ventana», plus the layer chart drawn with
+  `recContexto='proyecto'` (`recSeries()` drops the other forum; `recChart()` draws the window). Shareable as
+  `#ficha/<id>?c=…&v=…&pu=…` (`fichaId`). Explorar (`pintarRecorridos()`, `recContexto='explorar'`) shows everything for
+  everyone: both forums, no signal, no window (`pintarExplorarDatos()` replaces `pintarDecision()` there), and a link back
+  to the attribute «para <proyecto>». `FUENTE_INFO` says where each source is from: Google Trends and Shopping worldwide
+  with English terms (14 Argentine terms in Spanish), Reddit English-language forums with no country, Vogue Runway shows
+  in Paris, Milan, New York, London and other weeks, Amazon = amazon.com, H&M dataset states no country.
 - **K-means runs in the browser** (`kRand`/`kInit`/`kLloyd`/`kFit`/`kName`): 17 attributes (no footwear), 4
   standardized features (runway level/momentum, search level/momentum through 2024). k=4 starts from the stored `KM.cent` centroids so
   results are deterministic; other k use seeded random restarts. Clusters get stage names by nearest

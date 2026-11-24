@@ -3456,3 +3456,33 @@ todavía muestran lo mismo para todos: abrir Rayas con un proyecto de mujer mues
 gráfico en Mis ciclos y en Explorar. Mis ciclos tiene que mostrar sólo lo del proyecto en todas sus pantallas. Queda para
 la próxima fase, junto con rehacer el home de cero.
 
+## 2026-11-24 · Mis ciclos y Explorar, distintos; de dónde es cada dato
+
+Felipe, al revisar la fase D: «MIS CICLOS vs EXPLORAR CICLOS: tienen que mostrar información DISTINTA. Hoy es la misma.
+Ejemplo del error: proyecto “Mujer · para una marca · fast fashion”. Abro Rayas y aparece Reddit HOMBRES. Mal. Abro Floral
+en Mis ciclos y en Explorar: el mismo gráfico, los mismos 22 y 44. Mal. MIS CICLOS = solo lo de mi proyecto.» Y Cristian,
+en clase: que se sepa de qué países es la información de Google Trends y de Reddit, de dónde viene cada cosa.
+
+**La causa.** La ficha de un atributo y Explorar dibujaban con la misma función (`recSeries()`), que siempre sumaba los dos
+foros de Reddit, y Explorar mostraba además la decisión para tu perfil. Las tarjetas de Mis ciclos que no tenían ficha
+vieja llevaban directo a Explorar.
+
+**Ahora.** Desde Mis ciclos, cualquier atributo abre su ficha del proyecto: arriba «Para “Invierno Zara” · Mujer · Para
+una marca · Fast fashion», la señal con su porqué, la etapa, la búsqueda 2022→2024, el Reddit **sólo del foro de tu
+público** y tu ventana (hasta 2026 ±14 para fast fashion); el gráfico de capas tiene sólo ese foro y marca tu ventana.
+Explorar muestra lo mismo para todos: los dos foros, sin señal y sin ventana, y dice por qué («Explorar muestra los datos
+de todos, sin señal: no sabe para quién diseñás»), con un link a «Ver floral para “Invierno Zara”». La ficha tiene su
+propio link (`#ficha/floral`). Rayas con un proyecto de mujer: búsqueda y Reddit mujeres, nada de hombres.
+
+**De dónde es cada dato** (verificado en `datasets/` y en el readme de las series antes de escribirlo): Google Trends y
+Google Shopping, todo el mundo, con los términos en inglés; aparte, 14 términos en español sólo de Argentina. Reddit:
+r/femalefashionadvice y r/malefashionadvice, foros en inglés, sin país (Reddit no dice de dónde es cada usuario). Vogue
+Runway: desfiles de París, Milán, Nueva York, Londres y otras semanas de la moda. Amazon: reseñas de amazon.com. H&M: el
+dataset no dice de qué país son las compras, y así se dice. Está en la ficha de cada fuente (la que aparece al pasar el
+mouse por un número) y en las dos propuestas del home.
+
+Probado a 1400 y 393 px con un proyecto de mujer: Rayas y Floral en Mis ciclos sin Reddit de hombres y con ventana;
+en Explorar con los dos foros, sin señal ni ventana; el link de la ficha la reabre; sin errores. `probar_demo.js`: 8 de 8
+en los dos anchos. Capturas en `diseno/rediseno_2026-11-24/ficha/`. Error corregido antes de cerrar: «Ver en Explorar»
+abría siempre el jean baggy.
+

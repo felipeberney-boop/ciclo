@@ -2075,6 +2075,23 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app #v-radar .mclt .mcfila:hover rect{fill:var(--bloque)}
 .app #v-radar .mclt .mcfila:hover .mcpunto{r:8}
 .app #v-radar .mclt .mcfila:focus-visible{outline:2px solid var(--accion)}
+/* ================= la ficha del proyecto (24/11) · última ================= */
+.app #v-detalle .fpquien:not(#q):not(#qq):not(#qqq){font-size:17px!important;color:var(--tinta-2)!important;margin:8px 0 0!important}
+.app #v-detalle .vhead .eti{margin:0 0 8px}
+.app .fpdec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px 48px;align-items:start;margin:32px 0 8px;padding:28px 0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+@media (max-width:820px){.app .fpdec{grid-template-columns:1fr}}
+.app .fpsen{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.app .fpsen .sen:not(#q):not(#qq):not(#qqq):not(#qqqq){font-size:var(--t-h2)!important;font-weight:600!important;padding:0!important;background:none!important}
+.app .fpsen p{margin:0;font-size:17px;max-width:44ch}
+.app .fpdat{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;margin:0}
+.app .fpdat div{display:flex;flex-direction:column;gap:4px}
+.app .fpdat dt:not(#q):not(#qq):not(#qqq){font-size:12px!important;font-weight:600!important;text-transform:uppercase;letter-spacing:.08em;color:var(--tinta-2)!important}
+.app .fpdat dd{margin:0;font-size:20px;font-weight:500;font-variant-numeric:tabular-nums}
+.app .fpdat.expl{margin:8px 0 0}
+.app :is(#v-detalle,#v-recorridos) .fpnota:not(#q):not(#qq):not(#qqq){font-size:16px!important;color:var(--tinta-2)!important;margin:12px 0!important;max-width:72ch}
+.app .fpgraf{margin:40px 0 0}
+.app .fpgraf h2:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){margin:0 0 4px!important}
+.app .fpgraf figure{margin:8px 0 0}
 </style>
 
 <div class="app">
@@ -2691,22 +2708,22 @@ const FUENTES={
   x:['CLIP · lectura de imagen','Compara una foto con textos de atributos y con looks de pasarela, en tu navegador','14.000 looks de Vogue, 2010–2023']};
 /* 18/11 · la ficha de cada fuente, para entender de dónde viene cada dato y qué hicimos con él (pedido de Christian, de la cátedra) */
 const FUENTE_INFO={
-  g:{de:'Google Trends, «todo el mundo», búsqueda web. 65 series bajadas del sitio entre septiembre y octubre de 2026, 2004–2025. Términos de servicio de Google, uso académico.',
+  g:{de:'Google Trends, «todo el mundo», búsqueda web, con los términos en inglés. 65 series bajadas del sitio entre septiembre y octubre de 2026, 2004–2025. Términos de servicio de Google, uso académico.',
      como:'Promedio de cada año. Cada término se divide por el promedio de 35 búsquedas de moda de ese mismo año: así se descuenta que Google crezca o cambie cómo mide. 2025 y 2026 quedan afuera por el salto de medición de Google.',
      saca:'Cuánto se busca cada atributo frente a su máximo y si gana o pierde terreno. Entra al K-means.'},
-  t:{de:'Google Trends, «todo el mundo», búsqueda web, 2016–2024.',
+  t:{de:'Google Trends, «todo el mundo», búsqueda web, con los términos en inglés, 2016–2024.',
      como:'El peso de cada término frente a 35 búsquedas de moda, en 2022 y en 2024; la resta son los puntos ganados o perdidos.',
      saca:'Qué gana y qué pierde terreno hoy. Es la señal cuando un atributo no tiene etapa del K-means.'},
-  v:{de:'Dataset traopia/vogue-runway (Hugging Face): una copia de Vogue Runway al 31/03/2023, con 1,28 M fotos de desfile, su casa, temporada, etiquetas y el vector CLIP de cada foto. Las fotos se enlazan, nunca se bajan.',
+  v:{de:'Dataset traopia/vogue-runway (Hugging Face): una copia de Vogue Runway al 31/03/2023, con 1,28 M fotos de desfile de París, Milán, Nueva York, Londres y otras semanas de la moda, su casa, temporada, etiquetas y el vector CLIP de cada foto. Las fotos se enlazan, nunca se bajan.',
      como:'Proporción de looks de colección del año que tienen la etiqueta del atributo (sin novias); 100 es su máximo. Desde 2022 Vogue dejó de etiquetar: esos años los lee un clasificador CLIP entrenado con las etiquetas de 2010–2021 (va punteado). 2024 y 2025 salen de otro dataset (tonyassi/vogue933k): una muestra de 20.000 looks por año, empalmada sobre 2022–2023; sólo se muestran si su margen de error es chico.',
      saca:'Cuánto aparece el atributo en los desfiles y si sube o baja. Entra al K-means.'},
-  l:{de:'Lyst Index, el ranking trimestral de marcas de Lyst, transcrito a mano del sitio: Q1-18 a Q2-26, 55 marcas.',
+  l:{de:'Lyst Index, el ranking trimestral y global de marcas de Lyst, transcrito a mano del sitio: Q1-18 a Q2-26, 55 marcas.',
      como:'El puesto de cada marca en cada trimestre. En Q1-26 Lyst cambió la fórmula, así que las comparaciones se hacen dentro de cada tramo.',
      saca:'Si una marca sube o baja en el interés. No entra al modelo: se cruza por marca.'},
-  r:{de:'Arctic Shift, un archivo público de Reddit: todos los títulos de r/femalefashionadvice, 2012–2025 (bajados en septiembre, octubre y noviembre de 2026). Sólo se guardan los conteos.',
+  r:{de:'Arctic Shift, un archivo público de Reddit: todos los títulos de r/femalefashionadvice, un foro en inglés, 2012–2025. Sin país: Reddit no dice de dónde es cada usuario (bajados en septiembre, octubre y noviembre de 2026). Sólo se guardan los conteos.',
      como:'Posts del año cuyo título nombra el término (palabra entera), sobre el total de posts del año; media de 3 años; 100 es su máximo. Entran los términos con 100 posts o más.',
      saca:'Si se habla más o menos del atributo. No entra al modelo: lo comprueba.'},
-  h:{de:'Arctic Shift, un archivo público de Reddit: todos los títulos de r/malefashionadvice, 2012–2025 (581.184 posts, bajados el 17/11/2026). Sólo se guardan los conteos.',
+  h:{de:'Arctic Shift, un archivo público de Reddit: todos los títulos de r/malefashionadvice, un foro en inglés, 2012–2025. Sin país: Reddit no dice de dónde es cada usuario (581.184 posts, bajados el 17/11/2026). Sólo se guardan los conteos.',
      como:'Igual que la serie de mujeres: posts que nombran el término sobre el total del año, media de 3 años, 100 es su máximo. Sin «lace», que ahí son cordones.',
      saca:'Si los hombres hablan más o menos del atributo. No entra al modelo: lo comprueba.'},
   z:{de:'«ZARA Sales» (Kaggle): un scrape de zara.com del 19/02/2024, 228 prendas.',
@@ -2721,13 +2738,13 @@ const FUENTE_INFO={
   c:{de:'Nuestra propia historia de búsqueda, 2004–2024: 224 tramos de 1 a 5 años.',
      como:'Cuánto se movió de verdad la búsqueda a cada distancia: mediana y percentiles.',
      saca:'La escala del movimiento posible hasta tu ventana. No es un pronóstico.'},
-  s:{de:'Google Trends, propiedad Shopping (búsquedas de compra), 25 términos, 2008–2025 (22/09/2026).',
+  s:{de:'Google Trends, propiedad Shopping (búsquedas de compra), todo el mundo, en inglés, 25 términos, 2008–2025 (22/09/2026).',
      como:'Promedio de cada año y cambio entre 2021–22 y 2024–25.',
      saca:'Si la intención de compra acompaña a la etapa. Valida el modelo; no entra.'},
-  m:{de:'Amazon Reviews 2023 (McAuley Lab, UCSD): una muestra de 1,1 M de reseñas de indumentaria, 2012–2023.',
+  m:{de:'Amazon Reviews 2023 (McAuley Lab, UCSD): una muestra de 1,1 M de reseñas de indumentaria de amazon.com, 2012–2023.',
      como:'Reseñas del año que nombran el término, sobre el total; cambio entre 2019 y 2022.',
      saca:'Si el consumo masivo confirma lo que dice el modelo. Valida; no entra.'},
-  hm:{de:'H&M Personalized Fashion Recommendations (Kaggle): 31,8 M transacciones de 2018 a 2020; usamos las 30,6 M de adultos.',
+  hm:{de:'H&M Personalized Fashion Recommendations (Kaggle): 31,8 M transacciones de 2018 a 2020; usamos las 30,6 M de adultos. El dataset no dice de qué país son las compras.',
      como:'Compras por atributo y por mes, leídas del tipo y la descripción de cada artículo.',
      saca:'Qué compra el mercado masivo. Es contexto: no entra al modelo.'},
   ly:{de:'Los informes anuales de Lyst (Year in Fashion y similares), 19 señales cargadas a mano, cada una con su link.',
@@ -2902,8 +2919,7 @@ function mcFicha(o,s){
   b.onclick=()=>mcAbrir(o.id);
   return b;
 }
-function mcAbrir(id){const tid=Object.keys(DMAP).find(k=>DMAP[k]===id);
-  if(tid&&T.some(t=>t.id===tid&&tieneDato(t)))abrirDetalle(tid);else{recSel=id;pintarRecorridos();mostrar('recorridos');$('#rtitulo')?.scrollIntoView();}}
+function mcAbrir(id){recContexto='proyecto';abrirFichaProyecto(id);recContexto='explorar';}
 function mcTend(L){
   const C=$('#mctend');if(!C)return;
   const esp=vinculo==='propia'?'Explorar':'Esperar';
@@ -2959,6 +2975,51 @@ function mcLineaTiempo(F,W){
       <circle cx="${X(x.y)}" cy="${y}" r="13" fill="transparent"${ds}/><circle class="mcpunto" cx="${X(x.y)}" cy="${y}" r="6.5" fill="var(--s2)"${ds}/>
       <text x="${X(x.y)+(x.y>=2021?-14:14)}" y="${y+5}" text-anchor="${x.y>=2021?'end':'start'}" fill="var(--tinta-2)"${ds}>${x.y}</text></g>`;});
   return s+'</svg>';
+}
+/* ---------- 24/11 · la ficha de Mis ciclos y Explorar, separadas (devolución: «Mis ciclos y Explorar tienen que
+   mostrar información distinta»; «Abro Rayas y aparece Reddit hombres») ----------
+   recContexto decide qué ve el gráfico de capas: 'proyecto' (la ficha que se abre desde Mis ciclos) muestra sólo el foro
+   de Reddit de tu público y tu ventana; 'explorar' (Explorar ciclos) muestra todo, para todos, sin nada del perfil. */
+function abrirFichaProyecto(id){
+  const o=REC.find(x=>x.id===id);if(!o)return;
+  const p=pyActivo(),s=mcSeñal(o),et=mcEnKM(o)?etapaDe(o.n):null,d=terreno(o.id),rd=mcReddit(o),P=PERFIL[cliente]||PERFIL.premium;
+  const tid=Object.keys(DMAP).find(k=>DMAP[k]===id)||(T.some(t=>t.id===id)?id:null),t=tid?T.find(x=>x.id===tid):null;
+  detSel=tid;const v=$('#v-detalle');recContexto='proyecto';
+  const quien=mirando?'Sin proyecto: las señales son para una marca contemporary de ejemplo.':`Para ${p?'«'+pyEsc(p.nombre)+'» · ':''}${pyResumen({publico,vinculo,cliente})}`;
+  const foro=publico==='todos'?'los dos foros':`el foro de ${publico==='mujer'?'mujeres':'hombres'}`;
+  v.innerHTML=`<button class="back" id="volver">← Mis ciclos</button>
+    <div class="vhead"><div><p class="eti">${o.tipo}</p><h1>${o.n}</h1><p class="fpquien">${quien}</p>${t?dzEnFicha(t):''}</div></div>
+    <div class="fpdec">
+      <div class="fpsen"><span class="sen ${s.cls}">${s.icono} ${s.estado==='sin-dato'?'Sin señal':s.palabra}</span><p>${s.corto||s.porque}</p></div>
+      <dl class="fpdat">
+        <div><dt>Etapa</dt><dd${et&&et.n?src('k'):''}>${et&&et.n?et.n:'Sin etapa: no entra al K-means'}</dd></div>
+        <div><dt>Búsqueda 2022→2024</dt><dd${d!=null?src('t'):''}>${d!=null?mcPts(d)+' puntos':'sin dato'}</dd></div>
+        <div><dt>Reddit de tu público</dt><dd>${rd.length?rd.map(r=>`<span${src(r.k)}>${r.q}: ${mcPts(r.d)} puntos</span>`).join('<br>'):`sin el término en ${foro}`}</dd></div>
+        <div><dt>Tu ventana</dt><dd${src('c')}>hasta ${P.hasta} · ±${Math.round(P.banda)} puntos</dd></div>
+      </dl>
+    </div>
+    <section class="fpgraf"><h2>Pasarela, búsqueda y Reddit de tu público</h2>
+      <p class="fpnota">Cada curva es un índice de 0 a 100 de su propio máximo. Reddit: sólo ${foro}${publico==='todos'?'':', porque tu proyecto es de '+(publico==='mujer'?'mujer':'hombre')}. Google y Vogue no separan por género.</p>
+      <div class="leg" id="dleg"></div><figure><div id="casc"></div></figure>
+      <p class="fpnota"><a href="#recorridos" id="fpexplorar">Ver ${o.n.toLowerCase()} en Explorar ciclos</a>: los mismos datos para todos, sin tu proyecto.</p></section>`;
+  const ancho=innerWidth<600?Math.max(320,innerWidth-40):Math.min(900,innerWidth-120);
+  if(recCapas(o)<3){$('#dleg').hidden=true;$('#casc').appendChild(capaFranjas(o,ancho));}
+  else{$('#dleg').innerHTML=recLeyenda(o);$('#casc').appendChild(recChart(o,ancho));legDestaca($('#dleg'),$('#casc'));}
+  $('#volver').onclick=()=>mostrar('radar');
+  $('#fpexplorar').onclick=e=>{e.preventDefault();recSel=o.id;mostrar('recorridos');pintarRecorridos();requestAnimationFrame(()=>$('#rtitulo')?.scrollIntoView());};
+  mostrar('detalle',true);$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
+  fichaId=o.id;escribirLink(true);
+}
+let fichaId=null;
+/* Explorar: los datos del atributo, sin señal ni ventana (no sabe para quién diseñás) */
+function pintarExplorarDatos(o){
+  const et=mcEnKM(o)?etapaDe(o.n):null,d=terreno(o.id),p=pyActivo();
+  const ter=d==null?'sin dato':d>5?`ganó terreno (${mcPts(d)})`:d<-5?`perdió terreno (${mcPts(d)})`:`estable (${mcPts(d)})`;
+  $('#rdecide').innerHTML=`<dl class="fpdat expl">
+      <div><dt>Etapa</dt><dd${et&&et.n?src('k'):''}>${et&&et.n?et.n:'Sin etapa: no entra al K-means'}</dd></div>
+      <div><dt>Búsqueda mundial 2022→2024</dt><dd${d!=null?src('t'):''}>${ter}</dd></div></dl>
+    <p class="fpnota">Explorar muestra los datos de todos, sin señal: no sabe para quién diseñás. ${p?`<a href="#radar" data-fp="${o.id}">Ver ${o.n.toLowerCase()} para «${pyEsc(p.nombre)}»</a>`:`<a href="#crear" data-crear>Creá tu proyecto</a> para ver qué te conviene.`}</p>`;
+  $('#rdecide [data-fp]')?.addEventListener('click',e=>{e.preventDefault();abrirFichaProyecto(e.currentTarget.dataset.fp);});
 }
 function pintarRadar(){
   const sel=$('#mccat');
@@ -3115,13 +3176,15 @@ function consejo(cli,et){const c=CONSEJO[cli][et]; // la regla fija; el color lo
 const tuQuien=()=>vinculo==='propia'?'tu cliente':'tu marca';
 let detSel=null;
 function abrirDetalle(id){
+  {const rid=DMAP[id]||(REC.some(o=>o.id===id)?id:null);if(rid&&REC.some(o=>o.id===rid)&&GREL[rid]){recContexto='proyecto';abrirFichaProyecto(rid);recContexto='explorar';return;}}
+  fichaId=null;
   const t=T.find(x=>x.id===id);detSel=id;const v=$('#v-detalle');
   // la recomendación sale de señal(), como en el resto de la app: etapa del K-means, si no la serie, si no nada.
   // Nunca de la etapa estimada sobre el catálogo sintético (antes decía «Entrar, está en pico» para el cuero, que el K-means pone en retorno)
   const sg=señal({grupo:KMAP[t.id]||null,rec:DMAP[t.id]&&REC.some(o=>o.id===DMAP[t.id])?DMAP[t.id]:null});
   const CLI={fast:'fast fashion',medio:'contemporary',premium:'high fashion',nicho:'diseño emergente'}[cliente];
   v.innerHTML=`
-    <button class="back" id="volver">← Volver a Tendencias</button>
+    <button class="back" id="volver">← Mis ciclos</button>
     <div class="vhead">
       <div>
         <h1>${t.n}</h1>
@@ -3546,7 +3609,7 @@ function disenarCon(h){
 function dzPintarFijo(){
   let e=$('#dzfijo');if(!e){e=document.createElement('p');e.id='dzfijo';e.className='dzfijo';$('#dzpasos').before(e);}
   const f=dz.fijo;e.hidden=!f;if(!f){e.innerHTML='';return;}
-  e.innerHTML=`<span>Diseñando con <b>${f.n}</b> (${(DZ_NOMBRE[f.k]||'Prenda').toLowerCase()}), desde Tendencias. Sólo te preguntamos lo que falta.</span><button type="button" id="dzquitar">Quitar ${f.n} ×</button>`;
+  e.innerHTML=`<span>Diseñando con <b>${f.n}</b> (${(DZ_NOMBRE[f.k]||'Prenda').toLowerCase()}), desde Mis ciclos. Sólo te preguntamos lo que falta.</span><button type="button" id="dzquitar">Quitar ${f.n} ×</button>`;
   $('#dzquitar').onclick=()=>{dz.fijo=null;pintarDisenar();escribirLink(false);};
 }
 function dzDesdeLink(qs){
@@ -4753,7 +4816,7 @@ const CAPA={v:{n:'Pasarela',c:'--s1',dm:'none',dp:'2 3',w:2.4},
             g:{n:'Búsqueda mundo',c:'--s2',dm:'none',dp:'6 4',w:2.4,banda:true},
             r:{n:'Reddit mujeres',c:'--s3',dm:'none',dp:'1 4',w:2.4},
             h:{n:'Reddit hombres',c:'--s5',dm:'none',dp:'1 4',w:2.4}};
-let recFoco=null,recDesde2004=false;
+let recFoco=null,recDesde2004=false,recContexto='explorar'; // 24/11: 'proyecto' (ficha de Mis ciclos) o 'explorar'
 function recSeries(o){
   const S=[];
   const r26=o.rk&&RD26[o.rk]?RD26[o.rk]:null;
@@ -4761,9 +4824,10 @@ function recSeries(o){
   S.push({k:'g',n:'Búsqueda',d:'Google Trends mundo · «'+o.gk+'» · peso frente a las otras búsquedas de moda · 2010–2024, 2025 apagado',vals:GREL[o.id],ult:ANIO_G,dudoso:2025,from:2010});
   const rv=o.r||(typeof RDS!=='undefined'&&o.rk&&RDS[o.rk]?RDS[o.rk].i:null);
   const rh=typeof RDH!=='undefined'&&o.rk&&RDH[o.rk]?RDH[o.rk]:null;
-  if(rh) S.push({k:'h',d:'r/malefashionadvice · «'+termVis(o.rk)+'» · media de 3 años · '+rh.n+' posts, 2012–2025',vals:rh.i,ult:2025,from:2012,obs:rh.n.toLocaleString('es-AR')+' posts que lo nombran, de 581.184'});
+  const soloPub=recContexto==='proyecto'?publico:'todos'; // en la ficha del proyecto, sólo el foro de su público
+  if(rh&&soloPub!=='mujer') S.push({k:'h',d:'r/malefashionadvice · «'+termVis(o.rk)+'» · media de 3 años · '+rh.n+' posts, 2012–2025',vals:rh.i,ult:2025,from:2012,obs:rh.n.toLocaleString('es-AR')+' posts que lo nombran, de 581.184'});
   const rn=typeof RDS!=='undefined'&&o.rk&&RDS[o.rk]&&RDS[o.rk].n;
-  if(rv) S.push({k:'r',d:'r/femalefashionadvice · «'+termVis(o.rk)+'» · media de 3 años · '+(r26?'2026 hasta octubre':'2012–2025'),vals:rv,ult:2025,from:2012,r26,obs:rn?rn.toLocaleString('es-AR')+' posts que lo nombran, de unos 178.000':null});
+  if(rv&&soloPub!=='hombre') S.push({k:'r',d:'r/femalefashionadvice · «'+termVis(o.rk)+'» · media de 3 años · '+(r26?'2026 hasta octubre':'2012–2025'),vals:rv,ult:2025,from:2012,r26,obs:rn?rn.toLocaleString('es-AR')+' posts que lo nombran, de unos 178.000':null});
   // la continuación: el movimiento mediano de la historia (cono medido), desde el último dato bueno de cada capa
   const cl=v=>Math.max(0,Math.min(100,v));
   S.forEach(se=>{Object.assign(se,CAPA[se.k],se.n?{n:se.n}:{});const b=se.vals[se.ult-2004];
@@ -4809,9 +4873,9 @@ function recChart(o,W=640,H=300,solo=null){
   // dónde entra cada capa: la línea empieza ahí porque la fuente empieza ahí
   if(etiq)ini.filter(q=>q.y>X0).filter((q,i,A)=>!(q.k==='h'&&A.some(z=>z.k==='r'&&z.y===q.y))).forEach(q=>{s.appendChild(el('line',{x1:X(q.y),x2:X(q.y),y1:mt,y2:H-mb,stroke:cssv('--ink-3'),'stroke-dasharray':'2 3'}));if(W<500)return;const t=el('text',{x:X(q.y)+4,y:H-mb-6,'font-size':9.5,fill:cssv('--ink-2'),...font});t.textContent=(q.k==='r'&&ini.some(z=>z.k==='h'&&z.y===q.y)?'Reddit':CAPA[q.k].n)+' desde '+q.y;s.appendChild(t);});s.appendChild(tf);
   // tu ventana: hasta dónde el error medido todavía sirve para la decisión de esta categoría
-  const P=PERFIL[cliente]||PERFIL.premium,xt=X(P.hasta);
+  const P=recContexto==='proyecto'?(PERFIL[cliente]||PERFIL.premium):{hasta:2030,banda:0},xt=X(P.hasta);
   s.appendChild(el('line',{x1:xt,x2:xt,y1:mt+4,y2:H-mb,stroke:cssv('--ink'),'stroke-width':1,'stroke-dasharray':'2 2',opacity:.6}));
-  if(!solo||solo===recSeries(o)[0].k){const izq=W-mr-xt<90,tt=el('text',{x:izq?xt-4:xt+4,y:H-mb-6,'text-anchor':izq?'end':'start','font-size':9.5,fill:cssv('--ink'),...font});tt.textContent=`tu ventana · ±${Math.round(P.banda)}`;s.appendChild(tt);}
+  if(recContexto==='proyecto'&&(!solo||solo===recSeries(o)[0].k)){const izq=W-mr-xt<90,tt=el('text',{x:izq?xt-4:xt+4,y:H-mb-6,'text-anchor':izq?'end':'start','font-size':9.5,fill:cssv('--ink'),...font});tt.textContent=`tu ventana · ±${Math.round(P.banda)}`;s.appendChild(tt);}
   [0,50,100].filter(v=>v<=top).forEach(v=>{
     s.appendChild(el('line',{x1:ml,x2:W-mr,y1:Y(v),y2:Y(v),stroke:cssv('--rule-2'),'stroke-width':1}));
     const t=el('text',{x:ml-7,y:Y(v)+4,'text-anchor':'end','font-size':10,fill:cssv('--ink-3'),...font});t.textContent=v;s.appendChild(t);});
@@ -4904,8 +4968,9 @@ function pintarRecorridos(){
         b.addEventListener('click',()=>{recSel=o.id;pintarRecorridos();});row.appendChild(b)});f.appendChild(row)});
   }
   $$('#rfilt .chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===recSel));
+  recContexto='explorar';
   const o=REC.find(x=>x.id===recSel);
-  pintarDecision(o);
+  pintarExplorarDatos(o);
   $('#rleg').innerHTML=recLeyenda(o);
   $$('#rleg .legi').forEach(b=>b.addEventListener('click',()=>{recFoco=recFoco===b.dataset.k?null:b.dataset.k;pintarRecorridos();$(`#rleg .legi[data-k="${b.dataset.k}"]`)?.focus();}));
   const rc=$('#rchart');rc.innerHTML='';
@@ -4917,7 +4982,7 @@ function pintarRecorridos(){
       h.innerHTML=`<div class="rminih" style="color:${cssv(se.c)}">${se.n}</div>`;h.appendChild(recChart(o,360,150,se.k));rc.appendChild(h);});
   }else rc.appendChild(recChart(o));
   if(!pocas){rc.insertAdjacentHTML('beforeend',CLAVE);legDestaca($('#rleg'),rc);}
-  if(!pocas)$('#rcap').textContent=`Cada curva es un índice 0–100 de su propio máximo. La línea llena es medida: pasarela con las etiquetas de Vogue hasta 2021 y leída con CLIP de 2022 a 2025 (ese tramo va punteado, porque Vogue dejó de etiquetar), búsqueda hasta 2024 y Reddit hasta 2025. El punto hueco de 2025 en la búsqueda está apagado a propósito: ese año y 2026 traen el salto de medición de Google. La búsqueda es el peso de este atributo frente a las otras búsquedas de moda: así se descuenta que Google crezca o cambie su medición, y queda lo que gana o pierde terreno. La línea punteada no predice nada. Muestra dónde terminaría cada atributo si de acá a 2030 se moviera como se movió la mitad de los casos de nuestra historia. Sirve para ver la escala del movimiento posible, no para saber qué va a pasar. La banda es cuánto se movió de verdad la búsqueda a cada distancia. Tu ventana como ${(PERFIL[cliente]||PERFIL.premium).n.toLowerCase()} llega a ${(PERFIL[cliente]||PERFIL.premium).hasta}, con un error medido de ±${Math.round((PERFIL[cliente]||PERFIL.premium).banda)} puntos; más allá la línea sigue, apagada. Tocá una capa en la leyenda para aislarla.`;
+  if(!pocas)$('#rcap').textContent=`Cada curva es un índice 0–100 de su propio máximo. La línea llena es medida: pasarela con las etiquetas de Vogue hasta 2021 y leída con CLIP de 2022 a 2025 (ese tramo va punteado, porque Vogue dejó de etiquetar), búsqueda hasta 2024 y Reddit hasta 2025. El punto hueco de 2025 en la búsqueda está apagado a propósito: ese año y 2026 traen el salto de medición de Google. La búsqueda es el peso de este atributo frente a las otras búsquedas de moda: así se descuenta que Google crezca o cambie su medición, y queda lo que gana o pierde terreno. La línea punteada no predice nada. Muestra dónde terminaría cada atributo si de acá a 2030 se moviera como se movió la mitad de los casos de nuestra historia. Sirve para ver la escala del movimiento posible, no para saber qué va a pasar. La banda es cuánto se movió de verdad la búsqueda a cada distancia. Tocá una capa en la leyenda para aislarla.`;
   const fila=(k,v,t,f)=>`<dt>${k}</dt><dd class="mono"${f||''}>${v}${t?` <span class="tag ${t==='abierto'?'demo':'real'}">${t}</span>`:''}</dd>`;
   let h='';
   h+=fila('Pasarela',o.pv||'sin etiqueta',o.pv?'medido':'',o.pv?src('v',`«${o.vk}»: el año de su máximo`):'');
@@ -5291,7 +5356,7 @@ function mostrar(v,keepNav){
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
   if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}else tvParar();
-  if(v==='inicio')pintarInicio();if(v==='cuenta')pintarCuentaVista();
+  if(v==='inicio')pintarInicio();if(v==='cuenta')pintarCuentaVista();if(v!=='detalle')fichaId=null;
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }
@@ -5543,9 +5608,10 @@ $('#gmirar').addEventListener('click',gateMirar);
 let publico='todos';
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
-const VISTAS=['inicio','cuenta','perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','preguntar','tiza','revision','consulta','asistente','racional','adivina','mover'];
+const VISTAS=['ficha','inicio','cuenta','perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','preguntar','tiza','revision','consulta','asistente','racional','adivina','mover'];
 let vista='perfil',leyendoLink=false;
 function linkActual(){
+  if(vista==='detalle'&&fichaId)return `#ficha/${fichaId}?c=${cliente}&v=${vinculo}&pu=${publico}`;
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
   let q=`?c=${cliente}&v=${vinculo}&pu=${publico}`;
   if(vista==='disenar'){const s=DZ_ELEC.filter(k=>dz[k]).map(k=>k+':'+dz[k]).join(',');
@@ -5566,6 +5632,8 @@ function leerLink(){
   if(destino==='recorridos'&&el&&REC.some(o=>o.id===el)){recSel=el;pintarRecorridos();}
   if(destino==='detalle'&&el&&T.some(t=>t.id===el&&tieneDato(t)))detSel=el;
   if(destino==='perfil'){abrirGate('radar');return true;}
+  if(destino==='ficha'){if(qs.has('c')&&qs.has('v')&&qs.has('pu')){vinculo=qs.get('v')==='propia'?'propia':'marca';publico=['mujer','hombre'].includes(qs.get('pu'))?qs.get('pu'):'todos';mirando=false;ponerCliente(PLAZO[qs.get('c')]?qs.get('c'):'premium');}else{const p=pyActivo();if(p)pyAplicar(p);else pyMirar();}
+    if(el&&REC.some(o=>o.id===el))abrirFichaProyecto(el);else mostrar('radar');return true;}
   if(!(qs.has('c')&&qs.has('v')&&qs.has('pu'))){const p=pyActivo();if(p)pyAplicar(p);else pyMirar();
     if(destino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(destino);return true;}
   leyendoLink=true;
@@ -5842,6 +5910,7 @@ function etiquetasSvg(){
   new MutationObserver(pedir).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','open']});window.addEventListener('resize',pedir);}
   extenderREC();sumarRedditREC();pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
   pintarCuenta();
+  fichaId=null;
   if(!leerLink()){const p=pyActivo();if(p){pyAplicar(p);mostrar('radar');}else{pyMirar();mostrar('inicio');}} // 24/11: con proyecto, Mis ciclos; sin proyecto, el home
 }catch(e){arranqueFallido(e);}
 window.CICLO_LISTO=true;

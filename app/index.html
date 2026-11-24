@@ -2121,6 +2121,19 @@ img:not(.fcarga){transition:opacity .35s ease}
   .app #v-inicio .hdos{grid-template-columns:1fr}
 }
 
+/* 24/11 vuelta K: El brief, la jerarquía del encargo: casa (lo principal) · temporada (etiqueta chica en mayúsculas) · prenda (subtítulo) */
+.app #v-mover .bftxt .bfpr:not(#q):not(#qq):not(#qqq){font-size:20px!important;font-weight:400!important;color:var(--tinta-2)!important;margin:4px 0 0!important;line-height:1.3}
+.app #v-mover .bfhead .bfenc{display:inline-flex;align-items:baseline;flex-wrap:wrap;justify-content:center;gap:4px 14px}
+.app #v-mover .bfenc .bfencc:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq):not(#qqqqqqq){font-size:18px!important;font-weight:600!important;color:var(--tinta)!important;font-family:var(--sf)!important;letter-spacing:-.01em!important}
+.app #v-mover .bfencv .bfencc:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq):not(#qqqqqqq){font-size:22px!important}
+/* la tarjeta del encargo, todo alineado a la izquierda: etiqueta, casa, prenda, tipo de marca, racha y botón */
+.app #v-mover .bftxt :is(.bfde,.bfcat,.bfjuego,.bfpr,h2):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq):not(#qqqqqqq){text-align:left!important;margin-left:0!important;margin-right:0!important}
+.app #v-mover .bfhead .bfencp:not(#q):not(#qq),.app #v-mover .bfhead .bfpaso:not(#q):not(#qq){font-size:16px!important;color:var(--tinta-2)!important;text-transform:none!important;letter-spacing:0!important}
+.app #v-mover .bfhead .eti:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){color:var(--tinta-2)!important;margin:0!important}
+.app #v-mover .bfencv{display:flex;flex-direction:column;align-items:center;gap:4px;margin:0 0 18px;text-align:center}
+.app #v-mover .bfencv .eti:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){margin:0!important;color:var(--tinta-2)!important}
+.app #v-mover .bfencv .bfencc:not(#q):not(#qq){font-size:var(--t-h3,22px)!important;font-weight:600!important;color:var(--tinta)!important;line-height:1.2}
+.app #v-mover .bfencv .bfencp:not(#q):not(#qq){font-size:17px!important;color:var(--tinta-2)!important}
 /* 24/11 vuelta K: Explorar, la barra de arriba (buscador + categorías) y el selector del recorrido */
 .app #v-recorridos .exbarra{margin:28px 0 24px}
 .app #v-recorridos .exbarra .ciclofilt:not(#q){flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px;margin:0!important;padding:2px 0 4px;scrollbar-width:none}
@@ -5907,17 +5920,17 @@ function bfImg(id,n,img,forma){const fo=FOTO_ATR[id];if(!fo)return `<span class=
   return `<span class="dzimg bfconf"><img class="bfph" loading="lazy"${fotoPos(id)} src="${vogueFoto(fo.f,640)}" alt="${n} en la pasarela: ${fotoCred(fo)}"><span class="pcred">${fotoCred(fo)}</span>${forma?`<span class="psil" aria-hidden="true"><img src="${img}" alt=""></span>`:''}</span>`;}
 const bfNum=d=>(d>0?'+':d<0?'−':'')+Math.abs(Math.round(d));
 function pintarBrief(){const C=$('#mv');if(!C||typeof GREL==='undefined')return;if(!bf)bfNuevo();
-  const B=bfBrief(),P=PERFIL[B.cat],temp=`${BF_TEMP[B.cat]} 2025`,f=bfFoto(B); // 24/11: antes era el horizonte de decisión (2026–2028); ahora, el último año con datos
+  const B=bfBrief(),P=PERFIL[B.cat],temp=`${BF_TEMP[B.cat]} 2024`,f=bfFoto(B); // 24/11 vuelta K: el último año con búsqueda medida (Google, hasta 2024); antes 2025 y, antes, el horizonte de decisión (2026–2028)
   if(bf.fase==='brief'){
     C.innerHTML=`<div class="bfbrief"><div class="bfcard">
         <div class="bffoto">${f?`<img src="${vogueFoto(f.f,640)}" alt="${f.d}, ${TEMP[f.s]||''} ${f.y}"><span class="bfcred">${B.ref?'Referencia: ':''}${f.d} · ${TEMP[f.s]||''} ${f.y} · Vogue Runway</span>`:''}</div>
-        <div class="bftxt"><p class="bfde">Brief</p><h2>${B.casa}</h2><p class="bfl">${temp}</p><p class="bfl">${B.pn}</p>
+        <div class="bftxt"><p class="bfde">Brief · ${temp}</p><h2>${B.casa}</h2><p class="bfpr">${B.pn}</p>
           <p class="bfcat">${P.n} · produce en ${P.prod}${B.ref?` · baja a la calle lo que mostró ${f?f.d:'el lujo'}`:''}</p>
           ${(()=>{const R=bfRacha();return R.r>0?`<p class="bfjuego">Racha: <b>${R.r}</b> · si este no llega a 7, vuelve a cero</p>`:R.m>0?`<p class="bfjuego">Tu mejor racha: ${R.m}. Clavás con 7 o más.</p>`:`<p class="bfjuego">Clavás con 7 o más. Encadená briefs y armá una racha.</p>`;})()}
           <button type="button" class="mvbtn" id="bfok">Aceptar el brief</button></div></div></div>`;
     $('#bfok').onclick=()=>{bf.fase=0;bf.el=[];pintarBrief();};return;}
   if(typeof bf.fase==='number'){const pasos=bfPasos(),[tit,ops]=pasos[bf.fase];
-    C.innerHTML=`<div class="bfhead"><span>${B.casa} · ${temp} · ${B.pn}</span><span>${bf.fase+1} de ${pasos.length}</span></div>
+    C.innerHTML=`<div class="bfhead"><span class="bfenc"><b class="bfencc">${B.casa}</b><span class="eti">${temp}</span><span class="bfencp">${B.pn}</span></span><span class="bfpaso">${bf.fase+1} de ${pasos.length}</span></div>
       <h2 class="bfpreg">${tit}</h2>
       <div class="dzgrid bfgrid${ops.length>5?' bf6':''}">${ops.map(([id,n,img])=>`<button type="button" class="dzc bfop" data-id="${id}">${bfImg(id,n,img,bf.fase===0)}<span class="dzb"><span class="dzn">${n}</span></span></button>`).join('')}</div>
       <div class="bfbarra">${bf.fase?`<button type="button" class="gvolver" id="bfatras">← Volver</button>`:''}</div>`;
@@ -5940,7 +5953,7 @@ function bfVeredicto(C,B,temp){const el=bf.el,cnt={};el.forEach(x=>cnt[x.m.k]=(c
   const RR=bf.racha,etq=nota>=7?'Clavado':nota>=5?'Casi':'Errado';
   const frase=`Mi look: ${cats.map(c=>`${bfPuntaje(c,el)}/10 para ${nom(c)}`).join(', ')}.`;
   const T=x=>`style="--t:${x}s"`;
-  C.innerHTML=`<div class="bfver"><p class="bfde">${B.casa} · ${temp} · ${B.pn}</p>
+  C.innerHTML=`<div class="bfver"><div class="bfenc bfencv"><span class="eti">${temp}</span><b class="bfencc">${B.casa}</b><span class="bfencp">${B.pn}</span></div>
     <div class="bfnota bfr" ${T(0)}><b class="bfnum" data-n="${nota}">0</b><span class="bfde10">/10</span><span class="bfetq bfr ${clavo?'ok':nota>=5?'casi':'mal'}" ${T(1)}>${etq}</span></div>
     <p class="bfracha bfr" ${T(1.6)}>${clavo?`Racha: <b>${RR.ahora}</b> ${RR.ahora===1?'brief clavado':'briefs clavados seguidos'}${RR.record&&RR.ahora>1?' · tu récord':''}`:RR.antes>0?`Se cortó la racha: ibas <b>${RR.antes}</b>. Tu mejor: ${RR.mejor}.`:`Sin racha todavía. Clavás con 7 o más.`}</p>
     <h2 class="bftit bfr" ${T(2.6)}>${BF_TIT[B.cat][dom]}</h2>

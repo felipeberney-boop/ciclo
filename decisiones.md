@@ -3723,3 +3723,27 @@ Diseñar y Acerca de. La app pesa 1.129 KB (antes 1.151).
 
 Probado: buscar «sat» deja Satén (1 de 65), «zzz» dice que no hay nada, Faldas filtra, el selector cambia el recorrido a
 Rayas y a Floral; 65 opciones, sin errores. `probar_demo.js` 8 de 8 en los dos anchos. Capturas `K/3_despues_*`.
+
+## 2026-11-24 · Vuelta K, punto 5: El brief, sólo años con datos y la jerarquía del encargo
+
+Pedido: «Siguen apareciendo temporadas 2025. Solo años con datos de búsqueda (hasta 2024). Revisá todos los encargos.
+Jerarquía del encabezado: hoy “Miu Miu · Otoño 2025 · Una falda” tiene todo al mismo nivel y con mayúscula inicial. La
+casa es lo principal, la temporada una etiqueta chica en mayúsculas y la prenda un subtítulo. Revisá esa misma jerarquía en
+toda la app (casa / temporada / prenda, atributo / dato / fuente)».
+
+**2024.** La temporada de los 15 encargos sale de una sola cuenta (`BF_TEMP` + el año), así que el cambio alcanza a
+todos: Otoño 2024 para lujo y contemporary, Primavera 2024 para fast fashion. 2024 es el último año de la búsqueda medida
+(Google, corregida); el veredicto ya leía 2022→2024. No queda ningún 2025–2028 en El brief. Los años de las fotos («Miu Miu ·
+Spring 2023 · Vogue Runway») son el crédito de la foto de referencia, no la temporada del encargo, y quedan.
+
+**Jerarquía.** En los tres lugares donde aparece el encargo: la casa en 600 (22 px en la tarjeta y el veredicto, 18 en el
+encabezado de cada paso), la temporada como Etiqueta (12, mayúsculas, gris) y la prenda como subtítulo (20 en la tarjeta,
+16–17 en gris en los pasos y el veredicto). En la tarjeta la etiqueta dice «BRIEF · OTOÑO 2024» y todo el texto queda
+alineado a la izquierda (antes la etiqueta y la racha iban centradas y la casa a la izquierda).
+
+**El resto de la app.** Se revisó la misma jerarquía: las tarjetas de Mis ciclos y Explorar ya van atributo (H3) ·
+categoría (Etiqueta) · datos con su rótulo; la ficha, categoría (Etiqueta) · atributo (H1) · datos; los créditos de foto,
+12 px en caja normal (diseñador · temporada · año · Vogue Runway), que es la regla de crédito del sistema y no un
+encabezado. No hizo falta cambiar otro lugar.
+
+`probar_demo.js` 8 de 8 en los dos anchos. Capturas `K/5_despues_{brief,juego,ver}_*`.

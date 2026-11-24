@@ -48,63 +48,73 @@ Docentes: Cristian Reynaga e Iván Fardjoume
 
 ## El recorrido, paso a paso
 
-### La entrada: tres preguntas
+### La entrada: el home y tu proyecto (desde el 24/11)
 
-Cada tarjeta dice sólo lo que hay que clickear. Qué cambia cada respuesta está en la pantalla **Acerca de** de la app (hasta el 17/11, «Método»).
-El 04/11 se probó preguntar por el objetivo («¿Qué estás por decidir?») y se descartó el mismo día: obligaba a traducir
-la situación a una categoría abstracta antes de ver nada. Está contado en `decisiones.md` y en el racional.
+Hasta el 24/11 la app abría con tres preguntas en pasos. Después de la devolución de la Entrega 4 abre en un home que
+explica qué es antes de pedir nada, y las tres preguntas pasaron a «Creá tu proyecto», al final, en una sola pantalla.
+Está contado en `decisiones.md` y en `entregas/entrega_4/plan_rediseno.md`.
 
-**1 · ¿Para quién diseñás?** Mujer, hombre o sin género.
+**1 · El home.** Qué es, para quién y qué te da; abajo, «Bajá para ver cómo funciona».
 
-![Paso 1: ¿para quién diseñás?](entregas/entrega_4/recorrido/paso_01_para_quien_disenas.png)
+![Paso 1: el home](entregas/entrega_4/recorrido/paso_01_home.png)
 
-**2 · ¿Trabajás para una marca o por tu cuenta?** Por tu cuenta no comprometés stock: donde a una marca le conviene
-esperar, a vos te conviene explorar.
+**2 · Una idea por pantalla**, con una foto de pasarela que cambia al bajar: cómo funciona, de dónde salen los datos (con
+país y período) y qué obtenés.
 
-![Paso 2: ¿para una marca o por tu cuenta?](entregas/entrega_4/recorrido/paso_02_marca_o_por_tu_cuenta.png)
+![Paso 2: cómo funciona](entregas/entrega_4/recorrido/paso_02_como_funciona.png)
 
-**3 · La categoría.** Para una marca: high fashion, contemporary, fast fashion o de autor.
+**3 · Creá tu proyecto.** Nombre, email, para quién diseñás, para una marca o por tu cuenta, y el tipo de marca. Se guarda
+en el navegador. «Sólo estoy mirando» va a Explorar ciclos sin proyecto.
 
-![Paso 3: la categoría](entregas/entrega_4/recorrido/paso_03_categoria.png)
+![Paso 3: crear tu proyecto](entregas/entrega_4/recorrido/paso_03_crear_tu_proyecto.png)
 
-**4 · Cae en Tendencias**, con el perfil debajo del título y «Cambiar» al lado.
+En el celular:
 
-![Paso 4: después de las preguntas, Tendencias](entregas/entrega_4/recorrido/paso_04_cae_en_tendencias_con_el_perfil.png)
-
-Por tu cuenta, la tercera pregunta es qué tipo de prendas querés diseñar, y en Tendencias aparece Explorar donde la
-marca vería Esperar.
-
-![Por tu cuenta: la categoría](entregas/entrega_4/recorrido/paso_10_por_tu_cuenta_categoria.png)
-
-![Por tu cuenta: Tendencias, con Explorar](entregas/entrega_4/recorrido/paso_11_por_tu_cuenta_tendencias.png)
-
-En el celular, las mismas tres preguntas:
-
-<img src="entregas/entrega_4/recorrido/paso_01_para_quien_disenas_celular.png" alt="Paso 1 en el celular" width="260"> <img src="entregas/entrega_4/recorrido/paso_02_marca_o_por_tu_cuenta_celular.png" alt="Paso 2 en el celular" width="260"> <img src="entregas/entrega_4/recorrido/paso_03_categoria_celular.png" alt="Paso 3 en el celular" width="260">
+<img src="entregas/entrega_4/recorrido/paso_01_home_celular.png" alt="Paso 1 en el celular" width="200"> <img src="entregas/entrega_4/recorrido/paso_02_como_funciona_celular.png" alt="Paso 2 en el celular" width="200"> <img src="entregas/entrega_4/recorrido/paso_03_crear_tu_proyecto_celular.png" alt="Paso 3 en el celular" width="200">
 
 ### El uso
 
-**5 · Tendencias, la pantalla principal.** Qué gana y qué pierde terreno afuera, y cada atributo con su etapa y su señal.
+**4 · Mis ciclos, arriba: qué gana y qué pierde terreno.** La búsqueda mundial 2022→2024, con la línea que explica qué es
+«+50» y, debajo de cada gráfico, la señal de cada atributo para tu proyecto.
 
-![Paso 5: Tendencias](entregas/entrega_4/recorrido/paso_05_tendencias.png)
+![Paso 4: Mis ciclos](entregas/entrega_4/recorrido/paso_04_mis_ciclos.png)
 
-**6 · Un atributo abre su ficha.** La señal con una línea de por qué y el gráfico; el resto, en el «?».
+**5 · Mis tendencias.** Los 65 atributos agrupados por su señal (Entrar, Esperar, Salir), con el Reddit de tu público.
+
+![Paso 5: Mis tendencias](entregas/entrega_4/recorrido/paso_05_mis_tendencias.png)
+
+Por tu cuenta, donde una marca vería Esperar aparece Explorar:
+
+![Por tu cuenta: Explorar](entregas/entrega_4/recorrido/paso_12_por_tu_cuenta_explorar.png)
+
+**6 · Un atributo abre su ficha**, sólo con lo de tu proyecto: su señal, tu ventana y el Reddit de tu público. Debajo del
+gráfico, «Cómo se lee · CICLO no predice».
 
 ![Paso 6: la ficha del atributo](entregas/entrega_4/recorrido/paso_06_ficha_del_atributo.png)
 
-**7 · «Diseñar con…» lleva a Diseñar.**
+**7 · «Diseñar con…» lleva a Diseñar**, con el atributo fijo arriba. Sólo pregunta lo que falta.
 
-![Paso 7: el botón Diseñar con](entregas/entrega_4/recorrido/paso_07_boton_disenar_con.png)
+![Paso 7: Diseñar con el atributo fijo](entregas/entrega_4/recorrido/paso_07_disenar_con_el_atributo_fijo.png)
 
-**8 · Diseñar, con el atributo fijo arriba.** Sólo pregunta lo que falta.
+**8 · Explorar ciclos**: lo mismo para todos, sin proyecto y sin señal. Arriba, el buscador y las categorías.
 
-![Paso 8: Diseñar con el atributo fijo](entregas/entrega_4/recorrido/paso_08_disenar_con_el_atributo_fijo.png)
+![Paso 8: Explorar ciclos](entregas/entrega_4/recorrido/paso_08_explorar.png)
 
-<img src="entregas/entrega_4/recorrido/paso_08_disenar_con_el_atributo_fijo_celular.png" alt="Paso 8 en el celular" width="260">
+**9 · El recorrido de cualquier atributo**, con un selector de los 65.
 
-**9 · Preguntale a CICLO** («Preguntar» en el menú). Le preguntás por un atributo, una marca o un diseño tuyo, en un solo hilo. Una imagen, soltada en cualquier parte de la app, se vuelve tu mensaje; la respuesta trae adentro lo que leyó CLIP (chips que se corrigen, con su señal), la curva que importa, los looks de pasarela parecidos y la devolución. Una pregunta por una marca trae su recorrido en Lyst adentro de la respuesta. Sin clave de Groq, lo medido aparece igual y la devolución de una imagen la arman reglas; con clave, la escribe el modelo (prompt v9: arranca por lo que hay, lo que falta al final).
+![Paso 9: el recorrido de satén](entregas/entrega_4/recorrido/paso_09_explorar_recorrido.png)
 
-![Paso 9: Preguntale a CICLO](entregas/entrega_4/recorrido/paso_09_preguntar.png)
+**10 · Preguntale a CICLO** («Preguntar» en el menú). Le preguntás por un atributo, una marca o un diseño tuyo, en un solo hilo. Una imagen, soltada en cualquier parte de la app, se vuelve tu mensaje; la respuesta trae adentro lo que leyó CLIP (chips que se corrigen, con su señal), la curva que importa, los looks de pasarela parecidos y la devolución. Desde el 24/11 la respuesta escrita anda sin pegar una clave (una función de Netlify llama a Groq); si el modelo no está, contestan las reglas, y lo dice.
+
+![Paso 10: Preguntale a CICLO](entregas/entrega_4/recorrido/paso_10_preguntar.png)
+
+**11 · El brief.**
+
+![Paso 11: El brief](entregas/entrega_4/recorrido/paso_11_el_brief.png)
+
+En el celular:
+
+<img src="entregas/entrega_4/recorrido/paso_04_mis_ciclos_celular.png" alt="Mis ciclos en el celular" width="200"> <img src="entregas/entrega_4/recorrido/paso_06_ficha_del_atributo_celular.png" alt="La ficha en el celular" width="200"> <img src="entregas/entrega_4/recorrido/paso_08_explorar_celular.png" alt="Explorar en el celular" width="200">
 
 **Y además.** La pirueta, «El brief»: un encargo de una casa real con un look de su desfile, tres toques de diseño (forma, material, estampa) y un veredicto en lenguaje de moda; al final, el mismo look puntuado para tres casas, porque lo que sube es del lujo y lo que está en su pico es del fast fashion. También «Cómo se arma una señal», arriba de todo en Método, y El ciclo.
 

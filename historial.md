@@ -614,6 +614,14 @@ de una línea que se abren con «+», con dos nuevas: de dónde es cada dato y q
 Cada línea de la app, releída: lo que no explica un dato ni ayuda a decidir, sale. La lista de lo que salió y lo que se
 reescribió está en `entregas/entrega_4/texto_que_sale.md`.
 
+## v1.88 · 24/11/2026 · Vuelta K: el home define, Mis ciclos en dos secciones, Explorar con buscador
+
+El home abre con qué es, para quién y qué te da, y avisa que se baja; los botones quedan al final. Mis ciclos son dos
+secciones a la vista: qué gana y qué pierde terreno, y Mis tendencias. El buscador y las categorías pasan a Explorar, que
+muestra el recorrido de cualquier atributo con un selector; salen los gráficos de jeans por corte y todo lo que estaba
+oculto. La franja de fuentes queda sólo en el home. El brief va a 2024 y su encabezado tiene jerarquía. El recorrido del
+readme se rehízo con el flujo nuevo.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

@@ -3747,3 +3747,15 @@ categoría (Etiqueta) · datos con su rótulo; la ficha, categoría (Etiqueta) �
 encabezado. No hizo falta cambiar otro lugar.
 
 `probar_demo.js` 8 de 8 en los dos anchos. Capturas `K/5_despues_{brief,juego,ver}_*`.
+
+## 2026-11-24 · Vuelta K: el recorrido del readme, rehecho
+
+Pedido: «actualizá capturar_recorrido.js». El script recorría la entrada vieja de tres preguntas, que ya no se muestra.
+Ahora hace, con clicks de verdad y sin nada guardado: el home, «Bajá para ver cómo funciona», «Creá tu proyecto» (Mujer ·
+Para una marca · Fast fashion), Mis ciclos (la gráfica y Mis tendencias), la ficha de Jeans baggy, Diseñar con el atributo
+fijo, Explorar, el recorrido de Satén elegido en el selector, Preguntar y El brief, en la compu y en el celular, más la
+rama «Por mi cuenta» (donde la marca espera, Explorar). Borra antes las capturas viejas de la carpeta, para que no queden
+imágenes de una entrada que ya no existe. El readme muestra el recorrido nuevo.
+
+Al revisar las capturas apareció un problema: en Explorar la barra fija (buscador y dos filas de chips) tapaba el título del
+recorrido al bajar. En Explorar la barra deja de ser fija; en Mis ciclos ya no hay barra.

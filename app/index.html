@@ -2135,7 +2135,8 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app #v-mover .bfencv .bfencc:not(#q):not(#qq){font-size:var(--t-h3,22px)!important;font-weight:600!important;color:var(--tinta)!important;line-height:1.2}
 .app #v-mover .bfencv .bfencp:not(#q):not(#qq){font-size:17px!important;color:var(--tinta-2)!important}
 /* 24/11 vuelta K: Explorar, la barra de arriba (buscador + categorías) y el selector del recorrido */
-.app #v-recorridos .exbarra{margin:28px 0 24px}
+.app #v-recorridos .exbarra:not(#q){margin:28px 0 24px;position:static;backdrop-filter:none} /* con dos filas de chips, fija tapaba el recorrido */
+.app #v-recorridos .exrec{scroll-margin-top:72px}
 .app #v-recorridos .exbarra .ciclofilt:not(#q){flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px;margin:0!important;padding:2px 0 4px;scrollbar-width:none}
 .app #v-recorridos .exbarra .ciclofilt::-webkit-scrollbar{display:none}
 .app #v-recorridos .exbarra .ciclofilt .chip{flex:0 0 auto}

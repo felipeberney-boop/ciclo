@@ -2417,6 +2417,23 @@ html body .app #v-mover .bfnder .bfetq:not(#g1):not(#g2):not(#g3):not(#g4):not(#
 html body .app #v-mover .bfcomp:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){text-align:center!important}
 html body .app #v-mover .bftit:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:auto!important;margin-right:auto!important}
 html body .app #v-mover :is(.bfracha,.bfpor,.bfcomp):not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:auto!important;margin-right:auto!important}
+/* ---- vuelta M, punto 7: lo que trababa a las dos usuarias ---- */
+html body .app #v-radar .mcdat:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(0,1fr) auto!important}
+html body .app #v-radar .mcdat dd:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:nowrap}
+html body .app #v-radar .mcdat dt:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:normal!important;min-width:0;overflow-wrap:anywhere}
+html body .app :is(#v-radar,#v-recorridos) .mcver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:inline-block;margin-top:10px;font-size:16px;color:var(--accion);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+html body .app :is(#v-radar .mcf,#v-recorridos .ciclo):hover .mcver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){text-decoration-thickness:2px}
+html body .app #v-recorridos .ciclo .mcver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){align-self:flex-start}
+html body .app .dzpasos .dzde:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta);margin-right:14px}
+html body .app .dzpasos .dzp.hecho:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--accion)!important;text-decoration:underline;text-underline-offset:3px}
+html body .app .dzpasos .dzp.on:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){background:var(--tinta)!important;color:#fff!important;border-radius:999px!important;border-color:var(--tinta)!important}
+html body .app .dzpasos .dzp.on .dzpn:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:rgba(255,255,255,.7)!important}
+html body .app .dzpasos .dzp[disabled]:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--tinta-3,#86868b)!important;opacity:1}
+html body .app #v-recorridos .rtsel select:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-right:1.25em!important}
+html body .app #v-recorridos .rtflecha:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:absolute;right:.1em;bottom:.32em;width:.42em;height:auto;color:var(--accion);font-size:inherit;pointer-events:none}
+html body .app #v-radar .perfilrad.pysin:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:flex!important;flex-wrap:wrap;align-items:center;gap:14px 24px;border:1px solid var(--linea);border-radius:18px!important;padding:20px 24px!important;max-width:calc(8*var(--g-col) + 7*var(--g-med));font-size:17px}
+html body .app #v-radar .perfilrad.pysin .pysinb:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex:1 1 320px;color:var(--tinta-2)}
+html body .app #v-radar .perfilrad.pysin .pysinb b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--tinta);font-weight:600}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -2667,7 +2684,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <div class="ciclos" id="ciclos"></div>
       <section class="exrec" aria-labelledby="rtitulo">
         <div class="exrecab">
-          <h2 id="rtitulo"><span>El recorrido de</span> <span class="rtsel"><select id="rsel" aria-label="Elegí el atributo: cualquiera de los 65"></select><span class="rtflecha" aria-hidden="true">▾</span></span></h2>
+          <h2 id="rtitulo"><span>El recorrido de</span> <span class="rtsel"><select id="rsel" aria-label="Elegí el atributo: cualquiera de los 65"></select><svg class="rtflecha" aria-hidden="true" viewBox="0 0 16 10" width="16" height="10"><path d="M1.5 1.5 8 8l6.5-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
         </div>
         <div class="decide" id="rdecide" aria-live="polite"></div>
         <div class="lys">
@@ -3220,7 +3237,8 @@ function mcFicha(o,s){
     <span class="sen ${s.cls}">${s.icono} ${s.palabra}</span>
     <dl class="mcdat">${et&&et.n?`<dt>Etapa</dt><dd${src('k')}>${et.n}</dd>`:''}
       <dt>Búsqueda 2022→2024</dt><dd${d!=null?src('t'):''}>${d!=null?mcPts(d)+' puntos':'sin dato'}</dd>
-      ${rd.length?rd.map(r=>`<dt>Reddit, ${r.q}</dt><dd${src(r.k)}>${mcPts(r.d)} puntos</dd>`).join(''):`<dt>Reddit</dt><dd class="mcno">sin el término en ${publico==='todos'?'los foros':'el foro de '+(publico==='mujer'?'mujeres':'hombres')}</dd>`}</dl></div>`;
+      ${rd.length?rd.map(r=>`<dt>Reddit, ${r.q}</dt><dd${src(r.k)}>${mcPts(r.d)} puntos</dd>`).join(''):`<dt>Reddit</dt><dd class="mcno">sin el término en ${publico==='todos'?'los foros':'el foro de '+(publico==='mujer'?'mujeres':'hombres')}</dd>`}</dl>
+    <span class="mcver" aria-hidden="true">Ver la ficha →</span></div>`;
   b.onclick=()=>mcAbrir(o.id);
   return b;
 }
@@ -3935,7 +3953,7 @@ function dzVisFoto(fo,sil,n){return `<img class="bfph" loading="lazy" src="${vog
 function dzTarjeta({id,n,en,d,vis,s,dato,attr,on,nota,extra,foto}){
   return `<button class="dzc ${s.cls}${on?' on':''}${foto?' dzconfoto':''}" type="button" ${attr}="${id}" aria-pressed="${!!on}"><span class="dzimg${foto?' bfconf':''}">${vis}${nota?`<span class="dzsilnota">${nota}</span>`:''}</span>
     <span class="dzb"><span class="dzn">${n}</span>${en?`<span class="dzen">${en}</span>`:''}${d?`<span class="dzdef">${d}</span>`:''}<span class="dzm">${senBadge(s)}${dzProc(s)}</span>
-    ${s.liso?'':`<span class="dzq"${!s.interpretado&&s.num?src('t',s.proc==='prestado'?'prestado de '+s.de:null):''}>${s.proc==='prestado'?`Sin serie propia. Mostrando: ${s.de}${s.num?', '+s.num:s.etapa?', etapa '+s.etapa.toLowerCase():''}.<br>Por qué: ${s.presta_porque}`:s.estado==='sin-dato'?'Ni serie propia ni de un pariente: se puede explorar, no se recomienda.':dato||s.num}</span>`}${extra||''}</span></button>`;
+    ${s.liso?'':`<span class="dzq"${!s.interpretado&&s.num?src('t',s.proc==='prestado'?'prestado de '+s.de:null):''}>${s.proc==='prestado'?`<span title="Por qué: ${escH(s.presta_porque||'')}">De ${s.de}${s.num?', '+s.num:s.etapa?', etapa '+s.etapa.toLowerCase():''}</span>`:s.estado==='sin-dato'?'Sin dato: se puede explorar.':dato||s.num}</span>`}${extra||''}</span></button>`;
 }
 const dzDatoTxt=s=>s.cuota!=null?`${Math.round(s.cuota)} % ${s.interpretado?'de la pasarela':'de las búsquedas de jeans'} · ${s.num}`:s.num?`${s.num} afuera`:'';
 /* calzado: la frecuencia en pasarela leída por CLIP, punteada porque es interpretación; nunca da señal */
@@ -4017,7 +4035,7 @@ function dzBarra(){
 function pintarDisenar(){setTimeout(dzAcum,0);
   const C=$('#dzcuerpo'),pr=dzPrenda(),t=dzTipo(),cl=dzClip(),P=dzPasos(),hex=(dzColores().L.find(x=>x.id===dz.color)||{}).hex;
   if(!pr&&dz.paso!=='prenda')dz.paso='prenda';else if(pr&&!t&&!['prenda','tipo'].includes(dz.paso))dz.paso='tipo';
-  $('#dzpasos').innerHTML=P.map((p,i)=>`<button type="button" class="dzp${dz.paso===p?' on':''}" data-p="${p}" ${(p!=='prenda'&&!pr)||(p!=='prenda'&&p!=='tipo'&&!t)?'disabled':''}><span class="dzpn">${String(i+1).padStart(2,'0')}</span><span class="dzpt">${DZ_NOMBRE[p]}</span></button>`).join('<span class="dzsep" aria-hidden="true">›</span>');
+  const iA=P.indexOf(dz.paso);$('#dzpasos').innerHTML=`<span class="dzde">Paso ${iA+1} de ${P.length}</span>`+P.map((p,i)=>`<button type="button" class="dzp${dz.paso===p?' on':i<iA?' hecho':''}" data-p="${p}" ${(p!=='prenda'&&!pr)||(p!=='prenda'&&p!=='tipo'&&!t)?'disabled':''}><span class="dzpn">${String(i+1).padStart(2,'0')}</span><span class="dzpt">${DZ_NOMBRE[p]}</span></button>`).join('<span class="dzsep" aria-hidden="true">›</span>');
   $$('#dzpasos .dzp').forEach(b=>b.onclick=()=>dzIr(b.dataset.p));dzPintarFijo();
   const pa=$('#dzpasos .dzp.on'),pz=$('#dzpasos');if(pa&&pz.scrollWidth>pz.clientWidth)pz.scrollLeft=pa.offsetLeft-pz.clientWidth/2+pa.offsetWidth/2;
   const saltear=p=>`<div class="dzacc"><button type="button" class="gvolver" id="dzsaltar">Seguir sin elegir ${DZ_NOMBRE[p].toLowerCase()} →</button></div>`;
@@ -4561,7 +4579,7 @@ function pintarCiclos(){
   const corto=!cicloTodos&&!q;
   $('#ciclos').innerHTML=(L.length?'':'<p class="mcvacio">Nada con ese filtro. Probá otra palabra o «Todos».</p>')+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">${FOTO_ATR[c.o.id]?`<span class="cfoto"><img loading="lazy"${fotoPos(c.o.id)} src="${vogueFoto(FOTO_ATR[c.o.id].f,640)}" alt="${c.o.n.split(' /')[0]} en la pasarela"><span class="pcred">${fotoCred(FOTO_ATR[c.o.id])}</span></span>`:`<span class="cfoto sinfoto"><span>Sin foto: en la pasarela no se distingue</span></span>`}
     <span class="cn serif">${c.o.n.split(' /')[0]}</span><span class="cf">${c.f}</span>
-    <span class="cm"><span><b${src('g','el último máximo que se despega 15 puntos, 2010–2024 · 180 meses')}>${c.ultimo}${c.ultimo===2010?'*':''}</b>último pico</span><span><b${src('g','de su último pico a 2024')}>${c.anios===0?'ahora':c.anios+' año'+(c.anios>1?'s':'')}</b>desde el pico</span><span><b${c.ciclo?src('g','los años entre sus dos últimos picos'):''}>${c.ciclo?c.ciclo+' años':'—'}</b>entre picos</span><span>${senBadge(c.sg)}</span></span></button>`).join('')+
+    <span class="cm"><span><b${src('g','el último máximo que se despega 15 puntos, 2010–2024 · 180 meses')}>${c.ultimo}${c.ultimo===2010?'*':''}</b>último pico</span><span><b${src('g','de su último pico a 2024')}>${c.anios===0?'ahora':c.anios+' año'+(c.anios>1?'s':'')}</b>desde el pico</span><span><b${c.ciclo?src('g','los años entre sus dos últimos picos'):''}>${c.ciclo?c.ciclo+' años':'—'}</b>entre picos</span><span>${senBadge(c.sg)}</span></span><span class="mcver" aria-hidden="true">Ver su recorrido ↓</span></button>`).join('')+
     (L.length>CICLO_CORTO&&!q?`<button type="button" class="kbtn ghost ciclomas" aria-expanded="${cicloTodos}">${cicloTodos?'Mostrar menos':`Ver los ${L.length} atributos`}</button>`:'')+
     `<details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Búsqueda mundial frente a las otras búsquedas de moda, 2010–2024 (2025 y 2026 tienen el salto de medición de Google), ● medido. Un pico es un máximo que se despega al menos 15 puntos de lo que lo rodea. Sube o baja: 2022→2024. *2010 es donde empieza la serie corregida: el pico pudo ser antes.</p></div></details>`;
   $$('#exchips [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;cicloTodos=false;pintarCiclos();});
@@ -5663,7 +5681,7 @@ function gateElegir(){
 /* Mis ciclos dice con qué proyecto se está leyendo (24/11: el nombre del proyecto y «Editar», en vez de «Tu perfil») */
 function pintarPerfilRadar(){
   const e=$('#perfilrad');if(!e)return;const p=pyActivo();
-  if(mirando){e.innerHTML=`<span>Estás mirando sin proyecto: las señales son para una marca contemporary de ejemplo.</span><button type="button" id="perfilradc">Crear tu proyecto</button>`;$('#perfilradc').onclick=()=>abrirGate('radar');return;}
+  if(mirando){e.innerHTML=`<span class="pysinb"><b>Todavía no tenés proyecto.</b> Lo que ves es un ejemplo: las señales son para una marca contemporary. Con tu proyecto, cada tarjeta te dice si entrar, esperar o salir.</span><button type="button" id="perfilradc" class="btn-pri">Crear tu proyecto</button>`;e.classList.add('pysin');$('#perfilradc').onclick=()=>abrirGate('radar');return;}
   if(p&&(p.publico!==publico||p.vinculo!==vinculo||p.cliente!==cliente)){e.innerHTML=`<span>Perfil de un link: <b>${pyResumen({publico,vinculo,cliente})}</b>, no el de tu proyecto.</span><button type="button" id="perfilradc">Volver a «${pyEsc(p.nombre)}»</button>`;$('#perfilradc').onclick=()=>{pyAplicar(p);pintarPerfilRadar();pintarRadar();escribirLink();};return;}
   if(p){e.innerHTML=`<span><span class="eti">Proyecto</span><b>${pyEsc(p.nombre)}</b> · ${pyResumen(p)}</span><button type="button" id="perfilradc">Editar</button>`;
     $('#perfilradc').onclick=()=>{cuentaEdita=p.id;cuentaFoco='proyectos';mostrar('cuenta');};return;}

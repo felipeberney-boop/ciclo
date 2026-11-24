@@ -628,6 +628,14 @@ El home dice «Cuándo entrar en una tendencia, y cuándo salir.». Mis ciclos a
 (Google mundial, igual para todos los proyectos), y las fotos llegan sin bajar. 15 atributos más tienen foto de pasarela
 (63 de 65). Explorar termina en el recorrido. Acerca de y el botón de El brief, ajustados; el racional, al día.
 
+## v1.90 · 24/11/2026 · Vuelta M: qué diseñar y cuándo, una grilla y fotos en Diseñar
+
+El home dice «Qué corte, qué estampa, qué color. Y cuándo.» y va directo a cómo funciona. Mis ciclos muestra sólo el
+proyecto, los dos gráficos chicos lado a lado y un gancho a El brief con el próximo encargo. Explorar se llama «Explorar
+las tendencias del mundo» y el título del recorrido es el selector. Una grilla de 12/8/4 columnas alinea las nueve
+pantallas (`?grilla` la muestra). El veredicto de El brief, centrado; tres ideas de archivo, en mockups. 53 opciones de
+Diseñar con foto. Los cinco tropiezos más grandes de dos recorridos de usuaria, arreglados.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

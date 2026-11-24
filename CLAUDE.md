@@ -139,6 +139,21 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   with word and icon, nothing else. *foto*: Vogue Runway full-bleed, credit in white. *ilustración*: technical drawings
   in black line on white, never in a signal color. Never force `display` on buttons in this layer (it unhid the gate's
   «Volver»).
+- **Vuelta M (24/11, last).** Home H1 «Qué corte, qué estampa, qué color. Y cuándo.»; «Una etapa para cada atributo» is gone
+  (hero → Tres pasos → Dos fuentes → Una señal → Creá tu proyecto; the green Miu Miu photo first, Burberry out). Mis ciclos:
+  no mission line, the two charts side by side from 700 px with the count in their titles, the source in two 13 px lines
+  (`.mcfuente`), no group sentences, cards end in «Ver la ficha →», and a black block under the cards with the next real
+  brief (`pintarGancho()`, defined next to El brief and exposed as `window.pintarGancho` because El brief lives in another
+  block of the script). Without a project Mis ciclos shows a bordered notice with «Crear tu proyecto». Explorar: H1
+  «Explorar las tendencias del mundo», five rows of cards (columns × 5), the recorrido title is the select («El recorrido
+  de [Jeans baggy ⌄]», `rtAncho()` sizes it), the chart at most 8 columns, cards end in «Ver su recorrido ↓», a card
+  without photo shows a gray box that says so. El brief: the verdict is centered on the grid axis (`.bfnota` is
+  `1fr auto 1fr`). Diseñar: «Paso n de 9», done steps blue and underlined, the current one a filled ink pill; borrowed
+  data is one line («De pantalón largo, +9,4», the reason in `title`). `FOTO_ATR` also holds 53 Diseñar options
+  (materials, prints and garment types; types keyed `prenda/tipo`), shown big with the drawn texture in the corner; 8 have
+  no good candidate (neoprene, espiga, pitón, vaca, paisley, botinetas, chatitas, guillerminas). Three archive ideas for El
+  brief (not built) in `diseno/rediseno_2026-11-24/M/5_brief/ideas_brief.html`: archive is 2012–2021 only (photos
+  2010–2023, corrected search 2010–2024, nothing from the 80s or 90s).
 - **La grilla (24/11, vuelta M; Cristian marcó cosas «tiradas a la izquierda y sueltas a la derecha»).** One grid for every
   screen, tokens in `:root` at the end of the CSS (layer «la grilla», the last one): `--g-mar` margin, `--g-n` columns,
   `--g-med` gutter, `--g-col` one column. **Desktop ≥1000:** 12 columns, gutter 24, margin `max(clamp(16px,5.5vw,80px),

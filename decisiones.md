@@ -4032,3 +4032,47 @@ tela no tenían licencia.
 Los cortes de jean, los tiros y los fits siguen con silueta a propósito: CLIP no distingue cortes de jean (está en
 `datasets/diccionario.md`). Los colores siguen con la muestra de color, que es el dato. Capturas
 `M/6_fotos/despues_disenar_*`. `probar_demo.js` 8 de 8 en los dos anchos.
+
+## 2026-11-24 · Vuelta M, punto 7: la app recorrida como dos usuarias
+
+Pedido: «recorré toda la app como dos personas, una diseñadora de una marca fast fashion y alguien que solo ama la moda.
+Anotá dónde te trabás, qué no se entiende, qué sobra y qué falta, con las reglas de Cristian (recorrido claro, jerarquía,
+grilla, menos texto, links que parezcan links). Dame la lista ordenada por impacto y arreglá las 5 primeras».
+
+**Los dos recorridos.**
+- La diseñadora: home → Tres pasos → Creá tu proyecto (Mujer · Para una marca · Fast fashion) → Mis ciclos → la ficha de
+  Jeans baggy → Diseñar con baggy → El brief.
+- La que sólo ama la moda: «Sólo estoy mirando» → Explorar → una tarjeta → el recorrido → Preguntar → El brief → Acerca
+  de → Mis ciclos sin proyecto.
+
+Cada paso, en la compu y en el celular, en `M/7_recorrido/` (antes) y `M/7_recorrido/despues/`.
+
+**La lista, por impacto:**
+1. *Links que no parecen links.* Las tarjetas de Mis ciclos y de Explorar son el camino principal (a la ficha, al
+   recorrido), pero nada dice que se tocan. Además, en la compu los datos de la primera tarjeta se partían («En /
+   ascenso», «+50 / puntos»). **Arreglado:** «Ver la ficha →» y «Ver su recorrido ↓» en azul subrayado, y los valores en
+   una sola línea.
+2. *En Diseñar no se sabe en qué paso estás.* La barra 01…09 era gris sobre gris, el paso actual tenía apenas un borde y
+   en el celular quedaba cortada. **Arreglado:**
+   - «Paso 4 de 9» al principio;
+   - los pasos hechos en azul subrayado, porque se puede volver;
+   - el actual en una píldora negra llena;
+   - los que faltan, en gris.
+3. *Demasiado texto en las tarjetas de Diseñar.* Cada opción prestada traía «Sin serie propia. Mostrando: … Por qué: …»
+   (cuatro a seis líneas en 12 px). **Arreglado:** una línea, «De pantalón largo, +9,4», con el porqué al pasar el mouse;
+   y «Sin dato: se puede explorar.» en vez de una frase de dos líneas.
+4. *El selector del recorrido.* La flecha «▾» a 0,6 em se leía como un punto («Cargo .»). **Arreglado:** un chevron
+   dibujado, del color del link.
+5. *Mis ciclos sin proyecto.* Quien entra por «Sólo estoy mirando» y toca «Mis ciclos» ve tarjetas de una marca de
+   ejemplo bajo el título «Mis», con una línea chica. **Arreglado:** un aviso con borde, «Todavía no tenés proyecto. Lo
+   que ves es un ejemplo…», y el botón «Crear tu proyecto» lleno.
+6. El recorrido en el celular es muy largo: cuatro gráficos chicos apilados, la leyenda dos veces y el pie. *Pendiente.*
+7. La jerga del home: «Un K-means junta…» no le dice nada a quien sólo ama la moda. *Pendiente* (por ejemplo, «Un
+   algoritmo agrupa…»).
+8. El pie dice «Copiar link de este diseño» en todas las pantallas, aunque no haya diseño. *Pendiente.*
+9. En la ficha, «Diseñar con este corte» va antes de la señal: la acción aparece antes del dato que la justifica.
+   *Pendiente.*
+10. Después de «Sólo estoy mirando», Explorar no recuerda que estás sin proyecto (sólo lo dice el botón de arriba).
+    *Pendiente.*
+
+`probar_demo.js` 8 de 8 en los dos anchos.

@@ -139,6 +139,20 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   with word and icon, nothing else. *foto*: Vogue Runway full-bleed, credit in white. *ilustración*: technical drawings
   in black line on white, never in a signal color. Never force `display` on buttons in this layer (it unhid the gate's
   «Volver»).
+- **La grilla (24/11, vuelta M; Cristian marcó cosas «tiradas a la izquierda y sueltas a la derecha»).** One grid for every
+  screen, tokens in `:root` at the end of the CSS (layer «la grilla», the last one): `--g-mar` margin, `--g-n` columns,
+  `--g-med` gutter, `--g-col` one column. **Desktop ≥1000:** 12 columns, gutter 24, margin `max(clamp(16px,5.5vw,80px),
+  (100vw−1280)/2)` (77 at 1400; content never wider than 1280). **Tablet 600–999:** 8 columns, gutter 20, margin 32.
+  **Phone <600:** 4 columns, gutter 16, margin 16. The bar, every view and the footer use `--g-mar`. Everything starts on a
+  column line; widths are whole columns: Mis ciclos cards 3 columns (4 per row; 2 per row on phones), its two charts 6
+  each; Explorar cards 4 (3 per row; 2 on tablet, 1 on phones), no box or inner padding (the chosen one gets an outline
+  outside), the recorrido chart at most 8; Diseñar options 2 (6 per row; 4 tablet, 2 phone); Preguntar and El brief are a
+  narrow block on columns 3–10 (Preguntar's photo 3 columns); El brief options 2 columns each, centered; Acerca de puts
+  the number in column 1, text from column 2, «+» at the end of 12 (phones hide the number); the ficha: signal on 1–6,
+  data on 7–12; Mi cuenta on 1–8 with the avatar in column 1; the home photo runs to the end of column 6 and the text sits
+  on 8–12; the home footer is 4+2+2+2+2. Boxes (cards with a background or border) sit on the lines; their inner padding
+  is allowed. Centered text (El brief header) is centered on the grid axis. `?grilla` in the URL or Shift+G shows the
+  columns on top (`body.ver-grilla`). Weight: card numbers in Explorar are 400; only names and titles go 500–600.
 - **Startup:** every `.view` starts `hidden`; only the boot code (wrapped in try/catch, plus a fallback
   `<script>`) decides what shows. A saved profile goes to Diseñar with the `#perfilinea` line, never silently.
 - **No number without its source.** Each card states which data layer can and cannot answer. Since 17/11 every measured number also carries `data-src="key|observations"` (keys in `FUENTES`, helper `src(k,n)`): hovering, or tapping on a phone, shows source, period and observations in `#tip`. Add it to any new measured number.

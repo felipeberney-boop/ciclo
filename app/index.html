@@ -2321,6 +2321,98 @@ body:not(.on-inicio) .app .colofon>div:first-child b{display:inline;margin:0}
 .app #v-racional .aptabla td{padding:12px 12px 12px 0;border-bottom:1px solid var(--linea);vertical-align:top}
 .app #v-racional .aptabla .tag{margin-left:4px}
 @media (max-width:600px){.app #v-racional .aptabla :is(th,td):nth-child(n+4){display:none}.app #v-racional .aptabla{font-size:14px}}
+
+/* ===== 24/11 vuelta M · LA GRILLA (ver CLAUDE.md, «La grilla»). Tokens: --g-mar (margen), --g-n (columnas),
+   --g-med (medianil), --g-col (ancho de una columna). Compu ≥1000: 12 columnas, medianil 24, margen 5,5vw (77 a 1400),
+   ancho de contenido máximo 1280. Tableta 600–999: 8 columnas, medianil 20, margen 32. Celular <600: 4 columnas,
+   medianil 16, margen 16. Todo arranca en la línea de la columna 1; un bloque angosto (Preguntar, El brief) ocupa las
+   columnas 3–10. ?grilla o Shift+G la muestran encima. */
+:root{--g-mar:max(clamp(16px,5.5vw,80px),calc((100vw - 1280px)/2));--g-n:12;--g-med:24px;--g-col:calc((100vw - 2*var(--g-mar) - 11*var(--g-med))/12)}
+@media (max-width:999px){:root{--g-mar:32px;--g-n:8;--g-med:20px;--g-col:calc((100vw - 2*var(--g-mar) - 7*var(--g-med))/8)}}
+@media (max-width:599px){:root{--g-mar:16px;--g-n:4;--g-med:16px;--g-col:calc((100vw - 2*var(--g-mar) - 3*var(--g-med))/4)}}
+body.ver-grilla::after{content:'';position:fixed;top:0;bottom:0;left:var(--g-mar);right:var(--g-mar);pointer-events:none;z-index:99999;
+  background:repeating-linear-gradient(90deg,rgba(255,0,90,.10) 0 var(--g-col),transparent var(--g-col) calc(var(--g-col) + var(--g-med)));
+  box-shadow:-1px 0 0 rgba(255,0,90,.5),1px 0 0 rgba(255,0,90,.5)}
+/* ---- la grilla, aplicada (24/11 vuelta M). Una regla por pantalla; todo arranca en la línea de la columna 1 ---- */
+/* márgenes: la barra, cada pantalla y el pie, con el mismo margen */
+html body header.mast:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7),html body footer.colofon:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7),html body .app .view:not(#v-inicio):not(#v-perfil):not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:var(--g-mar)!important;padding-right:var(--g-mar)!important}
+html body .app #v-inicio .hcred:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:var(--g-mar)!important;padding-right:var(--g-mar)!important}
+/* el home: la foto hasta el final de la columna 6; el texto, de la 8 a la 12 */
+@media (min-width:1000px){
+  html body .app #v-inicio .hsplit:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:calc(var(--g-mar) + 6*var(--g-col) + 5*var(--g-med)) minmax(0,1fr)!important}
+  html body .app #v-inicio .hidea:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:calc(var(--g-col) + 2*var(--g-med))!important;padding-right:var(--g-mar)!important}
+  html body footer.colofon:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(12,minmax(0,1fr))!important;column-gap:var(--g-med)!important}
+  html body footer.colofon>*:first-child:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-column:span 4}
+  html body footer.colofon>*:not(:first-child):not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-column:span 2}
+}
+@media (max-width:999px){html body .app #v-inicio .hidea:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:var(--g-mar)!important;padding-right:var(--g-mar)!important}}
+/* Mis ciclos: el proyecto sin sangría; las tarjetas de a 3 columnas (4 por fila), los dos gráficos de a 6 */
+html body .app #v-radar .perfilrad:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:0!important;padding-right:0!important;margin-left:0!important}
+html body .app #v-radar .mcgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(4,minmax(0,1fr))!important;column-gap:var(--g-med)!important}
+@media (max-width:599px){html body .app #v-radar .mcgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+html body .app #v-radar .mcf:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:0!important;padding-right:0!important}
+html body .app #v-radar .mcdos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){column-gap:var(--g-med)!important}
+/* Explorar: tarjetas de a 4 columnas (3 por fila), sin sangría; la elegida, con un contorno afuera */
+html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:40px var(--g-med)!important}
+@media (max-width:999px){html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:599px){html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(0,1fr)!important}}
+html body .app #v-recorridos .ciclo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding:0!important;border:0!important;background:none!important;box-shadow:none!important}
+html body .app #v-recorridos .ciclo.on:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){outline:2px solid var(--accion);outline-offset:8px}
+html body .app #v-recorridos .ciclo .cm b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-weight:400!important}
+html body .app #v-recorridos #rchart:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
+/* Diseñar: las opciones de a 2 columnas (6 por fila); 4 en la tableta, 2 en el celular */
+html body .app #v-disenar .dzgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:28px var(--g-med)!important}
+@media (max-width:999px){html body .app #v-disenar .dzgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media (max-width:599px){html body .app #v-disenar .dzgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* Preguntar y El brief: un bloque angosto, columnas 3 a 10 */
+@media (min-width:1000px){
+  html body .app #v-lectura .lt:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important;width:calc(8*var(--g-col) + 7*var(--g-med))!important;margin-left:calc(2*(var(--g-col) + var(--g-med)))!important;margin-right:0!important;padding-left:0!important;padding-right:0!important}
+  html body .app #v-lectura .pvcol:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:calc(3*var(--g-col) + 2*var(--g-med)) minmax(0,1fr)!important;column-gap:var(--g-med)!important}
+  html body .app #v-mover #mv:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important;width:calc(8*var(--g-col) + 7*var(--g-med))!important;margin-left:calc(2*(var(--g-col) + var(--g-med)))!important;margin-right:0!important}
+}
+@media (max-width:999px){html body .app #v-lectura .lt:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:0!important;padding-right:0!important;max-width:none!important}}
+html body .app #v-mover .bfgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:repeat(auto-fit,calc(2*var(--g-col) + var(--g-med)))!important;gap:28px var(--g-med)!important;justify-content:center!important;width:auto!important}
+@media (max-width:599px){html body .app #v-mover .bfgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* Acerca de: el número en la columna 1, el texto desde la 2, el «+» al final de la 12 */
+@media (min-width:600px){
+  html body .app #v-racional .methead:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) 40px!important;column-gap:var(--g-med)!important;align-items:baseline!important}
+  html body .app #v-racional .metprev:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7),html body .app #v-racional .metfull:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:calc(var(--g-col) + var(--g-med))!important;padding-left:0!important}
+}
+/* la ficha: la señal en las columnas 1–6, los datos en las 7–12 (dos de a 3) */
+@media (min-width:821px){
+  html body .app .fpdec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:var(--g-med)!important}
+  html body .app .fpdat:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){column-gap:var(--g-med)!important}
+  html body .app .fpsen:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-right:calc(var(--g-col) + var(--g-med))}
+}
+/* Mi cuenta: todo en las columnas 1–8; el avatar en la 1, el nombre desde la 2 */
+html body .app #v-radar .mccu:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:0!important;padding-right:0!important}
+/* el recorrido de Explorar sin caja: la leyenda, el gráfico y «Cómo se lee» arrancan en la columna 1 */
+html body .app #v-recorridos .lys:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:block!important;background:none!important;border:0!important}
+html body .app #v-recorridos .lys>div:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding:0!important;background:none!important;border:0!important}
+/* «Cómo se lee», tres de a 4 columnas */
+html body .app .cslee .csgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){column-gap:var(--g-med)!important}
+/* el gancho a El brief: la foto en las columnas 1–5; el texto desde la 7 */
+@media (min-width:700px){html body .app #v-radar .bfgancho:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:calc(5*var(--g-col) + 4*var(--g-med)) minmax(0,1fr)!important}
+  html body .app #v-radar .bfgtxt:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:calc(var(--g-col) + 2*var(--g-med))!important}}
+@media (min-width:1000px){
+  html body .app #v-inicio .hlista li:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:var(--g-col) minmax(0,1fr)!important;column-gap:var(--g-med)!important}
+  html body .app #v-inicio .hsen div:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:calc(2*var(--g-col) + var(--g-med)) minmax(0,1fr);column-gap:var(--g-med)!important}
+  html body .app #v-inicio .hdos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:calc(3*var(--g-col) + 2*var(--g-med)) minmax(0,1fr)!important;column-gap:var(--g-med)!important}
+  html body .app #v-recorridos .decide:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:calc(8*var(--g-col) + 7*var(--g-med)) minmax(0,1fr)!important;column-gap:var(--g-med)!important;background:none!important;border:0!important}
+}
+html body .app #v-recorridos .ciclo .cm:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex-wrap:wrap!important}
+html body .app #v-recorridos .ciclo .cm>span:last-child:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex-basis:100%!important;margin-top:6px}
+html body .app #v-recorridos .cfoto.sinfoto:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:flex;align-items:flex-end;aspect-ratio:3/2;background:var(--paper,#f5f5f7);border-radius:var(--r-card,18px);padding:14px;box-sizing:border-box;font-size:13px;color:var(--tinta-2)}
+html body .app #v-recorridos .fpdat.expl>div:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:0!important;background:none!important}
+html body .app #v-recorridos .decide>*:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:0!important;background:none!important}
+@media (max-width:599px){html body .app #v-racional .methead:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:minmax(0,1fr) 40px!important;column-gap:var(--g-med)!important}
+  html body .app #v-racional .metn:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}}
+@media (max-width:860px){html body .app #v-inicio .hmfoto:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-left:calc(-1*var(--g-mar))!important;margin-right:calc(-1*var(--g-mar))!important;width:calc(100% + 2*var(--g-mar))!important}}
+html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
+html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
+html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
+
+
 </style>
 
 <div class="app">
@@ -4458,7 +4550,7 @@ function pintarCiclos(){
   const eq=$('#exq');if(eq&&!eq.dataset.ok){eq.dataset.ok=1;let t=null;eq.oninput=e=>{clearTimeout(t);t=setTimeout(()=>{exQ=e.target.value;cicloTodos=false;pintarCiclos();},120);};}
   if($('#excuenta'))$('#excuenta').textContent=`${L.length} de 65`;
   const corto=!cicloTodos&&!q;
-  $('#ciclos').innerHTML=(L.length?'':'<p class="mcvacio">Nada con ese filtro. Probá otra palabra o «Todos».</p>')+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">${FOTO_ATR[c.o.id]?`<span class="cfoto"><img loading="lazy"${fotoPos(c.o.id)} src="${vogueFoto(FOTO_ATR[c.o.id].f,640)}" alt="${c.o.n.split(' /')[0]} en la pasarela"><span class="pcred">${fotoCred(FOTO_ATR[c.o.id])}</span></span>`:''}
+  $('#ciclos').innerHTML=(L.length?'':'<p class="mcvacio">Nada con ese filtro. Probá otra palabra o «Todos».</p>')+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">${FOTO_ATR[c.o.id]?`<span class="cfoto"><img loading="lazy"${fotoPos(c.o.id)} src="${vogueFoto(FOTO_ATR[c.o.id].f,640)}" alt="${c.o.n.split(' /')[0]} en la pasarela"><span class="pcred">${fotoCred(FOTO_ATR[c.o.id])}</span></span>`:`<span class="cfoto sinfoto"><span>Sin foto: en la pasarela no se distingue</span></span>`}
     <span class="cn serif">${c.o.n.split(' /')[0]}</span><span class="cf">${c.f}</span>
     <span class="cm"><span><b${src('g','el último máximo que se despega 15 puntos, 2010–2024 · 180 meses')}>${c.ultimo}${c.ultimo===2010?'*':''}</b>último pico</span><span><b${src('g','de su último pico a 2024')}>${c.anios===0?'ahora':c.anios+' año'+(c.anios>1?'s':'')}</b>desde el pico</span><span><b${c.ciclo?src('g','los años entre sus dos últimos picos'):''}>${c.ciclo?c.ciclo+' años':'—'}</b>entre picos</span><span>${senBadge(c.sg)}</span></span></button>`).join('')+
     (L.length>CICLO_CORTO&&!q?`<button type="button" class="kbtn ghost ciclomas" aria-expanded="${cicloTodos}">${cicloTodos?'Mostrar menos':`Ver los ${L.length} atributos`}</button>`:'')+
@@ -5690,6 +5782,9 @@ function pintarCuentaVista(){
 /* el home (24/11, segunda vuelta): la foto de la izquierda cambia con la idea que está en el centro; cada idea aparece
    con el scroll, una por una; al final, el formulario */
 let inicioListo=false;
+/* la grilla a la vista: ?grilla en la URL o Shift+G (fuera de un campo de texto) */
+if(/[?&]grilla/.test(location.search))document.body.classList.add('ver-grilla');
+document.addEventListener('keydown',e=>{if(e.shiftKey&&e.key==='G'&&!/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))document.body.classList.toggle('ver-grilla');});
 function pintarInicio(){
   if(!$('#inform .pyform'))pintarForm($('#inform'),null);
   if(inicioListo)return;inicioListo=true;

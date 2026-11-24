@@ -3915,3 +3915,40 @@ baggy ▾]"».
 - El gráfico, hasta 820 px de ancho (antes, todo el ancho).
 - Las tarjetas siguen eligiendo el recorrido, y «Diseñar con…» sigue debajo del título. `probar_demo.js` 8 de 8 en los dos
   anchos. Capturas `M/3_explorar/antes_*` y `despues_*`.
+
+## 2026-11-24 · Vuelta M, punto 4: una grilla para todas las pantallas
+
+Pedido: «GRILLA (MUY IMPORTANTE, lo marcó Cristian). Hay muchas cosas tiradas a la izquierda y otras sueltas a la derecha.
+Definí UNA grilla (columnas, márgenes, medianiles) para escritorio y celular, documentala en CLAUDE.md y alineá TODAS las
+pantallas… Revisá también jerarquía y negritas… Mostrame cada pantalla con la grilla superpuesta antes y después».
+
+**La grilla.** Compu: 12 columnas, medianil 24, margen 5,5 % del ancho (77 px a 1400) y contenido de 1280 como máximo.
+Tableta: 8 columnas, medianil 20, margen 32. Celular: 4 columnas, medianil 16, margen 16. Se eligió 12 porque divide en 2,
+3, 4 y 6, que son las cantidades que usa la app (dos gráficos, tres tarjetas en Explorar, cuatro en Mis ciclos, seis
+opciones en Diseñar). Los márgenes que ya había (77 y 16) se conservan: lo que cambia es que todo cae en una línea.
+Tokens en `:root` y documentación en `CLAUDE.md` («La grilla»). `?grilla` o Shift+G la superponen.
+
+**Qué se movió, pantalla por pantalla** (medido con un script que lista lo que no arranca en una línea de columna):
+- Home: la foto termina en la columna 6 y el texto va de la 8 a la 12 (antes, mitad y mitad con 70 px de relleno); los tres
+  pasos, los dos números y las tres señales usan columnas; el pie, 4+2+2+2+2.
+- Mis ciclos: «PROYECTO» estaba 18 px adentro; el texto de las tarjetas, 2 px; tarjetas de a 3 columnas; el gancho a El
+  brief, foto en 1–5 y texto desde la 7.
+- Explorar: las tarjetas tenían caja y 18 px de relleno (la foto quedaba en 95); ahora sin caja, de a 4 columnas, y la
+  elegida con un contorno por fuera. El recorrido perdió su caja: la leyenda, el gráfico y «Cómo se lee» arrancan en la
+  columna 1; el gráfico, hasta 8 columnas; los datos en 1–8 y la nota en 9–12. La tarjeta sin foto (espiga) ocupa su
+  lugar con un recuadro gris que lo dice, en vez de dejar un hueco.
+- Diseñar: de cinco opciones por fila (210 px sueltos) a seis de 2 columnas.
+- Preguntar: un bloque de 760 px centrado a ojo pasa a las columnas 3–10, con la foto en 3 columnas.
+- El brief: el bloque, columnas 3–10; cada opción, 2 columnas, centradas en el eje.
+- Acerca de: el número en la columna 1, el texto desde la 2 (antes, 33 px), el «+» al final de la 12.
+- Ficha: la señal en 1–6 y los datos en 7–12 (antes, 1 : 1,2).
+- Mi cuenta: todo en 1–8 (antes, 960 px), el avatar en la columna 1 y el nombre desde la 2.
+
+**Jerarquía y negritas.** Los tres números de cada tarjeta de Explorar estaban en 600 (45 negritas por pantalla): pasan a
+400; quedan en 500–600 sólo los nombres y los títulos. El resto ya seguía la escala del sistema (H1 56 · H2 32 · H3 22 · H4
+18 · Párrafo 17 · Etiqueta 12).
+
+**Qué queda fuera de la línea, a propósito:** el relleno de adentro de una caja (la tarjeta del proyecto, las burbujas de
+Preguntar), el texto centrado (El brief, centrado en el eje de la grilla) y los botones alineados a la derecha (terminan en
+una línea). Capturas con la grilla encima, antes y después, en `M/4_grilla/` (`grilla_antes_*`, `grilla_despues_*` y una
+por pantalla). `probar_demo.js` 8 de 8 en los dos anchos.

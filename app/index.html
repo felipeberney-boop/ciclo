@@ -2024,21 +2024,21 @@ img:not(.fcarga){transition:opacity .35s ease}
    Rediseño D: la misión en una línea, la barra sticky (buscar, categoría, Tendencias | Gráfica), las tarjetas agrupadas
    Entrar → Esperar → Salir y un gráfico por vez con su conclusión. */
 .app #v-radar .mcmision:not(#q):not(#qq):not(#qqq){font-size:20px!important;line-height:1.4;color:var(--tinta-2)!important;margin:6px 0 0!important;max-width:52ch}
-.app #v-radar .mcbarra{position:sticky;top:52px;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:28px 0 8px;padding:12px 0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
-@media (max-width:760px){.app #v-radar .mcbarra{top:48px}}
-.app #v-radar .mcbusca{flex:1 1 260px;position:relative}
-.app #v-radar .mcbusca input{width:100%;font:400 17px var(--sf);padding:12px 16px 12px 42px;border:1px solid var(--linea);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236e6e73' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 14px 50%;color:var(--tinta)}
-.app #v-radar .mcbarra select{font:400 16px var(--sf);padding:12px 36px 12px 14px;border:1px solid var(--linea);background:#fff;color:var(--tinta);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231d1d1f' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;max-width:100%}
-.app #v-radar .mcbarra :is(input,select):focus-visible{outline:2px solid var(--accion);outline-offset:1px}
+.app :is(#v-radar,#v-recorridos) .mcbarra{position:sticky;top:52px;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:28px 0 8px;padding:12px 0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+@media (max-width:760px){.app :is(#v-radar,#v-recorridos) .mcbarra{top:48px}}
+.app :is(#v-radar,#v-recorridos) .mcbusca{flex:1 1 260px;position:relative}
+.app :is(#v-radar,#v-recorridos) .mcbusca input{width:100%;font:400 17px var(--sf);padding:12px 16px 12px 42px;border:1px solid var(--linea);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236e6e73' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 14px 50%;color:var(--tinta)}
+.app :is(#v-radar,#v-recorridos) .mcbarra select{font:400 16px var(--sf);padding:12px 36px 12px 14px;border:1px solid var(--linea);background:#fff;color:var(--tinta);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231d1d1f' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;max-width:100%}
+.app :is(#v-radar,#v-recorridos) .mcbarra :is(input,select):focus-visible{outline:2px solid var(--accion);outline-offset:1px}
 .app #v-radar .mcvista{display:inline-flex;padding:3px;background:var(--bloque);gap:2px}
 .app #v-radar .mcvista button{font:500 16px var(--sf);border:0;background:none;color:var(--tinta-2);padding:9px 18px;cursor:pointer}
 .app #v-radar .mcvista button[aria-selected=true]{background:#fff;color:var(--tinta);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-.app #v-radar .mccuenta{font-size:14px;color:var(--tinta-2);white-space:nowrap}
-.app #v-radar :is(.mcbusca input,.mcbarra select):not(#z):not(#zz){border-radius:12px!important}
+.app :is(#v-radar,#v-recorridos) .mccuenta{font-size:14px;color:var(--tinta-2);white-space:nowrap}
+.app :is(#v-radar,#v-recorridos) :is(.mcbusca input,.mcbarra select):not(#z):not(#zz){border-radius:12px!important}
 .app #v-radar .mcvista:not(#z):not(#zz){border-radius:999px!important}
 .app #v-radar .mcvista button:not(#z):not(#zz){border-radius:999px!important}
 @media (max-width:600px){.app #v-radar .mcgrid:not(#z){grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 12px}.app #v-radar .mcf:not(#z){min-width:0}.app #v-radar .mcdat:not(#z){grid-template-columns:1fr;gap:0}.app #v-radar .mcdat dd:not(#z){text-align:left;margin-bottom:6px}.app #v-radar .mctop{flex-direction:column;gap:2px}.app #v-radar .mctop h3:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:18px!important}}
-@media (max-width:600px){.app #v-radar .mcbarra{gap:8px;padding:10px 0}.app #v-radar .mcbusca{flex-basis:100%}.app #v-radar .mcbarra select{flex:1;min-width:0;padding:10px 32px 10px 12px}.app #v-radar .mcvista button{padding:8px 14px}.app #v-radar .mccuenta{display:none}.app #v-radar .mcbusca input{padding:10px 14px 10px 38px}}
+@media (max-width:600px){.app :is(#v-radar,#v-recorridos) .mcbarra{gap:8px;padding:10px 0}.app :is(#v-radar,#v-recorridos) .mcbusca{flex-basis:100%}.app :is(#v-radar,#v-recorridos) .mcbarra select{flex:1;min-width:0;padding:10px 32px 10px 12px}.app #v-radar .mcvista button{padding:8px 14px}.app :is(#v-radar,#v-recorridos) .mccuenta{display:none}.app :is(#v-radar,#v-recorridos) .mcbusca input{padding:10px 14px 10px 38px}}
 .app #v-radar :is(.mcque,.mcunidad,.mcpie):not(#q):not(#qq):not(#qqq){font-size:16px!important;color:var(--tinta-2)!important;max-width:78ch;margin:18px 0 8px!important;line-height:1.5}
 .app #v-radar :is(.mcque,.mcunidad) b{color:var(--tinta);font-weight:600}
 .app #v-radar .mcconc:not(#q):not(#qq):not(#qqq){font-size:20px!important;line-height:1.4;color:var(--tinta)!important;margin:10px 0 0!important;max-width:60ch}
@@ -2140,6 +2140,19 @@ img:not(.fcarga){transition:opacity .35s ease}
   .app #v-inicio .hdos{grid-template-columns:1fr}
 }
 
+/* 24/11 vuelta K: Mis ciclos en dos secciones con título */
+.app #v-radar .mcsec{margin:44px 0 0}
+.app #v-radar .mcsec+.mcsec{margin-top:72px}
+.app #v-radar .mcsech:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-size:var(--t-h2)!important;line-height:1.15!important;margin:0 0 10px!important;padding-bottom:12px;border-bottom:1px solid var(--linea)}
+.app #v-radar .mcgrcab h3:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-size:var(--t-sub)!important;font-weight:600!important;margin:0!important;color:inherit}
+.app #v-radar .mcgrcab h3.s-entrar{color:var(--act-entrar)!important}.app #v-radar .mcgrcab h3.s-esperar{color:var(--act-esperar)!important}.app #v-radar .mcgrcab h3.s-salir{color:var(--act-salir)!important}
+.app #v-radar .mcgrcab h3 span{color:var(--tinta-2);font-weight:400}
+.app #v-radar .mcgrcab{border-bottom-width:1px!important}
+.app #v-radar .mcglis{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:10px 0 0}
+.app #v-radar .mcglis .eti{flex-basis:100%;margin:0}
+.app #v-radar .mcgit{all:unset;cursor:pointer;display:inline-flex;align-items:baseline;gap:8px;font-size:16px;color:var(--tinta)}
+.app #v-radar .mcgit:hover{text-decoration:underline}
+.app #v-radar .mcgit:focus-visible{outline:2px solid var(--accion);outline-offset:2px}
 /* 24/11 vuelta K: la franja de fuentes del pie va sólo en el home; en las demás pantallas queda una línea (CICLO, fecha, código, copiar link) */
 body:not(.on-inicio) .app .colofon>div:not(:first-child){display:none}
 body:not(.on-inicio) .app .colofon:not(#q){display:block;padding-top:22px;padding-bottom:28px}
@@ -2380,14 +2393,14 @@ body:not(.on-inicio) .app .colofon>div:first-child b{display:inline;margin:0}
           <p class="mcmision">Qué atributos conviene usar en tu proyecto ahora, y por qué.</p>
         </div>
       </div>
-      <div class="mcbarra" id="mcbarra">
-        <div class="mcbusca"><label class="sr" for="mcq">Buscar un atributo</label><input id="mcq" type="search" placeholder="Buscar: floral, cuero, baggy…" autocomplete="off"></div>
-        <label class="sr" for="mccat">Categoría</label><select id="mccat"></select>
-        <div class="mcvista" id="mcvista" role="tablist" aria-label="Cómo verlo"><button type="button" role="tab" data-mv="tend" aria-selected="true">Tendencias</button><button type="button" role="tab" data-mv="graf" aria-selected="false">Gráfica</button></div>
-        <span class="mccuenta" id="mccuenta" aria-live="polite"></span>
-      </div>
-      <div id="mctend"></div>
-      <div id="mcgraf" hidden></div>
+      <section class="mcsec" aria-labelledby="mcsec1">
+        <h2 class="mcsech" id="mcsec1">Qué gana y qué pierde terreno</h2>
+        <div id="mcgraf"></div>
+      </section>
+      <section class="mcsec" aria-labelledby="mcsec2">
+        <h2 class="mcsech" id="mcsec2">Mis tendencias</h2>
+        <div id="mctend"></div>
+      </section>
       <p class="bfacceso"><a class="mvacceso" href="#mover" data-vista="mover">¿Tenés ojo para Chanel? <b>Jugá «El brief» →</b></a></p>
     </section>
 
@@ -3103,26 +3116,29 @@ function mcTend(L){
   const G=[['entrar','▲ Entrar','Conviene usarlos ahora.'],['esperar','■ '+esp,vinculo==='propia'?'Probalos sin comprometer stock.':'Todavía no, o ya no con tu plazo: vigilalos.'],['salir','▼ Salir','Para tu tipo de marca, ya pasó su momento.'],['sin-dato','○ Sin señal','No hay dato suficiente para decidir.']];
   const por={};L.forEach(o=>{const s=mcSeñal(o);(por[s.estado]=por[s.estado]||[]).push({o,s,d:terreno(o.id)});});
   const foros=publico==='todos'?'del foro de mujeres y del de hombres':`del foro de ${publico==='mujer'?'mujeres':'hombres'}`;
-  C.innerHTML=`<p class="mcque"><b>Cada tarjeta es un atributo</b> con datos medidos (${L.length} de 65), ordenados por su señal para tu proyecto. La señal sale de su etapa en el K-means o, si no la tiene, de la búsqueda 2022→2024. Reddit: ${foros}; Google y Vogue son de todos.</p>
+  C.innerHTML=`<p class="mcque"><b>Cada tarjeta es un atributo</b> con datos medidos (${L.length} de 65), ordenados por su señal para tu proyecto. Para buscar uno o filtrar por categoría: <a href="#recorridos" data-vista="recorridos">Explorar ciclos</a>. La señal sale de su etapa en el K-means o, si no la tiene, de la búsqueda 2022→2024. Reddit: ${foros}; Google y Vogue son de todos.</p>
     ${L.length?'':'<p class="mcvacio">Nada con ese filtro. Probá otra palabra o «Todas las categorías».</p>'}
-    ${G.filter(([k])=>por[k]&&por[k].length).map(([k,t,q])=>`<section class="mcgr"><div class="mcgrcab"><h2 class="${SEN[k].cls}">${t} <span>${por[k].length}</span></h2><p>${q}</p></div><div class="mcgrid" data-k="${k}"></div></section>`).join('')}`;
+    ${G.filter(([k])=>por[k]&&por[k].length).map(([k,t,q])=>`<section class="mcgr"><div class="mcgrcab"><h3 class="${SEN[k].cls}">${t} <span>${por[k].length}</span></h3><p>${q}</p></div><div class="mcgrid" data-k="${k}"></div></section>`).join('')}`;
   G.forEach(([k])=>{const g=C.querySelector(`.mcgrid[data-k="${k}"]`);if(!g)return;
     por[k].sort((a,b)=>k==='salir'?(a.d??0)-(b.d??0):(b.d??-1e9)-(a.d??-1e9)).forEach(x=>g.appendChild(mcFicha(x.o,x.s)));});
 }
 function mcGrafica(L){
-  const C=$('#mcgraf');if(!C||C.hidden)return;
+  const C=$('#mcgraf');if(!C)return;
   const W=Math.max(300,Math.round(C.clientWidth||1000)),movil=W<620;
-  const pills=`<div class="mcgsel" role="group" aria-label="Qué gráfico">${[['terreno','Gana y pierde terreno'],['picos','Cuándo picó cada uno']].map(([k,n])=>`<button type="button" class="chip" data-g="${k}" aria-pressed="${mcGraf===k}">${n}</button>`).join('')}</div>`;
+  const pills=''; // 24/11 vuelta K: Mis ciclos muestra las dos secciones a la vista; ya no hay selector de gráfico
   let h='';
   if(mcGraf==='terreno'){
     const con=L.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null),ga=con.filter(x=>x.d>0.5).sort((a,b)=>b.d-a.d),pi=con.filter(x=>x.d<-0.5).sort((a,b)=>a.d-b.d);
     const G=ga.slice(0,5),P=pi.slice(0,5);
     const conc=!con.length?'Sin atributos con este filtro.':`De ${mcFiltroTxt(con.length)}, ${ga.length} ganaron terreno y ${pi.length} lo perdieron entre 2022 y 2024.${G.length?` El que más ganó es ${G[0].o.n} (${mcPts(G[0].d)})`:''}${P.length?`${G.length?';':' El'} el que más perdió, ${P[0].o.n} (${mcPts(P[0].d)})`:''}${G.length||P.length?'.':''}`;
     const Hh=movil?240:300;
-    h=`<div class="mcgcab"><h2>Gana y pierde terreno</h2><p class="mcconc">${conc}</p>
-      <p class="mcunidad"><b>Qué son los puntos:</b> el índice de búsqueda mundial de Google Trends, de 0 a 100, donde 100 es el año en que más se buscó ese término entre 2004 y 2024 (corregido contra 35 búsquedas de moda). «+50» quiere decir que subió 50 puntos de esa escala entre 2022 y 2024. Google no separa por género: es la búsqueda de todos. <span class="tag real">● medido</span></p></div>
-      ${G.length?moviPanel(G,'Gana terreno','+',W,Hh,true):''}${P.length?moviPanel(P,'Pierde terreno','−',W,Hh,true):''}
-      <p class="mcpie">Los cinco que más se movieron hacia cada lado. Tocá una línea para ver el ciclo de ese atributo.</p>`;
+    const sen=x=>{const s=mcSeñal(x.o);return s.estado==='sin-dato'?'':` <span class="sen ${s.cls}">${s.icono} ${s.palabra}</span>`;};
+    const lista=(A,t)=>A.length?`<p class="mcglis"><span class="eti">${t}, con su señal para tu proyecto</span>${A.map(x=>`<button type="button" class="mcgit" data-r="${x.o.id}">${x.o.n}${sen(x)}</button>`).join('')}</p>`:'';
+    h=`<div class="mcgcab"><p class="mcconc">${conc}</p>
+      <p class="mcunidad"><b>Qué quiere decir «+50»:</b> que su búsqueda en Google subió 50 puntos entre 2022 y 2024, en una escala de 0 a 100 donde 100 es el año en que más se buscó ese término entre 2004 y 2024 (búsqueda mundial, corregida contra 35 búsquedas de moda). <span class="tag real">● medido</span></p>
+      <p class="mcunidad"><b>Qué cambia con tu proyecto:</b> Google no separa por género ni por tipo de marca, así que las curvas son las de todos. Lo que es de tu proyecto es la señal de cada uno (debajo de cada gráfico) y el Reddit de tus tendencias.</p></div>
+      ${G.length?moviPanel(G,'Gana terreno','+',W,Hh,true)+lista(G,'Los que más ganan'):''}${P.length?moviPanel(P,'Pierde terreno','−',W,Hh,true)+lista(P,'Los que más pierden'):''}
+      <p class="mcpie">Los cinco que más se movieron hacia cada lado. Tocá una línea o un nombre para ver su ficha.</p>`;
   }else{
     const F=L.map(o=>({o,y:tvMaxAnio(o.id).my})).filter(x=>x.y).sort((a,b)=>a.y-b.y||a.o.n.localeCompare(b.o.n));
     const ver=mcPicosTodos||F.length<=24?F:F.slice(-24);
@@ -3136,6 +3152,7 @@ function mcGrafica(L){
   C.innerHTML=pills+h;
   C.querySelectorAll('.mcgsel button').forEach(b=>b.onclick=()=>{mcGraf=b.dataset.g;mcGrafica(mcLista());});
   $('#mcpicostodos')?.addEventListener('click',()=>{mcPicosTodos=true;mcGrafica(mcLista());});
+  C.querySelectorAll('.mcgit').forEach(b=>b.onclick=()=>mcAbrir(b.dataset.r));
   C.querySelectorAll('.mvc,.mcfila').forEach(g=>{const ir=()=>mcAbrir(g.dataset.r);g.setAttribute('tabindex','0');g.setAttribute('role','button');g.addEventListener('click',ir);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ir();}});});
 }
 /* «Cuándo picó cada uno», ahora una línea de tiempo con los años en el eje (arriba y abajo) */
@@ -3207,20 +3224,14 @@ function pintarExplorarDatos(o){
     <p class="fpnota">Explorar muestra los datos de todos, sin señal: no sabe para quién diseñás. ${p?`<a href="#radar" data-fp="${o.id}">Ver ${o.n.toLowerCase()} para «${pyEsc(p.nombre)}»</a>`:`<a href="#crear" data-crear>Creá tu proyecto</a> para ver qué te conviene.`}</p>`;
   $('#rdecide [data-fp]')?.addEventListener('click',e=>{e.preventDefault();abrirFichaProyecto(e.currentTarget.dataset.fp);});
 }
+/* 24/11 vuelta K: Mis ciclos son dos secciones a la vista, una debajo de la otra: la gráfica (qué gana y qué pierde terreno)
+   y Mis tendencias (las tarjetas por señal). El buscador y las categorías pasaron a Explorar ciclos: acá van los 65. */
+let mcRz=false;
 function pintarRadar(){
-  const sel=$('#mccat');
-  if(sel&&!sel.options.length){const n={};REC.forEach(o=>{if(GREL[o.id])n[o.tipo]=(n[o.tipo]||0)+1;});
-    sel.innerHTML=`<option value="todos">Todas las categorías</option>`+REC_ORDEN.filter(k=>n[k]).map(k=>`<option value="${k}">${k} (${n[k]})</option>`).join('');
-    sel.onchange=()=>{mcCat=sel.value;mcPicosTodos=false;pintarRadar();};
-    let t=null;$('#mcq').oninput=e=>{clearTimeout(t);t=setTimeout(()=>{mcQ=e.target.value;mcPicosTodos=false;pintarRadar();},120);};
-    $$('#mcvista button').forEach(b=>b.onclick=()=>{mcVista=b.dataset.mv;pintarRadar();});
-    let rt=null;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(vista==='radar'&&mcVista==='graf')mcGrafica(mcLista());},200);});}
-  if(sel)sel.value=mcCat;
-  $$('#mcvista button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.mv===mcVista)));
-  if($('#mctend'))$('#mctend').hidden=mcVista!=='tend';if($('#mcgraf'))$('#mcgraf').hidden=mcVista!=='graf';
+  if(!mcRz){mcRz=true;let rt=null;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(vista==='radar')mcGrafica(mcLista());},200);});}
+  mcQ='';mcCat='todos';
   const L=mcLista();
-  if($('#mccuenta'))$('#mccuenta').textContent=`${L.length} de 65`;
-  if(mcVista==='tend')mcTend(L);else mcGrafica(L);
+  mcGrafica(L);mcTend(L);
 }
 
 /* ---------- detalle ---------- */
@@ -4465,8 +4476,8 @@ function moviPanel(L,titulo,signo,Wx,Hx,ejes){ /* ejes (24/11): escala fija 0–
   const todos=ser.flat().map(q=>q[1]),mn=ejes?0:Math.min(0,...todos),mx=ejes?Math.max(100,...todos):Math.max(...todos)*1.05,Y=v=>T+(1-(v-mn)/(mx-mn))*(H-T-B);
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${titulo}: búsqueda mundial ${MOVI_Y0} a ${MOVI_Y1} de ${L.map(x=>x.o.n).join(', ')}">`;
   if(ejes)[0,50,100].forEach(v=>{s+=`<line x1="${Lm}" x2="${X(MOVI_Y1)}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--linea)" stroke-dasharray="${v?'3 4':'0'}"/><text x="${Lm-8}" y="${Y(v)+4}" text-anchor="end" fill="var(--tinta-2)">${v}</text>`;});
-  s+=`<rect x="${X(2022)}" y="${T}" width="${X(2024)-X(2022)}" height="${H-T-B}" fill="var(--paper)" rx="6"/><text x="${X(2023)}" y="${T+14}" text-anchor="middle" fill="var(--ink-3)">2022→2024</text>`;
-  [MOVI_Y0,2019,2022,MOVI_Y1].forEach(y=>s+=`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)">${y}</text>`);
+  s+=`<rect x="${X(2022)}" y="${T}" width="${X(2024)-X(2022)}" height="${H-T-B}" fill="var(--paper)" rx="6"/><text x="${X(2023)}" y="${T+14}" text-anchor="middle" fill="var(--ink-3)">${W<520?'22→24':'2022→2024'}</text>`;
+  (W<520?[MOVI_Y0,2020,MOVI_Y1]:[MOVI_Y0,2019,2022,MOVI_Y1]).forEach(y=>s+=`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--ink-3)">${y}</text>`);
   s+=`<line x1="${Lm}" x2="${X(MOVI_Y1)}" y1="${H-B}" y2="${H-B}" stroke="var(--rule)"/>`;
   const fin=ser.map((p,i)=>({i,y:Y(p[p.length-1][1])})).sort((a,b)=>a.y-b.y);
   for(let k=1;k<fin.length;k++)if(fin[k].y-fin[k-1].y<28)fin[k].y=fin[k-1].y+28;

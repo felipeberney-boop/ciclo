@@ -3673,3 +3673,26 @@ de cada número.
 
 `probar_demo.js` 8 de 8 a 1400 y a 393 (el paso 1 ahora toca el aviso y baja hasta «Creá tu proyecto»). Capturas en
 `diseno/rediseno_2026-11-24/K/` (`antes_*`, `1_despues_*`, `4_despues_*`).
+
+## 2026-11-24 · Vuelta K, punto 2: Mis ciclos, dos secciones a la vista
+
+Pedido: «Arriba de todo, la GRÁFICA: el gráfico de antes de “qué sube y qué baja”, filtrado por mi proyecto. GANA TERRENO
+arriba y PIERDE TERRENO abajo, uno debajo del otro, a todo el ancho. Con la línea que explica qué es “+50”. Debajo: “MIS
+TENDENCIAS”… Que se entienda que son dos secciones: título claro en cada una, no un selector que esconde una de las dos…
+La barra de búsqueda y los filtros de atributos SALEN de Mis ciclos y pasan a Explorar ciclos». Y de la devolución:
+«MIS CICLOS = solo lo de mi proyecto».
+
+Sale el selector Tendencias | Gráfica y la barra (buscador, categoría y cuenta). Quedan dos secciones con su título H2,
+una debajo de la otra: **«Qué gana y qué pierde terreno»** (la conclusión calculada, la línea de «+50», Gana terreno arriba
+y Pierde terreno abajo a todo el ancho) y **«Mis tendencias»** (las tarjetas por señal, como estaban; los grupos ▲ Entrar,
+■ Esperar y ▼ Salir pasan a H3, porque ahora están adentro de una sección). Sale también «Cuándo picó cada uno» de Mis
+ciclos: era la otra pestaña del selector y no es lo pedido.
+
+**Qué se puede filtrar y qué no.** El gráfico es la búsqueda mundial de Google, que no separa por género ni por tipo de
+marca: las curvas son las mismas para cualquier proyecto, y la pantalla lo dice en una línea («Qué cambia con tu
+proyecto»). Lo que sí es del proyecto se agregó debajo de cada gráfico: los cinco nombres con su señal para tu proyecto
+(▲ Entrar / ▼ Salir), que llevan a la ficha. Reddit sigue filtrado por el público del proyecto en las tarjetas y en la
+ficha (Mujer → sólo el foro de mujeres). En el celular el eje de años mostraba «2022» y «2024» encimados: queda 2016 ·
+2020 · 2024 y la franja dice «22→24».
+
+`probar_demo.js` 8 de 8 en los dos anchos (el paso 2 ya no toca el selector). Capturas `K/2_despues_radar_*`.

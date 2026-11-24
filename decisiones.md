@@ -4098,3 +4098,17 @@ cantidad de datos, «Ver la ficha» caía a alturas distintas en la misma fila.
 **La revisión.** Un script mira las 65 tarjetas de Mis ciclos y las 65 de Explorar a 1400, 1000 y 393 px y busca texto en
 columnas angostas o que se salga de la tarjeta: cero casos. Capturas de las que fallaban en `N/1_bug/antes_*` y
 `despues_*`. `probar_demo.js` 8 de 8 en los dos anchos.
+
+## 2026-11-24 · Vuelta N, punto 2: los atributos sin foto, al final
+
+Pedido: «Espiga: si no hay un buen candidato, no la busques más. Regla: un atributo sin foto NUNCA va en las primeras
+filas… los que no tienen, al final de la lista completa. Revisalo en Mis ciclos y Explorar».
+
+- Espiga no se busca más; queda sin foto, igual que neoprene.
+- **Explorar.** El orden pone primero los que tienen foto y, dentro de cada parte, sigue por el pico más reciente. Las
+  cinco filas antes de «Ver los 65 atributos» son todas con foto; espiga y neoprene quedan últimos en la lista completa.
+- **Mis ciclos** no tiene una vista corta: muestra los 65 por señal. Dentro de cada grupo (Entrar, Esperar o Explorar,
+  Salir) los que no tienen foto van al final. Para Mujer · Para una marca · Fast fashion, espiga y neoprene son las
+  tarjetas 28 y 29 de Salir.
+
+Verificado con un script en los dos anchos. Capturas `N/2_sinfoto/`. `probar_demo.js` 8 de 8.

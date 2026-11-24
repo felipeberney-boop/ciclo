@@ -3259,7 +3259,7 @@ function mcTend(L){
   C.innerHTML=`${L.length?'':'<p class="mcvacio">Nada para mostrar.</p>'}
     ${G.filter(([k])=>por[k]&&por[k].length).map(([k,t,q])=>`<section class="mcgr"><div class="mcgrcab"><h3 class="${SEN[k].cls}">${t} <span>${por[k].length}</span></h3></div><div class="mcgrid" data-k="${k}"></div></section>`).join('')}`;
   G.forEach(([k])=>{const g=C.querySelector(`.mcgrid[data-k="${k}"]`);if(!g)return;
-    por[k].sort((a,b)=>k==='salir'?(a.d??0)-(b.d??0):(b.d??-1e9)-(a.d??-1e9)).forEach(x=>g.appendChild(mcFicha(x.o,x.s)));});
+    por[k].sort((a,b)=>(!FOTO_ATR[a.o.id])-(!FOTO_ATR[b.o.id])||(k==='salir'?(a.d??0)-(b.d??0):(b.d??-1e9)-(a.d??-1e9))).forEach(x=>g.appendChild(mcFicha(x.o,x.s)));});
 }
 function mcGrafica(L){
   const C=$('#mcgraf');if(!C)return;
@@ -4579,7 +4579,7 @@ const CICLO_CORTO=10;let cicloTodos=false; // 24/11 vuelta M: cinco filas a la v
 let exQ='';
 function pintarCiclos(){
   const q=mcNorm(exQ.trim());
-  const L=REC.filter(o=>(cicloGrupo==='todos'||o.tipo===cicloGrupo)&&(!q||mcNorm(o.n+' '+o.tipo+' '+(o.gk||'')+' '+(o.vk||'')).includes(q))).map(cicloDe).filter(Boolean).sort((a,b)=>a.anios-b.anios||a.o.n.localeCompare(b.o.n)); // 24/11: Explorar no tiene perfil, así que no ordena por señal
+  const L=REC.filter(o=>(cicloGrupo==='todos'||o.tipo===cicloGrupo)&&(!q||mcNorm(o.n+' '+o.tipo+' '+(o.gk||'')+' '+(o.vk||'')).includes(q))).map(cicloDe).filter(Boolean).sort((a,b)=>(!FOTO_ATR[a.o.id])-(!FOTO_ATR[b.o.id])||a.anios-b.anios||a.o.n.localeCompare(b.o.n)); // 24/11: Explorar no tiene perfil, así que no ordena por señal
   const grupos=REC_ORDEN.filter(g=>REC.some(o=>o.tipo===g));
   const ch=$('#exchips');if(ch)ch.innerHTML=['todos',...grupos].map(g=>`<button type="button" class="chip" data-g="${g}" aria-pressed="${cicloGrupo===g}">${g==='todos'?'Todos':g==='Estampa'?'Estampas':g==='Material'?'Materiales':g}</button>`).join('');
   const eq=$('#exq');if(eq&&!eq.dataset.ok){eq.dataset.ok=1;let t=null;eq.oninput=e=>{clearTimeout(t);t=setTimeout(()=>{exQ=e.target.value;cicloTodos=false;pintarCiclos();},120);};}

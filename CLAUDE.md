@@ -27,9 +27,24 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   `datasets_procesados/*.json` are exports of these constants, not inputs the app loads.
   `codigo/extraer_series_de_la_app.js` parses `const NAME=` up to the top-level `;`, so keep that form if
   you edit them.
-- **Views** are sections `#v-<name>` (perfil = the gate, disenar, radar, detalle, etapas, recorridos, marcas, retornos,
+- **Views** are sections `#v-<name>` (since 24/11: inicio = the home, cuenta = Mi cuenta; perfil = the old three-step gate, no longer shown; disenar, radar = «Mis ciclos», detalle, etapas, recorridos, marcas, retornos,
   lectura («Preguntale a CICLO», «Preguntar» in the nav, renamed on 16/11 from «Lectura», which had replaced «Tiza» (10/11), the merge of consulta and asistente), racional, mover («El brief», the Entrega 4 pirueta since 10/11, under Más), adivina (out of the nav since 10/11, direct link only); the old portada was removed on 26/10) toggled by `mostrar(v)`; nav links use `data-v`. Each view has a `pintar*()`
   renderer that builds SVG charts by hand (no chart library).
+- **Home, projects and account (since 24/11, rediseño B+C; see `entregas/entrega_4/plan_rediseno.md`).** The app opens on
+  `#v-inicio` (`pintarInicio()`): a full-bleed moving row of Vogue Runway looks (`GATE_FOTOS.var`) with the text under it
+  (i-D reference), then short sections (qué es · cómo funciona · de dónde salen los datos, with period and how often each
+  source would be refreshed · con proyecto o sólo mirando) and «Crear tu proyecto» (`#crear`, `pintarForm()`): project
+  name, your name, email and the three questions on one screen, each with a «Qué cambia» line. No server: everything is
+  in localStorage (`ciclo.usuario`, `ciclo.proyectos`, `ciclo.activo`), stated next to the email field and in Acerca de.
+  `abrirGate(destino)` no longer opens the gate: it scrolls to «Crear tu proyecto» and remembers where you were going
+  (`pyDestino`). «Sólo estoy mirando» (`gateMirar()`, `[data-mirar]`) goes to Explorar ciclos without a project
+  (`pyMirar()`: contemporary example profile, said on screen). Boot: a link with `c`, `v`, `pu` opens its view; else an
+  active project opens Mis ciclos; else the home. Menu: CICLO · Mis ciclos (`radar`) · Diseñar · Explorar ciclos
+  (`recorridos`) · Preguntar · El brief · Acerca de; «Más» and «Cambiar perfil» are gone. `#cuenta` (outside `#nav`, so
+  it shows on phones too) holds the avatar with initials (`iniciales()`: Felipe Berney → FB, one name → one letter, else
+  from the email) or «Crear proyecto»; the avatar opens Mis proyectos · Mi perfil · Salir / cambiar de proyecto. Mi cuenta
+  (`pintarCuentaVista()`) edits the name/email and lists projects (open, edit, delete, new). Mis ciclos shows
+  `PROYECTO <name> · Mujer · Para una marca · Fast fashion · Editar` (`pintarPerfilRadar()`).
 - **K-means runs in the browser** (`kRand`/`kInit`/`kLloyd`/`kFit`/`kName`): 17 attributes (no footwear), 4
   standardized features (runway level/momentum, search level/momentum through 2024). k=4 starts from the stored `KM.cent` centroids so
   results are deterministic; other k use seeded random restarts. Clusters get stage names by nearest
@@ -43,7 +58,7 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   attribute, never another family); the UI always says where a borrowed number comes from.
 - **Diseñar** runs on `TAX` (from `codigo/taxonomia.py`; rerun it after touching drawings or tables). Every state color
   comes from `señal()` / `señalPalabra()` and the `s-<estado>` CSS classes; never assign a state color by hand.
-  The app always opens on the 3-question gate (since 17/11 a full-screen band of Vogue Runway photos, `GATE_FOTOS` from `codigo/armar_fotos_entrada.js`, `gateBanda()`, that change with each answer; the question sits on top in the system font) (each card shows only its label; what each answer changes lives in Método, `pintarMetodoGate()`); only a link with `c`, `v` and `pu` skips it (a 04/11 link with `d` instead of `v` still works: `d=disenar` maps to `v=propia`). The questions are: público, vínculo (para una marca / por mi cuenta: «por mi cuenta» turns Esperar into Explorar) and category. A gate by objective («¿Qué estás por decidir?») was tried and dropped on 04/11; don't bring it back. The app shows nothing about the course (no subject, school, teachers or delivery numbers): that lives in the readme and the racional. After it, the app lands on Tendencias (`radar`), the
+  Until 24/11 the app opened on the 3-question gate (since 17/11 a full-screen band of Vogue Runway photos, `GATE_FOTOS` from `codigo/armar_fotos_entrada.js`, `gateBanda()`, that change with each answer; the question sits on top in the system font) (each card shows only its label; what each answer changes lives in Método, `pintarMetodoGate()`); only a link with `c`, `v` and `pu` skips it (a 04/11 link with `d` instead of `v` still works: `d=disenar` maps to `v=propia`). The questions are: público, vínculo (para una marca / por mi cuenta: «por mi cuenta» turns Esperar into Explorar) and category. A gate by objective («¿Qué estás por decidir?») was tried and dropped on 04/11; don't bring it back. The app shows nothing about the course (no subject, school, teachers or delivery numbers): that lives in the readme and the racional. After it, the app lands on Tendencias (`radar`), the
   main screen; the CICLO mark goes to Tendencias and «Cambiar perfil» reopens the gate (`abrirGate(vista)`). Nav order:
   Tendencias · Diseñar · El ciclo · Preguntar · Más. Since 10/11 «Más» holds only El brief and Método (Adiviná vos left it; it still opens at `#adivina`), and Retornos opens from El ciclo via `data-vista="<vista>"` links; since 10/11 El modelo (`etapas`) and Marcas are out of the navigation (they still open by direct link, `#etapas`/`#marcas`). Método (view `racional`; since 17/11 it is called «Acerca de» in the menu and its title is «Acerca de CICLO», like a site's About page; it holds the racional summarized in six parts) opens with «Cómo se arma una señal» (`pintarLectura()`; it was «…una lectura» until 16/11), which replaced the static data schema. «El brief» (view `mover`, `pintarBrief()`, `BF_BRIEFS`, `BF_PTS`): a brief from a real house with a Vogue photo (hotlinked, never downloaded), three picks (shape, material, print), and a verdict: each pick's moment (sube/pico/quieto/baja) comes from its GREL search series 2022→2024; the per-house points are a game rule (luxury wins while rising, fast fashion at the peak), stated as such and separate from `CONSEJO`. Tendencias opens with a chart that rotates between five animated readings of the GREL series (`pintarTerreno()`, `TV_V`, `tvIr()`, 9 s each; no dark tile anymore). Every «?» (`details.qm`) sits top right of its block and opens as a floating card. The gate has a «Sólo estoy mirando» exit (`gateMirar()`, a general contemporary profile that Tendencias states); Tiza uses `prompts/prompt_asistente_v9.md` (conclusion → backing number → folded detail). Links between views use `data-vista` (not `data-ir`, which is the Diseñar step a chip returns to). `tendencia(d)` describes (▲/■/▼ in ink, El ciclo and Tendencias; the one exception since 27/10: «▲ Gana presencia» text is
   green and «▼ Pierde presencia» red, classes `t-entrar`/`t-salir`, bars and «Estable» stay ink) and is otherwise never a state color; `señal()` decides, and without a K-means stage it says Entrar/Esperar/Salir from the trend.
@@ -100,6 +115,7 @@ directory that don't match the repo layout, so adjust before running (`taxonomia
 - `calcular_geometria_de_graficos.js` reads `./datos_app.json` → writes `geom.json`
 - `generar_laminas_entrega_2.py` → 20 slide SVGs (1920×1080) into `entrega2_svg/`
 - `renderizar_laminas_a_png.js` reads `entrega2_svg/` → PNG (Playwright)
+- `probar_demo.js` (repo root, app served): the class demo, 8 steps; since 24/11 step 1 creates a project in the home. `capturar_recorrido.js` still walks the old gate and needs updating
 - `capturar_pantallas_de_la_app.js` (run from the repo root, app served) → the 19 screenshots (01–17, 19 and 20, El brief) in
   `entregas/entrega_4/capturas/` used by the readme (the 03/11 set stays in `entregas/entrega_3/capturas/`). It never shows an LLM answer (no simulated responses)
 - `capturar_recorrido.js` (same way) → the step-by-step walkthrough in `entregas/entrega_4/recorrido/` that the readme shows

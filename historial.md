@@ -569,6 +569,14 @@ Después de la devolución de la Entrega 4 (6/10). La Bodoni queda sólo en el l
 sistema de Apple. Una escala fija (H1, H2, H3, H4, párrafo, etiqueta, dato) con nada que se lea bajo 16 px, y una paleta
 por rol: el azul es sólo lo que se toca, los links van subrayados y los botones se ven como botones.
 
+## v1.80 · 24/11/2026 · Rediseño B y C: el home, el proyecto y el menú
+
+La app ya no abre con preguntas: abre en un home con una serie de pasarela que corre, qué es CICLO, cómo funciona, de
+dónde salen los datos (con período y cada cuánto se actualizaría) y qué obtenés con y sin proyecto. Al final, «Crear tu
+proyecto»: nombre, email y las tres preguntas en una sola pantalla, cada una con lo que cambia; se guarda en el navegador.
+El menú pierde «Más» (Mis ciclos · Diseñar · Explorar ciclos · Preguntar · El brief · Acerca de) y «Cambiar perfil» pasa a
+ser un avatar con iniciales: Mis proyectos · Mi perfil · Salir.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

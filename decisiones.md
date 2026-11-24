@@ -3356,3 +3356,57 @@ primer paso de la entrada; y con los pills más grandes, el «?» de El ciclo se
 **Qué no cambia todavía.** La entrada con las tres preguntas, el menú y Tendencias siguen como estaban: son las fases
 B, C y D. Capturas antes y después, a 1400 y 393 px: `diseno/rediseno_2026-11-24/A/`. `probar_demo.js` sin clave: 8 de 8
 en los dos anchos.
+
+## 2026-11-24 · Rediseño, fases B y C: el home, el proyecto y el menú
+
+Responde a estos puntos de la devolución (`entregas/entrega_4/devolucion.md`):
+
+- «El home tiene que narrar de dónde sale la información, qué período cubre y qué se puede obtener.»
+- «Diferenciar el uso con y sin logueo. Las tres preguntas sin contexto no arman expectativas; si no ramifican, que
+  vayan en una sola pantalla. Con el carrusel de fotos el problema sigue.» A mano, sobre la entrada: «No se entiende el
+  camino» y «¿Para qué género?».
+- En clase: «Al entrar no hay preguntas»; «Crear tu proyecto: nombre del proyecto + email + las tres preguntas, TODO EN
+  UNA SOLA PANTALLA, con una línea que diga qué cambia cada respuesta»; el menú «CICLO · Mis ciclos · Diseñar · Explorar
+  ciclos · Preguntar · El brief · Acerca de», sin «Más», y «Cambiar perfil» como un avatar con iniciales que abre «Mis
+  proyectos · Mi perfil · Salir».
+
+**La portada: la serie.** Se probaron las dos que pidió la cátedra, una foto sola con el texto al costado y una serie de
+pasarela que corre, en un prototipo aparte (`diseno/rediseno_2026-11-24/B/`). Felipe eligió la serie. Las fotos son las
+de la entrada vieja (`GATE_FOTOS`), enlazadas desde Vogue; la fila se frena al pasar el mouse y no se mueve si el sistema
+pide menos movimiento.
+
+**El home** son cinco bloques cortos: qué es (una etapa, no una predicción), cómo funciona (medimos, agrupamos, te decimos
+qué hacer), de dónde salen los datos, qué obtenés con proyecto y sin él, y el formulario. La tabla de fuentes dice período,
+cuánto y **cada cuánto se actualizaría**, que también pedía la devolución («¿Cada cuánto se actualizan los datos?»): hoy
+todo se bajó una vez, entre septiembre y noviembre de 2026; Trends, Reddit y Shopping se renovarían cada mes, Vogue con
+cada temporada, Lyst cada trimestre; H&M, Amazon y Zara son datasets cerrados y no cambian. Se dice así, sin prometer una
+actualización que no existe.
+
+**Para qué sirve cada pregunta, dicho al lado.** Género: qué foro de Reddit se lee y qué fotos se ven; «Google y Vogue no
+separan por género: esas curvas son de todos» (revisado en los datos antes de escribirlo; ver el plan). Para una marca o
+por tu cuenta: por tu cuenta, donde una marca espera, vos explorás. Tipo de marca: los plazos, y con ellos la señal (la
+frase sale de `CONSEJO`: fast fashion todavía llega con el atributo en pico; high fashion, en el pico, espera).
+
+**Con y sin proyecto.** Sin proyecto, arriba a la derecha dice «Crear proyecto» y Mis ciclos avisa que las señales son de
+una marca contemporary de ejemplo. «Sólo estoy mirando» entra a Explorar ciclos. Con proyecto, el avatar con iniciales está
+siempre a la vista, también en el celular (va fuera del menú desplegable), y Mis ciclos abre con «PROYECTO Invierno Zara ·
+Mujer · Para una marca · Fast fashion · Editar».
+
+**Sin servidor.** No hay cuentas: tu nombre, tu email y tus proyectos quedan en el navegador (localStorage). Se dice junto
+al campo del email, al pie del formulario, en Mi cuenta y en Acerca de. Se sumó «Tu nombre» al formulario, que la consigna
+no listaba, porque las iniciales del ejemplo de la cátedra (Felipe Berney → FB) salen de un nombre; si no hay nombre, salen
+del email.
+
+**Lo que no se borró.** La entrada de tres pasos (`#v-perfil`) queda en el código pero no se muestra; los links viejos que
+la abrían ahora llevan a «Crear tu proyecto». Los links compartidos con perfil (`?c=…&v=…&pu=…`) siguen abriendo su vista.
+
+**Probado.** Un recorrido automático a 1400 y 393 px: abre en el home; «Sólo estoy mirando» → Explorar ciclos; sin nombre
+avisa; «por mi cuenta» cambia la tercera pregunta; crear → Mis ciclos con el proyecto arriba y «FB»; el avatar abre su menú;
+al recargar sigue el proyecto; un segundo proyecto queda abierto; salir → home. Sin errores. `probar_demo.js` se actualizó
+(el paso 1 ahora crea un proyecto en el home) y da 8 de 8 en los dos anchos. Capturas en `diseno/rediseno_2026-11-24/BC/`.
+Errores de la fase, corregidos antes del commit: la regla vieja de «sin esquinas» dejaba cuadrados el avatar y los pills;
+en el celular, «Menú» se partía en dos líneas y «Crear proyecto» tocaba el borde.
+
+**Pendiente.** `capturar_recorrido.js` todavía recorre la entrada vieja. Mis ciclos sigue siendo Tendencias por dentro
+(fase D) y Explorar ciclos sigue siendo El ciclo (fase E). Falta el link de la página que mostró Cristian.
+

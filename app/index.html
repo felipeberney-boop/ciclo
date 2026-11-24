@@ -1907,34 +1907,221 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app :is(.kbtn.ghost,.gvolver,.cmplay,.cmre,.arpausa,.ltejb,.btn-sec):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){align-items:center;background:#fff!important;color:var(--accion)!important;border:1.5px solid var(--accion)!important;border-radius:999px!important;padding:9px 16px!important;font:500 16px/1.1 var(--sf)!important;letter-spacing:-.01em!important;text-decoration:none!important;text-transform:none!important}
 /* opciones y filtros (pills): 15, tinta; la elegida, rellena en tinta */
 .app :is(.chip,.tvsel button,.ltsugb):not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:16px!important;letter-spacing:-.01em!important}
+/* ================= el home y la cuenta (24/11) · última =================
+   Rediseño B y C: el home con una serie de pasarela a sangre y el texto debajo (referencia i-D), secciones cortas y
+   «Crear tu proyecto» en una sola pantalla; el menú sin «Más»; el avatar con iniciales siempre a la vista. */
+.app #v-inicio.view:not([hidden]):not(#q):not(#qq):not(#qqq){padding:0!important;max-width:none!important;width:100vw;margin-left:calc(50% - 50vw);box-sizing:border-box}
+#v-inicio .inportada{display:grid;grid-template-rows:auto auto;min-height:calc(100vh - 52px)}
+#v-inicio .infila{overflow:hidden;background:#111;height:max(340px,calc(100vh - 52px - 250px))}
+#v-inicio .incinta{display:flex;gap:2px;height:100%;width:max-content;animation:incorre 70s linear infinite}
+#v-inicio .infila:hover .incinta{animation-play-state:paused}
+@keyframes incorre{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){#v-inicio .incinta{animation:none}}
+#v-inicio .incinta figure{margin:0;position:relative;height:100%;aspect-ratio:2/3;flex:none;background:#222}
+#v-inicio .incinta img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+.app #v-inicio .incinta figcaption:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){position:absolute;left:12px;right:12px;bottom:12px;margin:0;padding:0;border:0;color:#fff!important;font-size:12px!important;line-height:1.3;text-shadow:0 1px 8px rgba(0,0,0,.55)}
+#v-inicio .intx{display:grid;grid-template-columns:160px minmax(0,1fr) auto;align-items:end;gap:18px 48px;padding:32px var(--gut) 40px}
+#v-inicio .incuerpo{display:flex;flex-direction:column;gap:14px}
+.app #v-inicio .intx h1:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){margin:0!important;max-width:18ch;text-align:left!important}
+.app #v-inicio .inlead:not(#q):not(#qq):not(#qqq){font-size:20px!important;line-height:1.45;color:var(--tinta-2)!important;max-width:52ch;margin:0!important}
+#v-inicio .inacc{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+#v-inicio .intx>.eti{align-self:start;padding-top:10px}
+@media (max-width:900px){#v-inicio .intx{grid-template-columns:1fr;gap:14px;padding:24px 18px 32px}#v-inicio .infila{height:56vh}#v-inicio .inportada{min-height:0}#v-inicio .intx>.eti br{display:none}}
+#v-inicio .inw{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+#v-inicio .ins{padding:88px 0;border-top:1px solid var(--linea)}
+@media (max-width:700px){#v-inicio .ins{padding:56px 0}#v-inicio .inw{padding:0 18px}}
+#v-inicio .incab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:40px;margin-bottom:40px;align-items:end}
+@media (max-width:820px){#v-inicio .incab{grid-template-columns:1fr;gap:14px;margin-bottom:28px}}
+#v-inicio .incab .eti{margin:0 0 10px}
+.app :is(#v-inicio,#v-cuenta) :is(.insub,.que):not(#q):not(#qq):not(#qqq){font-size:16px!important;color:var(--tinta-2)!important;margin:0;max-width:60ch}
+.app #v-inicio .incab .insub:not(#q):not(#qq):not(#qqq){font-size:17px!important}
+#v-inicio .inpasos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:820px){#v-inicio .inpasos{grid-template-columns:1fr}}
+#v-inicio .inpaso{background:var(--bloque);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:10px}
+#v-inicio .inpaso p{margin:0;color:var(--tinta-2)}
+#v-inicio .inpaso .sen{display:inline-flex;margin:2px 2px 0 0}
+#v-inicio .inn{font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1}
+#v-inicio .intabla{width:100%;border-collapse:collapse;font-size:16px}
+.app #v-inicio .intabla th:not(#q):not(#qq):not(#qqq){text-align:left;font-size:12px!important;font-weight:600!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:var(--tinta-2)!important;padding:0 14px 10px 0;border-bottom:1px solid var(--tinta)}
+#v-inicio .intabla td{padding:14px 14px 14px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+#v-inicio .intabla tr.ingrupo td{padding-top:28px;border-bottom:0}
+#v-inicio .indentro{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--tinta);color:#fff}
+#v-inicio .indentro.infuera{background:#fff;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+@media (max-width:820px){#v-inicio .intabla,#v-inicio .intabla tbody,#v-inicio .intabla tr,#v-inicio .intabla td{display:block}#v-inicio .intabla thead{display:none}#v-inicio .intabla tr{padding:12px 0;border-bottom:1px solid var(--linea)}#v-inicio .intabla td{border:0;padding:2px 0}#v-inicio .intabla tr.ingrupo{border:0}
+  #v-inicio .intabla td[data-k]::before{content:attr(data-k) " · ";font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tinta-2)}}
+#v-inicio .inmodos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){#v-inicio .inmodos{grid-template-columns:1fr}}
+#v-inicio .inmodo{border:1px solid var(--linea);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px}
+#v-inicio .inmodo.con{border:2px solid var(--tinta)}
+#v-inicio .inmodo ul{margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:6px}
+#v-inicio .inmodo p{margin:0}
+
+/* el formulario del proyecto (home y Mi cuenta) */
+.app .pyform{background:var(--bloque);border-radius:24px;padding:clamp(22px,4vw,44px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 40px}
+.app .pyform.corto{grid-template-columns:1fr 1fr;padding:24px;margin-top:16px}
+@media (max-width:900px){.app .pyform,.app .pyform.corto{grid-template-columns:1fr;gap:26px}}
+.app .pyform .campo{display:flex;flex-direction:column;gap:8px;min-width:0}
+.app .pyform fieldset.campo{grid-column:span 1}
+.app .pyform fieldset.campo:nth-of-type(1),.app .pyform fieldset.campo:nth-of-type(2){grid-column:span 1}
+.app .pyform .ancho{grid-column:1/-1!important}
+@media (min-width:901px){.app .pyform fieldset.campo:nth-of-type(1){grid-column:1/span 2}.app .pyform fieldset.campo:nth-of-type(2){grid-column:3/span 1}}
+.app .pyform :is(label[for],legend):not(#q):not(#qq):not(#qqq){font-size:18px!important;font-weight:600!important;color:var(--tinta)!important;padding:0;letter-spacing:-.01em!important;text-transform:none!important}
+.app .pyform fieldset{border:0;margin:0;padding:0}
+.app .pyform input[type=text],.app .pyform input[type=email]{font:400 17px var(--sf);padding:14px 16px;border:1px solid var(--linea);border-radius:12px;background:#fff;color:var(--tinta);width:100%}
+.app .pyform input:focus-visible{outline:2px solid var(--accion);outline-offset:1px}
+.app .pyform .ops{display:flex;flex-wrap:wrap;gap:8px}
+.app .pyform .ops label{cursor:pointer;font-size:16px!important;font-weight:400!important}
+.app .pyform .ops input{position:absolute;opacity:0;pointer-events:none}
+.app .pyform .ops span{display:inline-flex;padding:10px 18px;border-radius:999px;border:1px solid var(--linea);background:#fff;color:var(--tinta)}
+.app .pyform .ops input:checked+span{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+.app .pyform .ops input:focus-visible+span{outline:2px solid var(--accion);outline-offset:2px}
+.app .pyform .que b{color:var(--tinta);font-weight:600}
+.app .pyform .pyerr{grid-column:1/-1;margin:0;color:#A5372A;font-weight:600}
+.app .pyform .cierre{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;border-top:1px solid var(--linea);padding-top:26px}
+.app .pyform .cierre .que{flex:1 1 280px}
+
+/* el menú: sin «Más»; el avatar o «Crear proyecto», siempre a la vista */
+.app .mast .cuenta{position:relative;flex:none;display:flex;align-items:center}
+.app .mast .cuenta .cuentacrear:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){padding:8px 16px!important;font-size:15px!important}
+.app .avatar{width:36px;height:36px;border-radius:50%;border:0;background:var(--tinta);color:#fff;font:600 14px/1 var(--sf);letter-spacing:.02em;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+.app .avatar.grande{width:64px;height:64px;font-size:24px;cursor:default}
+.app .avatar:focus-visible{outline:2px solid var(--accion);outline-offset:2px}
+.app .cuentamenu:not([hidden]){position:absolute;top:calc(100% + 10px);right:0;z-index:70;width:280px;background:#fff;border:1px solid var(--linea);border-radius:16px;padding:8px;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(0,0,0,.12)}
+.app .cuentamenu .cmquien{display:flex;flex-direction:column;gap:2px;padding:10px 12px 12px;margin:0 0 4px;border-bottom:1px solid var(--linea)}
+.app .cuentamenu .cmquien b{font-size:16px;font-weight:600}
+.app .cuentamenu .cmquien span{font-size:14px;color:var(--tinta-2)}
+.app .cuentamenu button{font:400 16px var(--sf);text-align:left;background:none;border:0;padding:10px 12px;border-radius:10px;color:var(--tinta);cursor:pointer}
+.app .cuentamenu button:hover{background:var(--bloque)}
+@media (max-width:760px){.app .mast .row1{margin-right:auto}}
+
+/* Mi cuenta */
+#v-cuenta .cusec{padding:40px 0;border-top:1px solid var(--linea);max-width:960px}
+#v-cuenta .cuyo{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:14px 0 18px}
+#v-cuenta .cuyo>div{flex:1;min-width:200px}
+#v-cuenta .cucab{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+#v-cuenta .cucab .eti,#v-cuenta #cu-perfil>.eti{margin:0 0 8px}
+#v-cuenta .culista{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:12px}
+#v-cuenta .cupy{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:center;border:1px solid var(--linea);border-radius:18px;padding:20px 22px}
+#v-cuenta .cupy.on{border:2px solid var(--tinta)}
+#v-cuenta .cupy h3{margin:0 0 4px}
+#v-cuenta .cupy p{margin:0}
+#v-cuenta .cupy .eti{margin-top:8px}
+#v-cuenta .cuacc{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+#v-cuenta .cuform{grid-column:1/-1}
+@media (max-width:700px){#v-cuenta .cupy{grid-template-columns:1fr}}
+/* la regla vieja de «sin esquinas» (capa editorial) se gana con :not(#z), como el resto de la capa Apple */
+.app :is(.avatar):not(#z):not(#zz){border-radius:50%!important}
+.app :is(.cuentamenu,.pyform input[type=text],.pyform input[type=email]):not(#z):not(#zz){border-radius:14px!important}
+.app :is(.cuentamenu button):not(#z):not(#zz){border-radius:10px!important}
+.app :is(.pyform,.pyform.corto):not(#z):not(#zz){border-radius:24px!important}
+.app :is(.pyform .ops span,#v-inicio .indentro,#v-cuenta .cupy .sen):not(#z):not(#zz){border-radius:999px!important}
+.app :is(#v-inicio .inpaso,#v-inicio .inmodo,#v-cuenta .cupy):not(#z):not(#zz){border-radius:18px!important}
+.app .perfilrad b:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-weight:600!important}
+@media (max-width:760px){.app .mast:not(#z):not(#zz){gap:8px!important;padding:0 14px!important}.app .navmenu:not(#z){white-space:nowrap}.app .mast .cuenta .cuentacrear:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq):not(#qqqqqqq){padding:7px 12px!important;font-size:14px!important;white-space:nowrap}}
+/* Mis ciclos: la línea del proyecto */
+.app .perfilrad .eti{margin-right:8px}
 </style>
 
 <div class="app">
   <header class="mast">
     <div class="row1">
       <span class="side">N.º 01 — Primavera 2026</span>
-      <button class="mk" id="home" title="Tendencias" aria-label="CICLO"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10.00" cy="2.50" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17.13" cy="7.68" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="14.41" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="5.59" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="2.87" cy="7.68" r="2.3" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg><span>CICLO</span></button>
+      <button class="mk" id="home" title="Inicio" aria-label="CICLO, inicio"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10.00" cy="2.50" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17.13" cy="7.68" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="14.41" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="5.59" cy="16.07" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="2.87" cy="7.68" r="2.3" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg><span>CICLO</span></button>
       <span class="side r">Última lectura 21.10.2026</span>
     </div>
     <button type="button" class="navmenu" id="navmenu" aria-expanded="false" aria-controls="nav">☰ Menú</button>
     <nav id="nav" aria-label="Secciones">
-      <a data-v="radar" class="nav-dz">Tendencias</a>
+      <a data-v="radar" class="nav-dz">Mis ciclos</a>
       <a data-v="disenar">Diseñar</a>
-      <a data-v="recorridos">El ciclo</a>
+      <a data-v="recorridos">Explorar ciclos</a>
       <a data-v="lectura">Preguntar</a>
-      <button type="button" id="navmas" class="navmas" aria-expanded="false">Más</button>
-      <span class="navgrupo" id="navgrupo" hidden>
-        <a data-v="mover"><b>El brief</b><span>Un encargo de una casa real: diseñás en tres toques y CICLO te dice si tuviste ojo.</span><i>15 casas, del lujo al fast fashion</i><em>Jugar →</em></a>
-        <a data-v="racional"><b>Acerca de</b><span>Qué es CICLO, de dónde salen los datos y cómo se hizo.</span><i>El racional, resumido</i><em>Abrir →</em></a>
-      </span>
-      <button type="button" class="navperfil" id="navperfil">Cambiar perfil</button>
+      <a data-v="mover">El brief</a>
+      <a data-v="racional">Acerca de</a>
     </nav>
+    <div class="cuenta" id="cuenta"></div>
   </header>
 
   <main>
     <p class="aviso" id="aviso" role="alert" hidden></p>
 
-    <!-- ================= ENTRADA: las tres preguntas ================= -->
+    <!-- ================= INICIO (24/11): el home, sin preguntas; al final, «Crear tu proyecto» ================= -->
+    <section class="view" id="v-inicio" hidden>
+      <div class="inportada">
+        <div class="infila" aria-hidden="true"><div class="incinta" id="incinta"></div></div>
+        <div class="intx">
+          <p class="eti">Una herramienta <br>de moda</p>
+          <div class="incuerpo">
+            <h1>En qué momento está cada color, estampa, corte o material.</h1>
+            <p class="inlead">CICLO cruza veinte años de pasarela y de búsquedas para decirte, atributo por atributo, si conviene entrar, esperar o salir.</p>
+          </div>
+          <div class="inacc"><a class="btn-pri" href="#crear" data-crear>Crear tu proyecto</a><a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a></div>
+        </div>
+      </div>
+
+      <div class="inw">
+        <section class="ins" id="in-que">
+          <div class="incab"><div><p class="eti">Qué es</p><h2>Una etapa para cada atributo, no una predicción.</h2></div>
+          <p class="insub">Un atributo es una cosa concreta que se puede medir en todos lados: el floral, el jean amplio, la gamuza. CICLO lo ubica en una de cinco etapas (emergente, en ascenso, en pico, saturada, en retorno) según cuánto aparece en los desfiles y cuánto se lo busca. No adivina el futuro: dice dónde está hoy.</p></div>
+        </section>
+
+        <section class="ins" id="in-como">
+          <div class="incab"><div><p class="eti">Cómo funciona</p><h2>Tres pasos.</h2></div><p class="insub">Lo mismo para los 65 atributos con datos.</p></div>
+          <div class="inpasos">
+            <div class="inpaso"><span class="inn">1</span><h3>Medimos</h3><p>Cuánto aparece en la pasarela de Vogue Runway y cuánto se busca en Google, año por año.</p></div>
+            <div class="inpaso"><span class="inn">2</span><h3>Agrupamos</h3><p>Un K-means junta a los que se mueven parecido y le da a cada grupo el nombre de una etapa. Corre en tu navegador.</p></div>
+            <div class="inpaso"><span class="inn">3</span><h3>Te decimos qué hacer</h3><p>Según tu tipo de marca y sus plazos, cada etapa es una señal: <span class="sen s-entrar">▲ Entrar</span> <span class="sen s-esperar">■ Esperar</span> <span class="sen s-salir">▼ Salir</span></p></div>
+          </div>
+        </section>
+
+        <section class="ins" id="in-datos">
+          <div class="incab"><div><p class="eti">De dónde salen los datos</p><h2>Dos fuentes deciden; el resto comprueba.</h2></div>
+          <p class="insub">Todo se bajó una vez, entre septiembre y noviembre de 2026. La última columna dice cada cuánto habría que volver a bajarlo si CICLO estuviera en uso; los datasets cerrados no cambian.</p></div>
+          <table class="intabla">
+            <thead><tr><th>Fuente</th><th>Qué mide</th><th>Período</th><th>Cuánto</th><th>Se actualizaría</th></tr></thead>
+            <tbody>
+              <tr class="ingrupo"><td colspan="5"><span class="indentro">Entran al modelo</span></td></tr>
+              <tr><td><b>Vogue Runway</b></td><td data-k="Mide">Qué parte de los looks de cada año tiene el atributo</td><td data-k="Período">2000–2025</td><td data-k="Cuánto">902.566 looks hasta 2023; 20.000 por año en 2024 y 2025</td><td data-k="Se actualizaría">Con cada temporada (4 por año)</td></tr>
+              <tr><td><b>Google Trends</b></td><td data-k="Mide">Cuánto se busca en el mundo, frente a 35 búsquedas de moda</td><td data-k="Período">2004–2024</td><td data-k="Cuánto">65 series</td><td data-k="Se actualizaría">Cada mes</td></tr>
+              <tr class="ingrupo"><td colspan="5"><span class="indentro infuera">Comprueban, no entran</span></td></tr>
+              <tr><td><b>Reddit</b></td><td data-k="Mide">De qué se habla: un foro de mujeres y uno de hombres, por separado</td><td data-k="Período">2012–2025</td><td data-k="Cuánto">178.519 y 581.184 posts</td><td data-k="Se actualizaría">Cada mes</td></tr>
+              <tr><td><b>Google Shopping</b></td><td data-k="Mide">Búsquedas con intención de compra</td><td data-k="Período">2008–2025</td><td data-k="Cuánto">25 términos</td><td data-k="Se actualizaría">Cada mes</td></tr>
+              <tr><td><b>Lyst Index</b></td><td data-k="Mide">El ranking de marcas más buscadas</td><td data-k="Período">2018–2026</td><td data-k="Cuánto">55 marcas, 34 trimestres</td><td data-k="Se actualizaría">Cada trimestre</td></tr>
+              <tr><td><b>H&amp;M</b></td><td data-k="Mide">Qué compra el mercado masivo</td><td data-k="Período">2018–2020</td><td data-k="Cuánto">30,6 M de compras</td><td data-k="Se actualizaría">No: dataset cerrado</td></tr>
+              <tr><td><b>Amazon</b></td><td data-k="Mide">Reseñas de ropa que nombran el atributo</td><td data-k="Período">2012–2023</td><td data-k="Cuánto">1,1 M de reseñas</td><td data-k="Se actualizaría">No: dataset cerrado</td></tr>
+              <tr><td><b>Zara</b></td><td data-k="Mide">Qué había en la góndola un mes</td><td data-k="Período">Febrero de 2024</td><td data-k="Cuánto">228 prendas</td><td data-k="Se actualizaría">No: es una foto de un mes</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="ins" id="in-modos">
+          <div class="incab"><div><p class="eti">Qué obtenés</p><h2>Con proyecto o sólo mirando.</h2></div><p class="insub">Los datos son los mismos. El proyecto cambia cómo se leen.</p></div>
+          <div class="inmodos">
+            <div class="inmodo con"><p class="eti">Con proyecto</p><h3>Mis ciclos</h3><ul>
+              <li>Cada atributo con su señal para tu tipo de marca y sus plazos.</li>
+              <li>Lo que se habla en Reddit, del foro de tu público.</li>
+              <li>Diseñar, Preguntar y El brief, con tu proyecto.</li></ul>
+              <p><a class="btn-pri" href="#crear" data-crear>Crear tu proyecto</a></p></div>
+            <div class="inmodo"><p class="eti">Sólo mirando</p><h3>Explorar ciclos</h3><ul>
+              <li>Todos los atributos, sus curvas y sus fotos de pasarela.</li>
+              <li>Las señales, para una marca contemporary de ejemplo, y dicho así.</li></ul>
+              <p><a class="lnk" href="#recorridos" data-mirar>Explorar ciclos</a></p></div>
+          </div>
+        </section>
+
+        <section class="ins" id="crear">
+          <div class="incab"><div><p class="eti">Crear tu proyecto</p><h2>Todo en una pantalla.</h2></div><p class="insub">Un nombre y tres preguntas. Podés cambiarlas cuando quieras.</p></div>
+          <div id="inform"></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- ================= CUENTA (24/11): mi perfil y mis proyectos ================= -->
+    <section class="view" id="v-cuenta" hidden>
+      <div class="vhead"><div><h1>Mi cuenta</h1></div></div>
+      <div id="cuentacuerpo"></div>
+    </section>
+
+    <!-- ================= ENTRADA: las tres preguntas (desde el 24/11 no se muestra; queda por los links viejos) ================= -->
     <section class="view" id="v-perfil" hidden>
       <div class="gbanda" id="gbanda" aria-hidden="true"></div>
       <div class="gate">
@@ -1963,7 +2150,7 @@ img:not(.fcarga){transition:opacity .35s ease}
     <section class="view" id="v-radar" hidden>
       <div class="vhead">
         <div>
-          <h1 id="radtit">Qué se está moviendo</h1>
+          <h1 id="radtit">Mis ciclos</h1>
           <p class="perfilrad" id="perfilrad"></p>
           <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>El punto de la pista marca en qué etapa está el atributo según el K-means, que cruza pasarela y búsqueda medidas. Si no tiene etapa, la señal sale de cuánto ganó o perdió terreno en la búsqueda entre 2022 y 2024.</p></div></details>
         </div>
@@ -2343,7 +2530,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <section class="metsec" aria-labelledby="met6">
         <h2 class="methd" id="met6"><button type="button" class="methead" aria-expanded="false" aria-controls="met6f"><span class="metn">5</span><span class="mett">Las decisiones de diseño</span><span class="metab" aria-hidden="true">Abrir</span></button></h2>
         <div class="metprev"><p class="metlead">El color dice una sola cosa: si conviene avanzar o frenar. La etapa es un lugar en la pista, no un color. Lo primero de cada pantalla es lo que decide; lo que aclara va en un «?».</p></div>
-        <div class="metfull" id="met6f" hidden><p><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va con ▲ o ▼, y sólo la palabra lleva el mismo verde o rojo («Gana presencia», «Pierde presencia»); «Estable» va en negro. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series, y los grupos del K-means tienen tonos que no son de la señal. Hay un solo color más, el azul, y significa «se puede tocar»: botones, links y la opción elegida. El resto es blanco, gris y negro.</p><p><b>La letra.</b> La del sistema de Apple (SF Pro; Inter en el resto) en todo; la Bodoni, sólo en el logo. Cinco estilos: título, subtítulo, cuerpo, etiqueta y dato.</p></div>
+        <div class="metfull" id="met6f" hidden><p><b>Cómo leer los colores.</b> El color dice una sola cosa: si conviene avanzar o frenar. Tres colores quedan reservados para esa señal: <b class="sen s-entrar">▲ Entrar</b>, <b class="sen s-esperar">■ Esperar / Explorar</b> y <b class="sen s-salir">▼ Salir</b>; lo que no tiene serie medida queda neutro, <b class="sen s-sin">○ Sin dato directo</b>, siempre con la palabra al lado. Que algo gane o pierda terreno es un dato, no una decisión: va con ▲ o ▼, y sólo la palabra lleva el mismo verde o rojo («Gana presencia», «Pierde presencia»); «Estable» va en negro. De dónde sale cada dato se marca sin color: <span class="proc">● medido</span> es una serie medida, <span class="tag ia2">interpretado</span> es la lectura de un modelo (línea punteada en los gráficos), y <span class="proc">↪ prestado</span> es el dato de un pariente, dicho en la tarjeta. Los gráficos usan color sólo para separar sus series, y los grupos del K-means tienen tonos que no son de la señal. Hay un solo color más, el azul, y significa «se puede tocar»: botones, links y la opción elegida. El resto es blanco, gris y negro.</p><p><b>La letra.</b> La del sistema de Apple (SF Pro; Inter en el resto) en todo; la Bodoni, sólo en el logo. Una escala fija: H1, H2, H3, H4, párrafo, etiqueta y dato.</p><p><b>Tus datos.</b> Tu nombre, tu email y tus proyectos se guardan sólo en este navegador (localStorage). No hay servidor ni cuentas: nadie más los ve, y si borrás los datos del navegador, se borran.</p></div>
       </section>
       <section class="metsec" aria-labelledby="met7">
         <h2 class="methd" id="met7"><button type="button" class="methead" aria-expanded="false" aria-controls="met7f"><span class="metn">6</span><span class="mett">El racional completo</span><span class="metab" aria-hidden="true">Abrir</span></button></h2>
@@ -4935,13 +5122,12 @@ function acercaRota(pared){if(innerWidth<760)return;const sec=$('#v-racional');
 function tratamiento(v){if(v==='recorridos')cicloTL();if(v==='disenar')dzAcum();if(v==='lectura')setTimeout(preguntarVacio,30);if(v==='racional')acercaPared();}
 function mostrar(v,keepNav){
   if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando
-  document.body.classList.toggle('on-gate',v==='perfil');
-  ['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','racional','adivina','mover'].forEach(x=>{
+  document.body.classList.toggle('on-gate',v==='perfil');document.body.classList.toggle('on-inicio',v==='inicio');
+  ['inicio','cuenta','perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','racional','adivina','mover'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });
   if(!keepNav)$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v===v?'page':'false'));
-  $('#navgrupo').hidden=true;$('#navmas').setAttribute('aria-expanded','false');
-  $('#navmas').classList.toggle('on',['etapas','marcas','racional','adivina','mover'].includes(v));cerrarMenu();
+  cerrarCuenta();cerrarMenu();
   if(v==='retornos')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='recorridos'?'page':'false'));
   if(v==='detalle')$$('#nav a').forEach(a=>a.setAttribute('aria-current',a.dataset.v==='radar'?'page':'false'));
   if(v==='disenar')pintarDisenar();else if($('#dzbarra'))$('#dzbarra').hidden=true;
@@ -4951,6 +5137,7 @@ function mostrar(v,keepNav){
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
   if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}else tvParar();
+  if(v==='inicio')pintarInicio();if(v==='cuenta')pintarCuentaVista();
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);
 }
@@ -5033,20 +5220,152 @@ function ponerCliente(c){
 }
 /* «Sólo estoy mirando» (10/11/2026): entra a Tendencias sin contestar; las señales usan un perfil general y lo dicen */
 let mirando=false;
-function gateMirar(){mirando=true;publico='todos';vinculo='marca';ponerCliente('medio');if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);}
+/* 24/11: «Sólo estoy mirando» entra a Explorar ciclos, sin proyecto */
+function gateMirar(){if(!pyActivo())pyMirar();mostrar('recorridos');}
 function gateElegir(){
   mirando=false;publico=gateSel.publico||'todos';vinculo=gateSel.vinculo||'marca';ponerCliente(gateSel.cliente);guardarPerfil();
   if(gateDestino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(gateDestino);
 }
-/* Tendencias dice con qué perfil se está leyendo, y deja cambiarlo */
+/* Mis ciclos dice con qué proyecto se está leyendo (24/11: el nombre del proyecto y «Editar», en vez de «Tu perfil») */
 function pintarPerfilRadar(){
-  const e=$('#perfilrad');if(!e)return;
-  const pub={mujer:'Mujer',hombre:'Hombre',todos:'Sin género'}[publico]||'Sin género';
-  const cat=(GATE[vinculo]||GATE.marca).c[cliente]?.[0]||(PERFIL[cliente]||PERFIL.premium).n;
-  if(mirando){e.innerHTML=`<span>Estás mirando sin elegir: las señales son para una marca contemporary.</span><button type="button" id="perfilradc">Decime para quién diseñás</button>`;$('#perfilradc').onclick=()=>abrirGate('radar');return;}
-  e.innerHTML=`<span>Tu perfil: <b>${pub} · ${vinculo==='propia'?'Por tu cuenta':'Para una marca'} · ${cat}</b></span><button type="button" id="perfilradc">Cambiar</button>`;
-  $('#perfilradc').onclick=()=>abrirGate('radar');
+  const e=$('#perfilrad');if(!e)return;const p=pyActivo();
+  if(mirando){e.innerHTML=`<span>Estás mirando sin proyecto: las señales son para una marca contemporary de ejemplo.</span><button type="button" id="perfilradc">Crear tu proyecto</button>`;$('#perfilradc').onclick=()=>abrirGate('radar');return;}
+  if(p){e.innerHTML=`<span><span class="eti">Proyecto</span><b>${pyEsc(p.nombre)}</b> · ${pyResumen(p)}</span><button type="button" id="perfilradc">Editar</button>`;
+    $('#perfilradc').onclick=()=>{cuentaEdita=p.id;cuentaFoco='proyectos';mostrar('cuenta');};return;}
+  const q={publico,vinculo,cliente};
+  e.innerHTML=`<span>Perfil de un link: <b>${pyResumen(q)}</b></span><button type="button" id="perfilradc">Crear un proyecto</button>`;$('#perfilradc').onclick=()=>abrirGate('radar');
 }
+/* ---------- 24/11 · el home y los proyectos (rediseño B y C, después de la devolución de la Entrega 4) ----------
+   «Al entrar no hay preguntas»: la app abre en el home (#v-inicio). Las tres preguntas viven en «Crear tu proyecto», en
+   una sola pantalla, con una línea que dice qué cambia cada respuesta. No hay servidor: el usuario y sus proyectos se
+   guardan en este navegador (localStorage: ciclo.usuario, ciclo.proyectos, ciclo.activo), y Acerca de lo dice.
+   abrirGate() ya no abre el gate de tres pasos: lleva al formulario y recuerda adónde ibas. */
+const PY_K={u:'ciclo.usuario',p:'ciclo.proyectos',a:'ciclo.activo'};
+const pyLeer=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}};
+const pyEscribir=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}};
+const pyEsc=t=>String(t==null?'':t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let usuario=pyLeer(PY_K.u,null),proyectos=pyLeer(PY_K.p,[]),activoId=pyLeer(PY_K.a,null),pyDestino='radar';
+if(!Array.isArray(proyectos))proyectos=[];
+const pyActivo=()=>proyectos.find(p=>p.id===activoId)||null;
+/* Felipe Berney → FB; un solo nombre → una letra; sin nombre, del email */
+function iniciales(u){
+  const n=(u&&u.nombre||'').trim();
+  if(n){const w=n.split(/\s+/).filter(Boolean);return (w.length>1?w[0][0]+w[w.length-1][0]:w[0][0]).toUpperCase();}
+  const w=((u&&u.email)||'').split('@')[0].split(/[._-]+/).filter(Boolean);
+  return w.length?(w.length>1?w[0][0]+w[1][0]:w[0][0]).toUpperCase():'?';
+}
+const PY_PUB={mujer:'Mujer',hombre:'Hombre',todos:'Sin género'};
+const pyCat=p=>((GATE[p.vinculo]||GATE.marca).c[p.cliente]||['—'])[0];
+const pyResumen=p=>`${PY_PUB[p.publico]||'Sin género'} · ${p.vinculo==='propia'?'Por mi cuenta':'Para una marca'} · ${pyCat(p)}`;
+function pyAplicar(p){mirando=false;publico=p.publico;vinculo=p.vinculo;Object.assign(gateSel,{publico,vinculo,cliente:p.cliente});ponerCliente(p.cliente);guardarPerfil();}
+function pyMirar(){mirando=true;publico='todos';vinculo='marca';ponerCliente('medio');}
+function pyActivar(id,destino){
+  activoId=id;pyEscribir(PY_K.a,id);const p=pyActivo();if(p)pyAplicar(p);pintarCuenta();
+  if(destino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(destino&&!['inicio','perfil','cuenta'].includes(destino)?destino:'radar');
+}
+function pySalir(){activoId=null;pyEscribir(PY_K.a,null);pyMirar();pintarCuenta();mostrar('inicio');}
+function pyGuardarTodo(){pyEscribir(PY_K.u,usuario);pyEscribir(PY_K.p,proyectos);}
+
+/* el formulario: crear (p=null) o editar un proyecto; lo usan el home y Mi cuenta */
+let pyFormN=0;
+function pintarForm(cont,p,alGuardar){
+  const n=++pyFormN,u=usuario||{},v=p||{publico:'mujer',vinculo:'marca',cliente:'fast'},nuevo=!p;
+  const op=(name,val,lab,on)=>`<label><input type="radio" name="${name}-${n}" value="${val}"${on?' checked':''}><span>${lab}</span></label>`;
+  const marcas=(vin,sel)=>Object.entries(GATE[vin].c).map(([k,[t]])=>op('ti',k,t,sel===k)).join('');
+  cont.innerHTML=`<form class="pyform" novalidate>
+    <div class="campo"><label for="pn-${n}">Nombre del proyecto</label><input id="pn-${n}" type="text" autocomplete="off" placeholder="Por ejemplo: Invierno 2026" value="${pyEsc(p?p.nombre:'')}"></div>
+    <div class="campo"><label for="pu-${n}">Tu nombre</label><input id="pu-${n}" type="text" autocomplete="name" placeholder="Nombre y apellido" value="${pyEsc(u.nombre||'')}"><p class="que">Para tus iniciales, arriba a la derecha.</p></div>
+    <div class="campo"><label for="pe-${n}">Tu email</label><input id="pe-${n}" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" value="${pyEsc(u.email||'')}"><p class="que">Queda en este navegador: no hay servidor y no se manda a ningún lado.</p></div>
+    <fieldset class="campo"><legend>¿Para quién diseñás?</legend>
+      <div class="ops">${op('pu','mujer','Mujer',v.publico==='mujer')}${op('pu','hombre','Hombre',v.publico==='hombre')}${op('pu','todos','Sin género',v.publico==='todos')}</div>
+      <p class="que"><b>Qué cambia:</b> qué foro de Reddit se lee (mujeres o hombres) y las fotos de pasarela que ves. Google y Vogue no separan por género: esas curvas son de todos.</p></fieldset>
+    <fieldset class="campo"><legend>¿Para una marca o por tu cuenta?</legend>
+      <div class="ops">${op('vi','marca','Para una marca',v.vinculo==='marca')}${op('vi','propia','Por mi cuenta',v.vinculo==='propia')}</div>
+      <p class="que"><b>Qué cambia:</b> por tu cuenta no comprometés producción ni stock, así que donde una marca debería esperar, vos podés <b>explorar</b>.</p></fieldset>
+    <fieldset class="campo ancho"><legend id="tl-${n}">${GATE[v.vinculo].preg}</legend>
+      <div class="ops" id="ti-${n}">${marcas(v.vinculo,v.cliente)}</div>
+      <p class="que"><b>Qué cambia:</b> los plazos y, con ellos, la señal. Fast fashion produce en 6 semanas: con el atributo en pico todavía llega. High fashion produce en 6 meses: en el pico llegaría tarde, así que la señal es esperar.</p></fieldset>
+    <p class="pyerr" id="er-${n}" role="alert" hidden></p>
+    <div class="cierre"><button class="btn-pri" type="submit">${nuevo?'Crear proyecto':'Guardar cambios'}</button>${nuevo?'<a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a>':'<button type="button" class="lnk" data-cancelar>Cancelar</button>'}<p class="que">Se guarda en este navegador (localStorage). Si borrás los datos del navegador, se borra el proyecto.</p></div>
+  </form>`;
+  const f=cont.querySelector('form'),val=nm=>(f.querySelector(`input[name="${nm}-${n}"]:checked`)||{}).value;
+  f.addEventListener('input',()=>{$(`#er-${n}`).hidden=true;});
+  f.addEventListener('change',e=>{if(e.target.name!==`vi-${n}`)return;const vin=val('vi'),sel=val('ti');
+    $(`#ti-${n}`).innerHTML=marcas(vin,sel);$(`#tl-${n}`).textContent=GATE[vin].preg;});
+  f.querySelector('[data-cancelar]')?.addEventListener('click',()=>alGuardar&&alGuardar(null));
+  f.addEventListener('submit',e=>{e.preventDefault();
+    const nom=$(`#pn-${n}`).value.trim(),un=$(`#pu-${n}`).value.trim(),em=$(`#pe-${n}`).value.trim(),er=$(`#er-${n}`);
+    const falta=!nom?'Ponele un nombre al proyecto.':!un&&!em?'Poné tu nombre o tu email, para tus iniciales.':em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)?'Ese email no parece completo.':!val('ti')?'Elegí el tipo de marca.':'';
+    if(falta){er.textContent=falta;er.hidden=false;return;}
+    usuario={nombre:un,email:em};
+    const datos={nombre:nom,publico:val('pu')||'todos',vinculo:val('vi')||'marca',cliente:val('ti')};
+    let id;if(p){Object.assign(p,datos);id=p.id;}else{id='p'+Date.now().toString(36);proyectos.push(Object.assign({id,creado:new Date().toISOString().slice(0,10)},datos));}
+    pyGuardarTodo();if(alGuardar)alGuardar(id);else pyActivar(id,pyDestino);
+  });
+}
+
+/* el avatar: siempre a la vista. Sin proyecto, «Crear proyecto» */
+function pintarCuenta(){
+  const c=$('#cuenta');if(!c)return;const p=pyActivo();
+  if(!p){c.innerHTML=`<button type="button" class="btn-pri cuentacrear" id="cuentacrear">Crear proyecto</button>`;
+    $('#cuentacrear').onclick=()=>abrirGate(['inicio','cuenta','perfil'].includes(vista)?'radar':vista);return;}
+  const quien=usuario&&(usuario.nombre||usuario.email)||'';
+  c.innerHTML=`<button type="button" class="avatar" id="avatar" aria-haspopup="true" aria-expanded="false" aria-label="Tu cuenta: ${pyEsc(quien)}, proyecto ${pyEsc(p.nombre)}">${pyEsc(iniciales(usuario))}</button>
+    <div class="cuentamenu" id="cuentamenu" hidden>
+      <p class="cmquien"><b>${pyEsc(quien)}</b><span>${pyEsc(p.nombre)} · ${pyResumen(p)}</span></p>
+      <button type="button" data-c="proyectos">Mis proyectos</button>
+      <button type="button" data-c="perfil">Mi perfil</button>
+      <button type="button" data-c="salir">Salir / cambiar de proyecto</button>
+    </div>`;
+  $('#avatar').onclick=e=>{e.stopPropagation();const m=$('#cuentamenu');m.hidden=!m.hidden;$('#avatar').setAttribute('aria-expanded',String(!m.hidden));};
+  c.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{cerrarCuenta();const k=b.dataset.c;if(k==='salir')pySalir();else{cuentaFoco=k;mostrar('cuenta');}});
+}
+function cerrarCuenta(){const m=$('#cuentamenu');if(m&&!m.hidden){m.hidden=true;$('#avatar')?.setAttribute('aria-expanded','false');}}
+document.addEventListener('click',e=>{if(!e.target.closest('#cuenta'))cerrarCuenta();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarCuenta();});
+
+/* Mi cuenta: mi perfil y mis proyectos */
+let cuentaFoco='proyectos',cuentaEdita=null;
+function pintarCuentaVista(){
+  const C=$('#cuentacuerpo');if(!C)return;const p=pyActivo(),u=usuario||{};
+  if(!proyectos.length){C.innerHTML=`<p class="insub">Todavía no creaste un proyecto.</p><p><button type="button" class="btn-pri" id="cunuevo">Crear tu proyecto</button></p>`;$('#cunuevo').onclick=()=>abrirGate('radar');return;}
+  const fila=q=>`<li class="cupy${q.id===activoId?' on':''}"><div><h3>${pyEsc(q.nombre)}</h3><p>${pyResumen(q)}</p><p class="eti">Creado el ${q.creado.split('-').reverse().join('/')}${q.id===activoId?' · abierto ahora':''}</p></div>
+    <div class="cuacc">${q.id===activoId?'':`<button type="button" class="btn-pri" data-abrir="${q.id}">Abrir</button>`}<button type="button" class="lnk" data-editar="${q.id}">Editar</button><button type="button" class="lnk" data-borrar="${q.id}">Borrar</button></div>
+    ${cuentaEdita===q.id?'<div class="cuform" id="cuform"></div>':''}</li>`;
+  C.innerHTML=`<section class="cusec" id="cu-perfil"><p class="eti">Mi perfil</p>
+      <div class="cuyo"><span class="avatar grande" aria-hidden="true">${pyEsc(iniciales(u))}</span><div><h2>${pyEsc(u.nombre||u.email||'Sin nombre')}</h2><p class="insub">${pyEsc(u.email||'Sin email')}</p></div>
+      <button type="button" class="btn-sec" id="cuyoed">Editar</button></div>
+      <div id="cuyoform"></div>
+      <p class="que">Tu nombre, tu email y tus proyectos están sólo en este navegador. No hay servidor.</p></section>
+    <section class="cusec" id="cu-proyectos"><div class="cucab"><div><p class="eti">Mis proyectos</p><h2>${proyectos.length} proyecto${proyectos.length>1?'s':''}</h2></div><button type="button" class="btn-sec" id="cunuevo">Nuevo proyecto</button></div>
+      ${cuentaEdita==='nuevo'?'<div class="cuform" id="cuform"></div>':''}
+      <ul class="culista">${proyectos.map(fila).join('')}</ul>
+      <p><button type="button" class="lnk" id="cusalir">Salir / cambiar de proyecto</button></p></section>`;
+  const vuelve=id=>{const nuevo=cuentaEdita==='nuevo';cuentaEdita=null;if(id&&(nuevo||id===activoId)){pyActivar(id,nuevo?'radar':'cuenta');}else{pintarCuenta();pintarCuentaVista();}};
+  if(cuentaEdita)pintarForm($('#cuform'),cuentaEdita==='nuevo'?null:proyectos.find(q=>q.id===cuentaEdita),vuelve);
+  $('#cunuevo').onclick=()=>{cuentaEdita='nuevo';pintarCuentaVista();$('#cuform')?.scrollIntoView({block:'start'});};
+  $('#cusalir').onclick=pySalir;
+  $('#cuyoed').onclick=()=>{const F=$('#cuyoform');F.innerHTML=`<form class="pyform corto" novalidate><div class="campo"><label for="cun">Tu nombre</label><input id="cun" type="text" value="${pyEsc(u.nombre||'')}"></div><div class="campo"><label for="cue">Tu email</label><input id="cue" type="email" value="${pyEsc(u.email||'')}"></div><div class="cierre"><button class="btn-pri" type="submit">Guardar</button></div></form>`;
+    F.querySelector('form').onsubmit=e=>{e.preventDefault();usuario={nombre:$('#cun').value.trim(),email:$('#cue').value.trim()};pyGuardarTodo();pintarCuenta();pintarCuentaVista();};};
+  C.querySelectorAll('[data-abrir]').forEach(b=>b.onclick=()=>pyActivar(b.dataset.abrir,'radar'));
+  C.querySelectorAll('[data-editar]').forEach(b=>b.onclick=()=>{cuentaEdita=b.dataset.editar;pintarCuentaVista();$('#cuform')?.scrollIntoView({block:'center'});});
+  C.querySelectorAll('[data-borrar]').forEach(b=>b.onclick=()=>{const q=proyectos.find(x=>x.id===b.dataset.borrar);if(!q||!confirm(`¿Borrar «${q.nombre}»? No se puede deshacer.`))return;
+    proyectos=proyectos.filter(x=>x!==q);pyGuardarTodo();if(q.id===activoId){activoId=null;pyEscribir(PY_K.a,null);pyMirar();}pintarCuenta();pintarCuentaVista();});
+  const foco=$(cuentaFoco==='perfil'?'#cu-perfil':'#cu-proyectos');if(foco&&!cuentaEdita)requestAnimationFrame(()=>foco.scrollIntoView({block:'start'}));
+}
+
+/* el home: la serie de pasarela y el formulario */
+function pintarInicio(){
+  const c=$('#incinta');
+  if(c&&!c.childElementCount){const F=(GATE_FOTOS.var||[]).slice(0,10);
+    const h=F.map(([f,d,s,y])=>`<figure><img src="${vogueFoto(f,640)}" alt="" loading="lazy" decoding="async"><figcaption>${pyEsc(d)} · ${TEMP[s]||''} ${y} · Vogue Runway</figcaption></figure>`).join('');
+    c.innerHTML=h+h;}
+  if(!$('#inform .pyform'))pintarForm($('#inform'),null);
+}
+document.addEventListener('click',e=>{
+  const cr=e.target.closest('[data-crear]');if(cr){e.preventDefault();abrirGate(pyDestino);return;}
+  const mi=e.target.closest('[data-mirar]');if(mi){e.preventDefault();gateMirar();}
+});
 /* Método · la entrada: lo que el gate ya no explica en cada tarjeta */
 function pintarMetodoGate(){
   const m=$('#metgate');if(!m)return;
@@ -5062,14 +5381,14 @@ function pintarMetodoGate(){
     <h3>Si trabajás para una marca · ¿Qué tipo de marca?</h3>${tabla('marca')}
     <h3>Si trabajás por tu cuenta · ¿Qué tipo de prendas querés diseñar?</h3>${tabla('propia')}`;
 }
-function abrirGate(destino){gateDestino=destino&&destino!=='perfil'?destino:'radar';gatePaso=1;pintarGate();mostrar('perfil');}
+/* 24/11: ya no abre las tres preguntas en pasos; lleva a «Crear tu proyecto» en el home y recuerda adónde ibas */
+function abrirGate(destino){pyDestino=gateDestino=destino&&!['perfil','inicio','cuenta'].includes(destino)?destino:'radar';mostrar('inicio');requestAnimationFrame(()=>$('#crear')?.scrollIntoView({block:'start'}));}
 $('#gvolver').addEventListener('click',()=>{gatePaso=Math.max(1,gatePaso-1);pintarGate();$('#ggrid .gcard')?.focus();});
-$('#navperfil').addEventListener('click',()=>abrirGate(vista));
 $('#gmirar').addEventListener('click',gateMirar);
 let publico='todos';
 
 /* ---------- links compartibles: #vista[/elemento][?c=cliente] ---------- */
-const VISTAS=['perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','preguntar','tiza','revision','consulta','asistente','racional','adivina','mover'];
+const VISTAS=['inicio','cuenta','perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','preguntar','tiza','revision','consulta','asistente','racional','adivina','mover'];
 let vista='perfil',leyendoLink=false;
 function linkActual(){
   const el=vista==='recorridos'?recSel:vista==='detalle'?detSel:null;
@@ -5091,7 +5410,9 @@ function leerLink(){
   if(qs.has('d')&&!qs.has('v'))qs.set('v',qs.get('d')==='disenar'?'propia':'marca');
   if(destino==='recorridos'&&el&&REC.some(o=>o.id===el)){recSel=el;pintarRecorridos();}
   if(destino==='detalle'&&el&&T.some(t=>t.id===el&&tieneDato(t)))detSel=el;
-  if(!(qs.has('c')&&qs.has('v')&&qs.has('pu'))||destino==='perfil'){abrirGate(destino);return true;}
+  if(destino==='perfil'){abrirGate('radar');return true;}
+  if(!(qs.has('c')&&qs.has('v')&&qs.has('pu'))){const p=pyActivo();if(p)pyAplicar(p);else pyMirar();
+    if(destino==='detalle'&&detSel)abrirDetalle(detSel);else mostrar(destino);return true;}
   leyendoLink=true;
   try{
     vinculo=qs.get('v')==='propia'?'propia':'marca';publico=['mujer','hombre'].includes(qs.get('pu'))?qs.get('pu'):'todos';
@@ -5108,16 +5429,12 @@ $('#copiar').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(u);b.textContent='Copiado';}catch(e){window.prompt('Copiá este link:',u);}
   setTimeout(()=>{b.textContent='Copiar link';},1800);
 });
-$('#navmas').addEventListener('click',e=>{e.stopPropagation();const g=$('#navgrupo');g.hidden=!g.hidden;$('#navmas').setAttribute('aria-expanded',String(!g.hidden));});
-/* «Más» se cierra al tocar afuera o con Escape; en el celular, el menú entero */
-function cerrarMas(){$('#navgrupo').hidden=true;$('#navmas').setAttribute('aria-expanded','false');}
+function cerrarMas(){}
 function cerrarMenu(){document.body.classList.remove('menu-abierto');$('#navmenu').setAttribute('aria-expanded','false');}
-document.addEventListener('click',e=>{if(!e.target.closest('#navgrupo,#navmas'))cerrarMas();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){cerrarMas();cerrarMenu();}});
 $('#navmenu').addEventListener('click',()=>{
   document.documentElement.style.setProperty('--alto-mast',$('.mast').offsetHeight+'px');
   const ab=document.body.classList.toggle('menu-abierto');$('#navmenu').setAttribute('aria-expanded',String(ab));});
-$('#navperfil').addEventListener('click',cerrarMenu);
 /* línea de lectura arriba y botón para volver */
 (function(){
   const bar=document.createElement('div');bar.id='progreso';bar.setAttribute('aria-hidden','true');
@@ -5162,12 +5479,12 @@ function pintarPipe(){
 }
 $$('#hfilt .chip').forEach(b=>b.addEventListener('click',()=>{
   historia=b.dataset.h;$$('#hfilt .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));pintarMarcas();}));
-$('#home').addEventListener('click',()=>{if(vista!=='perfil')mostrar('radar');}); // la marca lleva a Tendencias, la pantalla principal; en las tres preguntas no saltea nada
+$('#home').addEventListener('click',()=>mostrar('inicio')); // la marca lleva a Tendencias, la pantalla principal; en las tres preguntas no saltea nada
 /* el arranque: todas las vistas empiezan ocultas y sólo esto decide cuál se ve. Si algo falla, el gate y un aviso,
    nunca una pantalla equivocada sin explicación (el <script> de abajo cubre un error antes de llegar acá) */
 function arranqueFallido(e){
   console.error('CICLO no arrancó bien:',e);
-  try{abrirGate('radar');}catch(e2){$$('main .view').forEach(x=>x.hidden=x.id!=='v-perfil');}
+  try{mostrar('inicio');}catch(e2){$$('main .view').forEach(x=>x.hidden=x.id!=='v-inicio');}
   const a=document.getElementById('aviso');
   if(a){a.hidden=false;a.textContent='Algo falló al cargar la app. Elegí tu perfil para seguir; si vuelve a pasar, recargá la página.';}
 }
@@ -5369,7 +5686,8 @@ function etiquetasSvg(){
 {let pend=0;const pedir=()=>{if(pend)return;pend=requestAnimationFrame(()=>{pend=0;etiquetasSvg();});};
   new MutationObserver(pedir).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','open']});window.addEventListener('resize',pedir);}
   extenderREC();sumarRedditREC();pintarTerreno();pintarRadar();pintarEtapas();pintarRecorridos();pintarJeans();pintarMarcas();pintarRetornos();pintarConsulta();pintarLystX();
-  if(!leerLink())abrirGate('radar'); // la entrada son las tres preguntas, siempre, y después Tendencias; sólo un link con el perfil la saltea
+  pintarCuenta();
+  if(!leerLink()){const p=pyActivo();if(p){pyAplicar(p);mostrar('radar');}else{pyMirar();mostrar('inicio');}} // 24/11: con proyecto, Mis ciclos; sin proyecto, el home
 }catch(e){arranqueFallido(e);}
 window.CICLO_LISTO=true;
 </script>

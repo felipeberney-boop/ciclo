@@ -1,4 +1,4 @@
-// CICLO · la demo de la Entrega 4, paso por paso, como se hace en clase (16/11/2026; la de la Entrega 3 está en git).
+// CICLO · la demo de la Entrega 4, paso por paso (24/11: arranca en el home y crea un proyecto), como se hace en clase (16/11/2026; la de la Entrega 3 está en git).
 // Uso, desde la raíz del repo, con la app servida (cd app && python3 -m http.server 8000):
 //   node codigo/probar_demo.js [http://localhost:8000/]            → sin clave: Preguntale a CICLO tiene que decir clara la falta de clave
 //   GROQ_KEY=gsk_… node codigo/probar_demo.js [url]                → además hace la pregunta de verdad y la lectura escrita
@@ -27,11 +27,16 @@ const OUT = path.join(os.tmpdir(), 'ciclo_demo');
   const ir = async v => { if (ANCHO < 760 && await p.isVisible('#navmenu')) await p.click('#navmenu'); await p.click(`#nav a[data-v="${v}"]`); };
   await p.goto(BASE, { waitUntil: 'networkidle' }); await p.waitForTimeout(600);
 
-  await paso('La entrada: mujer, para una marca, fast fashion', async () => {
-    for (const [sel, v] of [['data-pub', 'mujer'], ['data-vinc', 'marca'], ['data-cli', 'fast']]) await p.click(`#ggrid [${sel}="${v}"]`);
-    await p.waitForSelector('#v-radar:not([hidden])'); return (await p.textContent('#perfilrad')).replace('Cambiar', '').trim();
+  // desde el 24/11 la app abre en el home y las tres preguntas están en «Crear tu proyecto», en una sola pantalla
+  await paso('El home y «Crear tu proyecto»: mujer, para una marca, fast fashion', async () => {
+    await p.waitForSelector('#v-inicio:not([hidden])');
+    await p.click('#v-inicio .inacc [data-crear]'); await p.waitForTimeout(500);
+    await p.fill('#inform input[id^=pn-]', 'Demo de clase'); await p.fill('#inform input[id^=pu-]', 'Demo CICLO');
+    for (const t of ['Mujer', 'Para una marca', 'Fast fashion']) await p.click(`#inform .ops label:has-text("${t}")`);
+    await p.click('#inform button[type=submit]');
+    await p.waitForSelector('#v-radar:not([hidden])'); return (await p.textContent('#perfilrad')).replace('Editar', '').replace(/\s+/g, ' ').trim();
   });
-  await paso('Tendencias: el gráfico que rota y las tarjetas', async () => {
+  await paso('Mis ciclos: el gráfico que rota y las tarjetas', async () => {
     await p.waitForSelector('#v-radar:not([hidden]) #terreno svg', { timeout: 8000 });
     return (await p.$$eval('#grid .card, #grid [data-id], #grid button', a => a.length)) + ' tarjetas';
   });

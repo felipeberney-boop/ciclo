@@ -2121,6 +2121,8 @@ img:not(.fcarga){transition:opacity .35s ease}
   .app #v-inicio .hdos{grid-template-columns:1fr}
 }
 
+/* 24/11 vuelta L: Explorar termina en el recorrido, sin el pie (queda la flecha para volver arriba) */
+body[data-vista="recorridos"] .app .colofon{display:none!important}
 /* 24/11 vuelta L: Mis ciclos, la gráfica más chica y concisa */
 .app #v-radar .mcconc:not(#q):not(#qq):not(#qqq){font-size:17px!important;line-height:1.45!important;margin:6px 0 0!important;max-width:none}
 .app #v-radar .mcconc .mcunidad:not(#q):not(#qq):not(#qqq){display:inline;font-size:16px!important;margin:0!important;color:var(--tinta-2)!important}
@@ -5428,7 +5430,7 @@ function acercaRota(pared){if(innerWidth<760)return;const sec=$('#v-racional');
 function tratamiento(v){if(v==='disenar')dzAcum();if(v==='lectura')setTimeout(preguntarVacio,30);}
 function mostrar(v,keepNav){
   if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando
-  document.body.classList.toggle('on-gate',v==='perfil');document.body.classList.toggle('on-inicio',v==='inicio');
+  document.body.dataset.vista=v;document.body.classList.toggle('on-gate',v==='perfil');document.body.classList.toggle('on-inicio',v==='inicio');
   ['inicio','cuenta','perfil','disenar','radar','detalle','etapas','recorridos','marcas','retornos','lectura','racional','adivina','mover'].forEach(x=>{
     const s=document.getElementById('v-'+x); if(s) s.hidden = (x!==v);
   });

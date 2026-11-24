@@ -3817,3 +3817,11 @@ de esta vuelta es que las fotos lleguen antes, y apilados la primera tarjeta seg
 **Resultado:** la primera tarjeta pasa de y ≈ 1.780 a y ≈ 850 px en la compu (se ve sin bajar en una pantalla de 900) y
 de ≈ 2.400 a ≈ 1.275 en el celular. Queda igual el encabezado del proyecto, «Mis tendencias» y los grupos Entrar / Esperar
 / Salir. `probar_demo.js` 8 de 8 en los dos anchos. Capturas `L/2_despues_{mujer_marca_fast,hombre_propia_nicho}_*`.
+
+## 2026-11-24 · Vuelta L, punto 4: Explorar termina en el recorrido
+
+Pedido: «Sacá la última sección de abajo (el bloque de CICLO con fuentes y todo eso). Si querés, dejá solo la flecha para
+volver arriba». En Explorar ciclos ya no aparece el pie (CICLO, la fecha de los datos, el código y «Copiar link»): la
+pantalla termina en «Cómo se lee · CICLO no predice». Queda la flecha redonda para volver arriba. Para eso `mostrar()`
+anota la vista en el `body` (`data-vista`). En el home el pie sigue entero; en las demás pantallas, la línea de la vuelta
+K. `probar_demo.js` 8 de 8 en los dos anchos. Capturas `L/4_antes_*` y `L/4_despues_explorar_abajo_*`.

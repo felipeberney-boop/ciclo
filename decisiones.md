@@ -3539,3 +3539,23 @@ la clave y tokens de la conversación).
 `probar_demo.js` sin clave: 8 de 8 en los dos anchos (ahora, con la función activa, la pregunta del paso 6 la contesta el
 modelo). Capturas en `diseno/rediseno_2026-11-24/G/`.
 
+## 2026-11-24 · Rediseño, fase E: Explorar ciclos
+
+Lo pedido en clase: «Explorar ciclos (reemplaza a El ciclo, la parte INFORMATIVA). Todo, SIN el filtro del proyecto. Queda:
+el selector y el gráfico de lo que clickeás, y abajo SOLO los tres gráficos separados de jeans (amplios, medios, ajustados),
+uno cada uno. Sale: el gráfico apilado de jeans por corte, el de color, el último gráfico y toda la información extra.»
+
+**Queda:** el título «Explorar ciclos» con una línea («Todos los atributos, para todos: sin tu proyecto y sin señal»), los
+filtros por grupo y las tarjetas con foto para elegir, el recorrido de lo que elegís (etapa y búsqueda, sin señal; el gráfico
+de capas con los dos foros de Reddit; un epígrafe de una línea) y los tres jeans, cada uno en su gráfico.
+
+**Sale:** el gráfico animado de arriba (el año corriendo con las fotos), el apilado de jeans por corte, «El retraso, atributo
+por atributo» (el último gráfico), el panel de al lado (cuándo tocó techo cada capa, quién lo llevó a la pasarela, la lectura),
+la lista completa repetida, el link a Retornos y todas las notas. «El de color» lo interpretamos como el gráfico animado de
+arriba, el único con color que no estaba en la lista de lo que queda; si era otro, se saca igual de fácil. Las tarjetas antes
+se ordenaban por la señal del perfil; Explorar no tiene perfil, así que ahora van por el pico más reciente.
+
+Las partes que salen quedan ocultas en el HTML (algunas funciones todavía escriben en ellas) y se borran en la limpieza de
+texto (J). `probar_demo.js` 8 de 8 en los dos anchos; la prueba de Mis ciclos contra Explorar sigue pasando. Capturas en
+`diseno/rediseno_2026-11-24/E/`.
+

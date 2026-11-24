@@ -69,6 +69,12 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   to the attribute «para <proyecto>». `FUENTE_INFO` says where each source is from: Google Trends and Shopping worldwide
   with English terms (14 Argentine terms in Spanish), Reddit English-language forums with no country, Vogue Runway shows
   in Paris, Milan, New York, London and other weeks, Amazon = amazon.com, H&M dataset states no country.
+- **Explorar ciclos (`#v-recorridos`, since 24/11, rediseño E)** is the informative screen, without the project: title
+  «Explorar ciclos» and one line; the filter chips and photo cards (`pintarCiclos()`, sorted by most recent peak, never by
+  signal); «El recorrido de <atributo>» (neutral facts, chart, a one-line caption); and only the three jeans charts by cut
+  (`#jsub-amplio/medio/ajustado`). The animated timeline (`cicloTL()`, no longer called), the stacked jeans share, the lag
+  chart, the side panel and the notes are wrapped in `<div hidden class="exsale">` because some renderers still write into
+  them; delete them together with their renderers when cleaning up.
 - **K-means runs in the browser** (`kRand`/`kInit`/`kLloyd`/`kFit`/`kName`): 17 attributes (no footwear), 4
   standardized features (runway level/momentum, search level/momentum through 2024). k=4 starts from the stored `KM.cent` centroids so
   results are deterministic; other k use seeded random restarts. Clusters get stage names by nearest

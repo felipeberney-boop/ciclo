@@ -2170,6 +2170,15 @@ img:not(.fcarga){transition:opacity .35s ease}
 .app #v-lectura .ltejr b{font-weight:600}
 .app #v-lectura .ltejquien:not(#q):not(#qq):not(#qqq){margin:0!important;font-size:13px!important;color:var(--tinta-2)!important}
 .app #v-lectura .ltejquien .lnk:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq):not(#qqqqqq){font-size:13px!important;padding:0!important}
+/* ================= Explorar ciclos (24/11, rediseño E) · última =================
+   Queda el selector (filtros y tarjetas), el recorrido de lo que elegís y los tres jeans, uno cada uno. */
+.app #v-recorridos .exmision:not(#q):not(#qq):not(#qqq){font-size:20px!important;line-height:1.4;color:var(--tinta-2)!important;margin:8px 0 0!important;max-width:56ch}
+.app #v-recorridos .exsub:not(#q):not(#qq):not(#qqq){font-size:17px!important;color:var(--tinta-2)!important;margin:8px 0 20px!important}
+.app #v-recorridos .lys:not(#q):not(#qq){grid-template-columns:minmax(0,1fr)!important}
+.app #v-recorridos .cf:not(#q):not(#qq){display:none!important}
+.app #v-recorridos .three-j:not(#q):not(#qq){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+@media (max-width:820px){.app #v-recorridos .three-j:not(#q):not(#qq){grid-template-columns:1fr}}
+.app #v-recorridos .three-j .lbl:not(#q):not(#qq):not(#qqq):not(#qqqq):not(#qqqqq){font-size:var(--t-h4)!important;font-weight:600!important;text-transform:none!important;letter-spacing:-.01em!important;color:var(--tinta)!important}
 </style>
 
 <div class="app">
@@ -2410,16 +2419,15 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
     <section class="view" id="v-recorridos" hidden>
       <div class="vhead">
         <div>
-          <h1>¿Cuándo estuvo de moda, y cuánto tardó en volver?</h1>
-          <details class="qm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Para cada atributo: su último pico en la búsqueda mundial, si hoy sube o baja, cuántos años pasaron y, cuando la serie tiene dos picos, cada cuánto vuelve.</p></div></details>
-          <p class="irmas"><a href="#retornos" data-vista="retornos">Qué volvió y cada cuánto →</a></p>
+          <h1>Explorar ciclos</h1>
+          <p class="exmision">Todos los atributos, para todos: sin tu proyecto y sin señal. Elegí uno para ver su recorrido.</p>
         </div>
       </div>
       <hr class="rule">
       <div class="ciclos" id="ciclos"></div>
       <h2 class="h3" id="rtitulo">El recorrido</h2>
       <div class="decide" id="rdecide" aria-live="polite"></div>
-      <details class="rfiltd"><summary class="lbl">Ver otro atributo · la lista completa</summary><div class="filters" id="rfilt" role="group" aria-label="Atributo"></div></details>
+      <details class="rfiltd" hidden><summary class="lbl">Ver otro atributo · la lista completa</summary><div class="filters" id="rfilt" role="group" aria-label="Atributo"></div></details>
       <div class="lys">
         <div>
           <div class="leg" id="rleg"></div>
@@ -2427,7 +2435,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
             <figcaption id="rcap"></figcaption></figure>
           <button type="button" class="gvolver" id="rdesde">ver desde 2004</button>
         </div>
-        <div>
+        <div hidden class="exsale">
           <span class="lbl">Cuándo tocó techo cada capa</span>
           <dl id="rdl" style="margin-top:12px"></dl>
           <div id="rpion"></div>
@@ -2439,16 +2447,19 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       </div>
 
       <h3 class="h3">Los jeans, por corte</h3>
-      <p class="sub" style="margin-top:8px">Todos los jeans en un solo lugar, separados por silueta: <b>amplios</b> (baggy, wide leg, barrel y relaxed), <b>medios</b> (straight, bootcut, flare y tapered) y <b>ajustados</b> (skinny y slim). Las búsquedas del recto de tiro alto y del tapered relajado cuentan dentro de los medios, como en Diseñar (antes de octubre estaban en los amplios). Qué parte de la búsqueda de jeans se lleva cada corte, año por año.</p>
+      <p class="exsub">Cuánto se busca cada corte en el mundo, 2004–2024. Cada uno en su gráfico.</p>
+      <div hidden class="exsale"><p class="sub" style="margin-top:8px">Todos los jeans en un solo lugar, separados por silueta: <b>amplios</b> (baggy, wide leg, barrel y relaxed), <b>medios</b> (straight, bootcut, flare y tapered) y <b>ajustados</b> (skinny y slim). Las búsquedas del recto de tiro alto y del tapered relajado cuentan dentro de los medios, como en Diseñar (antes de octubre estaban en los amplios). Qué parte de la búsqueda de jeans se lleva cada corte, año por año.</p>
       <div class="lys" style="grid-template-columns:1fr">
         <div><figure><div id="jshare"></div><p class="chdesliza" aria-hidden="true">Deslizá el gráfico →</p>
           <figcaption>Google Trends mundo, 13 términos en tres consultas con «skinny jeans» como ancla común · suma por corte · dato medido.</figcaption></figure></div>
+      </div>
       </div>
       <div class="three-j">
         <div><span class="lbl">Amplios</span><div id="jsub-amplio"></div></div>
         <div><span class="lbl">Medios</span><div id="jsub-medio"></div></div>
         <div><span class="lbl">Ajustados</span><div id="jsub-ajustado"></div></div>
       </div>
+      <div hidden class="exsale">
       <p class="note"><b>Mirar adentro del grupo importa.</b> Juntar todos los amplios muestra el cambio grande —del 5 % de la búsqueda en 2012 al 41 % en 2024—, y ahí suben todos. Los medios, en cambio, esconden dos historias: el recto de tiro alto tocó techo en 2021 y ya cae, mientras straight, bootcut y flare están en su máximo en 2024. Por eso la app agrupa por corte y deja ver cada estilo adentro. En H&amp;M, en 2018–2020, todavía había 1.500 jeans ajustados distintos a la venta contra 411 amplios: el mainstream seguía en el corte anterior.</p>
       <p class="note a"><b>La pasarela no distingue cortes.</b> Vogue etiqueta «Denim» y «Jeans», no «baggy» ni «skinny». Los tres grupos comparten la misma curva de pasarela, así que para los jeans el retraso entre capas no se puede medir por corte.</p>
       <h3 class="h3">El retraso, atributo por atributo</h3>
@@ -2469,6 +2480,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       </div>
       <p class="note a"><b>Los límites de estos datos.</b> Las etiquetas de Vogue Runway no las puso un editor: las generó un modelo de visión genérico, que reconoce «Leather Jacket» o «Polka Dot» pero no «rayas» ni «oversize». Antes de 2010 las fotos eran chicas y el modelo detecta menos, por eso ese tramo va punteado. En 2020 y 2021 hubo menos desfiles y más lookbooks. Reddit es un solo subreddit y en 2012–2013 era chico: sus primeros años exageran lo que se nombraba entonces. Y enero–septiembre 2026 de Google Trends quedó afuera: 33 de 35 términos marcan su récord el mismo mes, incluso búsquedas sin relación entre sí — es un salto en la medición de Google, no en la moda.</p>
       <p class="note"><b>Por qué en Argentina hay menos términos.</b> Descartamos «lunares», «rayas», «gamuza» y «bordo»: en español también son manchas de la piel, líneas, un paño de limpieza y un club de fútbol. En inglés «polka dot dress» no tiene ese problema. Es la razón por la que la capa argentina se arma con términos compuestos.</p>
+    </div>
     </section>
 
     <!-- ================= MARCAS ================= -->
@@ -4317,7 +4329,7 @@ function cicloDe(o){
 }
 const CICLO_CORTO=12;let cicloTodos=false; // doce tarjetas a la vista; el resto, a un toque
 function pintarCiclos(){
-  const L=REC.filter(o=>cicloGrupo==='todos'||o.tipo===cicloGrupo).map(cicloDe).filter(Boolean).sort((a,b)=>({entrar:0,esperar:1,salir:2,'sin-dato':3}[a.sg.estado]-{entrar:0,esperar:1,salir:2,'sin-dato':3}[b.sg.estado])||a.anios-b.anios);
+  const L=REC.filter(o=>cicloGrupo==='todos'||o.tipo===cicloGrupo).map(cicloDe).filter(Boolean).sort((a,b)=>a.anios-b.anios||a.o.n.localeCompare(b.o.n)); // 24/11: Explorar no tiene perfil, así que no ordena por señal
   const grupos=REC_ORDEN.filter(g=>REC.some(o=>o.tipo===g));
   $('#ciclos').innerHTML=`<div class="ciclofilt" role="group" aria-label="Grupo">${['todos',...grupos].map(g=>`<button type="button" class="chip" data-g="${g}" aria-pressed="${cicloGrupo===g}">${g==='todos'?'Todos':g==='Estampa'?'Estampas':g==='Material'?'Materiales':g}</button>`).join('')}</div>`+L.map(c=>`<button type="button" class="ciclo ${c.sg.cls}${recSel===c.o.id?' on':''}" data-r="${c.o.id}" aria-pressed="${recSel===c.o.id}">${FOTO_ATR[c.o.id]?`<span class="cfoto"><img loading="lazy"${fotoPos(c.o.id)} src="${vogueFoto(FOTO_ATR[c.o.id].f,640)}" alt="${c.o.n.split(' /')[0]} en la pasarela"><span class="pcred">${fotoCred(FOTO_ATR[c.o.id])}</span></span>`:''}
     <span class="cn serif">${c.o.n.split(' /')[0]}</span><span class="cf">${c.f}</span>
@@ -5072,7 +5084,7 @@ function pintarRecorridos(){
       h.innerHTML=`<div class="rminih" style="color:${cssv(se.c)}">${se.n}</div>`;h.appendChild(recChart(o,360,150,se.k));rc.appendChild(h);});
   }else rc.appendChild(recChart(o));
   if(!pocas){rc.insertAdjacentHTML('beforeend',CLAVE);legDestaca($('#rleg'),rc);}
-  if(!pocas)$('#rcap').textContent=`Cada curva es un índice 0–100 de su propio máximo. La línea llena es medida: pasarela con las etiquetas de Vogue hasta 2021 y leída con CLIP de 2022 a 2025 (ese tramo va punteado, porque Vogue dejó de etiquetar), búsqueda hasta 2024 y Reddit hasta 2025. El punto hueco de 2025 en la búsqueda está apagado a propósito: ese año y 2026 traen el salto de medición de Google. La búsqueda es el peso de este atributo frente a las otras búsquedas de moda: así se descuenta que Google crezca o cambie su medición, y queda lo que gana o pierde terreno. La línea punteada no predice nada. Muestra dónde terminaría cada atributo si de acá a 2030 se moviera como se movió la mitad de los casos de nuestra historia. Sirve para ver la escala del movimiento posible, no para saber qué va a pasar. La banda es cuánto se movió de verdad la búsqueda a cada distancia. Tocá una capa en la leyenda para aislarla.`;
+  if(!pocas)$('#rcap').textContent='Cada curva es un índice de 0 a 100 de su propio máximo. Lleno: medido. Punteado: no predice, muestra cuánto se movieron casos parecidos. Pasá el mouse por una curva para ver de dónde sale.';
   const fila=(k,v,t,f)=>`<dt>${k}</dt><dd class="mono"${f||''}>${v}${t?` <span class="tag ${t==='abierto'?'demo':'real'}">${t}</span>`:''}</dd>`;
   let h='';
   h+=fila('Pasarela',o.pv||'sin etiqueta',o.pv?'medido':'',o.pv?src('v',`«${o.vk}»: el año de su máximo`):'');
@@ -5428,7 +5440,7 @@ function acercaRota(pared){if(innerWidth<760)return;const sec=$('#v-racional');
   pa.onclick=()=>{corre=!corre;pa.textContent=corre?'Pausar':'Seguir';};
   pa.textContent=corre?'Pausar':'Seguir';
   const t=setInterval(()=>{if(!box.isConnected){clearInterval(t);return;}if(corre&&!sec.hidden)ir((k+1)%sl.length);},9000);}
-function tratamiento(v){if(v==='recorridos')cicloTL();if(v==='disenar')dzAcum();if(v==='lectura')setTimeout(preguntarVacio,30);if(v==='racional')acercaPared();}
+function tratamiento(v){if(v==='disenar')dzAcum();if(v==='lectura')setTimeout(preguntarVacio,30);if(v==='racional')acercaPared();}
 function mostrar(v,keepNav){
   if(['tiza','consulta','asistente','revision','preguntar'].includes(v))v='lectura'; // los links de antes siguen andando
   document.body.classList.toggle('on-gate',v==='perfil');document.body.classList.toggle('on-inicio',v==='inicio');

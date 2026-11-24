@@ -595,6 +595,11 @@ pasarela por idea, una idea por pantalla que aparece con el scroll, y un cierre 
 «Preguntale a CICLO» contesta con un modelo de lenguaje sin que haya que pegar una clave: una función de Netlify la pone, desde
 una variable de entorno. Con el hilo vacío se ven dos ejemplos de conversación, calculados con los datos del momento.
 
+## v1.84 · 24/11/2026 · Explorar ciclos, corto
+
+El ciclo pasa a ser Explorar ciclos, la parte informativa, sin proyecto: filtros y tarjetas para elegir, el recorrido del
+atributo elegido y los tres jeans por corte. Sale el resto.
+
 ## Presentación · Entrega 3
 
 Una sola presentación, la web: https://felipeberney-boop.github.io/ciclo/presentacion/ (código en `app/presentacion/`).

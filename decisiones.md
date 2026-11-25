@@ -4242,3 +4242,19 @@ Quien entraba por «Sólo estoy mirando» llegaba a Explorar y sólo el botón d
 proyecto. Ahora, debajo del título, va el mismo aviso que en Mis ciclos sin proyecto: «Estás mirando sin proyecto. Con
 uno, cada atributo te dice si entrar, esperar o salir.», con el botón «Crear tu proyecto», que baja al formulario del
 home. Con un proyecto activo, el aviso no aparece. Capturas `N/7_sinproyecto/`. `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · El racional, al día con las vueltas M y N
+
+Pedido: «actualizá el racional».
+
+Cambios en `entregas/entrega_4/racional.md` (y el PDF regenerado, 25 páginas):
+- **§5 El recorrido**, con los pasos de hoy, en una lista. Agrega que quien sólo mira ve un aviso en Mis ciclos y en
+  Explorar.
+- **§6 La tabla de pantallas.** Tres filas nuevas (el home, Mis ciclos y Explorar, del 24/11). Las de la entrada,
+  Tendencias y El ciclo quedan marcadas «hasta el 24/11», con la pantalla que las reemplaza. La de El brief suma «¿Lo
+  viste venir?» y el archivo.
+- **§6 Grilla.** El texto decía que no había grilla de columnas «porque dejaría huecos»; ahora cuenta la grilla de
+  12/8/4 columnas, por qué 12 y cómo se resolvieron los huecos (filas enteras y «Ver los n»).
+- **§8 La pirueta.** Un párrafo nuevo: la cobertura real de años (2012–2021 para el archivo; nada de los 80 ni de los
+  90), «¿Lo viste venir?», las piezas de archivo y que los encargos usan 2024 con las 22 opciones completas.
+- **La línea de tiempo** del 24/11 suma las vueltas L a N, y la versión dice «24/11 (noche)».

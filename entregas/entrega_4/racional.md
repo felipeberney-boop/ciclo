@@ -3,9 +3,9 @@
 **Entrega 4 · 17/11/2026** · *Sistemas generativos e IA para Diseño* (K534/K576), UdeSA · Felipe Berney y Abril Dobler ·
 Docentes: Cristian Reynaga e Iván Fardjoume
 
-> **Versión del 23/11.** La primera versión (04/11) la redactó Claude a partir del repositorio y de las conversaciones
-> de trabajo con Felipe en Claude Code; se actualizó después de cada cambio grande (el último, la pasarela 2022–2025 y el
-> diseño del 17 y 18/11). Lo que dice quién decidió qué sale de esas conversaciones y cita las palabras de Felipe tal
+> **Versión del 24/11 (noche).** La primera versión (04/11) la redactó Claude a partir del repositorio y de las conversaciones
+> de trabajo con Felipe en Claude Code; se actualizó después de cada cambio grande (el último, las vueltas de rediseño del 24/11
+> después de la devolución). Lo que dice quién decidió qué sale de esas conversaciones y cita las palabras de Felipe tal
 > como las escribió.
 
 App: https://felipeberney-boop.github.io/ciclo/ · Repositorio: https://github.com/felipeberney-boop/ciclo ·
@@ -217,11 +217,20 @@ la señal no las decide la IA: las deciden el K-means y una regla fija.
 que asesora a varias marcas. Desde el 13/10 es quien diseña, porque la app dejó de mostrar todo y pasó a acompañar una
 decisión de diseño.
 
-**El recorrido (desde el 24/11).** El home (qué es, para quién y qué te da, una idea por pantalla) → «Creá tu
-proyecto» (nombre, email, las tres preguntas en una sola pantalla) → Mis ciclos (qué gana y qué pierde terreno, y Mis
-tendencias: los 65 atributos por señal para tu proyecto) → la ficha de un atributo, sólo con lo de tu proyecto →
-«Diseñar con…» → Explorar ciclos (lo mismo para todos, sin señal, con buscador y el recorrido de cualquier atributo) →
-Preguntale a CICLO → El brief. Está paso a paso, con capturas en la compu y en el celular, en el readme
+**El recorrido (desde el 24/11).**
+1. El home: «Qué corte, qué estampa, qué color. Y cuándo.», cómo funciona, las dos fuentes y qué señal obtenés, una idea
+   por pantalla.
+2. «Creá tu proyecto»: nombre, email y las tres preguntas en una sola pantalla.
+3. Mis ciclos, la herramienta de tu proyecto: qué gana y qué pierde terreno, dos gráficos chicos lado a lado, y Mis
+   tendencias, los 65 atributos agrupados por señal, dos filas por grupo.
+4. La ficha de un atributo: primero la señal y su porqué, después «Diseñar con…».
+5. Diseñar.
+6. Explorar las tendencias del mundo: lo mismo para todos, sin señal, con buscador y el recorrido de cualquier atributo.
+7. Preguntale a CICLO.
+8. El brief.
+
+Quien entra por «Sólo estoy mirando» ve en Mis ciclos y en Explorar un aviso que dice que está sin proyecto, con el botón
+para crearlo. Está paso a paso, con capturas en la compu y en el celular, en el readme
 (`codigo/capturar_recorrido.js`). Hasta el 24/11 el recorrido empezaba con las tres preguntas en pasos y caía en
 Tendencias; así está en papel, una pantalla por hoja, en `entregas/entrega_4/disenos_en_papel/` (del 04/11).
 
@@ -275,13 +284,16 @@ los mismos datos sin señal.
 
 | Pantalla | Lo primero que se ve | Por qué |
 |---|---|---|
-| La entrada | Una banda de fotos de pasarela que corre sola a pantalla completa, con la pregunta encima y sus opciones (17/11). Las fotos responden a lo que se contesta: looks de mujer, de hombre o sin género, y después casas de la escala elegida | Cada respuesta cambia la lectura (lo que cambia está en Acerca de). La ropa primero, como i-D y Vogue Runway; el gráfico que estuvo antes en ese lugar repetía el de Tendencias cuatro pantallas seguidas |
-| Tendencias | Un gráfico que rota entre cinco lecturas animadas de la búsqueda: qué sube y qué baja, qué está en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro (hasta el 10/11, un bloque oscuro de texto que la devolución marcó como obstructivo); debajo del título, una fila de looks que se mueve, y las tarjetas como fotos a sangre | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal. Sólo lo que tiene dato medido: el catálogo sintético no se muestra. La fila de looks queda sólo acá, donde la sección habla de «qué se está moviendo» |
+| La entrada (hasta el 24/11) | Una banda de fotos de pasarela que corre sola a pantalla completa, con la pregunta encima y sus opciones (17/11). Las fotos responden a lo que se contesta: looks de mujer, de hombre o sin género, y después casas de la escala elegida | Cada respuesta cambia la lectura (lo que cambia está en Acerca de). La ropa primero, como i-D y Vogue Runway; el gráfico que estuvo antes en ese lugar repetía el de Tendencias cuatro pantallas seguidas |
+| Tendencias (hasta el 24/11; hoy, Mis ciclos) | Un gráfico que rota entre cinco lecturas animadas de la búsqueda: qué sube y qué baja, qué está en su máximo, cuándo picó cada uno, lo que vuelve y uno contra otro (hasta el 10/11, un bloque oscuro de texto que la devolución marcó como obstructivo); debajo del título, una fila de looks que se mueve, y las tarjetas como fotos a sangre | Es lo que se mueve hoy, medido; después, cada atributo con su etapa y su señal. Sólo lo que tiene dato medido: el catálogo sintético no se muestra. La fila de looks queda sólo acá, donde la sección habla de «qué se está moviendo» |
+| El home (24/11) | «Qué corte, qué estampa, qué color. Y cuándo.», al lado de una foto de pasarela que cambia con cada idea | Lo que hace CICLO en una línea: qué diseñar y cuándo. Después, sólo cómo funciona, de dónde salen los datos, qué te da y el formulario; se sacó la sección «Una etapa para cada atributo», que no se entendía |
+| Mis ciclos (24/11) | El proyecto, «Gana terreno» y «Pierde terreno» lado a lado, y una línea con la fuente (el resto, en la ficha de fuente) | Es la herramienta de tu proyecto: arriba lo que se mueve, enseguida tus tarjetas por señal, de a dos filas por grupo. Abajo, el próximo encargo de El brief con su foto |
+| Explorar (24/11) | «Explorar las tendencias del mundo»: cualquier género, cualquier mercado; seis filas de tarjetas verticales y «El recorrido de [atributo]», con el nombre como selector | Mis ciclos es MI proyecto; Explorar es TODO, y los títulos lo dicen. Las fotos van verticales para que se vea el look entero; los atributos sin foto, al final |
 | La ficha | La señal grande, con una línea de por qué | Es la decisión. El gráfico la sostiene; el detalle está en el «?». Con menos de tres capas de datos, una franja por capa en vez del gráfico de capas, para que una sola línea no parezca un dato flojo |
 | Diseñar | La pregunta del paso, con la foto de pasarela de cada prenda y su silueta como etiqueta (18/11) | Un paso, una decisión; lo elegido queda en una barra abajo, cada elección con su miniatura. Un tipo sin foto propia conserva su dibujo: prestarle la foto de otro diría algo falso de esa prenda |
-| El ciclo | Los 48 atributos con serie de búsqueda y foto, a la vez, sobre un eje de 2004 a 2024: cada foto en el año de su pico, subiendo y bajando con su búsqueda medida mientras un cursor recorre veinte años en veinte segundos (18/11) | La pantalla trata de cuándo picó cada uno y cuánto tardó en volver. El movimiento es la serie medida, no una animación decorativa; tocar una foto abre ese atributo |
+| El ciclo (hasta el 24/11; hoy, Explorar) | Los 48 atributos con serie de búsqueda y foto, a la vez, sobre un eje de 2004 a 2024: cada foto en el año de su pico, subiendo y bajando con su búsqueda medida mientras un cursor recorre veinte años en veinte segundos (18/11) | La pantalla trata de cuándo picó cada uno y cuánto tardó en volver. El movimiento es la serie medida, no una animación decorativa; tocar una foto abre ese atributo |
 | Preguntale a CICLO, «Preguntar» en el menú (antes Buscar por imagen, Preguntar, Tiza y Lectura) | Vacía, una foto que rota entre casas, las preguntas sugeridas y «Sumá tu diseño». Después, un solo hilo: tu imagen o tu pregunta, y la respuesta con todo adentro (lo que leyó CLIP, la curva que importa, los looks parecidos, la conclusión en una frase) | La devolución pidió filtrar lo que devuelve la IA: primero la conclusión, después el dato que la sostiene y su curva; el detalle queda plegado. Una sola columna, para que se sienta un asistente y no un tablero con un chat al costado. Debajo de la caja, siempre, qué modelo contesta, por qué API y cuántos tokens usó (o que sin clave contestan las reglas, con 0 tokens) |
-| El brief | El encargo de una casa real con la foto de su desfile; después, el veredicto por partes: el puntaje enorme, la racha, el porqué, las tres casas y una frase para copiar (18/11) | La devolución de la pirueta: «no es un juego, no tiene hook». La racha le da algo que perder, y el ritmo del veredicto hace que el puntaje llegue primero |
+| El brief | El encargo de una casa real con la foto de su desfile; después, el veredicto por partes, centrado en el eje: el puntaje enorme, la racha, el porqué, las tres casas y una frase para copiar (18/11). Desde el 24/11, una segunda pestaña, «¿Lo viste venir?», y un premio: piezas de archivo | La devolución de la pirueta: «no es un juego, no tiene hook». La racha le da algo que perder, el ritmo del veredicto hace que el puntaje llegue primero y el archivo da algo que juntar |
 | Acerca de (hasta el 17/11, «Método») | «Cómo se arma una señal», animado; después los datos y el modelo como diagramas; arriba, la pared del corpus, las fuentes y el modelo rotando cada 9 segundos | La devolución pidió que se entienda qué datos se usan y cómo conviven, sin tener que leer |
 
 **Cada número dice de dónde sale.** Desde el 17/11, cada número medido muestra su fuente al pasar el mouse (o al
@@ -314,10 +326,21 @@ mayúsculas y el gráfico de Tendencias repetido en cada pantalla) y se revirti�
 que se toca. Nada más tiene color, y por eso la señal se ve. Desde el 17/11 el fondo es blanco (antes, el gris perla de
 la referencia de Apple), para que las fotos de pasarela lo llenen.
 
-**Grilla.** El contenido va hasta 1.360 px, con un margen que va de 16 px en el celular a 80 px en la compu, y las
-tarjetas se acomodan solas, de 268 px como mínimo. En el celular todo va en una columna y los gráficos anchos se
-deslizan. No es una grilla de columnas fija: es fluida, porque la cantidad de tarjetas cambia con el perfil y con el
-filtro, y una grilla de 12 columnas dejaría huecos. Las hojas en papel usan la misma regla.
+**Grilla.** Hasta el 24/11 era fluida: las tarjetas se acomodaban solas, de 268 px como mínimo. La devolución marcó
+cosas «tiradas a la izquierda y otras sueltas a la derecha» (Cristian), y desde el 24/11 hay una grilla de columnas para
+todas las pantallas:
+- En la compu, 12 columnas, medianil de 24 px y un margen de 5,5 % del ancho (77 px a 1.400), con 1.280 px de contenido
+  como máximo.
+- En la tableta, 8 columnas, medianil de 20 y margen de 32.
+- En el celular, 4 columnas, medianil de 16 y margen de 16.
+
+Se eligieron 12 porque dividen en 2, 3, 4 y 6, que son las cantidades que usa la app: dos gráficos, cuatro tarjetas por
+fila, seis opciones en Diseñar. Todo arranca en una línea de columna, y lo angosto (Preguntar, El brief) ocupa las
+columnas 3 a 10.
+
+El miedo de antes (que la cantidad de tarjetas deje huecos) se resolvió con las filas: se muestran filas enteras, cinco
+o seis según la pantalla, y el resto detrás de «Ver los n». Se comprobó con un script que mide qué bloque no arranca en
+una línea, y con la grilla superpuesta en cada pantalla (`?grilla` en la dirección).
 
 **De Figma al código.** La app no se construyó leyendo un Figma: se escribió en código con Claude Code, y el Figma
 cuenta el camino en tres etapas (el detalle, con qué leyó un agente y qué no, está en
@@ -387,7 +410,7 @@ ejemplo de como se veria la web»), sobre una captura de la app que ya estaba en
 | 16/11 | El nombre, otra vez: «Lectura» no decía que es un chat con el que se conversa. Pasa a **Preguntale a CICLO** en el título y **Preguntar** en el menú | Felipe eligió el nombre: es el original, dice que es una conversación, lleva la marca y no envejece como «IA» |
 | 17/11 | La Entrega 4 y su devolución: falta identidad propia, «¿y el racional?», «¿y la info de hombres?». Método pasa a **Acerca de** y resume el racional; Reddit de hombres entra como serie aparte; cada número dice de dónde sale; la dirección 032c se aplica y se revierte en el día; queda la identidad por la letra (Bodoni Moda, fina) y por las fotos (la entrada como una banda de looks, fondo blanco) | Felipe pidió cada cambio y eligió entre propuestas renderizadas; la letra la delegó |
 | 18/11 | La pasarela 2022–2023 estaba mal medida (Vogue dejó de etiquetar): la corrige un clasificador CLIP y el K-means se recalcula. Llega 2024–2025 y entra al modelo. Diseñar con fotos, El ciclo en movimiento, El brief con racha, la ficha de cada fuente, el modelo y los tokens a la vista | El problema de la pasarela lo encontró Claude al ir a buscar 2026; recalcular el modelo y meter 2024–2025 los aprobó o pidió Felipe |
-| 24/11 | La devolución de la Entrega 4 (6/10) abre un rediseño por fases. Primero, la letra del sistema de Apple (la Bodoni, sólo en el logo), una escala tipográfica fija y una paleta por rol. Después: un home sin preguntas, rehecho de cero con una foto de pasarela por idea (de dónde sale cada dato, de qué país y qué período, y qué obtenés), «Crear tu proyecto» en una sola pantalla, un menú sin «Más» con avatar, Mis ciclos (sólo lo del proyecto: 65 atributos por señal, el Reddit de tu público, «Gana y pierde terreno» con eje 0–100 y una línea de tiempo de picos) contra Explorar ciclos (lo mismo para todos, sin señal), Preguntar con la IA andando sin pegar clave (una función de Netlify), El brief centrado, la ficha que dice que no predice, Acerca de corto y el texto releído línea por línea. Esa misma tarde, una vuelta más (K): el home define en la primera pantalla y avisa que se baja; Mis ciclos en dos secciones a la vista (la gráfica y Mis tendencias); el buscador y las categorías pasan a Explorar, con el recorrido de cualquier atributo; El brief en 2024, el último año con búsqueda medida; la franja de fuentes sólo en el home; y se borra lo que había quedado oculto | Felipe pasó la devolución y el orden de la cátedra; Claude armó el plan y la lámina del sistema y lo aplicó a mano, sin revertir los commits del 17/11 |
+| 24/11 | La devolución de la Entrega 4 (6/10) abre un rediseño por fases. Primero, la letra del sistema de Apple (la Bodoni, sólo en el logo), una escala tipográfica fija y una paleta por rol. Después: un home sin preguntas, rehecho de cero con una foto de pasarela por idea (de dónde sale cada dato, de qué país y qué período, y qué obtenés), «Crear tu proyecto» en una sola pantalla, un menú sin «Más» con avatar, Mis ciclos (sólo lo del proyecto: 65 atributos por señal, el Reddit de tu público, «Gana y pierde terreno» con eje 0–100 y una línea de tiempo de picos) contra Explorar ciclos (lo mismo para todos, sin señal), Preguntar con la IA andando sin pegar clave (una función de Netlify), El brief centrado, la ficha que dice que no predice, Acerca de corto y el texto releído línea por línea. Esa misma tarde, una vuelta más (K): el home define en la primera pantalla y avisa que se baja; Mis ciclos en dos secciones a la vista (la gráfica y Mis tendencias); el buscador y las categorías pasan a Explorar, con el recorrido de cualquier atributo; El brief en 2024, el último año con búsqueda medida; la franja de fuentes sólo en el home; y se borra lo que había quedado oculto. Vueltas L a N, esa noche: el título «Qué corte, qué estampa, qué color. Y cuándo.»; Mis ciclos sólo con lo del proyecto y un gancho a El brief; Explorar como «las tendencias del mundo», con un selector compacto; una grilla de 12/8/4 columnas para todas las pantallas; fotos de pasarela para 53 opciones de Diseñar; tarjetas que no se desarman y los atributos sin foto al final; «¿Lo viste venir?» y las piezas de archivo; y tres recorridos como usuaria (fast fashion y alguien que sólo ama la moda), con los tropiezos más grandes arreglados | Felipe pasó la devolución y el orden de la cátedra; Claude armó el plan y la lámina del sistema y lo aplicó a mano, sin revertir los commits del 17/11 |
 
 **Qué propuso la IA, qué decidió Felipe y por qué.** Las citas de Felipe son textuales, de las conversaciones en Claude
 Code. Las consignas largas que pegó (el 20/10, el 27/10, el 03/11, el 04/11 y el 10/11) cuentan como suyas: las eligió y las mandó.
@@ -460,6 +483,28 @@ de pasarela; las que no desfilan llevan una foto de referencia de una casa de lu
 mostró Prada»). Desde el 18/11 tiene algo que perder: una racha de briefs clavados (7/10 o más para su casa) que se
 corta si fallás, y el veredicto llega por partes, primero el puntaje y al final una frase para contar («Mi look: 3/10
 para Bottega Veneta, 6/10 para COS, 6/10 para Zara»). Los umbrales de 7 y 5 son una regla del juego, no del modelo.
+
+**Más adictivo, con archivo (24/11).** Felipe pidió que El brief fuera más picante para diseñadores: «a la gente de
+moda le encanta el ARCHIVO». Antes de proponer, se revisó qué años cubren los datos:
+- la pasarela, de 2000 a 2023;
+- las fotos que la app puede mostrar, de 2010 a 2023 (el índice de 14.000 looks);
+- la búsqueda corregida, de 2010 a 2024;
+- los 80 y los 90 no están en ninguna fuente.
+
+El archivo de CICLO va entonces de 2012 a 2021. De tres ideas con mockups, Felipe eligió «¿Lo viste venir?»:
+- un look del índice que muestra un atributo (por ejemplo, Gucci 2016 y el bordado);
+- apostás si la búsqueda subió, se quedó o bajó en los tres años siguientes;
+- la curva medida se dibuja sola.
+
+No es un pronóstico: sólo se juega con años ya medidos.
+
+Clavar un brief, o acertar tres seguidas, desbloquea una **pieza de archivo**, que se guarda en «Tu archivo», en Mi
+cuenta. Son dieciséis looks icónicos que están en el índice, elegidos a ojo: la última colección completa de Lee
+McQueen, el supermercado de Chanel, la primera colección de Michele para Gucci, Céline de Phoebe Philo, Balenciaga de
+Demna y otros. Galliano de los 90 y Tom Ford para Gucci no pueden estar, porque el índice empieza en 2010.
+
+Los quince encargos usan 2024, el último año con búsqueda medida, y las 22 opciones tienen su serie completa de 2022 a
+2024.
 
 **«Cómo se arma una señal»** (hasta el 16/11, «Cómo se arma una lectura»: el nombre pasó a la sección de IA, que el mismo día se renombró). Fue la pirueta entre el 10/11 y la devolución, y queda arriba de todo en Acerca de (hasta el 17/11, «Método»). Las dos notas más bajas de la Entrega 3 (datos e
 IA, 5 sobre 10) decían lo mismo: el modelo es demasiado complejo para explicarlo. La pirueta convierte esa debilidad en la

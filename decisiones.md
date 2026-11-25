@@ -4155,3 +4155,48 @@ que ya existen».
 
 Se abre al pasar el mouse en la compu y al tocar en el celular; es el mismo mecanismo que el resto de los números
 medidos. Capturas `N/4_fuente/` (la línea y la ficha abierta, en los dos anchos). `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · Vuelta N, punto 5 y la idea 2: «¿Lo viste venir?» y el archivo
+
+Pedido: «implementá la idea 2 del brief» y «Confirmame que todos los encargos usan años con datos. Premio: si clavás el
+brief (o la racha), ganás una PIEZA DE ARCHIVO… Que se guarde en una colección ("Tu archivo") en Mi perfil, con piezas
+por desbloquear… Elegí las piezas a ojo, solo looks que estén en nuestro corpus».
+
+**Los años.** Los 15 encargos son de Otoño o Primavera 2024 y se puntúan con la búsqueda 2022→2024. Las 22 opciones
+tienen su serie completa en esos tres años; ninguna tiene huecos. Las fotos de los encargos son de 2017 a 2023 y son sólo
+la referencia visual.
+
+**«¿Lo viste venir?».** Es una pestaña nueva en El brief, al lado de «El encargo».
+- Aparece un look del índice que muestra un atributo (la foto de `FOTO_ATR`, elegida con CLIP y revisada a ojo) con año
+  entre 2012 y 2021. Son 38 posibles.
+- Apostás si la búsqueda mundial corregida subió, se quedó o bajó en los tres años siguientes, con el mismo umbral de
+  ±3 puntos que El brief.
+- Después la curva 2010–2024 se dibuja sola, con la ventana marcada y los dos números.
+- La racha se guarda en el navegador (`ciclo.vv_racha`).
+- Sólo usa años ya medidos: el último punto es 2024. No es un pronóstico.
+
+**El premio.** Clavar un brief (7 o más) o acertar tres seguidas en «¿Lo viste venir?» desbloquea una pieza al azar entre
+las que faltan. En el veredicto aparece un bloque negro: «Ganaste una pieza de archivo · n de 16», la foto, la casa y
+«Ver tu archivo →». La colección se guarda en el navegador (`ciclo.archivo`) y se ve en Mi cuenta, «Tu archivo», con las
+bloqueadas como «?».
+
+**Las 16 piezas**, elegidas a ojo en hojas de contacto, todas del índice (2010–2023):
+- McQueen Spring 2010 (la última colección completa de Lee McQueen);
+- Dior de Galliano, Spring 2010;
+- Chanel de Lagerfeld, Fall 2014 (el supermercado);
+- Céline de Phoebe Philo, Spring 2011;
+- Saint Laurent de Hedi Slimane, Fall 2013;
+- Gucci de Alessandro Michele, Fall 2015 (su primera colección);
+- Balenciaga de Demna, Spring 2017;
+- Vetements, Spring 2016;
+- Maison Margiela de Galliano, Spring 2016;
+- Jil Sander de Raf Simons, Spring 2011;
+- Comme des Garçons, Spring 2015;
+- Rick Owens, Spring 2014;
+- Jacquemus, Fall 2018;
+- Bottega Veneta de Daniel Lee, Fall 2020;
+- Loewe de Jonathan Anderson, Spring 2022;
+- Miu Miu, Spring 2023.
+
+Galliano de los 90, Tom Ford para Gucci y el primer Margiela no están: el índice empieza en 2010. Hojas en
+`N/5_brief/ha_*.png`. Capturas del momento del premio y de Tu archivo en `N/5_brief/n_*`. `probar_demo.js` 8 de 8.

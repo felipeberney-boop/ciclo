@@ -3343,7 +3343,7 @@ function mcTend(L){
   G.forEach(([k])=>{const g=C.querySelector(`.mcgrid[data-k="${k}"]`);if(!g)return;
     por[k].sort((a,b)=>(!FOTO_ATR[a.o.id])-(!FOTO_ATR[b.o.id])||(k==='salir'?(a.d??0)-(b.d??0):(b.d??-1e9)-(a.d??-1e9))).forEach(x=>g.appendChild(mcFicha(x.o,x.s)));
     /* vuelta N: dos filas por grupo y «Ver los n»; así Esperar y Salir se ven sin bajar 65 tarjetas */
-    const cols=Math.max(1,getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length),n=cols*2,cs=[...g.children];
+    const cols=Math.max(1,gridCols(g)),n=cols*2,cs=[...g.children];
     if(cs.length>n){const nom=G.find(x=>x[0]===k)[1].replace(/^\S+\s/,'');cs.slice(n).forEach(c=>c.hidden=true);
       g.insertAdjacentHTML('afterend',`<p class="mcmasp"><button type="button" class="btn-sec mcmas" aria-expanded="false">Ver los ${cs.length} de ${nom}</button></p>`);
       const b=g.nextElementSibling.querySelector('button');b.onclick=()=>{const ab=b.getAttribute('aria-expanded')==='true';cs.slice(n).forEach(c=>c.hidden=ab);b.setAttribute('aria-expanded',!ab);b.textContent=ab?`Ver los ${cs.length} de ${nom}`:'Mostrar menos';if(ab)g.parentElement.scrollIntoView({block:'start'});};}});
@@ -4664,6 +4664,10 @@ function cicloDe(o){
 const CICLO_CORTO=10;let cicloTodos=false; // 24/11 vuelta M: cinco filas a la vista (antes doce tarjetas); el resto, a un toque
 /* 24/11 vuelta K: el buscador y las categorías que estaban arriba de Mis ciclos pasan acá, a una barra fija arriba */
 let exQ='';
+/* cuántas columnas tiene una grilla: con la vista oculta el navegador devuelve «repeat(4, minmax(0px, 1fr))» y contar
+   palabras daba 3; se lee el número del repeat o se cuentan las pistas ya resueltas (vuelta N) */
+function gridCols(g){const t=getComputedStyle(g).gridTemplateColumns||'';const m=t.match(/repeat\((\d+)/);if(m)return +m[1];
+  const n=t.split(/\s+(?![^(]*\))/).filter(x=>x&&x!=='none').length;return Math.max(1,n);}
 function pintarCiclos(){
   const q=mcNorm(exQ.trim());
   const L=REC.filter(o=>(cicloGrupo==='todos'||o.tipo===cicloGrupo)&&(!q||mcNorm(o.n+' '+o.tipo+' '+(o.gk||'')+' '+(o.vk||'')).includes(q))).map(cicloDe).filter(Boolean).sort((a,b)=>(!FOTO_ATR[a.o.id])-(!FOTO_ATR[b.o.id])||a.anios-b.anios||a.o.n.localeCompare(b.o.n)); // 24/11: Explorar no tiene perfil, así que no ordena por señal
@@ -4679,7 +4683,7 @@ function pintarCiclos(){
     `<details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Búsqueda mundial frente a las otras búsquedas de moda, 2010–2024 (2025 y 2026 tienen el salto de medición de Google), ● medido. Un pico es un máximo que se despega al menos 15 puntos de lo que lo rodea. Sube o baja: 2022→2024. *2010 es donde empieza la serie corregida: el pico pudo ser antes.</p></div></details>`;
   $$('#exchips [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;cicloTodos=false;pintarCiclos();});
   $('#ciclos').classList.toggle('corto',corto);
-  {const g=$('#ciclos'),cols=Math.max(1,getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length),n=cols*6;
+  {const g=$('#ciclos'),cols=Math.max(1,gridCols(g)),n=cols*6;
    $$('#ciclos .ciclo').forEach((b,i)=>{b.style.display=corto&&i>=n&&!b.classList.contains('on')?'none':'';});
    const mas=$('#ciclos .ciclomas');if(mas&&corto&&L.length<=n)mas.remove();}
   const mas=$('#ciclos .ciclomas');if(mas)mas.onclick=()=>{cicloTodos=!cicloTodos;pintarCiclos();if(!cicloTodos)$('#ciclos').scrollIntoView({behavior:'instant'});};

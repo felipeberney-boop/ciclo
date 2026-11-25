@@ -4258,3 +4258,21 @@ Cambios en `entregas/entrega_4/racional.md` (y el PDF regenerado, 25 páginas):
 - **§8 La pirueta.** Un párrafo nuevo: la cobertura real de años (2012–2021 para el archivo; nada de los 80 ni de los
   90), «¿Lo viste venir?», las piezas de archivo y que los encargos usan 2024 con las 22 opciones completas.
 - **La línea de tiempo** del 24/11 suma las vueltas L a N, y la versión dice «24/11 (noche)».
+
+## 2026-11-24 · Vuelta O, punto 2: la última fila de Explorar, cerrada
+
+Pedido: «la última fila queda incompleta y deja un hueco a la derecha. Completala con atributos que tengan foto (en
+escritorio y en celular la fila tiene que cerrar justa)».
+
+**La causa.** No faltaban atributos: la cuenta de columnas estaba mal. Cuando la pantalla todavía está oculta, el
+navegador devuelve las columnas como «repeat(4, minmax(0px, 1fr))», y contar las palabras de ese texto daba 3. Por eso
+Explorar mostraba 3 × 6 = 18 tarjetas en una grilla de 4: cuatro filas y media.
+
+Con el mismo error, los grupos de Mis ciclos mostraban 6 tarjetas en vez de 8 en la compu. Una función, `gridCols()`,
+lee el número del `repeat` o cuenta las columnas ya resueltas.
+
+**Ahora.** En la vista corta de Explorar hay 24 tarjetas en la compu (seis filas de 4) y 12 en el celular (seis de 2),
+todas con foto. En Mis ciclos, dos filas cerradas por grupo (8 y 4).
+
+La lista completa tiene 65 atributos, así que su última fila no puede cerrar con 4 columnas: ahí quedan neoprene y
+espiga, que no tienen foto. Capturas `O/2_filas/`. `probar_demo.js` 8 de 8.

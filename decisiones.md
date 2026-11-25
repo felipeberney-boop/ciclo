@@ -4200,3 +4200,17 @@ bloqueadas como «?».
 
 Galliano de los 90, Tom Ford para Gucci y el primer Margiela no están: el índice empieza en 2010. Hojas en
 `N/5_brief/ha_*.png`. Capturas del momento del premio y de Tu archivo en `N/5_brief/n_*`. `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · Vuelta N: los pendientes del recorrido de la vuelta M
+
+Pedido: «arreglá los pendientes» (los puntos 6 a 8 de la lista de la vuelta M).
+- **El recorrido en el celular era muy largo.** Saqué la leyenda repetida (cada gráfico chico ya dice su capa), la clave
+  de líneas (está en la ⓘ de la línea de la fuente) y bajé cada gráfico chico de 150 a 120 px. Del título al pie pasa de
+  1.390 a 1.056 px a 393 de ancho.
+- **Jerga en el home.** «Un K-means junta a los que se mueven parecido…» pasa a «Un algoritmo junta a los que se mueven
+  parecido y le pone nombre a la etapa.» El nombre K-means sigue en Acerca de y en la ficha.
+- **«Copiar link de este diseño» en todas las pantallas.** Ahora aparece sólo en Diseñar y en la ficha de un atributo,
+  que es donde hay algo para compartir.
+
+Los dos que siguen pendientes (en la ficha la acción va antes de la señal; Explorar no recuerda que estás sin proyecto)
+pasan a la revisión del punto 6. Captura `N/pendientes_recorrido_393.png`. `probar_demo.js` 8 de 8.

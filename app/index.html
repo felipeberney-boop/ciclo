@@ -2501,6 +2501,11 @@ html body .app #cu-archivo .archp.bloq>span:not(#g1):not(#g2):not(#g3):not(#g4):
 html body .app #cu-archivo figcaption:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-top:8px!important;padding:0!important;border:0!important;font-size:15px!important;line-height:1.35;color:var(--tinta)!important}
 html body .app #cu-archivo figcaption b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:block;font-weight:500!important;font-size:15px!important;color:var(--tinta)!important}
 html body .app #cu-archivo figcaption span:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--tinta-2);font-size:13px}
+/* vuelta N · pendientes: «Copiar link de este diseño» sólo donde hay un diseño (Diseñar); el recorrido en el celular,
+   sin la leyenda repetida ni la clave de líneas (cada gráfico chico ya dice su capa; la clave está en la ⓘ) */
+html body:not([data-vista="disenar"]):not([data-vista="detalle"]) .app #copiar:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}
+@media (max-width:599px){html body .app #v-recorridos #rleg:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7),html body .app #v-recorridos #rchart .clave:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}
+  html body .app #v-recorridos .rmini:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-bottom:6px!important}}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -2555,7 +2560,7 @@ html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(
             <h2 class="hrev" style="--i:1">Tres pasos.</h2>
             <ol class="hlista">
               <li class="hrev" style="--i:2"><span class="hn">1 / 3</span><b>Medimos</b><p>Cuánto aparece en los desfiles y cuánto se lo busca, año por año.</p></li>
-              <li class="hrev" style="--i:3"><span class="hn">2 / 3</span><b>Agrupamos</b><p>Un K-means junta a los que se mueven parecido y nombra la etapa.</p></li>
+              <li class="hrev" style="--i:3"><span class="hn">2 / 3</span><b>Agrupamos</b><p>Un algoritmo junta a los que se mueven parecido y le pone nombre a la etapa.</p></li>
               <li class="hrev" style="--i:4"><span class="hn">3 / 3</span><b>Te decimos</b><p>Según tu tipo de marca y sus plazos, una señal.</p></li>
             </ol>
           </section>
@@ -5422,7 +5427,7 @@ function pintarRecorridos(){
     $('#rcap').textContent=recCapas(o)===1?`Para ${o.n.toLowerCase()} hay una sola capa medida, así que va en su franja: el área es su índice 0–100 de su propio máximo y el punto, su pico. El gráfico de capas aparece cuando hay tres o más.`:`Para ${o.n.toLowerCase()} hay dos capas medidas, así que cada una va en su franja, sin compararlas: el área es su índice 0–100 de su propio máximo y el punto, su pico. El gráfico de capas aparece cuando hay tres o más.`;}
   else if(matchMedia('(max-width:600px)').matches){ // teléfono: un gráfico chico por capa, apilados
     recSeries(o).forEach(se=>{const h=document.createElement('div');h.className='rmini';
-      h.innerHTML=`<div class="rminih" style="color:${cssv(se.c)}">${se.n}</div>`;h.appendChild(recChart(o,360,150,se.k));rc.appendChild(h);});
+      h.innerHTML=`<div class="rminih" style="color:${cssv(se.c)}">${se.n}</div>`;h.appendChild(recChart(o,360,120,se.k));rc.appendChild(h);});
   }else rc.appendChild(recChart(o));
   if(!pocas){rc.insertAdjacentHTML('beforeend',CLAVE);legDestaca($('#rleg'),rc);}
   if(!pocas)$('#rcap').innerHTML='<span data-src="cx" tabindex="0">Índice 0–100 de su propio máximo · punteado: no predice <span class="ifu" aria-hidden="true">i</span></span>';

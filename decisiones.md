@@ -4352,3 +4352,25 @@ Sumaría en la ficha de un atributo o en Explorar, donde se mira la historia.
 
 **Recomendación: C**, con el desplegable abierto por defecto la primera vez. Es la que mejor resuelve «mi proyecto + mis
 tendencias», con la grilla de 4 intacta y sin gráficos apretados.
+
+## 2026-11-24 · Vuelta O: el layout C de Mis ciclos y el título 1
+
+Pedido: «implementá la C y poné el título 1».
+
+**El título.** El home dice «Qué diseñar. Y cuándo.».
+
+**Mis ciclos, layout C.**
+- Arriba quedan el proyecto y una línea: «29 ganan terreno, 32 lo pierden · búsqueda mundial 2022→2024 · Ver el
+  gráfico». La línea despliega los dos gráficos de siempre, con la línea de la fuente.
+- La primera vez que alguien entra a Mis ciclos el gráfico está abierto, así ve qué se mueve. Después queda cerrado, o
+  como lo haya dejado la persona, también al cambiar el ancho de la ventana.
+- Cada tarjeta trae una mini barra de búsqueda 2022→2024: verde a la derecha si ganó y roja a la izquierda si perdió,
+  hasta ±50, con su número y la ficha de fuente al pasar el mouse. Reemplaza la fila «Búsqueda 2022→2024».
+- El orden por señal, las dos filas por grupo y el pie de cada tarjeta no cambian.
+
+Un tropiezo en el camino: la app pinta Mis ciclos por detrás al arrancar, así que «primera visita» se marcaba antes de que
+la persona entrara. Ahora la marca se guarda al mostrar Mis ciclos, y si el gráfico está abierto se decide una vez por
+carga.
+
+Los textos al día: el readme, el racional (el recorrido, la tabla y la línea de tiempo) y `CLAUDE.md`. Capturas
+`P/despues_*`. `probar_demo.js` 8 de 8 y el control de las 130 tarjetas sin fallas.

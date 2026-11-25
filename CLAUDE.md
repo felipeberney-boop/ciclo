@@ -154,7 +154,13 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   no good candidate (neoprene, espiga, pitón, vaca, paisley, botinetas, chatitas, guillerminas). Three archive ideas for El
   brief (not built) in `diseno/rediseno_2026-11-24/M/5_brief/ideas_brief.html`: archive is 2012–2021 only (photos
   2010–2023, corrected search 2010–2024, nothing from the 80s or 90s).
-- **Vuelta N (24/11, last).** Card data: the label keeps at least half the width and a text value wraps (a one-line
+- **Vuelta O (24/11, last).** Home H1 «Qué diseñar. Y cuándo.». Mis ciclos uses layout C: `#mcgraf` is a `<details
+  class="mcdet">` with a one-line summary («29 ganan terreno, 32 lo pierden · búsqueda mundial 2022→2024 · Ver el
+  gráfico») holding the two charts and the source line; it is open on the first visit to Mis ciclos (`mcPrimera`, flag
+  `ciclo.mcgraf_visto` set in `mostrar('radar')`) and then keeps what the person chose (`mcGrafAbierto`). Each card shows
+  a mini bar of search 2022→2024 (`.mcbar`, −50…+50) instead of the «Búsqueda 2022→2024» row. `gridCols(g)` reads a
+  grid's column count (a hidden view returns «repeat(4, …)», which used to count as 3).
+- **Vuelta N (24/11).** Card data: the label keeps at least half the width and a text value wraps (a one-line
   «sin el término…» used to crush the label); without Reddit the value says «no aparece»; card links sit at the foot of
   each row; on phones each datum stacks label over value. Attributes without photo always go last (Explorar's short view
   never shows them; Mis ciclos puts them last in each group). Mis ciclos groups show two rows and «Ver los n de <grupo>».

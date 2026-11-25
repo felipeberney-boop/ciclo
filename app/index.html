@@ -2516,6 +2516,26 @@ html body .app #v-recorridos .exsinpy:not([hidden]):not(#g1):not(#g2):not(#g3):n
 html body .app #v-recorridos .exsinpy .pysinb:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex:1 1 300px;color:var(--tinta-2)}
 html body .app #v-recorridos .exsinpy .pysinb b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--tinta);font-weight:600}
 html body .app #v-recorridos .exsinpy .btn-pri:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){text-decoration:none}
+/* vuelta O · Mis ciclos, layout C: la gráfica en un desplegable y una mini barra de búsqueda en cada tarjeta */
+html body .app #v-radar .mcdet:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);padding:14px 0;margin:8px 0 0}
+html body .app #v-radar .mcdet summary:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;font-size:17px}
+html body .app #v-radar .mcdet summary::-webkit-details-marker:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none}
+html body .app #v-radar .mcres b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-weight:500}
+html body .app #v-radar .mcres:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--tinta-2)}
+html body .app #v-radar .mcres b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--tinta)}
+html body .app #v-radar .mcver2:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--accion);text-decoration:underline;text-underline-offset:3px}
+html body .app #v-radar .mcdet .ocultar,html body .app #v-radar .mcdet[open] .ver:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none}
+html body .app #v-radar .mcdet[open] .ocultar:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:inline}
+html body .app #v-radar .mcdet .mcdos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-top:12px}
+html body .app #v-radar .mcbar:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid;grid-template-columns:auto minmax(0,1fr) 3.4em;align-items:center;gap:10px;margin:8px 0 6px}
+html body .app #v-radar .mcbarl:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:13px;color:var(--tinta-2);white-space:nowrap}
+html body .app #v-radar .mceje:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:relative;height:8px;background:var(--paper,#f5f5f7);border-radius:4px!important}
+html body .app #v-radar .mceje::after:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){content:'';position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:#86868b}
+html body .app #v-radar .mceje i:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:absolute;top:0;bottom:0;border-radius:4px!important}
+html body .app #v-radar .mceje i.mas:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){background:var(--act-entrar)}
+html body .app #v-radar .mceje i.menos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){background:var(--act-salir)}
+html body .app #v-radar .mcbar b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:15px;font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:599px){html body .app #v-radar .mcbar:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(0,1fr) 3em;row-gap:2px}html body .app #v-radar .mcbarl:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-column:1/-1}}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -2560,7 +2580,7 @@ html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(
           <section class="hidea" data-f="0" id="in-hero">
             <img class="hmfoto" alt="" src="https://assets.vogue.com/photos/633c453a802c86f37bb5ae35/master/w_800,c_limit/00044-miu-miu-spring-2023-ready-to-wear-credit-gorunway.jpg">
             <p class="eti hrev">Una herramienta de moda para diseñadores y marcas</p>
-            <h1 class="hrev" style="--i:1">Qué corte, qué estampa, qué color. Y cuándo.</h1>
+            <h1 class="hrev" style="--i:1">Qué diseñar. Y cuándo.</h1>
             <p class="hlead hrev" style="--i:2">CICLO cruza 25 años de desfiles con 20 de búsquedas en Google y te dice, para cada color, estampa, corte o material, si en tu proyecto conviene entrar, esperar o salir.</p>
             <a class="hbaja hrev" style="--i:3" href="#in-como" data-baja>Bajá para ver cómo funciona <span aria-hidden="true">↓</span></a>
           </section>
@@ -3325,8 +3345,9 @@ function mcFicha(o,s){
   b.innerHTML=`<div class="mcfoto">${fo?`<img loading="lazy" decoding="async"${fotoPos(o.id)} src="${vogueFoto(fo.f,640)}" alt=""><span class="pcred">${fotoCred(fo)}</span>`:`<span class="mcsin">Sin foto de pasarela</span>`}</div>
     <div class="mccu"><div class="mctop"><h3>${o.n}</h3><span class="eti">${o.tipo}</span></div>
     <span class="sen ${s.cls}">${s.icono} ${s.palabra}</span>
+    ${d!=null?`<div class="mcbar"${src('t')} aria-label="Búsqueda 2022→2024: ${mcPts(d)} puntos"><span class="mcbarl">Búsqueda 22→24</span><span class="mceje" aria-hidden="true"><i class="${d>=0?'mas':'menos'}" style="${d>=0?'left':'right'}:50%;width:${(Math.min(50,Math.abs(d))/50*50).toFixed(1)}%"></i></span><b>${mcPts(d)}</b></div>`:''}
     <dl class="mcdat">${et&&et.n?`<dt>Etapa</dt><dd${src('k')}>${et.n}</dd>`:''}
-      <dt>Búsqueda 2022→2024</dt><dd${d!=null?src('t'):''}>${d!=null?mcPts(d)+' puntos':'sin dato'}</dd>
+      ${d!=null?'':'<dt>Búsqueda 2022→2024</dt><dd>sin dato</dd>'}
       ${rd.length?rd.map(r=>`<dt>Reddit, ${r.q}</dt><dd${src(r.k)}>${mcPts(r.d)} puntos</dd>`).join(''):`<dt>Reddit, ${publico==='todos'?'los dos foros':publico==='mujer'?'mujeres':'hombres'}</dt><dd class="mcno">no aparece</dd>`}</dl>
     <span class="mcver" aria-hidden="true">Ver la ficha →</span></div>`;
   b.onclick=()=>mcAbrir(o.id);
@@ -3348,6 +3369,7 @@ function mcTend(L){
       g.insertAdjacentHTML('afterend',`<p class="mcmasp"><button type="button" class="btn-sec mcmas" aria-expanded="false">Ver los ${cs.length} de ${nom}</button></p>`);
       const b=g.nextElementSibling.querySelector('button');b.onclick=()=>{const ab=b.getAttribute('aria-expanded')==='true';cs.slice(n).forEach(c=>c.hidden=ab);b.setAttribute('aria-expanded',!ab);b.textContent=ab?`Ver los ${cs.length} de ${nom}`:'Mostrar menos';if(ab)g.parentElement.scrollIntoView({block:'start'});};}});
 }
+let mcGrafAbierto=null;const mcPrimera=(()=>{try{return !localStorage.getItem('ciclo.mcgraf_visto');}catch(e){return false;}})();
 function mcGrafica(L){
   const C=$('#mcgraf');if(!C)return;
   const W=Math.max(300,Math.round(C.clientWidth||1000)),movil=W<620;
@@ -3359,8 +3381,12 @@ function mcGrafica(L){
     const Hh=movil?160:150;
     const dos=W>=700,Wc=dos?Math.floor((W-40)/2):W; // 24/11 vuelta M: siempre lado a lado desde 700 px, chicos
     const py=(()=>{const p=pyActivo();return p?'«'+pyEsc(p.nombre)+'»':'tu proyecto';})();
-    h=`<div class="mcdos"><div>${G.length?moviPanel(G,`Gana terreno · ${ga.length} de ${con.length}`,'+',Wc,Hh,true):''}</div><div>${P.length?moviPanel(P,`Pierde terreno · ${pi.length} de ${con.length}`,'−',Wc,Hh,true):''}</div></div>
-      <p class="mcfuente"><span data-src="gm" tabindex="0">Google, todo el mundo · 2022→2024 · +50 = subió 50 puntos <span class="ifu" aria-hidden="true">i</span></span></p>`;
+    /* vuelta O (layout C): una línea con el resumen y el gráfico en un desplegable; abierto la primera vez */
+    // cuenta como visto sólo con Mis ciclos en pantalla (al arrancar se pinta por detrás)
+    const ab=mcGrafAbierto!=null?mcGrafAbierto:mcPrimera; // abierto en la primera visita a Mis ciclos; después, lo que eligió la persona
+    h=`<details class="mcdet"${ab?' open':''}><summary><span class="mcres"><b>${ga.length} ganan terreno, ${pi.length} lo pierden</b> · búsqueda mundial 2022→2024</span><span class="mcver2"><span class="ver">Ver el gráfico</span><span class="ocultar">Ocultar el gráfico</span></span></summary>
+      <div class="mcdos"><div>${G.length?moviPanel(G,`Gana terreno · ${ga.length} de ${con.length}`,'+',Wc,Hh,true):''}</div><div>${P.length?moviPanel(P,`Pierde terreno · ${pi.length} de ${con.length}`,'−',Wc,Hh,true):''}</div></div>
+      <p class="mcfuente"><span data-src="gm" tabindex="0">Google, todo el mundo · 2022→2024 · +50 = subió 50 puntos <span class="ifu" aria-hidden="true">i</span></span></p></details>`;
   }else{
     const F=L.map(o=>({o,y:tvMaxAnio(o.id).my})).filter(x=>x.y).sort((a,b)=>a.y-b.y||a.o.n.localeCompare(b.o.n));
     const ver=mcPicosTodos||F.length<=24?F:F.slice(-24);
@@ -3372,6 +3398,7 @@ function mcGrafica(L){
       ${F.length>ver.length?`<p><button type="button" class="btn-sec" id="mcpicostodos">Ver los ${F.length}</button> <span class="mcpie">Ahora: los ${ver.length} que picaron más tarde.</span></p>`:''}`;
   }
   C.innerHTML=pills+h;
+  C.querySelector('.mcdet')?.addEventListener('toggle',e=>{mcGrafAbierto=e.target.open;});
   C.querySelectorAll('.mcgsel button').forEach(b=>b.onclick=()=>{mcGraf=b.dataset.g;mcGrafica(mcLista());});
   $('#mcpicostodos')?.addEventListener('click',()=>{mcPicosTodos=true;mcGrafica(mcLista());});
   C.querySelectorAll('.mcgit').forEach(b=>b.onclick=()=>mcAbrir(b.dataset.r));
@@ -5702,7 +5729,7 @@ function mostrar(v,keepNav){
   vistaBanda(v);tratamiento(v);
   if(v==='adivina')pintarAdivina();
   if(v==='mover')pintarBrief();
-  if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();}else tvParar();
+  if(v==='radar'){pintarPerfilRadar();pintarRadar();moviAnimar();try{localStorage.setItem('ciclo.mcgraf_visto','1');}catch(e){}}else tvParar();
   if(v==='inicio')pintarInicio();if(v==='cuenta')pintarCuentaVista();if(v!=='detalle')fichaId=null;
   window.scrollTo({top:0,behavior:'instant'});
   vista=v;escribirLink(true);

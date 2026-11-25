@@ -76,8 +76,9 @@ En el celular:
 
 ### El uso
 
-**4 · Mis ciclos, arriba: qué gana y qué pierde terreno.** La búsqueda mundial 2022→2024, los dos gráficos lado a lado y
-una línea con la fuente (el detalle, en la ⓘ).
+**4 · Mis ciclos, arriba: qué gana y qué pierde terreno.** Una línea con el resumen («29 ganan terreno, 32 lo pierden») y
+«Ver el gráfico», que despliega los dos gráficos (abierto la primera vez). Cada tarjeta trae su mini barra de búsqueda
+2022→2024.
 
 ![Paso 4: Mis ciclos](entregas/entrega_4/recorrido/paso_04_mis_ciclos.png)
 

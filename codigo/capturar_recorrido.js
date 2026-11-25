@@ -1,5 +1,6 @@
 // CICLO · el recorrido paso a paso para el readme (03/11/2026; rehecho el 24/11/2026 para el home y los proyectos;
-// al día con la vuelta N: el selector del recorrido, «¿Lo viste venir?», el premio, Tu archivo y el aviso sin proyecto).
+// al día con la vuelta P: el selector del recorrido, «¿Lo viste venir?», el premio, Tu archivo, el aviso sin proyecto,
+// Mis ciclos con el gráfico en un desplegable (abierto en la primera visita) y «Paso n de 9» fijo en Diseñar).
 // Uso, desde la raíz del repo, con la app servida (cd app && python3 -m http.server 8000):
 //   node codigo/capturar_recorrido.js [http://localhost:8000/]
 // Requiere: npm install playwright. Escribe en entregas/entrega_4/recorrido/ (el de la Entrega 3 queda en entrega_3/).
@@ -43,6 +44,7 @@ const OUT = 'entregas/entrega_4/recorrido';
     await p.click('#inform button[type=submit]'); await p.waitForSelector('#v-radar:not([hidden]) #mctend .mcf');
     // Mis ciclos: la gráfica y Mis tendencias
     await foto(p, `paso_04_mis_ciclos${suf}`);
+    await p.click('#mcgraf .mcdet summary'); await p.waitForTimeout(400); // como queda desde la segunda visita: el gráfico cerrado
     await hasta(p, '#mcsec2'); await foto(p, `paso_05_mis_tendencias${suf}`);
     await p.click('#mctend .mcf:has-text("Jeans baggy")'); await p.waitForSelector('#v-detalle:not([hidden]) svg');
     await p.evaluate(() => window.scrollTo(0, 0)); await foto(p, `paso_06_ficha_del_atributo${suf}`);

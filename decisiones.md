@@ -4392,3 +4392,14 @@ celular (`Q/antes/`). Lo que trababa:
 
 Capturas en `Q/despues/`. `probar_demo.js` 8 de 8, las 130 tarjetas sin fallas y «¿Lo viste venir?» con su premio sin
 errores.
+
+## 2026-11-24 · El racional y el recorrido, al día con la vuelta P
+
+Pedido: «actualizá el racional y capturar_recorrido.js».
+
+- **Racional, §6.** Un párrafo nuevo: «Cómo se probó: recorridos como usuaria». Explica qué se recorrió, con qué
+  criterios, ejemplos de lo arreglado y que no reemplaza una prueba con diseñadores reales. La línea de tiempo dice
+  «vueltas L a P» y «tres rondas de recorridos». PDF regenerado.
+- **`capturar_recorrido.js`.** El comentario está al día. El paso 5 cierra el gráfico de Mis ciclos antes de capturar
+  Mis tendencias, como queda desde la segunda visita; el paso 4 lo muestra abierto, como en la primera. Capturas
+  regeneradas en `entregas/entrega_4/recorrido/`.

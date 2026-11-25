@@ -4343,7 +4343,7 @@ gráfico», que despliega los dos gráficos. En cada tarjeta, una mini barra de 
 - En contra: la foto de conjunto (qué se mueve más) queda detrás de un click.
 
 **«Cuándo picó cada uno»: es ruido en Mis ciclos.** En la propuesta B se ve por qué:
-- unos veinte de los 65 atributos tienen su máximo en 2010, que es el primer año de la serie corregida, así que la
+- 26 de los 65 atributos tienen su máximo en 2010, que es el primer año de la serie corregida, así que la
   columna más alta es un efecto del arranque de la serie y no un dato de moda;
 - el año del pico ya está adentro de la señal de cada tarjeta;
 - no ayuda a decidir qué diseñar ahora.

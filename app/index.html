@@ -2545,6 +2545,10 @@ html body .app #v-recorridos #ciclos>details.qm:not(#g1):not(#g2):not(#g3):not(#
   html body .app #v-recorridos .ciclo .cm>span:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:12px!important;line-height:1.25}
   html body .app #v-recorridos .ciclo .cm>span b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:block;font-size:16px!important}
   html body .app #v-recorridos .ciclo .cm>span:last-child:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-column:1/-1}}
+/* vuelta Q · recorrido: en el celular, los valores de la ficha a 17 px (a 22 se partían en tres renglones) y las cifras
+   de la tarjeta de Explorar sin cortarse */
+@media (max-width:599px){html body .app .fpdat dd:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:17px!important;line-height:1.35!important}
+  html body .app #v-recorridos .ciclo .cm>span b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:nowrap;font-size:15px!important}}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -3937,7 +3941,7 @@ function dzRef(ref){ // «tipo:pantalones/largo», «rec:cargo», «km:Y2K», «
 function dzSeñal(at){ // el atributo de la taxonomía → la señal, con su procedencia
   if(!at)return señal({});
   const p=dzSeñalPropia(at);if(p)return Object.assign(p,{proc:p.interpretado?'interpretado':'medido'});
-  if(at.presta_de){const L=dzRef(at.presta_de),sp=dzSeñalPropia(L);if(sp)return Object.assign(sp,{proc:'prestado',de:L.n.toLowerCase(),presta_porque:at.presta_porque});}
+  if(at.presta_de){const L=dzRef(at.presta_de),sp=dzSeñalPropia(L);if(sp)return Object.assign(sp,{proc:'prestado',de:/^[A-Z0-9]{2,}$/.test(L.n)?L.n:L.n.toLowerCase(),presta_porque:at.presta_porque});}
   return señal({});
 }
 /* el color suelto: cada color en toda la pasarela leída por CLIP (todas las prendas, ponderado por looks) */

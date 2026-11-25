@@ -4403,3 +4403,26 @@ Pedido: «actualizá el racional y capturar_recorrido.js».
 - **`capturar_recorrido.js`.** El comentario está al día. El paso 5 cierra el gráfico de Mis ciclos antes de capturar
   Mis tendencias, como queda desde la segunda visita; el paso 4 lo muestra abierto, como en la primera. Capturas
   regeneradas en `entregas/entrega_4/recorrido/`.
+
+## 2026-11-24 · Vuelta Q: otro recorrido como usuaria
+
+Pedido: «hacé otro recorrido como usuaria y arreglá lo que trabe».
+
+Los dos recorridos de siempre (fast fashion y quien sólo ama la moda), en la compu y en el celular (`R/antes/`). Lo que
+trababa:
+1. **Diseñar mostraba un nombre interno.** Tiro bajo, un dato prestado, decía «De y2k, etapa en ascenso»: el nombre
+   del grupo del modelo pasado a minúsculas. Ahora una sigla queda como sigla: «De Y2K».
+2. **La ficha en el celular.** Los cuatro datos iban a 22 px y «mujeres («baggy jeans»): +43 puntos» ocupaba tres
+   renglones. Ahora van a 17 px, en dos.
+3. **Las cifras de Explorar en el celular.** «13 años» se partía en dos renglones y desalineaba la fila. Ahora no se
+   corta.
+
+En el camino:
+- `capturar_recorrido.js` se colgaba esperando que la red quedara quieta («networkidle»), con las fotos de Vogue
+  tardando. Ahora espera la carga de la página, con más margen.
+- Una corrida en paralelo con el recorrido de las usuarias había dejado el recorrido del readme con 15 capturas. Ya está
+  completo de nuevo: 33.
+- Un comentario `//` al final de un renglón se comió una llave y rompió el script de la app unos minutos. Se vio enseguida
+  y se corrigió. Regla: nunca dejar un comentario `//` en un renglón que sigue con código.
+
+Capturas `R/despues/`. `probar_demo.js` 8 de 8.

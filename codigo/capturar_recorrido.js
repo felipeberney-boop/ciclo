@@ -21,8 +21,9 @@ const OUT = 'entregas/entrega_4/recorrido';
     const movil = ancho < 500;
     const ctx = await b.newContext({ viewport: { width: ancho, height: alto }, colorScheme: 'light', deviceScaleFactor: movil ? 2 : 1, isMobile: movil, hasTouch: movil });
     const p = await ctx.newPage();
-    await p.goto(BASE, { waitUntil: 'networkidle' });
-    await p.waitForTimeout(1500);
+    // «load» y no «networkidle»: las fotos de Vogue a veces tardan y dejaban la carga colgada (24/11)
+    await p.goto(BASE, { waitUntil: 'load', timeout: 60000 });
+    await p.waitForTimeout(2500);
     return p;
   };
   const foto = async (p, nombre) => { await p.mouse.move(2, 2); await p.waitForTimeout(1200); await p.screenshot({ path: `${OUT}/${nombre}.png` }); console.log('·', nombre); };

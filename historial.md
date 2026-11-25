@@ -628,6 +628,13 @@ El home dice «Cuándo entrar en una tendencia, y cuándo salir.». Mis ciclos a
 (Google mundial, igual para todos los proyectos), y las fotos llegan sin bajar. 15 atributos más tienen foto de pasarela
 (63 de 65). Explorar termina en el recorrido. Acerca de y el botón de El brief, ajustados; el racional, al día.
 
+## v1.91 · 24/11/2026 · Vuelta N: tarjetas firmes, «¿Lo viste venir?» y Tu archivo
+
+Las tarjetas ya no se desarman (un valor largo aplastaba la etiqueta) y los atributos sin foto van al final. Explorar
+muestra el look entero en tarjetas verticales y su selector es un panel con buscador. La fuente de los gráficos, en una
+línea. El brief suma «¿Lo viste venir?» y un premio: piezas de archivo (16 looks icónicos del corpus) que se juntan en Tu
+archivo. Mis ciclos muestra dos filas por grupo y la ficha pone la señal antes de la acción.
+
 ## v1.90 · 24/11/2026 · Vuelta M: qué diseñar y cuándo, una grilla y fotos en Diseñar
 
 El home dice «Qué corte, qué estampa, qué color. Y cuándo.» y va directo a cómo funciona. Mis ciclos muestra sólo el

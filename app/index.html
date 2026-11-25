@@ -2506,6 +2506,12 @@ html body .app #cu-archivo figcaption span:not(#g1):not(#g2):not(#g3):not(#g4):n
 html body:not([data-vista="disenar"]):not([data-vista="detalle"]) .app #copiar:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}
 @media (max-width:599px){html body .app #v-recorridos #rleg:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7),html body .app #v-recorridos #rchart .clave:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}
   html body .app #v-recorridos .rmini:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-bottom:6px!important}}
+/* vuelta N · recorrido de fast fashion: en el celular, cada dato de la tarjeta con la etiqueta arriba del valor */
+@media (max-width:599px){html body .app #v-radar .mcdat:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(0,1fr)!important;row-gap:0!important}
+  html body .app #v-radar .mcdat dd:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){text-align:left!important;white-space:normal!important;margin:0 0 8px!important}}
+html body .app #v-radar .mcf[hidden]:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}
+html body .app #v-radar .mcmasp:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin:22px 0 0}
+html body .app .fpsen .dzdesde:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-top:18px!important;text-align:left!important;justify-content:flex-start!important;display:flex!important;margin-left:0!important;margin-right:0!important;align-self:flex-start!important}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -3330,7 +3336,12 @@ function mcTend(L){
   C.innerHTML=`${L.length?'':'<p class="mcvacio">Nada para mostrar.</p>'}
     ${G.filter(([k])=>por[k]&&por[k].length).map(([k,t,q])=>`<section class="mcgr"><div class="mcgrcab"><h3 class="${SEN[k].cls}">${t} <span>${por[k].length}</span></h3></div><div class="mcgrid" data-k="${k}"></div></section>`).join('')}`;
   G.forEach(([k])=>{const g=C.querySelector(`.mcgrid[data-k="${k}"]`);if(!g)return;
-    por[k].sort((a,b)=>(!FOTO_ATR[a.o.id])-(!FOTO_ATR[b.o.id])||(k==='salir'?(a.d??0)-(b.d??0):(b.d??-1e9)-(a.d??-1e9))).forEach(x=>g.appendChild(mcFicha(x.o,x.s)));});
+    por[k].sort((a,b)=>(!FOTO_ATR[a.o.id])-(!FOTO_ATR[b.o.id])||(k==='salir'?(a.d??0)-(b.d??0):(b.d??-1e9)-(a.d??-1e9))).forEach(x=>g.appendChild(mcFicha(x.o,x.s)));
+    /* vuelta N: dos filas por grupo y «Ver los n»; así Esperar y Salir se ven sin bajar 65 tarjetas */
+    const cols=Math.max(1,getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length),n=cols*2,cs=[...g.children];
+    if(cs.length>n){const nom=G.find(x=>x[0]===k)[1].replace(/^\S+\s/,'');cs.slice(n).forEach(c=>c.hidden=true);
+      g.insertAdjacentHTML('afterend',`<p class="mcmasp"><button type="button" class="btn-sec mcmas" aria-expanded="false">Ver los ${cs.length} de ${nom}</button></p>`);
+      const b=g.nextElementSibling.querySelector('button');b.onclick=()=>{const ab=b.getAttribute('aria-expanded')==='true';cs.slice(n).forEach(c=>c.hidden=ab);b.setAttribute('aria-expanded',!ab);b.textContent=ab?`Ver los ${cs.length} de ${nom}`:'Mostrar menos';if(ab)g.parentElement.scrollIntoView({block:'start'});};}});
 }
 function mcGrafica(L){
   const C=$('#mcgraf');if(!C)return;
@@ -3396,9 +3407,9 @@ function abrirFichaProyecto(id){
   const quien=mirando?'Sin proyecto: las señales son para una marca contemporary de ejemplo.':`Para ${p?'«'+pyEsc(p.nombre)+'» · ':''}${pyResumen({publico,vinculo,cliente})}`;
   const foro=publico==='todos'?'los dos foros':`el foro de ${publico==='mujer'?'mujeres':'hombres'}`;
   v.innerHTML=`<button class="back" id="volver">← Mis ciclos</button>
-    <div class="vhead"><div><p class="eti">${o.tipo}</p><h1>${o.n}</h1><p class="fpquien">${quien}</p>${t?dzEnFicha(t):''}</div></div>
+    <div class="vhead"><div><p class="eti">${o.tipo}</p><h1>${o.n}</h1><p class="fpquien">${quien}</p></div></div>
     <div class="fpdec">
-      <div class="fpsen"><span class="sen ${s.cls}">${s.icono} ${s.estado==='sin-dato'?'Sin señal':s.palabra}</span><p>${s.corto||s.porque}</p></div>
+      <div class="fpsen"><span class="sen ${s.cls}">${s.icono} ${s.estado==='sin-dato'?'Sin señal':s.palabra}</span><p>${s.corto||s.porque}</p>${t?dzEnFicha(t):''}</div>
       <dl class="fpdat">
         <div><dt>Etapa</dt><dd${et&&et.n?src('k'):''}>${et&&et.n?et.n:'Sin etapa: no entra al K-means'}</dd></div>
         <div><dt>Búsqueda 2022→2024</dt><dd${d!=null?src('t'):''}>${d!=null?mcPts(d)+' puntos':'sin dato'}</dd></div>

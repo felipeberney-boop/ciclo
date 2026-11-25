@@ -154,6 +154,19 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   no good candidate (neoprene, espiga, pitón, vaca, paisley, botinetas, chatitas, guillerminas). Three archive ideas for El
   brief (not built) in `diseno/rediseno_2026-11-24/M/5_brief/ideas_brief.html`: archive is 2012–2021 only (photos
   2010–2023, corrected search 2010–2024, nothing from the 80s or 90s).
+- **Vuelta N (24/11, last).** Card data: the label keeps at least half the width and a text value wraps (a one-line
+  «sin el término…» used to crush the label); without Reddit the value says «no aparece»; card links sit at the foot of
+  each row; on phones each datum stacks label over value. Attributes without photo always go last (Explorar's short view
+  never shows them; Mis ciclos puts them last in each group). Mis ciclos groups show two rows and «Ver los n de <grupo>».
+  Explorar cards are 4:5 portrait, four per row (3 columns each), six rows; the recorrido select is a button that opens
+  a compact panel (`#rtpanel`, search + four families, `rtPintar()`; the hidden `#rsel` stays for scripts). The source
+  under the charts is one line with an ⓘ; the rest lives in `FUENTES.gm` / `FUENTES.cx` (the `data-src` card). El brief
+  has two tabs (`#bfmodos`): «El encargo» and «¿Lo viste venir?» (`pintarViste()`, `vvNuevo()`: a `FOTO_ATR` look from
+  2012–2021 and its corrected search three years later, ±3 points, racha in `ciclo.vv_racha`). Clavar a brief or three
+  right guesses in a row unlocks a random piece of `BF_ARCHIVO` (16 iconic looks from the index, 2010–2023, chosen by
+  eye), stored in `ciclo.archivo` and shown in Mi cuenta, «Tu archivo» (`archivoHTML()`, exposed on `window`). In the
+  ficha the signal comes first and «Diseñar con…» sits under it. «Copiar link de este diseño» shows only in Diseñar and
+  the ficha. The home says «Un algoritmo junta…» instead of «Un K-means…».
 - **La grilla (24/11, vuelta M; Cristian marcó cosas «tiradas a la izquierda y sueltas a la derecha»).** One grid for every
   screen, tokens in `:root` at the end of the CSS (layer «la grilla», the last one): `--g-mar` margin, `--g-n` columns,
   `--g-med` gutter, `--g-col` one column. **Desktop ≥1000:** 12 columns, gutter 24, margin `max(clamp(16px,5.5vw,80px),

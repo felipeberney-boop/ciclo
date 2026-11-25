@@ -4214,3 +4214,22 @@ Pedido: «arreglá los pendientes» (los puntos 6 a 8 de la lista de la vuelta M
 
 Los dos que siguen pendientes (en la ficha la acción va antes de la señal; Explorar no recuerda que estás sin proyecto)
 pasan a la revisión del punto 6. Captura `N/pendientes_recorrido_393.png`. `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · Vuelta N, punto 6: otro recorrido como diseñadora de fast fashion
+
+Pedido: «otro recorrido rápido como usuaria de fast fashion: decime las 3 cosas que más traban y arreglalas».
+
+Recorrido: home → crear (Mujer · Para una marca · Fast fashion) → Mis ciclos → Jeans baggy → Diseñar → El brief, en
+la compu y en el celular (`N/6_recorrido/A_*`).
+
+1. **Mis ciclos era una pared de 65 tarjetas.** Para llegar a «Salir» había que bajar 18.340 px en el celular (11.572 en
+   la compu). Ahora cada grupo muestra dos filas y «Ver los 24 de Entrar» (el botón dice el grupo); los que no tienen
+   foto siguen al final. La pantalla mide 5.179 px en el celular y 5.180 en la compu, y Entrar, Esperar y Salir se ven
+   seguidos.
+2. **En el celular los datos de la tarjeta se partían en cuatro renglones** («Reddit, / mujeres / («baggy / jeans»)»
+   contra su valor). En el celular cada dato va con la etiqueta arriba del valor, en una sola columna.
+3. **En la ficha la acción iba antes del dato.** «Diseñar con este corte · Baggy →» estaba arriba, antes de la señal.
+   Ahora va debajo de «▲ Entrar» y de su porqué: primero el qué y el porqué, después qué hacer. Queda alineado a la
+   izquierda en los dos anchos.
+
+Capturas `N/6_recorrido/despues_*`. `probar_demo.js` 8 de 8, y el control de las 130 tarjetas sin fallas.

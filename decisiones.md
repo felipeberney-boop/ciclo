@@ -4140,3 +4140,18 @@ nativa de 65 renglones:
 
 No hay color entre los 65 atributos, así que no hay familia de color. El `<select>` queda escondido para los scripts.
 Capturas `N/3_explorar/propuesta_selector_*`. `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · Vuelta N, punto 4: la fuente en una línea
+
+Pedido: «El bloque de abajo del gráfico… sigue desordenado y apilado. Dejá UNA línea corta visible (fuente · período ·
+qué es el +50) y el resto en un tooltip o ficha al pasar el mouse (y al tocar en el celular), como las fichas de fuente
+que ya existen».
+
+- **Mis ciclos.** La línea queda «Google, todo el mundo · 2022→2024 · +50 = subió 50 puntos ⓘ». Lo demás va en la ficha
+  de fuente de siempre (`data-src`, clave nueva `gm` en `FUENTES`): 100 es el año más buscado desde 2004, no separa por
+  público ni por tipo de marca, y lo que cambia con el proyecto es la señal.
+- **Explorar.** La línea queda «Índice 0–100 de su propio máximo · punteado: no predice ⓘ», con la explicación completa
+  en la ficha (clave `cx`).
+
+Se abre al pasar el mouse en la compu y al tocar en el celular; es el mismo mecanismo que el resto de los números
+medidos. Capturas `N/4_fuente/` (la línea y la ficha abierta, en los dos anchos). `probar_demo.js` 8 de 8.

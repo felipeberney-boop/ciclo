@@ -2457,6 +2457,10 @@ html body .app #v-recorridos .rtops button:not(#g1):not(#g2):not(#g3):not(#g4):n
 html body .app #v-recorridos .rtops button:hover:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){border-color:var(--tinta)}
 html body .app #v-recorridos .rtops button[aria-pressed=true]:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){background:var(--tinta);color:#fff;border-color:var(--tinta)}
 html body .app #v-recorridos .rtnada:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:15px;color:var(--tinta-2);margin:10px 0 0}
+/* vuelta N: la fuente en una línea; el resto, en la ficha de fuente (al pasar el mouse o al tocar) */
+html body .app .ifu:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid currentColor;border-radius:50%!important;font:600 11px/1 var(--sf);font-style:normal;vertical-align:1px;margin-left:4px}
+html body .app :is(.mcfuente,#rcap) [data-src]:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){cursor:help}
+html body .app #rcap:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:13px!important;color:var(--tinta-2)!important}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -3040,6 +3044,8 @@ const hideTip=()=>{tip.style.opacity=0;tip.classList.remove('src');};
 /* 17/11 · de dónde sale cada número medido: al pasar el mouse (o al tocarlo en el celular) aparecen la fuente, el
    período y las observaciones. Nada fijo en pantalla. Cada número lleva data-src="clave|observaciones propias". */
 const FUENTES={
+  gm:['Google Trends · búsqueda mundial','+50 = subió 50 puntos de 2022 a 2024, en una escala donde 100 es el año más buscado de cada atributo desde 2004. No separa por público ni por tipo de marca: es igual para todos los proyectos. Lo que cambia con tu proyecto es la señal de cada tarjeta.','36 meses por término'],
+  cx:['Cómo se lee el gráfico','Cada curva es un índice de 0 a 100 de su propio máximo: no compara un atributo con otro. Lleno: medido. Punteado: no es un pronóstico, muestra cuánto se movieron casos parecidos. Pasá el mouse (o tocá) una curva para ver de dónde sale.','Pasarela, búsqueda y Reddit'],
   g:['Google Trends · búsqueda mundial','Promedio anual frente a 35 búsquedas de moda, hasta 2024 (2025–26 fuera: salto de medición)','12 meses por año y término'],
   t:['Google Trends · búsqueda mundial','Cuántos puntos ganó o perdió de 2022 a 2024, frente a 35 búsquedas de moda','36 meses por término'],
   v:['Vogue Runway · looks de colección','Proporción de looks por año: etiquetas de Vogue hasta 2021; desde 2022, un clasificador CLIP entrenado con esas etiquetas','902.566 looks hasta 2023 · 20.000 looks por año en 2024 y 2025'],
@@ -3292,7 +3298,7 @@ function mcGrafica(L){
     const dos=W>=700,Wc=dos?Math.floor((W-40)/2):W; // 24/11 vuelta M: siempre lado a lado desde 700 px, chicos
     const py=(()=>{const p=pyActivo();return p?'«'+pyEsc(p.nombre)+'»':'tu proyecto';})();
     h=`<div class="mcdos"><div>${G.length?moviPanel(G,`Gana terreno · ${ga.length} de ${con.length}`,'+',Wc,Hh,true):''}</div><div>${P.length?moviPanel(P,`Pierde terreno · ${pi.length} de ${con.length}`,'−',Wc,Hh,true):''}</div></div>
-      <p class="mcfuente"><span${src('t')}>Búsqueda en Google · todo el mundo · 2022→2024.</span> <span>+50 = subió 50 puntos; 100 = su año más buscado desde 2004.</span><br><span>Es igual para todos los proyectos; lo que cambia con ${py} es la señal de cada tarjeta.</span></p>`;
+      <p class="mcfuente"><span data-src="gm" tabindex="0">Google, todo el mundo · 2022→2024 · +50 = subió 50 puntos <span class="ifu" aria-hidden="true">i</span></span></p>`;
   }else{
     const F=L.map(o=>({o,y:tvMaxAnio(o.id).my})).filter(x=>x.y).sort((a,b)=>a.y-b.y||a.o.n.localeCompare(b.o.n));
     const ver=mcPicosTodos||F.length<=24?F:F.slice(-24);
@@ -5378,7 +5384,7 @@ function pintarRecorridos(){
       h.innerHTML=`<div class="rminih" style="color:${cssv(se.c)}">${se.n}</div>`;h.appendChild(recChart(o,360,150,se.k));rc.appendChild(h);});
   }else rc.appendChild(recChart(o));
   if(!pocas){rc.insertAdjacentHTML('beforeend',CLAVE);legDestaca($('#rleg'),rc);}
-  if(!pocas)$('#rcap').textContent='Cada curva es un índice de 0 a 100 de su propio máximo. Lleno: medido. Punteado: no predice, muestra cuánto se movieron casos parecidos. Pasá el mouse por una curva para ver de dónde sale.';
+  if(!pocas)$('#rcap').innerHTML='<span data-src="cx" tabindex="0">Índice 0–100 de su propio máximo · punteado: no predice <span class="ifu" aria-hidden="true">i</span></span>';
   pintarCiclos();rtPintar();
   const rd=$('#rdesde');rd.hidden=recCapas(o)<3;rd.textContent=recDesde2004?'ver desde que hay dos capas':'ver desde 2004';rd.onclick=()=>{recDesde2004=!recDesde2004;pintarRecorridos();};
   let rz=$('#rdz');if(!rz){rz=document.createElement('div');rz.id='rdz';rz.className='dzdesde';($('#v-recorridos .exrecab')||$('#rtitulo')).after(rz);}

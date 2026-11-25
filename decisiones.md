@@ -4374,3 +4374,21 @@ carga.
 
 Los textos al día: el readme, el racional (el recorrido, la tabla y la línea de tiempo) y `CLAUDE.md`. Capturas
 `P/despues_*`. `probar_demo.js` 8 de 8 y el control de las 130 tarjetas sin fallas.
+
+## 2026-11-24 · Vuelta P: otro recorrido como usuaria
+
+Pedido: «hacé otro recorrido como usuaria y arreglá lo que trabe».
+
+Dos recorridos completos, como la diseñadora de fast fashion y como alguien que sólo ama la moda, en la compu y en el
+celular (`Q/antes/`). Lo que trababa:
+1. **Diseñar en el celular.** «Paso 4 de 9» se iba de la pantalla al desplazar la tira de pasos, y quedaba sólo «Tipo
+   03 Corte 04 Tiro…» cortado: no se sabía en qué paso estabas. Ahora «Paso n de 9» queda fijo a la izquierda y los
+   pasos se deslizan por debajo.
+2. **La «?» de Explorar** flotaba encima de la foto de la cuarta tarjeta, en los dos anchos. Ahora va arriba de la
+   grilla, sobre la línea.
+3. **Las tarjetas de Explorar en el celular** apilaban «2024 / último pico / ahora / desde el pico / 7 años / entre
+   picos» en seis renglones. Ahora son tres columnas (número arriba, etiqueta abajo) y la tarjeta mide la mitad.
+4. **El brief.** La bajada decía «Te llega un encargo…» también en «¿Lo viste venir?». Ahora cambia con la pestaña.
+
+Capturas en `Q/despues/`. `probar_demo.js` 8 de 8, las 130 tarjetas sin fallas y «¿Lo viste venir?» con su premio sin
+errores.

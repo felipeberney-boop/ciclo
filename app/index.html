@@ -2536,6 +2536,15 @@ html body .app #v-radar .mceje i.mas:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5
 html body .app #v-radar .mceje i.menos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){background:var(--act-salir)}
 html body .app #v-radar .mcbar b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:15px;font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
 @media (max-width:599px){html body .app #v-radar .mcbar:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(0,1fr) 3em;row-gap:2px}html body .app #v-radar .mcbarl:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-column:1/-1}}
+/* vuelta P · recorrido de usuaria: «Paso n de 9» fijo a la izquierda de la tira de pasos (en el celular se iba al
+   desplazarla); la «?» de Explorar arriba de la grilla, no sobre una foto; las cifras de la tarjeta, en tres columnas */
+@media (max-width:760px){html body .app .dzpasos .dzde:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:sticky;left:0;z-index:2;background:#fff;padding:8px 10px 8px 0;margin-right:6px;box-shadow:8px 0 8px -6px rgba(0,0,0,.12)}}
+html body .app #v-recorridos #ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:relative}
+html body .app #v-recorridos #ciclos>details.qm:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:absolute!important;top:-30px!important;right:0!important;left:auto!important}
+@media (max-width:599px){html body .app #v-recorridos .ciclo .cm:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:8px!important;row-gap:6px!important}
+  html body .app #v-recorridos .ciclo .cm>span:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:12px!important;line-height:1.25}
+  html body .app #v-recorridos .ciclo .cm>span b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:block;font-size:16px!important}
+  html body .app #v-recorridos .ciclo .cm>span:last-child:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-column:1/-1}}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -2955,7 +2964,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
 
     <!-- ================= RACIONAL ================= -->
     <section class="view" id="v-mover" hidden>
-      <div class="vhead"><div><h1>El brief</h1><p class="sub">Te llega un encargo. Diseñás en tres toques. CICLO te dice si tuviste ojo.</p></div></div>
+      <div class="vhead"><div><h1>El brief</h1><p class="sub" id="bfsub">Te llega un encargo. Diseñás en tres toques. CICLO te dice si tuviste ojo.</p></div></div>
       <div class="bfmodos" id="bfmodos" role="tablist" aria-label="Juego"><button type="button" role="tab" data-modo="brief" aria-selected="true">El encargo</button><button type="button" role="tab" data-modo="viste" aria-selected="false">¿Lo viste venir?</button></div>
       <div class="mv" id="mv"></div>
     </section>
@@ -6270,6 +6279,7 @@ function pintarViste(C){if(!vv)vvNuevo();const o=REC.find(x=>x.id===vv.id),nom=o
       <p class="vvbot"><button type="button" class="mvbtn" id="vvotro">Otro look →</button></p></div></div>`;
   $('#vvotro').onclick=()=>{vvNuevo();pintarViste(C);};}
 document.addEventListener('click',e=>{const b=e.target.closest('#bfmodos [data-modo]');if(!b)return;bfModo=b.dataset.modo;
+  const sb=$('#bfsub');if(sb)sb.textContent=bfModo==='viste'?'Un look de archivo y un atributo. ¿Subió, se quedó o bajó en los tres años siguientes?':'Te llega un encargo. Diseñás en tres toques. CICLO te dice si tuviste ojo.';
   $$('#bfmodos [data-modo]').forEach(x=>x.setAttribute('aria-selected',x===b));pintarBrief();});
 /* 24/11 vuelta M: abajo de Mis tendencias, el próximo brief tal cual (casa, prenda, temporada y foto): «Aceptar» abre
    El brief en ese mismo encargo */

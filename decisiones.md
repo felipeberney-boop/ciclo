@@ -4112,3 +4112,31 @@ filas… los que no tienen, al final de la lista completa. Revisalo en Mis ciclo
   tarjetas 28 y 29 de Salir.
 
 Verificado con un script en los dos anchos. Capturas `N/2_sinfoto/`. `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · Vuelta N, punto 3: Explorar, la foto del look y un selector compacto
+
+Pedido: «No me gusta cómo agrandaste las tarjetas: cambió la proporción y las fotos quedan muy zoomeadas, no se ve la
+prenda… mantené la grilla pero volvé a la proporción de foto de antes (que se vea el look) y ajustá el ancho de columna…
+Agregá una fila más… El gráfico… no lo toques. El selector… la lista de opciones es enorme. Rediseñala más compacta:
+agrupada por familia…, con buscador arriba, que no tape la pantalla».
+
+**Las tarjetas.** La foto era 3:2 apaisada en las dos versiones. En la vuelta M la tarjeta pasó de 369 a 401 px de ancho,
+el recorte se agrandó y una foto de cuerpo entero quedaba en un pedazo de torso. Ahora las fotos son verticales (4:5,
+como en Mis ciclos): se ve el look entero.
+- En la compu, cuatro por fila de 3 columnas cada una. Sigue en la grilla.
+- En la tableta, cuatro; en el celular, dos.
+- Seis filas antes de «Ver los 65 atributos» (antes cinco): 24 tarjetas en la compu y 12 en el celular.
+- El gráfico no se tocó.
+
+Comparación en `N/3_explorar/antes_ahora_propuesta_*`.
+
+**El selector.** El nombre sigue siendo el título («El recorrido de Jeans baggy ⌄»), pero abre un panel, no la lista
+nativa de 65 renglones:
+- buscador arriba;
+- los 65 como botones chicos en cuatro familias (Cortes y prendas, Materiales, Estampas, Detalles);
+- el elegido, lleno;
+- como máximo 60 % del alto, con su propio scroll;
+- se cierra con Esc o tocando afuera.
+
+No hay color entre los 65 atributos, así que no hay familia de color. El `<select>` queda escondido para los scripts.
+Capturas `N/3_explorar/propuesta_selector_*`. `probar_demo.js` 8 de 8.

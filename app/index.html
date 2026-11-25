@@ -2353,9 +2353,9 @@ html body .app #v-radar .mcgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not
 html body .app #v-radar .mcf:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding-left:0!important;padding-right:0!important}
 html body .app #v-radar .mcdos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){column-gap:var(--g-med)!important}
 /* Explorar: tarjetas de a 4 columnas (3 por fila), sin sangría; la elegida, con un contorno afuera */
-html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:40px var(--g-med)!important}
-@media (max-width:999px){html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media (max-width:599px){html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:minmax(0,1fr)!important}}
+html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:40px var(--g-med)!important}
+@media (max-width:999px){html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media (max-width:599px){html body .app #v-recorridos .ciclos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px var(--g-med)!important}}
 html body .app #v-recorridos .ciclo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){padding:0!important;border:0!important;background:none!important;box-shadow:none!important}
 html body .app #v-recorridos .ciclo.on:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){outline:2px solid var(--accion);outline-offset:8px}
 html body .app #v-recorridos .ciclo .cm b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-weight:400!important}
@@ -2442,6 +2442,21 @@ html body .app #v-recorridos .rtflecha:not(#g1):not(#g2):not(#g3):not(#g4):not(#
 html body .app #v-radar .perfilrad.pysin:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:flex!important;flex-wrap:wrap;align-items:center;gap:14px 24px;border:1px solid var(--linea);border-radius:18px!important;padding:20px 24px!important;max-width:calc(8*var(--g-col) + 7*var(--g-med));font-size:17px}
 html body .app #v-radar .perfilrad.pysin .pysinb:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex:1 1 320px;color:var(--tinta-2)}
 html body .app #v-radar .perfilrad.pysin .pysinb b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--tinta);font-weight:600}
+/* vuelta N: Explorar, la foto vertical (se ve el look) y el panel del selector */
+html body .app #v-recorridos .cfoto:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7),html body .app #v-recorridos .cfoto.sinfoto:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){aspect-ratio:4/5!important}
+html body .app #v-recorridos .ciclo .cm:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){column-gap:14px!important;row-gap:4px!important}
+html body .app #v-recorridos .rtsel #rtbtn:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font:inherit;letter-spacing:inherit;color:var(--accion);background:none;border:0;border-bottom:2px solid var(--accion);border-radius:0!important;padding:0 1.1em 2px 0;margin:0;cursor:pointer;position:relative;display:inline-flex;align-items:baseline}
+html body .app #v-recorridos .rtsel #rtbtn:hover:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--accion-2);border-bottom-color:var(--accion-2)}
+html body .app #v-recorridos .exrecab:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:relative}
+html body .app #v-recorridos .rtpanel:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:absolute;z-index:40;left:0;top:calc(100% + 8px);width:min(calc(6*var(--g-col) + 5*var(--g-med)),calc(100vw - 2*var(--g-mar)));max-height:60vh;overflow:auto;background:#fff;border:1px solid var(--linea);border-radius:18px!important;padding:16px 18px 18px;box-shadow:0 18px 40px rgba(0,0,0,.12)}
+html body .app #v-recorridos .rtpanel[hidden]:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}
+html body .app #v-recorridos #rtq:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){width:100%;box-sizing:border-box;font:400 16px var(--sf);padding:10px 14px;border:1px solid var(--linea);border-radius:999px!important;margin:0 0 6px;outline-offset:1px;position:sticky;top:-16px;background:#fff}
+html body .app #v-recorridos .rtpanel .eti:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin:14px 0 8px!important}
+html body .app #v-recorridos .rtops:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:flex;flex-wrap:wrap;gap:6px}
+html body .app #v-recorridos .rtops button:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font:400 14px var(--sf);padding:6px 12px;border:1px solid var(--linea);border-radius:999px!important;background:#fff;color:var(--tinta);cursor:pointer}
+html body .app #v-recorridos .rtops button:hover:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){border-color:var(--tinta)}
+html body .app #v-recorridos .rtops button[aria-pressed=true]:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){background:var(--tinta);color:#fff;border-color:var(--tinta)}
+html body .app #v-recorridos .rtnada:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:15px;color:var(--tinta-2);margin:10px 0 0}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -2692,7 +2707,11 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <div class="ciclos" id="ciclos"></div>
       <section class="exrec" aria-labelledby="rtitulo">
         <div class="exrecab">
-          <h2 id="rtitulo"><span>El recorrido de</span> <span class="rtsel"><select id="rsel" aria-label="Elegí el atributo: cualquiera de los 65"></select><svg class="rtflecha" aria-hidden="true" viewBox="0 0 16 10" width="16" height="10"><path d="M1.5 1.5 8 8l6.5-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h2>
+          <h2 id="rtitulo"><span>El recorrido de</span> <span class="rtsel"><select id="rsel" class="sr" tabindex="-1" aria-hidden="true"></select><button type="button" id="rtbtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="rtpanel"><span id="rtnom"></span><svg class="rtflecha" aria-hidden="true" viewBox="0 0 16 10" width="16" height="10"><path d="M1.5 1.5 8 8l6.5-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></span></h2>
+          <div class="rtpanel" id="rtpanel" role="dialog" aria-label="Elegí un atributo" hidden>
+            <input type="search" id="rtq" placeholder="Buscar entre los 65" autocomplete="off" aria-label="Buscar un atributo">
+            <div id="rtlista"></div>
+          </div>
         </div>
         <div class="decide" id="rdecide" aria-live="polite"></div>
         <div class="lys">
@@ -4592,7 +4611,7 @@ function pintarCiclos(){
     `<details class="qm izq"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Búsqueda mundial frente a las otras búsquedas de moda, 2010–2024 (2025 y 2026 tienen el salto de medición de Google), ● medido. Un pico es un máximo que se despega al menos 15 puntos de lo que lo rodea. Sube o baja: 2022→2024. *2010 es donde empieza la serie corregida: el pico pudo ser antes.</p></div></details>`;
   $$('#exchips [data-g]').forEach(b=>b.onclick=()=>{cicloGrupo=b.dataset.g;cicloTodos=false;pintarCiclos();});
   $('#ciclos').classList.toggle('corto',corto);
-  {const g=$('#ciclos'),cols=Math.max(1,getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length),n=cols*5;
+  {const g=$('#ciclos'),cols=Math.max(1,getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length),n=cols*6;
    $$('#ciclos .ciclo').forEach((b,i)=>{b.style.display=corto&&i>=n&&!b.classList.contains('on')?'none':'';});
    const mas=$('#ciclos .ciclomas');if(mas&&corto&&L.length<=n)mas.remove();}
   const mas=$('#ciclos .ciclomas');if(mas)mas.onclick=()=>{cicloTodos=!cicloTodos;pintarCiclos();if(!cicloTodos)$('#ciclos').scrollIntoView({behavior:'instant'});};
@@ -5322,6 +5341,20 @@ function rtAncho(){const f=$('#rsel');if(!f||f.selectedIndex<0)return;let m=$('#
   if(!m){m=document.createElement('span');m.id='rtmide';m.setAttribute('aria-hidden','true');m.style.cssText='position:absolute;visibility:hidden;white-space:pre;left:-9999px';document.body.appendChild(m);}
   const cs=getComputedStyle(f);m.style.font=cs.font;m.style.letterSpacing=cs.letterSpacing;m.textContent=f.options[f.selectedIndex].text;
   f.style.width=Math.ceil(m.getBoundingClientRect().width+parseFloat(cs.paddingRight)+parseFloat(cs.paddingLeft)+2)+'px';}
+/* 24/11 vuelta N: el selector del recorrido es un panel compacto: buscador arriba y los 65 en cuatro familias, como
+   botones chicos; no tapa la pantalla (máximo 60 % del alto, con su propio scroll) */
+const RT_FAM=[['Cortes y prendas',t=>!['Estampa','Material','Detalles'].includes(t)],['Materiales',t=>t==='Material'],['Estampas',t=>t==='Estampa'],['Detalles',t=>t==='Detalles']];
+function rtPintar(){const o=REC.find(x=>x.id===recSel),b=$('#rtbtn'),q=mcNorm(($('#rtq')||{}).value||'');if(!b||!o)return;
+  $('#rtnom').textContent=o.n.split(' /')[0];
+  $('#rtlista').innerHTML=RT_FAM.map(([fam,ok])=>{const its=REC.filter(x=>ok(x.tipo)&&(!q||mcNorm(x.n+' '+x.tipo).includes(q))).sort((a,b)=>a.n.localeCompare(b.n));
+    return its.length?`<p class="eti">${fam}</p><div class="rtops">${its.map(x=>`<button type="button" data-r="${x.id}"${x.id===recSel?' aria-pressed="true"':''}>${x.n.split(' /')[0]}</button>`).join('')}</div>`:'';}).join('')||'<p class="rtnada">Nada con esa palabra.</p>';
+  $$('#rtlista [data-r]').forEach(x=>x.onclick=()=>{recSel=x.dataset.r;rtCerrar();pintarRecorridos();});}
+function rtCerrar(){const pn=$('#rtpanel');if(pn)pn.hidden=true;$('#rtbtn')?.setAttribute('aria-expanded','false');}
+function rtAbrir(){const pn=$('#rtpanel');pn.hidden=false;$('#rtbtn').setAttribute('aria-expanded','true');$('#rtq').value='';rtPintar();$('#rtq').focus();}
+document.addEventListener('click',e=>{if(e.target.closest('#rtbtn')){const pn=$('#rtpanel');pn.hidden?rtAbrir():rtCerrar();return;}
+  if(!e.target.closest('#rtpanel'))rtCerrar();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#rtpanel')&&!$('#rtpanel').hidden){rtCerrar();$('#rtbtn').focus();}});
+document.addEventListener('input',e=>{if(e.target.id==='rtq')rtPintar();});
 function pintarRecorridos(){
   /* 24/11 vuelta K: el recorrido de cualquier atributo, con un selector (antes, una lista escondida) */
   const f=$('#rsel');
@@ -5346,7 +5379,7 @@ function pintarRecorridos(){
   }else rc.appendChild(recChart(o));
   if(!pocas){rc.insertAdjacentHTML('beforeend',CLAVE);legDestaca($('#rleg'),rc);}
   if(!pocas)$('#rcap').textContent='Cada curva es un índice de 0 a 100 de su propio máximo. Lleno: medido. Punteado: no predice, muestra cuánto se movieron casos parecidos. Pasá el mouse por una curva para ver de dónde sale.';
-  pintarCiclos();rtAncho();
+  pintarCiclos();rtPintar();
   const rd=$('#rdesde');rd.hidden=recCapas(o)<3;rd.textContent=recDesde2004?'ver desde que hay dos capas':'ver desde 2004';rd.onclick=()=>{recDesde2004=!recDesde2004;pintarRecorridos();};
   let rz=$('#rdz');if(!rz){rz=document.createElement('div');rz.id='rdz';rz.className='dzdesde';($('#v-recorridos .exrecab')||$('#rtitulo')).after(rz);}
   rz.innerHTML=botonDz(hojaDeRec(recSel));

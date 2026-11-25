@@ -4519,3 +4519,18 @@ El brief, Acerca de, Mi cuenta).
 - Los «?»: ya están ocultos hasta que se tocan.
 
 `probar_demo.js` 8 de 8 en los dos anchos.
+
+## 2026-11-24 · Vuelta S, punto 3: otro recorrido como usuaria
+
+Pedido: «hacé otro recorrido como usuaria y arreglá lo que trabe».
+
+Los dos recorridos, sobre la versión con la columna lateral y sin el texto de relleno (`S/3_recorrido/`). No apareció
+ninguna traba grande:
+- el vínculo tarjeta–línea funciona con mouse y con toque;
+- el carrusel del celular queda fijo;
+- la ficha se lee en el celular.
+
+Un detalle sí: en el recorrido de Explorar, al sacar «Explorar muestra los datos de todos…», el link «Creá tu proyecto
+para ver tu señal.» quedó solo, suelto en una tercera columna a la derecha. Ahora va debajo de los datos, y los dos datos
+(etapa y búsqueda) van de a 4 columnas, no de punta a punta. Captura `S/3_recorrido/despues_explorar_recorrido_1400.png`.
+`probar_demo.js` 8 de 8.

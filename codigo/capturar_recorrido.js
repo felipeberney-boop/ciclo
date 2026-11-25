@@ -1,4 +1,5 @@
-// CICLO · el recorrido paso a paso para el readme (03/11/2026; rehecho el 24/11/2026 para el home y los proyectos).
+// CICLO · el recorrido paso a paso para el readme (03/11/2026; rehecho el 24/11/2026 para el home y los proyectos;
+// al día con la vuelta N: el selector del recorrido, «¿Lo viste venir?», el premio, Tu archivo y el aviso sin proyecto).
 // Uso, desde la raíz del repo, con la app servida (cd app && python3 -m http.server 8000):
 //   node codigo/capturar_recorrido.js [http://localhost:8000/]
 // Requiere: npm install playwright. Escribe en entregas/entrega_4/recorrido/ (el de la Entrega 3 queda en entrega_3/).
@@ -49,9 +50,21 @@ const OUT = 'entregas/entrega_4/recorrido';
     await foto(p, `paso_07_disenar_con_el_atributo_fijo${suf}`);
     // Explorar: el buscador, las categorías y el recorrido de cualquier atributo
     await ir(p, 'recorridos'); await foto(p, `paso_08_explorar${suf}`);
-    await p.selectOption('#rsel', 'satenseda'); await hasta(p, '#v-recorridos .exrec'); await foto(p, `paso_09_explorar_recorrido${suf}`);
-    await ir(p, 'lectura'); await foto(p, `paso_10_preguntar${suf}`);
-    await ir(p, 'mover'); await foto(p, `paso_11_el_brief${suf}`);
+    // el título es el selector: abre un panel con buscador y las cuatro familias
+    await hasta(p, '#rtitulo'); await p.click('#rtbtn'); await p.fill('#rtq', 'sat'); await foto(p, `paso_09_explorar_selector${suf}`);
+    await p.click('#rtlista [data-r="satenseda"]'); await hasta(p, '#rtitulo'); await foto(p, `paso_10_explorar_recorrido${suf}`);
+    await ir(p, 'lectura'); await foto(p, `paso_11_preguntar${suf}`);
+    await ir(p, 'mover'); await foto(p, `paso_12_el_brief${suf}`);
+    // «¿Lo viste venir?»: se juega de verdad hasta acertar tres seguidas, que es lo que da una pieza de archivo
+    await p.click('#bfmodos [data-modo="viste"]'); await p.waitForTimeout(800); await foto(p, `paso_13_lo_viste_venir${suf}`);
+    let premio = false;
+    for (let i = 0; i < 300 && !premio; i++) {
+      await p.click('#mv [data-vv="bajo"]'); await p.waitForTimeout(300);
+      premio = !!(await p.$('#mv .bfpremio'));
+      if (!premio) await p.click('#vvotro');
+    }
+    await p.waitForTimeout(1800); await foto(p, `paso_14_pieza_de_archivo${suf}`);
+    if (premio) { await p.click('#mv [data-arch]'); await p.waitForTimeout(1200); await foto(p, `paso_15_tu_archivo${suf}`); }
     await p.context().close();
   }
   // la otra rama: por tu cuenta, donde la marca espera, vos explorás
@@ -59,7 +72,14 @@ const OUT = 'entregas/entrega_4/recorrido';
     const p = await abrir(1400, 900);
     await hasta(p, '#crear'); await crear(p, 'Por mi cuenta', 'High fashion');
     await p.click('#inform button[type=submit]'); await p.waitForSelector('#v-radar:not([hidden]) #mctend .mcf');
-    await hasta(p, '#mctend .mcgrcab h3.s-esperar'); await foto(p, 'paso_12_por_tu_cuenta_explorar');
+    await hasta(p, '#mctend .mcgrcab h3.s-esperar'); await foto(p, 'paso_16_por_tu_cuenta_explorar');
+    await p.context().close();
+  }
+  // y quien sólo mira: Explorar le recuerda que no tiene proyecto
+  for (const [ancho, alto, suf] of [[1400, 900, ''], [393, 852, '_celular']]) {
+    const p = await abrir(ancho, alto);
+    await hasta(p, '#crear'); await p.click('[data-mirar]'); await p.waitForSelector('#v-recorridos:not([hidden]) #exsinpy:not([hidden])');
+    await p.evaluate(() => window.scrollTo(0, 0)); await foto(p, `paso_17_solo_mirando${suf}`);
     await p.context().close();
   }
   await b.close();

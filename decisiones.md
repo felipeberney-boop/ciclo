@@ -4276,3 +4276,79 @@ todas con foto. En Mis ciclos, dos filas cerradas por grupo (8 y 4).
 
 La lista completa tiene 65 atributos, así que su última fila no puede cerrar con 4 columnas: ahí quedan neoprene y
 espiga, que no tienen foto. Capturas `O/2_filas/`. `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · Vuelta O: el recorrido para el readme, al día
+
+Pedido: «actualizá capturar_recorrido.js con las pantallas nuevas».
+
+`codigo/capturar_recorrido.js` pasa de 12 a 17 pasos, todos con clicks de verdad. Los nuevos:
+- el selector del recorrido abierto, con el buscador;
+- «¿Lo viste venir?»;
+- la pieza de archivo;
+- Tu archivo;
+- Explorar después de «Sólo estoy mirando».
+
+«¿Lo viste venir?» se juega de verdad, contestando siempre «Bajó», hasta acertar tres seguidas (hasta 300 jugadas): el
+premio de la captura no está simulado. En el celular, a la primera corrida no llegó en 60 jugadas, y por eso el tope
+subió a 300.
+
+De paso:
+- En la curva de «¿Lo viste venir?», «2023» y «2024» se pisaban: ahora no se dibuja un año a menos de tres de otro.
+- En el celular los tres botones (Subió, Se quedó, Bajó) van en una sola fila.
+
+El readme muestra los pasos nuevos, y `CLAUDE.md` y `codigo/readme.md` describen el script. Son 33 capturas en
+`entregas/entrega_4/recorrido/`. `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · Vuelta O, punto 1: cinco títulos más para el home (sin cambiar)
+
+Pedido: «"Qué corte, qué estampa, qué color, y cuándo" va por buen camino pero no termina de convencer. Probá otras 5 en
+esa misma línea (qué diseñar + cuándo), más cortas y con más fuerza. Renderizalas sobre la primera foto… No cambies el
+título hasta que elija».
+
+Las cinco, renderizadas sobre la foto verde en `O/1_titulos/lamina_titulos_1400.png` y `_393.png`. El título de la app
+no cambió.
+1. «Qué diseñar. Y cuándo.» Es la idea pelada, en cuatro palabras, y entra en dos líneas.
+2. «El qué y el cuándo de la moda.»
+3. «Lo que diseñás, en su momento.»
+4. «Qué entra, qué sale y cuándo.»
+5. «Diseñá a tiempo.»
+
+Recomendación: la 1. Dice las dos cosas que hace CICLO sin adornos, y el punto antes de «Y cuándo» le da el remate que
+tenía la actual con la mitad de largo. La 5 es la más fuerte, pero deja afuera el «qué».
+
+## 2026-11-24 · Vuelta O, punto 3: tres layouts para Mis ciclos (sin implementar)
+
+Pedido: «tiene que mostrar a la vez la info de mi proyecto… y mis tendencias, ordenado y lindo… 3 propuestas
+renderizadas a 1400 y 393 px, con la grilla… En cada una incluí o no el "Cuándo picó cada uno" como línea de tiempo por
+año… y decime si de verdad suma o es ruido».
+
+Las tres se armaron sobre la app real, con los datos de un proyecto Mujer · Para una marca · Fast fashion y la grilla
+superpuesta (`O/3_misciclos/A_*`, `B_*`, `C_*` y la lámina `lamina_misciclos.png`).
+
+**A · Columna lateral.** Los dos gráficos, uno debajo del otro, en las columnas 10–12 y fijos al bajar; Mis tendencias,
+de a 3 tarjetas, en las columnas 1–9.
+- A favor: las tarjetas aparecen enseguida y los gráficos siguen a la vista.
+- En contra: a 293 px los gráficos se aprietan (los años se pisan); en el celular quedan como una tira que se desliza
+  de costado.
+
+**B · Apilados, a todo el ancho, compactos.** Gana y Pierde uno debajo del otro, a 1.246 px y 110 de alto, y debajo la
+línea de tiempo «Cuándo picó cada uno»: un punto por atributo en el año de su máximo, del color de su señal.
+- A favor: los gráficos se leen mejor que en ningún otro layout.
+- En contra: las tarjetas bajan unos 400 px respecto de C.
+
+**C · Sin gráficos grandes.** Una línea, «29 ganan terreno, 32 lo pierden · búsqueda mundial 2022→2024 · Ver el
+gráfico», que despliega los dos gráficos. En cada tarjeta, una mini barra de −50 a +50 con su número, en lugar de la fila
+«Búsqueda 2022→2024».
+- A favor: es lo más limpio, y el dato de cada atributo vive en su tarjeta.
+- En contra: la foto de conjunto (qué se mueve más) queda detrás de un click.
+
+**«Cuándo picó cada uno»: es ruido en Mis ciclos.** En la propuesta B se ve por qué:
+- unos veinte de los 65 atributos tienen su máximo en 2010, que es el primer año de la serie corregida, así que la
+  columna más alta es un efecto del arranque de la serie y no un dato de moda;
+- el año del pico ya está adentro de la señal de cada tarjeta;
+- no ayuda a decidir qué diseñar ahora.
+
+Sumaría en la ficha de un atributo o en Explorar, donde se mira la historia.
+
+**Recomendación: C**, con el desplegable abierto por defecto la primera vez. Es la que mejor resuelve «mi proyecto + mis
+tendencias», con la grilla de 4 intacta y sin gráficos apretados.

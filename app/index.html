@@ -2474,7 +2474,7 @@ html body .app #v-mover .vvtx h2:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):no
 html body .app #v-mover .vvres.ok:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--act-entrar)!important}
 html body .app #v-mover .vvres.mal:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--act-salir)!important}
 html body .app #v-mover .vvops:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:flex;flex-wrap:wrap;gap:10px}
-html body .app #v-mover .vvops button:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font:500 17px var(--sf);padding:12px 22px;border:1.5px solid var(--accion);border-radius:999px!important;background:#fff;color:var(--accion);cursor:pointer;min-width:120px}
+html body .app #v-mover .vvops button:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex:1 1 0;font:500 17px var(--sf);padding:12px 10px;border:1.5px solid var(--accion);border-radius:999px!important;background:#fff;color:var(--accion);cursor:pointer;min-width:0;max-width:160px}
 html body .app #v-mover .vvops button:hover:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){background:var(--accion);color:#fff}
 html body .app #v-mover .vvracha:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:16px;color:var(--tinta-2);margin:18px 0 0;text-align:left!important}
 html body .app #v-mover .vvdato:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:17px;margin:0 0 6px;text-align:left!important}
@@ -6224,7 +6224,7 @@ function vvCurva(){const v=GREL[vv.id],y0=2010,y1=2024,W=560,H=190,L=48,R=30,T=1
     ${[0,50,100].map(q=>`<text x="${L-8}" y="${Y(q)+4}" text-anchor="end" fill="var(--tinta-2)">${q}</text>`).join('')}
     <polyline class="vvlinea" pathLength="1" fill="none" stroke="${col}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="${pts.join(' ')}"/>
     <circle cx="${X(vv.f.y)}" cy="${Y(vv.a)}" r="6" fill="var(--tinta)"/><circle class="vvfin" cx="${X(vv.f.y+3)}" cy="${Y(vv.b)}" r="6" fill="${col}"/>
-    ${[y0,vv.f.y,vv.f.y+3,y1].filter((y,i,a)=>a.indexOf(y)===i).map(y=>`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--tinta-2)">${y}</text>`).join('')}</svg>`;}
+    ${[y0,vv.f.y,vv.f.y+3,y1].filter((y,i,a)=>a.indexOf(y)===i&&!(i===3&&y-vv.f.y-3<3)&&!(i===0&&vv.f.y-y<3)).map(y=>`<text x="${X(y)}" y="${H-6}" text-anchor="middle" fill="var(--tinta-2)">${y}</text>`).join('')}</svg>`;}
 function pintarViste(C){if(!vv)vvNuevo();const o=REC.find(x=>x.id===vv.id),nom=o.n.split(' /')[0],fo=vv.f,R=vvLeer();
   const OP=[['subio','Subió'],['quedo','Se quedó'],['bajo','Bajó']];
   const foto=`<figure class="vvfoto"><img src="${vogueFoto(fo.f,800)}"${fotoPos(vv.id)} alt="${nom} en la pasarela: ${fotoCred(fo)}"><figcaption class="pcred">${fotoCred(fo)}</figcaption></figure>`;

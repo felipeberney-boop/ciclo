@@ -54,17 +54,19 @@ Hasta el 24/11 la app abría con tres preguntas en pasos. Después de la devoluc
 explica qué es antes de pedir nada, y las tres preguntas pasaron a «Creá tu proyecto», al final, en una sola pantalla.
 Está contado en `decisiones.md` y en `entregas/entrega_4/plan_rediseno.md`.
 
-**1 · El home.** Qué es, para quién y qué te da; abajo, «Bajá para ver cómo funciona».
+**1 · El home.** Qué diseñar y cuándo, en una línea; abajo, «Bajá para ver cómo funciona».
 
 ![Paso 1: el home](entregas/entrega_4/recorrido/paso_01_home.png)
 
 **2 · Una idea por pantalla**, con una foto de pasarela que cambia al bajar: cómo funciona, de dónde salen los datos (con
-país y período) y qué obtenés.
+país y período) y qué señal obtenés.
 
 ![Paso 2: cómo funciona](entregas/entrega_4/recorrido/paso_02_como_funciona.png)
 
 **3 · Creá tu proyecto.** Nombre, email, para quién diseñás, para una marca o por tu cuenta, y el tipo de marca. Se guarda
-en el navegador. «Sólo estoy mirando» va a Explorar ciclos sin proyecto.
+en el navegador. «Sólo estoy mirando» va a Explorar sin proyecto, y la pantalla lo recuerda:
+
+![Sólo mirando: Explorar sin proyecto](entregas/entrega_4/recorrido/paso_17_solo_mirando.png)
 
 ![Paso 3: crear tu proyecto](entregas/entrega_4/recorrido/paso_03_crear_tu_proyecto.png)
 
@@ -74,21 +76,22 @@ En el celular:
 
 ### El uso
 
-**4 · Mis ciclos, arriba: qué gana y qué pierde terreno.** La búsqueda mundial 2022→2024, con la línea que explica qué es
-«+50» y, debajo de cada gráfico, la señal de cada atributo para tu proyecto.
+**4 · Mis ciclos, arriba: qué gana y qué pierde terreno.** La búsqueda mundial 2022→2024, los dos gráficos lado a lado y
+una línea con la fuente (el detalle, en la ⓘ).
 
 ![Paso 4: Mis ciclos](entregas/entrega_4/recorrido/paso_04_mis_ciclos.png)
 
-**5 · Mis tendencias.** Los 65 atributos agrupados por su señal (Entrar, Esperar, Salir), con el Reddit de tu público.
+**5 · Mis tendencias.** Los 65 atributos agrupados por su señal (Entrar, Esperar, Salir), dos filas por grupo y «Ver los
+n», con el Reddit de tu público. Abajo, el próximo encargo de El brief.
 
 ![Paso 5: Mis tendencias](entregas/entrega_4/recorrido/paso_05_mis_tendencias.png)
 
 Por tu cuenta, donde una marca vería Esperar aparece Explorar:
 
-![Por tu cuenta: Explorar](entregas/entrega_4/recorrido/paso_12_por_tu_cuenta_explorar.png)
+![Por tu cuenta: Explorar](entregas/entrega_4/recorrido/paso_16_por_tu_cuenta_explorar.png)
 
-**6 · Un atributo abre su ficha**, sólo con lo de tu proyecto: su señal, tu ventana y el Reddit de tu público. Debajo del
-gráfico, «Cómo se lee · CICLO no predice».
+**6 · Un atributo abre su ficha**, sólo con lo de tu proyecto: primero su señal y el porqué, después «Diseñar con…»; tu
+ventana y el Reddit de tu público. Debajo del gráfico, «Cómo se lee · CICLO no predice».
 
 ![Paso 6: la ficha del atributo](entregas/entrega_4/recorrido/paso_06_ficha_del_atributo.png)
 
@@ -96,21 +99,38 @@ gráfico, «Cómo se lee · CICLO no predice».
 
 ![Paso 7: Diseñar con el atributo fijo](entregas/entrega_4/recorrido/paso_07_disenar_con_el_atributo_fijo.png)
 
-**8 · Explorar ciclos**: lo mismo para todos, sin proyecto y sin señal. Arriba, el buscador y las categorías.
+**8 · Explorar las tendencias del mundo**: lo mismo para todos, sin proyecto y sin señal. Arriba, el buscador y las
+categorías; después, seis filas de tarjetas.
 
 ![Paso 8: Explorar ciclos](entregas/entrega_4/recorrido/paso_08_explorar.png)
 
-**9 · El recorrido de cualquier atributo**, con un selector de los 65.
+**9 · El recorrido de cualquier atributo.** El nombre en el título es el selector: abre un panel con buscador y las cuatro
+familias.
 
-![Paso 9: el recorrido de satén](entregas/entrega_4/recorrido/paso_09_explorar_recorrido.png)
+![Paso 9: el selector del recorrido](entregas/entrega_4/recorrido/paso_09_explorar_selector.png)
 
-**10 · Preguntale a CICLO** («Preguntar» en el menú). Le preguntás por un atributo, una marca o un diseño tuyo, en un solo hilo. Una imagen, soltada en cualquier parte de la app, se vuelve tu mensaje; la respuesta trae adentro lo que leyó CLIP (chips que se corrigen, con su señal), la curva que importa, los looks de pasarela parecidos y la devolución. Desde el 24/11 la respuesta escrita anda sin pegar una clave (una función de Netlify llama a Groq); si el modelo no está, contestan las reglas, y lo dice.
+![Paso 10: el recorrido de satén](entregas/entrega_4/recorrido/paso_10_explorar_recorrido.png)
 
-![Paso 10: Preguntale a CICLO](entregas/entrega_4/recorrido/paso_10_preguntar.png)
+**11 · Preguntale a CICLO** («Preguntar» en el menú). Le preguntás por un atributo, una marca o un diseño tuyo, en un solo hilo. Una imagen, soltada en cualquier parte de la app, se vuelve tu mensaje; la respuesta trae adentro lo que leyó CLIP (chips que se corrigen, con su señal), la curva que importa, los looks de pasarela parecidos y la devolución. Desde el 24/11 la respuesta escrita anda sin pegar una clave (una función de Netlify llama a Groq); si el modelo no está, contestan las reglas, y lo dice.
 
-**11 · El brief.**
+![Paso 11: Preguntale a CICLO](entregas/entrega_4/recorrido/paso_11_preguntar.png)
 
-![Paso 11: El brief](entregas/entrega_4/recorrido/paso_11_el_brief.png)
+**12 · El brief.** Un encargo de una casa real, tres toques y un veredicto.
+
+![Paso 12: El brief](entregas/entrega_4/recorrido/paso_12_el_brief.png)
+
+**13 · ¿Lo viste venir?** Un look de archivo (2012–2021) y un atributo: ¿la búsqueda subió, se quedó o bajó los tres años
+siguientes? Después, la curva medida.
+
+![Paso 13: ¿Lo viste venir?](entregas/entrega_4/recorrido/paso_13_lo_viste_venir.png)
+
+**14 · Una pieza de archivo.** Clavar un brief o acertar tres seguidas desbloquea un look icónico del corpus…
+
+![Paso 14: una pieza de archivo](entregas/entrega_4/recorrido/paso_14_pieza_de_archivo.png)
+
+**15 · …que se guarda en Tu archivo**, en Mi cuenta.
+
+![Paso 15: Tu archivo](entregas/entrega_4/recorrido/paso_15_tu_archivo.png)
 
 En el celular:
 

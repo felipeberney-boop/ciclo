@@ -208,7 +208,7 @@ directory that don't match the repo layout, so adjust before running (`taxonomia
 - `probar_demo.js` (repo root, app served): the class demo, 8 steps; since 24/11 step 1 taps «Bajá para ver cómo funciona» and creates a project at the end of the home
 - `capturar_pantallas_de_la_app.js` (run from the repo root, app served) → the 19 screenshots (01–17, 19 and 20, El brief) in
   `entregas/entrega_4/capturas/` used by the readme (the 03/11 set stays in `entregas/entrega_3/capturas/`). It never shows an LLM answer (no simulated responses)
-- `capturar_recorrido.js` (same way) → the step-by-step walkthrough in `entregas/entrega_4/recorrido/` that the readme shows (since 24/11: home → crear tu proyecto → Mis ciclos → ficha → Diseñar → Explorar → Preguntar → El brief, desktop and phone, plus the «por mi cuenta» branch; it deletes the old PNGs first)
+- `capturar_recorrido.js` (same way) → the step-by-step walkthrough in `entregas/entrega_4/recorrido/` that the readme shows (since vuelta N, 17 steps: home → crear tu proyecto → Mis ciclos → ficha → Diseñar → Explorar, its selector and recorrido → Preguntar → El brief → «¿Lo viste venir?», played until three right answers in a row → the archive piece → Tu archivo, desktop and phone, plus the «por mi cuenta» branch and «Sólo estoy mirando»; it deletes the old PNGs first)
 - `exportar_racional_pdf.js` (from the repo root) → `entregas/entrega_4/racional.pdf` from `racional.md`; rerun it after editing the racional. Needs `marked` besides Playwright
 
 Requires `npm install playwright` / `pip install pillow`.

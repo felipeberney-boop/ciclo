@@ -9,7 +9,7 @@ Scripts de extracción, cálculo y render. Ninguno es parte del sitio: el sitio 
 | `generar_laminas_entrega_2.py` | Genera las 20 láminas de la presentación como SVG de 1920×1080 |
 | `renderizar_laminas_a_png.js` | Pasa los SVG a PNG con Playwright |
 | `capturar_pantallas_de_la_app.js` | Abre la app y guarda una captura de cada vista |
-| `capturar_recorrido.js` | El recorrido paso a paso, con clicks de verdad (desde el 24/11: home → crear tu proyecto → Mis ciclos → ficha → Diseñar → Explorar → Preguntar → El brief, en la compu y en el celular) → `entregas/entrega_4/recorrido/` |
+| `capturar_recorrido.js` | El recorrido paso a paso, con clicks de verdad (desde la vuelta N, 17 pasos: home → crear tu proyecto → Mis ciclos → ficha → Diseñar → Explorar, su selector y el recorrido → Preguntar → El brief → «¿Lo viste venir?», jugado de verdad hasta acertar tres seguidas → la pieza de archivo → Tu archivo, más «por mi cuenta» y «Sólo estoy mirando», en la compu y en el celular) → `entregas/entrega_4/recorrido/` |
 | `probar_demo.js` | Los siete pasos de la demo de la Entrega 3, con clicks de verdad; con `GROQ_KEY` hace la pregunta a Groq, sin clave prueba el plan B |
 | `capturar_presentacion.js` + `armar_capturas_presentacion.py` | La captura de Tendencias que usa la presentación → `entregas/entrega_3/presentacion/capturas/tendencias.webp` |
 | `bajar_titulos_reddit.py` | Baja los títulos de r/femalefashionadvice de un año vía Arctic Shift |

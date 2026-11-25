@@ -2512,6 +2512,10 @@ html body:not([data-vista="disenar"]):not([data-vista="detalle"]) .app #copiar:n
 html body .app #v-radar .mcf[hidden]:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none!important}
 html body .app #v-radar .mcmasp:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin:22px 0 0}
 html body .app .fpsen .dzdesde:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-top:18px!important;text-align:left!important;justify-content:flex-start!important;display:flex!important;margin-left:0!important;margin-right:0!important;align-self:flex-start!important}
+html body .app #v-recorridos .exsinpy:not([hidden]):not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:flex!important;flex-wrap:wrap;align-items:center;gap:14px 24px;border:1px solid var(--linea);border-radius:18px!important;padding:18px 24px;margin:22px 0 0!important;max-width:calc(8*var(--g-col) + 7*var(--g-med));font-size:17px}
+html body .app #v-recorridos .exsinpy .pysinb:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex:1 1 300px;color:var(--tinta-2)}
+html body .app #v-recorridos .exsinpy .pysinb b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){color:var(--tinta);font-weight:600}
+html body .app #v-recorridos .exsinpy .btn-pri:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){text-decoration:none}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -2752,6 +2756,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
         <div>
           <h1>Explorar las tendencias del mundo</h1>
           <p class="exmision">Cualquier género, cualquier mercado: los 65 atributos, sin tu proyecto y sin señal.</p>
+          <p class="pysin exsinpy" id="exsinpy" hidden><span class="pysinb"><b>Estás mirando sin proyecto.</b> Con uno, cada atributo te dice si entrar, esperar o salir.</span><a href="#crear" class="btn-pri" data-crear>Crear tu proyecto</a></p>
         </div>
       </div>
       <div class="mcbarra exbarra" id="exbarra">
@@ -5419,6 +5424,7 @@ document.addEventListener('click',e=>{if(e.target.closest('#rtbtn')){const pn=$(
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#rtpanel')&&!$('#rtpanel').hidden){rtCerrar();$('#rtbtn').focus();}});
 document.addEventListener('input',e=>{if(e.target.id==='rtq')rtPintar();});
 function pintarRecorridos(){
+  {const e=$('#exsinpy');if(e)e.hidden=!!pyActivo();} // vuelta N: Explorar recuerda que estás sin proyecto
   /* 24/11 vuelta K: el recorrido de cualquier atributo, con un selector (antes, una lista escondida) */
   const f=$('#rsel');
   if(f&&!f.options.length){

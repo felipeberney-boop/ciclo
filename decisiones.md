@@ -4233,3 +4233,12 @@ la compu y en el celular (`N/6_recorrido/A_*`).
    izquierda en los dos anchos.
 
 Capturas `N/6_recorrido/despues_*`. `probar_demo.js` 8 de 8, y el control de las 130 tarjetas sin fallas.
+
+## 2026-11-24 · Vuelta N: Explorar recuerda que estás sin proyecto
+
+Pedido: «arreglá lo de Explorar sin proyecto».
+
+Quien entraba por «Sólo estoy mirando» llegaba a Explorar y sólo el botón de arriba a la derecha decía que no tenía
+proyecto. Ahora, debajo del título, va el mismo aviso que en Mis ciclos sin proyecto: «Estás mirando sin proyecto. Con
+uno, cada atributo te dice si entrar, esperar o salir.», con el botón «Crear tu proyecto», que baja al formulario del
+home. Con un proyecto activo, el aviso no aparece. Capturas `N/7_sinproyecto/`. `probar_demo.js` 8 de 8.

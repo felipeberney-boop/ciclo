@@ -4426,3 +4426,96 @@ En el camino:
   y se corrigió. Regla: nunca dejar un comentario `//` en un renglón que sigue con código.
 
 Capturas `R/despues/`. `probar_demo.js` 8 de 8.
+
+## 2026-11-24 · Vuelta S, punto 1: Mis ciclos, gráficos y Mis tendencias juntos
+
+Pedido: «Sacá el botón de ocultar el gráfico… Columna izquierda angosta (≈ 1/3), sticky: arriba el proyecto… y debajo
+GANA TERRENO y PIERDE TERRENO, uno debajo del otro… Columna derecha (≈ 2/3): MIS TENDENCIAS… Que vayan de la mano: al
+pasar el mouse por una tarjeta se resalta su línea… al pasar por una línea se resalta su tarjeta… Celular: los dos
+gráficos compactos arriba, en un carrusel horizontal… Tocar una tarjeta resalta su línea».
+
+**Compu (≥1000 px).** Dos columnas de la grilla:
+- A la izquierda, 4 columnas, fijas al bajar: el proyecto (nombre · público · vínculo · tipo · Editar), «Gana terreno» y
+  «Pierde terreno» uno debajo del otro (150 px de alto) y una línea de fuente (el resto en la ⓘ).
+- A la derecha, 8 columnas: Mis tendencias de a 3 tarjetas por fila, dos filas por grupo.
+- Sin desplegable ni «Ocultar el gráfico».
+
+**De la mano (`mcFoco`).**
+- Al pasar por una tarjeta, su línea se engrosa y las demás se apagan.
+- Si el atributo no está entre los cinco del gráfico (son 10 líneas para 65 tarjetas), su línea se suma, en negro y con
+  su nombre, mientras dura el foco. Así toda tarjeta tiene su línea.
+- Al pasar por una línea se marca su tarjeta, con un contorno azul.
+- Un click en la línea o en la tarjeta abre la ficha. Cada línea lleva el mismo nombre que su tarjeta.
+
+**Celular.** Los dos gráficos van en un carrusel de dos (Gana / Pierde) que queda fijo arriba mientras se bajan las
+tarjetas. El primer toque en una tarjeta resalta su línea y lleva el carrusel al gráfico que corresponde; el segundo
+toque, o «Ver la ficha →», abre la ficha.
+
+**Tableta.** Los dos gráficos lado a lado arriba, y las tarjetas debajo.
+
+«Cuándo picó cada uno» queda afuera. La variante con los dos gráficos a todo el ancho no hizo falta: el layout lateral
+funciona en la práctica. Capturas en `S/1_misciclos/`:
+- `lateral_1400` y `_393`;
+- `lateral_hover_tarjeta_1400`;
+- `lateral_hover_tarjeta_sin_linea_1400` (Merino suma su línea);
+- `lateral_hover_linea_1400`;
+- `lateral_toque_tarjeta_393` y `lateral_carrusel_pierde_393`.
+
+## 2026-11-24 · Vuelta S, punto 2: el texto de relleno, pantalla por pantalla
+
+Pedido: «sacá cada frase que no explique un dato ni ayude a decidir. Pasame la lista de lo que sacaste (antes →
+después)».
+
+Se leyó todo el texto visible de cada pantalla con un script (home, Mis ciclos, Explorar, la ficha, Diseñar, Preguntar,
+El brief, Acerca de, Mi cuenta).
+
+**Explorar**
+- «Cualquier género, cualquier mercado: los 65 atributos, sin tu proyecto y sin señal.» → «Todos los públicos y
+  mercados, sin filtro.»
+- «Explorar muestra los datos de todos, sin señal: no sabe para quién diseñás. Ver jeans baggy para «Invierno 25»» →
+  «Ver jeans baggy para «Invierno 25» →».
+- Sin proyecto: «… Creá tu proyecto para ver qué te conviene.» → «Creá tu proyecto para ver tu señal.»
+
+**«Cómo se lee», en Explorar y en la ficha**
+- «Sale de un K-means: un algoritmo que agrupa a los 17 atributos con pasarela y búsqueda según cuánto aparecen y cuánto
+  se buscan hoy, y le pone a cada grupo el nombre de la etapa más parecida. Dice dónde está, no adónde va.» → «Un K-means
+  agrupa los 17 atributos con pasarela y búsqueda. Dice dónde está, no adónde va.»
+- «Este atributo no entra al K-means (no tiene pasarela y búsqueda a la vez), así que no tiene etapa: la señal sale de
+  cuánto ganó o perdió en la búsqueda de 2022 a 2024.» → «No entra al K-means (le falta pasarela o búsqueda): la señal
+  sale de la búsqueda 2022→2024.»
+- «no es un pronóstico: es el cono, cuánto se movió de verdad la búsqueda, a cada distancia, en los 224 tramos de nuestra
+  propia historia. Muestra la escala de lo posible.» → «No es un pronóstico: es cuánto se movió la búsqueda en 224 casos
+  parecidos.»
+- «Con menos de tres capas no hay punteado: cada capa va en su franja, sólo con lo medido. Cuando aparece, …» → «Con
+  menos de tres capas no hay punteado.»
+- «Es el año en que más apareció o se buscó ese atributo en esa fuente (búsqueda: 2004–2024; Reddit: 2012–2025). No
+  compara un atributo con otro.» → «El año en que más apareció o se buscó en esa fuente. No compara un atributo con otro.»
+
+**La ficha**
+- «Cada curva es un índice de 0 a 100 de su propio máximo. Reddit: sólo el foro de mujeres, porque tu proyecto es de
+  mujer. Google y Vogue no separan por género.» → «Índice 0–100 de su propio máximo. Reddit: sólo el foro de mujeres;
+  Google y Vogue no separan por género.»
+- «Ver jeans baggy en Explorar ciclos: los mismos datos para todos, sin tu proyecto.» → «Ver jeans baggy en Explorar →»
+
+**Diseñar**
+- «Diseñando con Baggy (corte), desde Mis ciclos. Sólo te preguntamos lo que falta.» → «Diseñando con Baggy (corte),
+  desde Mis ciclos.»
+- «Cada material, con un look de Vogue Runway que lo muestra (elegido con CLIP y revisado a ojo) y su textura dibujada en
+  la esquina; sin un look que lo muestre, sólo la textura. Con serie medida sólo hay cuero y gamuza; el resto se elige
+  por diseño.» → «Con serie medida sólo hay cuero y gamuza; el resto se elige por diseño.»
+
+**Home, «Creá tu proyecto»**
+- «Sin servidor: nadie más lo ve.» → (fuera; ya dice «Se guarda en tu navegador»).
+
+**Mi cuenta**
+- «Tu nombre, tu email y tus proyectos están sólo en este navegador. No hay servidor.» → «Se guarda sólo en este
+  navegador.»
+
+**Lo que quedó, y por qué**
+- Las tres líneas de las opciones del formulario: dicen qué cambia cada respuesta.
+- Las fuentes del home y la regla de El brief: explican un dato o una regla.
+- La línea del modelo en Preguntar: es transparencia que pidió la devolución.
+- Las notas de datos de Diseñar (tiro, estampa, CLIP): dicen de dónde sale cada número.
+- Los «?»: ya están ocultos hasta que se tocan.
+
+`probar_demo.js` 8 de 8 en los dos anchos.

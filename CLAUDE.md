@@ -154,7 +154,14 @@ GitHub Pages publishes `app/` with no build command (`.github/workflows/publicar
   no good candidate (neoprene, espiga, pitón, vaca, paisley, botinetas, chatitas, guillerminas). Three archive ideas for El
   brief (not built) in `diseno/rediseno_2026-11-24/M/5_brief/ideas_brief.html`: archive is 2012–2021 only (photos
   2010–2023, corrected search 2010–2024, nothing from the 80s or 90s).
-- **Vuelta O (24/11, last).** Home H1 «Qué diseñar. Y cuándo.». Mis ciclos uses layout C: `#mcgraf` is a `<details
+- **Vuelta S (24/11, last).** Mis ciclos: `.mclayout` puts an `aside.mclado` (4 columns, sticky: `#perfilrad`, the two
+  charts stacked, one source line) next to `.mcprin` (8 columns, Mis tendencias 3 per row). No details/toggle any more.
+  `mcFoco(id)` links a card and its line (hover on desktop, first tap on phones): the line thickens, the others fade
+  (`.movp.mcon`), and an attribute outside the top five gets its line added to the right panel while focused
+  (`mcPanel(k,extra)`); hovering a line outlines its card (`mcFocoLinea`). Cards carry `data-r`. Phones: the aside is
+  `display:contents` and `#mcgraf` is a sticky two-panel carousel. `moviPanel` takes a 7th arg for the right label
+  margin. Filler text was cut screen by screen (list in `decisiones.md`).
+- **Vuelta O (24/11).** Home H1 «Qué diseñar. Y cuándo.». Mis ciclos uses layout C: `#mcgraf` is a `<details
   class="mcdet">` with a one-line summary («29 ganan terreno, 32 lo pierden · búsqueda mundial 2022→2024 · Ver el
   gráfico») holding the two charts and the source line; it is open on the first visit to Mis ciclos (`mcPrimera`, flag
   `ciclo.mcgraf_visto` set in `mostrar('radar')`) and then keeps what the person chose (`mcGrafAbierto`). Each card shows

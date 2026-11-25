@@ -2549,6 +2549,36 @@ html body .app #v-recorridos #ciclos>details.qm:not(#g1):not(#g2):not(#g3):not(#
    de la tarjeta de Explorar sin cortarse */
 @media (max-width:599px){html body .app .fpdat dd:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:17px!important;line-height:1.35!important}
   html body .app #v-recorridos .ciclo .cm>span b:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){white-space:nowrap;font-size:15px!important}}
+/* ===== vuelta Q · Mis ciclos: gráficos y Mis tendencias juntos ===== */
+@media (min-width:1000px){
+  html body .app #v-radar .mclayout:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid;grid-template-columns:calc(4*var(--g-col) + 3*var(--g-med)) minmax(0,1fr);column-gap:var(--g-med);align-items:start;margin-top:8px}
+  html body .app #v-radar .mclado:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:sticky;top:72px;max-height:calc(100vh - 88px);overflow:auto}
+  html body .app #v-radar .mclado .mcdos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:block!important}
+  html body .app #v-radar .mcprin:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-top:0!important}
+  html body .app #v-radar .mcprin .mcgrid:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  html body .app #v-radar .mcprin #mcsec2:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin-top:0!important}
+}
+html body .app #v-radar .mclado .perfilrad:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin:0 0 18px!important;justify-content:flex-start!important;text-align:left!important;gap:2px 6px}
+html body .app #v-radar .mclado .movp:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin:0 0 14px!important}
+html body .app #v-radar .mclado .mcfuente:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin:2px 0 0!important}
+/* la conexión: la línea en foco, las demás apagadas; la tarjeta en foco con un contorno */
+html body .app #v-radar .movp.mcon .mvc:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){opacity:.14;transition:opacity .15s}
+html body .app #v-radar .movp.mcon .mvc.foco:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){opacity:1}
+html body .app #v-radar .mvc.foco polyline:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){stroke-width:4.5}
+html body .app #v-radar .mvc.foco .mvcl text:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-weight:600}
+html body .app #v-radar .mcf.foco:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){outline:2px solid var(--accion);outline-offset:6px;border-radius:4px}
+/* tableta: los dos gráficos lado a lado, arriba */
+@media (min-width:600px) and (max-width:999px){html body .app #v-radar .mclado .mcdos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:1fr 1fr;column-gap:var(--g-med)}}
+/* celular: un carrusel de dos (Gana / Pierde) fijo arriba mientras se bajan las tarjetas */
+@media (max-width:599px){
+  html body .app #v-radar .mclado:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:contents}
+  html body .app #v-radar #mcgraf:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){position:sticky;top:48px;z-index:5;background:#fff;margin:0 calc(-1*var(--g-mar));padding:6px var(--g-mar) 4px;border-bottom:1px solid var(--linea)}
+  html body .app #v-radar #mcgraf .mcdos:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:flex!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  html body .app #v-radar #mcgraf .mcdos::-webkit-scrollbar:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:none}
+  html body .app #v-radar #mcgraf .mcdos>div:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){flex:0 0 88%;scroll-snap-align:start}
+  html body .app #v-radar #mcgraf .movp:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){margin:0!important}
+  html body .app #v-radar #mcgraf .mcfuente:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){font-size:12px!important;margin:2px 0 0!important}
+}
 html body .app #cuentacuerpo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:calc(8*var(--g-col) + 7*var(--g-med))}
 html body .app #v-cuenta .cusec:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){max-width:none!important}
 html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(#g6):not(#g7){display:grid!important;grid-template-columns:var(--g-col) minmax(0,1fr) auto;column-gap:var(--g-med)!important}
@@ -2675,17 +2705,19 @@ html body .app #v-cuenta .cuyo:not(#g1):not(#g2):not(#g3):not(#g4):not(#g5):not(
       <div class="vhead">
         <div>
           <h1 id="radtit">Mis ciclos</h1>
-          <p class="perfilrad" id="perfilrad"></p>
         </div>
       </div>
-      <section class="mcsec" aria-labelledby="mcsec1">
-        <h2 class="mcsech sr" id="mcsec1">Gana y pierde terreno</h2>
-        <div id="mcgraf"></div>
-      </section>
-      <section class="mcsec" aria-labelledby="mcsec2">
-        <h2 class="mcsech" id="mcsec2">Mis tendencias</h2>
-        <div id="mctend"></div>
-      </section>
+      <div class="mclayout">
+        <aside class="mclado" aria-labelledby="mcsec1">
+          <p class="perfilrad" id="perfilrad"></p>
+          <h2 class="mcsech sr" id="mcsec1">Gana y pierde terreno</h2>
+          <div id="mcgraf"></div>
+        </aside>
+        <section class="mcsec mcprin" aria-labelledby="mcsec2">
+          <h2 class="mcsech" id="mcsec2">Mis tendencias</h2>
+          <div id="mctend"></div>
+        </section>
+      </div>
       <section class="mcsec bfgancho" id="bfgancho" aria-label="El brief"></section>
     </section>
 
@@ -2788,7 +2820,7 @@ La búsqueda de cada término se divide por el promedio de los 35 términos de m
       <div class="vhead">
         <div>
           <h1>Explorar las tendencias del mundo</h1>
-          <p class="exmision">Cualquier género, cualquier mercado: los 65 atributos, sin tu proyecto y sin señal.</p>
+          <p class="exmision">Todos los públicos y mercados, sin filtro.</p>
           <p class="pysin exsinpy" id="exsinpy" hidden><span class="pysinb"><b>Estás mirando sin proyecto.</b> Con uno, cada atributo te dice si entrar, esperar o salir.</span><a href="#crear" class="btn-pri" data-crear>Crear tu proyecto</a></p>
         </div>
       </div>
@@ -3363,7 +3395,8 @@ function mcFicha(o,s){
       ${d!=null?'':'<dt>Búsqueda 2022→2024</dt><dd>sin dato</dd>'}
       ${rd.length?rd.map(r=>`<dt>Reddit, ${r.q}</dt><dd${src(r.k)}>${mcPts(r.d)} puntos</dd>`).join(''):`<dt>Reddit, ${publico==='todos'?'los dos foros':publico==='mujer'?'mujeres':'hombres'}</dt><dd class="mcno">no aparece</dd>`}</dl>
     <span class="mcver" aria-hidden="true">Ver la ficha →</span></div>`;
-  b.onclick=()=>mcAbrir(o.id);
+  b.dataset.r=o.id;
+  b.onclick=e=>{if(mcTactil&&!b.classList.contains('foco')&&!e.target.closest('.mcver')){mcFoco(o.id);return;}mcAbrir(o.id);};
   return b;
 }
 function mcAbrir(id){recContexto='proyecto';abrirFichaProyecto(id);recContexto='explorar';}
@@ -3382,24 +3415,44 @@ function mcTend(L){
       g.insertAdjacentHTML('afterend',`<p class="mcmasp"><button type="button" class="btn-sec mcmas" aria-expanded="false">Ver los ${cs.length} de ${nom}</button></p>`);
       const b=g.nextElementSibling.querySelector('button');b.onclick=()=>{const ab=b.getAttribute('aria-expanded')==='true';cs.slice(n).forEach(c=>c.hidden=ab);b.setAttribute('aria-expanded',!ab);b.textContent=ab?`Ver los ${cs.length} de ${nom}`:'Mostrar menos';if(ab)g.parentElement.scrollIntoView({block:'start'});};}});
 }
-let mcGrafAbierto=null;const mcPrimera=(()=>{try{return !localStorage.getItem('ciclo.mcgraf_visto');}catch(e){return false;}})();
+let mcGrafAbierto=null,mcG=null,mcExtra=null;
+function mcPanel(k,extra){const g=mcG;if(!g)return '';const gana=k==='g',L=(gana?g.G:g.P).concat(extra?[extra]:[]);
+  return L.length?moviPanel(L,`${gana?'Gana':'Pierde'} terreno · ${(gana?g.ga:g.pi).length} de ${g.con.length}`,gana?'+':'−',g.Wc,g.Hh,true,g.Rx):'';}
+/* una tarjeta y su línea, de la mano: resalta la línea (y apaga las demás); si el atributo no está entre los cinco del
+   gráfico, su línea se suma mientras dura el foco */
+function mcFoco(id){
+  if(mcExtra){const k=mcExtra;mcExtra=null;const c=$(k==='g'?'#mcpg':'#mcpp');if(c)c.innerHTML=mcPanel(k);mcEnlazarLineas();}
+  $$('#mcgraf .movp').forEach(m=>m.classList.remove('mcon'));$$('#mcgraf .mvc.foco').forEach(g=>g.classList.remove('foco'));
+  $$('#mctend .mcf.foco').forEach(c=>c.classList.remove('foco'));
+  if(!id||!mcG)return;
+  let g=$(`#mcgraf .mvc[data-r="${id}"]`);
+  if(!g){const x=mcG.con.find(z=>z.o.id===id);if(!x)return;const k=x.d>=0?'g':'p';mcExtra=k;const c=$(k==='g'?'#mcpg':'#mcpp');c.innerHTML=mcPanel(k,x);mcEnlazarLineas();g=$(`#mcgraf .mvc[data-r="${id}"]`);}
+  if(g){g.classList.add('foco');g.closest('.movp').classList.add('mcon');
+    const car=$('#mcgraf .mcdos');if(car&&car.scrollWidth>car.clientWidth+4){const pn=g.closest('#mcpg,#mcpp');car.scrollTo({left:pn.offsetLeft-car.offsetLeft,behavior:'smooth'});}}
+  const t=$(`#mctend .mcf[data-r="${id}"]`);if(t)t.classList.add('foco');
+}
+function mcEnlazarLineas(){$$('#mcgraf .mvc').forEach(g=>{if(g.dataset.ok)return;g.dataset.ok=1;const ir=()=>mcAbrir(g.dataset.r);g.setAttribute('tabindex','0');g.setAttribute('role','button');
+  g.addEventListener('click',ir);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ir();}});
+  g.addEventListener('mouseenter',()=>{if(mcExtra)return;mcFocoLinea(g.dataset.r,true);});g.addEventListener('mouseleave',()=>{if(mcExtra)return;mcFocoLinea(g.dataset.r,false);});});}
+function mcFocoLinea(id,on){$$('#mcgraf .movp').forEach(m=>m.classList.toggle('mcon',on&&!!m.querySelector(`.mvc[data-r="${id}"]`)));
+  $$('#mcgraf .mvc').forEach(g=>g.classList.toggle('foco',on&&g.dataset.r===id));$$('#mctend .mcf').forEach(c=>c.classList.toggle('foco',on&&c.dataset.r===id));}
+const mcTactil=matchMedia('(hover:none)').matches;
+document.addEventListener('mouseover',e=>{if(mcTactil)return;const c=e.target.closest('#mctend .mcf');const r=e.relatedTarget&&e.relatedTarget.closest?e.relatedTarget.closest('#mctend .mcf'):null;if(c&&c!==r)mcFoco(c.dataset.r);});
+document.addEventListener('mouseout',e=>{if(mcTactil)return;const c=e.target.closest('#mctend .mcf');if(!c)return;const r=e.relatedTarget&&e.relatedTarget.closest?e.relatedTarget.closest('#mctend .mcf'):null;if(r!==c)mcFoco(null);});const mcPrimera=(()=>{try{return !localStorage.getItem('ciclo.mcgraf_visto');}catch(e){return false;}})();
 function mcGrafica(L){
   const C=$('#mcgraf');if(!C)return;
-  const W=Math.max(300,Math.round(C.clientWidth||1000)),movil=W<620;
+  const W=Math.max(280,Math.round(C.clientWidth||1000)),movil=innerWidth<600;
   const pills=''; // 24/11 vuelta K: Mis ciclos muestra las dos secciones a la vista; ya no hay selector de gráfico
   let h='';
   if(mcGraf==='terreno'){
     const con=L.map(o=>({o,d:terreno(o.id)})).filter(x=>x.d!=null),ga=con.filter(x=>x.d>0.5).sort((a,b)=>b.d-a.d),pi=con.filter(x=>x.d<-0.5).sort((a,b)=>a.d-b.d);
     const G=ga.slice(0,5),P=pi.slice(0,5);
-    const Hh=movil?160:150;
-    const dos=W>=700,Wc=dos?Math.floor((W-40)/2):W; // 24/11 vuelta M: siempre lado a lado desde 700 px, chicos
-    const py=(()=>{const p=pyActivo();return p?'«'+pyEsc(p.nombre)+'»':'tu proyecto';})();
-    /* vuelta O (layout C): una línea con el resumen y el gráfico en un desplegable; abierto la primera vez */
-    // cuenta como visto sólo con Mis ciclos en pantalla (al arrancar se pinta por detrás)
-    const ab=mcGrafAbierto!=null?mcGrafAbierto:mcPrimera; // abierto en la primera visita a Mis ciclos; después, lo que eligió la persona
-    h=`<details class="mcdet"${ab?' open':''}><summary><span class="mcres"><b>${ga.length} ganan terreno, ${pi.length} lo pierden</b> · búsqueda mundial 2022→2024</span><span class="mcver2"><span class="ver">Ver el gráfico</span><span class="ocultar">Ocultar el gráfico</span></span></summary>
-      <div class="mcdos"><div>${G.length?moviPanel(G,`Gana terreno · ${ga.length} de ${con.length}`,'+',Wc,Hh,true):''}</div><div>${P.length?moviPanel(P,`Pierde terreno · ${pi.length} de ${con.length}`,'−',Wc,Hh,true):''}</div></div>
-      <p class="mcfuente"><span data-src="gm" tabindex="0">Google, todo el mundo · 2022→2024 · +50 = subió 50 puntos <span class="ifu" aria-hidden="true">i</span></span></p></details>`;
+    /* vuelta Q: los gráficos van junto a Mis tendencias (columna lateral en la compu, carrusel en el celular), siempre a la
+       vista; cada línea se conecta con su tarjeta (mcFoco) */
+    const angosto=W<560,Wc=movil?Math.min(W,360):W,Hh=movil?130:150,Rx=angosto?150:200;
+    mcG={G,P,ga,pi,con,Wc,Hh,Rx};
+    h=`<div class="mcdos"><div id="mcpg">${mcPanel('g')}</div><div id="mcpp">${mcPanel('p')}</div></div>
+      <p class="mcfuente"><span data-src="gm" tabindex="0">Google, todo el mundo · 2022→2024 · +50 = subió 50 puntos <span class="ifu" aria-hidden="true">i</span></span></p>`;
   }else{
     const F=L.map(o=>({o,y:tvMaxAnio(o.id).my})).filter(x=>x.y).sort((a,b)=>a.y-b.y||a.o.n.localeCompare(b.o.n));
     const ver=mcPicosTodos||F.length<=24?F:F.slice(-24);
@@ -3415,7 +3468,8 @@ function mcGrafica(L){
   C.querySelectorAll('.mcgsel button').forEach(b=>b.onclick=()=>{mcGraf=b.dataset.g;mcGrafica(mcLista());});
   $('#mcpicostodos')?.addEventListener('click',()=>{mcPicosTodos=true;mcGrafica(mcLista());});
   C.querySelectorAll('.mcgit').forEach(b=>b.onclick=()=>mcAbrir(b.dataset.r));
-  C.querySelectorAll('.mvc,.mcfila').forEach(g=>{const ir=()=>mcAbrir(g.dataset.r);g.setAttribute('tabindex','0');g.setAttribute('role','button');g.addEventListener('click',ir);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ir();}});});
+  mcEnlazarLineas();
+  C.querySelectorAll('.mcfila').forEach(g=>{const ir=()=>mcAbrir(g.dataset.r);g.setAttribute('tabindex','0');g.setAttribute('role','button');g.addEventListener('click',ir);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ir();}});});
 }
 /* «Cuándo picó cada uno», ahora una línea de tiempo con los años en el eje (arriba y abajo) */
 function mcLineaTiempo(F,W){
@@ -3440,9 +3494,9 @@ function mcLineaTiempo(F,W){
    predecir?»). Tres líneas fijas, a la vista: qué es la etapa, qué es lo punteado y qué es 100 */
 function comoSeLee(o){const enKM=mcEnKM(o);
   return `<div class="cslee"><p class="eti">Cómo se lee · CICLO no predice</p><div class="csgrid">
-    <div><b>La etapa</b><p>${enKM?'Sale de un K-means: un algoritmo que agrupa a los 17 atributos con pasarela y búsqueda según cuánto aparecen y cuánto se buscan hoy, y le pone a cada grupo el nombre de la etapa más parecida. Dice dónde está, no adónde va.':'Este atributo no entra al K-means (no tiene pasarela y búsqueda a la vez), así que no tiene etapa: la señal sale de cuánto ganó o perdió en la búsqueda de 2022 a 2024.'}</p></div>
-    <div><b>Lo punteado</b><p>${recCapas(o)<3?'Con menos de tres capas no hay punteado: cada capa va en su franja, sólo con lo medido. Cuando aparece, ':''}no es un pronóstico: es el cono, cuánto se movió de verdad la búsqueda, a cada distancia, en los 224 tramos de nuestra propia historia. Muestra la escala de lo posible.</p></div>
-    <div><b>El 100</b><p>Es el año en que más apareció o se buscó ese atributo en esa fuente (búsqueda: 2004–2024; Reddit: 2012–2025). No compara un atributo con otro.</p></div>
+    <div><b>La etapa</b><p>${enKM?'Un K-means agrupa los 17 atributos con pasarela y búsqueda. Dice dónde está, no adónde va.':'No entra al K-means (le falta pasarela o búsqueda): la señal sale de la búsqueda 2022→2024.'}</p></div>
+    <div><b>Lo punteado</b><p>${recCapas(o)<3?'Con menos de tres capas no hay punteado. ':''}No es un pronóstico: es cuánto se movió la búsqueda en 224 casos parecidos.</p></div>
+    <div><b>El 100</b><p>El año en que más apareció o se buscó en esa fuente. No compara un atributo con otro.</p></div>
   </div></div>`;}
 function abrirFichaProyecto(id){
   const o=REC.find(x=>x.id===id);if(!o)return;
@@ -3463,10 +3517,10 @@ function abrirFichaProyecto(id){
       </dl>
     </div>
     <section class="fpgraf"><h2>Pasarela, búsqueda y Reddit de tu público</h2>
-      <p class="fpnota">Cada curva es un índice de 0 a 100 de su propio máximo. Reddit: sólo ${foro}${publico==='todos'?'':', porque tu proyecto es de '+(publico==='mujer'?'mujer':'hombre')}. Google y Vogue no separan por género.</p>
+      <p class="fpnota">Índice 0–100 de su propio máximo. Reddit: sólo ${foro}; Google y Vogue no separan por género.</p>
       <div class="leg" id="dleg"></div><figure><div id="casc"></div></figure>
       ${comoSeLee(o)}
-      <p class="fpnota"><a href="#recorridos" id="fpexplorar">Ver ${o.n.toLowerCase()} en Explorar ciclos</a>: los mismos datos para todos, sin tu proyecto.</p></section>`;
+      <p class="fpnota"><a href="#recorridos" id="fpexplorar">Ver ${o.n.toLowerCase()} en Explorar →</a></p></section>`;
   const ancho=innerWidth<600?Math.max(320,innerWidth-40):Math.min(900,innerWidth-120);
   if(recCapas(o)<3){$('#dleg').hidden=true;$('#casc').appendChild(capaFranjas(o,ancho));}
   else{$('#dleg').innerHTML=recLeyenda(o);$('#casc').appendChild(recChart(o,ancho));legDestaca($('#dleg'),$('#casc'));}
@@ -3483,7 +3537,7 @@ function pintarExplorarDatos(o){
   $('#rdecide').innerHTML=`<dl class="fpdat expl">
       <div><dt>Etapa</dt><dd${et&&et.n?src('k'):''}>${et&&et.n?et.n:'Sin etapa: no entra al K-means'}</dd></div>
       <div><dt>Búsqueda mundial 2022→2024</dt><dd${d!=null?src('t'):''}>${ter}</dd></div></dl>
-    <p class="fpnota">Explorar muestra los datos de todos, sin señal: no sabe para quién diseñás. ${p?`<a href="#radar" data-fp="${o.id}">Ver ${o.n.toLowerCase()} para «${pyEsc(p.nombre)}»</a>`:`<a href="#crear" data-crear>Creá tu proyecto</a> para ver qué te conviene.`}</p>`;
+    <p class="fpnota">${p?`<a href="#radar" data-fp="${o.id}">Ver ${o.n.toLowerCase()} para «${pyEsc(p.nombre)}» →</a>`:`<a href="#crear" data-crear>Creá tu proyecto</a> para ver tu señal.`}</p>`;
   $('#rdecide [data-fp]')?.addEventListener('click',e=>{e.preventDefault();abrirFichaProyecto(e.currentTarget.dataset.fp);});
 }
 /* 24/11 vuelta K: Mis ciclos son dos secciones a la vista, una debajo de la otra: la gráfica (qué gana y qué pierde terreno)
@@ -4069,7 +4123,7 @@ function disenarCon(h){
 function dzPintarFijo(){
   let e=$('#dzfijo');if(!e){e=document.createElement('p');e.id='dzfijo';e.className='dzfijo';$('#dzpasos').before(e);}
   const f=dz.fijo;e.hidden=!f;if(!f){e.innerHTML='';return;}
-  e.innerHTML=`<span>Diseñando con <b>${f.n}</b> (${(DZ_NOMBRE[f.k]||'Prenda').toLowerCase()}), desde Mis ciclos. Sólo te preguntamos lo que falta.</span><button type="button" id="dzquitar">Quitar ${f.n} ×</button>`;
+  e.innerHTML=`<span>Diseñando con <b>${f.n}</b> (${(DZ_NOMBRE[f.k]||'Prenda').toLowerCase()}), desde Mis ciclos.</span><button type="button" id="dzquitar">Quitar ${f.n} ×</button>`;
   $('#dzquitar').onclick=()=>{dz.fijo=null;pintarDisenar();escribirLink(false);};
 }
 function dzDesdeLink(qs){
@@ -4209,7 +4263,7 @@ function pintarDisenar(){setTimeout(dzAcum,0);
       <details class="qm izq dzqm"><summary aria-label="Cómo se lee esto">?</summary><div class="qmc"><p>Sólo los que se usan en ${dzNombreTipo().toLowerCase()}. Cuando el material es denim, la prenda se llama jean.</p></div></details>`+
       TAX.materiales.map(g=>{const its=g.items.filter(i=>ok.includes(i.id)&&dzFijoMatOk(g.grupo));if(!its.length)return '';
         return `<h3 class="dzh3">${g.grupo}</h3><div class="dzgrid">${its.map(i=>{const s=dzSeñal(i);const fo=FOTO_ATR[i.serie]||FOTO_ATR[i.id],tela=dzTela(i.tex,i.color||'#D9CFC4');return dzTarjeta({id:i.id,n:i.n,en:i.en,d:i.d,vis:fo?dzVisFoto(fo,tela,i.n):tela,foto:!!fo,s,dato:s.num?`${s.num} afuera`:'',attr:'data-ma',on:dz.material===i.id});}).join('')}</div>`;}).join('')+
-      `<p class="note dznota">Cada material, con un look de Vogue Runway que lo muestra (elegido con CLIP y revisado a ojo) y su textura dibujada en la esquina; sin un look que lo muestre, sólo la textura. Con serie medida sólo hay cuero y gamuza; el resto se elige por diseño.</p>`+saltear('material');
+      `<p class="note dznota">Con serie medida sólo hay cuero y gamuza; el resto se elige por diseño.</p>`+saltear('material');
     enlazar('data-ma','material');conSaltear('material');
   }else if(dz.paso==='color'){
     const {L:cs,de,n}=dzColores(),mx=Math.max(1,...cs.filter(c=>c.medido).map(c=>c.ahora));
@@ -4747,8 +4801,8 @@ const MOVI_Y0=2016,MOVI_Y1=2024,MOVI_COL=['--s1','--s2','--s4','--s3','--s5'];
 /* cinco que ganan y cinco que pierden, elegidos (10/11) entre los de mayor cambio con serie propia y reconocibles para un
    diseñador; quedan afuera las fibras (lana, merino, popelina), que suben pero no dicen nada de un diseño */
 const MOVI_SEL={gana:['jamplio','gamuza','faldas_maxi','faldas_mini','trench'],pierde:['camisas_blusa','vestidos_cruzado','buzos_polera','vestidos_slip','corset']};
-function moviPanel(L,titulo,signo,Wx,Hx,ejes){ /* ejes (24/11): escala fija 0–100 con sus marcas, para que se lea la unidad */
-  const W=Wx||520,H=Hx||250,Lm=ejes?44:14,R=200,T=16,B=26,X=y=>Lm+(y-MOVI_Y0)/(MOVI_Y1-MOVI_Y0)*(W-Lm-R);
+function moviPanel(L,titulo,signo,Wx,Hx,ejes,Rx){ /* ejes (24/11): escala fija 0–100 con sus marcas, para que se lea la unidad */
+  const W=Wx||520,H=Hx||250,Lm=ejes?44:14,R=Rx||200,T=16,B=26,X=y=>Lm+(y-MOVI_Y0)/(MOVI_Y1-MOVI_Y0)*(W-Lm-R);
   const ser=L.map(x=>{const v=GREL[x.o.id],p=[];for(let y=MOVI_Y0;y<=MOVI_Y1;y++){const q=v[y-2004];if(q!=null)p.push([y,q]);}return p;});
   const todos=ser.flat().map(q=>q[1]),mn=ejes?0:Math.min(0,...todos),mx=ejes?Math.max(100,...todos):Math.max(...todos)*1.05,Y=v=>T+(1-(v-mn)/(mx-mn))*(H-T-B);
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${titulo}: búsqueda mundial ${MOVI_Y0} a ${MOVI_Y1} de ${L.map(x=>x.o.n).join(', ')}">`;
@@ -4759,7 +4813,7 @@ function moviPanel(L,titulo,signo,Wx,Hx,ejes){ /* ejes (24/11): escala fija 0–
   const fin=ser.map((p,i)=>({i,y:Y(p[p.length-1][1])})).sort((a,b)=>a.y-b.y);
   for(let k=1;k<fin.length;k++)if(fin[k].y-fin[k-1].y<28)fin[k].y=fin[k-1].y+28;
   const sobra=fin.length?fin[fin.length-1].y-(H-B):0;if(sobra>0)fin.forEach(f=>f.y-=sobra);
-  ser.forEach((p,i)=>{const x=L[i],col=`var(${MOVI_COL[i]})`,u=p[p.length-1],ly=fin.find(f=>f.i===i).y;
+  ser.forEach((p,i)=>{const x=L[i],col=`var(${MOVI_COL[i]||'--tinta'})`,u=p[p.length-1],ly=fin.find(f=>f.i===i).y;
     s+=`<g class="mvc" data-r="${x.o.id}" style="--d:${i*0.28}s" tabindex="0" role="button" aria-label="${x.o.n}, ${signo}${Math.round(Math.abs(x.d))} puntos: ver su recorrido">
       <polyline pathLength="1" fill="none" stroke="${col}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="${p.map(([y,v])=>X(y).toFixed(1)+','+Y(v).toFixed(1)).join(' ')}"/>
       <circle class="mvcp" cx="${X(u[0])}" cy="${Y(u[1])}" r="5" fill="${col}"/>
@@ -5892,7 +5946,7 @@ function pintarForm(cont,p,alGuardar){
     <p class="linea">Cambia los plazos y, con ellos, la señal.</p>
     <p class="pyerr" id="er-${n}" role="alert" hidden></p>
     <button class="btn-pri" type="submit">${nuevo?'Crear proyecto':'Guardar cambios'}</button>
-    <div class="pie">${nuevo?'<a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a>':'<button type="button" class="lnk" data-cancelar>Cancelar</button>'}<span>Sin servidor: nadie más lo ve.</span></div>
+    <div class="pie">${nuevo?'<a class="lnk" href="#recorridos" data-mirar>Sólo estoy mirando</a>':'<button type="button" class="lnk" data-cancelar>Cancelar</button>'}</div>
   </form>`;
   const f=cont.querySelector('form'),val=nm=>(f.querySelector(`input[name="${nm}-${n}"]:checked`)||{}).value;
   f.addEventListener('input',()=>{$(`#er-${n}`).hidden=true;});
@@ -5942,7 +5996,7 @@ function pintarCuentaVista(){
       <div class="cuyo"><span class="avatar grande" aria-hidden="true">${pyEsc(iniciales(u))}</span><div><h2>${pyEsc(u.nombre||u.email||'Sin nombre')}</h2><p class="insub">${pyEsc(u.email||'Sin email')}</p></div>
       <button type="button" class="btn-sec" id="cuyoed">Editar</button></div>
       <div id="cuyoform"></div>
-      <p class="que">Tu nombre, tu email y tus proyectos están sólo en este navegador. No hay servidor.</p></section>
+      <p class="que">Se guarda sólo en este navegador.</p></section>
     <section class="cusec" id="cu-proyectos"><div class="cucab"><div><p class="eti">Mis proyectos</p><h2>${proyectos.length} proyecto${proyectos.length>1?'s':''}</h2></div><button type="button" class="btn-sec" id="cunuevo">Nuevo proyecto</button></div>
       ${cuentaEdita==='nuevo'?'<div class="cuform" id="cuform"></div>':''}
       <ul class="culista">${proyectos.map(fila).join('')}</ul>
